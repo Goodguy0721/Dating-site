@@ -1,0 +1,110 @@
+<div id="actions" class="hide">
+  <div class="btn-group">
+    <a href="{{site_url}}admin/countries/country_edit" class="btn btn-primary">
+        {% helper lang.l('link_add_country','countries') %}
+    </a>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="{{site_url}}admin/countries/country_edit">
+          {% helper lang.l('link_add_country','countries') %}</a>
+      </li>
+      <li>
+        <a href="{{site_url}}admin/countries/index/0">
+          {% helper lang.l ('link_view_mode','countries') %}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<table id="data" class="table table-striped responsive-utilities jambo_table">
+  <thead>
+    <tr class="headings">
+      <th class="column-title">{% helper lang.l('field_country','countries') %}</th>
+      <th class="column-title"></th>
+      <th class="column-title">{% helper lang.l('link_sorting_mode','countries') %}</th>
+      <th class="column-title"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="even pointer">
+      <td>
+        <div id="menu_items">
+          <select multiple id="clsr0ul" class="form-control country-select-cell">
+          {% for item in installed %}
+            <option id="item_{{item.code}}">{{item.name}}</option>
+          {% endfor %}
+          </select>
+        </div>
+      </td>
+      <td class='arrows-icons'>
+        <i class="fa fa-chevron-left" id="moveToSortList"></i>
+        <i class="fa fa-chevron-right" id="moveToDefault"></i>
+      </td>
+      <td>
+        <div id="menu_items">
+          <select multiple name="parent_0" id="clsr0ul_sort" class="form-control country-select-cell">
+          {% for item in sorted %}
+            <option id="item_{{item.code}}">{{item.name}}</option>
+          {% endfor %}
+          </select>
+        </div>
+      </td>
+      <td class="arrows-up-down arrows-icons">
+        <i class="fa fa-chevron-up" id="moveUp"></i>
+        <i class="fa fa-chevron-down" id="moveDown"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2,3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bSort": false,
+            "bFilter": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>

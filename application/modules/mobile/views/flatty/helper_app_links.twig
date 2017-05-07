@@ -1,0 +1,23 @@
+{%if android_url or ios_url %}
+<div class="download">
+    <span>Download application:</span>
+    <div class="mobile-apps clearfix">
+        <div class="col-xs-5 mr10 dd-img">
+            {%if android_url %}
+                <a href="{{ android_url }}" class="android_app">
+                    <img class="img-responsive" src="{{ site_root }}application/views/flatty/img/android.png">
+                </a>
+            {% endif %}
+        </div>
+        <div class="col-xs-6 dd-img">
+            {%if ios_url %}
+                <a href="{{ ios_url }}" class="ios_app">
+                    <img class="img-responsive" src="{{ site_root }}application/views/flatty/img/appstorie.png">
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+{% endif %}

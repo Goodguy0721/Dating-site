@@ -1,0 +1,13 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+	<h1>
+	    {% helper lang.l('packages', 'packages') %}
+	</h1>
+</div>
+
+
+<div class="col-md-12">
+	{% helper packages.packages_list() %}
+</div>
+
+{% include '@app/footer.twig' %}

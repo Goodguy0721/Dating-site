@@ -1,0 +1,312 @@
+#cometchat img {
+	border: none;
+	padding: 0 !important;
+}
+
+.video-chat{
+    background: url("../../../img/bg-video.jpg") no-repeat;
+    width: 100%;
+    position: absolute;
+    background-size: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.video-chat header{
+    color: #fff;
+    height: 50px;
+    opacity: 1;
+    background-color: rgba(0,0,0,.6);
+    transition: height .5s;
+    position: fixed;
+    top: 0;
+    #{$left}: 0;
+    width: 100%;
+}
+
+.link-for-room{
+    color: #fff;
+    vertical-align: top;
+    padding: 13px;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.icon-chat{
+    font-size: 35px;
+    margin: 7px 25px;
+    display: inline-block;
+    position: relative;
+}
+
+.icon-chat .fa-video-camera{
+    color: $status_color;
+    position: absolute;
+    #{$right}: -10px;
+}
+
+.icon-chat .fa-comment{
+    font-size: 16px;
+    vertical-align: top;
+    padding: 9px 4px;
+    color: #fff;
+}
+
+.left-link-video{
+    display: inline-block;
+}
+
+.copy-link{
+    display: inline-block;
+    background: $indicator_color;
+    padding: 5px;
+    vertical-align: top;
+    color: #fff;
+    margin: 10px 80px;
+    border-radius: 5px
+}
+
+.copy-link:hover{
+    background:#4d8d43;
+    text-decoration: none;
+}
+
+.copy-link i{
+    color: #fff;
+}
+
+.right-link-video{
+    float: $right;
+}
+
+.right-link-video li{
+    float: $left;
+    padding: 13px;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.right-link-video li:hover{
+    background-color: rgba(255,255,255,.24);
+}
+
+.right-link-video i{
+    font-size: 20px;
+    padding: 0 5px;
+    color: #fff;
+}
+
+.user-link{
+    background-color: $indicator_color;
+    border-radius: 100px;
+    padding: 9px 6px !important;
+    margin: 7px;
+}
+
+.right-link-video .fa-sign-in{
+    opacity: 0.8;
+}
+
+.right-link-video .fa-sign-in:hover{
+    opacity: 1;
+}
+
+.col-chat{
+    width:100%;
+    display: block;
+    height: 100%;
+    float: left;
+}
+
+.col-chat-item{
+    background: rgba(0,0,0,.4);
+    width: 43%;
+    margin: 8% 3%;
+    float: $left;
+    position: relative;
+    height: 75%;
+    display: inline-block;
+    padding-top: 1%;
+}
+
+.chat-control{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.75);
+    height: 70px;
+}
+
+.chat-control span i{
+    cursor:pointer
+}
+
+.chat-control .text{
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.chat-control .text i{
+    color: #fff;
+}
+
+.chat-control-video{
+    float: $left;
+    width: 35%;
+    display: inline-block;
+}
+
+.chat-control-pause{
+    text-align: $right;
+    width: 50%;
+    float: $right;
+    margin-#{$right}: 15px;
+}
+
+.chat-control-pause i{
+    color: #000;
+}
+
+.chat-control-audio{
+    width: 24%;
+    float: $right;
+    text-align: $right;
+    margin-#{$right}: 10px;
+    display: inline-block;
+}
+
+.chat-control-pause .text{
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.button-pause{
+    background: rgba(226,226,226,1);
+    background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 27%, rgba(254,254,254,1) 100%);
+    background: -webkit-gradient($left top, $left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(27%, rgba(219,219,219,1)), color-stop(100%, rgba(254,254,254,1)));
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 27%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 27%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 27%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 27%, rgba(254,254,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+    padding: 20px;
+    border-radius: 54%;
+}
+
+.start-chat{
+    position: absolute;
+    #{$right}: 0;
+}
+
+.block-user{
+    position: absolute;
+    #{$right}: 0;
+    top:0;
+}
+
+.block-user i{
+    font-size: 25px;
+    color: #ff0000;
+    padding: 20px;
+    background: rgba(0,0,0,0.75);
+}
+
+.chat-control i.fa-ban{
+    font-size: 25px;
+    color: #ff0000;
+    padding: 20px;
+}
+
+.chat-control i.fa-check{
+    font-size: 25px;
+    color: $status_color;
+    padding: 20px;
+}
+
+.start-chat-block {
+    display: none;
+    position: absolute;
+    #{$right}: 0;
+    width: 20%;
+    bottom: 0px;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    float: left;
+}
+
+.close-chat{
+    padding: 10px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 50%;
+    display: block;
+    position:absolute;
+    #{$right}: 5px;
+    z-index: 1;
+    top: 50px;
+}
+
+.close-chat i{
+    font-size: 25px;
+    color: #fff;
+    cursor:pointer;
+}
+
+.input-chat{
+    position: absolute;
+    padding: 5px;
+    height: 30px !important;
+    width: 100%;
+    bottom: 5%;
+}
+
+.info_block{
+	position: absolute;
+	top: 30%;
+	background: rgba(0, 0, 0, 0.75) none repeat scroll 0px 0px;
+	width: 100%;
+	color: rgb(255, 255, 255); 
+	text-align: center;
+}
+
+.message-scroller{
+    max-height: calc(100% - 100px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    height: 100%;
+}
+
+#messagesChat{
+    position: relative;
+    padding: 6px 0 18px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+#messagesChat .vc-message{
+	overflow: hidden;
+	margin: 10px;
+}
+
+#messagesChat .vc-message .message{
+	margin-top: 5px;
+    color: #fff;
+}
+
+#messagesChat .vc-message--left .message{
+	margin-#{$left}: 75px;
+	text-align: $left;
+}
+
+#messagesChat .vc-message--right .message{
+	margin-#{$right}: 75px;
+	text-align: $right;
+}
+
+#messagesChat .vc-message img{
+	border-radius: 50%;
+}

@@ -1,0 +1,39 @@
+<div class="container-fluid pad0">
+    <div class="full-length-block">
+        <div class="container">
+            <div>
+                <div class="store-search-block">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 no-padding-left no-padding-right">
+                        <div class="input-group input-group no-padding-left">
+                            <span  id="categories" class="input-group-addon">
+                                <span class="categories-name hide-in-mobile">
+                                    {% if category.name %}
+                                        {{ category.name }}
+                                    {% else %}
+                                        {% helper lang.l('field_categories', 'store') %}
+                                    {% endif %}
+                                </span>
+                                <span>
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                            </span>
+                            <form id="store-search-products-form" action="{{ form_settings.action }}" method="POST">
+                                <input type="text" name="search_product"  id="search_product" class="form-control">
+                                <span class="input-group-btn">
+                                    <button id="search_friend" class="btn btn-primary" type="submit">{% helper lang.l('button_products_find', 'store', '', 'button') %}</button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding-left no-padding-right text-center">
+                        <div class="store-cart-block">
+                            <span id="load_cart_block">
+                                {% helper store.store_button_block({}) %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+	<div class="user-short-inf">
+		<div class="user-short-inf__user">
+			<a class="user-short-inf__photo g-pic-border g-rounded-small" href="{% helper seo.seolink('users', 'profile') %}" title="{{ user_short.output_name|e }}">
+				<img class="img-responsive" src="{{ user_short.logo }}" alt="{{ user_short.fname }} {{ user_short.sname }}" />
+			</a><!-- remove space
+		 --><div class="user-short-inf__name">
+				<a href="{% helper seo.seolink('users', 'profile') %}">{{ user_short.output_name }}</a>
+			</div>
+		</div>
+
+		<div class="user-short-inf__account">{% helper users.onUserAccount() %}</div>
+	</div>

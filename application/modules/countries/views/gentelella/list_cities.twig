@@ -1,0 +1,31 @@
+{% include '@app/header.twig' %}
+{% helper utils.jscript('countries','admin-location-sorter.js') %}
+
+<script>
+    var sorter;
+    $(function () {
+        sorter = new sortLocations({
+            siteUrl: '{{site_url}}',
+            urlSaveSort: 'admin/countries/ajax_save_city_sorter/{{country.code}}/{{region.id}}'
+        });
+    });
+</script>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_countries_menu') %}
+            </ul>
+        </div>
+        <div class='x-contet'>
+            {% if sort_mode %}
+                {% include 'cities_sort_mode.twig' %}
+            {% else %}
+                {% include 'cities_view_mode.twig' %}
+            {% endif %}
+        </div>
+    </div>
+ </div>
+
+{% include '@app/footer.twig' %}

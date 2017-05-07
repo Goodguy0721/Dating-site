@@ -1,0 +1,19 @@
+<a title="{{ params.title_text }}" id="delete_select_block_{{ params.id_user }}"
+   href="{{ site_url }}admin/users/ajax_delete_select/{{ params.id_user }}/{{ params.deleted }}">
+    {{ params.title_text }}
+</a>
+
+<script type="text/javascript">
+    $(function(){
+        $('#delete_select_block_{{ params.id_user }}').unbind('click').click(function(){
+            $.ajax({
+                url: site_url + 'admin/users/ajax_delete_select/{{ params.id_user }}/{{ params.deleted }}',
+                cache: false,
+                success: function(data){
+                    delete_select_block.show_load_block(data);
+                }
+            });
+            return false;
+        });
+    });
+</script>

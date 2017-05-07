@@ -1,0 +1,147 @@
+{% include '@app/header.twig' %}
+<div class="event-view">
+    
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="event-preview col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <div class="g-events-gallery__photo">
+                <div  id="event_photo"><img src="{{ event.image.thumbs.large }}"></div>
+                {% if event.is_owner %}
+                <div id="event-change-photo" class="g-events-gallery__photo-btn_block">
+                    <a>{% helper lang.l('wc_btn_change_photo', 'users') %}</a>
+                    <script type="text/javascript">
+                        $(function () {
+                            loadScripts(
+                                    ["{% helper utils.jscript('events', 'events-avatar.js', 'path') %}"],
+                                    function () {
+                                        event_avatar = new avatar({
+                                            site_url: site_url,
+                                            id_event:{{ event.id }},
+                                            saveAfterSelect: true,
+                                            photo_id: 'event-change-photo'
+                                        });
+                                    },
+                                    ['event_avatar'],
+                                    {async: false}
+                            );
+                        });
+                    </script>
+                </div>  
+                {% endif %}
+            </div>
+            {% if event.max_participants %}
+                <div class="spot">
+                    {% helper lang.l('text_spots_left', 'events') %}: 
+                    {% if settings.participants_out and settings.participants_out > 0 %}
+                        {{ settings.participants_out }}&nbsp;{% helper lang.l('text_out_of', 'events') %}&nbsp;{{ event.max_participants }}
+                    {% else %}
+                        {% helper lang.l('text_spots_none', 'events') %}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if event.is_owner or settings.event_settings.is_user_invite %}
+                <button class="btn btn-primary form-control mb20" id="invite_users_block"{% if event.status < 1 %} disabled{% endif %}>
+                    {% helper lang.l('link_invite_participant', 'events') %}
+                </button>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+
+        {% helper events.events_nav_side_links({'template':'left', 'search_type': search_type}) %}
+        
+        <div class="form-group event-actions">
+            {% include 'event_view_actions_block.twig' %}
+        </div>
+        
+        {% helper media.events_media_block({'count':16,'album_id':event.album_id, 'media_size':'small'}) %}
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+        <div class="event-description">
+            <div class="category">{{ category }}</div>
+            <div class="title">{{ event.name }}</div>
+            <div class="location"><i class="fa fa-map-marker"></i>&nbsp;{{ event.location }}</div>
+            <div class="event-info">
+                <div>
+                    {% helper date_start = date_format.tpl_date_format(event.date_started, page_data.event_date_format) %}
+                    {% helper date_end = date_format.tpl_date_format(event.date_ended, page_data.event_date_format) %}
+                    {% helper time_start = date_format.tpl_date_format(event.time_started, page_data.event_time_format) %}
+                    {% helper time_end = date_format.tpl_date_format(event.time_ended, page_data.event_time_format) %}
+
+                    {{ date_start }} | {{ time_start }} -
+                    {% if date_start == date_end %}
+                        {{ time_end }}
+                    {% else %}
+                        {{ date_end }} | {{ time_end }}
+                    {% endif %}
+                </div>
+                {% if event.address %}
+                    <div>
+                        {% helper lang.l('field_address', 'events') %}: {{ event.address }}
+                    </div>
+                {% endif %}
+                {% if event.venue %}
+                    <div>
+                        {% helper lang.l('field_venue', 'events') %}: {{ event.venue }}
+                    </div>
+                {% endif %}
+                {% if event.max_participants %}
+                    <div>{% helper lang.l('text_spots_total', 'events') %}: {{ event.max_participants }}</div>
+                {% endif %}
+            </div>
+            <div class="text">{{ event.description }}</div>
+            <div class="show-comments-block">
+                {% helper comments.comments_form({
+                    'gid': 'events',
+                    'id_obj': event.id,
+                    'hidden': 0,
+                    'count': event.comments_count,
+                    'view': 'button',
+                    'btn_view_class': 'btn-secondary',
+                    'btn_send_class': 'btn-primary',
+                }) %}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+        <div class="attending" id="participants_block">
+            {% helper events.approve_users_block({'event_id':event.id, 'count': 8}) %}
+        </div>
+        <div class="author-info clearfix">
+            <div class="title">
+                {% helper lang.l('text_event_by', 'events') %}
+            </div>
+            <div>
+                {% if event.is_admin %}
+                    <img src="{{ user_create.media.user_logo.thumbs.small }}">
+                    <div class="name">{{ user_create.output_name }}</div>
+                {% else %}
+                    <a href="{% helper seo.seolink('users', 'view', user_create) %}">
+                        <img src="{{ user_create.media.user_logo.thumbs.small }}">
+                        <div class="name">{{ user_create.output_name }}</div>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        loadScripts(
+            [
+                "{% helper utils.jscript('events', 'events.js', 'path') %}",
+            ],
+            function(){
+                events = new Events({
+                    siteUrl: site_url,
+                    profile_id: {{ event.fk_user_id }},
+                    lang_delete_confirm: "{% helper lang.l('note_delete_user', 'users') %}"
+                });
+                events.data.event_id = {{ event.id }};
+                //events.data.user_can_join = {{ settings.user_can_join }};
+            },
+            ['events'],
+            {async: true}
+        );
+    });
+</script>
+{% include '@app/footer.twig' %}

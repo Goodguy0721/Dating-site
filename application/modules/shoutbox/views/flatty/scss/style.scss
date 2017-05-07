@@ -1,0 +1,175 @@
+.shoutbox-messages-list {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    vertical-align: bottom;
+    width: 264px;         
+    bottom: 0;
+    display: inline-block;
+    height: 100%; 
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    .shoutbox-header {
+        background: $main_bg;
+        color: #fff;
+        font-weight: bold;
+        height: 40px; 
+        line-height: 40px; 
+        padding: 0 10px; 
+        position: absolute; 
+        top: 0; 
+        width: 100%; 
+        z-index: 10;
+        .shoutbox-header__title {
+            font-size: 0.8571em;
+            font-weight: bold;
+        }
+        .shoutbox__close {
+            font-size: 1em;
+            height: 100%;
+            line-height: 40px;
+            padding: 0 10px;
+            position: absolute;
+            #{$right}: 0;
+            top: 0;
+            opacity: 0.5;
+            &:hover,
+            &:active {
+                background: rgba(255, 255, 255, 0.15);
+                opacity: 1;
+            }
+            &.fa {
+                width: auto;
+            }
+        }
+    }
+    .shoutbox-content-block {
+        height: 100%; 
+        padding: 40px 0;
+        width: 100%; 
+        z-index: 1;
+        .shoutbox-content {
+            margin-bottom: 60px;
+        }
+        .shoutbox-scroller {
+            height: 100%; 
+            width: 100%; 
+            padding: 0px;
+        }
+        .shoutbox-in-top {
+            background-color: rgba($main_bg, 0.3);
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            position: relative;
+            bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+            &:hover,
+            &:focus {
+                background-color: $main_bg;
+            }
+        }
+        .shoutbox-msg-window__footer {
+            background: $content_bg;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+        }
+        .shoutbox-msg-window__sendfield {
+            padding: 5px 10px;
+        }
+        .shoutbox-msg-window__textarea {
+            height: 80px;
+            width: 100%;
+        }
+    }
+}
+.shoutbox-contact {
+    overflow: hidden; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    width: 100%; 
+    position: relative;
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    &.new-msg {
+        background: rgba($main_bg, 0.2);
+    }
+
+    .shoutbox-contact > div {
+        vertical-align: top; 
+        line-height: 0;
+    }
+    .shoutbox-contact__image {
+        border-radius: 3px;
+        float: $left;
+        height: 30px;
+        margin-#{$right}: 5px; 
+        width: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: block;
+        img {
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            padding: 0;
+        }
+    }
+    .shoutbox-contact__info {
+        font-size: 0.8571em;
+        margin-#{$left}: 35px;
+        top: 0;
+        position: relative;
+        .shoutbox_user_name {
+            color: $link_color;
+            font-weight: bold;
+        }
+        .date {
+            color: $contrast_color;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .shoutbox-messages-list {
+        width: 240px;
+    }
+}
+@media (min-width: 768px) {
+    .shoutbox-mobile-block {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .shoutbox-mobile-block {
+        margin-top: 20px;
+        display: block;
+        padding: 15px 10px ;
+        background-color: $content_bg;
+        border: 1px solid $delimiter_color;
+        border-radius: 5px;
+        .js-shoutbox-button-class {
+            display: none !important;
+        }
+        .title-block {
+            display: none;
+        }
+        .shoutbox-messages-list {
+            display: block;
+            position: relative;
+            z-index: 1;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            .shoutbox__close {
+                display: none;
+            }
+        }
+    }
+    
+}

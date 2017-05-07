@@ -1,0 +1,161 @@
+html, body, .index-page .main, .index-page .main > .content {
+    height: 100% !important;
+    min-height: 100%;
+}
+
+.header {
+    background: $content_bg;
+}
+
+#header-menu > li,
+#header-menu > li:first-child {
+    border: none;
+}
+
+#header-menu > li:hover,
+#header-menu > li:first-child:hover {
+    background: #3498DB;
+}
+
+.footer.footer-index {
+    background: $content_bg;
+    margin-top: -50px;
+}
+
+.footer ul > li {
+    text-transform: none;
+    width: auto;
+    margin-right: 40px;    
+}
+
+.footer > .content > ul > li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer .copyright {
+    margin: 0 auto;
+    width: 980px;
+    background: none;
+}
+
+.logo_header,
+.index-menu {
+    line-height: 70px;
+    overflow: hidden;
+}
+
+.index-page::before {
+    margin: 0;
+    background-position: center 70px;
+}
+
+.footer .copyright {
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 12px;
+}
+
+.promo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+        
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    
+    color: #0C1820;
+    
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.social_logo {
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+.index-social {
+    position: relative;
+    height: 100%;
+}
+
+.language-selector {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    z-index: 2;
+}
+
+.auth-links {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.auth-links a:hover {
+    text-decoration: none;
+}
+
+.auth-links li {
+    display: inline;
+}
+
+.auth-links li a {
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: normal;
+    text-transform: none;
+    background: #3498DB;
+}
+
+#ajax_login_link {
+    background: none;
+    color: #3498DB;
+}
+
+.mobile_apps {
+    margin: 15px auto;
+}
+
+.android_app, .ios_app {
+    display: inline-block;
+    width: 170px;
+    height: 52px;
+}
+
+.android_app {
+    background: url(../../../img/google-play-logo.png) 10px 0 no-repeat;
+}
+
+.ios_app {
+    background: url(../../../img/app-store-logo.png) 10px 0 no-repeat;
+}
+
+.pjaxcontainer {
+    display: table; 
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.pjaxcontainer_inner {
+    display: table-row; 
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    min-height: 0;
+}
+
+.footer {
+    position: relative;
+}

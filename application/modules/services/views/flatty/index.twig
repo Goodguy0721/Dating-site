@@ -1,0 +1,15 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    <div class="col-xs-12">
+        <h1>
+            {% helper lang.l('header_services_list', 'services') %}
+        </h1>
+        {% helper services.services_buy_list({'template_gid': template_gid}) %}
+        {% helper memberships.memberships_list({'template_gid': template_gid, 'headline': 1}) %}
+        {% helper packages.packages_list({'template_gid': template_gid, 'headline': 1}) %}
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

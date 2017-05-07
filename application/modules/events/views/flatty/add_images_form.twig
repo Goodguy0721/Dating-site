@@ -1,0 +1,113 @@
+{% set rand = random(11111, 99999) %}
+<div class="content-block load_content">
+    <h1>
+        {% helper lang.l('add_photos', 'media') %}
+    </h1>
+    <div class="">
+        <form id="item_form{{ rand }}" onsubmit="return"
+              action="{{ site_root }}/{{ seo.myprofile }}" method="post"
+              enctype="multipart/form-data" name="item_form" role="form">
+            <div class="form-group">
+                <div class="f-title">
+                    {% helper lang.l('field_files', 'media') %}:
+                </div>
+                <div class="f-block">
+                    <div id="dnd_upload{{ rand }}" class="drag">
+                        <div id="dndfiles{{ rand }}" class="drag-area">
+                            <div class="drag">
+                                <p>
+                                    {% helper lang.l('drag_photos', 'media') %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="upload-btn">
+                            <span data-role="filebutton">
+                                <s>
+                                    {% helper lang.l('btn_choose_file', 'start') %}
+                                </s>
+                                <input type="file" name="multiUpload" id="multiUpload{{ rand }}"
+                                       accept="image/*;capture=camera" multiple />
+                            </span>
+                            {% if media_config.max_size %}
+                                &nbsp;({% helper lang.l('max', 'start') %}
+                                {% helper utils.bytesFormat(media_config.max_size) %})
+                            {% endif %}
+                        </div>&nbsp;
+                        <span id="attach-input-error{{ rand }}"></span>
+                        <div id="attach-input-warning{{ rand }}"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="album_content{{ rand }}">
+                <input type="hidden" name="album_id" value="{{ id_album }}">
+            </div>
+            <button name="btn_upload" id="btn_upload{{ rand }}" class="btn btn-primary btn-block">
+                {% helper lang.l('btn_save', 'start', '', 'button') %}
+            </button>
+        </form>
+    </div>
+    <div class="clr"></div>
+</div>
+
+{% autoescape false %}
+    <script>
+        $(function () {
+            loadScripts(
+                    "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                    function () {
+                        var lang_data = {
+                                errors: {
+                                    file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                                }
+                            };
+                        var allowed_mimes = {{ media_config.allowed_mimes|json_encode() }};
+                                eu = new uploader({
+                                    siteUrl: site_url,
+                                    Accept: 'application/json',
+                                    uploadUrl: 'events/ajaxSaveImage',
+                                    zoneId: 'dndfiles{{ rand }}',
+                                    fileId: 'multiUpload{{ rand }}',
+                                    formId: 'item_form{{ rand }}',
+                                    sendType: 'file',
+                                    sendId: 'btn_upload{{ rand }}',
+                                    messageId: 'attach-input-error{{ rand }}',
+                                    warningId: 'attach-input-warning{{ rand }}',
+                                    maxFileSize: '{{ media_config.max_size }}',
+                                    mimeType: allowed_mimes,
+                                    lang: lang_data,
+                                    cbOnQueueComplete: function (data) {
+                                        if (window.sitegallery) {
+                                            sitegallery.reload();
+                                        } else if (window.mediagallery) {
+                                            mediagallery.reload();
+                                            mediagallery.properties.windowObj.hide_load_block();
+                                        } else if (window.eventsgallery) {
+                                            eventsgallery.reload();
+                                        }
+
+                                        if(window.event_recent_mediagallery) {
+                                            event_recent_mediagallery.refresh_recent_photos();
+                                        }
+                                        if(window.wall) {
+                                            wall.loadEvents('new');
+                                        }
+                                    },
+                                    createThumb: true,
+                                    thumbWidth: 60,
+                                    thumbHeight: 60,
+                                    thumbCrop: true,
+                                    thumbJpeg: false,
+                                    thumbBg: 'transparent',
+                                    fileListInZone: true,
+                                    filebarHeight: 200,
+                                    jqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+                                });
+                    },
+                    ['eu'],
+                    {async: false}
+            );
+        });
+    </script>
+{% endautoescape %}

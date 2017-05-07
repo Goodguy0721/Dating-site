@@ -1,0 +1,19 @@
+<div class="like_users">
+	<div class="lh0 {% if like_users|length > 14 %}w-scroll{% endif %}">
+		{% for user in like_users %}
+			{% helper text_user_logo = lang.l('text_user_logo', 'likes', '', 'button', user) %}
+			<a id="like_user_{{ user.id }}" href="{{ user.link }}"
+               title="{{ user.output_name|e }}">
+                <img src="{{ user.media.user_logo.thumbs.small }}"
+                     alt="{{ text_user_logo }}" title="{{ text_user_logo }}">
+            </a>
+		{% endfor %}
+	</div>
+	{% if has_more %}
+		<ul class="centered">
+			<li class="a like_more_btn">
+                {% helper lang.l('btn_view_more', 'start') %}
+            </li>
+		</ul>
+	{% endif %}
+</div>

@@ -1,0 +1,149 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_payments_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if filter == 'all' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/payments/systems/all'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('filter_all_systems', 'payments') %} ({{ filter_data.all }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'used' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/payments/systems/used'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('filter_used_systems', 'payments') %} ({{ filter_data.used }})
+                    </label>
+                    <label class="btn btn-default"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/payments/install'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('filter_install_systems', 'payments') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_system_name', 'payments') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in systems %}
+                    <tr class="even pointer">
+                        <td>{{ item.name }}</td>
+                        <td>
+                        {% if item.in_use %}
+                            {% helper lang.l('btn_tableicon_is_active','start') %}
+                        {% else %}
+                            {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                        {% endif %}
+                        </td>
+                        <td class="icons">
+                          <div class="btn-group">
+                          {% if item.in_use %}
+                            <button type="button"
+                                    class="btn btn-primary" title="{% helper lang.l('link_deactivate_system','payments') %}"
+                                    onclick = "document.location.href='{{ site_url }}admin/payments/system_use/{{ item.gid }}/0'">
+                                {% helper lang.l('make_inactive','start') %}
+                            </button>
+                          {% else %}
+                            <button type="button"
+                                    class="btn btn-primary" title="{% helper lang.l('link_activate_system','payments') %}"
+                                    onclick = "document.location.href='{{ site_url }}admin/payments/system_use/{{ item.gid }}/1'">
+                                {% helper lang.l('make_active','start') %}
+                            </button>
+                          {% endif %}
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                            {% if item.in_use %}
+                              <li>
+                                <a href="{{ site_url }}admin/payments/system_use/{{ item.gid }}/0">
+                                    {% helper lang.l('make_inactive','start') %}</a>
+                              </li>
+                            {% else %}
+                              <li>
+                                <a href="{{ site_url }}admin/payments/system_use/{{ item.gid }}/1">
+                                    {% helper lang.l('make_active','start') %}</a>
+                              </li>
+                            {% endif %}
+                              <li>
+                                <a href="{{ site_url }}admin/payments/system_edit/{{ item.gid }}">
+                                    {% helper lang.l('link_edit_payments','payments') %}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_payment_systems','payments') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

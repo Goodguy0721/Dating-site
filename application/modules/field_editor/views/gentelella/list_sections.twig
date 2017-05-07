@@ -1,0 +1,15 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<ul class="nav nav-tabs bar_tabs">
+    {% helper menu.get_admin_level1_menu('admin_fields_menu') %}
+</ul>
+
+<div class="x_panel">
+    {% if mode == 'sort' %}
+        {% include 'sections_sort_mode.twig' %}
+    {% else %}
+        {% include 'sections_view_mode.twig' %}
+    {% endif %}
+</div>
+
+{% include '@app/footer.twig' %}

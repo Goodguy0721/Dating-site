@@ -1,0 +1,18 @@
+<div id="{{ block_background_id }}" class="load_content_bg">
+    <div id="{{ block_id }}" class="load_content_inner col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
+        {% if use_close_button %}
+            <div class="lc-header clearfix">
+                <div id="{{ close_button_id }}" class="load_content_close clearfix hide">
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
+        {% endif %}
+        <div class="load_content_inner2">
+            <div class="lc-content-outer">
+                <div class="lc-content-inner">
+                    <div id="{{ block_id }}_content" class="pg-modal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

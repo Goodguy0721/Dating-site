@@ -1,0 +1,35 @@
+<script>
+	function equalHeight(group) {
+		tallest = 0;
+		group.each(function() {
+			thisHeight = $(this).height();
+			if(thisHeight > tallest) {
+				tallest = thisHeight;
+			}
+		});
+		group.height(tallest);
+	}
+</script>
+<div class="sitemap">
+	{% set line = 1 %}
+
+	<div class="site-map-block row">
+		{% for key, item in blocks %}
+			<script>
+				$(function(){
+					equalHeight($(".line{{ line }}"));
+				});
+			</script>
+
+			<div class="col-sm-3  col-md-3">
+	            {% include 'sitemap_level.twig' with {'list': item} %}
+	        </div>
+
+	        {% if loop.index is divisibleby(4) %}
+	        </div><div class="site-map-block row">
+	        {% endif %}
+
+		{% endfor %}
+	</div>
+</div>
+<div class="clr"></div>

@@ -1,0 +1,3 @@
+	2560	Morehead	-8.7106600	141.6366800	PG	06	0	0	Morehead	Morehead	Morehead	Morehead	Morehead	Morehead
+	2560	Kiunga	-6.1219300	141.2906100	PG	06	0	0	Kiunga	Kiunga	Kiunga	Kiunga	Kiunga	Kiunga
+	2560	Daru	-9.0778600	143.2089300	PG	06	0	0	Daru	Daru	Daru	Daru	Daru	Daru

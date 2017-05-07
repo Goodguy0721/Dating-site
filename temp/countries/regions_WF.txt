@@ -1,0 +1,2 @@
+	3921	Tauai	-14.2333300	-178.1666700	WF	98612	0	0	Tauai	Tauai	Tauai	Tauai	Tauai	Tauai
+	3921	Leava	-14.2933300	-178.1583300	WF	98612	0	0	Leava	Leava	Leava	Leava	Leava	Leava

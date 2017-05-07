@@ -1,0 +1,38 @@
+<label class="control-label col-sm-3" col-xs-12>
+  {{ options_values.header }}:</label>
+<div class="col-sm-9 col-xs-12">
+    {% if options_values.type == 'multi' %}
+        {% for id_key, val in options_values.option %}
+            <label class="block_cat checkbox-inline">
+                <input type="checkbox" value="{{ id_key }}" name="option[{{ opt.id }}][{{ id_key }}]"
+                    {% if val.sel %}checked{% endif %} class="flat">&nbsp;{{ val.name }}
+            </label>
+        {% endfor %}
+    {% else %}
+        <select name="option[{{ opt.id }}]" class="form-control">
+        {% for id_key, val in options_values.option %}
+            <option value="{{ id_key }}" {% if val.sel %}selected{% endif %}>{{ val.name }}</option>
+        {% endfor %}
+        </select>
+    {% endif %}
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.flat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        }).on('ifClicked', function(event) {
+            $(this).trigger('click');
+        }).on('ifChanged', function(event) {
+            $(this).trigger('change');
+        }).on('ifChecked', function() {
+            $(this).attr('checked', 'checked');
+        }).on('ifUnchecked', function() {
+            $(this).removeAttr('checked');
+        }).on('ifDisabled', function() {
+            $(this).attr('disabled', 'disabled');
+        }).on('ifEnabled', function() {
+            $(this).removeAttr('disabled');
+        });
+    });
+</script>

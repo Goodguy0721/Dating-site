@@ -1,0 +1,192 @@
+{% include '@app/header.twig' with {load_type : 'ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_kisses_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions">
+                <div class="btn-group">
+                  <a href="{{ site_url }}admin/kisses/add/" id="btn_add"
+                      class="btn btn-primary">
+                      {% helper lang.l('btn_add', 'kisses') %}
+                  </a>
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                          <a href="{{ site_url }}admin/kisses/add/" id="btn_add">
+                              {% helper lang.l('btn_add', 'kisses') %}
+                          </a>
+                        </li>
+                        <li>
+                          <a id="delete_select_block" href="javascript:void(0)" aria-expanded="false">
+                              {% helper lang.l('btn_link_delete', 'kisses') %}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x_panel">
+              <input type="checkbox" class="flat" id="grouping_all">
+              <span id="select-all">{% helper lang.l('btn_select_all', 'kisses') %}</span>
+              <span id="unselect-all" class="hide">{% helper lang.l('btn_unselect_all', 'kisses') %}</span>
+            </div>
+
+            <div id="pages">
+                <ul name="parent_0" class="sort connected" id="clsr0ul">
+                    {% if kisses %}
+                        {% for kiss in kisses %}
+                            <li id="item_{{ kiss.id }}" data-id="item_{{ kiss.id }}">
+                                <div class="x_panel">
+                                    <div class="form-group">
+                                        <div class="pull-right">
+                                          <div class="btn-group">
+                                            <a class="delete_select_file btn btn-primary" data-id="{{ kiss.id }}" href="javascript:void(0)">
+                                                {% helper lang.l('btn_delete', 'start') %}
+                                            </a>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                              <li>
+                                                <a class="delete_select_file" data-id="{{ kiss.id }}" href="javascript:void(0)">
+                                                    {% helper lang.l('btn_delete', 'start') %}
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <input type="checkbox" class="grouping flat" value="{{ kiss.id|escape }}"
+                                            name="ids[]" id="kisses-{{ kiss.id|escape }}" data="table_records">
+                                            &nbsp;
+                                        <img src="{{ file_url }}{{ kiss.image|escape }}"
+                                            alt="{{ kiss.id|escape }}">
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li>{% helper lang.l('no_kisses', 'kisses') %}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ site_url }}application/views/gentelella/js/sortable/Sortable.min.js"></script>
+<script type="text/javascript">
+    var reload_link = "{{ site_url }}admin/kisses/index/";
+    var order = '{{ order }}';
+    var order_direction = '{{ order_direction }}';
+
+    $(function () {
+        $('#delete_selected').bind('click', function () {
+            if (!$('input[type=checkbox].grouping').is(':checked'))
+                return false;
+            if (!confirm('{% helper lang.l('note_alerts_delete_all', 'kisses', '', 'js') %}'))
+                return false;
+            $('#kisses_form').attr('action', $(this).attr('href')).submit();
+            return false;
+        });
+
+        var sortable = Sortable.create($(clsr0ul)[0], {
+            onUpdate: function (/**Event*/evt) {
+                var result = sortable.toArray();
+                var data = {};
+                for (var i in result) {
+                    data[result[i]] = parseInt(i) + 1;
+                }
+                $.ajax({
+                    url: '{{ site_url }}admin/kisses/ajax_save_sorter',
+                    data: {sorter: {parent_0: data }},
+                    dataType: 'json',
+                    method: 'post',
+                });
+            },
+        });
+
+        delete_select_block = new loadingContent({
+            loadBlockSize: 'small',
+            footerButtons: '<input type="submit" id="lie_delete" name="btn_confirm" value="{% helper lang.l('btn_confirm', 'kisses') %}" class="btn btn-primary">'
+        });
+
+        $('.delete_select_file').unbind('click').click(function(){
+            var id_kisses = $(this).attr('data-id');
+            var data = new Array();
+            var checked = $('input#kisses-' + id_kisses).is(':checked');
+            if (checked) {
+                $('input#kisses-' + id_kisses).prop('checked', false);
+                $('input#kisses-' + id_kisses).prop('checked', true);
+            } else {
+                $('input#kisses-' + id_kisses).prop('checked', true);
+            }
+            data[0] = id_kisses;
+            if (data.length > 0) {
+                $.ajax({
+                    url: site_url + 'admin/kisses/ajax_confirm_delete_select',
+                    cache: false,
+                    success: function(data) {
+                        delete_select_block.show_load_block(data);
+                    }
+                });
+            } else {
+                error_object.show_error_block('{% helper lang.l("no_select_kisses", "kisses", '', "js") %}', 'error');
+            }
+        });
+
+        $('#delete_select_block').unbind('click').click(function(){
+            var data = new Array();
+            $('.grouping:checked').each(function(i){
+                data[i] = $(this).val();
+            });
+            if(data.length > 0) {
+                $.ajax({
+                    url: site_url + 'admin/kisses/ajax_confirm_delete_select',
+                    cache: false,
+                    success: function(data){
+                        delete_select_block.show_load_block(data);
+                    }
+                });
+            } else {
+                error_object.show_error_block('{% helper lang.l("no_select_kisses", "kisses", '', "js") %}', 'error');
+            }
+        });
+
+        $('#select-all').bind('click', function() {
+            $('#pages').find('input[type=checkbox]').prop('checked', true).parent().addClass('checked');
+        });
+
+        $('#unselect-all').bind('click', function() {
+            $('#pages').find('input[type=checkbox]').prop('checked', false).parent().removeClass('checked');
+        });
+
+        $('#grouping_all').bind('click', function() {
+            if ($(this).is(':checked')) {
+                $('.grouping').iCheck('check');
+                $('#select_all').hide();
+                $('#unselect_all').show();
+            } else {
+                $('.grouping').iCheck('uncheck');
+                $('#select_all').show();
+                $('#unselect_all').hide();
+            }
+        });
+    });
+    function reload_this_page(value) {
+        var link = reload_link + '/' + order + '/' + order_direction;
+        location.href = link;
+    }
+</script>
+
+{% include '@app/footer.twig' %}

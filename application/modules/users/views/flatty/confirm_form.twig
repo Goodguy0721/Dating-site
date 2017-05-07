@@ -1,0 +1,33 @@
+{% include '@app/header.twig' %}
+
+<div class="clearfix"></div>
+<div class="content-block">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <h1>{% helper seo.seo_tags('header_text') %}</h1>
+        <div class="content-value">
+            <p class="mb10">
+                {% helper lang.l('text_confirm', 'users') %}
+            </p>
+            <div class="row">
+                <form action="" method="post" >
+                    <div class="form-group clearfix">
+                        <label class="col-xs-12 tali">
+                            {% helper lang.l('field_confirm_code', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                            <input type="text" name="code" value="">
+                            <span class="pginfo msg reason"></span>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="col-xs-12 col-sm-12">
+                            <input type="submit" class="btn btn-primary" name="btn_save" value="{% helper lang.l('btn_ok', 'start', '', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

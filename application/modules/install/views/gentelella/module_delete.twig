@@ -1,0 +1,87 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Module:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {{ module.module }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Description:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        <b>{{ module.install_name }}</b><br>{{ module.install_descr }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Version:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {{ module.version }}
+                    </div>
+                </div>
+        {% if deinstalled %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Files to be deleted:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% for item in module.files %}
+                        {{ item.2 }}<br>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% if messages %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Messages:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% for item in messages %}
+                        {{ item }}<br>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% else %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Dependent modules:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                    {% if depend_modules %}
+                        {% for item in depend_modules %}
+                        <b>{{ item.module }}</b> ({{ item.install_name }})<br>
+                        {% endfor %}
+                    {% else %}
+                        No dependencies<br>
+                    {% endif %}
+                        A module can only be removed if it does not have a dependent module
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Save module settings:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        If default settings (e.g. languages) were changed, you can back up your changes.<br>
+                        <a href="{{ site_url }}admin/install/generate_install_module_settings/{{ module.module }}">Backup</a>
+                    </div>
+                </div>
+        {% endif %}
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        {% if not deinstalled %}
+                        <input type="submit" name="submit_btn" value="Delete" class="btn btn-primary"
+                            {% if depend_modules %}disabled{% else %}onclick="if(!confirm('Are you sure you want to uninstall the module?')) return false"{% endif %}>
+                            <a class="btn btn-default" href="{{ site_url }}admin/install/modules">Cancel</a>
+                        {% else %}
+                        <a class="btn btn-default" href="{{ site_url }}admin/install/modules">Back</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+	      </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

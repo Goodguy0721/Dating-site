@@ -1,0 +1,15 @@
+<div class="pages">
+    {% if page_data.total_rows %}
+    <span class="total">
+        {% helper lang.l('showing', 'start') %} {{ page_data.start_num }} - {{ page_data.end_num }} / {{ page_data.total_rows }}
+    </span>
+    {% endif %}
+    {% if page_data.nav is not empty %}<div class='paging_full_numbers dataTables_paginate'>{{ page_data.nav }}</div>{% endif %}
+</div>
+<script>
+    $("b").replaceWith(function(index, oldHTML){
+        return $('<a class="js_current">').html(oldHTML);
+    });
+    $('.paging_full_numbers a').addClass('paginate_button');
+    $('.js_current').addClass('paginate_active');
+</script>

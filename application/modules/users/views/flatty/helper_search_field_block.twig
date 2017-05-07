@@ -1,0 +1,91 @@
+{% set field_gid=field.field.gid %}
+{% if not field_name %}
+    {% set field_name=field.field.gid %}
+{% endif %}
+{% if field.field.type == 'select' %}
+    {% set default_select_lang %}
+        {% helper lang.l('select_default', 'start') %}
+    {% endset %}
+    {% if field.settings.search_type == 'one' %}
+        {% helper start.selectbox({
+            'input': field_name,
+            'id': field_name ~ '_select',
+            'value': field.field_content.options.option,
+            'selected': attribute(data, field_name),
+            'default': default_select_lang
+        }) %}
+    {% else %}
+        {% helper start.checkbox({
+            'input': field_name,
+            'id': field_name ~ '_select',
+            'value': field.field_content.options.option,
+            'selected': attribute(data, field_name),
+            'group_methods': 1
+        }) %}
+    {% endif %}
+{% elseif field.field.type == 'multiselect' %}
+    {% if field.field_content.settings_data_array.view_type == 'mselect' %}
+        {% helper start.selectbox({
+            'input': field_name,
+            'id': field_name ~ '_select',
+            'value': field.field_content.options.option,
+            'selected': attribute(data, field_name),
+            'default': default_select_lang
+        }) %}
+    {% else %}
+        {% helper start.checkbox({
+            'input': field_name,
+            'id': field_name ~ '_select',
+            'value': field.field_content.options.option,
+            'selected': field.field_content.value,
+            'group_methods': 1
+        }) %}
+    {% endif %}
+{% elseif field.field.type == 'text' %}
+    {% if field.settings.search_type == 'number' and field.settings.view_type == 'range' %}
+        {% set field_gid_min=field_name ~ '_min' %}
+        {% set field_gid_max=field_name ~ '_max' %}
+        <input type="text" name="{{ field_name }}_min" class="form-control" value="{{ attribute(data, field_gid_min) }}">
+        &nbsp;-&nbsp;
+        <input type="text" name="{{ field_name }}_max" class="form-control" value="{{ attribute(data, field_gid_max) }}">
+    {% elseif field.settings.search_type == 'number' %}
+        <input type="text" name="{{ field_name }}" class="form-control" value="{{ attribute(data, field_name) }}">
+    {% else %}
+        <input type="text" name="{{ field_name }}" value="{{ attribute(data, field_name) }}" class="form-control">
+    {% endif %}
+{% elseif field.field.type == 'range' %}
+    <div class="w200">
+        {% if field.settings.search_type == 'range' %}
+            {% set field_gid_min=field_name ~ '_min' %}
+            {% set field_gid_max=field_name ~ '_max' %}
+            {% helper start.slider({
+                'id': field_name ~ '_slider',
+                'min': field.field_content.settings_data_array.min_val,
+                'max': field.field_content.settings_data_array.max_val,
+                'value_min': attribute(data, field_gid_min),
+                'value_max': attribute(data, field_gid_max),
+                'field_name_min': field_name ~ '_min',
+                'field_name_max': field_name ~ '_max'
+            }) %}
+        {% elseif field.settings.search_type == 'number' %}
+            {% set field_value=attribute(data, field_name) %}
+            <input type="text" name="{{ field_name }}" class="form-control" value="{{ field_value|e }}">
+        {% endif %}
+    </div>
+{% elseif field.field.type == 'textarea' %}
+    {% set field_value=attribute(data, field_name) %}
+    <input type="text" name="{{ field_name }}" value="{{ field_value|e }}" class="form-control">
+{% elseif field.field.type == 'checkbox' %}
+    {% if field.field_content.value %}
+        {% set chbx_field_value=1 %}
+    {% else %}
+        {% set chbx_field_value=0 %}
+    {% endif %}
+
+    {% helper start.checkbox({
+        'input': field_name,
+        'id': field_name ~ '_select',
+        'value': chbx_field_value,
+        'selected': attribute(data, field_name)
+    }) %}
+{% endif %}

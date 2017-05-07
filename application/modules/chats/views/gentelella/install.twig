@@ -1,0 +1,18 @@
+{% include '@app/header.twig' %}
+
+<a href="javascript:void(0);" onclick="document.getElementById('adminPage').contentWindow.location.reload(true);">
+		{% helper lang.l('btn_refresh', 'start') %}</a>
+
+{{ chat_block }}
+
+<div class="btn">
+	<div class="l">
+		<a href="{{ site_url }}admin/chats/set_install/{{ chat.gid }}" type="submit" name="btn_save">
+			{% helper lang.l('installed', 'chats') %}
+		</a>
+	</div>
+</div>
+<a class="cancel" href="{{ site_url }}admin/chats">
+	{% helper lang.l('btn_cancel', 'start') %}</a>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,22 @@
+<ul>
+	{% for key, item in menu %}
+		<li {% if item.active is not empty or item.in_chain is not empty %}class="active"{% endif %}>
+            <a id="user_{{ item.gid }}" href="{{ item.link }}">
+                <span class="a">
+                    {{ item.value }}{% if item.indicator %}<span class="num">{{ item.indicator }}</span>{% endif %}
+                </span>
+            </a>
+			{% if item.sub is not empty %}
+				<ul class="submenu noPrint">
+					{% for key, s in item.sub %}
+						<li {% if s.active %}class="active"{% endif %}>
+                            <a id="user_{{ item.gid }}_{{ s.gid }}" href="{{ s.link }}">
+                                {{ s.value }}{% if s.indicator %}<span class="num">{{ s.indicator }}</span>{% endif %}
+                            </a>
+                        </li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

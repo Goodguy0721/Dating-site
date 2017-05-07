@@ -1,0 +1,11 @@
+{% for key, item in subscriptions_list %}
+	<div class="r">
+		<div class="v">
+			<input {% if item.subscribed %}checked{% endif %} type="checkbox"
+                   name="user_subscriptions_list[]" value="{{ item.id }}" id="sub{{ item.id }}">
+			<label for="sub{{ item.id }}">
+                {% helper lang.l('item.name_i', 'subscriptions') %}
+            </label>
+		</div>
+	</div>
+{% endfor %}

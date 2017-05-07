@@ -1,0 +1,24 @@
+<h2 class="line top bottom linked">
+	{% helper lang.l('reg_subscriptions', 'subscriptions') %}
+	<a class="fright fa fa-pencil fa-lg edge hover"
+       href="{{ site_url }}users/profile/subscriptions/">
+    </a>
+</h2>
+<div class="view-section">
+	<div class="view-section">
+        {% for item in subscriptions_list %}
+            <div class="r">
+                <div class="f">
+                    {{ item.name }}:
+                </div>
+                <div class="v">
+                    {% if item.subscribed %}
+                        {% helper lang.l('user_subscribed', 'subscriptions') %}
+                    {% else %}
+                        {% helper lang.l('user_not_subscribed', 'subscriptions') %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+	</div>
+</div>

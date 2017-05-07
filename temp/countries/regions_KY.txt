@@ -1,0 +1,5 @@
+	636	West Bay	19.3666700	-81.4166700	KY	00	0	0	West Bay	West Bay	West Bay	West Bay	West Bay	West Bay
+	636	North Side	19.3500000	-81.2000000	KY	00	0	0	North Side	North Side	North Side	North Side	North Side	North Side
+	636	George Town	19.2866000	-81.3743600	KY	00	0	0	George Town	George Town	George Town	George Town	George Town	George Town
+	636	East End	19.3000000	-81.1166700	KY	00	0	0	East End	East End	East End	East End	East End	East End
+	636	Bodden Town	19.2764700	-81.2542000	KY	00	0	0	Bodden Town	Bodden Town	Bodden Town	Bodden Town	Bodden Town	Bodden Town

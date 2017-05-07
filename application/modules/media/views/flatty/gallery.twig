@@ -1,0 +1,97 @@
+{% include '@app/header.twig' %}
+{% helper is_module_installed = utils.depends('audio_uploads') %}
+<div class="col-xs-12 content-block">
+	<h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+    <div class="g-flatty-block">
+        <div class="row g-flatty-block__header">
+        	<div class="col-sm-6 col-md-9">
+                <ul class="b-tabs" id="gallery_filters">
+                    {% for key, item in media_filters %}
+                        <li data-param="{{ key }}" class="b-tabs__item {% if gallery_param == key %}active{% endif %}">
+                            <a href="{{ item.link }}" class="b-tabs__text">
+                                <span>{{ item.name }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 b-album-filters__addfile">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" data-media="add_photo">{% helper lang.l('add_photo', 'media') %}</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">{% helper lang.l('add_photo', 'media') %}</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a data-media="add_photo" href="javascript:void(0);">{% helper lang.l('add_photo', 'media') %}</a></li>
+                        <li><a data-media="add_video" href="javascript:void(0);">{% helper lang.l('add_video', 'media') %}</a></li>
+                        {% if is_module_installed.audio_uploads %}
+                            <li><a data-media="add_audio" href="javascript:void(0);">{% helper lang.l('add_audio', 'audio_uploads') %}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<div class="g-flatty-block__control form-inline">
+            <span id="gallery_albums" class="form-group {% if gallery_param != 'albums' %}hide{% endif %}">
+                {{ albums }}
+            </span>&nbsp;&nbsp;
+            <span id="gallery_media_sorter" class="form-group {% if gallery_param == 'albums' %}hide{% endif %}">
+                <span class="media-sorter">{% helper lang.l('sort_by', 'start') %}&nbsp;</span>
+                <select class="form-control">
+                    {% for key, item in media_sorter.links %}
+                        <option value="{{ key }}" {% if key == media_sorter.order %}selected{% endif %}>
+                            {{ item }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <i data-role="sorter-dir" class="hidden-xs fa {% if media_sorter.direction == 'ASC' %}fa-arrow-up{% else %}fa-arrow-down{% endif %} pointer plr5"></i>
+            </span>
+        </div>
+
+        <div id="gallery" class="row g-users-gallery"></div>
+    </div>
+</div>
+<div class="clr"></div>
+<script>
+	$(function(){
+		loadScripts(
+			[
+                "{% helper utils.jscript('media', '../views/flatty/js/gallery.js', 'path') %}",
+                "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}"
+            ],
+			function(){
+				sitegallery = new gallery({
+					id: 'gallery',
+					site_url: site_url,
+                                        get_list_url: 'media/ajax_get_gallery_render_list/',
+					button_title: '{% helper lang.l("show_more", "media") %}',
+					load_on_scroll: true,
+					id_category: 0,
+                                        columns_per_line: 10,
+                                        column_width: 100,
+                                        margins: 5,
+				});
+				mediagallery = new media({
+					siteUrl: site_url,
+					galleryContentPage: 1,
+					idUser: 0,
+					all_loaded: 1,
+					lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+					galleryContentDiv: 'gallery',
+					post_data: {filter_duplicate: 1},
+					load_on_scroll: false,
+					sorterId: 'gallery_media_sorter',
+					is_guest: '{{ is_guest }}'
+				});
+				sitegallery.init().load();
+			},
+			['sitegallery', 'mediagallery'],
+			{async: false}
+		);
+	});
+</script>
+
+{% include '@app/footer.twig' %}

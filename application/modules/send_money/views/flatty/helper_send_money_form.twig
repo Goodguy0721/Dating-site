@@ -1,0 +1,131 @@
+<div class="content-block load_content">
+    {% set user_callback %}
+        function(variable, value, data){
+            $('#user_hidden').val(variable.toString()).change();
+            $('#user_text').val(value);
+        }
+    {% endset %}
+
+    {% if friends_count == 0 and friends_only != 'to_all' %}
+        <h1>{% helper lang.l('send_money', 'send_money') %}</h1>
+        <div class="inside send-money-find-friends">
+            <p>
+                {% helper lang.l('send_money_find_friends', 'send_money') %}
+            </p>
+            <a href="{{ site_url }}users/search" class="btn btn-primary">
+                {% helper lang.l('btn_search', 'send_money') %}
+            </a>
+        </div>
+    {% else %}
+
+    <script>
+        $(function(){
+            loadScripts(
+                "{% helper utils.jscript('', 'autocomplete_input.js', 'path') %}",
+                function(){
+                    user_autocomplete = new autocompleteInput({
+                        siteUrl: '{{ site_root }}',
+                        dataUrl: 'users/ajax_get_users_data',
+                        id_text: 'user_text',
+                        id_hidden: 'user_hidden',
+                        user_id: {{ user_id }},
+                        rand: '{{ rand }}',
+                        format_callback: function(data){
+                            return data.output_name + (data.nickname != data.output_name ?
+                                ' (' + data.nickname + ')' : '');
+                        }
+                    });
+                },
+                'user_autocomplete'
+            );
+        });
+        $(function(){
+            $('#for_friends').unbind('click').click(function(){
+                if ($('#for_friends').prop('checked')) {
+                    $('#friend_list').removeClass('hide');
+                    $('#user_text').addClass('hide');
+                } else {
+                    $('#user_text').removeClass('hide');
+                    $('#friend_list').addClass('hide');
+                }
+            });
+        });
+        $(function(){
+            $('#amount').unbind('input').bind('input', function(){
+                if ($('#amount').val() > 0) {
+                    $('#output').text(function(){
+                        var out = parseFloat($('#amount').val()) +
+                            {% if koef == 1 %}
+                            parseFloat({{ transfer_fee }});
+                            {% else %}
+                            (parseFloat($('#amount').val())*{{ koef }});
+                            {% endif %}
+                        return out;
+                    });
+                } else {
+                    $('#output').text(0);
+                }
+            });
+        });
+    </script>
+    <div class="send-money-form-wrapper">
+        <h1>{% helper lang.l('send_money', 'send_money') %}</h1>
+        <form id="send_form" class="send-money-form" method="post" class="" action="{{ site_url }}send_money/confirm">
+            <div class="row">
+                <div class="col-md-5 send-money-select-user">
+                    <div class="form-group">
+                        <label>{% helper lang.l('admin_settings_to_whom', 'send_money') %}</label>
+                        {% if friends_count != 0 %}
+                        <select id="friend_list" name="friend" class="form-control{% if friends_only == 'to_all' %} hide {% endif %}">
+                            {% for friend_id, item in friends_list %}
+                            <option value="{{ friend_id }}">
+                                {{ item }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                        {% if friends_only == 'to_all' %}
+                        <input type="text" id="user_text" name="user_text"
+                            placeholder="" class="form-control">
+                        {% else %}
+                        <span id="user_text" class="hide"></span>
+                        {% endif %}
+                        <input type="hidden" name="id_user" id="user_hidden">
+                    </div>
+                </div>
+                {% if friends_count != 0 %}
+                    {% if friends_only == 'to_all' %}
+                    <div class="col-md-5 send-money-for-friends">
+                        <label for="for_friends" class="checkbox-inline">
+                            <input type="checkbox" id="for_friends">{% helper lang.l('admin_settings_friends', 'send_money') %}
+                        </label>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="form-group row send-money-amount-input">
+                <div class="col-md-5">
+                    <label>{% helper lang.l('send_money_amount', 'send_money') %}, {{ cur_currency }}</label>
+                    <input type="text" name="amount" id="amount" pattern="\d+(\.\d{2})?"
+                           placeholder="" class="form-control">
+                </div>
+            </div>
+            {% if use_fee == 'use' %}
+            <div class='mt5 mb5'>
+                <div class='fleft'>{% helper lang.l('send_money_transfer_live', 'send_money') %}&nbsp;
+                <div id='output' pattern='\d+(\.\d{2})?'>0</div>
+                <span>&nbsp;{{ cur_currency }} ({{ transfer_fee }} {% if koef == '1' %}{{ cur_currency }}{% else %}{{ currency }}{% endif %})</span>
+                </div>
+            </div>
+            <div class="clr"></div>
+            {% endif %}
+            <div class="form-group send-money-btn">
+                <button type="submit" form="send_form" name="btn_send_money_save"
+                    class="btn btn-primary" value="1">
+                    {% helper lang.l('send_money', 'send_money') %}
+                </button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>

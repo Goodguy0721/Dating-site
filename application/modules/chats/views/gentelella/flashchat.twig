@@ -1,0 +1,80 @@
+<div id="flashchat">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+          <div class="x_title">
+              <h2 class="header">
+                  {% helper lang.l('settings', 'chats') %}</h2>
+              <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+              <form method="post" enctype="multipart/form-data" data-parsley-validate
+                    class="form-horizontal form-label-left" name="save_form">
+                  <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          {% helper lang.l('flashchat_chat_server_mode', 'chats') %}:</label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                          {% for chat_server_mode in chat_server_modes %}
+                          <label>
+                            <input class="server_type flat" name="settings[chat_server_mode]"
+                               id="server_{{ chat_server_mode }}" type="radio" value="{{ chat_server_mode }}"
+                               {% if chat.settings.chat_server_mode == chat_server_mode %}checked="checked"{% endif %}>
+                             {% helper lang.l('flashchat_chat_server_mode_' ~ chat_server_mode, 'chats') %}
+                             <p class="note">
+                               {% helper lang.l('flashchat_chat_server_mode_' ~ chat_server_mode ~ '_note', 'chats') %}
+                            </p>
+                          </label>
+                          {% endfor %}
+                      </div>
+                  </div>
+              {% for chat_server_mode in chat_server_modes %}
+                  <div class="{% if chat.settings.chat_server_mode != chat_server_mode %}hide{% endif %} server_settings"
+                       id="settings_{{ chat_server_mode }}">
+                      {% include "flashchat_settings_" ~ chat_server_mode ~ ".twig" %}
+                  </div>
+              {% endfor %}
+
+                  <div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/chats">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+          <div class="x_title">
+              <h2>{% helper lang.l('admin_panel', 'chats') %}</h2>
+              <div class="clearfix"></div>
+          </div>
+          <div class="x_content" id="admin_panel">
+              <object id="admin-panel" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                      codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,19,0"
+                      width="100%" height="700" id="topcmm_123webmessenger">
+                  <param name="movie" value="{{ url }}">
+                  <param name="quality" value="high">
+                  <param name="menu" value="false">
+                  <param name="allowScriptAccess" value="always">
+                  <embed id="embed" src="{{ url }}" quality="high" menu="false" width="100%" height="700"
+                         type="application/x-shockwave-flash" allowScriptAccess="always"
+                         pluginspage="http://www.macromedia.com/go/getflashplayer"
+                         scale="noscale" name="topcmm_123webmessenger" swLiveConnect="true"></embed>
+              </object>
+          </div>
+      </div>
+  </div>
+</div>
+{% helper utils.jscript('chats', 'flashchat-admin.js') %}
+<script type="text/javascript">
+    var flashchat;
+    $(function () {
+        flashchat = new flashchatAdmin({
+            adminFile: '{{ admin_file }}'
+        });
+        flashchat.chatSettings = {% helper utils.json_encode(chat.settings) %};
+    });
+</script>

@@ -1,0 +1,12 @@
+{% if albums_list %}
+	<select class="form-control" name="album_id" id="album_id">
+		<option value="0">
+            {% helper lang.l('please_select', 'media') %}
+        </option>
+		{% for key, item in albums_list %}
+			<option value="{{ item.id }}">
+                {% helper utils.truncate(item.name, 21) %}({{ item[albums_count_field] }})
+            </option>
+		{% endfor %}
+	</select>
+{% endif %}

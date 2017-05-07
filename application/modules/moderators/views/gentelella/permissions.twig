@@ -1,0 +1,174 @@
+<a href="javascript:;" id="permissions">
+    {% helper lang.l('no_permissions', 'moderators') %}
+</a>
+<div id="permissions-value">
+    {% for key, module in methods %}
+        {% if module.main.checked %}
+            <input type="hidden" name="permission_data[{{ key }}][{{ module.main.method }}]" value="1">
+        {% endif %}
+
+        {% for index,item in module.methods %}
+            {% if item.checked %}
+                <input type="hidden" name="permission_data[{{ key }}][{{ item.method }}]" value="1">
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        var permissions = {};
+        var permissionsCopy = {};
+        var permissionsNames = [];
+
+        var windowObj = new loadingContent({
+            loadBlockSize: 'big',
+            closeBtnID: 'edit_permissions_close',
+            closeBtnLabel: '{% helper lang.l('btn_done','start', '', 'js') %}',
+        });
+
+        {% for key, module in methods %}
+            permissions['{{ key }}'] = {};
+            permissions['{{ key }}']['{{ module.main.method }}'] = {% if module.main.checked %}true{% else %}false{% endif %};
+
+            permissionsNames['{{ key }}'] = {};
+            permissionsNames['{{ key }}']['{{ module.main.method }}'] = '{{ module.module.module_name }}';
+
+            {% for index,item in module.methods %}
+                permissions['{{ key }}']['{{ item.method }}'] = {% if item.checked %}true{% else %}false{% endif %};
+                permissionsNames['{{ key }}']['{{ item.method }}'] = '{{ item.name }}';
+            {% endfor %}
+
+        {% endfor %}
+
+        $('#permissions').bind('click', function() {
+            permissionsCopy = permissions;
+            windowObj.show_load_block(
+                '<form id="permissions-form">' +
+                '   <div class="content-block load_content">' +
+                '       <h1>{% helper lang.l('field_permissions', 'moderators') %}</h1>' +
+                '       <div class="container">' +
+                '           <div class="row">' +
+            {% for key, module in methods %}
+                '               <div class="col-md-4 col-sm-6 col-xs-12 permissions">' +
+                '                   <input type="checkbox" name="permission_data[{{ key }}][{{ module.main.method }}]"' +
+                '                       value=1' + (permissions['{{ key }}']['{{ module.main.method }}'] ? ' checked' : '') + ' id="pd_{{ key }}" class="flat js-permissions-group" data-key="{{ key }}" data-method="{{ module.main.method }}" data-main="">' +
+                '                   <label for="pd_{{ key }}"><b>{{ module.module.module_name }}</b></label><br>' +
+                '                   <ul class="permissions_edit">' +
+                {% for index,item in module.methods %}
+                    {% if strval(index) != 'main' %}
+                '                       <li>' +
+                '                           <input type="checkbox" name="permission_data[{{ key }}][{{ item.method }}]"' +
+                '                               value=1' + (permissions['{{ key }}']['{{ item.method }}'] ? ' checked' : '') + ' id="pd_{{ key }}_{{ item.method }}" class="flat"' +
+                '                               {% if not module.main.checked %}disabled{% endif %} data-key="{{ key }}" data-method="{{ item.method }}" data-main="{{ key }}_{{ module.main.method }}">' +
+                '                           <label for="pd_{{ key }}_{{ item.method }}">{{ item.name }}</label>' +
+                '                       </li>' +
+                    {% endif %}
+                {% endfor %}
+                '                   </ul>' +
+                '                </div>' +
+                {% endfor %}
+                '           </div>' +
+                '       </div>' +
+
+                '       <!-- div class="ln_solid"></div>' +
+
+                '       <div class="model-footer">' +
+                '           <button type="button" class="btn btn-default" data-dismiss="modal" id="edit_permissions_close">' +
+                '               {% helper lang.l('btn_done','start', '', 'js') %}' +
+                '           </button>' +
+                '       </div -->' +
+                '   </div>' +
+                '</form>'
+            );
+
+            $('input.flat').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green'
+            }).on('ifClicked', function(event) {
+                $(this).trigger('click');
+            }).on('ifChanged', function(event) {
+                $(this).trigger('change');
+            }).on('ifChecked', function() {
+                $(this).attr('checked', 'checked');
+            }).on('ifUnchecked', function() {
+                $(this).removeAttr('checked');
+            }).on('ifDisabled', function() {
+                $(this).attr('disabled', 'disabled');
+            }).on('ifEnabled', function() {
+                $(this).removeAttr('disabled');
+            });
+        });
+
+        $(document).off('change', '.permissions input[type=checkbox]').on('change', '.permissions input[type=checkbox]', function() {
+            var item = $(this);
+
+            if (item.hasClass('js-permissions-group')) {
+                if (item.is(':checked')) {
+                    item.parents('.permissions').first().find('input[id^='+$(this).attr('id')+'_]').iCheck("enable");
+
+                    $('.permissions').find('[data-main=' + item.data('key') + '_' + item.data('method') + ']').each(function(index, item) {
+                      var item = $(item);
+                      item.iCheck('check');
+                      permissionsCopy[item.data('key')][item.data('method')] = item.prop('checked');
+                    });
+                } else {
+                    item.parents('.permissions').first().find('input[id^='+$(this).attr('id')+'_]').iCheck('disable');
+
+                    $('.permissions').find('[data-main=' + item.data('key') + '_' + item.data('method') + ']').each(function(index, item) {
+                        var item = $(item);
+                        item.iCheck('uncheck');
+                        permissionsCopy[item.data('key')][item.data('method')] = item.prop('checked');
+                    });
+                }
+            }
+
+            permissionsCopy[item.data('key')][item.data('method')] = item.prop('checked');
+        });
+
+        $(document).off('click', '#edit_permissions_close').on('click', '#edit_permissions_close', function() {
+            permissions = permissionsCopy;
+
+            var names = [];
+            var values = '';
+
+            for (var key in permissions) {
+                for (var method in permissions[key]) {
+                    if (permissions[key][method]) {
+                        names.push(permissionsNames[key][method]);
+                        values += '<input type="hidden" name="permission_data[' + key + '][' + method + ']" value="1">';
+                    }
+
+                    //values += '<input type="hidden" name="permission_data[' + key + '][' + method + ']" value="' + (permissions[key][method] ? 1: 0)+ '">';
+                }
+            }
+
+            if (names.length > 0) {
+                $('#permissions').html(names.join('; '));
+            } else {
+                $('#permissions').html('{% helper lang.l('no_permissions', 'moderators', '', 'js') %}');
+            }
+
+            $('#permissions-value').html(values);
+
+            windowObj.hide_load_block();
+        });
+
+        var names = [];
+
+        for (var key in permissions) {
+            for (var method in permissions[key]) {
+                if (permissions[key][method]) {
+                    names.push(permissionsNames[key][method]);
+                }
+            }
+        }
+
+        if (names.length > 0) {
+            $('#permissions').html(names.join('; '));
+        } else {
+            $('#permissions').html('{% helper lang.l('no_permissions', 'moderators', '', 'js') %}');
+        }
+    });
+</script>

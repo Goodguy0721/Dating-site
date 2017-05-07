@@ -1,0 +1,59 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+		<div class="x_title h4">
+				{% helper lang.l('admin_header_messages_edit', 'mailbox') %}
+		</div>
+		<div class="x_content">
+			<div class="form-horizontal form-label-left">
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_subject', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">{{ message.subject }}</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_sender', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">{{ message.sender.output_name }}</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-9 col-xs-12">
+						{% helper lang.l('field_recipient', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">{{ message.recipient.output_name }}</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_message', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">{{ message.message }}</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-9 col-xs-12">
+						{% helper lang.l('field_attaches', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						{% for item in message.attaches %}
+						<a href="javascript:;">{{ item.filename }}</a> ({{ item.filesize / 1024 }}
+						{% helper lang.l('text_size_kb', 'mailbox') %})
+						{% endfor %}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_date_add', 'mailbox') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						{% helper date_format.tpl_date_format(message.date_add, date_format) %}
+					</div>
+				</div>
+				<div class="ln_solid"></div>
+					<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+					<a href="{{ site_url }}admin/mailbox/delete/{{ message.id }}/{{ message.folder }}" class="btn btn-primary">
+						{% helper lang.l('btn_delete', 'start') %}</a>
+					<a class="btn btn-default" href="{{ site_url }}admin/mailbox/index/{{ message.folder }}">
+						{% helper lang.l('btn_cancel', 'start') %}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include '@app/footer.twig' %}

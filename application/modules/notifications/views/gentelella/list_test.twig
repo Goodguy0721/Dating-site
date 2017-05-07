@@ -1,0 +1,38 @@
+{% helper lang.l('link_delete_notification', 'notifications', '', 'button') %}
+{% include '@app/header.twig' %}
+{helper func_name='get_admin_level1_menu' helper_name='menu' func_param='admin_notifications_menu'}
+<div class="actions">
+    {% if allow_edit %}
+        <ul>
+            <li><div class="l"><a href="{{ site_url }}admin/notifications/edit">{% helper lang.l('link_add_notification', 'notifications') %}</a></div></li>
+        </ul>
+    {% endif %}
+    &nbsp;
+</div>
+
+<table cellspacing="0" cellpadding="0" class="data" width="100%">
+    <tr>
+        <th class="first w100">{% helper lang.l('field_notification_name', 'notifications') %}</th>
+        <th class="w100">{% helper lang.l('field_send_type', 'notifications') %}</th>
+        <th class="w100"><a href="{{ sort_links.date_add }}"{% if order == 'date_add' %} class="{{ order_direction|lower }}"{% endif %}>{% helper lang.l('field_date_add', 'notifications') %}</a></th>
+        <th class="w50">&nbsp;</th>
+    </tr>
+    {% for item in notifications %}
+        {counter print=false assign=counter}
+        <tr{% if counter is div by 2 %} class="zebra"{% endif %}>
+            <td>{% helper lang.l(item.name_i, 'notifications') %}</td>
+            <td class="center">{% helper lang.l('field_send_type_'+item.send_type, 'notifications') %}</td>
+            <td class="center">{{ item.date_add|date_format:page_data.date_format }}</td>
+            <td class="icons">
+                <a href="{{ site_url }}admin/notifications/edit/{{ item.id }}"><img src="{{ site_root }}{{ img_folder }}icon-edit.png" width="16" height="16" border="0" alt="{% helper lang.l('link_edit_notification', 'notifications') %}" title="{% helper lang.l('link_edit_notification', 'notifications') %}"></a>
+                    {% if allow_edit %}
+                    <a href="{{ site_url }}admin/notifications/delete/{{ item.id }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_notification', 'notifications', '', 'js') %}')) return false;"><img src="{{ site_root }}{{ img_folder }}icon-delete.png" width="16" height="16" border="0" alt="{% helper lang.l('link_delete_notification', 'notifications') %}" title="{% helper lang.l('link_delete_notification', 'notifications') %}"></a>
+                    {% endif %}
+            </td>
+        </tr>
+    {% else %}
+        <tr><td colspan="5" class="center">{% helper lang.l('no_notifications', 'notifications') %}</td></tr>
+    {% endfor %}
+</table>
+{include file="pagination.tpl"}
+{% include '@app/footer.twig' %}

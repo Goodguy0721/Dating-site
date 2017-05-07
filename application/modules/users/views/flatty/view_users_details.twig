@@ -1,0 +1,15 @@
+{% for item in sections %}
+    {% set view_fields %}
+        {% include 'custom_view_fields.twig' with {'fields_data': item.fields} %}
+    {% endset %}
+    {% if view_fields|trim %}
+        <h2 class="section-header">
+            <span class="upper">
+                {{ item.name }}
+            </span>
+        </h2>
+        <div class="view-section">
+            {{ view_fields }}
+        </div>
+    {% endif %}
+{% endfor %}

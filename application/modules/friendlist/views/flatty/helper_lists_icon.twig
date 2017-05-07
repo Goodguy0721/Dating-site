@@ -1,0 +1,44 @@
+<span id="friendlist_{{ friendlist_button_rand }}">
+	<span id="friendlist_links_{{ friendlist_button_rand }}">
+		{% for btn_name, btn in buttons %}
+                    <dt>
+                        <a href="{% helper seo.seolink('friendlist', btn.method, id_dest_user) %}"
+                           class="js-friendlist-link" data-pjax="0" method="{{ btn.method }}" onclick="event.preventDefault();"
+                           title="{% helper lang.l('action_' ~ btn_name, 'friendlist') %}">
+                            {% if btn.method != 'decline' %}
+                                <i class="fa fa-plus"></i>
+                            {% else %}
+                                <i class="fa fa-minus"></i>
+                            {% endif %}
+                        </a>
+                    </dt>
+                    <dd>
+                        <a href="{% helper seo.seolink('friendlist', btn.method, id_dest_user) %}"
+                           class="js-friendlist-link" data-pjax="0" method="{{ btn.method }}" onclick="event.preventDefault();"
+                           title="{% helper lang.l('action_' ~ btn_name, 'friendlist') %}">
+                            {% helper lang.l('action_' ~ btn_name, 'friendlist') %}
+                        </a>
+                    </dd>
+                {% endfor %}
+	</span>
+	<script>
+		$(function() {
+			loadScripts(
+				"{% helper utils.jscript('friendlist', 'lists_links.js', 'path') %}",
+				function() {
+					var id_dest_user = parseInt('{{ id_dest_user }}');
+					var button_rand = parseInt('{{ friendlist_button_rand }}');
+					lists_links = new ListsLinks({
+						siteUrl: site_url,
+						id_dest_user: id_dest_user,
+						button_rand: button_rand,
+						url: 'friendlist/',
+                        view_type: 'icon'
+					});
+				},
+				'lists_links',
+				{async: false}
+			);
+		});
+	</script>
+</span>

@@ -1,0 +1,3 @@
+	3030	Simson Bay Village	18.0378300	-63.1185200	SX	00	0	0	Simson Bay Village	Simson Bay Village	Simson Bay Village	Simson Bay Village	Simson Bay Village	Simson Bay Village
+	3030	Philipsburg	18.0260000	-63.0458200	SX	00	0	0	Philipsburg	Филипсбург	Philipsburg	Philipsburg	Philipsburg	Philipsburg
+	3030	Simpson Bay	18.0402000	-63.1164600	SX	00	0	0	Simpson Bay	Simpson Bay	Simpson Bay	Simpson Bay	Simpson Bay	Simpson Bay

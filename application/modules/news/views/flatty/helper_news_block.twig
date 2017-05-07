@@ -1,0 +1,43 @@
+{%if block_width == '30' %}
+    {% set block_row_count = 1 %}
+    {% set block_col_md = 12 %}
+{% elseif block_width == '50' %}
+    {% set block_row_count = 1 %}
+    {% set block_col_md = 12 %}
+{% elseif block_width == '70' %}
+    {% set block_row_count = 2 %}
+    {% set block_col_md = 6 %}
+{% elseif block_width == '100' %}
+    {% set block_row_count = 2 %}
+    {% set block_col_md = 6 %}
+{% endif %}
+<div class="latest_added_news_block">
+	<div class="row">
+		{% for key, item in news %}
+            <div class="news col-md-{{ block_col_md }}">
+                {% if item.img %}
+                    <div class="photo-small">
+                        <a href="{% helper seo.seolink('news', 'view', item) %}" class="thumbnail">
+                            <img src="{{ item.media.img.thumbs.small }}" align="left" class="img-responsive">
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="strings text-ellipsis">
+                    <b>{{ item.name }}</b><br>
+                    <span class="annotation">{{ item.annotation }}</span><br>
+                    <a href="{% helper seo.seolink('news', 'view', item) %}">
+                        {% helper lang.l('link_view_more', 'news') %}
+                    </a>
+                </div>
+            </div>
+            {% if loop.index % block_row_count == 0 %}
+    </div><div class="row">
+            {% endif %}
+		{% endfor %}
+	</div>
+	<p>
+        <a href="{% helper seo.seolink('news', 'index') %}">
+            {% helper lang.l('link_read_more', 'news') %}
+        </a>
+    </p>
+</div>

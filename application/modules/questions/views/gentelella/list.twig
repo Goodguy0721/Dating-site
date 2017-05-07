@@ -1,0 +1,219 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_questions_menu') %}
+            </ul>
+        </div>
+    </div>
+    <div class="x_content">
+        <form method="post" enctype="multipart/form-data" data-parsley-validate
+              class="form-horizontal form-label-left" name="deleteForm"
+              action="{{ site_url }}admin/questions/delete_admin_question">
+            <div id="actions" class="hide">
+            {% if back != 'user' %}
+              <div class="btn-group">
+                <a href="{{ site_url }}admin/questions/edit_question" class="btn btn-primary">
+                    {% helper lang.l('add_question', 'questions') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="{{ site_url }}admin/questions/edit_question">
+                        {% helper lang.l('add_question', 'questions') %}
+                    </a>
+                  </li>
+                  <li>
+                    <a onclick="deleteSelectBlock(); return false;" type="button">
+                      {% helper lang.l('delete_selected', 'questions') %}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            {% endif %}
+                <div class="clearfix"></div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table tableflat bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th>{% helper lang.l('field_name', 'questions') %}</th>
+                        <th>{% helper lang.l('text_status', 'start') %}</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in questions %}
+                    <tr>
+                        <td class="column-group">
+                            <input class="flat grouping" type="checkbox" name="delete_questions[{{ question.id }}]">
+                        </td>
+                    {% if back == 'user' %}
+                        <td>{{ question.username }}</td>
+                    {% else %}
+                        <td>{{ question.name }}</td>
+                    {% endif %}
+                        <td class="text-center">
+                          <span {% if not question.status %}class="hide"{% endif %}>
+                              {% helper lang.l('btn_tableicon_is_active','start') %}
+                          </span><span {% if question.status %}class="hide"{% endif %}>
+                              {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                          </span>
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                              <span class="btn btn-primary">
+                                  <a onclick="activateQuestion('{{ question.id|e('js') }}', 0, this);"
+                                     title="{% helper lang.l('link_deactivate_question', 'question') %}"
+                                     {% if not question.status %}class="hide"{% endif %}
+                                     href="javascript:void(0);">{% spaceless %}
+                                      {% helper lang.l('make_inactive','start') %}
+                                  {% endspaceless %}</a><a onclick="activateQuestion('{{ question.id|e('js') }}', 1, this);"
+                                     title="{% helper lang.l('link_activate_question', 'question') %}"
+                                     {% if question.status %}class="hide"{% endif %}
+                                     href="javascript:void(0);">{% spaceless %}
+                                      {% helper lang.l('make_active','start') %}
+                                  {% endspaceless %}</a>
+                              </span>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                      <a onclick="activateQuestion('{{ question.id|e('js') }}', 0, this);"
+                                         title="{% helper lang.l('link_deactivate_question', 'question') %}"
+                                         {% if not question.status %}class="hide"{% endif %}
+                                         href="javascript:void(0);">{% spaceless %}
+                                          {% helper lang.l('make_inactive','start') %}
+                                      {% endspaceless %}</a><a onclick="activateQuestion('{{ question.id|e('js') }}', 1, this);"
+                                         title="{% helper lang.l('link_activate_question', 'question') %}"
+                                         {% if question.status %}class="hide"{% endif %}
+                                         href="javascript:void(0);">{% spaceless %}
+                                          {% helper lang.l('make_active','start') %}
+                                      {% endspaceless %}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ site_url }}admin/questions/edit_question/{{ question.id }}/{{ back }}">
+                                            {% helper lang.l('btn_edit','start') %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="javascript: if (!confirm('{% helper lang.l('admin_confirm_delete', 'questions') %}')) return false;"
+                                           href="{{ site_url }}admin/questions/delete_admin_question/{{ question.id }}/{{ back }}">
+                                            {% helper lang.l('btn_delete','start') %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    function activateQuestion(id, status, a_obj){
+        $.post(
+            site_url + 'admin/questions/ajax_activate_question/',
+            {id: id, status: status},
+            function(resp){
+                if (resp.status){
+                    $(a_obj).parents('tr').first().find('.hide')
+                      .removeClass('hide').siblings().addClass('hide');
+                    if (status == 1) {
+                        error_object.show_error_block("{% helper lang.l('question_activated', 'questions') %}", 'success');
+                    } else{
+                        error_object.show_error_block("{% helper lang.l('question_deactivated', 'questions') %}", 'success');
+                    }
+                }
+            },
+        'json'
+        );
+    }
+</script>
+
+<script>
+function deleteSelectBlock(){
+    var data = new Array();
+    $('.grouping:checked').each(function(i){
+        data[i] = $(this).val();
+    });
+    if (data.length > 0){
+        if (!confirm('{% helper lang.l('admin_mass_confirm_delete', 'questions') %}')) {
+            return false;
+        } else {
+            deleteForm.submit();
+        }
+    } else{
+        error_object.show_error_block('{% helper lang.l('no_questions_selected', 'questions') %}', 'error');
+    }
+}
+
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_questions','questions') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+
+{% include '@app/footer.twig' %}

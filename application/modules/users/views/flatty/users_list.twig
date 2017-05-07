@@ -1,0 +1,110 @@
+{% include '@app/header.twig' %}
+<div class="search-header">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="title">
+            {% if search_text %}
+                {% helper lang.l('search_results', 'users') %}:
+                '{{ search_text }}'
+            {% else %}
+                {% helper seo.seo_tags('header_text') %}
+            {% endif %}
+        </h1>
+        {#<div class="menu">
+            <a href="javascript:void(0);" {% if page_data.view_type == 'list' %}class="active"{% endif %} onclick="changeViewType('list');" title="{% helper lang.l('btn_list_view', 'users', '', 'button') %}"><i class="fa fa-list"></i>&nbsp;{% helper lang.l('btn_list_view', 'users', '', 'button') %}</a>
+            <a href="javascript:void(0);" {% if page_data.view_type == 'gallery' %}class="active"{% endif %} onclick="changeViewType('gallery');" title="{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}"><i class="fa fa-globe"></i>&nbsp;{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}</a>
+        </div>#}
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="content-block">
+    <div class="user-search">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="search-param-button mb10"><a>{% helper lang.l('search_params_button', 'users') %}</a></div>
+            <div class="search-form">
+                {% helper utils.startSearchForm({'type': type , 'show_data': '1', 'object': 'user'}) %}
+            </div>
+
+            {% if hl_data.service_highlight.status %}
+                <div id="hl_service_container" class="contrasting-block">
+                    <input type="button" class="btn btn-primary" value="{{ hl_data.service_highlight.name }}" onclick="highlight_in_search_available_view.check_available();" />
+                    <div class="mt10">{{ hl_data.service_highlight.description }}</div>
+                    <script>
+                        $(function () {
+                            loadScripts(
+                                "{% helper utils.jscript('', 'available_view.js', 'path') %}",
+                                function () {
+                                    highlight_in_search_available_view = new available_view({
+                                        siteUrl: site_url,
+                                        checkAvailableAjaxUrl: 'users/ajax_available_highlight_in_search/',
+                                        buyAbilityAjaxUrl: 'users/ajax_activate_highlight_in_search/',
+                                        buyAbilityFormId: 'ability_form',
+                                        buyAbilitySubmitId: 'ability_form_submit',
+                                        formType: 'list',
+                                        success_request: function (message) {
+                                            error_object.show_error_block(message, 'success');
+                                            $('#hl_service_container').remove();
+                                        },
+                                        fail_request: function (message) {
+                                            error_object.show_error_block(message, 'error');
+                                        },
+                                    });
+                                },
+                                ['highlight_in_search_available_view'],
+                                {async: false}
+                            );
+                        });
+                    </script>
+                </div>
+            {% endif %}
+
+            {% helper banners.show_banner_place('banner-185x155') %}
+            {% helper banners.show_banner_place('banner-185x75') %}
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="search-result" id="main_users_results">
+                {{ block }}
+            </div>
+            {% if not is_has_platinum %}
+            <div class="mt20 mb20 text-center">
+              <a href="{{ site_url }}memberships/form/premium-membership">
+                <img src="{{ site_url }}application/views/flatty/img/platinum_membership.png" class="img-responsive" style="display: inline-block;"></a>
+            </div>
+            {% endif %}
+            <script>
+                $(function () {
+                    loadScripts(
+                            "{% helper utils.jscript('users', 'users-list.js', 'path') %}",
+                            function () {
+                                users_list = new usersList({
+                                    siteUrl: "{{ site_url }}",
+                                    viewUrl: "{% helper seo.seolink('users', '') %}",
+                                    viewAjaxUrl: "{{ site_url }}users/ajax_search/",
+                                    listBlockId: 'main_users_results',
+                                    tIds: ['pages_block_1', 'pages_block_2', 'sorter_block']
+                                });
+                            },
+                            'users_list'
+                            );
+                });
+
+                function changeViewType(type) {
+                    var url = "{% helper seo.seolink('users', 'set_view_mode') %}/" + type;
+
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        cache: false,
+                        success: function (data) {
+                            locationHref('{% helper seo.seolink('users', 'search') %}');
+                        }
+                    });
+                }
+
+                $('.search-param-button').click(function () {
+                    $('.user-search .search-form').toggle();
+                });
+            </script>
+        </div>
+    </div>
+</div>
+{% include '@app/footer.twig' %}

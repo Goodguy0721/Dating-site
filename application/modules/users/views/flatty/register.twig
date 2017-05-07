@@ -1,0 +1,359 @@
+{% include '@app/header.twig' %}
+
+{% helper is_module_installed = utils.depends('geomap') %}
+
+    <p class="register-headline header-comment user-profile-promo-text" style="text-shadow: none; font-size: 20px; font-family: inherit;">
+        It's <span style="font-weight: bold; color: #79a55a; font-size: 22px;">FREE</span> to look… Register now to see who's in your area!
+    </p>
+
+    <div class="registration-cont row">
+
+<div class="col-xs-12 col-sm-8 col-sm-offset-1 clearfix">
+
+    <form action="{{ page_data.form_action }}" method="post" enctype="multipart/form-data"
+       class="form-horizontal">
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               First name
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <input type="text" name="fname" value="{{ data.fname|e }}" class="form-control">
+           </div>
+       </div>
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               {# % helper lang.l('field_name', 'users') % #}
+               Username
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <input type="text" name="nickname" value="{{ data.nickname|e }}" class="form-control">
+           </div>
+       </div>
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-xs-4 text-right">
+               {% helper lang.l('field_password', 'users') %}
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <input type="password" name="password" value="{{ data.password }}"  class="form-control">
+           </div>
+       </div>
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               {% helper lang.l('field_email', 'users') %}
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <input type="email" name="email" value="{{ data.email|e }}" class="form-control">
+           </div>
+       </div>
+       <div class="form-group">
+         <label for="" class="col-xs-11 col-xs-4 text-right">
+             Birthday
+         </label>
+         <div class="col-xs-11 col-sm-7">
+           <ul class="list-inline">
+             <li>
+               <select name="birth_date_month" class="form-control" placeholder="Month">
+                 <option value="1">Jan</option>
+                 <option value="2">Feb</option>
+                 <option value="3">Mar</option>
+                 <option value="4">Apr</option>
+                 <option value="5">May</option>
+                 <option value="6">Jun</option>
+                 <option value="7">Jul</option>
+                 <option value="8">Aug</option>
+                 <option value="9">Sep</option>
+                 <option value="10">Oct</option>
+                 <option value="11">Nov</option>
+                 <option value="12">Dec</option>
+               </select>
+             </li>
+             <li>
+               <select name="birth_date_day" class="form-control" placeholder="Day">
+                 {% for i in 1..31 %}
+                 <option>{{ i }}</option>
+                 {% endfor %}
+               </select>
+             </li>
+             <li>
+               <select name="birth_date_year" class="form-control" placeholder="Year">
+                 {% for i in 1998..1950 %}
+                 <option>{{ i }}</option>
+                 {% endfor %}
+               </select>
+             </li>
+           </ul>
+         </div>
+       </div>
+       {# <custom_M> #}
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-xs-4 text-right">
+               {% helper lang.l('field_living_with', 'users') %}
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               {% helper living_with = lang.ld('living_with', 'data_properties') %}
+               <select name="living_with[]" multiple class="form-control" style="height: 76px;">
+                   {% for key, item in living_with.option %}
+                       <option value="{{ key }}" {% helper utils.inArray(key, data.living_with, 'selected') %}>
+                           {{ item }}
+                       </option>
+                   {% endfor %}
+               </select>
+               <span style="font-size:75%">(Hold down the Ctrl button (for Windows) or the Command button (for Mac) to select multiple items)</span>
+           </div>
+       </div>
+       {# </custom_M> #}
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               Ethnicity
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <select name="ethnicity" class="form-control">
+                 <option value="">Please, select</option>
+                 {% for option_gid, option_name in ethnicity_options %}
+                 <option value="{{ option_gid }}" {% if option_gid == data.ethnicity %}selected{% endif %}>{{ option_name }}</option>
+                 {% endfor %}
+               </select>
+           </div>
+       </div>
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               Relationship status
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <select name="relationship_status" class="form-control">
+                 <option value="">Please, select</option>
+                 {% for option_gid, option_name in relationship_status_options %}
+                 <option value="{{ option_gid }}" {% if option_gid == data.relationship_status %}selected{% endif %}>{{ option_name }}</option>
+                 {% endfor %}
+               </select>
+           </div>
+       </div>
+       <div class="form-group">
+           <label for="" class="col-xs-11 col-sm-4 text-right">
+               Height
+           </label>
+           <div class="col-xs-11 col-sm-7">
+               <select name="height" class="form-control">
+                 <option value="">Please, select</option>
+                 {% for option_gid, option_name in height_options %}
+                 <option value="{{ option_gid }}" {% if option_gid == data.height %}selected{% endif %}>{{ option_name }}</option>
+                 {% endfor %}
+               </select>
+           </div>
+       </div>
+        <div class="form-group">
+            <label for="" class="col-xs-11 col-sm-4 text-right">
+                {% helper lang.l('field_user_type', 'users') %}
+            </label>
+            <div class="col-xs-11 col-sm-7 checkbox">
+            {% for key, item in user_types.option %}
+              <input type="radio" name="user_type" value="{{ key }}" {% if key == data.user_type %}checked{% endif %}>
+              {{ item }}
+            {% endfor %}
+            </div>
+        </div>
+        {% if editable_fields.looking_user_type %}
+        <div class="form-group">
+            <label for="" class="col-sm-4 text-right">
+                {% helper lang.l('field_looking_user_type', 'users') %}
+            </label>
+            <div class="col-xs-11 col-sm-7 checkbox">
+            {% for key, item in user_types.option %}
+              <input type="radio" name="looking_user_type" value="{{ key }}" {% if key == data.looking_user_type %}checked{% endif %}>
+              {{ item }}
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="" class="col-xs-11 col-xs-4 text-right">
+                {% helper lang.l('field_location', 'users') %}
+            </label>
+            <div class="col-xs-11 col-sm-7">
+                {% helper countries.location_select({
+                    'module': 'countries',
+                    'select_type': 'city',
+                    'id_country': data.id_country ,
+                    'id_region': data.id_region,
+                    'id_city': data.id_city,
+                    'var_country_name': 'id_country',
+                    'var_region_name': 'id_region',
+                    'var_city_name': 'id_city',
+                    'auto_detect': 1
+                }) %}
+            </div>
+            <input type="hidden" name="lat" value="{{ data.lat|e }}" id="lat">
+            <input type="hidden" name="lon" value="{{ data.lon|e }}" id="lon">
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-11 col-sm-4 text-right">
+                Resident Postal / Zip Code
+            </label>
+            <div class="col-xs-11 col-sm-7">
+                <input type="text" name="postal_code" value="{{ data.postal_code|e }}" class="form-control">
+            </div>
+        </div>
+
+        {% helper referral_links.referral_get_code() %}
+
+        {% if is_module_installed.geomap %}
+            {% helper geomap.geomap_load_geocoder() %}
+        {% endif %}
+
+        <script>
+            $(function () {
+                loadScripts(
+                        ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                        function () {
+                            users_map = new usersMap({
+                                siteUrl: site_url,
+                            });
+                        },
+                        ['users_map'],
+                        {async: true}
+                );
+            });
+        </script>
+
+        {# % helper subscriptions.get_user_subscriptions_form('register') % #}
+
+        {#<div class="form-group captcha">
+            <label for="captcha" class="col-sm-3">
+                {% helper lang.l('field_captcha', 'users') %}:
+            </label>
+            <div class="col-sm-9 col-md-8">
+              <div class="row">
+                <div class="col-xs-6 col-sm-3 captcha-img">
+                    {{ data.captcha_image }}
+                </div>
+                <div class="col-xs-6 col-sm-9">
+                    <input type="text" name="captcha_confirmation" class="captcha form-control" value="" maxlength="{{ data.captcha_word_length }}" />
+                </div>
+              </div>
+            </div>
+        </div>#}
+
+        <div class="form-group">
+          <div class="col-xs-11 text-center">
+                <input id="confirmation" type="checkbox" value="1" name="confirmation"
+                {% if data.confirmation %}checked{% endif%}>
+                {% helper lang.l('field_confirmation', 'users') %}
+
+                {% helper legal_terms_link=content.get_page_link({'page_gid': 'legal-terms'}) %}
+                {% if legal_terms_link is not empty %}
+                    <a href="{{ legal_terms_link }}">
+                        {% helper lang.l('terms_and_conditions', 'users') %}
+                    </a>
+                {% else %}
+                    {% helper lang.l('terms_and_conditions', 'users') %}
+                {% endif %}
+
+                <span class="pginfo msg confirmation"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12 text-center">
+                <button type="submit" name="btn_register" class="btn btn-primary">
+                  Start Looking!</button>
+            </div>
+        </div>
+    </form>
+
+    {% helper banners.show_banner_place('banner-980x90') %}
+
+    <script>
+        $(function () {
+            $('input, select').off('change').on('change', function() {
+                var input_object = $(this);
+                    field_name = $(this).prop('name'),
+                    field_value = $(this).val();
+
+                if (input_object.attr('id') == 'confirmation') {
+                    return;
+                }
+
+                if (input_object.prop('type') == 'checkbox' && input_object.prop('checked') == false) {
+                    field_value = 0;
+                }
+
+                input_object.parent().find('.field-error-icon, .field-success-icon, .msg').remove();
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: site_url + 'users/ajaxRegValidation',
+                    data: {
+                        field_name: field_name,
+                        field_value: field_value,
+                    },
+                    success: function (response) {
+                        input_object.parentsUntil('form').find('.field-error-icon, .field-success-icon').remove();
+
+                        if (response) {
+                            if ('error' in response && field_name in response['error']) {
+                                input_object.removeClass('success');
+                                input_object.addClass('pginfo field error');
+
+                                input_object.parents('div').first().after('<i class="fa fa-close fa-2x field-error-icon" aria-hidden="true"></i>');
+                                input_object.after('<span class="pginfo msg error">' + response['error'][field_name] + '</span>');
+                            } else {
+                                input_object.removeClass('error');
+                                input_object.addClass('pginfo field success');
+
+                                input_object.parents('div').first().after('<i class="fa fa-check fa-2x field-success-icon" aria-hidden="true"></i>');
+                                input_object.parentsUntil('form').find('.pginfo.msg.error').remove();
+                            }
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        if (typeof (console) !== 'undefined') {
+                            console.error(errorThrown);
+                        }
+                    }
+                });
+            });
+
+            var date_now = new Date();
+                    var date_min = new Date(date_now.getFullYear() - {{ age_max }}, 0, 1);
+                    var date_max = new Date(date_now.getFullYear() - {{ age_min }}, 0, 1);
+                    var yr = (date_min.getFullYear()) + ':' + (date_max.getFullYear());
+            $("#datepicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeYear: true,
+                changeMonth: true,
+                yearRange: yr,
+                defaultDate: date_max
+            });
+
+            loadScripts(
+                    ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                    function () {
+                        users_map = new usersMap({
+                            siteUrl: site_url,
+                            country_old_id: '{{ data.id_country }}',
+                            region_old_id: '{{ data.id_region }}',
+                            city_old_id: '{{ data.id_city }}'
+                        });
+                    },
+                    ['users_map'],
+                    {async: true}
+            );
+        });
+    </script>
+
+    {% helper incomplete_signup.incomplete_signup_script() %}
+    {% helper social_networking.show_social_networks_like() %}
+    {% helper social_networking.show_social_networks_share() %}
+    {% helper social_networking.show_social_networks_comments() %}
+</div>
+
+<div class="col-xs-12 col-sm-3">
+    {% helper banners.show_banner_place('banner-320x250') %}
+    {% helper banners.show_banner_place('banner-320x75') %}
+    {% helper banners.show_banner_place('banner-185x155') %}
+    {% helper banners.show_banner_place('banner-185x75') %}
+</div>
+
+</div>
+
+{% include '@app/footer.twig' %}

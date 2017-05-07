@@ -1,0 +1,38 @@
+<input name="region_name" type="text" id="country_text_{{country_helper_data.rand}}"
+       value="{{country_helper_data.location_text}}"
+       autocomplete="off"
+       placeholder="{{country_helper_data.placeholder}}"
+       class="form-control">
+<span id="country_msg_{{country_helper_data.rand}}"
+      class="hide pginfo msg region_name info">{% helper lang.l('text_select_from_list','countries') %}
+</span>
+<input name="{{country_helper_data.var_country_name}}" type="hidden"
+       id="country_hidden_{{country_helper_data.rand}}"
+       value="{{country_helper_data.country.code}}">
+<input name="{{country_helper_data.var_region_name}}" type="hidden"
+       id="region_hidden_{{country_helper_data.rand}}"
+       value="{{country_helper_data.region.id}}">
+<input name="{{country_helper_data.var_city_name}}" type="hidden"
+       id="city_hidden_{{country_helper_data.rand}}"
+       value="{{country_helper_data.city.id}}">
+
+
+<script type='text/javascript'>
+    {% if country_helper_data.var_js_name %}var {{country_helper_data.var_js_name}};{% endif %}
+        $(function () {
+
+            loadScripts(
+                "{% helper utils.jscript('countries', 'location-autocomplete.js', 'path') %}",
+                function () {
+                    new locationAutocomplete({
+                        siteUrl: '{{site_url}}',
+                        rand: '{{country_helper_data.rand}}',
+                        id_country: '{{country_helper_data.country.code}}',
+                        id_region: '{{country_helper_data.region.id}}',
+                        id_city: '{{country_helper_data.city.id}}'
+                    });
+                },
+                'region_{{country_helper_data.rand}}'
+            );
+        });
+</script>

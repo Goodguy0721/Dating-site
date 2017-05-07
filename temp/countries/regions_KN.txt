@@ -1,0 +1,2 @@
+	2910	Trinity	17.3000000	-62.7666700	KN	15	0	0	Trinity	Trinity	Trinity	Trinity	Trinity	Trinity
+	2910	Boyd’s	17.2943500	-62.7480700	KN	15	0	0	Boyd’s	Boyd’s	Boyd’s	Boyd’s	Boyd’s	Boyd’s

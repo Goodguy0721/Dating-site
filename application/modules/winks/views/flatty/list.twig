@@ -1,0 +1,126 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <h1>{% helper seo.seo_tags('header_text') %}</h1>
+</div>
+
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+
+<div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+    <div class="b-winks">
+        <div class="b-winks__top">
+            {% include 'list_top_panel.twig' %}
+        </div>
+
+        {% if page_data.total_rows > page_data.per_page %}
+            <div class="sorter short-line" id="sorter_block">
+                <div class="fright">
+                    {% set page_data = page_data|merge({'type': 'cute'}) %}
+                    {% helper start.pagination(page_data) %}
+                </div>
+            </div>
+        {% endif %}
+        <div id="winks-list" class="b-winks__list">
+            <div class="media b-winks__item hide-always wink" id="wink-_user-id_" data-user-id="_user-id_">
+                <div class="media-left">
+                    <a class="g-pic-border g-rounded"  title="_user-name_" href="_user-link_">[img]</a>
+                </div>
+                <div class="media-body">
+                    <div class="b-winks__name">
+                        <a title="_user-name_" href="_user-link_">_user-name_</a>
+                    </div>
+                    <div class="b-winks__actions">
+                        <a class="btn-wink btn btn-primary-inverted" data-user-id="_user-id_" data-is-new="true"
+                            href="javascript:void(0);">
+                            {% helper lang.l('wink', 'winks') %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% for item in winks %}
+                <div class="media b-winks__item wink" id="wink-{{ item.id_from }}" data-user-id="{{ item.id_from }}">
+                    <div class="media-left">
+                        <a class="g-pic-border g-rounded" title="{{ item.from.output_name }}" href="{{ item.from.link }}">
+                            <img class="media-object" src="{{ item.from.media.user_logo.thumbs.small }}"
+                                 alt="{{ item.from.output_name }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="b-winks__name">
+                            <a title="{{ item.from.output_name }}" href="{{ item.from.link }}">{{ item.from.output_name }}</a> {% helper lang.l('winked_at_you', 'winks') %}
+                        </div>
+                        <div class="b-winks__date">{% helper date_format.tpl_date_format(item.date, page_data.date_time_format) %}</div>
+                        <div class="b-winks__actions">
+                            <a class="btn-wink-back btn btn-primary-inverted" data-user-id="{{ item.id_from }}" href="javascript:void(0);">
+                               {% helper lang.l('wink_back', 'winks') %}
+                            </a>
+                        </div>
+                        <a class="btn-wink-ignore b-winks__remove" data-user-id="{{ item.id_from }}" href="javascript:void(0);"
+                           title="{% helper lang.l('wink_ignore', 'winks') %}">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if page_data.total_rows > page_data.per_page %}
+            <div>
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data) %}
+            </div>
+        {% endif %}
+
+        <div id="no-winks" class="b-winks__null {% if winks %} hide{% endif %}">
+            <p>
+                {% helper lang.l('welcome_text', 'winks') %}:
+            </p>
+            <p>
+                <button id="winks-search-button" type="button" class='btn btn-primary'>
+                    {% helper lang.l('btn_search', 'winks') %}
+                </button>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('winks', 'winks.js', 'path') %}"],
+            function(){
+                winksObj = new winks({
+                    siteUrl: site_url,
+                    titleWink: '{% helper lang.l('wink', 'winks') %}',
+                    titleWinkBack: '{% helper lang.l('wink_back', 'winks') %}',
+                    errIsPending: '{% helper lang.l('error_is_pending', 'winks') %}',
+                    errIsOnList: '{% helper lang.l('error_is_on_list', 'winks') %}',
+                    succIgnored: '{% helper lang.l('msg_ignored', 'winks') %}',
+                    succWinked: '{% helper lang.l('msg_winked', 'winks') %}',
+                    succResponded: '{% helper lang.l('msg_responded', 'winks') %}'
+                });
+            },
+            'winksObj'
+        );
+    });
+</script>
+
+<div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+    <div id="active_users" class="clearfix mb10">
+        {% helper users.active_users_block({'count': '16'}) %}
+    </div>
+    <div id="recent_photo" class="clearfix mb10">
+        {% helper media.recent_media_block({'upload_gid': 'photo', 'count': '16'}) %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

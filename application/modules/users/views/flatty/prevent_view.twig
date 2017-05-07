@@ -1,0 +1,29 @@
+<div class="load_content" id="friendlist_links_request_{{ id_dest_user }}">
+	<h1>
+        {% helper lang.l('table_header_activity', 'users') %}
+    </h1>
+	<div class="popup-form">
+		<div class="text">
+            <div>
+                {% helper lang.l('text_inactive_in_search', 'users') %}
+            </div>
+            <div>
+                {% helper lang.l('text_need_for_activation_popup', 'users') %}
+            </div>
+		</div>
+		<div class="button">
+            {% if user_service_button == '1' %}
+                <input type="button" value="{% helper lang.l('link_activate_profile', 'users') %}"
+                    onclick="locationHref('{% helper seo.seolink('services', 'index', {'section-code': 'user_activate_in_search_template'}) %}');" />
+            {% endif %}
+            {% if user_logo_button == '1' %}
+                <input type="button" value="{% helper lang.l('user_logo_button', 'users') %}"
+                    onclick="locationHref('{% helper seo.seolink('users', 'profile', {'section-code': 'view'}) %}');" />
+            {% endif %}
+            {% if user_location_button == '1' %}
+                <input type="button" value="{% helper lang.l('user_location_button', 'users') %}"
+                    onclick="locationHref('{% helper seo.seolink('users', 'profile', {'section-code': 'personal'}) %}');" />
+            {% endif %}
+		</div>
+	</div>
+</div>

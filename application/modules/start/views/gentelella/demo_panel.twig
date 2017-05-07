@@ -1,0 +1,185 @@
+{%if DEMO_MODE %}
+
+    {% if place == 'top' %}
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-43414725-1', 'auto', {'allowLinker': true{% if demo_analytic_user_id %}, 'userId': '{{ demo_analytic_user_id }}'{% endif %}});
+            ga('require', 'displayfeatures');
+            ga('require', 'linker');
+            ga('linker:autoLink', [
+                'payproglobal.com', 'livechatinc.com', 'pilotgroup.zendesk.com',
+                'paypal.com', 'yandex.ru', 'webmoney.ru', 'qiwi.com', 'mopay.com',
+                'socialscript.ru', 'socialbiz.pro', 'datingpro.com', 'datingsoftware.ru',
+                'datingpro.fr', 'pgdatingsoftware.de', 'dating-soft.com', 'realtysoft.pro',
+                'pgrealestate.ru', 'realestatescript.de', 'realestatescript.es',
+                'emlakscripti.biz.tr', 'jobsoftpro.com', 'pgautopro.com', 'allsharevideo.com',
+                'elmspro.com', 'eventsoft.pro', 'pgeventsoft.ru', 'hotescort.pro',
+                'pghotescort.ru', 'newsletter.pro', 'pgwebportal.com', 'pilotgroup.net'
+            ]);
+            ga('send', 'pageview');
+        </script>
+    {% endif %}
+
+    {% if place == 'bottom' %}
+                var lc = document.createElement('script');
+                lc.type = 'text/javascript';
+                lc.async = true;
+                lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(lc, s);
+            })();
+
+        <script>
+            /* kissmetrics */
+            var _kmq = _kmq || [];
+            var _kmk = _kmk || '6d00fd30f5b61692ebe3ddeb42986d90ff05a6e7';
+            function _kms(u) {
+                setTimeout(function ()
+                {
+                    var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = u;
+                    f.parentNode.insertBefore(s, f);
+                }
+                , 1);
+            }
+            _kms('//i.kissmetrics.com/i.js');
+            _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+        </script>
+
+        <script type="text/javascript" src="//use.typekit.net/rps2ais.js"></script>
+        <script type="text/javascript">try {
+                Typekit.load();
+            } catch (e) {
+            }</script>
+        <style>html,body{font-family: 'proxima-nova' !important;}</style>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter6359566 = new Ya.Metrika(
+                                {id: 6359566, clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true, trackHash: true, ecommerce: "dataLayer"}
+                        );
+                    } catch (e) {
+                    }
+                });
+                var n = d.getElementsByTagName("script")[0],
+                        s = d.createElement("script"),
+                        f = function ()
+                        {
+                            n.parentNode.insertBefore(s, n);
+                        }
+                ;
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+                if (w.opera == "[object Opera]")
+                {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else
+                {
+                    f();
+                }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/6359566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+    {% endif %}
+{% else %}
+
+    {% if place == 'top' %}
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function ()
+                {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }
+
+                , i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-55856033-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+    {% endif %}
+
+    {% if place == 'bottom' %}
+        {# <script>
+            var __lc = {};
+            __lc.license = 1083102;
+            __lc.skill = 4;
+
+            (function() { var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true; lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s); })();
+        </script> #}
+
+        {# webvisor #}
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter6359566 = new Ya.Metrika(
+                                {id: 6359566, clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true, trackHash: true, ecommerce: "dataLayer"}
+                        );
+                    } catch (e) {
+                    }
+                });
+                var n = d.getElementsByTagName("script")[0],
+                        s = d.createElement("script"),
+                        f = function ()
+                        {
+                            n.parentNode.insertBefore(s, n);
+                        }
+                ;
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+                if (w.opera == "[object Opera]")
+                {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else
+                {
+                    f();
+                }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/6359566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        {# Bpm tracking-code #}
+        <script type="text/javascript">
+            (function (d, s, i, r) {
+                if (d.getElementById(i)) {
+                    return;
+                }
+                var n = d.createElement(s);
+                e = d.getElementsByTagName(s)[0];
+                n.id = i;
+                n.src = "https://webtracking-v01.bpmonline.com/Src/tracking_" + r + ".js";
+                e.parentNode.insertBefore(n, e);
+            })(document, "script", "bpmTracking", "fGZdOipnODxE1g06nZgIshWyr63LmODDPUqxmvLJ");
+        </script>
+    {% endif %}
+
+    {% endif %}

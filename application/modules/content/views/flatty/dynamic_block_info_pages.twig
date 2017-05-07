@@ -1,0 +1,53 @@
+<div {% if not dynamic_block_info_pages_data.params.transparent %}class="bg-html_bg"{% endif %}>
+    {% if dynamic_block_info_pages_data.section.title %}
+        <h2 title="{{ dynamic_block_info_pages_data.section.title|e }}">
+            {{ dynamic_block_info_pages_data.section.title }}
+        </h2>
+	{% endif %}
+	{% if dynamic_block_info_pages_data.section %}
+        <div>
+			{% if dynamic_block_info_pages_data.section.img %}
+                <a href="{% helper seo.seolink('content', 'view', dynamic_block_info_pages_data.section) %}">
+                    <img src="{{ dynamic_block_info_pages_data.section.media.img.thumbs.small }}" alt="">
+                </a><br>
+			{% endif %}
+			{% if dynamic_block_info_pages_data.section.annotation %}
+				{{ dynamic_block_info_pages_data.section.annotation }}
+			{% else %}
+				{{ dynamic_block_info_pages_data.section.content }}
+			{% endif %}
+			<div class="ptb10">
+                <button onclick="locationHref('{% helper seo.seolink('content', 'view', dynamic_block_info_pages_data.section) %}');">
+                    {% helper lang.l('btn_view_more', 'start') %}
+                </button>
+            </div>
+		</div>
+	{% endif %}
+	{% if dynamic_block_info_pages_data.pages %}
+		<div class="dynamic-subsections" data-count="{{ dynamic_block_info_pages_data.pages|length }}">
+			{% for key, item in dynamic_block_info_pages_data.pages %}
+				<div class="content-dyn-block-item box-sizing">
+					<h3 class="text-overflow" title="{{ item.title|e }}">
+                        {% if item.title %}
+                            {{ item.title }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </h3>
+					<div>
+                        {% if dynamic_block_info_pages_data.params.trim_subsections_text %}
+                            {{ item.short_content }}
+                        {% else %}
+                            {{ item.content }}
+                        {% endif %}
+                    </div>
+					<div class="ptb10">
+                        <button class="inline-btn" onclick="locationHref('{% helper seo.seolink('content', 'view', item) %}');">
+                            {% helper lang.l('btn_view_more', 'start') %}
+                        </button>
+                    </div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>

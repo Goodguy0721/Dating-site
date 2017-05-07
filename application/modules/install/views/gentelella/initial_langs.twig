@@ -1,0 +1,53 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+			<form method="post" action="{{ data.action|e }}" id="install_langs"
+        data-parsley-validate class="form-horizontal form-label-left">
+          <table class="table table-striped responsive-utilities jambo_table bulk_action">
+  					<thead>
+  						<tr class="headings">
+  							<th class="column-title">Name</th>
+  							<th class="column-title text-center">Install</th>
+  							<th class="column-title text-center">Default</th>
+  						</tr>
+  					</thead>
+  					<tbody>
+  					{% for lang in data.available %}
+  					<tr class="even pointer">
+  						<td>{{ lang.name }}</td>
+  						<td class="text-center">
+  							<input type="checkbox" {% if not data.install or utils.inArray(lang.code, data.install) %}checked{% endif %}
+  										 name="install[{{ lang.id }}]" value="{{ lang.code }}" class="flat" />
+  						</td>
+  						<td class="text-center">
+  							<input type="radio" {% if data.default == lang.code %}checked{% endif %} name="default"
+                                value="{{ lang.code|e }}" class="flat" />
+  						</td>
+  					</tr>
+  					{% endfor %}
+  					</tbody>
+  				</table>
+
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<input type="submit" name="save_install_langs" value="Next" class="btn btn-success"
+              {% if not data.available %}disabled{% endif %}>
+					</div>
+				</div>
+			</form>
+
+	</div>
+</div>
+
+{% helper utils.jscript('install', 'product_install.js') %}
+<script type="text/javascript">
+	var productInstall = new productInstall();
+		$(function() {
+			productInstall.langs_init();
+		});
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,7 @@
+	165	Rouiba	36.7382900	3.2807900	DZ	01	0	0	Rouiba	Rouiba	Rouiba	Rouiba	Rouiba	Rouiba
+	165	Dar el Beïda	36.7133300	3.2125000	DZ	01	0	0	Dar el Beïda	Дар-эль-Бейда	Dar el Beïda	Dar el Beïda	Dar el Beïda	Dar el Beïda
+	165	Bordj el Kiffan	36.7487100	3.1924800	DZ	01	0	0	Bordj el Kiffan	Bordj el Kiffan	Bordj el Kiffan	Bordj el Kiffan	Bordj el Kiffan	Bordj el Kiffan
+	165	Birkhadem	36.7149900	3.0500200	DZ	01	0	0	Birkhadem	Birkhadem	Birkhadem	Birkhadem	Birkhadem	Birkhadem
+	165	Bab Ezzouar	36.7261500	3.1829100	DZ	01	0	0	Bab Ezzouar	Bab Ezzouar	Bab Ezzouar	Bab Ezzouar	Bab Ezzouar	Bab Ezzouar
+	165	Algiers	36.7525000	3.0419700	DZ	01	0	0	Algiers	Алжир	Algiers	Algiers	Algiers	Algiers
+	165	Aïn Taya	36.7933300	3.2869400	DZ	01	0	0	Aïn Taya	Aïn Taya	Aïn Taya	Aïn Taya	Aïn Taya	Aïn Taya

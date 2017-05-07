@@ -1,0 +1,101 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                {% if data.id %}
+                    {% helper lang.l('admin_header_ausers_change', 'ausers') %}
+                {% else %}
+                    {% helper lang.l('admin_header_ausers_add', 'ausers') %}
+                {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="{{ data.action }}" name="save_form" class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_nickname', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.nickname|e }}" name="nickname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_email', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.email|e }}" name="email" class="form-control">
+                    </div>
+                </div>
+                {% if data.id %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_change_password', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="checkbox" value="1" name="update_password" 
+                               id="pass_change_field" class="flat">
+                    </div>
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_password', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="password" value="" name="password" id="pass_field"
+                            class="form-control" {% if data.id %}disabled{% endif %}>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_repassword', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="password" value="" name="repassword" id="repass_field"
+                            {% if data.id %}disabled{% endif %} class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.name|e }}" name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_description', 'ausers') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea name="description" class="form-control">{{ data.description }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start') %}
+                        <input type="submit" class="btn btn-success" value="{{ save_text|e }}" name="btn_save">
+                        {% if is_add_available %}
+                            <a class="btn btn-default" href="{{ site_url }}admin/ausers">
+                                {% helper lang.l('btn_cancel', 'start') %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+    $(function(){
+        $("#pass_change_field")
+            .on('ifChecked', function(){
+                $("#pass_field").removeAttr("disabled");
+                $("#repass_field").removeAttr("disabled");
+            })
+            .on('ifUnchecked', function(){
+                $("#pass_field").attr('disabled', 'disabled');
+                $("#repass_field").attr('disabled', 'disabled');
+            });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

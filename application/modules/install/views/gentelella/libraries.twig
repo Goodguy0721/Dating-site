@@ -1,0 +1,34 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">Library</th>
+                        <th class="column-title">Name</th>
+                        <th class="column-title">Version</th>
+                        <th class="column-title">Installed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, item in libraries %}
+                    <tr>
+                        <td class="first"><b>{{ item.gid }}</b></td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                        {% if item.update %}
+                            <font class="req">{{ item.version }}.00</font> <br><a href="{{ site_url }}admin/install/library_update_install/{{ item.gid }}">Update</a>
+                        {% else %}{{ item.version }}.00{% endif %}
+                        </td>
+                        <td class="text-center">{% helper date_format.tpl_date_format(item.date_add, page_data.date_format) %}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

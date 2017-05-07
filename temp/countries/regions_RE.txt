@@ -1,0 +1,22 @@
+	2760	Trois-Bassins	-21.1000000	55.3000000	RE	RE	0	0	Trois-Bassins	Trois-Bassins	Trois-Bassins	Trois-Bassins	Trois-Bassins	Trois-Bassins
+	2760	Salazie	-21.0273400	55.5390000	RE	RE	0	0	Salazie	Salazie	Salazie	Salazie	Salazie	Salazie
+	2760	Saint-Pierre	-21.3393000	55.4781100	RE	RE	0	0	Saint-Pierre	Сент-Пьер	Saint-Pierre	Saint-Pierre	Saint-Pierre	Saint-Pierre
+	2760	Saint-Philippe	-21.3585200	55.7679500	RE	RE	0	0	Saint-Philippe	Saint-Philippe	Saint-Philippe	Saint-Philippe	Saint-Philippe	Saint-Philippe
+	2760	Saint-Paul	-21.0096300	55.2707100	RE	RE	0	0	Saint-Paul	Saint-Paul	Saint-Paul	Saint-Paul	Saint-Paul	Saint-Paul
+	2760	Saint-Louis	-21.2858500	55.4112400	RE	RE	0	0	Saint-Louis	Сен-Луи	Saint-Louis	Saint-Louis	Saint-Louis	Saint-Louis
+	2760	Saint-Leu	-21.1705900	55.2882400	RE	RE	0	0	Saint-Leu	Санкт-Леу	Saint-Leu	Saint-Leu	Saint-Leu	Saint-Leu
+	2760	Saint-Joseph	-21.3783800	55.6191800	RE	RE	0	0	Saint-Joseph	Сент-Джозеф	Saint-Joseph	Saint-Joseph	Saint-Joseph	Saint-Joseph
+	2760	Sainte-Suzanne	-20.9061400	55.6088600	RE	RE	0	0	Sainte-Suzanne	Sainte-Suzanne	Sainte-Suzanne	Sainte-Suzanne	Sainte-Suzanne	Sainte-Suzanne
+	2760	Sainte-Rose	-21.1298300	55.7962900	RE	RE	0	0	Sainte-Rose	Sainte-Rose	Sainte-Rose	Sainte-Rose	Sainte-Rose	Sainte-Rose
+	2760	Sainte-Marie	-20.8968400	55.5496000	RE	RE	0	0	Sainte-Marie	Сент-Мари	Sainte-Marie	Sainte-Marie	Sainte-Marie	Sainte-Marie
+	2760	Saint-Denis	-20.8823100	55.4504000	RE	RE	0	0	Saint-Denis	Сен-Дени	Saint-Denis	Saint-Denis	Saint-Denis	Saint-Denis
+	2760	Saint-Benoît	-21.0380100	55.7193700	RE	RE	0	0	Saint-Benoît	Санкт-Бенуа	Saint-Benoît	Saint-Benoît	Saint-Benoît	Saint-Benoît
+	2760	Saint-André	-20.9633300	55.6503100	RE	RE	0	0	Saint-André	Санкт-Андре	Saint-André	Saint-André	Saint-André	Saint-André
+	2760	Petite-Île	-21.3500000	55.5666700	RE	RE	0	0	Petite-Île	Petite-Île	Petite-Île	Petite-Île	Petite-Île	Petite-Île
+	2760	Le Tampon	-21.2830900	55.5180200	RE	RE	0	0	Le Tampon	Ле-Тампон	Le Tampon	Le Tampon	Le Tampon	Le Tampon
+	2760	Les Avirons	-21.2418100	55.3393800	RE	RE	0	0	Les Avirons	Les Avirons	Les Avirons	Les Avirons	Les Avirons	Les Avirons
+	2760	Le Port	-20.9373000	55.2918900	RE	RE	0	0	Le Port	Le Port	Le Port	Le Port	Le Port	Le Port
+	2760	La Possession	-20.9289200	55.3351300	RE	RE	0	0	La Possession	La Possession	La Possession	La Possession	La Possession	La Possession
+	2760	L'Entre-Deux	-21.2333300	55.4666700	RE	RE	0	0	L'Entre-Deux	L'Entre-Deux	L'Entre-Deux	L'Entre-Deux	L'Entre-Deux	L'Entre-Deux
+	2760	Cilaos	-21.1335700	55.4719000	RE	RE	0	0	Cilaos	Cilaos	Cilaos	Cilaos	Cilaos	Cilaos
+	2760	Bras-Panon	-20.9966700	55.6782300	RE	RE	0	0	Bras-Panon	Bras-Panon	Bras-Panon	Bras-Panon	Bras-Panon	Bras-Panon

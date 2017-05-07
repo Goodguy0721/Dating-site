@@ -1,0 +1,10 @@
+{% for opt in options %}
+    <div class="form-group">
+        {% helper store.store_options_values({
+            header: opt.name,
+            type: opt.type,
+            id: opt.id,
+            action: 'edit'
+        }) %}
+    </div>
+{% endfor %}

@@ -1,0 +1,79 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+            <li><a id="events_edit_main_item" href="{{ site_url }}admin/events/edit_main/{{ event_id }}">
+              {% helper lang.l('menu_edit_main_item', 'events') %}</a>
+            </li>
+            <li>
+              <a id="events_edit_participants_item" href="{{ site_url }}admin/events/edit_participants/{{ event_id }}">
+                {% helper lang.l('menu_edit_participants_item', 'events') %}</a>
+            </li>
+            <li>
+              <a id="events_edit_album_item" href="{{ site_url }}admin/events/edit_album/{{ event_id }}">
+                {% helper lang.l('menu_edit_album_item', 'events') %}</a>
+            </li>
+            <li class="active">
+              <a id="events_edit_map_item" href="{{ site_url }}admin/events/edit_map/{{ event_id }}">
+                {% helper lang.l('menu_edit_map_item', 'events') %}</a>
+            </li>
+          </ul>
+        </div>
+
+        <script>
+        	function get_type_data(type){
+        		$('#default_view_type option').removeAttr('selected');
+        		$('#default_view_type option[value='+type+']').attr('selected', 'selected');
+        	}
+        	function get_zoom_data(zoom){
+        		$('#default_zoom').val(zoom);
+        	}
+        	function get_drag_data(point_gid, lat, lon){
+        		$('#default_lat').val(lat);
+        		$('#default_lon').val(lon);
+        	}
+
+        	$(function(){
+        		$("#default_lat").bind('keyup', function(){
+        			map.moveMarker('general', $("#default_lat").val(), $("#default_lon").val());
+        		});
+        		$("#default_lon").bind('keyup', function(){
+        			map.moveMarker('general', $("#default_lat").val(), $("#default_lon").val());
+        		});
+
+        		$("#default_zoom").bind('keyup', function(){
+        			map.setZoom(parseInt($(this).val()));
+        		});
+        		$("#default_view_type").bind('change', function(){
+        			map.setType(parseInt($(this).val())-1);
+        		});
+        	});
+        </script>
+
+<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+      class="form-horizontal form-label-left">
+	<div class="form-group">
+    {% helper geomap.show_map({
+          map_gid: geomap_driver.gid,
+          gid: map_gid,
+          markers: markers,
+          settings: view_settings,
+          map_id: map,
+          width: '738',
+          height: '300'
+    }) %}
+  </div>
+  <div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+      <input type="submit" name="save" value="{% helper lnag.l('btn_save', 'start', '', 'button') %}">
+    </div>
+  </div>
+  <input type="hidden" name="lat" id='default_lat' value="{{ event.lat|e }}">
+  <input type="hidden" name="lon" id='default_lon' value="{{ event.lon|e }}">
+</form>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,154 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+			<div class="" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+              {% helper menu.get_admin_level1_menu('admin_horoscope_menu') %}
+          </ul>
+      </div>
+			<div class="x_panel">
+            <div class="x_title">
+						    <h2>{% helper lang.l('header_filters', 'start') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+						<div class="x_content hide">
+							<form method="post" action="" name="save_form" enctype="multipart/form-data"
+								class="form-horizontal form-label-left">
+									<div class="form-group">
+										<label class="control-label col-sm-3 col-xs-12">
+											{% helepr lang.l('field_user', 'mailbox') %}:</label>
+										<div class="col-sm-9 col-xs-12">
+											{% helper users.user_select({selected: id_user, max: 1, var_name: 'id_user'}) %}
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+											<input type="submit" class="btn btn-success" name="filter-submit" value="{% helper lang.l('header_filters_set', 'mailbox', '', 'button') %}">
+											<input type="submit" class="btn btn-default" name="filter-reset" value="{% helper lang.l('header_filters_reset', 'mailbox', '', 'button') %}">
+										</div>
+									</div>
+							</form>
+						</div>
+				</div>
+				<div class="x_content">
+            <div id="actions" class="hide"></div>
+						<form id="mailbox_form" action="" method="post">
+							<table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+							<thead>
+								<tr class="headings">
+									<th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+									<th class="column-title">
+									{% if folder == 'inbox' %}
+										{% helepr lang.l('field_sender', 'mailbox') %}
+									{% else %}
+										{% helper lang.l('field_recipient', 'mailbox') %}
+									{% endif %}
+									</th>
+									<th class="column-title">{% helper lang.l('field_subject', 'mailbox') %}</th>
+									<th class="column-title">&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for item in messages %}
+									<tr class="even pointer">
+										<td class="text-center"><input type="checkbox" name="ids[]" class="grouping flat" value="{{ item.id }}"></td>
+										<td>
+											{% if folder == 'inbox' %}
+												{% helper utils.truncate(item.sender.output_name, 50) %}
+											{% else %}
+												{% helper utils.truncate(item.recipient.output_name, 50) %}
+											{% endif %}
+										</td>
+										<td>{% helper utils.truncate(item.subject, 100) %}</td>
+										<td class="icons">
+											<div class="btn-group">
+												<a href="{{ site_url }}admin/mailbox/view/{{ item.id }}" class="btn btn-primary">
+													{% helper lang.l('link_message_show', 'mailbox') %}</a>
+												<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+		                        		aria-haspopup="true" aria-expanded="false">
+		                        <span class="caret"></span>
+		                        <span class="sr-only">Toggle Dropdown</span>
+		                		</button>
+				                <ul class="dropdown-menu">
+				                  <li>
+														<a href="{{ site_url }}admin/mailbox/view/{{ item.id }}">
+															{% helper lang.l('link_message_show', 'mailbox') %}</a>
+													</li>
+													<li>
+														<a href="{{ site_url }}admin/mailbox/delete/{{ item.id }}/{{ folder }}">
+															{% helper lang.l('link_message_delete', 'mailbox') %}</a>
+													</li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+							</table>
+						</form>
+						{% include "@app/pagination.twig" %}
+<script>
+var reload_link = "{{ site_url }}admin/mailbox/index/";
+var filter = '{{ filter }}';
+var order = '{{ order }}';
+var order_direction = '{{ order_direction }}';
+
+function reload_this_page(value){
+	var link = reload_link + value + '/' + filter + '/' + order + '/' + order_direction;
+	location.href=link;
+}
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_messages','mailbox') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

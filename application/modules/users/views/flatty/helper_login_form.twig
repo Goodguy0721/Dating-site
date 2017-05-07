@@ -1,0 +1,32 @@
+{% if auth_type == 'user' %}
+    <div class="content-block no-margin">
+        <h1>
+            {% helper lang.l('header_profile', 'users') %}
+        </h1>
+        <div class="content-value small">
+            {% if user_data.media.user_logo.thumbs.middle %}
+                <div class="logo-img">
+                    {% set text_user_logo %}
+                        {% helper lang.l('text_user_logo', 'users', '', 'button', user_data) %}
+                    {% endset %}
+                    <img src="{{ user_data.media.user_logo.thumbs.middle }}"
+                         alt="{{ text_user_logo }}" title="{{ text_user_logo }}" />
+                </div>
+            {% endif %}
+            <span class="nick">
+                {{ user_data.fname }} {{ user_data.sname }}
+            </span>
+            <a href="{% helper seo.seolink('users', 'profile') %}">
+                {{ user_data.nickname }}
+            </a><br><br>
+            <span class="nick with_money">
+                {% helper start.currency_format_output(user_data.account) %}
+            </span>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="user-menu">
+        {% helper menu.get_menu('account_menu') %}
+    </div>
+    <div class="clr"></div>
+{% endif %}

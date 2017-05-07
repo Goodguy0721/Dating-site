@@ -1,0 +1,8 @@
+{% for key, item in pages %}
+<li id="module_pages_{{ module_id }}_{{ key }}" class="x_panel cursor-pointer {% if item.group_id %}inactive{% else %}sortable{% endif %}">
+	<b class="name">{{ item.name }}</b><br><i>{{ site_url }}<span class="link">{{ item.link }}</span></i>
+	{% if item.group_id %}<br><font class="used_page">
+        {% helper lang.l('page_used_in_group', 'banners') %}: {{ item.group_name }}</font>
+    {% endif %}
+</li>
+{% endfor %}

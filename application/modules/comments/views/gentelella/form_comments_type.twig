@@ -1,0 +1,71 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class='x_title'>
+            <h2>
+                {% if comments_type.id %}
+                    {% helper lang.l('admin_header_comments_type_change', 'comments') %}
+                {% else %}
+                    {% helper lang.l('admin_header_comments_type_add', 'comments') %}
+                {% endif %}
+            </h2>
+            <div class='clearfix'></div>
+        </div>
+        <div class='x_content'>
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data"
+                  class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_status', 'comments') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="checkbox" value="1" name="status" class="flat"
+                               {% if comments_type.status %}checked{% endif %}/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_use_likes', 'comments') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="checkbox" value="1" name="use_likes" class="flat"
+                               {% if comments_type.settings.use_likes %}checked{% endif %}/></div>
+                </div>
+                {% if comments_type.gid!='user_avatar' %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_guest_access', 'comments') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="checkbox" value="1" name="guest_access" class="flat"
+                                   {% if comments_type.settings.guest_access %}checked{% endif %}/>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_char_count', 'comments') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ comments_type.settings.char_count }}"
+                               name="char_count" class="form-control"/>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save"  class="btn btn-success"
+                               value="{% helper lang.l('btn_save','start','','button') %}">
+                        <a class="btn btn-default cancel" href="{{ site_url }}admin/comments/index/{{ data.page }}/">
+                            {% helper lang.l('btn_cancel','start') %}
+                        </a>
+                    </div>
+                    <div class='clearfix'></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

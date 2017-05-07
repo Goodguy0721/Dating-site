@@ -1,0 +1,41 @@
+<div class="form">
+    {% if count(settings_errors) > 0 %}
+    <div class="form-group">
+        {% for item in settings_errors %}
+            <label class="label label-danger">Input with error {{ item }}</label><br>                
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_nickname', 'ausers') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" name="nickname"
+                value="{{ settings_data.nickname|e }}" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_password', 'ausers') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="password" name="password"
+                value="{{ settings_data.password|e }}" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_name', 'ausers') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" name="name"
+                value="{{ settings_data.name|e }}" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_email', 'ausers') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" name="email"
+                value="{{ settings_data.email|e }}" class="form-control">
+        </div>
+    </div>
+</div>

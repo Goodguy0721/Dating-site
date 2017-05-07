@@ -1,0 +1,28 @@
+	3038	Žilina	49.2231500	18.7394100	SK	08	0	0	Žilina	Жилина	Žilina	Žilina	Žilina	Žilina
+	3038	Vrútky	49.1132800	18.9171400	SK	08	0	0	Vrútky	Vrútky	Vrútky	Vrútky	Vrútky	Vrútky
+	3038	Tvrdošín	49.3370000	19.5560000	SK	08	0	0	Tvrdošín	Tvrdošín	Tvrdošín	Tvrdošín	Tvrdošín	Tvrdošín
+	3038	Turzovka	49.4042900	18.6225800	SK	08	0	0	Turzovka	Turzovka	Turzovka	Turzovka	Turzovka	Turzovka
+	3038	Trstená	49.3610100	19.6124900	SK	08	0	0	Trstená	Trstená	Trstená	Trstená	Trstená	Trstená
+	3038	Terchová	49.2589500	19.0293500	SK	08	0	0	Terchová	Terchová	Terchová	Terchová	Terchová	Terchová
+	3038	Stráža	49.2257800	18.9078200	SK	08	0	0	Stráža	Stráža	Stráža	Stráža	Stráža	Stráža
+	3038	Ružomberok	49.0748000	19.3075100	SK	08	0	0	Ružomberok	Ружомберок	Ružomberok	Ružomberok	Ružomberok	Ružomberok
+	3038	Rajec	49.0889800	18.6400700	SK	08	0	0	Rajec	Rajec	Rajec	Rajec	Rajec	Rajec
+	3038	Pribylina	49.0995000	19.7942700	SK	08	0	0	Pribylina	Прибылина	Pribylina	Pribylina	Pribylina	Pribylina
+	3038	Párnica	49.1941600	19.1976200	SK	08	0	0	Párnica	Párnica	Párnica	Párnica	Párnica	Párnica
+	3038	Oravský Podzámok	49.2593900	19.3569000	SK	08	0	0	Oravský Podzámok	Oravský Podzámok	Oravský Podzámok	Oravský Podzámok	Oravský Podzámok	Oravský Podzámok
+	3038	Nižná	49.3104600	19.5242800	SK	08	0	0	Nižná	Nižná	Nižná	Nižná	Nižná	Nižná
+	3038	Námestovo	49.4079000	19.4803200	SK	08	0	0	Námestovo	Наместово	Námestovo	Námestovo	Námestovo	Námestovo
+	3038	Martin	49.0665100	18.9239900	SK	08	0	0	Martin	Мартин	Martin	Martin	Martin	Martin
+	3038	Liptovský Trnovec	49.1203800	19.5471000	SK	08	0	0	Liptovský Trnovec	Liptovský Trnovec	Liptovský Trnovec	Liptovský Trnovec	Liptovský Trnovec	Liptovský Trnovec
+	3038	Liptovský Mikuláš	49.0806100	19.6221800	SK	08	0	0	Liptovský Mikuláš	Липтовски Микулаш	Liptovský Mikuláš	Liptovský Mikuláš	Liptovský Mikuláš	Liptovský Mikuláš
+	3038	Liptovský Hrádok	49.0396200	19.7233500	SK	08	0	0	Liptovský Hrádok	Liptovský Hrádok	Liptovský Hrádok	Liptovský Hrádok	Liptovský Hrádok	Liptovský Hrádok
+	3038	Kysucké Nové Mesto	49.3000000	18.7833300	SK	08	0	0	Kysucké Nové Mesto	Кисуцке Нове Место	Kysucké Nové Mesto	Kysucké Nové Mesto	Kysucké Nové Mesto	Kysucké Nové Mesto
+	3038	Krušetnica	49.3752300	19.3387600	SK	08	0	0	Krušetnica	Крушетница	Krušetnica	Krušetnica	Krušetnica	Krušetnica
+	3038	Krasňany	49.2149100	18.8871800	SK	08	0	0	Krasňany	Krasňany	Krasňany	Krasňany	Krasňany	Krasňany
+	3038	Hybe	49.0443900	19.8289500	SK	08	0	0	Hybe	Hybe	Hybe	Hybe	Hybe	Hybe
+	3038	Dolný Kubín	49.2098300	19.3034100	SK	08	0	0	Dolný Kubín	Долны Кубин	Dolný Kubín	Dolný Kubín	Dolný Kubín	Dolný Kubín
+	3038	Čičmany	48.9550300	18.5160800	SK	08	0	0	Čičmany	Чичмани	Čičmany	Čičmany	Čičmany	Čičmany
+	3038	Čadca	49.4350300	18.7889500	SK	08	0	0	Čadca	Чадца	Čadca	Čadca	Čadca	Čadca
+	3038	Bytča	49.2240400	18.5587800	SK	08	0	0	Bytča	Битча	Bytča	Bytča	Bytča	Bytča
+	3038	Oravská Lesná	49.3667200	19.1809300	SK	08	0	0	Oravská Lesná	Oravská Lesná	Oravská Lesná	Oravská Lesná	Oravská Lesná	Oravská Lesná
+	3038	Demänovská Dolina	48.9708600	19.5843300	SK	08	0	0	Demänovská Dolina	Demänovská Dolina	Demänovská Dolina	Demänovská Dolina	Demänovská Dolina	Demänovská Dolina

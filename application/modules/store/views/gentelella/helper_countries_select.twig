@@ -1,0 +1,3 @@
+{% for location in country_helper_data.locations %}
+    {% helper store.store_item_locations({ 'select_type': 'city', 'location': location, 'id_shipping': country_helper_data.id_shipping }) %}
+{% endfor %}

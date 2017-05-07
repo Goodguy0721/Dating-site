@@ -1,0 +1,32 @@
+<div class="media-gallery-content" id="image_content" data-area="view">
+    <div class="media-gallery-editor">
+        <div class="media-gallery-editor__media-box">
+            {% helper store.store_media({
+                'id_product': media_data.product_id,
+                'size': 'big',
+                'id_media': media_data.media_id,
+                'type': media_data.type,
+                'amount': 'single',
+                'source': 'user'
+            }) %}
+            <div id="next_media" class="load_content_right"></div>
+            <div id="prev_media" class="load_content_left"></div>
+        </div>
+    </div>
+</div>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('store', 'store_media.js', 'path') %}",
+			function(){
+				product_media = new store_media({
+					siteUrl: site_url,
+					mediaId: "{{ media_data.media_id }}",
+					count_photo: "{{ media_data.count }}",
+				});
+			},
+			'product_media',
+			{async: false}
+		);
+	});
+</script>

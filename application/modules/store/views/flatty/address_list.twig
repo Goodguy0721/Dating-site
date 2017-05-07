@@ -1,0 +1,37 @@
+{% include '@app/header.twig' %}
+
+{% helper utils.jscript('', 'number-format.js', '') %}
+
+<div class="store-content">
+    <div class="search-header">
+        <h1>{% helper seo.seotag('header_text') %}</h1>
+    </div>
+    <div class="list orders col-xs-12">
+        <div class="item-block ptb20" id="address">
+            {% helper store.store_address_block() %}
+        </div>
+			<input id="address_recipient" type="button" name="save"
+                value="{% helper lang.l('button_confirm_address', 'store') %}"
+                class="btn btn-primary{% if recipient is empty %} hide{% endif %}">
+    </div>
+</div>
+<div class="clr"></div>
+
+<script>
+    var currency_output = {% helper start.currency_format_regexp_output() %};
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('store', 'store_orders.js', 'path') %}",
+            function(){
+                orders = new storeOrders({
+                    siteUrl: site_url,
+                    order: {id_order: '{{ order_id }}'},
+                });
+            },
+            'orders',
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

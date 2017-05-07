@@ -1,0 +1,66 @@
+<div class="info_pages_block">
+	<h2>
+		{% if section.title %}
+			{{ section.title }}
+		{% else %}
+			{% helper lang.l('header_info_pages', 'content') %}
+		{% endif %}
+	</h2>
+
+	{% if block_width == '30' %}
+        {% set pages_per_row=1 %}
+        {% set pages_col_md=12 %}
+	{% elseif block_width == '50' %}
+        {% set pages_per_row=2 %}
+        {% set pages_col_md=6 %}
+    {% elseif block_width == '70' %}
+        {% set pages_per_row=2 %}
+        {% set pages_col_md=6 %}
+    {% elseif block_width == '100' %}
+        {% set pages_per_row=3 %}
+        {% set pages_col_md=4 %}
+	{% endif %}
+
+	<div class="row">
+		{% for key, item in pages %}
+            <div class="info_page col-md-{{ pages_col_md }} column">
+                {% if item.img %}
+                    <div class="text text-center">
+                        <a href="{% helper seo.seolink('content', 'view', item) %}">
+                            <img src="{{ item.media.img.thumbs.small }}" alt="">
+                        </a>
+                        <div class="text-content">
+                            <a href="{% helper seo.seolink('content', 'view', item %}" class="ellipsis">
+                                {{ item.title }}
+                            </a><br>
+                            <span class="text-content">
+                                {% if item.annotation %}
+                                    {{ item.annotation }}
+                                {% else %}
+                                    {% helper utils.truncate(item.content, 255) %}
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="text">
+                        <a href="{% helper seo.seolink('content', 'view', item) %}" class="ellipsis">
+                            {{ item.title }}
+                        </a><br>
+                        <span class="text-content">
+                            {% if item.annotation %}
+                                {{ item.annotation }}
+                            {% else %}
+                                {% helper utils.truncate(item.content, 255) %}
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+            </div>
+            {% if (loop.index % $pages_per_row) == 0 %}
+    </div>
+    <div class="row">
+            {% endif %}
+		{% endfor %}
+	</div>
+</div>

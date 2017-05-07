@@ -1,0 +1,34 @@
+<div class="col-xs-12 col-md-offset-2 col-md-8">
+    <div class="main-block centered">
+        <h1>{{ group.name }}</h1>
+        <div>{{ group.description }}</div>
+        <div>{% helper access_permissions.selectionPeriod({'periods': group.periods}) %}</div>
+        <div class="privilege">
+            <h2>{% helper lang.l('field_privilege', 'access_permissions') %}</h2>
+            <div>
+                {% for module, access in group.access %}
+                    {% if access.is_available %}
+                        <div class="contrasting-block">
+                            <div class="module-name">{{ access.name }}</div>
+                            <div class="module-description">
+                                {{ access.description }}
+                                {% helper count = access_permissions.isCount({'data': {'module_gid': module}, 'permissions': access.list, 'group_gid': group.gid}) %}
+                                {% if count %}
+                                    {% for type, value in count %}
+                                        <div>{{ value.name }}: 
+                                            {% if value.count > 0 %}
+                                                {{ value.count }}
+                                            {% else %}
+                                                 {% helper lang.l('field_period_unlimited', 'access_permissions') %}
+                                             {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

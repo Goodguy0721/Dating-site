@@ -1,0 +1,92 @@
+<div id="index_registration_login_forms_{{ dynamic_block_registration_login_form_data.rand }}"
+     class="index-login-form bg-html_bg p20">
+    {% helper users_connections.show_social_networking_login() %}
+    <div id="index_registration_form_{{ dynamic_block_registration_login_form_data.rand }}"
+         {% if dynamic_block_registration_login_form_data.view == 'login_form' %}class="hide"{% endif %}>
+        <form action="{% helper seo.seolink('users', 'registration') %}" method="post">
+            <div class="r">
+                <input type="text" name="email" class="big-input wp100 box-sizing"
+                       placeholder="{% helper lang.l('field_email', 'users', '', 'button') %}"
+                       {% if DEMO_MODE %}value="{{ demo_user_type_login_settings.login }}"{% endif %}>
+            </div>
+            <div class="r">
+                <input type="password" name="password" class="big-input wp100 box-sizing"
+                       placeholder="{% helper lang.l('field_password', 'users', '', 'button') %}"
+                       {% if DEMO_MODE %}value="{{ demo_user_type_login_settings.password }}"{% endif %}>
+            </div>
+            <div class="r">
+                <input type="submit" class="wp100 box-sizing"  name="logbtn"
+                       value="{% helper lang.l('btn_register', 'start', '', 'button') %}">
+            </div>
+            <div class="centered">
+                <span class="a" data-toggle>
+                    {% helper lang.l('btn_login', 'start') %}
+                </span>
+            </div>
+        </form>
+    </div>
+    <div id="index_login_form_{{ dynamic_block_registration_login_form_data.rand }}"
+         {% if dynamic_block_registration_login_form_data.view == 'registration_form' %}class="hide"{% endif %}>
+        <form action="{{ site_url }}users/login" method="post">
+            <div class="r">
+                <input type="text" name="email" class="big-input wp100 box-sizing"
+                       placeholder="{% helper lang.l('field_email', 'users', '', 'button') %}"
+                       {% if DEMO_MODE %}value="{{ demo_user_type_login_settings.login }}"{% endif %}>
+            </div>
+            <div class="r">
+                <input type="password" name="password" class="big-input wp100 box-sizing"
+                       placeholder="{% helper lang.l('field_password', 'users', '', 'button') %}"
+                       {% if DEMO_MODE %}value="{{ demo_user_type_login_settings.password|e }}"{% endif %}>
+            </div>
+            <div class="r">
+                <input type="submit" class="wp100 box-sizing" name="logbtn"
+                       value="{% helper lang.l('btn_login', 'start', '', 'button') %}">
+            </div>
+            <div class="centered">
+                <a href="{% helper seo.seolink('users', 'restore') %}">
+                    {% helper lang.l('link_restore', 'users') %}
+                </a>
+                <span class="a ml10" data-toggle>
+                    {% helper lang.l('btn_register', 'start') %}
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $('#index_registration_login_forms_{{ dynamic_block_registration_login_form_data.rand }}')
+            .off('click', '[data-toggle]').on('click', '[data-toggle]', function () {
+        var rand = '{{ dynamic_block_registration_login_form_data.rand }}';
+        if ($('#index_registration_form_' + rand).is(':visible')) {
+            if ($('#index_login_form_' + rand).find('input[name="email"]').val() == '') {
+                var email = $('#index_registration_form_' + rand).find('input[name="email"]').val();
+                $('#index_login_form_' + rand).find('input[name="email"]').val(email);
+            }
+            if ($('#index_login_form_' + rand).find('input[name="password"]').val() == '') {
+                var password = $('#index_registration_form_' + rand).find('input[name="password"]').val();
+                $('#index_login_form_' + rand).find('input[name="password"]').val(password);
+            }
+            $('#index_registration_form_' + rand).stop(true).fadeOut(300, function () {
+                $('#index_login_form_' + rand).stop(true).fadeIn(300);
+            });
+        } else {
+            if ($('#index_registration_form_' + rand).find('input[name="email"]').val() == '') {
+                var email = $('#index_login_form_' + rand).find('input[name="email"]').val();
+                $('#index_registration_form_' + rand).find('input[name="email"]').val(email);
+            }
+            if ($('#index_registration_form_' + rand).find('input[name="password"]').val() == '') {
+                var password = $('#index_login_form_' + rand).find('input[name="password"]').val();
+                $('#index_registration_form_' + rand).find('input[name="password"]').val(password);
+            }
+            $('#index_login_form_' + rand).stop(true).fadeOut(300, function () {
+                $('#index_registration_form_' + rand).stop(true).fadeIn(300);
+            });
+        }
+    });
+
+    $(document).one('pjax:start', function () {
+        $('#index_registration_login_forms_{{ dynamic_block_registration_login_form_data.rand }}')
+                .off('click', '[data-toggle]');
+    });
+</script>

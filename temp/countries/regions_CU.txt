@@ -1,0 +1,10 @@
+	806	Santa Cruz del Norte	23.1542400	-81.9255600	CU	MA	0	0	Santa Cruz del Norte	Santa Cruz del Norte	Santa Cruz del Norte	Santa Cruz del Norte	Santa Cruz del Norte	Santa Cruz del Norte
+	806	San Nicolás de Bari	22.7844400	-81.9133300	CU	MA	0	0	San Nicolás de Bari	San Nicolás de Bari	San Nicolás de Bari	San Nicolás de Bari	San Nicolás de Bari	San Nicolás de Bari
+	806	San José de las Lajas	22.9613900	-82.1511100	CU	MA	0	0	San José de las Lajas	San José de las Lajas	San José de las Lajas	San José de las Lajas	San José de las Lajas	San José de las Lajas
+	806	Quivicán	22.8231300	-82.3555800	CU	MA	0	0	Quivicán	Кивикан	Quivicán	Quivicán	Quivicán	Quivicán
+	806	Madruga	22.9100000	-81.8563900	CU	MA	0	0	Madruga	Madruga	Madruga	Madruga	Madruga	Madruga
+	806	La Salud	22.8719900	-82.4232800	CU	MA	0	0	La Salud	Ла Салюд	La Salud	La Salud	La Salud	La Salud
+	806	Jaruco	23.0441900	-82.0091900	CU	MA	0	0	Jaruco	Jaruco	Jaruco	Jaruco	Jaruco	Jaruco
+	806	Jamaica	22.9755900	-82.1685200	CU	MA	0	0	Jamaica	Jamaica	Jamaica	Jamaica	Jamaica	Jamaica
+	806	Bejucal	22.9286100	-82.3886100	CU	MA	0	0	Bejucal	Bejucal	Bejucal	Bejucal	Bejucal	Bejucal
+	806	Batabanó	22.7179400	-82.2896500	CU	MA	0	0	Batabanó	Batabanó	Batabanó	Batabanó	Batabanó	Batabanó

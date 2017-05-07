@@ -1,0 +1,26 @@
+	2658	Vila de Porto Santo	33.0601800	-16.3341000	PT	10	0	0	Vila de Porto Santo	Vila de Porto Santo	Vila de Porto Santo	Vila de Porto Santo	Vila de Porto Santo	Vila de Porto Santo
+	2658	São Vicente	32.7967300	-17.0432300	PT	10	0	0	São Vicente	Сан-Висенте	São Vicente	São Vicente	São Vicente	São Vicente
+	2658	Santana	32.8000000	-16.8833300	PT	10	0	0	Santana	Сантана	Santana	Santana	Santana	Santana
+	2658	Santa Cruz	32.6833300	-16.8000000	PT	10	0	0	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz
+	2658	Ribeira Brava	32.6500000	-17.0666700	PT	10	0	0	Ribeira Brava	Ribeira Brava	Ribeira Brava	Ribeira Brava	Ribeira Brava	Ribeira Brava
+	2658	Prazeres	32.7510400	-17.2043300	PT	10	0	0	Prazeres	Празереш	Prazeres	Prazeres	Prazeres	Prazeres
+	2658	Porto Moniz	32.8500000	-17.1666700	PT	10	0	0	Porto Moniz	Порту-Мониш	Porto Moniz	Porto Moniz	Porto Moniz	Porto Moniz
+	2658	Ponta do Sol	32.6666700	-17.1000000	PT	10	0	0	Ponta do Sol	Ponta do Sol	Ponta do Sol	Ponta do Sol	Ponta do Sol	Ponta do Sol
+	2658	Ponta do Pargo	32.8113700	-17.2486200	PT	10	0	0	Ponta do Pargo	Понта-ду-Паргу	Ponta do Pargo	Ponta do Pargo	Ponta do Pargo	Ponta do Pargo
+	2658	Paul do Mar	32.7589800	-17.2302500	PT	10	0	0	Paul do Mar	Паул-ду-Мар	Paul do Mar	Paul do Mar	Paul do Mar	Paul do Mar
+	2658	Nossa Senhora do Monte	32.6666700	-16.9000000	PT	10	0	0	Nossa Senhora do Monte	Монте	Nossa Senhora do Monte	Nossa Senhora do Monte	Nossa Senhora do Monte	Nossa Senhora do Monte
+	2658	Machico	32.7000000	-16.7666700	PT	10	0	0	Machico	Machico	Machico	Machico	Machico	Machico
+	2658	Lugar de Baixo	32.6798400	-17.0865700	PT	10	0	0	Lugar de Baixo	Лугар-де-Байшу	Lugar de Baixo	Lugar de Baixo	Lugar de Baixo	Lugar de Baixo
+	2658	Jardim do Mar	32.7388400	-17.2114600	PT	10	0	0	Jardim do Mar	Жардин-ду-Мар	Jardim do Mar	Jardim do Mar	Jardim do Mar	Jardim do Mar
+	2658	Funchal	32.6656800	-16.9254700	PT	10	0	0	Funchal	Фуншал	Funchal	Funchal	Funchal	Funchal
+	2658	Fajã da Ovelha	32.7745700	-17.2341200	PT	10	0	0	Fajã da Ovelha	Фажан-да-Овелья	Fajã da Ovelha	Fajã da Ovelha	Fajã da Ovelha	Fajã da Ovelha
+	2658	Estreito da Calheta	32.7370400	-17.1867400	PT	10	0	0	Estreito da Calheta	Эштрейту-да-Кальета	Estreito da Calheta	Estreito da Calheta	Estreito da Calheta	Estreito da Calheta
+	2658	Curral das Freiras	32.7202900	-16.9699300	PT	10	0	0	Curral das Freiras	Куррал-даш-Фрейраш	Curral das Freiras	Curral das Freiras	Curral das Freiras	Curral das Freiras
+	2658	Caniço	32.6333300	-16.8500000	PT	10	0	0	Caniço	Caniço	Caniço	Caniço	Caniço	Caniço
+	2658	Caniçal	32.7383400	-16.7383600	PT	10	0	0	Caniçal	Канисал	Caniçal	Caniçal	Caniçal	Caniçal
+	2658	Campanário	32.6657800	-17.0357600	PT	10	0	0	Campanário	Campanário	Campanário	Campanário	Campanário	Campanário
+	2658	Câmara de Lobos	32.6333300	-16.9666700	PT	10	0	0	Câmara de Lobos	Камара-де-Лобос	Câmara de Lobos	Câmara de Lobos	Câmara de Lobos	Câmara de Lobos
+	2658	Camacha	33.0866500	-16.3425300	PT	10	0	0	Camacha	Camacha	Camacha	Camacha	Camacha	Camacha
+	2658	Camacha	32.6791900	-16.8446200	PT	10	0	0	Camacha	Камаша	Camacha	Camacha	Camacha	Camacha
+	2658	Calheta	32.7166700	-17.1833300	PT	10	0	0	Calheta	Кальета	Calheta	Calheta	Calheta	Calheta
+	2658	Arco da Calheta	32.7150200	-17.1497400	PT	10	0	0	Arco da Calheta	Арку-да-Кальета	Arco da Calheta	Arco da Calheta	Arco da Calheta	Arco da Calheta

@@ -1,0 +1,100 @@
+{% include '@app/header.twig' %}
+
+    <div class="col-xs-12">
+        <div class="content-block">
+            <h1>
+                {% helper lang.l('header_membership_settings', 'memberships') %}: {{ membership.name }}
+            </h1>
+
+            {% if show_ms_change_warning %}
+                <div class="alert alert-warning" role="alert">{% helper lang.l('membership_change_warning', 'memberships') %}</div>
+            {% endif %}
+
+        	<p>{% helper lang.l('on_your_account_now', 'services') %}: {% helper start.currency_format_output({'value': membership.user_account}) %}</p>
+            <p>{{ membership.description }}</p>
+            <div class="content-value">
+                {% helper memberships.memberships_list({
+                    'memberships': membership,
+                    'hide_buy_btn': true
+                }) %}
+                {% helper special_offers.getOfferNote('memberships', membership.id) %}
+                <form method="post" action="">
+                    <div class="service-payment-form">
+                        {% if membership.free_activate %}
+                            <input type="submit" class="btn btn-primary" name="btn_account" value="{% helper lang.l('btn_activate_free', 'memberships', '', 'button') %}">
+                        {% else %}
+                            {% if (membership.pay_type == 'account' or membership.pay_type == 'account_and_direct') %}
+                                {% if membership.disable_account_pay %}
+                                    <div class="mtb20">
+                                        {% helper lang.l('error_account_less_then_service_price', 'services') %}
+                                        <a href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+                                            {% helper lang.l('link_add_founds', 'services') %}
+                                        </a>
+                                    </div>
+                                {% else %}
+                                    <div class="mtb20">
+                                        <input type="submit" data-pjax-submit="0" name="btn_account" value="{% helper lang.l('btn_pay_account', 'services', '', 'button') %}" class="btn btn-primary">
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if membership.pay_type == 'account_and_direct' or membership.pay_type == 'direct' %}
+                                <span class="select-payment-method">
+                                    {% helper lang.l('link_select_payment_method', 'services') %}
+                                </span>
+                                <div class="billing-systems-block row">
+                                    {% if billing_systems %}
+                                        <input type="hidden" id="system_gid" name="system_gid" value="">
+                                        {% for item in billing_systems %}
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="billing-method" data-gid="{{ item.gid }}" onclick="system_gid_change('{{ item.gid }}')">
+                                                    <img src="{{ item.logo_url }}" class="img-responsive" alt="{{ item.name }}" title="{{ item.name }}">
+                                                </div>
+                                            </div>
+                                            <div id="system_{{ item.gid }}" class="hide" data-tarifs="{{ item.tarifs_type }}">
+                                                <div id="details_{{ item.gid }}">{{ item.info_data }}</div>
+                                            </div>
+                                        {% endfor %}
+                                        <div class="col-xs-12 hide" id="details">
+                                            <label>
+                                                {% helper lang.l('field_info_data', 'payments') %}:
+                                            </label>
+                                            <div id="details_block"></div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="submit" name="btn_system" value="1" class="btn btn-primary">
+                                                {% helper lang.l('btn_pay_systems', 'services') %}
+                                            </button>
+                                        </div>
+                                    {% elseif membership.pay_type == 'direct' %}
+                                        {% helper lang.l('error_empty_billing_system_list', 'service') %}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script>
+    function system_gid_change(value) {
+        $('#details').hide();
+        if(value){
+            var details = $('#details_' + value).html();
+            if(details.length) $('#details').show().find('#details_block').html(details);
+        }
+    }
+
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('services', 'services.js', 'path') %}"],
+            function(){
+                services = new Services();
+            },
+            ['services'],
+            {async: true}
+        );
+    });
+</script>
+{% include '@app/footer.twig' %}

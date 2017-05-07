@@ -1,0 +1,208 @@
+	3781	Afton	42.7249300	-110.9318700	US	WY	0	0	Afton	Afton	Afton	Afton	Afton	Afton
+	3781	Airport Road	43.9932900	-107.9492600	US	WY	0	0	Airport Road	Airport Road	Airport Road	Airport Road	Airport Road	Airport Road
+	3781	Albany	41.1841400	-106.1319600	US	WY	0	0	Albany	Олбани	Albany	Albany	Albany	Albany
+	3781	Albin	41.4177600	-104.0982900	US	WY	0	0	Albin	Albin	Albin	Albin	Albin	Albin
+	3781	Alcova	42.5521800	-106.7164300	US	WY	0	0	Alcova	Alcova	Alcova	Alcova	Alcova	Alcova
+	3781	Alpine	43.1635300	-111.0180200	US	WY	0	0	Alpine	Alpine	Alpine	Alpine	Alpine	Alpine
+	3781	Alta	43.7538100	-111.0368900	US	WY	0	0	Alta	Alta	Alta	Alta	Alta	Alta
+	3781	Antelope Hills	43.0816300	-106.3241900	US	WY	0	0	Antelope Hills	Antelope Hills	Antelope Hills	Antelope Hills	Antelope Hills	Antelope Hills
+	3781	Arapahoe	42.9621800	-108.4898300	US	WY	0	0	Arapahoe	Arapahoe	Arapahoe	Arapahoe	Arapahoe	Arapahoe
+	3781	Arlington	41.5946900	-106.2083500	US	WY	0	0	Arlington	Arlington	Arlington	Arlington	Arlington	Arlington
+	3781	Arrowhead Springs	41.5069100	-109.1576300	US	WY	0	0	Arrowhead Springs	Arrowhead Springs	Arrowhead Springs	Arrowhead Springs	Arrowhead Springs	Arrowhead Springs
+	3781	Arvada	44.6535900	-106.1311400	US	WY	0	0	Arvada	Arvada	Arvada	Arvada	Arvada	Arvada
+	3781	Atlantic City	42.4966200	-108.7306700	US	WY	0	0	Atlantic City	Атлантик-Сити	Atlantic City	Atlantic City	Atlantic City	Atlantic City
+	3781	Auburn	42.7921500	-111.0032600	US	WY	0	0	Auburn	Auburn	Auburn	Auburn	Auburn	Auburn
+	3781	Baggs	41.0358000	-107.6575700	US	WY	0	0	Baggs	Baggs	Baggs	Baggs	Baggs	Baggs
+	3781	Bairoil	42.2444000	-107.5595100	US	WY	0	0	Bairoil	Bairoil	Bairoil	Bairoil	Bairoil	Bairoil
+	3781	Bar Nunn	42.9135800	-106.3433600	US	WY	0	0	Bar Nunn	Bar Nunn	Bar Nunn	Bar Nunn	Bar Nunn	Bar Nunn
+	3781	Basin	44.3799600	-108.0389900	US	WY	0	0	Basin	Basin	Basin	Basin	Basin	Basin
+	3781	Bear River	41.3841100	-111.0263000	US	WY	0	0	Bear River	Bear River	Bear River	Bear River	Bear River	Bear River
+	3781	Bedford	42.8993700	-110.9332600	US	WY	0	0	Bedford	Бедфорд	Bedford	Bedford	Bedford	Bedford
+	3781	Bessemer Bend	42.7580200	-106.5203100	US	WY	0	0	Bessemer Bend	Bessemer Bend	Bessemer Bend	Bessemer Bend	Bessemer Bend	Bessemer Bend
+	3781	Beulah	44.5444300	-104.0891000	US	WY	0	0	Beulah	Beulah	Beulah	Beulah	Beulah	Beulah
+	3781	Big Horn	44.6833000	-106.9922900	US	WY	0	0	Big Horn	Big Horn	Big Horn	Big Horn	Big Horn	Big Horn
+	3781	Big Piney	42.5382800	-110.1143200	US	WY	0	0	Big Piney	Big Piney	Big Piney	Big Piney	Big Piney	Big Piney
+	3781	Bondurant	43.2029900	-110.4087900	US	WY	0	0	Bondurant	Bondurant	Bondurant	Bondurant	Bondurant	Bondurant
+	3781	Boulder	42.7482800	-109.7176500	US	WY	0	0	Boulder	Боулдер	Boulder	Boulder	Boulder	Boulder
+	3781	Boulder Flats	42.9127400	-108.7990100	US	WY	0	0	Boulder Flats	Boulder Flats	Boulder Flats	Boulder Flats	Boulder Flats	Boulder Flats
+	3781	Brookhurst	42.8574700	-106.2364100	US	WY	0	0	Brookhurst	Brookhurst	Brookhurst	Brookhurst	Brookhurst	Brookhurst
+	3781	Buffalo	44.3483100	-106.6989400	US	WY	0	0	Buffalo	Буффало	Buffalo	Buffalo	Buffalo	Buffalo
+	3781	Burlington	44.4471800	-108.4323400	US	WY	0	0	Burlington	Берлингтон	Burlington	Burlington	Burlington	Burlington
+	3781	Burns	41.1927600	-104.3591200	US	WY	0	0	Burns	Burns	Burns	Burns	Burns	Burns
+	3781	Byron	44.7963400	-108.5065100	US	WY	0	0	Byron	Byron	Byron	Byron	Byron	Byron
+	3781	Calpet	42.2838300	-110.2590500	US	WY	0	0	Calpet	Calpet	Calpet	Calpet	Calpet	Calpet
+	3781	Carpenter	41.0455400	-104.3666200	US	WY	0	0	Carpenter	Carpenter	Carpenter	Carpenter	Carpenter	Carpenter
+	3781	Carter	41.4377300	-110.4284900	US	WY	0	0	Carter	Carter	Carter	Carter	Carter	Carter
+	3781	Casper	42.8666300	-106.3130800	US	WY	0	0	Casper	Каспер	Casper	Casper	Casper	Casper
+	3781	Casper Mountain	42.7330200	-106.3266900	US	WY	0	0	Casper Mountain	Casper Mountain	Casper Mountain	Casper Mountain	Casper Mountain	Casper Mountain
+	3781	Centennial	41.2983100	-106.1416800	US	WY	0	0	Centennial	Centennial	Centennial	Centennial	Centennial	Centennial
+	3781	Cheyenne	41.1399800	-104.8202500	US	WY	0	0	Cheyenne	Шайенн	Cheyenne	Cheyenne	Cheyenne	Cheyenne
+	3781	Chugcreek	42.0480300	-104.9183000	US	WY	0	0	Chugcreek	Chugcreek	Chugcreek	Chugcreek	Chugcreek	Chugcreek
+	3781	Chugwater	41.7566400	-104.8216400	US	WY	0	0	Chugwater	Chugwater	Chugwater	Chugwater	Chugwater	Chugwater
+	3781	Clearmont	44.6402600	-106.3808700	US	WY	0	0	Clearmont	Clearmont	Clearmont	Clearmont	Clearmont	Clearmont
+	3781	Clearview Acres	41.5805200	-109.2768000	US	WY	0	0	Clearview Acres	Clearview Acres	Clearview Acres	Clearview Acres	Clearview Acres	Clearview Acres
+	3781	Cody	44.5263400	-109.0565300	US	WY	0	0	Cody	Коди	Cody	Cody	Cody	Cody
+	3781	Cokeville	42.0824400	-110.9551900	US	WY	0	0	Cokeville	Cokeville	Cokeville	Cokeville	Cokeville	Cokeville
+	3781	Cora	42.9396600	-109.9796000	US	WY	0	0	Cora	Cora	Cora	Cora	Cora	Cora
+	3781	Cowley	44.8832900	-108.4695700	US	WY	0	0	Cowley	Cowley	Cowley	Cowley	Cowley	Cowley
+	3781	Crowheart	43.3096800	-109.1940200	US	WY	0	0	Crowheart	Crowheart	Crowheart	Crowheart	Crowheart	Crowheart
+	3781	Daniel	42.8643900	-110.0709900	US	WY	0	0	Daniel	Daniel	Daniel	Daniel	Daniel	Daniel
+	3781	Dayton	44.8752500	-107.2623000	US	WY	0	0	Dayton	Дейтон	Dayton	Dayton	Dayton	Dayton
+	3781	Deaver	44.8885600	-108.5979000	US	WY	0	0	Deaver	Deaver	Deaver	Deaver	Deaver	Deaver
+	3781	Diamondville	41.7793900	-110.5385000	US	WY	0	0	Diamondville	Diamondville	Diamondville	Diamondville	Diamondville	Diamondville
+	3781	Dixon	41.0333000	-107.5356200	US	WY	0	0	Dixon	Dixon	Dixon	Dixon	Dixon	Dixon
+	3781	Douglas	42.7596900	-105.3822100	US	WY	0	0	Douglas	Дуглас	Douglas	Douglas	Douglas	Douglas
+	3781	Dubois	43.5335600	-109.6304300	US	WY	0	0	Dubois	Dubois	Dubois	Dubois	Dubois	Dubois
+	3781	East Thermopolis	43.6463400	-108.1981500	US	WY	0	0	East Thermopolis	East Thermopolis	East Thermopolis	East Thermopolis	East Thermopolis	East Thermopolis
+	3781	Eden	42.0507900	-109.4370700	US	WY	0	0	Eden	Eden	Eden	Eden	Eden	Eden
+	3781	Edgerton	43.4130300	-106.2494700	US	WY	0	0	Edgerton	Edgerton	Edgerton	Edgerton	Edgerton	Edgerton
+	3781	Elk Mountain	41.6874600	-106.4133500	US	WY	0	0	Elk Mountain	Elk Mountain	Elk Mountain	Elk Mountain	Elk Mountain	Elk Mountain
+	3781	Encampment	41.2094100	-106.7897600	US	WY	0	0	Encampment	Encampment	Encampment	Encampment	Encampment	Encampment
+	3781	Esterbrook	42.4116400	-105.3608200	US	WY	0	0	Esterbrook	Esterbrook	Esterbrook	Esterbrook	Esterbrook	Esterbrook
+	3781	Ethete	43.0249600	-108.7726200	US	WY	0	0	Ethete	Ethete	Ethete	Ethete	Ethete	Ethete
+	3781	Etna	43.0332500	-111.0110500	US	WY	0	0	Etna	Etna	Etna	Etna	Etna	Etna
+	3781	Evanston	41.2682800	-110.9632400	US	WY	0	0	Evanston	Эванстон	Evanston	Evanston	Evanston	Evanston
+	3781	Evansville	42.8599700	-106.2683600	US	WY	0	0	Evansville	Эвансвилл	Evansville	Evansville	Evansville	Evansville
+	3781	Fairview	42.6885400	-110.9824300	US	WY	0	0	Fairview	Fairview	Fairview	Fairview	Fairview	Fairview
+	3781	Farson	42.1105100	-109.4409600	US	WY	0	0	Farson	Farson	Farson	Farson	Farson	Farson
+	3781	Fontenelle	41.9849500	-110.0590400	US	WY	0	0	Fontenelle	Fontenelle	Fontenelle	Fontenelle	Fontenelle	Fontenelle
+	3781	Fort Bridger	41.3166200	-110.3843300	US	WY	0	0	Fort Bridger	Fort Bridger	Fort Bridger	Fort Bridger	Fort Bridger	Fort Bridger
+	3781	Fort Laramie	42.2127400	-104.5171800	US	WY	0	0	Fort Laramie	Fort Laramie	Fort Laramie	Fort Laramie	Fort Laramie	Fort Laramie
+	3781	Fort Washakie	43.0063500	-108.8823500	US	WY	0	0	Fort Washakie	Fort Washakie	Fort Washakie	Fort Washakie	Fort Washakie	Fort Washakie
+	3781	Foxpark	41.0794200	-106.1525200	US	WY	0	0	Foxpark	Foxpark	Foxpark	Foxpark	Foxpark	Foxpark
+	3781	Frannie	44.9691200	-108.6215200	US	WY	0	0	Frannie	Frannie	Frannie	Frannie	Frannie	Frannie
+	3781	Garland	44.7796700	-108.6604000	US	WY	0	0	Garland	Гирлянда	Garland	Garland	Garland	Garland
+	3781	Gillette	44.2910900	-105.5022200	US	WY	0	0	Gillette	Джиллетт	Gillette	Gillette	Gillette	Gillette
+	3781	Glendo	42.5027500	-105.0260800	US	WY	0	0	Glendo	Glendo	Glendo	Glendo	Glendo	Glendo
+	3781	Glenrock	42.8613600	-105.8722300	US	WY	0	0	Glenrock	Glenrock	Glenrock	Glenrock	Glenrock	Glenrock
+	3781	Granger	41.5935700	-109.9687600	US	WY	0	0	Granger	Granger	Granger	Granger	Granger	Granger
+	3781	Green River	41.5285800	-109.4662500	US	WY	0	0	Green River	Грин-Ривер	Green River	Green River	Green River	Green River
+	3781	Greybull	44.4891200	-108.0562100	US	WY	0	0	Greybull	Greybull	Greybull	Greybull	Greybull	Greybull
+	3781	Grover	42.7915900	-110.9365900	US	WY	0	0	Grover	Grover	Grover	Grover	Grover	Grover
+	3781	Guernsey	42.2696900	-104.7416300	US	WY	0	0	Guernsey	Guernsey	Guernsey	Guernsey	Guernsey	Guernsey
+	3781	Hanna	41.8699600	-106.5619700	US	WY	0	0	Hanna	Hanna	Hanna	Hanna	Hanna	Hanna
+	3781	Hartrandt	42.8874700	-106.3475300	US	WY	0	0	Hartrandt	Hartrandt	Hartrandt	Hartrandt	Hartrandt	Hartrandt
+	3781	Hartville	42.3274700	-104.7252400	US	WY	0	0	Hartville	Hartville	Hartville	Hartville	Hartville	Hartville
+	3781	Hawk Springs	41.7860800	-104.2646800	US	WY	0	0	Hawk Springs	Hawk Springs	Hawk Springs	Hawk Springs	Hawk Springs	Hawk Springs
+	3781	Hill View Heights	43.8258100	-104.1599400	US	WY	0	0	Hill View Heights	Hill View Heights	Hill View Heights	Hill View Heights	Hill View Heights	Hill View Heights
+	3781	Hillsdale	41.2127600	-104.4774600	US	WY	0	0	Hillsdale	Hillsdale	Hillsdale	Hillsdale	Hillsdale	Hillsdale
+	3781	Hoback	43.2818700	-110.7838100	US	WY	0	0	Hoback	Hoback	Hoback	Hoback	Hoback	Hoback
+	3781	Homa Hills	42.9799700	-106.3608600	US	WY	0	0	Homa Hills	Homa Hills	Homa Hills	Homa Hills	Homa Hills	Homa Hills
+	3781	Hudson	42.9060700	-108.5834500	US	WY	0	0	Hudson	Гудзон	Hudson	Hudson	Hudson	Hudson
+	3781	Hulett	44.6827600	-104.6016300	US	WY	0	0	Hulett	Hulett	Hulett	Hulett	Hulett	Hulett
+	3781	Huntley	41.9327400	-104.1460600	US	WY	0	0	Huntley	Huntley	Huntley	Huntley	Huntley	Huntley
+	3781	Hyattville	44.2457900	-107.6028600	US	WY	0	0	Hyattville	Hyattville	Hyattville	Hyattville	Hyattville	Hyattville
+	3781	Jackson	43.4799300	-110.7624300	US	WY	0	0	Jackson	Джексон	Jackson	Jackson	Jackson	Jackson
+	3781	James Town	41.5552400	-109.5168000	US	WY	0	0	James Town	James Town	James Town	James Town	James Town	James Town
+	3781	Jeffrey City	42.4946800	-107.8273000	US	WY	0	0	Jeffrey City	Jeffrey City	Jeffrey City	Jeffrey City	Jeffrey City	Jeffrey City
+	3781	Johnstown	43.1182900	-108.7015100	US	WY	0	0	Johnstown	Джонстаун	Johnstown	Johnstown	Johnstown	Johnstown
+	3781	Kaycee	43.7102500	-106.6389300	US	WY	0	0	Kaycee	Kaycee	Kaycee	Kaycee	Kaycee	Kaycee
+	3781	Kelly	43.6229900	-110.6235400	US	WY	0	0	Kelly	Kelly	Kelly	Kelly	Kelly	Kelly
+	3781	Kemmerer	41.7924500	-110.5376700	US	WY	0	0	Kemmerer	Kemmerer	Kemmerer	Kemmerer	Kemmerer	Kemmerer
+	3781	Kirby	43.8044000	-108.1814900	US	WY	0	0	Kirby	Kirby	Kirby	Kirby	Kirby	Kirby
+	3781	La Barge	42.2618900	-110.1946000	US	WY	0	0	La Barge	La Barge	La Barge	La Barge	La Barge	La Barge
+	3781	La Grange	41.6402500	-104.1638400	US	WY	0	0	La Grange	La Grange	La Grange	La Grange	La Grange	La Grange
+	3781	Lance Creek	43.0324700	-104.6419000	US	WY	0	0	Lance Creek	Lance Creek	Lance Creek	Lance Creek	Lance Creek	Lance Creek
+	3781	Lander	42.8330100	-108.7306700	US	WY	0	0	Lander	Ландер	Lander	Lander	Lander	Lander
+	3781	Laramie	41.3113700	-105.5911000	US	WY	0	0	Laramie	Ларами	Laramie	Laramie	Laramie	Laramie
+	3781	Lingle	42.1363500	-104.3455100	US	WY	0	0	Lingle	Lingle	Lingle	Lingle	Lingle	Lingle
+	3781	Little America	41.5435700	-109.8590300	US	WY	0	0	Little America	Little America	Little America	Little America	Little America	Little America
+	3781	Lonetree	41.0544000	-110.1540400	US	WY	0	0	Lonetree	Lonetree	Lonetree	Lonetree	Lonetree	Lonetree
+	3781	Lost Springs	42.7655200	-104.9252500	US	WY	0	0	Lost Springs	Lost Springs	Lost Springs	Lost Springs	Lost Springs	Lost Springs
+	3781	Lovell	44.8374500	-108.3895600	US	WY	0	0	Lovell	Lovell	Lovell	Lovell	Lovell	Lovell
+	3781	Lucerne	43.7349600	-108.1764900	US	WY	0	0	Lucerne	Lucerne	Lucerne	Lucerne	Lucerne	Lucerne
+	3781	Lusk	42.7624700	-104.4521700	US	WY	0	0	Lusk	Lusk	Lusk	Lusk	Lusk	Lusk
+	3781	Lyman	41.3274500	-110.2929300	US	WY	0	0	Lyman	Lyman	Lyman	Lyman	Lyman	Lyman
+	3781	Mammoth	44.9766000	-110.7016000	US	WY	0	0	Mammoth	Mammoth	Mammoth	Mammoth	Mammoth	Mammoth
+	3781	Manderson	44.2694000	-107.9639900	US	WY	0	0	Manderson	Manderson	Manderson	Manderson	Manderson	Manderson
+	3781	Manville	42.7791300	-104.6177400	US	WY	0	0	Manville	Manville	Manville	Manville	Manville	Manville
+	3781	Marbleton	42.5535500	-110.1093200	US	WY	0	0	Marbleton	Marbleton	Marbleton	Marbleton	Marbleton	Marbleton
+	3781	McKinnon	41.0277300	-109.9359900	US	WY	0	0	McKinnon	McKinnon	McKinnon	McKinnon	McKinnon	McKinnon
+	3781	Meadow Acres	42.8577400	-106.0933500	US	WY	0	0	Meadow Acres	Meadow Acres	Meadow Acres	Meadow Acres	Meadow Acres	Meadow Acres
+	3781	Meadow Lark Lake	44.1755200	-107.2534000	US	WY	0	0	Meadow Lark Lake	Meadow Lark Lake	Meadow Lark Lake	Meadow Lark Lake	Meadow Lark Lake	Meadow Lark Lake
+	3781	Medicine Bow	41.8955200	-106.2047400	US	WY	0	0	Medicine Bow	Medicine Bow	Medicine Bow	Medicine Bow	Medicine Bow	Medicine Bow
+	3781	Meeteetse	44.1571800	-108.8715200	US	WY	0	0	Meeteetse	Meeteetse	Meeteetse	Meeteetse	Meeteetse	Meeteetse
+	3781	Midwest	43.4113600	-106.2800200	US	WY	0	0	Midwest	Midwest	Midwest	Midwest	Midwest	Midwest
+	3781	Mills	42.8405200	-106.3658600	US	WY	0	0	Mills	Mills	Mills	Mills	Mills	Mills
+	3781	Moorcroft	44.2633100	-104.9502500	US	WY	0	0	Moorcroft	Moorcroft	Moorcroft	Moorcroft	Moorcroft	Moorcroft
+	3781	Moose Wilson Road	43.5252100	-110.8446600	US	WY	0	0	Moose Wilson Road	Moose Wilson Road	Moose Wilson Road	Moose Wilson Road	Moose Wilson Road	Moose Wilson Road
+	3781	Mountain View	42.8535800	-106.3886400	US	WY	0	0	Mountain View	Маунтин-Вью	Mountain View	Mountain View	Mountain View	Mountain View
+	3781	Mountain View	41.2688400	-110.3398800	US	WY	0	0	Mountain View	Маунтин-Вью	Mountain View	Mountain View	Mountain View	Mountain View
+	3781	Newcastle	43.8547000	-104.2049400	US	WY	0	0	Newcastle	Newcastle	Newcastle	Newcastle	Newcastle	Newcastle
+	3781	North Rock Springs	41.6435800	-109.2656800	US	WY	0	0	North Rock Springs	North Rock Springs	North Rock Springs	North Rock Springs	North Rock Springs	North Rock Springs
+	3781	Opal	41.7691200	-110.3260000	US	WY	0	0	Opal	Opal	Opal	Opal	Opal	Opal
+	3781	Orin	42.6533000	-105.1924800	US	WY	0	0	Orin	Orin	Orin	Orin	Orin	Orin
+	3781	Osage	43.9808100	-104.4219000	US	WY	0	0	Osage	Osage	Osage	Osage	Osage	Osage
+	3781	Osmond	42.6829800	-110.9321400	US	WY	0	0	Osmond	Osmond	Osmond	Osmond	Osmond	Osmond
+	3781	Owl Creek	43.7810700	-108.5670600	US	WY	0	0	Owl Creek	Owl Creek	Owl Creek	Owl Creek	Owl Creek	Owl Creek
+	3781	Parkman	44.9569100	-107.3325800	US	WY	0	0	Parkman	Parkman	Parkman	Parkman	Parkman	Parkman
+	3781	Pavillion	43.2446800	-108.6901200	US	WY	0	0	Pavillion	Pavillion	Pavillion	Pavillion	Pavillion	Pavillion
+	3781	Pine Bluffs	41.1819300	-104.0691200	US	WY	0	0	Pine Bluffs	Pine Bluffs	Pine Bluffs	Pine Bluffs	Pine Bluffs	Pine Bluffs
+	3781	Pine Haven	44.3577600	-104.8105300	US	WY	0	0	Pine Haven	Pine Haven	Pine Haven	Pine Haven	Pine Haven	Pine Haven
+	3781	Pinedale	42.8666100	-109.8609900	US	WY	0	0	Pinedale	Pinedale	Pinedale	Pinedale	Pinedale	Pinedale
+	3781	Point of Rocks	41.6802400	-108.7856700	US	WY	0	0	Point of Rocks	Point of Rocks	Point of Rocks	Point of Rocks	Point of Rocks	Point of Rocks
+	3781	Powder River	43.0321900	-106.9872800	US	WY	0	0	Powder River	Powder River	Powder River	Powder River	Powder River	Powder River
+	3781	Powell	44.7538400	-108.7573500	US	WY	0	0	Powell	Powell	Powell	Powell	Powell	Powell
+	3781	Purple Sage	41.5508000	-109.3240200	US	WY	0	0	Purple Sage	Purple Sage	Purple Sage	Purple Sage	Purple Sage	Purple Sage
+	3781	Rafter J Ranch	43.4260400	-110.7990900	US	WY	0	0	Rafter J Ranch	Rafter J Ranch	Rafter J Ranch	Rafter J Ranch	Rafter J Ranch	Rafter J Ranch
+	3781	Ralston	44.7160600	-108.8645800	US	WY	0	0	Ralston	Ralston	Ralston	Ralston	Ralston	Ralston
+	3781	Ranchester	44.9088600	-107.1634100	US	WY	0	0	Ranchester	Ranchester	Ranchester	Ranchester	Ranchester	Ranchester
+	3781	Ranchettes	41.2185900	-104.7902500	US	WY	0	0	Ranchettes	Ranchettes	Ranchettes	Ranchettes	Ranchettes	Ranchettes
+	3781	Rawlins	41.7910700	-107.2386600	US	WY	0	0	Rawlins	Роулинс	Rawlins	Rawlins	Rawlins	Rawlins
+	3781	Red Butte	42.8060800	-106.4342000	US	WY	0	0	Red Butte	Red Butte	Red Butte	Red Butte	Red Butte	Red Butte
+	3781	Reliance	41.6691300	-109.1970700	US	WY	0	0	Reliance	Reliance	Reliance	Reliance	Reliance	Reliance
+	3781	Riverside	41.2174700	-106.7789300	US	WY	0	0	Riverside	Риверсайд	Riverside	Riverside	Riverside	Riverside
+	3781	Riverton	43.0249600	-108.3801000	US	WY	0	0	Riverton	Ривертон	Riverton	Riverton	Riverton	Riverton
+	3781	Robertson	41.1852300	-110.4132100	US	WY	0	0	Robertson	Robertson	Robertson	Robertson	Robertson	Robertson
+	3781	Rock River	41.7413600	-105.9747300	US	WY	0	0	Rock River	Rock River	Rock River	Rock River	Rock River	Rock River
+	3781	Rock Springs	41.5874600	-109.2029000	US	WY	0	0	Rock Springs	Рок-Спрингс	Rock Springs	Rock Springs	Rock Springs	Rock Springs
+	3781	Rolling Hills	42.9027400	-105.8441700	US	WY	0	0	Rolling Hills	Rolling Hills	Rolling Hills	Rolling Hills	Rolling Hills	Rolling Hills
+	3781	Ryan Park	41.3213600	-106.5089200	US	WY	0	0	Ryan Park	Ryan Park	Ryan Park	Ryan Park	Ryan Park	Ryan Park
+	3781	Saratoga	41.4549600	-106.8064300	US	WY	0	0	Saratoga	Saratoga	Saratoga	Saratoga	Saratoga	Saratoga
+	3781	Shell	44.5355200	-107.7798100	US	WY	0	0	Shell	Shell	Shell	Shell	Shell	Shell
+	3781	Sheridan	44.7971900	-106.9561800	US	WY	0	0	Sheridan	Шеридан	Sheridan	Sheridan	Sheridan	Sheridan
+	3781	Shoshoni	43.2357900	-108.1103700	US	WY	0	0	Shoshoni	Shoshoni	Shoshoni	Shoshoni	Shoshoni	Shoshoni
+	3781	Sinclair	41.7749600	-107.1131000	US	WY	0	0	Sinclair	Sinclair	Sinclair	Sinclair	Sinclair	Sinclair
+	3781	Slater	41.8730300	-104.8199700	US	WY	0	0	Slater	Slater	Slater	Slater	Slater	Slater
+	3781	Sleepy Hollow	44.2410900	-105.4222200	US	WY	0	0	Sleepy Hollow	Sleepy Hollow	Sleepy Hollow	Sleepy Hollow	Sleepy Hollow	Sleepy Hollow
+	3781	Smoot	42.6204800	-110.9143600	US	WY	0	0	Smoot	Smoot	Smoot	Smoot	Smoot	Smoot
+	3781	South Flat	43.9296800	-108.0037100	US	WY	0	0	South Flat	South Flat	South Flat	South Flat	South Flat	South Flat
+	3781	South Greeley	41.0969300	-104.8063600	US	WY	0	0	South Greeley	South Greeley	South Greeley	South Greeley	South Greeley	South Greeley
+	3781	South Park	43.4221500	-110.7932600	US	WY	0	0	South Park	South Park	South Park	South Park	South Park	South Park
+	3781	Story	44.5746900	-106.8867300	US	WY	0	0	Story	Story	Story	Story	Story	Story
+	3781	Sundance	44.4063700	-104.3757800	US	WY	0	0	Sundance	Sundance	Sundance	Sundance	Sundance	Sundance
+	3781	Superior	41.7694100	-108.9765100	US	WY	0	0	Superior	Superior	Superior	Superior	Superior	Superior
+	3781	Sweeney Ranch	41.4796900	-109.0112300	US	WY	0	0	Sweeney Ranch	Sweeney Ranch	Sweeney Ranch	Sweeney Ranch	Sweeney Ranch	Sweeney Ranch
+	3781	Ten Sleep	44.0341300	-107.4511900	US	WY	0	0	Ten Sleep	Ten Sleep	Ten Sleep	Ten Sleep	Ten Sleep	Ten Sleep
+	3781	Teton Village	43.5879800	-110.8279900	US	WY	0	0	Teton Village	Teton Village	Teton Village	Teton Village	Teton Village	Teton Village
+	3781	Thayne	42.9207600	-111.0021600	US	WY	0	0	Thayne	Thayne	Thayne	Thayne	Thayne	Thayne
+	3781	Thermopolis	43.6460700	-108.2120400	US	WY	0	0	Thermopolis	Thermopolis	Thermopolis	Thermopolis	Thermopolis	Thermopolis
+	3781	Torrington	42.0624600	-104.1843900	US	WY	0	0	Torrington	Torrington	Torrington	Torrington	Torrington	Torrington
+	3781	Turnerville	42.8588100	-110.9018700	US	WY	0	0	Turnerville	Turnerville	Turnerville	Turnerville	Turnerville	Turnerville
+	3781	Upton	44.0997000	-104.6280200	US	WY	0	0	Upton	Upton	Upton	Upton	Upton	Upton
+	3781	Urie	41.3160600	-110.3362700	US	WY	0	0	Urie	Urie	Urie	Urie	Urie	Urie
+	3781	Van Tassell	42.6627400	-104.0882700	US	WY	0	0	Van Tassell	Van Tassell	Van Tassell	Van Tassell	Van Tassell	Van Tassell
+	3781	Veteran	41.9644100	-104.3805100	US	WY	0	0	Veteran	Veteran	Veteran	Veteran	Veteran	Veteran
+	3781	Wamsutter	41.6730100	-107.9792500	US	WY	0	0	Wamsutter	Wamsutter	Wamsutter	Wamsutter	Wamsutter	Wamsutter
+	3781	Washakie Ten	44.0955100	-107.9087000	US	WY	0	0	Washakie Ten	Washakie Ten	Washakie Ten	Washakie Ten	Washakie Ten	Washakie Ten
+	3781	Washam	41.0166200	-109.7696000	US	WY	0	0	Washam	Washam	Washam	Washam	Washam	Washam
+	3781	West River	44.0985700	-107.9534300	US	WY	0	0	West River	West River	West River	West River	West River	West River
+	3781	Westview Circle	42.0641400	-105.0647000	US	WY	0	0	Westview Circle	Westview Circle	Westview Circle	Westview Circle	Westview Circle	Westview Circle
+	3781	Wheatland	42.0540700	-104.9529500	US	WY	0	0	Wheatland	Wheatland	Wheatland	Wheatland	Wheatland	Wheatland
+	3781	Whiting	42.0121900	-104.9605300	US	WY	0	0	Whiting	Whiting	Whiting	Whiting	Whiting	Whiting
+	3781	Wilson	43.5007600	-110.8752100	US	WY	0	0	Wilson	Уилсон	Wilson	Wilson	Wilson	Wilson
+	3781	Winchester	43.8599600	-108.1606500	US	WY	0	0	Winchester	Winchester	Winchester	Winchester	Winchester	Winchester
+	3781	Worland	44.0169000	-107.9553700	US	WY	0	0	Worland	Worland	Worland	Worland	Worland	Worland
+	3781	Wright	43.7512400	-105.4920100	US	WY	0	0	Wright	Райт	Wright	Wright	Wright	Wright
+	3781	Y-O Ranch	42.0308000	-104.9399700	US	WY	0	0	Y-O Ranch	Y-O Ranch	Y-O Ranch	Y-O Ranch	Y-O Ranch	Y-O Ranch
+	3781	Yoder	41.9169100	-104.2957900	US	WY	0	0	Yoder	Yoder	Yoder	Yoder	Yoder	Yoder
+	3781	Vista West	42.8668800	-106.4347100	US	WY	0	0	Vista West	Vista West	Vista West	Vista West	Vista West	Vista West
+	3781	Alpine Northeast	43.1942600	-111.0074400	US	WY	0	0	Alpine Northeast	Alpine Northeast	Alpine Northeast	Alpine Northeast	Alpine Northeast	Alpine Northeast
+	3781	Alpine Northwest	43.1805000	-111.0332100	US	WY	0	0	Alpine Northwest	Alpine Northwest	Alpine Northwest	Alpine Northwest	Alpine Northwest	Alpine Northwest
+	3781	Antelope Valley-Crestview	44.2248800	-105.4740900	US	WY	0	0	Antelope Valley-Crestview	Antelope Valley-Crestview	Antelope Valley-Crestview	Antelope Valley-Crestview	Antelope Valley-Crestview	Antelope Valley-Crestview
+	3781	Fox Farm-College	41.1120300	-104.7854600	US	WY	0	0	Fox Farm-College	Fox Farm-College	Fox Farm-College	Fox Farm-College	Fox Farm-College	Fox Farm-College
+	3781	Lakeview North	42.0970700	-104.9586900	US	WY	0	0	Lakeview North	Lakeview North	Lakeview North	Lakeview North	Lakeview North	Lakeview North
+	3781	Oakley	41.7520500	-110.5279900	US	WY	0	0	Oakley	Oakley	Oakley	Oakley	Oakley	Oakley
+	3781	Warren Air Force Base	41.1492700	-104.8621600	US	WY	0	0	Warren Air Force Base	Warren Air Force Base	Warren Air Force Base	Warren Air Force Base	Warren Air Force Base	Warren Air Force Base
+	3781	Woods Landing-Jelm	41.0990100	-106.0307100	US	WY	0	0	Woods Landing-Jelm	Woods Landing-Jelm	Woods Landing-Jelm	Woods Landing-Jelm	Woods Landing-Jelm	Woods Landing-Jelm
+	3781	Taylor	42.0702300	-110.9899300	US	WY	0	0	Taylor	Taylor	Taylor	Taylor	Taylor	Taylor

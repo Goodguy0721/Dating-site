@@ -1,0 +1,24 @@
+	1055	Sukuta	13.4103300	-16.7081500	GM	05	0	0	Sukuta	Sukuta	Sukuta	Sukuta	Sukuta	Sukuta
+	1055	Somita	13.2058300	-16.3055600	GM	05	0	0	Somita	Somita	Somita	Somita	Somita	Somita
+	1055	Sintet	13.2333300	-15.8166700	GM	05	0	0	Sintet	Sintet	Sintet	Sintet	Sintet	Sintet
+	1055	Sanneh Kunda	13.2333300	-15.8666700	GM	05	0	0	Sanneh Kunda	Sanneh Kunda	Sanneh Kunda	Sanneh Kunda	Sanneh Kunda	Sanneh Kunda
+	1055	Paima	13.2500000	-16.3000000	GM	05	0	0	Paima	Paima	Paima	Paima	Paima	Paima
+	1055	Nyaffy	13.2000000	-16.0000000	GM	05	0	0	Nyaffy	Nyaffy	Nyaffy	Nyaffy	Nyaffy	Nyaffy
+	1055	Nema Kunku	13.2500000	-15.8833300	GM	05	0	0	Nema Kunku	Nema Kunku	Nema Kunku	Nema Kunku	Nema Kunku	Nema Kunku
+	1055	Mayork	13.2333300	-15.9666700	GM	05	0	0	Mayork	Mayork	Mayork	Mayork	Mayork	Mayork
+	1055	Kansambou	13.1666700	-15.8000000	GM	05	0	0	Kansambou	Kansambou	Kansambou	Kansambou	Kansambou	Kansambou
+	1055	Kanjibat	13.2333300	-15.9166700	GM	05	0	0	Kanjibat	Kanjibat	Kanjibat	Kanjibat	Kanjibat	Kanjibat
+	1055	Kalang	13.2500000	-15.9500000	GM	05	0	0	Kalang	Kalang	Kalang	Kalang	Kalang	Kalang
+	1055	Jorem	13.2166700	-15.9666700	GM	05	0	0	Jorem	Jorem	Jorem	Jorem	Jorem	Jorem
+	1055	Jombiya	13.2166700	-16.7333300	GM	05	0	0	Jombiya	Jombiya	Jombiya	Jombiya	Jombiya	Jombiya
+	1055	Jatikoi	13.2833300	-15.9833300	GM	05	0	0	Jatikoi	Jatikoi	Jatikoi	Jatikoi	Jatikoi	Jatikoi
+	1055	Jarrol	13.2441200	-15.8454600	GM	05	0	0	Jarrol	Jarrol	Jarrol	Jarrol	Jarrol	Jarrol
+	1055	Gunjur	13.2019400	-16.7338900	GM	05	0	0	Gunjur	Gunjur	Gunjur	Gunjur	Gunjur	Gunjur
+	1055	Chabai	13.2000000	-15.8666700	GM	05	0	0	Chabai	Chabai	Chabai	Chabai	Chabai	Chabai
+	1055	Bulengart	13.2000000	-15.9166700	GM	05	0	0	Bulengart	Bulengart	Bulengart	Bulengart	Bulengart	Bulengart
+	1055	Bulanjor	13.2797200	-16.2483300	GM	05	0	0	Bulanjor	Bulanjor	Bulanjor	Bulanjor	Bulanjor	Bulanjor
+	1055	Brumen	13.2500000	-15.8333300	GM	05	0	0	Brumen	Brumen	Brumen	Brumen	Brumen	Brumen
+	1055	Brikama	13.2713600	-16.6494400	GM	05	0	0	Brikama	Брикаме	Brikama	Brikama	Brikama	Brikama
+	1055	Bondali Tenda	13.2500000	-15.9000000	GM	05	0	0	Bondali Tenda	Bondali Tenda	Bondali Tenda	Bondali Tenda	Bondali Tenda	Bondali Tenda
+	1055	Bajiran	13.2833300	-15.9666700	GM	05	0	0	Bajiran	Bajiran	Bajiran	Bajiran	Bajiran	Bajiran
+	1055	Abuko	13.4041700	-16.6558300	GM	05	0	0	Abuko	Abuko	Abuko	Abuko	Abuko	Abuko

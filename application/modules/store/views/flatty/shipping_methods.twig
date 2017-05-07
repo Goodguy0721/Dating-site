@@ -1,0 +1,69 @@
+<div class="shipping-block">
+	<h1>
+        {% helper lang.l('header_shipping', 'store') %}
+    </h1>
+	{% if shippings is not empty %}
+        {% set shipping_id = preorders.id_shipping %}
+        <div id="shipping_select" class="pointer">
+            <div id="shipping_name">
+                {% if shipping_id %}
+                    <span class="shipping_price">
+                        {% helper start.currency_format_output({
+                            'value': shippings[shipping_id].price
+                        }) %}
+                    </span>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-truck"></i> {{ preorders.shipping_name }}</button>
+                {% else %}
+                    <span class="shipping_price"></span>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-truck"></i> {% helper lang.l('field_shipping_method', 'store') %}</button>
+                {% endif %}
+            </div>
+        </div>
+        <div id="shipping_methods" class="hide">
+            <div class="clearfix">
+                <div class="col-xs-12 no-padding-left shipping-methods-header">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">{% helper lang.l('field_shipping_name', 'store') %}</div>
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">{% helper lang.l('field_shipping_description', 'store') %}</div>
+                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">{% helper lang.l('field_shipping_price', 'store') %}</div>
+                </div>
+                {% for item in shippings %}
+                    <div id="shipping_method_{{ item.id }}" class="col-xs-12 no-padding-left list shipping_methods shipping-methods" data-price="{{ item.price }}" data-shippingid="{{ item.id }}" >
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">{{ item.name }}</div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                                {% if item.description is not empty %}
+                                    <div>
+                                        ({{ item.description|nl2br }})
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                {% if item.price != 0 %}
+                                    <span class="shipping_price">
+                                        {% helper start.currency_format_output({
+                                            'value': item.price
+                                        }) %}
+                                    </span>
+                                {% else %}
+                                    <span class="shipping_price">
+                                        {% helper lang.l('field_free_shipping', 'store') %}
+                                    </span>
+                                {% endif %}&nbsp;
+                            </div>
+                            <div class="col-xs-12 no-padding-left edit-shipping-method"><i class="fa fa-pencil"></i>&nbsp;{% helper lang.l('link_edit_shipping', 'store') %}</div>
+                    </div>
+                {% endfor %}
+                <div class="col-xs-12 no-padding-left shipping_methods">
+                    <input type="button" value="{% helper lang.l('btn_select', 'store') %}" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-xs-12 no-padding-left">
+            {% helper lang.l('error_delivery_not_carried', 'store') %}&nbsp;
+            <a href="{{ site_url }}contact_us/index/"
+               title="{% helper lang.l('header_contact_us_form', 'contact_us') %}">
+                {% helper lang.l('header_contact_us_form', 'contact_us') %}
+            </a>
+        </div>
+	{% endif %}
+</div>

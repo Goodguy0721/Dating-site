@@ -1,0 +1,30 @@
+{% if guided_menu %}
+    <div class="row" style="border-bottom:2px solid #e6e9ed">
+{#        <div class="col-xs-12">#}
+            <div class="guide_link" id="btn-guide_page">
+                <i class="fa fa-sliders pr5" aria-hidden="true"></i>
+                {% helper lang.l('admin_btn_guide_page', 'guided_setup') %}
+            </div>
+{#        </div>#}
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+                loadScripts(
+                        "{% helper utils.jscript('guided_setup', 'guided_setup.js', 'path') %}",
+                        function(){
+                                guided_setup = new GuidedSetup({
+                                        siteUrl: site_url,
+                                        navBlock: '#guided-navigation',
+                                        guidedMenuId: {{ guided_menu.id }},
+                                        frameName: '{{ guided_menu.gid }}',
+                                });
+                        },
+                        ['guided_setup'],
+                        {async: false}
+                );
+
+        });
+    </script>
+
+{% endif %}

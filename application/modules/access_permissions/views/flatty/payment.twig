@@ -1,0 +1,24 @@
+<div class="content-value">
+    <div class="row">        
+        <div class="col-sm-12 col-md-12">
+            <div class="center congratulations-block">
+                <h1>{% helper lang.l('success_congratulations', 'access_permissions') %}</h1>
+                <div class="name-block">
+                    {% helper lang.l('success_apply', 'access_permissions') %}
+                    <span class="title-block">{{ result.data.current_name }}</span>
+                </div>
+                <div class="description-block">
+                    {% if result.data.current_description is not empty %}
+                        <em>
+                            <i class="fa fa-info" aria-hidden="true"></i>
+                            {{ result.data.current_description }}
+                        </em>
+                    {% endif %}
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-close" data-action="close">{% helper lang.l('btn_close', 'start') %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

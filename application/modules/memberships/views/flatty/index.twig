@@ -1,0 +1,9 @@
+{% include '@app/header.twig' %}
+
+<h1>
+    {% helper lang.l('memberships', 'memberships') %}
+</h1>
+
+{% helper memberships.memberships_list() %}
+
+{% include '@app/footer.twig' %}

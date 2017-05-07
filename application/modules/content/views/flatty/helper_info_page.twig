@@ -1,0 +1,35 @@
+<div class="content-info-page-block">
+	<h2>
+		{{ info_page_data.data.title }}
+	</h2>
+	{% if info_page_data.data.img %}
+        <div class="media">
+            <a href="{% helper seo.seolink('content', 'view', info_page_data.data) %}" class="thumbnail pull-left">
+                <img src="{{ info_page_data.data.media.img.thumbs.big }}" alt="" class="img-responsive">
+            </a>
+            <div class="media-body text-content">
+                {% if info_page_data.data.annotation %}
+                    {{ info_page_data.data.annotation }}
+                {% else %}
+                    {% helper utils.truncate(info_page_data.data.content, 255) %}
+                {% endif %}
+                <br><br>
+                <a href="{% helper seo.seolink('content', 'view', info_page_data.data) %}">
+                    {% helper lang.l('link_view_more', 'content') %}
+                </a>
+            </div>
+        </div>
+	{% else %}
+        <div class="text-content text">
+            {% if info_page_data.data.annotation %}
+                {{ info_page_data.data.annotation }}
+            {% else %}
+                {{ info_page_data.data.content|truncate(255) }}
+            {% endif %}
+            <br><br>
+            <a href="{% helper seo.seolink('content', 'view', info_page_data.data) %}">
+                {% helper lang.l('link_view_more', 'content') %}
+            </a>
+        </div>
+	{% endif %}
+</div>

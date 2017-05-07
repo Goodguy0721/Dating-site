@@ -1,0 +1,43 @@
+{% include '@app/header.twig' with {site_page: 'error'} %}
+
+<style>
+  h1 {
+    margin: .5em 0;
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+</style>
+<div class="col-xs-12">
+  <div class="quick-exit-btn"><a href="https://www.google.com">Quick Exit</a></div>
+  <section class="container main-content group" role="main" style="margin: 0 -60px;">
+    <article id="post-404-error" class="group">
+      <img height="480px" width="480px" class="pull-left" src="{{ site_url }}application/views/flatty/img/eTMj9qGTn.jpeg">
+      <p>&nbsp;</p><h1>Uh Oh..... This is embarrassing.</h1>
+      <p>&nbsp;</p><h1 style="line-height:1.5;"> But if you are looking for love, support or just want to meet other positive people, you are in the right place.</h1>
+      <br><br>
+      {% if auth_type != 'user' %}
+      <span><a href="{{ site_url }}users/registration" class="btn btn-primary btn-register" style="margin-right: 30px;"> Register here </a>
+        Alreay a member?
+        <a href="{{ site_url }}users/login_form" class="btn btn-primary"> Login </a>
+      </span>
+      {% endif %}
+    </article>
+  </section>
+
+    {#<div class="fhf-content">
+        <div class="fhf-title">
+            {% helper lang.l('fhf_title', 'start') %}
+        </div>
+        <div class="fhf-text">
+            {% helper lang.l('fhf_text', 'start') %}
+        </div>
+        <div class="fhf-link">
+            <a href="/">{% helper lang.l('fhf_back_link', 'start') %}</a>
+        </div>
+    </div>
+
+    {% helper site_map.getSitemap() %}#}
+</div>
+
+
+{% include '@app/footer.twig' %}

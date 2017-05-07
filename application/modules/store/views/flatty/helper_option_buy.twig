@@ -1,0 +1,34 @@
+{% if options_values.show %}
+    <div class="mt20">
+        <div>{{ options_values.header }}:</div>
+        <div class="oh">
+            {% if page_type == 'full' %}
+                <ul {% if options_values.description != '' %}data-placement="left" data-toggle="tooltip" data-html="true" title="{{ options_values.description }}"{% endif %} class="select-options" data-option="{{ options_values.id }}" id="view_{{ options_values.id }}">
+                    {% for id_key, val in options_values.option %}
+                        {% if val.sel %}
+                            <li class="ib selection-block {% if val.key == 0 %}selected-block{% endif %} pointer fleft" data-value="{{ id_key }}" data-option="{{ options_values.id }}">
+                                {{ val.name }}<input type="hidden" name="option[{{ options_values.id }}]" value="{{ id_key }}" id="option_{{ options_values.id }}_{{ id_key }}" {% if val.key > 0 %}disabled{% endif %}>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                {% if options_values.type == 'multi' %}
+                    {% if options_values.show %}
+                    <div class="maxw200 text-overflow select-options" id="view_{{ options_values.id }}" {% if options_values.description != '' %}data-placement="left" data-toggle="tooltip" data-html="true" title="{{ options_values.description }}"{% endif %}>
+                        <select name="option[{{ options_values.id }}]" style="line-height: 24px;" class="selectBox h30 maxw200">
+                        {% for id_key, val in options_values.option %}
+                            {% if val.sel %}<option value="{{ id_key }}">{{ val.name }}</option>{% endif %}
+                        {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% for id_key, val in options_values.option %}
+                        {% if val.sel %}<div {% if options_values.description != '' %}data-placement="left" data-toggle="tooltip" data-html="true" title="{{ options_values.description }}"{% endif %} class="selected-block select-options" id="view_{{ options_values.id }}"><div class="maxw200 text-overflow">{{ val.name }}</div></div><input type="hidden" name="option[{{ options_values.id }}]" value="{{ id_key }}">{% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

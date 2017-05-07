@@ -1,0 +1,62 @@
+.send-money-form-wrapper {
+    padding: 20px;
+}
+
+.send-money-form-wrapper > h1 {
+    margin-bottom: 20px;
+}
+
+.send-money-select-user, .send-money-amount-input > div {
+    padding-right: 0;
+}
+
+.send-money-for-friends > label {
+    margin: 24px 0;
+}
+
+.send-money-for-friends input {
+    margin: 2px -20px 0;
+}
+
+@media (max-width: 991px){
+    .send-money-for-friends > label {
+        margin-top: 0;
+    }
+}
+
+.send-money-form #output {
+    display: inline;
+}
+
+.send-money-btn {
+    margin: 0;
+    margin-top: 17px;
+}
+
+.payment_table div {
+    padding: 3px;
+}
+
+.payment_table {
+    width: 40%;
+    border-radius: 4px;
+}
+
+.payment-table-values div {
+    text-align: center;
+}
+
+@media (max-width: 690px){
+    .payment_table {
+        width: 100%;
+        margin: 0;
+    }
+
+    .payment-table-values {
+        margin: 0;
+    }
+}
+
+.donate-payment-btns {
+    margin-top: 20px;
+}

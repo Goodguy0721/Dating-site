@@ -1,0 +1,100 @@
+{% include '@app/header.twig' %}
+
+<form class="x_panel form-horizontal" method="post" action="{{ data.action }}" name="save_site_xml_form">
+	<div class="x_title h4">{% helper lang.l('admin_header_sitemap_txt_editing', 'seo_advanced') %}</div>
+	<div class="x_content">
+		{% if sitemap_data.mtime %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_last_sitemap_generating', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper date_format.tpl_date_format(sitemap_data.mtime, date_format) %}
+			</div>
+		</div>
+		{% endif %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_frequency', 'seo_advanced') %}:&nbsp;* </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<select name="changefreq" class="form-control">
+			{% for key, item in frequency_lang.option %}
+					<option value="{{ key }}" {% if key == sitemap_changefreq %}selected{% endif %}>{{ item }}</option>
+			{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_last_modified', 'seo_advanced') %}:&nbsp;* </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+			<input class="flat" type="radio" name="lastmod" value="0" id="lastmod0" {% if sitemap_lastmod == 0 %}checked{% endif %}> <label for="lastmod0">{% helper lang.l('field_last_modified_0', 'seo_advanced') %}</label><br>
+			<input class="flat" type="radio" name="lastmod" value="1" id="lastmod1" {% if sitemap_lastmod == 1 %}checked{% endif %}> <label for="lastmod1">{% helper lang.l('field_last_modified_1', 'seo_advanced') %}</label><br>
+			<input class="flat" type="radio" name="lastmod" value="2" id="lastmod2" {% if sitemap_lastmod == 2 %}checked{% endif %}> <label for="lastmod2">{% helper lang.l('field_last_modified_2', 'seo_advanced') %}</label><br>
+			<input class="form-control" type="text" name="lastmod_date" value="{{ sitemap_data.current_date|escape }}">
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_priority', 'seo_advanced') %}:&nbsp;* </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<select name="priority" class="form-control">
+				<option value="0" {% if sitemap_priority == 0 %}selected{% endif %}>{% helper lang.l('field_priority_none', 'seo_advanced') %}</option>
+				<option value="1" {% if sitemap_priority == 1 %}selected{% endif %}>{% helper lang.l('field_priority_auto', 'seo_advanced') %}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-group" id="add_priority" {% if sitemap_priority == 1 %}style="display: none;"{% endif %}>
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_priority', 'seo_advanced') %}:&nbsp;* </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% for module, module_data in urls_modules %}
+					{% if module_data is not empty %}
+						<div>
+							<div>{{ module }}:</div>
+							<div>
+								{% for key, url_data in module_data %}
+								<div class="row">
+									<div class="col-sm-3 col-md-2 col-xs-12">
+										<input type="text" name="priorities[{{ module }}][{{ key }}]"
+											value="{{ url_data.priority }}" class="form-control">
+									</div>
+									<div class="col-xs-1"> - </div>
+									<div class="col-xs-8 col-md-9 col-xs-12">{{ url_data.url }}</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_sitemap_help', 'seo_advanced') %}
+			</div>
+		</div>
+		<div class="ln_solid"></div>
+		<div class="row form-group">
+			<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+				<input class="btn btn-success" type="submit" name="btn_save_sitexml" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+				<a class="btn btn-default" href="{{ site_url }}admin/seo_advanced">{% helper lang.l('btn_cancel', 'start') %}</a>
+			</div>
+		</div>
+	</div>
+</form>
+<div class="clearfix"></div>
+<script>
+	$(function(){
+		$('select[name=priority]').change(function(){
+            var is_visible = $(this).val();
+            if (is_visible === '0') {
+                $('#add_priority').show();
+            } else {
+                $('#add_priority').hide();
+            }
+        });
+	});
+</script>
+
+{% include '@app/footer.twig' %}

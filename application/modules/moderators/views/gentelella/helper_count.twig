@@ -1,0 +1,12 @@
+<label class="btn btn-default{% if filter == 'all' %} active{% endif %}{% if not filter_data.all %} disabled{% endif %}"
+       data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+       onclick="{% if filter_data.all %} document.location.href='{{ site_url }}admin/ausers/index/all'{% else %}return false;{% endif %}">
+    <input type="radio" name="user_type"{% if filter == 'all' %} selected{% endif %}>
+    {% helper lang.l('filter_all_users', 'ausers') %} ({{ count_data.all }})
+</label>
+<label class="btn btn-default{% if filter == 'moderator' %} active{% endif %}{% if not filter_data.moderator %} disabled{% endif %}"
+       data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+       onclick="{% if filter_data.moderator %}document.location.href='{{ site_url }}admin/moderators/'{% else %}return false;{% endif %}">
+    <input type="radio" name="user_type"{% if filter == 'admin' %} selected{% endif %}>
+    {% helper lang.l('filter_moderator_users', 'ausers') %} ({{ count_data.moderators }})
+</label>

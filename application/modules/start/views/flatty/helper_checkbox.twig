@@ -1,0 +1,28 @@
+<div class="checkBox" id="{{ cb_id }}_cbox" iname="{{ cb_input }}">
+	{% for key, item in cb_value %}
+		<div class="input">
+			<div class="box fa {% if item.checked %}checked{% endif %}" gid="{{ key }}"></div>
+            <div class="label" gid="{{ key }}">{{ item.name }}</div>
+
+            {% if item.checked %}
+                <input type="hidden" name="{{ cb_input }}{% if cb_count > 1 %}[]{% endif %}" value="{{ key }}" />
+            {% endif %}
+		</div>
+	{% endfor %}
+	{% if cb_display_group_methods %}
+		<div class="clr"></div>
+
+		<span id="{{ cb_id }}_cbox_check_all" class="a" onclick="$(this).parent().find('input[type=checkbox]').prop('checked', true);">
+            {% helper lang.l('select_all', 'start') %}
+        </span>
+
+        &nbsp;|&nbsp;
+
+        <span id="{{ cb_id }}_cbox_uncheck_all" class="a" onclick="$(this).parent().find('input[type=checkbox]').prop('checked', false);">
+            {% helper lang.l('unselect_all', 'start') %}
+        </span>
+	{% endif %}
+</div>
+<script>
+    checkboxes.push('{{ cb_id }}');
+</script>

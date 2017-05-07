@@ -1,0 +1,50 @@
+	812	Zyyi	34.7333300	33.3375000	CY	03	0	0	Zyyi	Zyyi	Zyyi	Zyyi	Zyyi	Zyyi
+	812	Xylotymbou	35.0172000	33.7424500	CY	03	0	0	Xylotymbou	Xylotymbou	Xylotymbou	Xylotymbou	Xylotymbou	Xylotymbou
+	812	Voroklini	34.9833300	33.6583300	CY	03	0	0	Voroklini	Voroklini	Voroklini	Voroklini	Voroklini	Voroklini
+	812	Vavla	34.8416700	33.2666700	CY	03	0	0	Vavla	Vavla	Vavla	Vavla	Vavla	Vavla
+	812	Vavatsiniá	34.8933000	33.2284900	CY	03	0	0	Vavatsiniá	Vavatsiniá	Vavatsiniá	Vavatsiniá	Vavatsiniá	Vavatsiniá
+	812	Troúlloi	35.0320300	33.6150100	CY	03	0	0	Troúlloi	Troúlloi	Troúlloi	Troúlloi	Troúlloi	Troúlloi
+	812	Tochni	34.7805600	33.3233300	CY	03	0	0	Tochni	Tochni	Tochni	Tochni	Tochni	Tochni
+	812	Tersephanou	34.8541700	33.5458300	CY	03	0	0	Tersephanou	Tersephanou	Tersephanou	Tersephanou	Tersephanou	Tersephanou
+	812	Sophtadhes	34.8361100	33.5500000	CY	03	0	0	Sophtadhes	Sophtadhes	Sophtadhes	Sophtadhes	Sophtadhes	Sophtadhes
+	812	Skarinou	34.8250000	33.3541700	CY	03	0	0	Skarinou	Skarinou	Skarinou	Skarinou	Skarinou	Skarinou
+	812	Sha	34.9375000	33.3916700	CY	03	0	0	Sha	Sha	Sha	Sha	Sha	Sha
+	812	Pýla	35.0123700	33.6918800	CY	03	0	0	Pýla	Pýla	Pýla	Pýla	Pýla	Pýla
+	812	Psevdhas	34.9500000	33.4625000	CY	03	0	0	Psevdhas	Psevdhas	Psevdhas	Psevdhas	Psevdhas	Psevdhas
+	812	Psematismenos	34.7666700	33.3458300	CY	03	0	0	Psematismenos	Psematismenos	Psematismenos	Psematismenos	Psematismenos	Psematismenos
+	812	Perivolia	34.8291700	33.5833300	CY	03	0	0	Perivolia	Perivolia	Perivolia	Perivolia	Perivolia	Perivolia
+	812	Pérgamos	35.0416700	33.7083300	CY	03	0	0	Pérgamos	Пергамос	Pérgamos	Pérgamos	Pérgamos	Pérgamos
+	812	Pano Lefkara	34.8666700	33.3041700	CY	03	0	0	Pano Lefkara	Пано-Лефкара	Pano Lefkara	Pano Lefkara	Pano Lefkara	Pano Lefkara
+	812	Orá	34.8620600	33.1955600	CY	03	0	0	Orá	Orá	Orá	Orá	Orá	Orá
+	812	Odoú	34.8850000	33.1509000	CY	03	0	0	Odoú	Odoú	Odoú	Odoú	Odoú	Odoú
+	812	Mosphiloti	34.9500000	33.4291700	CY	03	0	0	Mosphiloti	Mosphiloti	Mosphiloti	Mosphiloti	Mosphiloti	Mosphiloti
+	812	Monagroúlli	34.7490200	33.2129500	CY	03	0	0	Monagroúlli	Monagroúlli	Monagroúlli	Monagroúlli	Monagroúlli	Monagroúlli
+	812	Menoyia	34.8416700	33.4416700	CY	03	0	0	Menoyia	Menoyia	Menoyia	Menoyia	Menoyia	Menoyia
+	812	Meneou	34.8611400	33.5951600	CY	03	0	0	Meneou	Meneou	Meneou	Meneou	Meneou	Meneou
+	812	Mazotos	34.8083300	33.4875000	CY	03	0	0	Mazotos	Mazotos	Mazotos	Mazotos	Mazotos	Mazotos
+	812	Mathiatis	34.9666700	33.3333300	CY	03	0	0	Mathiatis	Mathiatis	Mathiatis	Mathiatis	Mathiatis	Mathiatis
+	812	Maroni	34.7583300	33.3555600	CY	03	0	0	Maroni	Maroni	Maroni	Maroni	Maroni	Maroni
+	812	Mari	34.7416700	33.3000000	CY	03	0	0	Mari	Mari	Mari	Mari	Mari	Mari
+	812	Livadhia	34.9541700	33.6291700	CY	03	0	0	Livadhia	Livadhia	Livadhia	Livadhia	Livadhia	Livadhia
+	812	Lágeia	34.8427500	33.2469800	CY	03	0	0	Lágeia	Lágeia	Lágeia	Lágeia	Lágeia	Lágeia
+	812	Larnaca	34.9166700	33.6291700	CY	03	0	0	Larnaca	Ларнака	Larnaca	Larnaca	Larnaca	Larnaca
+	812	Kornos	34.9208300	33.3916700	CY	03	0	0	Kornos	Kornos	Kornos	Kornos	Kornos	Kornos
+	812	Kophinou	34.8250000	33.3875000	CY	03	0	0	Kophinou	Kophinou	Kophinou	Kophinou	Kophinou	Kophinou
+	812	Kolossi	34.6686500	32.9337500	CY	03	0	0	Kolossi	Kolossi	Kolossi	Kolossi	Kolossi	Kolossi
+	812	Klavdhia	34.8916700	33.5125000	CY	03	0	0	Klavdhia	Klavdhia	Klavdhia	Klavdhia	Klavdhia	Klavdhia
+	812	Kivisil	34.8375000	33.5083300	CY	03	0	0	Kivisil	Kivisil	Kivisil	Kivisil	Kivisil	Kivisil
+	812	Kiti	34.8500000	33.5750000	CY	03	0	0	Kiti	Kiti	Kiti	Kiti	Kiti	Kiti
+	812	Khirokitia	34.7958300	33.3375000	CY	03	0	0	Khirokitia	Khirokitia	Khirokitia	Khirokitia	Khirokitia	Khirokitia
+	812	Kellia	34.9791700	33.6208300	CY	03	0	0	Kellia	Kellia	Kellia	Kellia	Kellia	Kellia
+	812	Kato Lefkara	34.8625000	33.3166700	CY	03	0	0	Kato Lefkara	Като-Лефкара	Kato Lefkara	Kato Lefkara	Kato Lefkara	Kato Lefkara
+	812	Kato Drys	34.8508300	33.3041700	CY	03	0	0	Kato Drys	Kato Drys	Kato Drys	Kato Drys	Kato Drys	Kato Drys
+	812	Kalavasos	34.7733000	33.2958700	CY	03	0	0	Kalavasos	Kalavasos	Kalavasos	Kalavasos	Kalavasos	Kalavasos
+	812	Dhromolaxia	34.8755100	33.5868400	CY	03	0	0	Dhromolaxia	Dhromolaxia	Dhromolaxia	Dhromolaxia	Dhromolaxia	Dhromolaxia
+	812	Ayios Tykhonas	34.7250000	33.1416700	CY	03	0	0	Ayios Tykhonas	Ayios Tykhonas	Ayios Tykhonas	Ayios Tykhonas	Ayios Tykhonas	Ayios Tykhonas
+	812	Ayia Anna	34.9416700	33.4833300	CY	03	0	0	Ayia Anna	Ayia Anna	Ayia Anna	Ayia Anna	Ayia Anna	Ayia Anna
+	812	Avdelleró	35.0079600	33.5705300	CY	03	0	0	Avdelleró	Avdelleró	Avdelleró	Avdelleró	Avdelleró	Avdelleró
+	812	Athíenou	35.0618000	33.5415600	CY	03	0	0	Athíenou	Athíenou	Athíenou	Athíenou	Athíenou	Athíenou
+	812	Aradhippou	34.9500000	33.5916700	CY	03	0	0	Aradhippou	Aradhippou	Aradhippou	Aradhippou	Aradhippou	Aradhippou
+	812	Anaphotia	34.8250000	33.4625000	CY	03	0	0	Anaphotia	Anaphotia	Anaphotia	Anaphotia	Anaphotia	Anaphotia
+	812	Alethriko	34.8611100	33.4958300	CY	03	0	0	Alethriko	Alethriko	Alethriko	Alethriko	Alethriko	Alethriko
+	812	Alaminos	34.8083300	33.4333300	CY	03	0	0	Alaminos	Alaminos	Alaminos	Alaminos	Alaminos	Alaminos

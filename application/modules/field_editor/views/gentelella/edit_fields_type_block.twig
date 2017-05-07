@@ -1,0 +1,161 @@
+{% if field_type == 'checkbox' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_checkbox_by_default', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <input type="hidden" name="settings_data[default_value]" value="0">
+            <input class="flat" type="checkbox" name="settings_data[default_value]" value="1"{% if data.settings_data_array.default_value %} checked{% endif %}>
+        </div>
+    </div>
+{% elseif field_type == 'text' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_by_default', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[default_value]" value="{{ data.settings_data_array.default_value|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_min_char', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[min_char]" value="{{ data.settings_data_array.min_char|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_max_char', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[max_char]" value="{{ data.settings_data_array.max_char|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_template', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[template]" class="form-control">
+                {% for item in initial.template.options %}
+                    <option value="{{ item }}"{% if data.settings_data_array.template == item %} selected{% endif %}>{% helper lang.l("text_template_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_format', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[format]" class="form-control">
+                {% for item in initial.format.options %}
+                    <option value="{{ item }}"{% if data.settings_data_array.format == item %} selected{% endif %}>{% helper lang.l("text_format_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% elseif field_type == 'textarea' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_textarea_by_default', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[default_value]" value="{{ data.settings_data_array.default_value|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_textarea_min_char', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[min_char]" value="{{ data.settings_data_array.min_char|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_textarea_max_char', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[max_char]" value="{{ data.settings_data_array.max_char|escape }}" class="form-control"></div>
+    </div>
+{% elseif field_type == 'select' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_select_view_type', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[view_type]" class="form-control">
+                {% for item in initial.view_type.options %}
+                    <option value="{{ item }}"{% if data.settings_data_array.view_type == item %} selected{% endif %}>{% helper lang.l("select_view_type_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_select_empty_option', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <input type="hidden" name="settings_data[empty_option]" value="0">
+            <input class="flat" type="checkbox" name="settings_data[empty_option]" value="1"{% if data.settings_data_array.empty_option %} checked{% endif %}>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_select_options', 'field_editor') %}: </label>
+        <div class="col-md-9 col-xs-12 col-sm-9">
+            <div id="hidden_block"></div>
+            <a href="#" id="add_option_link">{% helper lang.l('link_add_new_option', 'field_editor') %}</a>
+            <div class="select-options" id="select_options_block">
+                {{ options_block }}
+            </div>
+        </div>
+    </div>
+    {% helper utils.jscript('field_editor', 'admin-field-editor-select.js') %}
+
+    <script type='text/javascript'>
+        var sOptions;
+        $(function () {
+            sOptions = new fieldEditorSelect({
+                siteUrl: '{{ site_url }}',
+                fieldID: '{{ data.id }}',
+                defaultMultiple: false,
+                defaultValues: [{{ data.settings_data_array.default_value }}],
+                useDefaultOptions: false
+            });
+        });
+    </script>
+{% elseif field_type == 'multiselect' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_select_view_type', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[view_type]" class="form-control">
+                {% for item in initial.view_type.options %}
+                    <option value="{{ item }}"{% if data.settings_data_array.view_type == item %} selected{% endif %}>{% helper lang.l("select_view_type_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_select_options', 'field_editor') %}: </label>
+        <div class="col-md-9 col-xs-12 col-sm-9">
+            <div id="hidden_block"></div>
+            <a href="#" id="add_option_link">{% helper lang.l('link_add_new_option', 'field_editor') %}</a>
+            <div class="select-options" id="select_options_block">
+                {{ options_block }}
+            </div>
+        </div>
+    </div>
+    {% helper utils.jscript('field_editor', 'admin-field-editor-select.js') %}
+    <script type='text/javascript'>
+        var sOptions;
+        $(function () {
+            sOptions = new fieldEditorSelect({
+                siteUrl: '{{ site_url }}',
+                fieldID: '{{ data.id }}',
+                defaultMultiple: true,
+                defaultValues:{% helper json.json_encode(data.settings_data_array.default_value) %},
+                    useDefaultOptions: false
+            });
+        });
+    </script>
+{% elseif field_type == 'range' %}
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_min_val', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[min_val]" value="{{ data.settings_data_array.min_val|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_max_val', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5"><input type="text" name="settings_data[max_val]" value="{{ data.settings_data_array.max_val|escape }}" class="form-control"></div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_template', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[template]" class="form-control">
+                {% for item in initial.template.options %}
+                    <option value="{{ item|escape }}"{% if data.settings_data_array.template == item %} selected{% endif %}>{% helper lang.l("text_template_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-3 col-xs-12 col-sm-3">{% helper lang.l('field_text_format', 'field_editor') %}: </label>
+        <div class="col-md-5 col-xs-12 col-sm-5">
+            <select name="settings_data[format]" class="form-control">
+                {% for item in initial.format.options %}
+                    <option value="{{ item }}"{% if data.settings_data_array.format == item %} selected{% endif %}>{% helper lang.l("text_format_"~item, 'field_editor') %}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,85 @@
+{% include '@app/header.twig' %}
+<ul class="nav nav-tabs bar_tabs">
+{{ main_menu }}
+</ul>
+
+{% if settings.use_shell_exec %}
+<div class="x_panel">
+	<b>{% helper lang.l('settings_os', 'video_uploads') %}:</b> {{ settings.used_system }}<br>
+	<b>{% helper lang.l('settings_ffmpeg_version', 'video_uploads') %}:</b> {% if versions.ffmpeg %}{{ versions.ffmpeg }}{% else %}<font class="red">{% helper lang.l('settings_not_found', 'video_uploads') %}</font>{% endif %}<br>
+	<b>{% helper lang.l('settings_mencoder_version', 'video_uploads') %}:</b> {% if versions.mencoder %}{{ versions.mencoder }}{% else %}<font class="red">{% helper lang.l('settings_not_found', 'video_uploads') %}</font>{% endif %}<br>
+	<b>{% helper lang.l('settings_mplayer_version', 'video_uploads') %}:</b> {% if versions.mplayer %}{{ versions.mplayer }}{% else %}<font class="red">{% helper lang.l('settings_not_found', 'video_uploads') %}</font>{% endif %}<br>
+	<b>{% helper lang.l('settings_flvtool2_version', 'video_uploads') %}:</b> {% if versions.flvtool2 %}{{ versions.flvtool2 }}{% else %}<font class="red">{% helper lang.l('settings_not_found', 'video_uploads') %}</font>{% endif %}<br>
+	{% if versions.ffmpeg or versions.mencoder %}
+	<b>{% helper lang.l('settings_convert_video_type', 'video_uploads') %}:</b> {{ settings.local_converting_video_type }}<br>
+	{% endif %}
+	{% if not settings.use_local_converting_video %}
+	<br>{% helper lang.l('error_unable_local_converting_video', 'video_uploads') %}<br>
+	{% endif %}
+	{% if not settings.use_local_converting_meta_data %}
+	<br>{% helper lang.l('error_unable_local_converting_meta_data', 'video_uploads') %}<br>
+	{% endif %}
+	{% if settings.use_local_converting_thumbs %}
+	<br>{% helper lang.l('error_unable_local_converting_thumbs', 'video_uploads') %}<br>
+	{% endif %}
+
+	{% if codecs %}
+	<br>
+		<b>{% helper lang.l('required_video_codecs', 'video_uploads') %}:</b><br>
+		{% for key, item in codecs.video_required %}
+		{{ key }} ({{ item.codec_description }}) - {% if item.installed %}<font class="green">{% helper lang.l('codec_installed', 'video_uploads') %}</font>{% else %}<font class="red">{% helper lang.l('codec_not_installed', 'video_uploads') %}</font>{% endif %}<br>
+		{% endfor %}<br>
+
+		<b>{% helper lang.l('required_audio_codecs', 'video_uploads') %}:</b><br>
+		{% for key, item in codecs.audio_required %}
+		{{ key }} ({{ item.codec_description }}) - {% if item.installed %}<font class="green">{% helper lang.l('codec_installed', 'video_uploads') %}</font>{% else %}<font class="red">{% helper lang.l('codec_not_installed', 'video_uploads') %}</font>{% endif %}<br>
+		{% endfor %}<br>
+	{% endif %}
+
+	{% if php_ini %}
+	<br>
+	<b>{% helper lang.l('php_ini_settings', 'video_uploads') %}:</b><br>
+	<b>post_max_size:</b> {{ php_ini.post_max_size }}<br>
+	<b>upload_max_filesize:</b> {{ php_ini.upload_max_filesize }}<br>
+	{{ php_ini.max_size_notice }}
+	{% endif %}
+</div>
+
+<div class="x_panel">
+	<form class="form-horizontal" method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+		<div class="x_title h4">{% helper lang.l('admin_header_system_settings', 'video_uploads') %}</div>
+		<div class="x_content">
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_ffmpeg_path', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.ffmpeg_path|escape }}" name="ffmpeg_path" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_mencoder_path', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.mencoder_path|escape }}" name="mencoder_path" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_mplayer_path', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.mplayer_path|escape }}" name="mplayer_path" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_flvtool2_path', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.flvtool2_path|escape }}" name="flvtool2_path" class="form-control"></div>
+			</div>
+			<div class="ln_solid"></div>
+			<div class="row form-group">
+				<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+					<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+					<a class="btn btn-default" name="btn_reset" href="{{ site_url }}admin/video_uploads/system_settings_reset">
+                        {% helper lang.l('reset_system_settings', 'video_uploads', '', 'button') %}</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% else %}
+<div class="x_panel">
+	<div>{% helper lang.l("error_unable_shell_exec", 'video_uploads') %}</div>
+</div>
+{% endif %}
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,5 @@
+{% if not blog_id %}
+<a href="{% helper seo.seolink('blogs', 'index') %}" class="link-r-margin" title="{% helper lang.l('my_blog', 'blogs') %}"><i class="fa fa-book"></i></a>
+{% else %}
+<a href="{% helper seo.seolink('blogs', 'view_blog') %}/{{ blog_id }}" class="link-r-margin" title="{% helper lang.l('view_blog', 'blogs') %}"><i class="fa fa-book"></i></a>
+{% endif %}

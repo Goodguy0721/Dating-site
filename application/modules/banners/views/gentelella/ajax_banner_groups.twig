@@ -1,0 +1,57 @@
+{% if groups %}
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_groups', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {% for group in groups %}
+            <input type="checkbox" class="tableflat js_grouped" name="banner_groups[]"
+                   value="{{ group.id }}" {% if banner_groups and (group.id in banner_groups) %}checked{% endif %}
+                   {% if groups_disabled %}disabled{% endif %} id="groups_{{ group.id }}">
+            <label for="groups_{{ group.id }}">{{ group.name }}</label><br>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    $(document).ready(function () {    
+        $('input.js_grouped').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        }).on('ifClicked', function(event) {
+            $(this).trigger('click');
+        }).on('ifChanged', function(event) {
+            $(this).trigger('change');
+        }).on('ifChecked', function() {
+            $(this).attr('checked', 'checked');
+        }).on('ifUnchecked', function() {
+            $(this).removeAttr('checked');
+        }).on('ifDisabled', function() {
+            $(this).attr('disabled', 'disabled');
+        }).on('ifEnabled', function() {
+            $(this).removeAttr('disabled');
+        });
+
+        $('.js_grouped').on('ifChanged', function(){
+            var anyChecked = false;
+            $('input.js_grouped').each(function(){
+                anyChecked = anyChecked || $(this).prop('checked');
+            });
+            if (anyChecked) {
+                $('.btn-success').removeClass('disabled');
+            } else {
+                $('.btn-success').addClass('disabled');
+            }
+        });
+
+        var anyChecked = false;
+        $('input.js_grouped').each(function(){
+            anyChecked = anyChecked || $(this).prop('checked');
+        });
+        if (anyChecked) {
+            $('.btn-success').removeClass('disabled');
+        } else {
+            $('.btn-success').addClass('disabled');
+        }
+    });
+</script>
+{% endif %}

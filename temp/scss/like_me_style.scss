@@ -1,0 +1,468 @@
+/* modify layout */
+.mod-likeme {
+    header {
+        z-index: -1;
+    }
+    .btn {
+        @include text-overflow;
+        max-width: 100%;
+    }
+}
+.mod-likeme-matches {
+    .b-likeme-page {
+        overflow-y: scroll;
+    }
+}
+@media (min-width: 768px) {
+    .mod-likeme {
+        .main-inner-content {
+            padding-top: 50px;
+        }
+        header {
+            z-index: 999;
+        } 
+    }
+}
+/* end of modify layout */
+
+.b-likeme__null {
+    @include g-panel;
+    padding: 0 15px 10px;
+
+    .btn {
+        margin-bottom: 5px;
+    }
+}
+
+/* mobile nav popup */
+.b-mobile-pop {
+    background: $content_bg;
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.b-mobile-pop__header {
+    background: $header_bg;
+    display: none;
+    height: 46px;
+    line-height: 46px;
+    margin-bottom: 15px;
+    text-align: right;
+
+    a {
+        color: #fff;
+    }
+}
+.b-mobile-pop_show {
+    display: block;
+    z-index: 1010; /* above header */
+
+    .b-mobile-pop__header {
+        display: block;
+    }
+}
+.b-mobile-pop__content {
+    padding: 0 15px;
+}
+.mod-likeme header {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .b-mobile-pop {
+        background: none;
+        display: block !important;
+        min-width: auto;
+        position: relative;
+        top: auto;
+        width: auto;
+    }
+    .b-mobile-pop_show {
+        display: none;
+
+        .b-mobile-pop__header {
+            display: none;
+        }
+    }
+    .b-mobile-pop__content {
+        padding: 0;
+    }
+    .mod-likeme header {
+        display: block;
+    }
+}
+/* end of mobile nav popup */
+
+/* alternative header in mobile */
+.b-title-menu_likeme {
+    background-color: $main_bg; 
+    color: #fff;
+    height: 45px;
+    line-height: 44px;
+    margin: -8px -15px;
+    padding: 0px 0;
+    position: relative;
+    text-align: center;
+    z-index: 1000;
+
+    a {
+        color: #fff;
+    }
+}
+.b-likeme__backlink {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 45px;
+}
+.b-title-menu__btn_header {
+    text-align: center;
+    width: 45px;
+}
+@media (min-width: 768px) {
+    .b-title-menu_likeme {
+        background: none;
+        color: inherit;
+        height: auto;
+        line-height: 1.1;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 8px;
+        padding-bottom: 10px;
+        z-index: auto;
+        text-align: left;
+
+        a {
+            color: $link-color;
+        }
+        h1 {
+            color: $header_color;
+        }
+    }
+    .b-likeme__backlink {
+        display: none;
+    }
+}
+/* end of alternative header in mobile */
+
+/* image height to 100% */
+.b-likeme-page {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+.b-likeme_h100 {
+    height: 100%;
+}
+.b-likeme__media {
+    bottom: 46px;
+    left: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.b-likeme__image {
+    @include g-panel;
+    bottom: 70px;
+    height: auto;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0px;
+    top: 0;
+
+    img {
+        height: auto !important;
+        left: 50%;
+        max-height: 100%;
+        max-width: 100%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+             -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        width: auto !important;
+    }
+}
+.b-likeme__name {
+    background: rgba(255,255,255, 0.9);
+    border-top: 1px rgba(0,0,0,0.05) solid;
+    bottom: 0px;
+    height: 35px;
+    left: 0px;
+    line-height: 35px;
+    padding: 0px 10px;
+    position: absolute;
+    right: 0px;
+}
+.b-likeme__actions {
+    bottom: 10px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+
+    .col-xs-6 {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .b-likeme-page {
+        top: 50px;
+    }
+    .b-likeme__media {
+        bottom: 38px;
+        left: 15px;
+        right: 15px;
+        top: 0;
+    }
+    .b-likeme__actions {
+        bottom: 10px;
+        left: 0;
+        right: auto;
+        text-align: center;
+
+        .col-xs-6 {
+            display: inline-block;
+            float: none;
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+        }
+        .btn {
+            width: auto;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .b-likeme__actions {
+        right: 0;
+    }
+}
+
+.b-likeme__alert {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+/* end of image height to 100% */
+
+/* my matches */
+.b-likeme__mymatches {
+    margin-top: 10px;   
+}
+@media (min-width: 768px) {
+    .b-likeme__mymatches {
+        margin-top: 0;   
+    }
+}
+/* end of my matches */
+
+
+
+
+
+
+
+/* match popup */
+.congratulations{
+    .first-liked{        
+        border: 1px solid #c5c5c5;
+        background: $content_bg;
+        float:left;
+        left: 50%;
+        margin-left: -105px;
+        position: relative;
+        z-index: 1;
+        transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        @include text-overflow;
+
+        img {
+            width: 100px;
+        }
+    }
+    .second-liked{        
+        border: 1px solid #c5c5c5;
+        background: $content_bg;
+        float:left;
+        left: 50%;
+        margin-left: -25px;
+        position: relative;
+        z-index: 2;
+        transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -webkit-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        @include text-overflow;
+
+        img {
+            width: 100px;
+        }
+    }
+}
+.congratulations__buttons {
+    .btn {
+        background: #fff;
+        border: 1px $input_color solid;
+        color: $input_color;
+
+        &:hover,
+        &:active {
+            background: rgba($input_color, 0.1);
+            border: 1px $input_color solid;
+        }
+    }
+}
+.congratulations__buttons-in {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+
+@media (min-width: 768px) {
+    .congratulations{
+        .first-liked{        
+            margin-left: -125px;
+
+            img {
+                width: 200px;
+            }
+        }
+        .second-liked{        
+            margin-left: -130px;
+
+            img {
+                width: 200px;
+            }
+        }
+    }
+
+}
+/* end of match popup */
+
+#matches {
+    .actions{
+        padding-top:15px !important; z-index: 10 !important;
+    }
+    .edge[class*="fa-"]:after, 
+    .edge[class*="icon-"]:after{
+        border-color: #ffffff !important;
+    }
+    .edge[class*="fa-"]:hover:after, 
+    .edge[class*="icon-"]:hover:after{
+        background-color: $content_bg !important;
+    }
+}
+.g-users-gallery__info {
+    .btn {
+        background: #fff;
+        border: 1px $input_color solid;
+        color: $input_color;
+        margin-top: 5px;
+        @include ellipsis;
+
+        &:hover,
+        &:active {
+            background: rgba($input_color, 0.1);
+            border: 1px $input_color solid;
+        }
+    }
+}
+
+.like_me-btn{
+    cursor: pointer; 
+    a{
+        text-decoration: none; 
+        color: #FFFFFF; 
+        font-size: 17px; 
+        text-align: center;
+        i{
+            margin-left: 5px;
+        }
+    }
+}
+
+.list-group-item .menu-link{
+    display: block;
+    line-height: 100%;
+}
+
+#like_me-block .list-group-item:hover{
+    background-color: #f5f5f5;
+    
+    & .menu-link{
+       text-decoration:none;
+    }
+}
+
+.like_me-name{
+    color: $font_color;
+    font-weight: bold;
+}
+
+.like_me-age{
+    color: $contrast_color;
+}
+
+#like_button {
+    color:#ffffff;
+
+    &:active {
+        background-color: darken($input_color,10%);
+    }
+}
+
+#skip_button{
+    color:$font_color;
+    font-weight: bold;
+
+    &:active {
+        background-color: darken($input_color,10%);
+    }
+    & .fa{
+        color:$font_color;
+    }
+}
+
+@media (min-width: 768px) {
+    #skip_button{
+        &:hover {
+            background-color: darken($input_color,10%);
+        }
+    }
+    #like_button {
+        &:hover{
+            background-color: darken($input_color,10%);
+        }
+    }
+
+}

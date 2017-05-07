@@ -1,0 +1,95 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_widgets_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_name', 'widgets') %}</th>
+                        <th class="column-title">{% helper lang.l('field_module', 'widgets') %}</th>
+                        <th class="column-title ">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in widgets %}
+                    {% set name = item.gid ~ '_name' %}
+                    <tr>
+                        <td>{{ item.langs[name] }}</td>
+                        <td>{{ item.module }}</td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            <a href="{{ site_url }}admin/widgets/install_widget/{{ item.module }}/{{ item.gid }}"
+                               class="btn btn-primary">
+                                {% helper lang.l('link_install_widget', 'widgets') %}
+                            </a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="{{ site_url }}admin/widgets/install_widget/{{ item.module }}/{{ item.gid }}">
+                                    {% helper lang.l('link_install_widget', 'widgets') %}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_widgets_install','widgets', '', 'js') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

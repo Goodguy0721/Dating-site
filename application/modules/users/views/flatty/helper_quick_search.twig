@@ -1,0 +1,10 @@
+<div class="quick-search">
+    <div class="input-group search-top-input">
+        <form action="{{ site_url}}users/search" method="POST">
+            <input type="text" class="form-control search-for-mobile" placeholder="{% helper lang.l('header_find_people', 'users') %}" autosave="saved-searches" name="search">
+            <button type="submit" class="button-search">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>

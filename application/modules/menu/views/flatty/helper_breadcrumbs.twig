@@ -1,0 +1,15 @@
+{% spaceless %}
+<div class="breadcrumbs">
+    <a href="{{ site_url }}">{% helper lang.l('header_start_page', 'start') %}</a>
+    {% for item in breadcrumbs %}
+        &nbsp;<i class="fa fa-angle-right"></i>&nbsp;
+        {% if item.url %}
+        <a href="{{ item.url }}" id="breadcrumb_{{ item.gid }}">
+            {{ item.text }}
+        </a>
+        {% else %}
+            {{ item.text }}
+        {% endif %}
+    {% endfor %}
+</div>
+{% endspaceless %}

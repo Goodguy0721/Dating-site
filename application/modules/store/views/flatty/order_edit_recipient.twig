@@ -1,0 +1,23 @@
+<div class="content-block load_content">
+    <h1>{% helper lang.l('field_choose_user', 'store') %}</h1>
+    <div class="clearfix">
+        <div class="no-padding-left">
+            <form method="POST" id="user_search">
+                <div class="search-form-recipient">
+                    <div class="col-xs-12 no-padding-left">
+                        <div class="input-group no-padding-left">
+                        <div class="col-xs-10 no-padding-left">
+                            <input type="text" class="form-control" id="search-by-name" name="search" value="{{ search|e }}" placeholder="{% helper lang.l('search', 'friendlist') %}">
+                        </div>
+                        <div class="col-xs-2 no-padding-left">
+                            <button id="search_friend" class="btn btn-primary" type="button">{% helper lang.l('btn_search', 'start', '', 'button') %}</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="no-padding-left" id="friendlist"></div>
+        <div class="no-padding-left" id="sent_gift"></div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="content-block load_content">
+	<h1>
+        {% helper lang.l('header_wall_settings', 'wall_events') %}&nbsp;
+    </h1>
+    {% if user_perm %}
+        <div class="inside wall-perm-form ">
+			<form action="{{ site_url }}wall_events/save_user_permissions" method="post">
+				<input type="hidden" value="{{ redirect_url }}" name="redirect_url" />
+                <div class="col-xs-12 no-padding-left">
+                    {% if user_perm.wall_post %}
+						<div>
+							<input type="hidden" name="perm[wall_post][post_allow]" value="0" />
+							<label>
+								&nbsp;<input type="checkbox" name="perm[wall_post][post_allow]" value="1" {% if user_perm.wall_post.post_allow %}checked{% endif %} />&nbsp;{% helper lang.l('post_allow', 'wall_events') %}
+							</label>
+						</div>
+					{% endif %}
+                </div>
+                <div class="col-xs-12 no-padding-left clearfix permission-header">
+                    <div class="col-lg-4 no-padding-left">{% helper lang.l('events', 'wall_events') %}</div>
+                    <div class="col-lg-4">{% helper lang.l('my_events_show', 'wall_events') %}</div>
+                    <div class="col-lg-4 no-padding-right">{% helper lang.l('friends_events_show', 'wall_events') %}</div>
+                </div>
+                <div class="col-xs-12 no-padding-left clearfix mb20">
+                    {% for gid, perm in user_perm %}
+                        <div class="clearfix permission-item">
+                            <div class="col-lg-4 no-padding-left">{% helper lang.l('wetype_' ~ gid, 'wall_events') %}</div>
+                            <div class="col-lg-4">
+                                <select name="perm[{{ gid }}][permissions]" class="form-control">
+                                    <option value="0"{% if perm.permissions == 0 %} selected{% endif %}>
+                                        {% helper lang.l('value_for_me', 'wall_events') %}
+                                    </option>
+                                    <option value="1"{% if perm.permissions == 1 %} selected{% endif %}>
+                                        {% helper lang.l('value_for_friends', 'wall_events') %}
+                                    </option>
+                                    <option value="2"{% if perm.permissions == 2 %} selected{% endif %}>
+                                        {% helper lang.l('value_for_registered', 'wall_events') %}
+                                    </option>
+                                    <option value="3"{% if perm.permissions == 3 %} selected{% endif %}>
+                                        {% helper lang.l('value_for_all', 'wall_events') %}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-3 no-padding-right">
+                                <input type="hidden" name="perm[{{ gid }}][feed]" value="0" />
+                                <input type="checkbox" name="perm[{{ gid }}][feed]" value="1" {% if perm.feed %} checked{% endif %}/>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="mt20">
+					<input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-primary">
+				</div>
+            </form>
+		</div>
+    {% else %}
+		<div class="p20">
+            {% helper lang.l('no_wall_events_types', 'wall_events') %}
+        </div>
+	{% endif %}
+</div>

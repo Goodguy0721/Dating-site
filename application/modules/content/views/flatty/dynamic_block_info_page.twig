@@ -1,0 +1,12 @@
+{% set info_page_block %}
+	{% helper content.content_info_page{
+		'keyword': block_keyword,
+        'view': block_view,
+        'width': block_width
+    }) %}
+{% endset %}
+{% if info_page_block|striptags|trim %}
+    <div class="dynamic_block_content">
+        {{ info_page_block }}
+    </div>
+{% endif %}

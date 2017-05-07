@@ -1,0 +1,43 @@
+<a id="btn_write_message_{{ message_button_rand }}" class="link-r-margin" href="javascript:void(0);"
+    title="{% helper lang.l('link_message_send', 'mailbox', '', 'button') %}">
+        <i class="fa fa-envelope fa-lg edge hover"></i>
+</a>
+<script>
+	var access_available_view;
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('', 'available_view.js', 'path') %}",
+			function(){
+				access_available_view = new available_view({
+					siteUrl: site_url,
+					checkAvailableAjaxUrl: 'mailbox/ajax_available_access_mailbox/',
+					buyAbilityAjaxUrl: 'mailbox/ajax_activate_send_message/',
+					buyAbilityFormId: 'ability_form',
+					buyAbilitySubmitId: 'ability_form_submit',
+					success_request: function(message){
+                        mb.write_message({{ user_id }}, 'short');
+                    },
+					fail_request: function(message){
+                        error_object.show_error_block(message, 'error');
+                    },
+				});
+			},
+			['access_message_available_view'],
+			{async: false}
+		);
+		loadScripts(
+			"{% helper utils.jscript('mailbox', 'mailbox-flatty.js', 'path') %}",
+			function(){
+				mb = new mailbox({
+					siteUrl: site_url,
+					contactId: '',
+					accessAvailableView: access_available_view,
+					loadContent: true,
+					writeMessageButton: '#btn_write_message_{{ message_button_rand }}'
+				});
+			},
+			['mb'],
+			{async: false}
+		);
+	});
+</script>

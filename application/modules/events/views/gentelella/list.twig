@@ -1,0 +1,184 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_events_menu') %}
+            </ul>
+        </div>
+            
+        <div class="x_content">
+            <div id="actions" class="hide">
+              <div class="btn-group">
+                <a href="{{ site_url }}admin/events/edit_main" class="btn btn-primary">
+                    {% helper lang.l('link_add', 'events') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="{{ site_url }}admin/events/edit_main">
+                        {% helper lang.l('link_add', 'events') %}
+                    </a>
+                  </li>
+            {% if events %}
+                  <li>
+                    <a href="{{ site_url }}admin/events/deleteSelect/" id="delete_selected">
+                      {% helper lang.l('link_delete_selected', 'events') %}
+                    </a>
+                  </li>
+            {% endif %}
+                </ul>
+              </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}" id="events_form">
+                <table id="users" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                            <th class="column-title">{% helper lang.l('field_name', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_category', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_date_started', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_status', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_actions', 'events') %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                        <tr>
+                            <td class="text-center">
+                              <input type="checkbox" class="grouping flat" value="{{ event.id }}" name="ids[]">
+                            </td>
+                            <td>{{ event.name }}</td>
+                            <td>
+                                {% helper ld_category = lang.ld('category', 'events') %}
+                                {% for key, item in ld_category.option %}
+                                    {% if key == event.category %}{{ item }}{% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {{ event.date_started }}
+                            </td>
+                            <td>
+                              {% if event.is_active %}
+                                {% helper lang.l('btn_tableicon_is_active','start') %}
+                              {% else %}
+                                {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                              {% endif %}
+                            </td>
+                            <td class="icons">
+				                        <div class="btn-group">
+                                  {% if event.is_active %}
+                                    <a href="{{ site_url }}admin/events/activate/{{ event.id }}/0" class="btn btn-primary">
+                                      {% helper lang.l('make_inactive', 'start') %}</a>
+                                  {% else %}
+                                    <a href="{{ site_url }}admin/events/activate/{{ event.id }}/1" class="btn btn-primary">
+                                      {% helper lang.l('make_active', 'start') %}</a>
+                                  {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                              aria-haspopup="true" aria-expanded="false">
+                                      <span class="caret"></span>
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                    {% if event.is_active %}
+                                        <a href="{{ site_url }}admin/events/activate/{{ event.id }}/0">
+                                          {% helper lang.l('make_inactive', 'start') %}</a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/events/activate/{{ event.id }}/1">
+                                          {% helper lang.l('make_active', 'start') %}</a>
+                                    {% endif %}
+                                      </li>
+                                      <li>
+                                        <a title="{% helper lang.l('link_edit_event', 'events') %}" href="{{ site_url }}admin/events/edit_main/{{ event.id }}">
+                                          {% helper lang.l('btn_edit', 'start') %}</a>
+                                      </li>
+                                      <li>
+                                        <a onclick = "if(!confirm('{% helper lang.l('note_alert_delete_event','events') %}')) { return false; }" href="{{ site_url }}admin/events/delete/{{ event.id }}">
+                                            {% helper lang.l('btn_delete', 'start') %}</a>
+                                      </li>
+                                    </ul>
+				                        </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    $('#delete_selected').bind('click', function(){
+        if(!$('input[type=checkbox].grouping').is(':checked')) return false;
+        if(!confirm('{% helper lang.l('note_alerts_delete_all', 'events', '', 'js') %}')) return false;
+        $('#events_form').attr('action', $(this).attr('href')).submit();
+        return false;
+    });
+});
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "Search all columns:"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+        
+        
+        $('#delete_selected').off().on('click', function(){
+            if(!$('input[type=checkbox].grouping').is(':checked')) return false; 
+            if(!confirm('{% helper lang.l('note_alerts_delete_all', 'events') %}')) return false;
+            $('#events_form').attr('action', $(this).attr('href')).submit();		
+            return false;
+	});
+    });
+</script>
+
+{% include '@app/footer.twig' %}

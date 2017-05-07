@@ -1,0 +1,154 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <!--1 level menu-->
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_countries_menu') %}
+            </ul>
+        </div>
+        <div class='x_content'>
+            <form action="{{site_url}}admin/countries/install/city/{{country.code}}" method="post">
+                <div id="actions" class="hide">
+                  <div class="btn-group">
+                    <button type="submit" name="install-btn" class="btn btn-primary"
+                           value="1" onclick="javascript: return checkBoxes();" id="install-all">
+                           {% helper lang.l('install_regions_link','countries') %}
+                    </button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                          <a href="javascript:;" onclick="javascript: $('#install-all').trigger('click');">
+                            {% helper lang.l('install_regions_link','countries') %}
+                          </a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+                <table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+                    <thead>
+                        <tr class="headings">
+                            <th class="text-center">
+                                <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title text-center">{% helper lang.l('field_country','countries') %}</th>
+                            <th class="column-title text-center">{% helper lang.l('field_region_code','countries') %}</th>
+                            <th class="column-title">{% helper lang.l('field_region_name','countries') %}</th>
+                            <th class="column-title text-center">{% helper lang.l('field_region_status','countries') %}</th>
+                            <th class="bulk-actions" colspan="5">
+                                {#<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false"
+                                    style="position: absolute; top: 15px; color:#fff; font-weight:500;">
+                                    Actions ( <span class="action-cnt"> </span> )
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu"
+                                    style="position: absolute; top: 45px; left: 6px; color: black">
+                                    <li class="dropdown">
+                                        <input type="submit" name="install-btn" class="btn btn-default"
+                                               value="{% helper lang.l('install_regions_link','countries','','button') %}"
+                                               onclick="javascript: return checkBoxes();" >
+                                    </li>
+                                </ul>#}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in list %}
+                            {% set region_code = item.code %}
+                            <tr class="{% if not empty(item.net_is_incomer) %}net_incomer {% endif %}even pointer">
+                                <td class="text-center">
+                                    {% if not empty(item.net_is_incomer) %}
+                                        <div class="corner-triangle"></div>
+                                    {% endif %}
+                                    <input type="checkbox" class="tableflat grouping ch-reg" value="{{ item.code }}"  name="region[]" data='table_records'>
+                                </td>
+                                <td class="text-center">{{country.name}} ({{country.code}})</td>
+                                <td class="text-center">{{item.code}}</td>
+                                <td>{{item.name}}</td>
+                                <td class="text-center">
+                                    {% if installed[region_code] %}<i>
+                                        {% helper lang.l('region_installed', 'countries') %}</i>
+                                    {% else %}
+                                        <i>{% helper lang.l('region_not_installed', 'countries') %}</i>
+                                    {% endif %}&nbsp;
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": ""
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': []
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bSort": false,
+            "bFilter": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+    function checkBoxes(){
+        if($('.ch-reg:checked').length > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+{% include '@app/footer.twig' %}

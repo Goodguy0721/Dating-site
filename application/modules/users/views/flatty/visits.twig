@@ -1,0 +1,123 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+</div>
+
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 user-search">
+    <div class="g-flatty-block">
+        <div class="b-tabs b-tabs_wrapper">
+            <div class="b-tabs__item {%if views_type == 'my_guests' %}active{% endif %}">
+                <a class="b-tabs__text" href="{% helper seo.seolink('users', 'my_guests') %}">
+                    {% helper lang.l('header_my_guests', 'users') %}
+                </a>
+            </div>
+            <div class="b-tabs__item  {%if views_type == 'my_visits' %}active{% endif %}">
+                <a class="b-tabs__text" href="{% helper seo.seolink('users', 'my_visits') %}">
+                    {% helper lang.l('header_my_visits', 'users') %}
+                </a>
+            </div>
+        </div>
+
+        {% if users %}
+            <div class="row g-flatty-block__control" id="sorter_block">
+
+                <div class="pull-left pl15">
+                    <div class="form-inline">
+                        <select class="form-control" name="period" onchange="locationHref(('{% helper seo.seolink('users', views_type, '[period]') %}').replace('[period]', this.value));">
+                            <option value="all" {% if period == 'all' %}selected{% endif %}>{% helper lang.l('all_time', 'users') %}</option>
+                            <option value="month" {% if period == 'month' %}selected{% endif %}>{% helper lang.l('last_month', 'users') %}</option>
+                            <option value="week" {% if period == 'week' %}selected{% endif %}>{% helper lang.l('last_week', 'users') %}</option>
+                            <option value="today" {% if period == 'today' %}selected{% endif %}>{% helper lang.l('today', 'users') %}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="st-info">
+                    <div class="lh30">
+                        {% helper lang.l('header_users_found', 'users') %}: {{ page_data.total_rows }}
+                    </div>
+                </div>
+
+                <div class="pull-right pr15">
+                    <div class="fright lh30 search-top-pager">
+                        {% set page_data = page_data|merge({'type': 'cute'}) %}
+                        {% helper start.pagination(page_data) %}
+                    </div>
+                </div>
+
+                {% if sort_data is not empty %}
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div id="users_block" class="row g-users-gallery">
+            {% for item in users %}
+                {% set viewer_id=item.id %}
+                {% if viewer_id %}
+                    <div id="item-block-{{ item.id }}" class="g-users-gallery__item col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <div class="g-users-gallery__content">
+                            <div class="g-users-gallery__photo">
+                                {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', item) %}
+                                <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item) %}">
+                                    {% helper users.formatAvatar({'user': item, 'size': 'great'}) %}
+                                </a>
+                            </div>
+                            <div class="g-users-gallery__info">
+                                <div class="subtext">
+                                    {% set vide_date = attribute(view_dates, viewer_id) %}
+                                    {% helper date_format.tpl_date_format(vide_date, page_data.date_time_format) %}
+                                </div>
+                                <div class="text-overflow">
+                                    <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'view', item) %}">{{ item.output_name }}</a>, {{ item.age }}
+                                </div>
+                                {% if item.location %}
+                                    <div class="text-overflow">
+                                        {{ item.location }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div id="item-block-{{ item.id }}" class="g-users-gallery__item col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <div class="g-users-gallery__content">
+                            <div class="g-users-gallery__photo">
+                                {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', item) %}
+                                <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'untitled') %}">
+                                    {% helper users.formatAvatar({'user': item, 'size': 'great'}) %}
+                                </a>
+                            </div>
+                            <div class="g-users-gallery__info">
+                                <div class="text-overflow">
+                                    <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'untitled') %}">{{ item.output_name }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="line empty center p10 pt20">
+                    {% helper lang.l('header_users_found', 'users') %}: {{ page_data.total_rows }}
+                </div>
+            {% endfor %}
+        </div>
+        {% if users %}
+            <div id="pages_block_2" class="tac">
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data) %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% include '@app/footer.twig' %}

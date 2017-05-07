@@ -1,0 +1,44 @@
+<h4>Installing: {{ module.install_name }} V{{ module.version }}</h4>
+<div>{{ module.install_descr }}</div>
+<br>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" id="module_bar"
+         data-transitiongoal=""
+         style="width: {{ current_module_percent }}%;"
+         aria-valuenow="">{{ current_module_percent }}%</div>
+</div>
+<div class="x_content h4">Check dependent modules</div>
+{% if errors or lib_errors %}
+    {% if errors %}
+    <h3>Required modules: </h3>
+    <div>
+        {% for item in errors %}
+        {{ item.module_gid }} V{{ item.module_version }} - <font class="req">{{ item.info }}</font><br>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if lib_errors %}
+    <h3>Required libraries: </h3>
+    <div>
+        {% for item in lib_errors %}
+        <b>{{ item.gid }}</b> {{ item.name }}<br>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="ln_solid"></div>
+    <div class="form-group">
+      <div class="col-xs-12">
+          <input type="button" onclick="javascript: product_install.request('dependencies');"
+              name="refresh_module" value="Refresh" class="btn btn-primary">
+      </div>
+    </div>
+    <div class="clearfix"></div>
+{% else %}
+<script>
+$(function(){
+    product_install.update_module_progress({{ current_module_percent }});
+    product_install.delayed_request('{{ next_step }}');
+});
+</script>
+{% endif %}
+

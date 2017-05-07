@@ -1,0 +1,5 @@
+	474	Tlhareselele	-25.5063900	25.6362500	BW	10	0	0	Tlhareselele	Tlhareselele	Tlhareselele	Tlhareselele	Tlhareselele	Tlhareselele
+	474	Sekoma	-24.4000000	23.8833300	BW	10	0	0	Sekoma	Sekoma	Sekoma	Sekoma	Sekoma	Sekoma
+	474	Mosopa	-24.7718000	25.4215600	BW	10	0	0	Mosopa	Mosopa	Mosopa	Mosopa	Mosopa	Mosopa
+	474	Khakhea	-24.6895400	23.4940300	BW	10	0	0	Khakhea	Khakhea	Khakhea	Khakhea	Khakhea	Khakhea
+	474	Kanye	-24.9667500	25.3327400	BW	10	0	0	Kanye	Kanye	Kanye	Kanye	Kanye	Kanye

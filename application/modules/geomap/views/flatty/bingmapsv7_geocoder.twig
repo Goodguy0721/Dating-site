@@ -1,0 +1,26 @@
+<script>
+	var geocoder;
+	geocoder_loader = function(){
+		geocoder = new BingMapsv7_Geocoder({});
+	}
+</script>
+
+{% if not geomap_js_loaded %}
+	<script>
+		$(function() {
+			loadScripts(
+				[
+					"{% helper utils.jscript('geomap', 'bingmapsv7.js', 'path') %}",
+					"http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&onScriptLoad=geocoder_loader"
+				],
+				function(){},
+				'geocoder',
+				{crossDomain: true}
+			);
+		});
+	</script>
+{% else %}
+	<script>
+        geocoder_loader();
+    </script>
+{% endif %}

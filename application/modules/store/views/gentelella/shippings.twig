@@ -1,0 +1,205 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if filter == 'all' %} active{% endif %}{% if not filter_data.all %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick='document.location.href="{{ site_url }}admin/store/shipping/all"'>
+                        <input type="radio" name='all' {% if filter == 'all' %} selected{% endif %}>
+                        {% helper lang.l('filter_all_shipping', 'store') %} ({{ filter_data.all }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'active' %} active{% endif %}{% if not filter_data.active %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick='document.location.href="{{ site_url }}admin/store/shipping/active"'>
+                        <input type="radio" name='active' {% if filter == 'active' %} selected{% endif %}>
+                        {% helper lang.l('filter_active_shipping', 'store') %} ({{ filter_data.active }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'inactive' %} active{% endif %}{% if not filter_data.inactive %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick='document.location.href="{{ site_url }}admin/store/shipping/inactive"'>
+                        <input type="radio" name='inactive' {% if filter == 'inactive' %} selected{% endif %}>
+                        {% helper lang.l('filter_inactive_shipping', 'store') %} ({{ filter_data.inactive }})
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div id="actions" class="hide">
+            <div class="btn-group">
+              <a href="{{ site_url }}admin/store/shipping_edit/" class="btn btn-primary">
+                  {% helper lang.l('link_add_shipping_method', 'store') %}
+              </a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                    <a href="{{ site_url }}admin/store/shipping_edit/">
+                        {% helper lang.l('link_add_shipping_method', 'store') %}
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" id="delete_select_block">
+                        {% helper lang.l('link_delete_shipping_method', 'store') %}
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title"><input type="checkbox" id="check-all" class='flat'></th>
+                        <th class="column-title">{% helper lang.l('field_shipping_name', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in shippings %}
+                    <tr>
+                        <td><input type="checkbox" class="grouping flat" value="{{ item.id }}" id="prod_{{ item.id }}"></td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                          {% if item.status %}
+                              {% helper lang.l('btn_tableicon_is_active','start') %}
+                          {% else %}
+                              {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                          {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div id="move_block">
+                                <div class="btn-group">
+                                  {% if item.status %}
+                                      <button type="button" class="btn btn-primary" title="{% helper lang.l('link_deactivate_shipping', 'store') %}"
+                                              onclick="document.location.href='{{ site_url }}admin/store/status_shipping/{{ item.id }}/0'">
+                                          {% helper lang.l('make_inactive','start') %}
+                                      </button>
+                                  {% else %}
+                                      <button type="button" class="btn btn-primary" title="{% helper lang.l('link_activate_shipping', 'store') %}"
+                                              onclick="document.location.href='{{ site_url }}admin/store/status_shipping/{{ item.id }}/1'">
+                                          {% helper lang.l('make_active','start') %}
+                                      </button>
+                                  {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      {% if item.status %}
+                                        <li>
+                                          <a href="{{ site_url }}admin/store/status_shipping/{{ item.id }}/0">
+                                              {% helper lang.l('make_inactive','start') %}
+                                          </a>
+                                        </li>
+                                      {% else %}
+                                        <li>
+                                          <a href="{{ site_url }}admin/store/status_shipping/{{ item.id }}/1">
+                                              {% helper lang.l('make_active','start') %}
+                                          </a>
+                                        </li>
+                                      {% endif %}
+                                        <li>
+                                            <a href="{{ site_url }}admin/store/shipping_edit/{{ item.id }}">
+                                                {% helper lang.l('btn_edit','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="javascript: if(!confirm('{% helper lang.l('note_delete_shipping', 'store', '', 'js') %}')) return false;"
+                                               href="{{ site_url }}admin/store/delete_shipping/{{ item.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+	</div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $(document).off('click', '#delete_select_block').on('click', '#delete_select_block', function() {
+            if (!confirm("{% helper lang.l('note_delete_shipping', 'store', '', 'js') %}")) {
+                return false;
+            }
+            var data = new Array();
+            $('.grouping:checked').each(function(i) {
+                data[i] = $(this).val();
+                $($(this).parents('tr').get(0)).remove();
+            });
+            if (data.length > 0) {
+                $.ajax({
+                    url: site_url + 'admin/store/ajax_delete_shippings/',
+                    data: {shipping_ids: data},
+                    type: "POST",
+                    cache: false,
+                    success: function(data){
+                        location.reload();
+                    }
+                });
+            }else{
+                error_object.show_error_block('{% helper lang.l("error_no_shipping_to_change_group", "store", '', "js") %}', 'error');
+            }
+        });
+    });
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_shipping','store') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,2,3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

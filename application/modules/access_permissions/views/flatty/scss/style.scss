@@ -1,0 +1,335 @@
+.advertising-image {
+    height: 200px;
+    background-color: $contrast_color;
+    color:$content_bg;
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: url(../../../../../../uploads/default/memberships__list.jpg) no-repeat center center;
+    text-align: center;
+    overflow:hidden;
+    .tagline {
+        font-size: 30px;
+        padding-top: 50px;
+    }
+    .btn-actions {
+        padding-top: 20px;
+        .services {
+            color: #fff;
+            margin-#{$left}: 10px; 
+        }
+    }
+}
+.access-list {
+     -moz-column-width: 18em;
+    -webkit-column-width: 18em;
+    column-width: 18em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em; 
+    column-gap:1em; 
+    .item-group {
+        padding:  .25rem;
+        .group-block {
+            height: 400px;
+            overflow: hidden;
+            position:relative;
+             display: inline-block;
+            padding-top: 20px;
+            width:  100%;
+            &:hover,
+            &:focus{
+                .toggle-block {
+                    font-size: 20px;
+                }
+            }
+            .btn-group-justified {
+                background: $html_bg;
+                color: inherit;
+            }
+            &.active {
+                height: 100%;
+                .toggle-block {
+                    padding: 20px 0;
+                    box-shadow: none;
+                    i:before {
+                        content: "\f102";
+                    }
+                }
+            }
+            .toggle-block {
+                box-shadow: 3px -94px 263px -55px #fff inset;
+                position: absolute;
+                bottom: 20px;
+                height: 100px;
+                width: 100%;
+                cursor: pointer;
+                margin: -70px -15px;
+                i:before {
+                    margin-top: 20px;
+                    font-weight: bold;
+                    color: $descr_color;
+                    content: "\f103";
+                }
+
+            }
+            .title-block {
+                margin-top: 10px;
+            }
+            .periods {
+                &.active {
+                     background: #fff;
+                     border: 1px solid;
+                     padding: 10px;
+                }
+                position: relative;
+                cursor: pointer;
+                .period-block {
+                    margin: 0 0 20px;
+                    .period {
+                        border-bottom: 1px dashed;
+                        padding-#{$right}: 5px;
+                    }
+                    i {
+                        line-height: 1.5;
+                    }
+                }
+                .all-period {
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                    color: $descr_color;
+                    overflow: hidden;
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    &:hover,
+                    &:focus{
+                        background: $html_bg;
+                        display: block;
+                    }
+                    .period {
+                        border: 0;
+                    }
+                }
+                .all-periods {
+                    background-color: #fff;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 1;
+                    margin: 50px;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                }
+                .price {
+                    font-size: 40px;
+                    position: relative;
+                    height: 70px;
+                    padding-top: 10px;
+                    .currency {
+                        font-size: 16px;
+                        position: absolute;
+                    }
+                }
+            }
+            .modules {
+                margin: 20px 0 50px;
+
+                .module-empty {
+                    
+                }
+                .module {
+                    margin: 20px 0;
+                    .module-name {
+                        font-weight: bold;
+                    }
+                    .module-description {
+                        font-size: 12px;
+                        color: $descr_color;
+                    }
+                }
+            }
+        }
+    }
+}
+.selection-period {
+    margin-top: 40px;
+    .actions-block {
+        ul {
+                width: 100%;
+         }
+    }
+    .singl-period {
+        margin: 20px 0;
+        font-weight: bold;
+    }
+    .saving {
+        padding-#{$right}: 10px;
+        height: 35px;
+        color: $descr_color;
+    }
+    .selector {
+        .progress {
+            cursor: pointer;
+            height: 58px;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0 20px;
+        }
+        .progress-bar {
+            top: 20px;
+            position: relative;
+            height: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+            &:first-child {
+                border-radius: 4px 0 0 4px;
+            }
+            &:last-child {
+                border-radius: 0 4px 4px 0;
+                .delimiter {
+                    color: rgba(0, 0, 0, 0.0);
+                }
+            }
+            .period-description {
+                i {
+                    font-size: 33px;
+                    color: $input_color;
+                    z-index: 1;
+                }
+                height: 50px;
+                top: -15px;
+                color: $font_color;
+                position: absolute;
+                right: -18px;
+            }
+        }
+        .progress-bar-selected {
+            background-color: $input_color;
+            &:first-child {
+                border-radius: 4px 0 0 4px;
+            }
+            &:first-child {
+                border-radius: 4px 0 0 4px;
+            }
+            .delimiter {
+                color: rgba(92, 103, 132, 0.25);
+                margin:7px;
+            }
+            .period {
+                margin-top: 0;
+            }
+        }
+        .progress-bar-empty {
+            background: rgba(92, 103, 132, 0.25);
+            .delimiter {
+                color: rgba(92, 103, 132, 0.25);
+                margin-top:7px;
+            }
+            .period {
+                margin-top: 7px;
+            }
+        }
+    }
+}
+.actions-block {
+    .btn-group {
+            .dropdown-menu {
+                max-height: 150px;
+                overflow: hidden;
+                overflow-y: auto;
+            }
+    }
+    &.actions-block-absolute {
+        .btn-group {
+            width: 100%;
+            .dropdown-menu {
+                width: 100%;
+                max-height: 150px;
+                overflow: hidden;
+                overflow-y: auto;
+            }
+            .buy {
+                width: 90%;
+            }
+            .sel {
+                width: 10%;
+            }
+        }
+    }
+    li {
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        a {
+            padding: 10px;
+            img {
+                max-height: 30px;
+                padding-#{$left}: 5px;
+            }
+            i {
+                padding: 0 10px;
+                color: $indicator_color;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+.b-memberships__item {
+    .b-memberships__price,
+    .b-memberships__title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .b-memberships__period {
+        font-size: 12px;
+    }
+    .b-member-plan__payment-data {
+        i {
+            color: $indicator_color;
+            margin-#{$right}: 5px;
+        }
+    }
+}
+.congratulations-block {
+    .name-block {
+        margin: 10px 0;
+    }
+    .description-block {
+         margin: 10px 0;
+         color: $descr_color;
+    }
+    button {
+        margin: 20px 0;
+    }
+}
+.main-block {
+    .privilege {
+        margin-top: 50px;
+        h2 {
+            text-align: $left;
+        }
+        .g-flatty-block,
+        .contrasting-block {
+            margin-bottom: 5px;
+            line-height: 2;
+            .module-name {
+                font-weight: bold;
+            }
+            .module-description {
+                color: $descr_color;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+  .advertising-image {
+    .tagline {
+      font-size: 25px;
+      padding-top: 30px;
+    }
+  }
+}

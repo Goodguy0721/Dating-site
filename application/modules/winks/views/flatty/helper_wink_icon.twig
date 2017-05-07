@@ -1,0 +1,29 @@
+<a id="btn-wink-{{ wink_button_rand }}" class="btn-wink{% if wink_back %}-back{% endif %} link-r-margin {% if is_pending %}link-disable{% endif %}"
+   data-user-id="{{ partner_id }}" data-is-pending="{{ is_pending }}" data-is-new="{{ is_new }}" title="
+        {% if wink_back %}
+            {% helper lang.l('wink_back', 'winks', '', 'button') %}
+        {% else %}
+            {% helper lang.l('wink', 'winks', '', 'button') %}
+        {% endif %}" href="javascript:void(0);">
+	<i class="fa fa-eye fa-big edge hover{% if is_pending %} g{% endif %}"></i>
+</a>
+<script>
+	$(function(){
+		loadScripts(
+			["{% helper utils.jscript('winks', 'winks.js', 'path') %}"],
+			function(){
+				winksObj = new winks({
+					siteUrl: site_url,
+					titleWink: '{% helper lang.l('wink', 'winks') %}',
+					titleWinkBack: '{% helper lang.l('wink_back', 'winks') %}',
+					errIsPending: '{% helper lang.l('error_is_pending', 'winks') %}',
+					succIgnored: '{% helper lang.l('msg_ignored', 'winks') %}',
+					succWinked: '{% helper lang.l('msg_winked', 'winks') %}',
+					succResponded: '{% helper lang.l('msg_responded', 'winks') %}',
+					wink_button_rand: '{{ wink_button_rand }}'
+				});
+			},
+			'winksObj'
+		);
+	});
+</script>

@@ -1,0 +1,26 @@
+<div class="view-user">
+    <div>{% spaceless %}
+        {% if data.user.is_guest  and  data.user_name %}
+            {{ data.user_name }}
+        {% else %}
+            {% if data.fname or  data.sname %}
+                <label>{% helper lang.l('field_name', 'users') %}:</label>
+                <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank">
+                    {{ data.fname }} {{ data.sname }}
+                </a>
+                <br/>
+            {% endif %}
+            {% if data.nickname %}
+                <label>{% helper lang.l('field_nickname', 'users') %}:</label>
+                <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank">
+                    {{ data.nickname }}
+                </a>
+                <br/>
+            {% endif %}
+        {% endif %}
+        <div class="mb20">
+            <label>{% helper lang.l('field_g_comment', 'users') %}:</label>
+            {{ data.text|nl2br }}
+        </div>
+        {% endspaceless %}</div>
+    </div>

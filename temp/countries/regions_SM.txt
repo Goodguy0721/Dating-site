@@ -1,0 +1,2 @@
+	2964	Serravalle	43.9689700	12.4816700	SM	09	0	0	Serravalle	Серравалле	Serravalle	Serravalle	Serravalle	Serravalle
+	2964	Falciano	43.9833300	12.5000000	SM	09	0	0	Falciano	Falciano	Falciano	Falciano	Falciano	Falciano

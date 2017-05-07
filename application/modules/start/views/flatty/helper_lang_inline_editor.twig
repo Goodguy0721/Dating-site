@@ -1,0 +1,24 @@
+<div class="content-block load_content">
+	<h1>
+        {% helper lang.l('header_inline_lang_edit', 'start') %}
+    </h1>
+	<div class="inside edit_block">
+		<form name="lang_edit" class="edit-form n100">
+			{% for key, item in langs %}
+                <div class="form-group">
+                    <label>{{ item.name }}:</label>
+					<div class="v">
+						{% if is_textarea %}
+                            <textarea name="field{{ key }}" rows="10" cols="80" lang-editor="redactor" lang-id="{{ key }}" class="form-control"></textarea>
+						{% else %}
+                            <input type="text" name="field{{ key }}" value="" lang-editor="redactor" lang-id="{{ key }}" class="form-control"/>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+			<div class="b">
+                <input type="button" id="lie_save" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-primary">
+            </div>
+		</form>
+	</div>
+</div>

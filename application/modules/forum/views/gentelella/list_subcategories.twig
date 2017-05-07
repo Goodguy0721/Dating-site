@@ -1,0 +1,132 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div>
+            <p class="mb5">
+                <a href="{{ site_url }}admin/forum/index/{{ category.cat_type }}">{% helper lang.l('title_'~category.cat_type, 'forum') %}</a> -> {{ category.category }}
+            </p>
+        </div>
+
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <a href="{{ site_root }}admin/forum/edit_subcategory/{{ category.id }}" class="btn btn-primary">
+                      {% helper lang.l('link_add_subcategory', 'forum') %}</a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ site_root }}admin/forum/edit_subcategory/{{ category.id }}">
+                                {% helper lang.l('link_add_subcategory', 'forum') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <table id="forum" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_subcategories', 'forum') %}</th>
+                        <th class="column-title">{% helper lang.l('link_messages_count', 'forum') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key,item in subcategories %}
+                        <tr class="even pointer">
+                            <td>
+                                <a href="{{ site_url }}admin/forum/messages/{{ item.id }}">
+                                    {{ item.subcategory }}
+                                </a>
+                            </td>
+                            <td>{{ item.messages_count }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick = "document.location.href='{{ site_url }}admin/forum/edit_subcategory/{{ category.id }}/{{ item.id }}'">
+                                            {% helper lang.l('link_edit_subcategory','forum') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/forum/edit_subcategory/{{ category.id }}/{{ item.id }}">
+                                                {% helper lang.l('link_edit_subcategory','forum') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/forum/delete_subcategory/{{ item.id }}/{{ category.id }}"
+                                               onclick="javascript: if(!confirm('{% helper lang.l('note_delete_subcategory', 'forum', '', 'js') %}')) return false;">
+                                                {% helper lang.l('link_delete_subcategory','forum') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#forum').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_subcategories','forum') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#forum_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

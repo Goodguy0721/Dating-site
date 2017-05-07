@@ -1,0 +1,26 @@
+{% include '@app/header.twig' %}
+<!--Profile -->					
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview({'page_name': 'homepage'}) %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id, 'media_size': 'small'}) %}  
+    </div>    
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+    <div class="g-flatty-block">
+        {% helper wall_events.wall_block({'place': 'homepage', 'id_wall': user_id}) %}        
+    </div>
+</div>
+<div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+    <div id="active_users" class="clearfix mb10">
+        {% helper users.active_users_block({'count': '16'}) %}
+    </div>
+    <div id="recent_photo" class="clearfix mb10">
+        {% helper media.recent_media_block({'upload_gid': 'photo', 'count': '16'}) %}
+    </div> 
+    <div id="bonuses" class="clearfix mb10">
+        {% helper bonuses.bonuses_form() %}   
+    </div>    
+</div>
+{% include '@app/footer.twig' %}

@@ -1,0 +1,89 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+    {% if service_name %}
+        <h1>
+            {% helper lang.l('first_connect_via', 'users_connections') %} {{service_name}}!
+        </h1>
+    {% endif %}
+</div>
+<div class="col-xs-4">
+    <p>
+        {% helper lang.l('select_usertype', 'users_connections') %}
+    </p>
+    <form action="{{ site_url }}users_connections/oauth_register/" method="POST">
+        <input type="hidden" name="service_id" value="{{ service_id }}" />
+        <input type="hidden" name="application_id" value="{{ application_id }}" />
+        <input type="hidden" name="access_token" value="{{ access_token }}" />
+        <input type="hidden" name="access_token_secret" value="{{ access_token_secret }}" />
+        <input type="hidden" name="date_end" value="{{ date_end }}" />
+        <input type="hidden" name="service_user_id" value="{{ service_user_id }}" />
+        <input type="hidden" name="service_user_fname" value="{{ service_user_fname }}" />
+        <input type="hidden" name="service_user_sname" value="{{ service_user_sname }}" />
+        <input type="hidden" name="service_user_email" value="{{ service_user_email }}" />
+        <select name="user_type" class="form-control mb10">
+            {% for key, item in user_type.option %}
+                <option value="{{ key }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+
+        {% if service_user_email is empty %}
+            <div class="form-group row mb10">
+                <label for="" class="col-xs-12 tali">
+                    {% helper lang.l('field_email', 'users') %}:
+                </label>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="email" name="service_user_email" value="" id="email" class="form-control" required>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if service_user_fname is empty %}
+            <div class="form-group row mb10">
+                <label for="" class="col-xs-12 tali">
+                    {% helper lang.l('field_fname', 'users') %}:
+                </label>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="text" name="service_user_fname" value="" id="fname" class="form-control">
+                </div>
+            </div>
+        {% endif %}
+
+        {% if service_user_sname is empty %}
+            <div class="form-group row mb10">
+                <label for="" class="col-xs-12 tali">
+                    {% helper lang.l('field_sname', 'users') %}:
+                </label>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="text" name="service_user_sname" value="" id="sname" class="form-control">
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="form-group row mb10">
+            <label for="" class="col-xs-12 tali">
+                {% helper lang.l('birth_date', 'users') %}:
+            </label>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <input type="text" name="birth_date" value="{{ data.birth_date|e }}"
+                       id="datepicker" maxlength="10"  class="form-control">
+            </div>
+        </div>
+        <input type="submit" name="btn_register" value="{% helper lang.l('btn_ok', 'start', '', 'button') %}" class="btn btn-primary"/>
+    </form>
+</div>
+    <script>
+        $(function () {
+            var date_now = new Date();
+                    var date_min = new Date(date_now.getFullYear() - {{ age_max }}, 0, 1);
+                    var date_max = new Date(date_now.getFullYear() - {{ age_min }}, 0, 1);
+                    var yr = (date_min.getFullYear()) + ':' + (date_max.getFullYear());
+            $("#datepicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeYear: true,
+                changeMonth: true,
+                yearRange: yr,
+                defaultDate: date_max
+            });
+        });
+    </script>
+{% include '@app/footer.twig' %}

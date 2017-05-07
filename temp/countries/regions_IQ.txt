@@ -1,0 +1,5 @@
+	1391	Tallkayf	36.4910900	43.1202600	IQ	15	0	0	Tallkayf	Талль-Кайф	Tallkayf	Tallkayf	Tallkayf	Tallkayf
+	1391	Al-Hamdaniya	36.2709300	43.3775800	IQ	15	0	0	Al-Hamdaniya	Al-Hamdaniya	Al-Hamdaniya	Al-Hamdaniya	Al-Hamdaniya	Al-Hamdaniya
+	1391	‘Aqrah	36.7332200	43.8796400	IQ	15	0	0	‘Aqrah	‘Aqrah	‘Aqrah	‘Aqrah	‘Aqrah	‘Aqrah
+	1391	Mosul	36.3350000	43.1188900	IQ	15	0	0	Mosul	Мосул	Mosul	Mosul	Mosul	Mosul
+	1391	Sinjār	36.3209000	41.8765600	IQ	15	0	0	Sinjār	Sinjār	Sinjār	Sinjār	Sinjār	Sinjār

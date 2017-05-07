@@ -1,0 +1,4 @@
+	927	Píllaro	-1.1741400	-78.5467600	EC	19	0	0	Píllaro	Píllaro	Píllaro	Píllaro	Píllaro	Píllaro
+	927	Pelileo	-1.3299000	-78.5434000	EC	19	0	0	Pelileo	Pelileo	Pelileo	Pelileo	Pelileo	Pelileo
+	927	Baños	-1.3969900	-78.4228900	EC	19	0	0	Baños	Baños	Baños	Baños	Baños	Baños
+	927	Ambato	-1.2490800	-78.6167500	EC	19	0	0	Ambato	Амбато	Ambato	Ambato	Ambato	Ambato

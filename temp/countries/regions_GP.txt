@@ -1,0 +1,24 @@
+	1120	Vieux-Habitants	16.0589000	-61.7659500	GP	GP	0	0	Vieux-Habitants	Vieux-Habitants	Vieux-Habitants	Vieux-Habitants	Vieux-Habitants	Vieux-Habitants
+	1120	Trois-Rivières	15.9756700	-61.6450900	GP	GP	0	0	Trois-Rivières	Trois-Rivières	Trois-Rivières	Trois-Rivières	Trois-Rivières	Trois-Rivières
+	1120	Terre-de-Bas	15.8501100	-61.6441700	GP	GP	0	0	Terre-de-Bas	Terre-de-Bas	Terre-de-Bas	Terre-de-Bas	Terre-de-Bas	Terre-de-Bas
+	1120	Saint-François	16.2526400	-61.2741400	GP	GP	0	0	Saint-François	Saint-François	Saint-François	Saint-François	Saint-François	Saint-François
+	1120	Sainte-Rose	16.3323800	-61.6979300	GP	GP	0	0	Sainte-Rose	Сент-Роз	Sainte-Rose	Sainte-Rose	Sainte-Rose	Sainte-Rose
+	1120	Sainte-Anne	16.2263600	-61.3791900	GP	GP	0	0	Sainte-Anne	Sainte-Anne	Sainte-Anne	Sainte-Anne	Sainte-Anne	Sainte-Anne
+	1120	Saint-Claude	16.0240900	-61.7021500	GP	GP	0	0	Saint-Claude	Saint-Claude	Saint-Claude	Saint-Claude	Saint-Claude	Saint-Claude
+	1120	Port-Louis	16.4190100	-61.5313100	GP	GP	0	0	Port-Louis	Port-Louis	Port-Louis	Port-Louis	Port-Louis	Port-Louis
+	1120	Pointe-Noire	16.2308600	-61.7878300	GP	GP	0	0	Pointe-Noire	Pointe-Noire	Pointe-Noire	Pointe-Noire	Pointe-Noire	Pointe-Noire
+	1120	Pointe-à-Pitre	16.2412500	-61.5361400	GP	GP	0	0	Pointe-à-Pitre	Пуант-а-Питр	Pointe-à-Pitre	Pointe-à-Pitre	Pointe-à-Pitre	Pointe-à-Pitre
+	1120	Petit-Canal	16.3783600	-61.4878800	GP	GP	0	0	Petit-Canal	Petit-Canal	Petit-Canal	Petit-Canal	Petit-Canal	Petit-Canal
+	1120	Petit-Bourg	16.1913500	-61.5915900	GP	GP	0	0	Petit-Bourg	Пти-Бург	Petit-Bourg	Petit-Bourg	Petit-Bourg	Petit-Bourg
+	1120	Les Abymes	16.2709500	-61.5045100	GP	GP	0	0	Les Abymes	Les Abymes	Les Abymes	Les Abymes	Les Abymes	Les Abymes
+	1120	Le Moule	16.3331500	-61.3472800	GP	GP	0	0	Le Moule	Le Moule	Le Moule	Le Moule	Le Moule	Le Moule
+	1120	Le Gosier	16.2068500	-61.4932900	GP	GP	0	0	Le Gosier	Le Gosier	Le Gosier	Le Gosier	Le Gosier	Le Gosier
+	1120	Lamentin	16.2710500	-61.6312400	GP	GP	0	0	Lamentin	Lamentin	Lamentin	Lamentin	Lamentin	Lamentin
+	1120	Grand-Bourg	15.8834600	-61.3148400	GP	GP	0	0	Grand-Bourg	Grand-Bourg	Grand-Bourg	Grand-Bourg	Grand-Bourg	Grand-Bourg
+	1120	Gourbeyre	15.9937800	-61.6913800	GP	GP	0	0	Gourbeyre	Gourbeyre	Gourbeyre	Gourbeyre	Gourbeyre	Gourbeyre
+	1120	Capesterre-Belle-Eau	16.0432200	-61.5659600	GP	GP	0	0	Capesterre-Belle-Eau	Capesterre-Belle-Eau	Capesterre-Belle-Eau	Capesterre-Belle-Eau	Capesterre-Belle-Eau	Capesterre-Belle-Eau
+	1120	Bouillante	16.1304100	-61.7691900	GP	GP	0	0	Bouillante	Bouillante	Bouillante	Bouillante	Bouillante	Bouillante
+	1120	Basse-Terre	15.9985400	-61.7254800	GP	GP	0	0	Basse-Terre	Бас-Тер	Basse-Terre	Basse-Terre	Basse-Terre	Basse-Terre
+	1120	Baillif	16.0201800	-61.7463200	GP	GP	0	0	Baillif	Baillif	Baillif	Baillif	Baillif	Baillif
+	1120	Baie-Mahault	16.2673800	-61.5854300	GP	GP	0	0	Baie-Mahault	Baie-Mahault	Baie-Mahault	Baie-Mahault	Baie-Mahault	Baie-Mahault
+	1120	Anse-Bertrand	16.4720600	-61.5077800	GP	GP	0	0	Anse-Bertrand	Anse-Bertrand	Anse-Bertrand	Anse-Bertrand	Anse-Bertrand	Anse-Bertrand

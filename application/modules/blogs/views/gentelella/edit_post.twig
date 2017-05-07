@@ -1,0 +1,67 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form action="{{ data.action }}" method="post" 
+                enctype="multipart/form-data" name="save_form"
+                data-parsley-validate class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_title', 'blogs') %}: * </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.title|e }}" name="title" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_description', 'blogs') %}: * </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {{ content_fck }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_hidden_post', 'blogs') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="hidden" value="0" name="is_hidden" />
+                        <input type="checkbox" value="1" name="is_hidden" class="flat" {% if data.is_hidden %}checked{% endif %} />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_can_comment', 'blogs') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="hidden" value="0" name="can_comment" />
+                        <input type="checkbox" value="1" name="can_comment" class="flat" {% if data.can_comment %}checked{% endif %} />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_tags', 'blogs') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.tags_str|e }}" name="tags" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/blogs/posts/{{ data.blog_id }}">
+                            {% helper lang.l('btn_cancel', 'start' )%}</a>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

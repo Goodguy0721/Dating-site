@@ -1,0 +1,355 @@
+	2526	Zubūbah	32.5434600	35.2227400	PS	WE	0	0	Zubūbah	Zubūbah	Zubūbah	Zubūbah	Zubūbah	Zubūbah
+	2526	Zabdah	32.4507700	35.1295800	PS	WE	0	0	Zabdah	Zabdah	Zabdah	Zabdah	Zabdah	Zabdah
+	2526	Zaytā	32.3856000	35.0512200	PS	WE	0	0	Zaytā	Zaytā	Zaytā	Zaytā	Zaytā	Zaytā
+	2526	Zaytā Jammā‘īn	32.1369800	35.1859500	PS	WE	0	0	Zaytā Jammā‘īn	Zaytā Jammā‘īn	Zaytā Jammā‘īn	Zaytā Jammā‘īn	Zaytā Jammā‘īn	Zaytā Jammā‘īn
+	2526	Az Zāwiyah	32.3759600	35.2316600	PS	WE	0	0	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah
+	2526	Zawātā	32.2461000	35.2265000	PS	WE	0	0	Zawātā	Zawātā	Zawātā	Zawātā	Zawātā	Zawātā
+	2526	Za‘tarah	31.6736100	35.2566200	PS	WE	0	0	Za‘tarah	Za‘tarah	Za‘tarah	Za‘tarah	Za‘tarah	Za‘tarah
+	2526	Yuta	31.4459000	35.0944300	PS	WE	0	0	Yuta	Yuta	Yuta	Yuta	Yuta	Yuta
+	2526	Yatmā	32.1088900	35.2690900	PS	WE	0	0	Yatmā	Yatmā	Yatmā	Yatmā	Yatmā	Yatmā
+	2526	Yāsūf	32.1084100	35.2378400	PS	WE	0	0	Yāsūf	Yāsūf	Yāsūf	Yāsūf	Yāsūf	Yāsūf
+	2526	Yāşīd	32.2968800	35.2775700	PS	WE	0	0	Yāşīd	Yāşīd	Yāşīd	Yāşīd	Yāşīd	Yāşīd
+	2526	Yānūn	32.1454000	35.3553500	PS	WE	0	0	Yānūn	Yānūn	Yānūn	Yānūn	Yānūn	Yānūn
+	2526	Yabrūd	31.9733000	35.2451600	PS	WE	0	0	Yabrūd	Yabrūd	Yabrūd	Yabrūd	Yabrūd	Yabrūd
+	2526	Ya‘bad	32.4456600	35.1682200	PS	WE	0	0	Ya‘bad	Ya‘bad	Ya‘bad	Ya‘bad	Ya‘bad	Ya‘bad
+	2526	Wādī Fūkīn	31.7070200	35.1036600	PS	WE	0	0	Wādī Fūkīn	Wādī Fūkīn	Wādī Fūkīn	Wādī Fūkīn	Wādī Fūkīn	Wādī Fūkīn
+	2526	‘Ūrīf	32.1594900	35.2222800	PS	WE	0	0	‘Ūrīf	‘Ūrīf	‘Ūrīf	‘Ūrīf	‘Ūrīf	‘Ūrīf
+	2526	Umm Şafā	32.0088900	35.1646100	PS	WE	0	0	Umm Şafā	Umm Şafā	Umm Şafā	Umm Şafā	Umm Şafā	Umm Şafā
+	2526	Umm at Tūt	32.4323400	35.3441800	PS	WE	0	0	Umm at Tūt	Umm at Tūt	Umm at Tūt	Umm at Tūt	Umm at Tūt	Umm at Tūt
+	2526	Umm al ‘Amd	31.4521300	35.1335700	PS	WE	0	0	Umm al ‘Amd	Umm al ‘Amd	Umm al ‘Amd	Umm al ‘Amd	Umm al ‘Amd	Umm al ‘Amd
+	2526	Ūdalah	32.1536300	35.2764600	PS	WE	0	0	Ūdalah	Ūdalah	Ūdalah	Ūdalah	Ūdalah	Ūdalah
+	2526	Turmus‘ayyā	32.0353800	35.2856400	PS	WE	0	0	Turmus‘ayyā	Turmus‘ayyā	Turmus‘ayyā	Turmus‘ayyā	Turmus‘ayyā	Turmus‘ayyā
+	2526	Ţūrah ash Sharqīyah	32.4644600	35.1711900	PS	WE	0	0	Ţūrah ash Sharqīyah	Ţūrah ash Sharqīyah	Ţūrah ash Sharqīyah	Ţūrah ash Sharqīyah	Ţūrah ash Sharqīyah	Ţūrah ash Sharqīyah
+	2526	Ţūrah al Gharbīyah	32.4688400	35.1524700	PS	WE	0	0	Ţūrah al Gharbīyah	Ţūrah al Gharbīyah	Ţūrah al Gharbīyah	Ţūrah al Gharbīyah	Ţūrah al Gharbīyah	Ţūrah al Gharbīyah
+	2526	Ţūlkarm	32.3103700	35.0286300	PS	WE	0	0	Ţūlkarm	Тулькарм	Ţūlkarm	Ţūlkarm	Ţūlkarm	Ţūlkarm
+	2526	Ţūbās	32.3209100	35.3698900	PS	WE	0	0	Ţūbās	Ţūbās	Ţūbās	Ţūbās	Ţūbās	Ţūbās
+	2526	Tilfīt	32.4014700	35.3415000	PS	WE	0	0	Tilfīt	Tilfīt	Tilfīt	Tilfīt	Tilfīt	Tilfīt
+	2526	Ti‘innik	32.5195600	35.2196600	PS	WE	0	0	Ti‘innik	Ti‘innik	Ti‘innik	Ti‘innik	Ti‘innik	Ti‘innik
+	2526	Tayāsīr	32.3404200	35.3960400	PS	WE	0	0	Tayāsīr	Tayāsīr	Tayāsīr	Tayāsīr	Tayāsīr	Tayāsīr
+	2526	Tarqūmyā	31.5755100	35.0122300	PS	WE	0	0	Tarqūmyā	Tarqūmyā	Tarqūmyā	Tarqūmyā	Tarqūmyā	Tarqūmyā
+	2526	Aţ Ţarm	32.4624800	35.1910200	PS	WE	0	0	Aţ Ţarm	Aţ Ţarm	Aţ Ţarm	Aţ Ţarm	Aţ Ţarm	Aţ Ţarm
+	2526	Ţammūn	32.2834700	35.3836700	PS	WE	0	0	Ţammūn	Ţammūn	Ţammūn	Ţammūn	Ţammūn	Ţammūn
+	2526	Ţallūzah	32.2705600	35.2949600	PS	WE	0	0	Ţallūzah	Ţallūzah	Ţallūzah	Ţallūzah	Ţallūzah	Ţallūzah
+	2526	Till	32.2006800	35.2129300	PS	WE	0	0	Till	Till	Till	Till	Till	Till
+	2526	Talfīt	32.0866400	35.2909400	PS	WE	0	0	Talfīt	Talfīt	Talfīt	Talfīt	Talfīt	Talfīt
+	2526	Taffūḩ	31.5385500	35.0496600	PS	WE	0	0	Taffūḩ	Taffūḩ	Taffūḩ	Taffūḩ	Taffūḩ	Taffūḩ
+	2526	Şūrīf	31.6507800	35.0643900	PS	WE	0	0	Şūrīf	Şūrīf	Şūrīf	Şūrīf	Şūrīf	Şūrīf
+	2526	Surdā	31.9370900	35.2032100	PS	WE	0	0	Surdā	Surdā	Surdā	Surdā	Surdā	Surdā
+	2526	Sīrīs	32.3282800	35.2913400	PS	WE	0	0	Sīrīs	Sīrīs	Sīrīs	Sīrīs	Sīrīs	Sīrīs
+	2526	Şīr	32.3634200	35.3152900	PS	WE	0	0	Şīr	Şīr	Şīr	Şīr	Şīr	Şīr
+	2526	Sinjil	32.0333400	35.2654500	PS	WE	0	0	Sinjil	Sinjil	Sinjil	Sinjil	Sinjil	Sinjil
+	2526	Silwād	31.9762500	35.2613000	PS	WE	0	0	Silwād	Silwād	Silwād	Silwād	Silwād	Silwād
+	2526	Sīlat az̧ Z̧ahr	32.3193400	35.1841800	PS	WE	0	0	Sīlat az̧ Z̧ahr	Sīlat az̧ Z̧ahr	Sīlat az̧ Z̧ahr	Sīlat az̧ Z̧ahr	Sīlat az̧ Z̧ahr	Sīlat az̧ Z̧ahr
+	2526	Sīlat al Ḩārithīyah	32.5084700	35.2275200	PS	WE	0	0	Sīlat al Ḩārithīyah	Sīlat al Ḩārithīyah	Sīlat al Ḩārithīyah	Sīlat al Ḩārithīyah	Sīlat al Ḩārithīyah	Sīlat al Ḩārithīyah
+	2526	Sa‘īr	31.5785500	35.1401700	PS	WE	0	0	Sa‘īr	Sa‘īr	Sa‘īr	Sa‘īr	Sa‘īr	Sa‘īr
+	2526	Shuqbā	31.9869600	35.0401200	PS	WE	0	0	Shuqbā	Shuqbā	Shuqbā	Shuqbā	Shuqbā	Shuqbā
+	2526	Shūfah	32.2755100	35.0813500	PS	WE	0	0	Shūfah	Shūfah	Shūfah	Shūfah	Shūfah	Shūfah
+	2526	Shabtīn	31.9732700	35.0497600	PS	WE	0	0	Shabtīn	Shabtīn	Shabtīn	Shabtīn	Shabtīn	Shabtīn
+	2526	Şaydā	32.3848900	35.1185600	PS	WE	0	0	Şaydā	Şaydā	Şaydā	Şaydā	Şaydā	Şaydā
+	2526	Şarţah	32.1044700	35.0919800	PS	WE	0	0	Şarţah	Şarţah	Şarţah	Şarţah	Şarţah	Şarţah
+	2526	Şarrah	32.2097000	35.1914700	PS	WE	0	0	Şarrah	Şarrah	Şarrah	Şarrah	Şarrah	Şarrah
+	2526	Şānūr	32.3560800	35.2453700	PS	WE	0	0	Şānūr	Şānūr	Şānūr	Şānūr	Şānūr	Şānūr
+	2526	Sannīryā	32.1287700	35.0465200	PS	WE	0	0	Sannīryā	Sannīryā	Sannīryā	Sannīryā	Sannīryā	Sannīryā
+	2526	Sālim	32.2096200	35.3303400	PS	WE	0	0	Sālim	Sālim	Sālim	Sālim	Sālim	Sālim
+	2526	Salfīt	32.0837000	35.1807900	PS	WE	0	0	Salfīt	Salfīt	Salfīt	Salfīt	Salfīt	Salfīt
+	2526	Saffārīn	32.2622500	35.1102800	PS	WE	0	0	Saffārīn	Saffārīn	Saffārīn	Saffārīn	Saffārīn	Saffārīn
+	2526	Şaffā	31.9056300	35.0609400	PS	WE	0	0	Şaffā	Şaffā	Şaffā	Şaffā	Şaffā	Şaffā
+	2526	Sabasţīyah	32.2756200	35.1987300	PS	WE	0	0	Sabasţīyah	Sabasţīyah	Sabasţīyah	Sabasţīyah	Sabasţīyah	Sabasţīyah
+	2526	Rummanah	32.5245100	35.2048000	PS	WE	0	0	Rummanah	Rummanah	Rummanah	Rummanah	Rummanah	Rummanah
+	2526	Rūjayb	32.1906100	35.2933200	PS	WE	0	0	Rūjayb	Rūjayb	Rūjayb	Rūjayb	Rūjayb	Rūjayb
+	2526	Rās Karkar	31.9424000	35.1077300	PS	WE	0	0	Rās Karkar	Rās Karkar	Rās Karkar	Rās Karkar	Rās Karkar	Rās Karkar
+	2526	Rantīs	32.0279700	35.0187900	PS	WE	0	0	Rantīs	Rantīs	Rantīs	Rantīs	Rantīs	Rantīs
+	2526	Rammūn	31.9334200	35.2982200	PS	WE	0	0	Rammūn	Rammūn	Rammūn	Rammūn	Rammūn	Rammūn
+	2526	Rāmīn	32.2852000	35.1495100	PS	WE	0	0	Rāmīn	Rāmīn	Rāmīn	Rāmīn	Rāmīn	Rāmīn
+	2526	Ramallah	31.8996400	35.2042200	PS	WE	0	0	Ramallah	Рамалла	Ramallah	Ramallah	Ramallah	Ramallah
+	2526	Rāfāt	32.0780600	35.0441700	PS	WE	0	0	Rāfāt	Rāfāt	Rāfāt	Rāfāt	Rāfāt	Rāfāt
+	2526	Rāfāt	31.8709600	35.1918200	PS	WE	0	0	Rāfāt	Rāfāt	Rāfāt	Rāfāt	Rāfāt	Rāfāt
+	2526	Rābā	32.3867800	35.3829800	PS	WE	0	0	Rābā	Rābā	Rābā	Rābā	Rābā	Rābā
+	2526	Quşrah	32.0854300	35.3300500	PS	WE	0	0	Quşrah	Quşrah	Quşrah	Quşrah	Quşrah	Quşrah
+	2526	Qūşīn	32.2382900	35.1829700	PS	WE	0	0	Qūşīn	Qūşīn	Qūşīn	Qūşīn	Qūşīn	Qūşīn
+	2526	Qīrah	32.1221400	35.1717300	PS	WE	0	0	Qīrah	Qīrah	Qīrah	Qīrah	Qīrah	Qīrah
+	2526	Qibyah	31.9773400	35.0098400	PS	WE	0	0	Qibyah	Qibyah	Qibyah	Qibyah	Qibyah	Qibyah
+	2526	Qaţanah	31.8336600	35.1189400	PS	WE	0	0	Qaţanah	Qaţanah	Qaţanah	Qaţanah	Qaţanah	Qaţanah
+	2526	‘Innāb al Kabīr	31.3971300	34.9291000	PS	WE	0	0	‘Innāb al Kabīr	‘Innāb al Kabīr	‘Innāb al Kabīr	‘Innāb al Kabīr	‘Innāb al Kabīr	‘Innāb al Kabīr
+	2526	Qaryūt	32.0700400	35.2943200	PS	WE	0	0	Qaryūt	Qaryūt	Qaryūt	Qaryūt	Qaryūt	Qaryūt
+	2526	Qarāwat Banī Zayd	32.0547000	35.1290800	PS	WE	0	0	Qarāwat Banī Zayd	Qarāwat Banī Zayd	Qarāwat Banī Zayd	Qarāwat Banī Zayd	Qarāwat Banī Zayd	Qarāwat Banī Zayd
+	2526	Qarāwat Banī Ḩasan	32.1256800	35.1006100	PS	WE	0	0	Qarāwat Banī Ḩasan	Qarāwat Banī Ḩasan	Qarāwat Banī Ḩasan	Qarāwat Banī Ḩasan	Qarāwat Banī Ḩasan	Qarāwat Banī Ḩasan
+	2526	Qalqīlyah	32.1896600	34.9706300	PS	WE	0	0	Qalqīlyah	Калькилия	Qalqīlyah	Qalqīlyah	Qalqīlyah	Qalqīlyah
+	2526	Qalandiyā	31.8628900	35.2081600	PS	WE	0	0	Qalandiyā	Qalandiyā	Qalandiyā	Qalandiyā	Qalandiyā	Qalandiyā
+	2526	Qaffīn	32.4327400	35.0826600	PS	WE	0	0	Qaffīn	Qaffīn	Qaffīn	Qaffīn	Qaffīn	Qaffīn
+	2526	Qabāţīyah	32.4103500	35.2808700	PS	WE	0	0	Qabāţīyah	Qabāţīyah	Qabāţīyah	Qabāţīyah	Qabāţīyah	Qabāţīyah
+	2526	Qabalān	32.1018200	35.2893800	PS	WE	0	0	Qabalān	Qabalān	Qabalān	Qabalān	Qabalān	Qabalān
+	2526	Nūbā	31.6090000	35.0345500	PS	WE	0	0	Nūbā	Nūbā	Nūbā	Nūbā	Nūbā	Nūbā
+	2526	Nişf Jubayl	32.2835900	35.2180100	PS	WE	0	0	Nişf Jubayl	Nişf Jubayl	Nişf Jubayl	Nişf Jubayl	Nişf Jubayl	Nişf Jubayl
+	2526	Ni‘līn	31.9474600	35.0203100	PS	WE	0	0	Ni‘līn	Ni‘līn	Ni‘līn	Ni‘līn	Ni‘līn	Ni‘līn
+	2526	Nazlat ‘Īsá	32.4156200	35.0588800	PS	WE	0	0	Nazlat ‘Īsá	Nazlat ‘Īsá	Nazlat ‘Īsá	Nazlat ‘Īsá	Nazlat ‘Īsá	Nazlat ‘Īsá
+	2526	Naḩḩālīn	31.6855900	35.1208100	PS	WE	0	0	Naḩḩālīn	Naḩḩālīn	Naḩḩālīn	Naḩḩālīn	Naḩḩālīn	Naḩḩālīn
+	2526	Nablus	32.2211100	35.2544400	PS	WE	0	0	Nablus	Наблус	Nablus	Nablus	Nablus	Nablus
+	2526	Mikhmās	31.8721000	35.2759600	PS	WE	0	0	Mikhmās	Mikhmās	Mikhmās	Mikhmās	Mikhmās	Mikhmās
+	2526	Mislīyah	32.3861300	35.2878000	PS	WE	0	0	Mislīyah	Mislīyah	Mislīyah	Mislīyah	Mislīyah	Mislīyah
+	2526	Mirkah	32.3958300	35.2380700	PS	WE	0	0	Mirkah	Mirkah	Mirkah	Mirkah	Mirkah	Mirkah
+	2526	Banī Zayd ash Shārqīyah	32.0493500	35.1659300	PS	WE	0	0	Banī Zayd ash Shārqīyah	Banī Zayd ash Shārqīyah	Banī Zayd ash Shārqīyah	Banī Zayd ash Shārqīyah	Banī Zayd ash Shārqīyah	Banī Zayd ash Shārqīyah
+	2526	Maythalūn	32.3479800	35.2744600	PS	WE	0	0	Maythalūn	Maythalūn	Maythalūn	Maythalūn	Maythalūn	Maythalūn
+	2526	Masḩah	32.1082800	35.0509600	PS	WE	0	0	Masḩah	Masḩah	Masḩah	Masḩah	Masḩah	Masḩah
+	2526	Marj Na‘jah	32.1848600	35.5389800	PS	WE	0	0	Marj Na‘jah	Marj Na‘jah	Marj Na‘jah	Marj Na‘jah	Marj Na‘jah	Marj Na‘jah
+	2526	Mardā	32.1138100	35.1953600	PS	WE	0	0	Mardā	Mardā	Mardā	Mardā	Mardā	Mardā
+	2526	Al Māliḩ	32.3274500	35.4618700	PS	WE	0	0	Al Māliḩ	Al Māliḩ	Al Māliḩ	Al Māliḩ	Al Māliḩ	Al Māliḩ
+	2526	Majdal Banī Fāḑil	32.0835700	35.3637800	PS	WE	0	0	Majdal Banī Fāḑil	Majdal Banī Fāḑil	Majdal Banī Fāḑil	Majdal Banī Fāḑil	Majdal Banī Fāḑil	Majdal Banī Fāḑil
+	2526	Mādamā	32.1858800	35.2311400	PS	WE	0	0	Mādamā	Mādamā	Mādamā	Mādamā	Mādamā	Mādamā
+	2526	Al Lubban ash Sharqīyah	32.0701100	35.2403000	PS	WE	0	0	Al Lubban ash Sharqīyah	Al Lubban ash Sharqīyah	Al Lubban ash Sharqīyah	Al Lubban ash Sharqīyah	Al Lubban ash Sharqīyah	Al Lubban ash Sharqīyah
+	2526	Kūr	32.2354400	35.0975300	PS	WE	0	0	Kūr	Kūr	Kūr	Kūr	Kūr	Kūr
+	2526	Kufayrit	32.4438000	35.2018400	PS	WE	0	0	Kufayrit	Kufayrit	Kufayrit	Kufayrit	Kufayrit	Kufayrit
+	2526	Kifil Ḩāris	32.1182700	35.1571900	PS	WE	0	0	Kifil Ḩāris	Kifil Ḩāris	Kifil Ḩāris	Kifil Ḩāris	Kifil Ḩāris	Kifil Ḩāris
+	2526	Qilā‘ Zaytā	31.5529400	35.1207700	PS	WE	0	0	Qilā‘ Zaytā	Qilā‘ Zaytā	Qilā‘ Zaytā	Qilā‘ Zaytā	Qilā‘ Zaytā	Qilā‘ Zaytā
+	2526	Z̧ahr al ‘Abd	32.4500200	35.0930300	PS	WE	0	0	Z̧ahr al ‘Abd	Z̧ahr al ‘Abd	Z̧ahr al ‘Abd	Z̧ahr al ‘Abd	Z̧ahr al ‘Abd	Z̧ahr al ‘Abd
+	2526	Wādī aḑ Ḑabi‘	32.4532400	35.3323000	PS	WE	0	0	Wādī aḑ Ḑabi‘	Wādī aḑ Ḑabi‘	Wādī aḑ Ḑabi‘	Wādī aḑ Ḑabi‘	Wādī aḑ Ḑabi‘	Wādī aḑ Ḑabi‘
+	2526	Umm Salmūnah	31.6445700	35.1667400	PS	WE	0	0	Umm Salmūnah	Umm Salmūnah	Umm Salmūnah	Umm Salmūnah	Umm Salmūnah	Umm Salmūnah
+	2526	Ar Ramāḑīn	31.3795200	34.9124600	PS	WE	0	0	Ar Ramāḑīn	Ar Ramāḑīn	Ar Ramāḑīn	Ar Ramāḑīn	Ar Ramāḑīn	Ar Ramāḑīn
+	2526	Umm ar Rīḩān	32.4832900	35.1408800	PS	WE	0	0	Umm ar Rīḩān	Umm ar Rīḩān	Umm ar Rīḩān	Umm ar Rīḩān	Umm ar Rīḩān	Umm ar Rīḩān
+	2526	Khirbat Şīr	32.1971000	35.0557200	PS	WE	0	0	Khirbat Şīr	Khirbat Şīr	Khirbat Şīr	Khirbat Şīr	Khirbat Şīr	Khirbat Şīr
+	2526	Rās aţ Ţīrah	32.1616900	35.0103600	PS	WE	0	0	Rās aţ Ţīrah	Rās aţ Ţīrah	Rās aţ Ţīrah	Rās aţ Ţīrah	Rās aţ Ţīrah	Rās aţ Ţīrah
+	2526	Qalqas	31.4921200	35.0953500	PS	WE	0	0	Qalqas	Qalqas	Qalqas	Qalqas	Qalqas	Qalqas
+	2526	Khirbat Qays	32.0628200	35.1772800	PS	WE	0	0	Khirbat Qays	Khirbat Qays	Khirbat Qays	Khirbat Qays	Khirbat Qays	Khirbat Qays
+	2526	Imrīsh	31.4689500	35.0081900	PS	WE	0	0	Imrīsh	Imrīsh	Imrīsh	Imrīsh	Imrīsh	Imrīsh
+	2526	Marāḩ Rabbāḩ	31.6340600	35.1868800	PS	WE	0	0	Marāḩ Rabbāḩ	Marāḩ Rabbāḩ	Marāḩ Rabbāḩ	Marāḩ Rabbāḩ	Marāḩ Rabbāḩ	Marāḩ Rabbāḩ
+	2526	Aḑ Ḑab‘ah	32.1584100	35.0095700	PS	WE	0	0	Aḑ Ḑab‘ah	Aḑ Ḑab‘ah	Aḑ Ḑab‘ah	Aḑ Ḑab‘ah	Aḑ Ḑab‘ah	Aḑ Ḑab‘ah
+	2526	Kurzah	31.4405800	34.9991000	PS	WE	0	0	Kurzah	Kurzah	Kurzah	Kurzah	Kurzah	Kurzah
+	2526	Kafā	32.2953100	35.0520600	PS	WE	0	0	Kafā	Kafā	Kafā	Kafā	Kafā	Kafā
+	2526	Dayr al ‘Asal at Taḩtā	31.4732900	34.9446000	PS	WE	0	0	Dayr al ‘Asal at Taḩtā	Dayr al ‘Asal at Taḩtā	Dayr al ‘Asal at Taḩtā	Dayr al ‘Asal at Taḩtā	Dayr al ‘Asal at Taḩtā	Dayr al ‘Asal at Taḩtā
+	2526	Dayr al ‘Asal al Fawqā	31.4683200	34.9383200	PS	WE	0	0	Dayr al ‘Asal al Fawqā	Dayr al ‘Asal al Fawqā	Dayr al ‘Asal al Fawqā	Dayr al ‘Asal al Fawqā	Dayr al ‘Asal al Fawqā	Dayr al ‘Asal al Fawqā
+	2526	Bayt Ta‘mar	31.6792700	35.2398600	PS	WE	0	0	Bayt Ta‘mar	Bayt Ta‘mar	Bayt Ta‘mar	Bayt Ta‘mar	Bayt Ta‘mar	Bayt Ta‘mar
+	2526	Khallat Sakāryā	31.6632200	35.1234800	PS	WE	0	0	Khallat Sakāryā	Khallat Sakāryā	Khallat Sakāryā	Khallat Sakāryā	Khallat Sakāryā	Khallat Sakāryā
+	2526	Bayt Mirsim	31.4523700	34.9150300	PS	WE	0	0	Bayt Mirsim	Bayt Mirsim	Bayt Mirsim	Bayt Mirsim	Bayt Mirsim	Bayt Mirsim
+	2526	Bayt Ḩasan	32.2376000	35.4040700	PS	WE	0	0	Bayt Ḩasan	Bayt Ḩasan	Bayt Ḩasan	Bayt Ḩasan	Bayt Ḩasan	Bayt Ḩasan
+	2526	Bayt ‘Awwā	31.5091100	34.9493800	PS	WE	0	0	Bayt ‘Awwā	Bayt ‘Awwā	Bayt ‘Awwā	Bayt ‘Awwā	Bayt ‘Awwā	Bayt ‘Awwā
+	2526	Bayt Amīn	32.1314700	35.0213800	PS	WE	0	0	Bayt Amīn	Bayt Amīn	Bayt Amīn	Bayt Amīn	Bayt Amīn	Bayt Amīn
+	2526	Kharā’ib Umm al Laḩm	31.8385400	35.0951100	PS	WE	0	0	Kharā’ib Umm al Laḩm	Kharā’ib Umm al Laḩm	Kharā’ib Umm al Laḩm	Kharā’ib Umm al Laḩm	Kharā’ib Umm al Laḩm	Kharā’ib Umm al Laḩm
+	2526	Jannātah	31.6695800	35.2196100	PS	WE	0	0	Jannātah	Jannātah	Jannātah	Jannātah	Jannātah	Jannātah
+	2526	Khirbat ‘Aţūf	32.2629400	35.4375700	PS	WE	0	0	Khirbat ‘Aţūf	Khirbat ‘Aţūf	Khirbat ‘Aţūf	Khirbat ‘Aţūf	Khirbat ‘Aţūf	Khirbat ‘Aţūf
+	2526	Ţarrāmah	31.4808100	35.0325200	PS	WE	0	0	Ţarrāmah	Ţarrāmah	Ţarrāmah	Ţarrāmah	Ţarrāmah	Ţarrāmah
+	2526	Sikkah	31.4916100	34.9430500	PS	WE	0	0	Sikkah	Sikkah	Sikkah	Sikkah	Sikkah	Sikkah
+	2526	Ash Shaykh Sa‘d	31.7372100	35.2574200	PS	WE	0	0	Ash Shaykh Sa‘d	Ash Shaykh Sa‘d	Ash Shaykh Sa‘d	Ash Shaykh Sa‘d	Ash Shaykh Sa‘d	Ash Shaykh Sa‘d
+	2526	Bayt ar Rūsh at Taḩtā	31.4633800	34.9359500	PS	WE	0	0	Bayt ar Rūsh at Taḩtā	Bayt ar Rūsh at Taḩtā	Bayt ar Rūsh at Taḩtā	Bayt ar Rūsh at Taḩtā	Bayt ar Rūsh at Taḩtā	Bayt ar Rūsh at Taḩtā
+	2526	Bayt ar Rūsh al Fawqā	31.4519600	34.9265200	PS	WE	0	0	Bayt ar Rūsh al Fawqā	Bayt ar Rūsh al Fawqā	Bayt ar Rūsh al Fawqā	Bayt ar Rūsh al Fawqā	Bayt ar Rūsh al Fawqā	Bayt ar Rūsh al Fawqā
+	2526	‘Akkābah	32.4482300	35.0816400	PS	WE	0	0	‘Akkābah	‘Akkābah	‘Akkābah	‘Akkābah	‘Akkābah	‘Akkābah
+	2526	Nazlat ash Shaykh Zayd	32.4624700	35.1750300	PS	WE	0	0	Nazlat ash Shaykh Zayd	Nazlat ash Shaykh Zayd	Nazlat ash Shaykh Zayd	Nazlat ash Shaykh Zayd	Nazlat ash Shaykh Zayd	Nazlat ash Shaykh Zayd
+	2526	Al Muţillah	32.4205000	35.4076300	PS	WE	0	0	Al Muţillah	Al Muţillah	Al Muţillah	Al Muţillah	Al Muţillah	Al Muţillah
+	2526	An Naşşārīyah	32.2364700	35.3871100	PS	WE	0	0	An Naşşārīyah	An Naşşārīyah	An Naşşārīyah	An Naşşārīyah	An Naşşārīyah	An Naşşārīyah
+	2526	Kharbathā al Mişbāḩ	31.8854600	35.0718500	PS	WE	0	0	Kharbathā al Mişbāḩ	Kharbathā al Mişbāḩ	Kharbathā al Mişbāḩ	Kharbathā al Mişbāḩ	Kharbathā al Mişbāḩ	Kharbathā al Mişbāḩ
+	2526	Al Majd	31.4805600	34.9510800	PS	WE	0	0	Al Majd	Al Majd	Al Majd	Al Majd	Al Majd	Al Majd
+	2526	Karmah	31.4518200	35.0268900	PS	WE	0	0	Karmah	Karmah	Karmah	Karmah	Karmah	Karmah
+	2526	Al Jārūshīyah	32.3469800	35.0500900	PS	WE	0	0	Al Jārūshīyah	Al Jārūshīyah	Al Jārūshīyah	Al Jārūshīyah	Al Jārūshīyah	Al Jārūshīyah
+	2526	Al Burj	31.4360900	34.9169700	PS	WE	0	0	Al Burj	Al Burj	Al Burj	Al Burj	Al Burj	Al Burj
+	2526	Khirbat al Ashqar	32.1407200	35.0202200	PS	WE	0	0	Khirbat al Ashqar	Khirbat al Ashqar	Khirbat al Ashqar	Khirbat al Ashqar	Khirbat al Ashqar	Khirbat al Ashqar
+	2526	Shuyūkh al ‘Arrūb	31.6173500	35.1436600	PS	WE	0	0	Shuyūkh al ‘Arrūb	Shuyūkh al ‘Arrūb	Shuyūkh al ‘Arrūb	Shuyūkh al ‘Arrūb	Shuyūkh al ‘Arrūb	Shuyūkh al ‘Arrūb
+	2526	Al ‘Aqrabānīyah	32.2523100	35.3783600	PS	WE	0	0	Al ‘Aqrabānīyah	Al ‘Aqrabānīyah	Al ‘Aqrabānīyah	Al ‘Aqrabānīyah	Al ‘Aqrabānīyah	Al ‘Aqrabānīyah
+	2526	Khirbat ad Dayr	31.6556000	35.0255300	PS	WE	0	0	Khirbat ad Dayr	Khirbat ad Dayr	Khirbat ad Dayr	Khirbat ad Dayr	Khirbat ad Dayr	Khirbat ad Dayr
+	2526	Khirbat Abū Falāḩ	32.0167800	35.3013500	PS	WE	0	0	Khirbat Abū Falāḩ	Khirbat Abū Falāḩ	Khirbat Abū Falāḩ	Khirbat Abū Falāḩ	Khirbat Abū Falāḩ	Khirbat Abū Falāḩ
+	2526	Khirbat ‘Abd Allāh al Yūnis	32.4758000	35.1140400	PS	WE	0	0	Khirbat ‘Abd Allāh al Yūnis	Khirbat ‘Abd Allāh al Yūnis	Khirbat ‘Abd Allāh al Yūnis	Khirbat ‘Abd Allāh al Yūnis	Khirbat ‘Abd Allāh al Yūnis	Khirbat ‘Abd Allāh al Yūnis
+	2526	Kharbathā Banī Ḩārith	31.9450800	35.0719400	PS	WE	0	0	Kharbathā Banī Ḩārith	Kharbathā Banī Ḩārith	Kharbathā Banī Ḩārith	Kharbathā Banī Ḩārith	Kharbathā Banī Ḩārith	Kharbathā Banī Ḩārith
+	2526	Khārās	31.6148000	35.0417400	PS	WE	0	0	Khārās	Khārās	Khārās	Khārās	Khārās	Khārās
+	2526	Khallat al Mayyah	31.4422200	35.1428600	PS	WE	0	0	Khallat al Mayyah	Khallat al Mayyah	Khallat al Mayyah	Khallat al Mayyah	Khallat al Mayyah	Khallat al Mayyah
+	2526	Kūbar	31.9872200	35.1578800	PS	WE	0	0	Kūbar	Kūbar	Kūbar	Kūbar	Kūbar	Kūbar
+	2526	Kafr Zībād	32.2258400	35.0717900	PS	WE	0	0	Kafr Zībād	Kafr Zībād	Kafr Zībād	Kafr Zībād	Kafr Zībād	Kafr Zībād
+	2526	Kafr Thulth	32.1533000	35.0469800	PS	WE	0	0	Kafr Thulth	Kafr Thulth	Kafr Thulth	Kafr Thulth	Kafr Thulth	Kafr Thulth
+	2526	Kafr Şūr	32.2436600	35.0639400	PS	WE	0	0	Kafr Şūr	Kafr Şūr	Kafr Şūr	Kafr Şūr	Kafr Şūr	Kafr Şūr
+	2526	Kafr Rā‘ī	32.3739800	35.1545100	PS	WE	0	0	Kafr Rā‘ī	Kafr Rā‘ī	Kafr Rā‘ī	Kafr Rā‘ī	Kafr Rā‘ī	Kafr Rā‘ī
+	2526	Kafr Qūd	32.4566100	35.2264900	PS	WE	0	0	Kafr Qūd	Kafr Qūd	Kafr Qūd	Kafr Qūd	Kafr Qūd	Kafr Qūd
+	2526	Kafr Qallīl	32.1935100	35.2828400	PS	WE	0	0	Kafr Qallīl	Kafr Qallīl	Kafr Qallīl	Kafr Qallīl	Kafr Qallīl	Kafr Qallīl
+	2526	Kafr Qaddūm	32.2216200	35.1447100	PS	WE	0	0	Kafr Qaddūm	Kafr Qaddūm	Kafr Qaddūm	Kafr Qaddūm	Kafr Qaddūm	Kafr Qaddūm
+	2526	Kafr Mālik	31.9884000	35.3093200	PS	WE	0	0	Kafr Mālik	Kafr Mālik	Kafr Mālik	Kafr Mālik	Kafr Mālik	Kafr Mālik
+	2526	Kafr Lāqif	32.1834200	35.0907300	PS	WE	0	0	Kafr Lāqif	Kafr Lāqif	Kafr Lāqif	Kafr Lāqif	Kafr Lāqif	Kafr Lāqif
+	2526	Kafr Jammāl	32.2255100	35.0433700	PS	WE	0	0	Kafr Jammāl	Kafr Jammāl	Kafr Jammāl	Kafr Jammāl	Kafr Jammāl	Kafr Jammāl
+	2526	Kafr Dān	32.4785200	35.2542500	PS	WE	0	0	Kafr Dān	Kafr Dān	Kafr Dān	Kafr Dān	Kafr Dān	Kafr Dān
+	2526	Kafr ‘Ayn	32.0475800	35.1203800	PS	WE	0	0	Kafr ‘Ayn	Kafr ‘Ayn	Kafr ‘Ayn	Kafr ‘Ayn	Kafr ‘Ayn	Kafr ‘Ayn
+	2526	Kafr al Labad	32.2996700	35.1095500	PS	WE	0	0	Kafr al Labad	Kafr al Labad	Kafr al Labad	Kafr al Labad	Kafr al Labad	Kafr al Labad
+	2526	Kafr ad Dīk	32.0671000	35.0828700	PS	WE	0	0	Kafr ad Dīk	Kafr ad Dīk	Kafr ad Dīk	Kafr ad Dīk	Kafr ad Dīk	Kafr ad Dīk
+	2526	Kafr ‘Abbūsh	32.2235300	35.0850400	PS	WE	0	0	Kafr ‘Abbūsh	Kafr ‘Abbūsh	Kafr ‘Abbūsh	Kafr ‘Abbūsh	Kafr ‘Abbūsh	Kafr ‘Abbūsh
+	2526	Jūrīsh	32.1018800	35.3218800	PS	WE	0	0	Jūrīsh	Jūrīsh	Jūrīsh	Jūrīsh	Jūrīsh	Jūrīsh
+	2526	Jūrat ash Sham‘ah	31.6505100	35.1700100	PS	WE	0	0	Jūrat ash Sham‘ah	Jūrat ash Sham‘ah	Jūrat ash Sham‘ah	Jūrat ash Sham‘ah	Jūrat ash Sham‘ah	Jūrat ash Sham‘ah
+	2526	Al Judayyidah	32.3354100	35.3010800	PS	WE	0	0	Al Judayyidah	Al Judayyidah	Al Judayyidah	Al Judayyidah	Al Judayyidah	Al Judayyidah
+	2526	Jīt	32.2143100	35.1708100	PS	WE	0	0	Jīt	Jīt	Jīt	Jīt	Jīt	Jīt
+	2526	Jiljīlīyā	32.0298600	35.2229700	PS	WE	0	0	Jiljīlīyā	Jiljīlīyā	Jiljīlīyā	Jiljīlīyā	Jiljīlīyā	Jiljīlīyā
+	2526	Jifnā	31.9619200	35.2133800	PS	WE	0	0	Jifnā	Jifnā	Jifnā	Jifnā	Jifnā	Jifnā
+	2526	Jībiyā	31.9979800	35.1598800	PS	WE	0	0	Jībiyā	Jībiyā	Jībiyā	Jībiyā	Jībiyā	Jībiyā
+	2526	Jayyūs	32.2012500	35.0341600	PS	WE	0	0	Jayyūs	Jayyūs	Jayyūs	Jayyūs	Jayyūs	Jayyūs
+	2526	Janīn	32.4594300	35.3008600	PS	WE	0	0	Janīn	Дженин	Janīn	Janīn	Janīn	Janīn
+	2526	Jammā‘īn	32.1316400	35.2040400	PS	WE	0	0	Jammā‘īn	Jammā‘īn	Jammā‘īn	Jammā‘īn	Jammā‘īn	Jammā‘īn
+	2526	Jālūd	32.0667500	35.3166200	PS	WE	0	0	Jālūd	Jālūd	Jālūd	Jālūd	Jālūd	Jālūd
+	2526	Jalqamūs	32.4246400	35.3642100	PS	WE	0	0	Jalqamūs	Jalqamūs	Jalqamūs	Jalqamūs	Jalqamūs	Jalqamūs
+	2526	Jalbūn	32.4595700	35.4151600	PS	WE	0	0	Jalbūn	Jalbūn	Jalbūn	Jalbūn	Jalbūn	Jalbūn
+	2526	Al Jalamah	32.5082100	35.3131700	PS	WE	0	0	Al Jalamah	Al Jalamah	Al Jalamah	Al Jalamah	Al Jalamah	Al Jalamah
+	2526	Jaba‘	32.3240900	35.2213200	PS	WE	0	0	Jaba‘	Jaba‘	Jaba‘	Jaba‘	Jaba‘	Jaba‘
+	2526	Jaba‘	31.8572700	35.2586800	PS	WE	0	0	Jaba‘	Jaba‘	Jaba‘	Jaba‘	Jaba‘	Jaba‘
+	2526	‘Izbat aţ Ţabīb	32.1815700	35.0345800	PS	WE	0	0	‘Izbat aţ Ţabīb	‘Izbat aţ Ţabīb	‘Izbat aţ Ţabīb	‘Izbat aţ Ţabīb	‘Izbat aţ Ţabīb	‘Izbat aţ Ţabīb
+	2526	‘Aslah	32.1732600	35.0355100	PS	WE	0	0	‘Aslah	‘Aslah	‘Aslah	‘Aslah	‘Aslah	‘Aslah
+	2526	Iskākā	32.1036100	35.2247200	PS	WE	0	0	Iskākā	Iskākā	Iskākā	Iskākā	Iskākā	Iskākā
+	2526	‘Irāq Būrīn	32.2008100	35.2415900	PS	WE	0	0	‘Irāq Būrīn	‘Irāq Būrīn	‘Irāq Būrīn	‘Irāq Būrīn	‘Irāq Būrīn	‘Irāq Būrīn
+	2526	Immātīn	32.1916400	35.1583600	PS	WE	0	0	Immātīn	Immātīn	Immātīn	Immātīn	Immātīn	Immātīn
+	2526	‘Illār	32.3702400	35.1070800	PS	WE	0	0	‘Illār	‘Illār	‘Illār	‘Illār	‘Illār	‘Illār
+	2526	Iktābah	32.3266000	35.0526200	PS	WE	0	0	Iktābah	Iktābah	Iktābah	Iktābah	Iktābah	Iktābah
+	2526	Ijnisinyā	32.2733200	35.2158600	PS	WE	0	0	Ijnisinyā	Ijnisinyā	Ijnisinyā	Ijnisinyā	Ijnisinyā	Ijnisinyā
+	2526	Idhnā	31.5587400	34.9743600	PS	WE	0	0	Idhnā	Idhnā	Idhnā	Idhnā	Idhnā	Idhnā
+	2526	Ibzīq	32.3688400	35.3973600	PS	WE	0	0	Ibzīq	Ibzīq	Ibzīq	Ibzīq	Ibzīq	Ibzīq
+	2526	Ḩuwwārah	32.1522400	35.2567300	PS	WE	0	0	Ḩuwwārah	Ḩuwwārah	Ḩuwwārah	Ḩuwwārah	Ḩuwwārah	Ḩuwwārah
+	2526	Ḩūsān	31.7093100	35.1347500	PS	WE	0	0	Ḩūsān	Ḩūsān	Ḩūsān	Ḩūsān	Ḩūsān	Ḩūsān
+	2526	Khirbat Ḩumşah	32.2345000	35.4911700	PS	WE	0	0	Khirbat Ḩumşah	Khirbat Ḩumşah	Khirbat Ḩumşah	Khirbat Ḩumşah	Khirbat Ḩumşah	Khirbat Ḩumşah
+	2526	Ḩizmā	31.8333700	35.2631500	PS	WE	0	0	Ḩizmā	Ḩizmā	Ḩizmā	Ḩizmā	Ḩizmā	Ḩizmā
+	2526	Ḩāris	32.1142400	35.1419200	PS	WE	0	0	Ḩāris	Ḩāris	Ḩāris	Ḩāris	Ḩāris	Ḩāris
+	2526	Ḩalḩūl	31.5802900	35.1017800	PS	WE	0	0	Ḩalḩūl	Ḩalḩūl	Ḩalḩūl	Ḩalḩūl	Ḩalḩūl	Ḩalḩūl
+	2526	Ḩajjah	32.2042700	35.1307700	PS	WE	0	0	Ḩajjah	Ḩajjah	Ḩajjah	Ḩajjah	Ḩajjah	Ḩajjah
+	2526	Ḩablah	32.1652300	34.9774800	PS	WE	0	0	Ḩablah	Ḩablah	Ḩablah	Ḩablah	Ḩablah	Ḩablah
+	2526	Khirbat al Fakhīt	31.3766200	35.1661900	PS	WE	0	0	Khirbat al Fakhīt	Khirbat al Fakhīt	Khirbat al Fakhīt	Khirbat al Fakhīt	Khirbat al Fakhīt	Khirbat al Fakhīt
+	2526	Far‘ūn	32.2861300	35.0232600	PS	WE	0	0	Far‘ūn	Far‘ūn	Far‘ūn	Far‘ūn	Far‘ūn	Far‘ūn
+	2526	Farkhah	32.0687800	35.1528600	PS	WE	0	0	Farkhah	Farkhah	Farkhah	Farkhah	Farkhah	Farkhah
+	2526	Far‘atā	32.1907200	35.1660500	PS	WE	0	0	Far‘atā	Far‘atā	Far‘atā	Far‘atā	Far‘atā	Far‘atā
+	2526	Faqqū‘ah	32.4899800	35.4016300	PS	WE	0	0	Faqqū‘ah	Faqqū‘ah	Faqqū‘ah	Faqqū‘ah	Faqqū‘ah	Faqqū‘ah
+	2526	Falāmyah	32.2249800	35.0229100	PS	WE	0	0	Falāmyah	Falāmyah	Falāmyah	Falāmyah	Falāmyah	Falāmyah
+	2526	Faḩmah	32.3829100	35.1791200	PS	WE	0	0	Faḩmah	Faḩmah	Faḩmah	Faḩmah	Faḩmah	Faḩmah
+	2526	Dūrā al Qar‘	31.9586200	35.2271400	PS	WE	0	0	Dūrā al Qar‘	Dūrā al Qar‘	Dūrā al Qar‘	Dūrā al Qar‘	Dūrā al Qar‘	Dūrā al Qar‘
+	2526	Dūrā	31.5077700	35.0292900	PS	WE	0	0	Dūrā	Дуры	Dūrā	Dūrā	Dūrā	Dūrā
+	2526	Domea	32.0563200	35.3670500	PS	WE	0	0	Domea	Domea	Domea	Domea	Domea	Domea
+	2526	Dhannābah	32.3134100	35.0414400	PS	WE	0	0	Dhannābah	Dhannābah	Dhannābah	Dhannābah	Dhannābah	Dhannābah
+	2526	Dayr Sharaf	32.2532600	35.1889300	PS	WE	0	0	Dayr Sharaf	Dayr Sharaf	Dayr Sharaf	Dayr Sharaf	Dayr Sharaf	Dayr Sharaf
+	2526	Dayr Qiddīs	31.9486200	35.0443700	PS	WE	0	0	Dayr Qiddīs	Dayr Qiddīs	Dayr Qiddīs	Dayr Qiddīs	Dayr Qiddīs	Dayr Qiddīs
+	2526	Dayr Niz̧ām	32.0028200	35.1143700	PS	WE	0	0	Dayr Niz̧ām	Dayr Niz̧ām	Dayr Niz̧ām	Dayr Niz̧ām	Dayr Niz̧ām	Dayr Niz̧ām
+	2526	Dayr Jarīr	31.9663600	35.2926100	PS	WE	0	0	Dayr Jarīr	Dayr Jarīr	Dayr Jarīr	Dayr Jarīr	Dayr Jarīr	Dayr Jarīr
+	2526	Dayr Istiyā	32.1309600	35.1396300	PS	WE	0	0	Dayr Istiyā	Dayr Istiyā	Dayr Istiyā	Dayr Istiyā	Dayr Istiyā	Dayr Istiyā
+	2526	Dayr Ibzī‘	31.9172700	35.1210500	PS	WE	0	0	Dayr Ibzī‘	Dayr Ibzī‘	Dayr Ibzī‘	Dayr Ibzī‘	Dayr Ibzī‘	Dayr Ibzī‘
+	2526	Dayr Ghazālah	32.4958600	35.3510400	PS	WE	0	0	Dayr Ghazālah	Dayr Ghazālah	Dayr Ghazālah	Dayr Ghazālah	Dayr Ghazālah	Dayr Ghazālah
+	2526	Dayr Dibwān	31.9111200	35.2666100	PS	WE	0	0	Dayr Dibwān	Dayr Dibwān	Dayr Dibwān	Dayr Dibwān	Dayr Dibwān	Dayr Dibwān
+	2526	Dayr Ballūţ	32.0655100	35.0245100	PS	WE	0	0	Dayr Ballūţ	Dayr Ballūţ	Dayr Ballūţ	Dayr Ballūţ	Dayr Ballūţ	Dayr Ballūţ
+	2526	Dayr as Sūdān	32.0321300	35.1484400	PS	WE	0	0	Dayr as Sūdān	Dayr as Sūdān	Dayr as Sūdān	Dayr as Sūdān	Dayr as Sūdān	Dayr as Sūdān
+	2526	Dayr al Ḩaţab	32.2173400	35.3212700	PS	WE	0	0	Dayr al Ḩaţab	Dayr al Ḩaţab	Dayr al Ḩaţab	Dayr al Ḩaţab	Dayr al Ḩaţab	Dayr al Ḩaţab
+	2526	Dayr al Ghuşūn	32.3524400	35.0768900	PS	WE	0	0	Dayr al Ghuşūn	Dayr al Ghuşūn	Dayr al Ghuşūn	Dayr al Ghuşūn	Dayr al Ghuşūn	Dayr al Ghuşūn
+	2526	Dayr Abū Mash‘al	31.9988100	35.0684400	PS	WE	0	0	Dayr Abū Mash‘al	Dayr Abū Mash‘al	Dayr Abū Mash‘al	Dayr Abū Mash‘al	Dayr Abū Mash‘al	Dayr Abū Mash‘al
+	2526	Dayr Abū Ḑa‘īf	32.4560100	35.3616400	PS	WE	0	0	Dayr Abū Ḑa‘īf	Dayr Abū Ḑa‘īf	Dayr Abū Ḑa‘īf	Dayr Abū Ḑa‘īf	Dayr Abū Ḑa‘īf	Dayr Abū Ḑa‘īf
+	2526	Brūqīn	32.0721600	35.0994300	PS	WE	0	0	Brūqīn	Brūqīn	Brūqīn	Brūqīn	Brūqīn	Brūqīn
+	2526	Birqīn	32.4546100	35.2607600	PS	WE	0	0	Birqīn	Birqīn	Birqīn	Birqīn	Birqīn	Birqīn
+	2526	Burqah	32.3017700	35.1926300	PS	WE	0	0	Burqah	Burqah	Burqah	Burqah	Burqah	Burqah
+	2526	Burqah	31.8968200	35.2543000	PS	WE	0	0	Burqah	Burqah	Burqah	Burqah	Burqah	Burqah
+	2526	Būrīn	32.1845200	35.2501500	PS	WE	0	0	Būrīn	Būrīn	Būrīn	Būrīn	Būrīn	Būrīn
+	2526	Burhām	31.9896400	35.1741200	PS	WE	0	0	Burhām	Burhām	Burhām	Burhām	Burhām	Burhām
+	2526	Budrus	31.9668700	34.9942500	PS	WE	0	0	Budrus	Budrus	Budrus	Budrus	Budrus	Budrus
+	2526	Bīr Zayt	31.9695900	35.1940800	PS	WE	0	0	Bīr Zayt	Bīr Zayt	Bīr Zayt	Bīr Zayt	Bīr Zayt	Bīr Zayt
+	2526	Bīr Nabālā	31.8508000	35.2036000	PS	WE	0	0	Bīr Nabālā	Bīr Nabālā	Bīr Nabālā	Bīr Nabālā	Bīr Nabālā	Bīr Nabālā
+	2526	Khirbat Bīr al ‘Idd	31.3754700	35.1320900	PS	WE	0	0	Khirbat Bīr al ‘Idd	Khirbat Bīr al ‘Idd	Khirbat Bīr al ‘Idd	Khirbat Bīr al ‘Idd	Khirbat Bīr al ‘Idd	Khirbat Bīr al ‘Idd
+	2526	Bil‘īn	31.9283500	35.0720400	PS	WE	0	0	Bil‘īn	Bil‘īn	Bil‘īn	Bil‘īn	Bil‘īn	Bil‘īn
+	2526	Biddū	31.8347800	35.1494700	PS	WE	0	0	Biddū	Biddū	Biddū	Biddū	Biddū	Biddū
+	2526	Bidyā	32.1146000	35.0802800	PS	WE	0	0	Bidyā	Bidyā	Bidyā	Bidyā	Bidyā	Bidyā
+	2526	Bazzāryah	32.3079800	35.1659300	PS	WE	0	0	Bazzāryah	Bazzāryah	Bazzāryah	Bazzāryah	Bazzāryah	Bazzāryah
+	2526	Bayt Wazan	32.2310500	35.2157600	PS	WE	0	0	Bayt Wazan	Bayt Wazan	Bayt Wazan	Bayt Wazan	Bayt Wazan	Bayt Wazan
+	2526	Bayt ‘Ūr at Taḩtā	31.8960900	35.0817800	PS	WE	0	0	Bayt ‘Ūr at Taḩtā	Bayt ‘Ūr at Taḩtā	Bayt ‘Ūr at Taḩtā	Bayt ‘Ūr at Taḩtā	Bayt ‘Ūr at Taḩtā	Bayt ‘Ūr at Taḩtā
+	2526	Bayt ‘Ūr al Fawqā	31.8852700	35.1153500	PS	WE	0	0	Bayt ‘Ūr al Fawqā	Bayt ‘Ūr al Fawqā	Bayt ‘Ūr al Fawqā	Bayt ‘Ūr al Fawqā	Bayt ‘Ūr al Fawqā	Bayt ‘Ūr al Fawqā
+	2526	Baytūnyā	31.8966000	35.1704800	PS	WE	0	0	Baytūnyā	Baytūnyā	Baytūnyā	Baytūnyā	Baytūnyā	Baytūnyā
+	2526	Bayt Imrīn	32.2930100	35.2161000	PS	WE	0	0	Bayt Imrīn	Bayt Imrīn	Bayt Imrīn	Bayt Imrīn	Bayt Imrīn	Bayt Imrīn
+	2526	Bayt Sūrīk	31.8242400	35.1493600	PS	WE	0	0	Bayt Sūrīk	Bayt Sūrīk	Bayt Sūrīk	Bayt Sūrīk	Bayt Sūrīk	Bayt Sūrīk
+	2526	Bayt Sīrā	31.8878000	35.0462300	PS	WE	0	0	Bayt Sīrā	Bayt Sīrā	Bayt Sīrā	Bayt Sīrā	Bayt Sīrā	Bayt Sīrā
+	2526	Bayt Sāḩūr	31.7009500	35.2263100	PS	WE	0	0	Bayt Sāḩūr	Bayt Sāḩūr	Bayt Sāḩūr	Bayt Sāḩūr	Bayt Sāḩūr	Bayt Sāḩūr
+	2526	Bayt Qād	32.4696800	35.3562600	PS	WE	0	0	Bayt Qād	Bayt Qād	Bayt Qād	Bayt Qād	Bayt Qād	Bayt Qād
+	2526	Bayt Nūbā	31.8591400	35.0435800	PS	WE	0	0	Bayt Nūbā	Bayt Nūbā	Bayt Nūbā	Bayt Nūbā	Bayt Nūbā	Bayt Nūbā
+	2526	Bayt Liqyā	31.8695800	35.0654000	PS	WE	0	0	Bayt Liqyā	Bayt Liqyā	Bayt Liqyā	Bayt Liqyā	Bayt Liqyā	Bayt Liqyā
+	2526	Bayt Līd	32.2608900	35.1316900	PS	WE	0	0	Bayt Līd	Bayt Līd	Bayt Līd	Bayt Līd	Bayt Līd	Bayt Līd
+	2526	Bethlehem	31.7048700	35.2037600	PS	WE	0	0	Bethlehem	Вифлеем	Bethlehem	Bethlehem	Bethlehem	Bethlehem
+	2526	Bayt Kāḩil	31.5701100	35.0650200	PS	WE	0	0	Bayt Kāḩil	Bayt Kāḩil	Bayt Kāḩil	Bayt Kāḩil	Bayt Kāḩil	Bayt Kāḩil
+	2526	Bayt Jālā	31.7154500	35.1878800	PS	WE	0	0	Bayt Jālā	Bayt Jālā	Bayt Jālā	Bayt Jālā	Bayt Jālā	Bayt Jālā
+	2526	Bayt ‘Anān	31.8506900	35.1124800	PS	WE	0	0	Bayt ‘Anān	Bayt ‘Anān	Bayt ‘Anān	Bayt ‘Anān	Bayt ‘Anān	Bayt ‘Anān
+	2526	Baytīn	31.9267400	35.2409800	PS	WE	0	0	Baytīn	Baytīn	Baytīn	Baytīn	Baytīn	Baytīn
+	2526	Bayt Ūmmar	31.6232900	35.1044600	PS	WE	0	0	Bayt Ūmmar	Bayt Ūmmar	Bayt Ūmmar	Bayt Ūmmar	Bayt Ūmmar	Bayt Ūmmar
+	2526	Al Ittiḩād	31.9755200	35.1159500	PS	WE	0	0	Al Ittiḩād	Al Ittiḩād	Al Ittiḩād	Al Ittiḩād	Al Ittiḩād	Al Ittiḩād
+	2526	Bayt Iksā	31.8173200	35.1793400	PS	WE	0	0	Bayt Iksā	Bayt Iksā	Bayt Iksā	Bayt Iksā	Bayt Iksā	Bayt Iksā
+	2526	Bayt Ijzā	31.8467500	35.1517300	PS	WE	0	0	Bayt Ijzā	Bayt Ijzā	Bayt Ijzā	Bayt Ijzā	Bayt Ijzā	Bayt Ijzā
+	2526	Bayt Ībā	32.2371900	35.2097700	PS	WE	0	0	Bayt Ībā	Bayt Ībā	Bayt Ībā	Bayt Ībā	Bayt Ībā	Bayt Ībā
+	2526	Bayt Fūrīk	32.1768900	35.3354100	PS	WE	0	0	Bayt Fūrīk	Bayt Fūrīk	Bayt Fūrīk	Bayt Fūrīk	Bayt Fūrīk	Bayt Fūrīk
+	2526	Bayt Fajjār	31.6244300	35.1545700	PS	WE	0	0	Bayt Fajjār	Bayt Fajjār	Bayt Fajjār	Bayt Fajjār	Bayt Fajjār	Bayt Fajjār
+	2526	Bayt Duqqū	31.8591100	35.1312400	PS	WE	0	0	Bayt Duqqū	Bayt Duqqū	Bayt Duqqū	Bayt Duqqū	Bayt Duqqū	Bayt Duqqū
+	2526	Bayt Dajan	32.1930300	35.3712700	PS	WE	0	0	Bayt Dajan	Bayt Dajan	Bayt Dajan	Bayt Dajan	Bayt Dajan	Bayt Dajan
+	2526	Bayt Ūlā	31.5961800	35.0296000	PS	WE	0	0	Bayt Ūlā	Bayt Ūlā	Bayt Ūlā	Bayt Ūlā	Bayt Ūlā	Bayt Ūlā
+	2526	Baytā al Fawqā	32.1426000	35.2877400	PS	WE	0	0	Baytā al Fawqā	Baytā al Fawqā	Baytā al Fawqā	Baytā al Fawqā	Baytā al Fawqā	Baytā al Fawqā
+	2526	Battīr	31.7194500	35.1410300	PS	WE	0	0	Battīr	Battīr	Battīr	Battīr	Battīr	Battīr
+	2526	Barţa‘ah ash Sharqīyah	32.4730400	35.0936000	PS	WE	0	0	Barţa‘ah ash Sharqīyah	Barţa‘ah ash Sharqīyah	Barţa‘ah ash Sharqīyah	Barţa‘ah ash Sharqīyah	Barţa‘ah ash Sharqīyah	Barţa‘ah ash Sharqīyah
+	2526	Bardalah	32.3863200	35.4808400	PS	WE	0	0	Bardalah	Bardalah	Bardalah	Bardalah	Bardalah	Bardalah
+	2526	Bāqah ash Sharqīyah	32.4103200	35.0705400	PS	WE	0	0	Bāqah ash Sharqīyah	Bāqah ash Sharqīyah	Bāqah ash Sharqīyah	Bāqah ash Sharqīyah	Bāqah ash Sharqīyah	Bāqah ash Sharqīyah
+	2526	Bāqat al Ḩaţab	32.2043400	35.1143300	PS	WE	0	0	Bāqat al Ḩaţab	Bāqat al Ḩaţab	Bāqat al Ḩaţab	Bāqat al Ḩaţab	Bāqat al Ḩaţab	Bāqat al Ḩaţab
+	2526	Banī Na‘īm	31.5159100	35.1641600	PS	WE	0	0	Banī Na‘īm	Banī Na‘īm	Banī Na‘īm	Banī Na‘īm	Banī Na‘īm	Banī Na‘īm
+	2526	Balāţah	32.2120700	35.2856100	PS	WE	0	0	Balāţah	Balāţah	Balāţah	Balāţah	Balāţah	Balāţah
+	2526	Bal‘ā	32.3339200	35.1116000	PS	WE	0	0	Bal‘ā	Bal‘ā	Bal‘ā	Bal‘ā	Bal‘ā	Bal‘ā
+	2526	‘Azzūn	32.1749600	35.0575200	PS	WE	0	0	‘Azzūn	‘Azzūn	‘Azzūn	‘Azzūn	‘Azzūn	‘Azzūn
+	2526	Az Zāwiyah	32.0962700	35.0398200	PS	WE	0	0	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah	Az Zāwiyah
+	2526	Az̧ Z̧āhirīyah	31.4096700	34.9732900	PS	WE	0	0	Az̧ Z̧āhirīyah	Az̧ Z̧āhirīyah	Az̧ Z̧āhirīyah	Az̧ Z̧āhirīyah	Az̧ Z̧āhirīyah	Az̧ Z̧āhirīyah
+	2526	Az Zabābidah	32.3866500	35.3241100	PS	WE	0	0	Az Zabābidah	Az Zabābidah	Az Zabābidah	Az Zabābidah	Az Zabābidah	Az Zabābidah
+	2526	‘Azmūţ	32.2229700	35.3098900	PS	WE	0	0	‘Azmūţ	‘Azmūţ	‘Azmūţ	‘Azmūţ	‘Azmūţ	‘Azmūţ
+	2526	‘Ayn Yabrūd	31.9491800	35.2512200	PS	WE	0	0	‘Ayn Yabrūd	‘Ayn Yabrūd	‘Ayn Yabrūd	‘Ayn Yabrūd	‘Ayn Yabrūd	‘Ayn Yabrūd
+	2526	‘Ayn Sīnyā	31.9712700	35.2278100	PS	WE	0	0	‘Ayn Sīnyā	‘Ayn Sīnyā	‘Ayn Sīnyā	‘Ayn Sīnyā	‘Ayn Sīnyā	‘Ayn Sīnyā
+	2526	‘Ayn Qīniyā	31.9265300	35.1499400	PS	WE	0	0	‘Ayn Qīniyā	‘Ayn Qīniyā	‘Ayn Qīniyā	‘Ayn Qīniyā	‘Ayn Qīniyā	‘Ayn Qīniyā
+	2526	‘Ayn ‘Arīk	31.9061300	35.1425400	PS	WE	0	0	‘Ayn ‘Arīk	‘Ayn ‘Arīk	‘Ayn ‘Arīk	‘Ayn ‘Arīk	‘Ayn ‘Arīk	‘Ayn ‘Arīk
+	2526	‘Aynabūs	32.1470600	35.2451300	PS	WE	0	0	‘Aynabūs	‘Aynabūs	‘Aynabūs	‘Aynabūs	‘Aynabūs	‘Aynabūs
+	2526	Usarin	32.1249900	35.3099900	PS	WE	0	0	Usarin	Usarin	Usarin	Usarin	Usarin	Usarin
+	2526	‘Awartā	32.1610800	35.2838800	PS	WE	0	0	‘Awartā	‘Awartā	‘Awartā	‘Awartā	‘Awartā	‘Awartā
+	2526	Aţ Ţīrah	31.8702200	35.1268200	PS	WE	0	0	Aţ Ţīrah	Aţ Ţīrah	Aţ Ţīrah	Aţ Ţīrah	Aţ Ţīrah	Aţ Ţīrah
+	2526	‘Attīl	32.3693500	35.0718900	PS	WE	0	0	‘Attīl	‘Attīl	‘Attīl	‘Attīl	‘Attīl	‘Attīl
+	2526	Aţ Ţaybah	32.5149400	35.1857400	PS	WE	0	0	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah
+	2526	Aţ Ţaybah	31.9538800	35.2998000	PS	WE	0	0	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah	Aţ Ţaybah
+	2526	‘Aţārah	32.0005800	35.2046600	PS	WE	0	0	‘Aţārah	‘Aţārah	‘Aţārah	‘Aţārah	‘Aţārah	‘Aţārah
+	2526	As Sāwiyah	32.0853700	35.2578200	PS	WE	0	0	As Sāwiyah	As Sāwiyah	As Sāwiyah	As Sāwiyah	As Sāwiyah	As Sāwiyah
+	2526	As Samū‘	31.3967100	35.0661100	PS	WE	0	0	As Samū‘	As Samū‘	As Samū‘	As Samū‘	As Samū‘	As Samū‘
+	2526	‘Aşīrah ash Shamālīyah	32.2512400	35.2671600	PS	WE	0	0	‘Aşīrah ash Shamālīyah	‘Aşīrah ash Shamālīyah	‘Aşīrah ash Shamālīyah	‘Aşīrah ash Shamālīyah	‘Aşīrah ash Shamālīyah	‘Aşīrah ash Shamālīyah
+	2526	‘Aşīrah al Qiblīyah	32.1784200	35.2156900	PS	WE	0	0	‘Aşīrah al Qiblīyah	‘Aşīrah al Qiblīyah	‘Aşīrah al Qiblīyah	‘Aşīrah al Qiblīyah	‘Aşīrah al Qiblīyah	‘Aşīrah al Qiblīyah
+	2526	Ash Shuyūkh	31.5700400	35.1560600	PS	WE	0	0	Ash Shuyūkh	Ash Shuyūkh	Ash Shuyūkh	Ash Shuyūkh	Ash Shuyūkh	Ash Shuyūkh
+	2526	Ash Shuhadā’	32.4294900	35.2711200	PS	WE	0	0	Ash Shuhadā’	Ash Shuhadā’	Ash Shuhadā’	Ash Shuhadā’	Ash Shuhadā’	Ash Shuhadā’
+	2526	Arţās	31.6893900	35.1868100	PS	WE	0	0	Arţās	Arţās	Arţās	Arţās	Arţās	Arţās
+	2526	Ar Rīḩīyah	31.4695000	35.0778100	PS	WE	0	0	Ar Rīḩīyah	Ar Rīḩīyah	Ar Rīḩīyah	Ar Rīḩīyah	Ar Rīḩīyah	Ar Rīḩīyah
+	2526	Ar Rās	32.2513400	35.0620000	PS	WE	0	0	Ar Rās	Ar Rās	Ar Rās	Ar Rās	Ar Rās	Ar Rās
+	2526	‘Arrānah	32.4972000	35.3227100	PS	WE	0	0	‘Arrānah	‘Arrānah	‘Arrānah	‘Arrānah	‘Arrānah	‘Arrānah
+	2526	Ar Rāmah	32.3592200	35.1712200	PS	WE	0	0	Ar Rāmah	Ar Rāmah	Ar Rāmah	Ar Rāmah	Ar Rāmah	Ar Rāmah
+	2526	Ar Rām wa Ḑāḩiyat al Barīd	31.8494500	35.2342000	PS	WE	0	0	Ar Rām wa Ḑāḩiyat al Barīd	Ar Rām wa Ḑāḩiyat al Barīd	Ar Rām wa Ḑāḩiyat al Barīd	Ar Rām wa Ḑāḩiyat al Barīd	Ar Rām wa Ḑāḩiyat al Barīd	Ar Rām wa Ḑāḩiyat al Barīd
+	2526	‘Arrābah	32.4051700	35.2018900	PS	WE	0	0	‘Arrābah	‘Arrābah	‘Arrābah	‘Arrābah	‘Arrābah	‘Arrābah
+	2526	Jericho	31.8666700	35.4500000	PS	WE	0	0	Jericho	Иерихон	Jericho	Jericho	Jericho	Jericho
+	2526	Al ‘Araqa	32.4705700	35.2002700	PS	WE	0	0	Al ‘Araqa	Al ‘Araqa	Al ‘Araqa	Al ‘Araqa	Al ‘Araqa	Al ‘Araqa
+	2526	‘Arabbūnah	32.5112900	35.3629100	PS	WE	0	0	‘Arabbūnah	‘Arabbūnah	‘Arabbūnah	‘Arabbūnah	‘Arabbūnah	‘Arabbūnah
+	2526	‘Aqrabā	32.1249500	35.3454700	PS	WE	0	0	‘Aqrabā	‘Aqrabā	‘Aqrabā	‘Aqrabā	‘Aqrabā	‘Aqrabā
+	2526	‘Anzah	32.3591600	35.2201100	PS	WE	0	0	‘Anzah	‘Anzah	‘Anzah	‘Anzah	‘Anzah	‘Anzah
+	2526	An Nuway‘imah	31.8921200	35.4354900	PS	WE	0	0	An Nuway‘imah	An Nuway‘imah	An Nuway‘imah	An Nuway‘imah	An Nuway‘imah	An Nuway‘imah
+	2526	An Nazlah ash Sharqīyah	32.4107200	35.1091600	PS	WE	0	0	An Nazlah ash Sharqīyah	An Nazlah ash Sharqīyah	An Nazlah ash Sharqīyah	An Nazlah ash Sharqīyah	An Nazlah ash Sharqīyah	An Nazlah ash Sharqīyah
+	2526	An Nazlah al Wusţá	32.4088900	35.0942200	PS	WE	0	0	An Nazlah al Wusţá	An Nazlah al Wusţá	An Nazlah al Wusţá	An Nazlah al Wusţá	An Nazlah al Wusţá	An Nazlah al Wusţá
+	2526	An Nazlah al Gharbīyah	32.4027000	35.0845500	PS	WE	0	0	An Nazlah al Gharbīyah	An Nazlah al Gharbīyah	An Nazlah al Gharbīyah	An Nazlah al Gharbīyah	An Nazlah al Gharbīyah	An Nazlah al Gharbīyah
+	2526	An Nāqūrah	32.2650600	35.2013500	PS	WE	0	0	An Nāqūrah	An Nāqūrah	An Nāqūrah	An Nāqūrah	An Nāqūrah	An Nāqūrah
+	2526	An Nabī Şamū’īl	31.8330700	35.1829900	PS	WE	0	0	An Nabī Şamū’īl	An Nabī Şamū’īl	An Nabī Şamū’īl	An Nabī Şamū’īl	An Nabī Şamū’īl	An Nabī Şamū’īl
+	2526	An Nabī Şāliḩ	32.0163800	35.1240300	PS	WE	0	0	An Nabī Şāliḩ	An Nabī Şāliḩ	An Nabī Şāliḩ	An Nabī Şāliḩ	An Nabī Şāliḩ	An Nabī Şāliḩ
+	2526	An Nabī Ilyās	32.1848200	35.0176000	PS	WE	0	0	An Nabī Ilyās	An Nabī Ilyās	An Nabī Ilyās	An Nabī Ilyās	An Nabī Ilyās	An Nabī Ilyās
+	2526	‘Anīn	32.5025900	35.1666800	PS	WE	0	0	‘Anīn	‘Anīn	‘Anīn	‘Anīn	‘Anīn	‘Anīn
+	2526	‘Anātā	31.8092400	35.2590200	PS	WE	0	0	‘Anātā	‘Anātā	‘Anātā	‘Anātā	‘Anātā	‘Anātā
+	2526	‘Anabtā	32.3079200	35.1169300	PS	WE	0	0	‘Anabtā	‘Anabtā	‘Anabtā	‘Anabtā	‘Anabtā	‘Anabtā
+	2526	‘Ammūryah	32.0635200	35.2097000	PS	WE	0	0	‘Ammūryah	‘Ammūryah	‘Ammūryah	‘Ammūryah	‘Ammūryah	‘Ammūryah
+	2526	Al Yāmūn	32.4856300	35.2301100	PS	WE	0	0	Al Yāmūn	Al Yāmūn	Al Yāmūn	Al Yāmūn	Al Yāmūn	Al Yāmūn
+	2526	Al Qubaybah	31.8388600	35.1367800	PS	WE	0	0	Al Qubaybah	Al Qubaybah	Al Qubaybah	Al Qubaybah	Al Qubaybah	Al Qubaybah
+	2526	Al Mughayyir	32.4222800	35.3847600	PS	WE	0	0	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir
+	2526	Al Mughayyir	32.0192000	35.3478300	PS	WE	0	0	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir	Al Mughayyir
+	2526	Al Midyah	31.9359200	35.0050000	PS	WE	0	0	Al Midyah	Al Midyah	Al Midyah	Al Midyah	Al Midyah	Al Midyah
+	2526	Al Mazra‘ah ash Sharqīyah	32.0001800	35.2815200	PS	WE	0	0	Al Mazra‘ah ash Sharqīyah	Al Mazra‘ah ash Sharqīyah	Al Mazra‘ah ash Sharqīyah	Al Mazra‘ah ash Sharqīyah	Al Mazra‘ah ash Sharqīyah	Al Mazra‘ah ash Sharqīyah
+	2526	Az Zaytūnīyah	31.9540200	35.1624000	PS	WE	0	0	Az Zaytūnīyah	Az Zaytūnīyah	Az Zaytūnīyah	Az Zaytūnīyah	Az Zaytūnīyah	Az Zaytūnīyah
+	2526	Al Lubban al Gharbī	32.0350400	35.0392800	PS	WE	0	0	Al Lubban al Gharbī	Al Lubban al Gharbī	Al Lubban al Gharbī	Al Lubban al Gharbī	Al Lubban al Gharbī	Al Lubban al Gharbī
+	2526	Al Khaḑir	31.6940500	35.1668500	PS	WE	0	0	Al Khaḑir	Al Khaḑir	Al Khaḑir	Al Khaḑir	Al Khaḑir	Al Khaḑir
+	2526	Hebron	31.5293500	35.0938000	PS	WE	0	0	Hebron	Хеврон	Hebron	Hebron	Hebron	Hebron
+	2526	Al Judayrah	31.8558700	35.1970600	PS	WE	0	0	Al Judayrah	Al Judayrah	Al Judayrah	Al Judayrah	Al Judayrah	Al Judayrah
+	2526	Al Jīb	31.8520300	35.1845100	PS	WE	0	0	Al Jīb	Al Jīb	Al Jīb	Al Jīb	Al Jīb	Al Jīb
+	2526	Al Jāniyah	31.9384800	35.1214200	PS	WE	0	0	Al Jāniyah	Al Jāniyah	Al Jāniyah	Al Jāniyah	Al Jāniyah	Al Jāniyah
+	2526	Al Hāshimīyah	32.4639200	35.2193800	PS	WE	0	0	Al Hāshimīyah	Al Hāshimīyah	Al Hāshimīyah	Al Hāshimīyah	Al Hāshimīyah	Al Hāshimīyah
+	2526	Al Funduq	32.1905500	35.1370900	PS	WE	0	0	Al Funduq	Al Funduq	Al Funduq	Al Funduq	Al Funduq	Al Funduq
+	2526	Al Faşāyil	32.0250900	35.4435100	PS	WE	0	0	Al Faşāyil	Al Faşāyil	Al Faşāyil	Al Faşāyil	Al Faşāyil	Al Faşāyil
+	2526	Al Fandaqūmīyah	32.3206000	35.2032900	PS	WE	0	0	Al Fandaqūmīyah	Al Fandaqūmīyah	Al Fandaqūmīyah	Al Fandaqūmīyah	Al Fandaqūmīyah	Al Fandaqūmīyah
+	2526	Al Bīrah	31.9100100	35.2164500	PS	WE	0	0	Al Bīrah	Аль-Бира	Al Bīrah	Al Bīrah	Al Bīrah	Al Bīrah
+	2526	Al ‘Ayzarīyah	31.7707800	35.2691600	PS	WE	0	0	Al ‘Ayzarīyah	Al ‘Ayzarīyah	Al ‘Ayzarīyah	Al ‘Ayzarīyah	Al ‘Ayzarīyah	Al ‘Ayzarīyah
+	2526	Al ‘Awjā	31.9506900	35.4675600	PS	WE	0	0	Al ‘Awjā	Al ‘Awjā	Al ‘Awjā	Al ‘Awjā	Al ‘Awjā	Al ‘Awjā
+	2526	Al ‘Aţţārah	32.3257100	35.1637300	PS	WE	0	0	Al ‘Aţţārah	Al ‘Aţţārah	Al ‘Aţţārah	Al ‘Aţţārah	Al ‘Aţţārah	Al ‘Aţţārah
+	2526	‘Ajjūl	32.0223200	35.1796900	PS	WE	0	0	‘Ajjūl	‘Ajjūl	‘Ajjūl	‘Ajjūl	‘Ajjūl	‘Ajjūl
+	2526	‘Ajjah	32.3607400	35.1959000	PS	WE	0	0	‘Ajjah	‘Ajjah	‘Ajjah	‘Ajjah	‘Ajjah	‘Ajjah
+	2526	‘Ayn ad Duyūk al Fawqā	31.8870900	35.4272100	PS	WE	0	0	‘Ayn ad Duyūk al Fawqā	‘Ayn ad Duyūk al Fawqā	‘Ayn ad Duyūk al Fawqā	‘Ayn ad Duyūk al Fawqā	‘Ayn ad Duyūk al Fawqā	‘Ayn ad Duyūk al Fawqā
+	2526	‘Ibwayn	32.0314400	35.1999200	PS	WE	0	0	‘Ibwayn	‘Ibwayn	‘Ibwayn	‘Ibwayn	‘Ibwayn	‘Ibwayn
+	2526	Abū Qashsh	31.9488300	35.1842600	PS	WE	0	0	Abū Qashsh	Abū Qashsh	Abū Qashsh	Abū Qashsh	Abū Qashsh	Abū Qashsh
+	2526	Abū Dīs	31.7621500	35.2616600	PS	WE	0	0	Abū Dīs	Abū Dīs	Abū Dīs	Abū Dīs	Abū Dīs	Abū Dīs
+	2526	‘Ābūd	32.0163700	35.0683300	PS	WE	0	0	‘Ābūd	‘Ābūd	‘Ābūd	‘Ābūd	‘Ābūd	‘Ābūd
+	2526	‘Ābā	32.4590500	35.3239400	PS	WE	0	0	‘Ābā	‘Ābā	‘Ābā	‘Ābā	‘Ābā	‘Ābā
+	2526	al-Kum	31.5312300	34.9606400	PS	WE	0	0	al-Kum	al-Kum	al-Kum	al-Kum	al-Kum	al-Kum
+	2526	al-Mudawwar	32.1431800	35.0122100	PS	WE	0	0	al-Mudawwar	al-Mudawwar	al-Mudawwar	al-Mudawwar	al-Mudawwar	al-Mudawwar
+	2526	Azun Atme	32.1216700	35.0203600	PS	WE	0	0	Azun Atme	Azun Atme	Azun Atme	Azun Atme	Azun Atme	Azun Atme

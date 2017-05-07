@@ -1,0 +1,39 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form action="" method="post" 
+                enctype="multipart/form-data" name="save_form"
+                data-parsley-validate class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_title', 'blogs') %}: * </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.title|e }}" name="title" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_description', 'blogs') %}: * </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {{ content_fck }}
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

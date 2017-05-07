@@ -1,0 +1,2 @@
+	450	Shemgang	27.2168900	90.6579400	BT	18	0	0	Shemgang	Шемганг	Shemgang	Shemgang	Shemgang	Shemgang
+	450	Panbang	26.8666700	90.9833300	BT	18	0	0	Panbang	Panbang	Panbang	Panbang	Panbang	Panbang

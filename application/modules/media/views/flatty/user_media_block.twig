@@ -1,0 +1,18 @@
+{% set thumb_name = recent_thumb.name %}
+<div id="refresh_user_recent_photos" class="pointer">
+    <i class="fa fa-camera"></i>
+    <a href="{{ gallery_link }}">{{ user_media_count }}&nbsp;{% helper lang.l('header_user_photos', 'media') %}</a>
+</div>
+<div class="media-items clearfix">
+    {% for item in recent_photos_data.media %}
+        <span class="a fleft" data-click="view-media" data-user-id="{{ item.id_owner }}" data-id-media="{{ item.id }}">
+            {% if item.upload_gid == 'gallery_video' %}
+                {% helper text_media_video = lang.l('text_media_video', 'media', '', 'button', item) %}
+                <img class="middle img-responsive" src="{{ item.video_content.thumbs[thumb_name] }}" width="{{ recent_thumb.width }}" alt="{{ text_media_video }}" title="{{ text_media_video }}" />
+            {% else %}
+                {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', item) %}
+                <img class="middle img-responsive" src="{{ item.media.mediafile.thumbs[thumb_name] }}" width="{{ recent_thumb.width }}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+            {% endif %}
+        </span>
+    {% endfor %} 
+</div>

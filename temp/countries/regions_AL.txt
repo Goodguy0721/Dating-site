@@ -1,0 +1,7 @@
+	117	Sarandë	39.8755600	20.0052800	AL	51	0	0	Sarandë	Sarandë	Sarandë	Sarandë	Sarandë	Sarandë
+	117	Konispol	39.6588900	20.1813900	AL	51	0	0	Konispol	Конисполь	Konispol	Konispol	Konispol	Konispol
+	117	Delvinë	39.9511100	20.0977800	AL	51	0	0	Delvinë	Дельвина	Delvinë	Delvinë	Delvinë	Delvinë
+	117	Vlorë	40.4666700	19.4897200	AL	51	0	0	Vlorë	Влёра	Vlorë	Vlorë	Vlorë	Vlorë
+	117	Selenicë	40.5305600	19.6358300	AL	51	0	0	Selenicë	Селеница	Selenicë	Selenicë	Selenicë	Selenicë
+	117	Orikum	40.3252800	19.4713900	AL	51	0	0	Orikum	Орикум	Orikum	Orikum	Orikum	Orikum
+	117	Himarë	40.1016700	19.7447200	AL	51	0	0	Himarë	Химара	Himarë	Himarë	Himarë	Himarë

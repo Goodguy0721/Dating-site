@@ -1,0 +1,170 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_notifications_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <a href="{{ site_url }}admin/subscriptions/edit" class="btn btn-primary">
+                        {% helper lang.l('link_add_subscriptions', 'subscriptions') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ site_url }}admin/subscriptions/edit">
+                                {% helper lang.l('link_add_subscriptions', 'subscriptions') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_subscriptions_name', 'subscriptions') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_subscribe_type', 'subscriptions') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_sheduler', 'subscriptions') %}
+                        </th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in subscriptions %}
+                        <tr class="even pointer">
+                            <td class="text-center">{% helper lang.l(item.name_i, 'subscriptions') %}</td>
+                            <td class="text-center">{% helper lang.l(item.subscribe_type, 'subscriptions') %}</td>
+                            <td class="text-center">{{ item.scheduler_format }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <a id="link_start_subscribe"
+                                       href="{{ site_url }}admin/subscriptions/ajax_start_subscribe/{{ item.id }}/"
+                                       onclick="javascript: open_start_subscribe(this.href); return false;"
+                                       class="btn btn-primary">{% spaceless %}
+                                            {% helper lang.l('start_subscribe', 'subscriptions') %}
+                                    {% endspaceless %}</a>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a id="link_start_subscribe"
+                                               href="{{ site_url }}admin/subscriptions/ajax_start_subscribe/{{ item.id }}/"
+                                               onclick="javascript: open_start_subscribe(this.href); return false;">{% spaceless %}
+                                                    {% helper lang.l('start_subscribe', 'subscriptions') %}
+                                            {% endspaceless %}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/subscriptions/edit/{{ item.id }}">
+                                                {% helper lang.l('link_edit_subscriptions', 'subscriptions') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/subscriptions/delete/{{ item.id }}"
+                                               onclick="javascript:
+                                                    if(!confirm('{% helper lang.l('note_delete_subscriptions', 'subscriptions', '', 'js') %}'))
+                                                    return false;">
+                                                {% helper lang.l('link_delete_subscriptions', 'subscriptions') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+
+function open_start_subscribe(url){
+    var loading_funds = new loadingContent({
+        linkerObjID: 'link_start_subscribe',
+        loadBlockWidth: '350px',
+        loadBlockLeftType: 'center',
+        loadBlockTopType: 'bottom',
+        closeBtnClass: 'w'
+    });
+    $.ajax({
+        url: url,
+        type: 'GET',
+        cache: false,
+        success: function(data){
+            loading_funds.show_load_block(data);
+        }
+    });
+}
+</script>
+
+<!--TABLES-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_subscriptions','subscriptions') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,2,3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

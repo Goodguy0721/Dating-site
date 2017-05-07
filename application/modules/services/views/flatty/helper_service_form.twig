@@ -1,0 +1,62 @@
+<div id="services_helper">
+    <form method="post" action="{{ site_url }}services/form/{{ data.gid }}">
+        <input type="hidden" value="1" name="without_activation">
+        {% for item in data.template.data_user_array %}
+			<input type="hidden" value="{{ item.value }}" name="data_user[{{ item.gid }}]" id="service_{{ item.gid }}">
+		{% endfor %}
+        {% if data.template.price_type == '2' %}
+			<div class="col-lg-3 no-padding-left">
+                {% helper lang.l('field_your_price', 'services') %}:
+            </div>
+            <div class="value col-lg-9 no-padding-left">
+                <input type="text" value="{{ data.price }}" name="price" class="short">
+                <b>{% helper start.currency_format_output() %}</b>
+            </div>
+		{% elseif data.template.price_type == '3' %}
+			<div class="value col-lg-12 no-padding-left">
+                <input type="hidden" value="{{ data.price }}" name="price" class="short">
+            </div>
+		{% else %}
+			<div class="col-lg-3 no-padding-left">
+                {% helper lang.l('field_price', 'services') %}:
+            </div>
+            <div class="value col-lg-9 no-padding-left">
+                <b>{% helper start.currency_format_output({'value': data.price}) %}</b>
+            </div>
+		{% endif %}
+        {% if (data.pay_type == 1 or data.pay_type == 2) and is_module_installed %}
+			<div class="search-header mt10">
+                <div class="title">
+                    {% helper lang.l('account_payment', 'services') %}
+                </div>
+            </div>
+			{% if data.disable_account_pay %}
+                {% helper lang.l('error_account_less_then_service_price', 'services') %}
+                <a href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+                    {% helper lang.l('link_add_founds', 'services') %}
+                </a>
+			{% else %}
+				{% helper lang.l('on_your_account_now', 'services') %}:
+                <b>{% helper start.currency_format_output({'value': data.user_account}) %}</b>
+				<div class="b outside">
+					<input type="submit" name="btn_account" value="{% helper lang.l('btn_pay_account', 'services', '', 'button') %}" class="btn btn-primary">
+				</div>
+			{% endif %}
+		{% endif %}
+        {% if data.pay_type == 2 or data.pay_type == 3 %}
+			<div class="search-header mt10">
+                <div class="title">
+                    {% helper lang.l('payment_systems', 'services') %}
+                </div>
+            </div>
+			{% if billing_systems %}
+				<input type="hidden" id="system_gid" name="system_gid" value="">
+				{% for item in billing_systems %}
+					<button type="submit" name="btn_system" value="1" class="btn btn-primary" onclick="$('#system_gid').val('{{ item.gid }}');">{{ item.name }}</button>
+				{% endfor %}
+			{% elseif data.pay_type == 3 %}
+				{% helper lang.l('error_empty_billing_system_list', 'service') %}
+			{% endif %}
+		{% endif %}
+    </form>
+</div>

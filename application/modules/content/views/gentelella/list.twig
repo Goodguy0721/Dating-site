@@ -1,0 +1,82 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <!-- 1 level menu: language menu -->
+        <div id="menu" class="btn-group pull-right" data-toggle="buttons">
+            {% for lang_id, item in languages %}
+                <label class="btn btn-default {% if lang_id == current_lang %}active{% endif %}"
+                       onclick="document.location.href='{{ site_url }}admin/content/index/{{ lang_id }}'">
+                    <input type="radio" {% if lang_id == current_lang_id %}selected{% endif %}>
+                    {{item.name}}
+                </label>
+            {% endfor %}
+        </div>
+
+        <!-- 2 level menu: main content menu -->
+        <div id="actions">
+          <div class="btn-group">
+            <a href="{{ site_url }}admin/content/edit/{{ current_lang }}/0" class="btn btn-primary">
+                {% helper lang.l('link_add_page', 'content') %}
+            </a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ site_url }}admin/content/edit/{{ current_lang }}/0">
+                      {% helper lang.l('link_add_page', 'content') %}
+                  </a>
+                </li>
+        {% if pages %}
+                <li>
+                  <a href="#" onclick="javascript: mlSorter.update_sorting();return false">
+                      {% helper lang.l('link_save_sorter', 'content') %}
+                  </a>
+                </li>
+        {% endif %}
+          </div>
+        </div>
+      </div>
+
+        <div class="x_content" id="pages">
+            <ul name="parent_0" class="to_do sort connected" id="clsr0ul">
+                {% include 'tree_level.twig' with {list: pages} %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script >
+    var mlSorter;
+    $(function () {
+        mlSorter = new multilevelSorter({
+            siteUrl: '{{ site_url }}',
+            itemsBlockID: 'pages',
+            urlSaveSort: 'admin/content/ajax_save_sorter',
+            urlDeleteItem: 'admin/content/ajax_delete/',
+        });
+    });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    function activatePage(id, status, a_obj) {
+        $.get(
+            site_url+'admin/content/ajax_activate/' + status + '/' + id,
+            {},
+            function(resp) {
+              $(a_obj).parents('.js-page').first().find('.hide')
+                      .removeClass('hide').siblings().addClass('hide');
+            },
+            'json'
+        );
+    }
+</script>
+
+{% include '@app/footer.twig' %}

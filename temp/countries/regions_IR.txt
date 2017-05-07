@@ -1,0 +1,7 @@
+	1373	Yazd	31.8972200	54.3675000	IR	40	0	0	Yazd	Йезд	Yazd	Yazd	Yazd	Yazd
+	1373	Taft	31.7438400	54.2027800	IR	40	0	0	Taft	Тафт	Taft	Taft	Taft	Taft
+	1373	Tabas	33.5958600	56.9243700	IR	40	0	0	Tabas	Табас	Tabas	Tabas	Tabas	Tabas
+	1373	Meybod	32.2501400	54.0165800	IR	40	0	0	Meybod	Meybod	Meybod	Meybod	Meybod	Meybod
+	1373	Bāfq	31.6035000	55.4024900	IR	40	0	0	Bāfq	Бафк	Bāfq	Bāfq	Bāfq	Bāfq
+	1373	Ardakān	32.3100100	54.0174700	IR	40	0	0	Ardakān	Ardakān	Ardakān	Ardakān	Ardakān	Ardakān
+	1373	Khavāş Kūh	32.3061100	53.6744400	IR	40	0	0	Khavāş Kūh	Khavāş Kūh	Khavāş Kūh	Khavāş Kūh	Khavāş Kūh	Khavāş Kūh

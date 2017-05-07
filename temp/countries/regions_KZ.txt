@@ -1,0 +1,16 @@
+	1543	Zhangatas	43.5622200	69.7342800	KZ	17	0	0	Zhangatas	Zhangatas	Zhangatas	Zhangatas	Zhangatas	Zhangatas
+	1543	Taraz	42.9000000	71.3666700	KZ	17	0	0	Taraz	Тараз	Taraz	Taraz	Taraz	Taraz
+	1543	Chu	43.6033400	73.7591900	KZ	17	0	0	Chu	Шу	Chu	Chu	Chu	Chu
+	1543	Karatau	43.1786900	70.4676800	KZ	17	0	0	Karatau	Karatau	Karatau	Karatau	Karatau	Karatau
+	1543	Oytal	42.9057300	73.2697200	KZ	17	0	0	Oytal	Ойтал	Oytal	Oytal	Oytal	Oytal
+	1543	Mynaral	45.4161100	73.6844400	KZ	17	0	0	Mynaral	Mynaral	Mynaral	Mynaral	Mynaral	Mynaral
+	1543	Mikhaylovka	43.0000000	71.5000000	KZ	17	0	0	Mikhaylovka	Mikhaylovka	Mikhaylovka	Mikhaylovka	Mikhaylovka	Mikhaylovka
+	1543	Merke	42.8677200	73.1762300	KZ	17	0	0	Merke	Мерке	Merke	Merke	Merke	Merke
+	1543	Lugovoye	42.9101000	72.7206600	KZ	17	0	0	Lugovoye	Lugovoye	Lugovoye	Lugovoye	Lugovoye	Lugovoye
+	1543	Lugovoy	42.9419600	72.7609800	KZ	17	0	0	Lugovoy	Луговой	Lugovoy	Lugovoy	Lugovoy	Lugovoy
+	1543	Khantaū	44.2274400	73.7955500	KZ	17	0	0	Khantaū	Khantaū	Khantaū	Khantaū	Khantaū	Khantaū
+	1543	Granitogorsk	42.7433700	73.4690600	KZ	17	0	0	Granitogorsk	Гранитогорск	Granitogorsk	Granitogorsk	Granitogorsk	Granitogorsk
+	1543	Georgiyevka	43.0388200	74.7128700	KZ	17	0	0	Georgiyevka	Георгиевка	Georgiyevka	Georgiyevka	Georgiyevka	Georgiyevka
+	1543	Moyynkum	44.2846100	72.9392000	KZ	17	0	0	Moyynkum	Moyynkum	Moyynkum	Moyynkum	Moyynkum	Moyynkum
+	1543	Aqbaqay	45.0000000	72.7833300	KZ	17	0	0	Aqbaqay	Aqbaqay	Aqbaqay	Aqbaqay	Aqbaqay	Aqbaqay
+	1543	Shyghanaq	44.8305600	70.0019400	KZ	17	0	0	Shyghanaq	Shyghanaq	Shyghanaq	Shyghanaq	Shyghanaq	Shyghanaq

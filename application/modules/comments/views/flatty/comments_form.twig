@@ -1,0 +1,243 @@
+{% set comment_content %}
+    {% if comments.hidden %}
+        <div class="comments-display-block">
+            {% if comments.view == 'button' %}
+                <div class="search-header">
+                    <div class="title">{% helper lang.l('comments', 'comments') %} (<span class="counter">{{ comments.count_all }}</span>)</div>
+                </div>
+                <div class="commets-form">
+                    <input id="show-comments-form" class="btn btn-primary" type="button" value="{% helper lang.l('link_add_post_comment', 'comments') %}" onclick="{% spaceless %}
+                        $('#comments_slider_{{ comments.gid }}_{{ comments.id_obj }}').slideToggle(150);
+                        event.preventDefault();
+                    {% endspaceless %}">
+                </div>
+            {% elseif comments.view == 'link' %}
+                <a href="javascript:void(0);" onclick="{% spaceless %}
+                        comments.loadComments(
+                            '{{ comments.gid|e('js') }}',
+                            '{{ comments.id_obj|e('js') }}',
+                            $('#comments_{{ comments.gid|e('js') }}_{{ comments.id_obj|e('js') }}')
+                        );
+                    event.preventDefault();
+                    {% endspaceless %}">
+                    <i class="fa fa-comment-o"></i>
+                    {% if comments.calc_count %}
+                        <span class="counter">{{ comments.count_all }}</span>
+                    {% endif %}
+                </a>
+            {% else %}
+                {% if comments.show_form or comments.count_all or not comments.calc_count %}
+                    <a class="like-btn-block" href="javascript:void(0);" onclick="{% spaceless %}
+                        comments.loadComments(
+                            '{{ comments.gid|e('js') }}',
+                            '{{ comments.id_obj|e('js') }}',
+                            $('#comments_{{ comments.gid|e('js') }}_{{ comments.id_obj|e('js') }}')
+                        );
+                        event.preventDefault();
+                        {% endspaceless %}">
+                        <i class="fa fa-comment-o"></i>
+                        {% if comments.calc_count %}
+                            <span class="counter">{{ comments.count_all }}</span>
+                        {% endif %}
+                    </a>
+                {% else %}
+                    <a class="like-btn-block" href="javascript:void(0);">
+                        <i class="fa fa-comment-o"></i>
+                        {% if comments.calc_count %}
+                            <span class="counter">{{ comments.count_all }}</span>
+                        {% endif %}
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% else %}
+        <div id="comments_form_cont_{{ comments.gid }}_{{ comments.id_obj }}"
+              class="form_wrapper comments-form-wrapper" gid="{{ comments.gid }}" id_obj="{{ comments.id_obj }}">
+            {% if comments.view == 'button' %}
+                <div class="search-header">
+                    <div class="title">{% helper lang.l('comments', 'comments') %} (<span class="counter">{{ comments.count_all }}</span>)</div>
+                </div>
+                <div class="commets-form">
+                    <input id="show-comments-form" class="btn {% if comments.btn_view_class %}{{ comments.btn_view_class }}{% else %}btn-primary{% endif %}" type="button" value="{% helper lang.l('link_add_post_comment', 'comments') %}" onclick="{% spaceless %}
+                                                $('#comments_form_{{ comments.gid }}_{{ comments.id_obj }}').slideToggle(150);
+                                                event.preventDefault();
+                                            {% endspaceless %}">
+                </div>
+            {% elseif comments.view == 'link' %}
+                <a href="javascript:void(0);" onclick="{% spaceless %}
+                    comments.loadComments(
+                        '{{ comments.gid|e('js') }}',
+                        '{{ comments.id_obj|e('js') }}',
+                        $('#comments_{{ comments.gid|e('js') }}_{{ comments.id_obj|e('js') }}')
+                    );
+                    event.preventDefault();
+                   {% endspaceless %}">
+                    {% helper lang.l('comments', 'comments') %}
+                    {% if comments.calc_count %}
+                        &nbsp;(<span class="counter">{{ comments.count_all }}</span>)
+                    {% endif %}
+                </a>
+            {% elseif comments.view == 'popup' %}
+                <div class="comments-display-block">
+                    {% if comments.show_form or comments.count_all %}
+                        <div class="title fleft">{% helper lang.l('comments', 'comments') %}</div>
+                        <a class="like-btn-block" href="javascript:void(0);" onclick="{% spaceless %}
+                            $('#comments_slider_{{ comments.gid }}_{{ comments.id_obj }}').slideToggle(150);
+                            event.preventDefault();
+                            {% endspaceless %}">
+                            <i class="fa fa-comment-o"></i>
+                            {% if comments.calc_count %}
+                                <span class="counter">{{ comments.count_all }}</span>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <div class="title fleft">{% helper lang.l('comments', 'comments') %}</div>
+                        <a class="like-btn-block" href="javascript:void(0);">
+                            <i class="fa fa-comment-o"></i>
+                            {% if comments.calc_count %}
+                                <span class="counter">{{ comments.count_all }}</span>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="comments-display-block">
+                    {% if comments.show_form or comments.count_all %}
+                        <a class="like-btn-block" href="javascript:void(0);" onclick="{% spaceless %}
+                            $('#comments_slider_{{ comments.gid }}_{{ comments.id_obj }}').slideToggle(150);
+                            event.preventDefault();
+                            {% endspaceless %}">
+                            <i class="fa fa-comment-o"></i>
+                            {% if comments.calc_count %}
+                                <span class="counter">{{ comments.count_all }}</span>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <a class="like-btn-block" href="javascript:void(0);">
+                            <i class="fa fa-comment-o"></i>
+                            {% if comments.calc_count %}
+                                <span class="counter">{{ comments.count_all }}</span>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div id="comments_slider_{{ comments.gid }}_{{ comments.id_obj }}" class="comments_slider">
+                {% if comments.show_form %}
+                    <div id="comments_form_{{ comments.gid }}_{{ comments.id_obj }}"  {% if comments.view == 'button' %}class="hide"{% endif %}>
+                        <div class="edit_block post-form wide resize">
+                            {% if user_session_data.auth_type != 'user' %}
+                                <div class="b" style="height: 0;">
+                                    <input type="text" value="" name="email" autocomplete="off" />
+                                </div>
+                            {% endif %}
+
+                            {% if comments_type.gid == 'wall_events' %}
+                                    <div class="form-input wall-comments-input">
+                                            {% if user_session_data.auth_type != 'user' %}
+                                                <div class="input">
+                                                    <input type="text" value="" name="user_name"
+                                                           placeholder="{% helper lang.l('your_name', 'comments', '', 'button') %}" />
+                                                </div>
+                                            {% endif %}
+                                            <div class="text">
+                                                <img class="wall-comment-block-img" src="{{ user_img }}" />
+                                                <div style="margin-left: 40px;">
+                                                    <textarea style="width:100%;" class="cmn-input-h" maxcount="{{ comments_type.settings.char_count }}"
+                                                          placeholder="{% helper lang.l('add_comment', 'comments', '', 'button') %}"></textarea>
+                                                    <div class="send-comment-btn-block hide">
+                                                        <div class="char-counter fright">
+                                                            <span class="char_counter">
+                                                                {{ comments_type.settings.char_count }}
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <input type="button" class="btn btn-primary-inverted" value="{% helper lang.l('btn_send', 'start') %}"
+                                                                   onclick="comments.addComment('{{ comments.gid }}', '{{ comments.id_obj }}');" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <script>
+                                        $("#comments_wall_events_{{comments.id_obj}} textarea").on('click', function(event){
+                                            event.stopPropagation();
+                                            $("#comments_wall_events_{{comments.id_obj}} .send-comment-btn-block").show();
+                                            $(this).removeClass('cmn-input-h');
+                                        });
+                                        $("html").on('click', function(){
+                                            $("#comments_wall_events_{{comments.id_obj}} .send-comment-btn-block").hide();
+                                            $("#comments_wall_events_{{comments.id_obj}} textarea").addClass('cmn-input-h');
+                                        });
+                                    </script>
+                            {% else %}
+                                <div style="padding-top: 10px;">
+                                    <div class="form-input">
+                                            {% if user_session_data.auth_type != 'user' %}
+                                                <div class="input">
+                                                    <input type="text" value="" name="user_name"
+                                                           placeholder="{% helper lang.l('your_name', 'comments', '', 'button') %}" />
+                                                </div>
+                                            {% endif %}
+                                            <div class="text form-group">
+                                                <textarea class="form-control" maxcount="{{ comments_type.settings.char_count }}"
+                                                          placeholder="{% helper lang.l('add_comment', 'comments', '', 'button') %}"></textarea>
+                                            </div>
+                                            <div class="char-counter fright">
+                                                <span class="char_counter">
+                                                    {{ comments_type.settings.char_count }}
+                                                </span>
+                                            </div>
+                                            <div class="send-comment-btn-block">
+                                                <input type="button" class="btn {% if comments.btn_send_class %}{{ comments.btn_send_class }}{% else %}btn-primary-inverted{% endif %}" value="{% helper lang.l('btn_send', 'start') %}"
+                                                       onclick="comments.addComment('{{ comments.gid }}', '{{ comments.id_obj }}');" />
+                                            </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                {% endif %}
+                
+                <div id="comments_cont_{{ comments.gid }}_{{ comments.id_obj }}" class="comments_wrapper">
+                     {% include 'comments_block.twig' %}
+                </div>
+                
+                {% if comments.bd_min_id != comments.min_id %}
+                    <div class="more_button">
+                        <input class="btn btn-primary" type="button" value="{% helper lang.l('show_more', 'comments') %}"
+                               onclick="comments.loadComments('{{ comments.gid }}', '{{ comments.id_obj }}');" />
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endset %}
+
+{% if not ajax %}
+    <div class="comments" id="comments_{{ comments.gid }}_{{ comments.id_obj }}">
+	<script>
+		$(function(){
+			loadScripts(
+				"{% helper utils.jscript('comments', 'comments.js', 'path') %}",
+				function(){
+					comments = new Comments({
+						siteUrl: site_url,
+						lng: $.parseJSON('{{ js_lng|e('js') }}'),
+                                                {% if comments_type.gid == 'wall_events' %}order_by: 'asc',
+                                                      append_comment: 'true',{% endif %}
+					});
+				},
+				'comments',
+				{async: false, cache: false}
+			);
+		});
+	</script>
+
+    {{ comment_content}}
+</div>
+{% else %}
+    {{ comment_content}}
+{% endif %}

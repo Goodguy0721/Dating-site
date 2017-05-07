@@ -1,0 +1,397 @@
+	249	Youngs	-35.0166700	117.5166700	AU	08	0	0	Youngs	Youngs	Youngs	Youngs	Youngs	Youngs
+	249	York	-31.8880900	116.7678000	AU	08	0	0	York	Йорк	York	York	York	York
+	249	Yilliminning	-32.9000000	117.3666700	AU	08	0	0	Yilliminning	Yilliminning	Yilliminning	Yilliminning	Yilliminning	Yilliminning
+	249	Yelbeni	-31.1703200	117.6607200	AU	08	0	0	Yelbeni	Yelbeni	Yelbeni	Yelbeni	Yelbeni	Yelbeni
+	249	Yealering	-32.6000000	117.6166700	AU	08	0	0	Yealering	Yealering	Yealering	Yealering	Yealering	Yealering
+	249	Yarloop	-32.9537200	115.8969300	AU	08	0	0	Yarloop	Yarloop	Yarloop	Yarloop	Yarloop	Yarloop
+	249	Yandanooka	-29.3120500	115.5686100	AU	08	0	0	Yandanooka	Yandanooka	Yandanooka	Yandanooka	Yandanooka	Yandanooka
+	249	Yanchep	-31.5467800	115.6317100	AU	08	0	0	Yanchep	Yanchep	Yanchep	Yanchep	Yanchep	Yanchep
+	249	Yallingup	-33.6500000	115.0333300	AU	08	0	0	Yallingup	Yallingup	Yallingup	Yallingup	Yallingup	Yallingup
+	249	Yalgoo	-28.3435600	116.6825300	AU	08	0	0	Yalgoo	Yalgoo	Yalgoo	Yalgoo	Yalgoo	Yalgoo
+	249	Wyndham	-15.4869000	128.1242800	AU	08	0	0	Wyndham	Wyndham	Wyndham	Wyndham	Wyndham	Wyndham
+	249	Wyalkatchem	-31.1806300	117.3836000	AU	08	0	0	Wyalkatchem	Wyalkatchem	Wyalkatchem	Wyalkatchem	Wyalkatchem	Wyalkatchem
+	249	Wundowie	-31.7616300	116.3799000	AU	08	0	0	Wundowie	Wundowie	Wundowie	Wundowie	Wundowie	Wundowie
+	249	Wubin	-30.1065000	116.6332000	AU	08	0	0	Wubin	Wubin	Wubin	Wubin	Wubin	Wubin
+	249	Wooroloo	-31.8038000	116.3131100	AU	08	0	0	Wooroloo	Wooroloo	Wooroloo	Wooroloo	Wooroloo	Wooroloo
+	249	Woodanilling	-33.5666700	117.4333300	AU	08	0	0	Woodanilling	Woodanilling	Woodanilling	Woodanilling	Woodanilling	Woodanilling
+	249	Wonnerup	-33.6333300	115.4333300	AU	08	0	0	Wonnerup	Wonnerup	Wonnerup	Wonnerup	Wonnerup	Wonnerup
+	249	Wongan Hills	-30.8929400	116.7192500	AU	08	0	0	Wongan Hills	Wongan Hills	Wongan Hills	Wongan Hills	Wongan Hills	Wongan Hills
+	249	Wokalup	-33.1166700	115.8666700	AU	08	0	0	Wokalup	Wokalup	Wokalup	Wokalup	Wokalup	Wokalup
+	249	Wiluna	-26.5921000	120.2240200	AU	08	0	0	Wiluna	Уилуна	Wiluna	Wiluna	Wiluna	Wiluna
+	249	Williamstown	-30.7500000	121.4833300	AU	08	0	0	Williamstown	Williamstown	Williamstown	Williamstown	Williamstown	Williamstown
+	249	Williams	-33.0280300	116.8792300	AU	08	0	0	Williams	Williams	Williams	Williams	Williams	Williams
+	249	Wickepin	-32.7815900	117.5029700	AU	08	0	0	Wickepin	Wickepin	Wickepin	Wickepin	Wickepin	Wickepin
+	249	Wialki	-30.4779800	118.1199600	AU	08	0	0	Wialki	Wialki	Wialki	Wialki	Wialki	Wialki
+	249	West Toodyay	-31.5333300	116.4166700	AU	08	0	0	West Toodyay	West Toodyay	West Toodyay	West Toodyay	West Toodyay	West Toodyay
+	249	Westonia	-31.3029400	118.6961700	AU	08	0	0	Westonia	Westonia	Westonia	Westonia	Westonia	Westonia
+	249	Wembley	-31.9333300	115.8000000	AU	08	0	0	Wembley	Wembley	Wembley	Wembley	Wembley	Wembley
+	249	Wellard	-32.2666700	115.8333300	AU	08	0	0	Wellard	Wellard	Wellard	Wellard	Wellard	Wellard
+	249	Watheroo	-30.2975800	116.0572300	AU	08	0	0	Watheroo	Watheroo	Watheroo	Watheroo	Watheroo	Watheroo
+	249	Waroona	-32.8432300	115.9220100	AU	08	0	0	Waroona	Waroona	Waroona	Waroona	Waroona	Waroona
+	249	Warburton	-26.1346000	126.5768100	AU	08	0	0	Warburton	Warburton	Warburton	Warburton	Warburton	Warburton
+	249	Wanneroo	-31.7500000	115.8000000	AU	08	0	0	Wanneroo	Wanneroo	Wanneroo	Wanneroo	Wanneroo	Wanneroo
+	249	Wannamal	-31.1597200	116.0559600	AU	08	0	0	Wannamal	Wannamal	Wannamal	Wannamal	Wannamal	Wannamal
+	249	Wandering	-32.6833300	116.6666700	AU	08	0	0	Wandering	Wandering	Wandering	Wandering	Wandering	Wandering
+	249	Walpole	-34.9760400	116.7302100	AU	08	0	0	Walpole	Walpole	Walpole	Walpole	Walpole	Walpole
+	249	Walliston	-31.9968300	116.0743000	AU	08	0	0	Walliston	Walliston	Walliston	Walliston	Walliston	Walliston
+	249	Walkaway	-28.9412500	114.8031200	AU	08	0	0	Walkaway	Walkaway	Walkaway	Walkaway	Walkaway	Walkaway
+	249	Wagin	-33.3089400	117.3432800	AU	08	0	0	Wagin	Wagin	Wagin	Wagin	Wagin	Wagin
+	249	Waggrakine	-28.7188300	114.6392400	AU	08	0	0	Waggrakine	Waggrakine	Waggrakine	Waggrakine	Waggrakine	Waggrakine
+	249	Vasse	-33.6666700	115.2500000	AU	08	0	0	Vasse	Vasse	Vasse	Vasse	Vasse	Vasse
+	249	Utakarra	-28.7833300	114.6500000	AU	08	0	0	Utakarra	Utakarra	Utakarra	Utakarra	Utakarra	Utakarra
+	249	Upper Swan	-31.7695300	116.0273000	AU	08	0	0	Upper Swan	Upper Swan	Upper Swan	Upper Swan	Upper Swan	Upper Swan
+	249	Trigg	-31.8693900	115.7571000	AU	08	0	0	Trigg	Trigg	Trigg	Trigg	Trigg	Trigg
+	249	Trayning	-31.1169400	117.7934800	AU	08	0	0	Trayning	Trayning	Trayning	Trayning	Trayning	Trayning
+	249	Torbay	-35.0233300	117.6605600	AU	08	0	0	Torbay	Torbay	Torbay	Torbay	Torbay	Torbay
+	249	Toompup	-34.0166700	118.4500000	AU	08	0	0	Toompup	Toompup	Toompup	Toompup	Toompup	Toompup
+	249	Toolibin	-32.9460000	117.6225400	AU	08	0	0	Toolibin	Toolibin	Toolibin	Toolibin	Toolibin	Toolibin
+	249	Toodyay	-31.5497700	116.4674300	AU	08	0	0	Toodyay	Toodyay	Toodyay	Toodyay	Toodyay	Toodyay
+	249	Three Springs	-29.5336100	115.7605300	AU	08	0	0	Three Springs	Three Springs	Three Springs	Three Springs	Three Springs	Three Springs
+	249	Tenterden	-34.3619800	117.5548800	AU	08	0	0	Tenterden	Tenterden	Tenterden	Tenterden	Tenterden	Tenterden
+	249	Tardun	-28.7937400	115.7477900	AU	08	0	0	Tardun	Tardun	Tardun	Tardun	Tardun	Tardun
+	249	Tammin	-31.6666700	117.5000000	AU	08	0	0	Tammin	Tammin	Tammin	Tammin	Tammin	Tammin
+	249	Tambellup	-34.0432900	117.6413500	AU	08	0	0	Tambellup	Tambellup	Tambellup	Tambellup	Tambellup	Tambellup
+	249	Swan View	-31.8833300	116.0500000	AU	08	0	0	Swan View	Swan View	Swan View	Swan View	Swan View	Swan View
+	249	Swanbourne	-31.9687800	115.7673000	AU	08	0	0	Swanbourne	Swanbourne	Swanbourne	Swanbourne	Swanbourne	Swanbourne
+	249	Subiaco	-31.9485000	115.8268000	AU	08	0	0	Subiaco	Subiaco	Subiaco	Subiaco	Subiaco	Subiaco
+	249	Stoneville	-30.8666700	121.7666700	AU	08	0	0	Stoneville	Stoneville	Stoneville	Stoneville	Stoneville	Stoneville
+	249	Spencers Brook	-31.7333300	116.6333300	AU	08	0	0	Spencers Brook	Spencers Brook	Spencers Brook	Spencers Brook	Spencers Brook	Spencers Brook
+	249	Spearwood	-32.1053400	115.7779700	AU	08	0	0	Spearwood	Spearwood	Spearwood	Spearwood	Spearwood	Spearwood
+	249	South Perth	-31.9833300	115.8666700	AU	08	0	0	South Perth	South Perth	South Perth	South Perth	South Perth	South Perth
+	249	South Kumminin	-32.2000000	118.3333300	AU	08	0	0	South Kumminin	South Kumminin	South Kumminin	South Kumminin	South Kumminin	South Kumminin
+	249	Southern Cross	-31.2267700	119.3237600	AU	08	0	0	Southern Cross	Southern Cross	Southern Cross	Southern Cross	Southern Cross	Southern Cross
+	249	Southern Brook	-31.5500000	116.8333300	AU	08	0	0	Southern Brook	Southern Brook	Southern Brook	Southern Brook	Southern Brook	Southern Brook
+	249	Denham	-25.9286800	113.5355000	AU	08	0	0	Denham	Denham	Denham	Denham	Denham	Denham
+	249	Shackleton	-31.9325200	117.8313300	AU	08	0	0	Shackleton	Shackleton	Shackleton	Shackleton	Shackleton	Shackleton
+	249	Serpentine	-32.3605100	115.9772300	AU	08	0	0	Serpentine	Serpentine	Serpentine	Serpentine	Serpentine	Serpentine
+	249	Scarborough	-31.8957800	115.7643100	AU	08	0	0	Scarborough	Scarborough	Scarborough	Scarborough	Scarborough	Scarborough
+	249	Sawyers Valley	-31.9023500	116.2006500	AU	08	0	0	Sawyers Valley	Sawyers Valley	Sawyers Valley	Sawyers Valley	Sawyers Valley	Sawyers Valley
+	249	Sandstone	-27.9868200	119.2973200	AU	08	0	0	Sandstone	Sandstone	Sandstone	Sandstone	Sandstone	Sandstone
+	249	Salmon Gums	-32.9833300	121.6333300	AU	08	0	0	Salmon Gums	Salmon Gums	Salmon Gums	Salmon Gums	Salmon Gums	Salmon Gums
+	249	Safety Bay	-32.3046300	115.7421300	AU	08	0	0	Safety Bay	Safety Bay	Safety Bay	Safety Bay	Safety Bay	Safety Bay
+	249	Rosa Brook	-33.9500000	115.1833300	AU	08	0	0	Rosa Brook	Rosa Brook	Rosa Brook	Rosa Brook	Rosa Brook	Rosa Brook
+	249	Roleystone	-32.1145800	116.0706000	AU	08	0	0	Roleystone	Roleystone	Roleystone	Roleystone	Roleystone	Roleystone
+	249	Roelands	-33.2833300	115.8166700	AU	08	0	0	Roelands	Roelands	Roelands	Roelands	Roelands	Roelands
+	249	Roebourne	-20.7722900	117.1464800	AU	08	0	0	Roebourne	Roebourne	Roebourne	Roebourne	Roebourne	Roebourne
+	249	Rockingham	-32.2768200	115.7297800	AU	08	0	0	Rockingham	Rockingham	Rockingham	Rockingham	Rockingham	Rockingham
+	249	Maida Vale	-31.9518700	116.0276400	AU	08	0	0	Maida Vale	Maida Vale	Maida Vale	Maida Vale	Maida Vale	Maida Vale
+	249	Redmond	-34.8666700	117.6833300	AU	08	0	0	Redmond	Redmond	Redmond	Redmond	Redmond	Redmond
+	249	Ravensthorpe	-33.5830300	120.0468800	AU	08	0	0	Ravensthorpe	Ravensthorpe	Ravensthorpe	Ravensthorpe	Ravensthorpe	Ravensthorpe
+	249	Quindanning	-33.0500000	116.5666700	AU	08	0	0	Quindanning	Quindanning	Quindanning	Quindanning	Quindanning	Quindanning
+	249	Quindalup	-33.6356000	115.1489900	AU	08	0	0	Quindalup	Quindalup	Quindalup	Quindalup	Quindalup	Quindalup
+	249	Quairading	-32.0119700	117.3955400	AU	08	0	0	Quairading	Quairading	Quairading	Quairading	Quairading	Quairading
+	249	Port Hedland	-20.3121500	118.6105900	AU	08	0	0	Port Hedland	Порт-Хедленд	Port Hedland	Port Hedland	Port Hedland	Port Hedland
+	249	Porongurup	-34.6500000	117.9000000	AU	08	0	0	Porongurup	Porongurup	Porongurup	Porongurup	Porongurup	Porongurup
+	249	Popanyinning	-32.6666700	117.1333300	AU	08	0	0	Popanyinning	Popanyinning	Popanyinning	Popanyinning	Popanyinning	Popanyinning
+	249	Point Samson	-20.6288900	117.1926500	AU	08	0	0	Point Samson	Джулия Крик	Point Samson	Point Samson	Point Samson	Point Samson
+	249	Pithara	-30.3919400	116.6688200	AU	08	0	0	Pithara	Pithara	Pithara	Pithara	Pithara	Pithara
+	249	Pinjarra	-32.6298000	115.8735100	AU	08	0	0	Pinjarra	Pinjarra	Pinjarra	Pinjarra	Pinjarra	Pinjarra
+	249	Pingrup	-33.5378100	118.5121600	AU	08	0	0	Pingrup	Pingrup	Pingrup	Pingrup	Pingrup	Pingrup
+	249	Pingelly	-32.5325200	117.0824000	AU	08	0	0	Pingelly	Pingelly	Pingelly	Pingelly	Pingelly	Pingelly
+	249	Pingaring	-32.7546000	118.6277900	AU	08	0	0	Pingaring	Pingaring	Pingaring	Pingaring	Pingaring	Pingaring
+	249	Piesseville	-33.1908800	117.2900600	AU	08	0	0	Piesseville	Piesseville	Piesseville	Piesseville	Piesseville	Piesseville
+	249	Pickering Brook	-32.0333300	116.1000000	AU	08	0	0	Pickering Brook	Pickering Brook	Pickering Brook	Pickering Brook	Pickering Brook	Pickering Brook
+	249	Piawaning	-30.8409700	116.3884500	AU	08	0	0	Piawaning	Piawaning	Piawaning	Piawaning	Piawaning	Piawaning
+	249	Perth	-31.9522400	115.8614000	AU	08	0	0	Perth	Перт	Perth	Perth	Perth	Perth
+	249	Perenjori	-29.4360600	116.2855800	AU	08	0	0	Perenjori	Perenjori	Perenjori	Perenjori	Perenjori	Perenjori
+	249	Pemberton	-34.4431100	116.0368900	AU	08	0	0	Pemberton	Pemberton	Pemberton	Pemberton	Pemberton	Pemberton
+	249	Pearce	-31.6666700	116.0166700	AU	08	0	0	Pearce	Pearce	Pearce	Pearce	Pearce	Pearce
+	249	Peak Hill	-25.6333300	118.7166700	AU	08	0	0	Peak Hill	Peak Hill	Peak Hill	Peak Hill	Peak Hill	Peak Hill
+	249	Paynes Find	-29.2592400	117.6893400	AU	08	0	0	Paynes Find	Paynes Find	Paynes Find	Paynes Find	Paynes Find	Paynes Find
+	249	Parkerville	-31.8747200	116.1380000	AU	08	0	0	Parkerville	Parkerville	Parkerville	Parkerville	Parkerville	Parkerville
+	249	Palgarup	-34.1624800	116.1844700	AU	08	0	0	Palgarup	Palgarup	Palgarup	Palgarup	Palgarup	Palgarup
+	249	Onslow	-21.6376400	115.1122100	AU	08	0	0	Onslow	Onslow	Onslow	Onslow	Onslow	Onslow
+	249	Ongerup	-33.9655900	118.4868800	AU	08	0	0	Ongerup	Ongerup	Ongerup	Ongerup	Ongerup	Ongerup
+	249	Ogilvie	-28.1500000	114.6333300	AU	08	0	0	Ogilvie	Ogilvie	Ogilvie	Ogilvie	Ogilvie	Ogilvie
+	249	O'Connor	-32.0581400	115.7972700	AU	08	0	0	O'Connor	O'Connor	O'Connor	O'Connor	O'Connor	O'Connor
+	249	Nyabing	-33.5412800	118.1459700	AU	08	0	0	Nyabing	Nyabing	Nyabing	Nyabing	Nyabing	Nyabing
+	249	Nungarin	-31.1863700	118.1040000	AU	08	0	0	Nungarin	Nungarin	Nungarin	Nungarin	Nungarin	Nungarin
+	249	Nullagine	-21.8833300	120.1000000	AU	08	0	0	Nullagine	Nullagine	Nullagine	Nullagine	Nullagine	Nullagine
+	249	North Fremantle	-32.0333300	115.7500000	AU	08	0	0	North Fremantle	North Fremantle	North Fremantle	North Fremantle	North Fremantle	North Fremantle
+	249	North Dandalup	-32.5167600	115.9719300	AU	08	0	0	North Dandalup	North Dandalup	North Dandalup	North Dandalup	North Dandalup	North Dandalup
+	249	Northcliffe	-34.6328900	116.1223600	AU	08	0	0	Northcliffe	Northcliffe	Northcliffe	Northcliffe	Northcliffe	Northcliffe
+	249	North Beach	-31.8629800	115.7562400	AU	08	0	0	North Beach	North Beach	North Beach	North Beach	North Beach	North Beach
+	249	Northampton	-28.3499400	114.6382100	AU	08	0	0	Northampton	Northampton	Northampton	Northampton	Northampton	Northampton
+	249	Northam	-31.6493200	116.6742300	AU	08	0	0	Northam	Northam	Northam	Northam	Northam	Northam
+	249	Norseman	-32.1976900	121.7787300	AU	08	0	0	Norseman	Norseman	Norseman	Norseman	Norseman	Norseman
+	249	Nornalup	-34.9917200	116.8201600	AU	08	0	0	Nornalup	Nornalup	Nornalup	Nornalup	Nornalup	Nornalup
+	249	Noggerup	-33.5833300	116.1666700	AU	08	0	0	Noggerup	Noggerup	Noggerup	Noggerup	Noggerup	Noggerup
+	249	Nippering	-33.2949900	117.6379600	AU	08	0	0	Nippering	Nippering	Nippering	Nippering	Nippering	Nippering
+	249	Newman	-23.3564400	119.7355300	AU	08	0	0	Newman	Ньюмен	Newman	Newman	Newman	Newman
+	249	Newdegate	-33.1000000	119.0166700	AU	08	0	0	Newdegate	Newdegate	Newdegate	Newdegate	Newdegate	Newdegate
+	249	Neendaling	-33.1166700	118.3333300	AU	08	0	0	Neendaling	Neendaling	Neendaling	Neendaling	Neendaling	Neendaling
+	249	Nedlands	-31.9818400	115.8073000	AU	08	0	0	Nedlands	Nedlands	Nedlands	Nedlands	Nedlands	Nedlands
+	249	Narrogin	-32.9328200	117.1776300	AU	08	0	0	Narrogin	Narrogin	Narrogin	Narrogin	Narrogin	Narrogin
+	249	Narrikup	-34.7723200	117.7041800	AU	08	0	0	Narrikup	Narrikup	Narrikup	Narrikup	Narrikup	Narrikup
+	249	Narngulu	-28.8205200	114.6925300	AU	08	0	0	Narngulu	Narngulu	Narngulu	Narngulu	Narngulu	Narngulu
+	249	Narembeen	-32.0636600	118.3957100	AU	08	0	0	Narembeen	Narembeen	Narembeen	Narembeen	Narembeen	Narembeen
+	249	Naraling	-28.4000000	114.8333300	AU	08	0	0	Naraling	Naraling	Naraling	Naraling	Naraling	Naraling
+	249	Nanson	-28.5787800	114.7544500	AU	08	0	0	Nanson	Nanson	Nanson	Nanson	Nanson	Nanson
+	249	Nannup	-33.9787400	115.7646000	AU	08	0	0	Nannup	Nannup	Nannup	Nannup	Nannup	Nannup
+	249	Muradup	-33.8333300	116.9833300	AU	08	0	0	Muradup	Muradup	Muradup	Muradup	Muradup	Muradup
+	249	Muntadgin	-31.7578400	118.5619400	AU	08	0	0	Muntadgin	Muntadgin	Muntadgin	Muntadgin	Muntadgin	Muntadgin
+	249	Mundijong	-32.2921700	115.9856400	AU	08	0	0	Mundijong	Mundijong	Mundijong	Mundijong	Mundijong	Mundijong
+	249	Mundaring	-31.9021000	116.1675700	AU	08	0	0	Mundaring	Mundaring	Mundaring	Mundaring	Mundaring	Mundaring
+	249	Mullewa	-28.5395200	115.5117300	AU	08	0	0	Mullewa	Mullewa	Mullewa	Mullewa	Mullewa	Mullewa
+	249	Mullalyup	-33.7333300	115.9333300	AU	08	0	0	Mullalyup	Mullalyup	Mullalyup	Mullalyup	Mullalyup	Mullalyup
+	249	Mukinbudin	-30.9141400	118.2078500	AU	08	0	0	Mukinbudin	Mukinbudin	Mukinbudin	Mukinbudin	Mukinbudin	Mukinbudin
+	249	Muchea	-31.5821400	115.9716100	AU	08	0	0	Muchea	Muchea	Muchea	Muchea	Muchea	Muchea
+	249	Mount Palmer	-31.4000000	119.6833300	AU	08	0	0	Mount Palmer	Mount Palmer	Mount Palmer	Mount Palmer	Mount Palmer	Mount Palmer
+	249	Mount Magnet	-28.0647900	117.8490400	AU	08	0	0	Mount Magnet	Mount Magnet	Mount Magnet	Mount Magnet	Mount Magnet	Mount Magnet
+	249	Mount Madden	-33.2666700	119.7833300	AU	08	0	0	Mount Madden	Mount Madden	Mount Madden	Mount Madden	Mount Madden	Mount Madden
+	249	Mount Helena	-31.8760600	116.2102500	AU	08	0	0	Mount Helena	Маунт Хелена	Mount Helena	Mount Helena	Mount Helena	Mount Helena
+	249	Mount Hardey	-31.9000000	116.8666700	AU	08	0	0	Mount Hardey	Mount Hardey	Mount Hardey	Mount Hardey	Mount Hardey	Mount Hardey
+	249	Mount Barker	-34.6308400	117.6660600	AU	08	0	0	Mount Barker	Mount Barker	Mount Barker	Mount Barker	Mount Barker	Mount Barker
+	249	Mosman Park	-32.0053800	115.7638000	AU	08	0	0	Mosman Park	Mosman Park	Mosman Park	Mosman Park	Mosman Park	Mosman Park
+	249	Morawa	-29.2134300	116.0079100	AU	08	0	0	Morawa	Morawa	Morawa	Morawa	Morawa	Morawa
+	249	Moorine Rock	-31.3208300	119.1266600	AU	08	0	0	Moorine Rock	Moorine Rock	Moorine Rock	Moorine Rock	Moorine Rock	Moorine Rock
+	249	Moora	-30.6400300	116.0036500	AU	08	0	0	Moora	Мура	Moora	Moora	Moora	Moora
+	249	Moonyoonooka	-28.7833300	114.7166700	AU	08	0	0	Moonyoonooka	Moonyoonooka	Moonyoonooka	Moonyoonooka	Moonyoonooka	Moonyoonooka
+	249	Monkey Mia	-25.7940200	113.7180400	AU	08	0	0	Monkey Mia	Monkey Mia	Monkey Mia	Monkey Mia	Monkey Mia	Monkey Mia
+	249	Mollerin	-30.4550100	117.5256500	AU	08	0	0	Mollerin	Mollerin	Mollerin	Mollerin	Mollerin	Mollerin
+	249	Minnivale	-31.1382500	117.1808800	AU	08	0	0	Minnivale	Minnivale	Minnivale	Minnivale	Minnivale	Minnivale
+	249	Mingenew	-29.1908500	115.4415600	AU	08	0	0	Mingenew	Mingenew	Mingenew	Mingenew	Mingenew	Mingenew
+	249	Millendon	-31.8166700	116.0333300	AU	08	0	0	Millendon	Millendon	Millendon	Millendon	Millendon	Millendon
+	249	Miling	-30.4897000	116.3623700	AU	08	0	0	Miling	Miling	Miling	Miling	Miling	Miling
+	249	Midland	-31.9000000	116.0000000	AU	08	0	0	Midland	Midland	Midland	Midland	Midland	Midland
+	249	Middle Swan	-31.8500000	116.0166700	AU	08	0	0	Middle Swan	Middle Swan	Middle Swan	Middle Swan	Middle Swan	Middle Swan
+	249	Merredin	-31.4809400	118.2744800	AU	08	0	0	Merredin	Merredin	Merredin	Merredin	Merredin	Merredin
+	249	Menzies	-29.6939300	121.0285300	AU	08	0	0	Menzies	Menzies	Menzies	Menzies	Menzies	Menzies
+	249	Melville	-28.1833300	116.7333300	AU	08	0	0	Melville	Melville	Melville	Melville	Melville	Melville
+	249	Meelon	-32.7000000	115.9333300	AU	08	0	0	Meelon	Meelon	Meelon	Meelon	Meelon	Meelon
+	249	Meekatharra	-26.5952400	118.4939300	AU	08	0	0	Meekatharra	Микатарра	Meekatharra	Meekatharra	Meekatharra	Meekatharra
+	249	Medina	-32.2333300	115.7833300	AU	08	0	0	Medina	Medina	Medina	Medina	Medina	Medina
+	249	Meckering	-31.6276500	117.0114000	AU	08	0	0	Meckering	Meckering	Meckering	Meckering	Meckering	Meckering
+	249	Maylands	-31.9309700	115.8948600	AU	08	0	0	Maylands	Maylands	Maylands	Maylands	Maylands	Maylands
+	249	Mayanup	-33.9500000	116.4500000	AU	08	0	0	Mayanup	Mayanup	Mayanup	Mayanup	Mayanup	Mayanup
+	249	Maya	-29.8848900	116.5044400	AU	08	0	0	Maya	Maya	Maya	Maya	Maya	Maya
+	249	Marvel Loch	-31.4677700	119.4872600	AU	08	0	0	Marvel Loch	Marvel Loch	Marvel Loch	Marvel Loch	Marvel Loch	Marvel Loch
+	249	Margaret River	-33.9536000	115.0739100	AU	08	0	0	Margaret River	Margaret River	Margaret River	Margaret River	Margaret River	Margaret River
+	249	Mardella	-32.3333300	115.9833300	AU	08	0	0	Mardella	Mardella	Mardella	Mardella	Mardella	Mardella
+	249	Marchagee	-30.0543400	116.0740000	AU	08	0	0	Marchagee	Marchagee	Marchagee	Marchagee	Marchagee	Marchagee
+	249	Marble Bar	-21.1706700	119.7444100	AU	08	0	0	Marble Bar	Marble Bar	Marble Bar	Marble Bar	Marble Bar	Marble Bar
+	249	Manning	-32.0159400	115.8671400	AU	08	0	0	Manning	Manning	Manning	Manning	Manning	Manning
+	249	Manmanning	-30.8485900	117.0977300	AU	08	0	0	Manmanning	Manmanning	Manmanning	Manmanning	Manmanning	Manmanning
+	249	Manjimup	-34.2412200	116.1456400	AU	08	0	0	Manjimup	Manjimup	Manjimup	Manjimup	Manjimup	Manjimup
+	249	Mandurah	-32.5269000	115.7217000	AU	08	0	0	Mandurah	Мандъюра	Mandurah	Mandurah	Mandurah	Mandurah
+	249	Malyalling	-32.7000000	117.5333300	AU	08	0	0	Malyalling	Malyalling	Malyalling	Malyalling	Malyalling	Malyalling
+	249	Mahogany Creek	-31.9095300	116.1042800	AU	08	0	0	Mahogany Creek	Mahogany Creek	Mahogany Creek	Mahogany Creek	Mahogany Creek	Mahogany Creek
+	249	Maddington	-32.0500000	115.9833300	AU	08	0	0	Maddington	Maddington	Maddington	Maddington	Maddington	Maddington
+	249	Ludlow	-33.6000000	115.4666700	AU	08	0	0	Ludlow	Ludlow	Ludlow	Ludlow	Ludlow	Ludlow
+	249	Lower Chittering	-31.5833300	116.1166700	AU	08	0	0	Lower Chittering	Lower Chittering	Lower Chittering	Lower Chittering	Lower Chittering	Lower Chittering
+	249	Leonora	-28.8850900	121.3307400	AU	08	0	0	Leonora	Леонора	Leonora	Leonora	Leonora	Leonora
+	249	Laverton	-28.6253100	122.3994000	AU	08	0	0	Laverton	Laverton	Laverton	Laverton	Laverton	Laverton
+	249	Latham	-29.7586900	116.4456700	AU	08	0	0	Latham	Latham	Latham	Latham	Latham	Latham
+	249	Lake King	-33.0859300	119.6755200	AU	08	0	0	Lake King	Lake King	Lake King	Lake King	Lake King	Lake King
+	249	Lake Grace	-33.1031700	118.4646300	AU	08	0	0	Lake Grace	Lake Grace	Lake Grace	Lake Grace	Lake Grace	Lake Grace
+	249	Lake Brown	-30.9500000	118.3333300	AU	08	0	0	Lake Brown	Lake Brown	Lake Brown	Lake Brown	Lake Brown	Lake Brown
+	249	Kwolyin	-31.9294800	117.7501100	AU	08	0	0	Kwolyin	Kwolyin	Kwolyin	Kwolyin	Kwolyin	Kwolyin
+	249	Kwinana	-32.2301300	115.7812800	AU	08	0	0	Kwinana	Kwinana	Kwinana	Kwinana	Kwinana	Kwinana
+	249	Kununurra	-15.7782500	128.7420800	AU	08	0	0	Kununurra	Kununurra	Kununurra	Kununurra	Kununurra	Kununurra
+	249	Kulin	-32.6668400	118.1579900	AU	08	0	0	Kulin	Kulin	Kulin	Kulin	Kulin	Kulin
+	249	Kulikup	-33.8166700	116.6833300	AU	08	0	0	Kulikup	Kulikup	Kulikup	Kulikup	Kulikup	Kulikup
+	249	Kukerin	-33.1833300	118.0833300	AU	08	0	0	Kukerin	Kukerin	Kukerin	Kukerin	Kukerin	Kukerin
+	249	Kudardup	-34.2833300	115.1000000	AU	08	0	0	Kudardup	Kudardup	Kudardup	Kudardup	Kudardup	Kudardup
+	249	Kronkup	-35.0369400	117.6241700	AU	08	0	0	Kronkup	Kronkup	Kronkup	Kronkup	Kronkup	Kronkup
+	249	Korrelocking	-31.2036700	117.4709400	AU	08	0	0	Korrelocking	Korrelocking	Korrelocking	Korrelocking	Korrelocking	Korrelocking
+	249	Koorda	-30.8256500	117.4879000	AU	08	0	0	Koorda	Koorda	Koorda	Koorda	Koorda	Koorda
+	249	Koolanooka	-29.2710500	116.0746900	AU	08	0	0	Koolanooka	Koolanooka	Koolanooka	Koolanooka	Koolanooka	Koolanooka
+	249	Kookynie	-29.3333300	121.4833300	AU	08	0	0	Kookynie	Kookynie	Kookynie	Kookynie	Kookynie	Kookynie
+	249	Konnongorring	-31.0833300	116.7833300	AU	08	0	0	Konnongorring	Konnongorring	Konnongorring	Konnongorring	Konnongorring	Konnongorring
+	249	Kondut	-30.7109000	116.7732000	AU	08	0	0	Kondut	Kondut	Kondut	Kondut	Kondut	Kondut
+	249	Kondinin	-32.4985600	118.2652600	AU	08	0	0	Kondinin	Kondinin	Kondinin	Kondinin	Kondinin	Kondinin
+	249	Kojonup	-33.8305000	117.1594600	AU	08	0	0	Kojonup	Kojonup	Kojonup	Kojonup	Kojonup	Kojonup
+	249	Kirup	-33.7000000	115.9000000	AU	08	0	0	Kirup	Kirup	Kirup	Kirup	Kirup	Kirup
+	249	King River	-34.9344400	117.9119000	AU	08	0	0	King River	King River	King River	King River	King River	King River
+	249	Keysbrook	-32.4333300	115.9666700	AU	08	0	0	Keysbrook	Keysbrook	Keysbrook	Keysbrook	Keysbrook	Keysbrook
+	249	Kenwick	-32.0333300	115.9666700	AU	08	0	0	Kenwick	Kenwick	Kenwick	Kenwick	Kenwick	Kenwick
+	249	Kentdale	-34.9000000	117.0500000	AU	08	0	0	Kentdale	Kentdale	Kentdale	Kentdale	Kentdale	Kentdale
+	249	Kendenup	-34.4821300	117.6253300	AU	08	0	0	Kendenup	Kendenup	Kendenup	Kendenup	Kendenup	Kendenup
+	249	Kelmscott	-32.1243400	116.0259000	AU	08	0	0	Kelmscott	Kelmscott	Kelmscott	Kelmscott	Kelmscott	Kelmscott
+	249	Kellerberrin	-31.6318200	117.7198300	AU	08	0	0	Kellerberrin	Kellerberrin	Kellerberrin	Kellerberrin	Kellerberrin	Kellerberrin
+	249	Katanning	-33.6878700	117.5584000	AU	08	0	0	Katanning	Katanning	Katanning	Katanning	Katanning	Katanning
+	249	Karridale	-34.2166700	115.0833300	AU	08	0	0	Karridale	Karridale	Karridale	Karridale	Karridale	Karridale
+	249	Karranadgin	-31.2333300	116.7500000	AU	08	0	0	Karranadgin	Karranadgin	Karranadgin	Karranadgin	Karranadgin	Karranadgin
+	249	Karragullen	-32.1000000	116.1333300	AU	08	0	0	Karragullen	Karragullen	Karragullen	Karragullen	Karragullen	Karragullen
+	249	Karnup	-32.3666700	115.8166700	AU	08	0	0	Karnup	Karnup	Karnup	Karnup	Karnup	Karnup
+	249	Karlgarin	-32.5000000	118.7000000	AU	08	0	0	Karlgarin	Karlgarin	Karlgarin	Karlgarin	Karlgarin	Karlgarin
+	249	Kalgoorlie	-30.7461400	121.4742000	AU	08	0	0	Kalgoorlie	Калгурли	Kalgoorlie	Kalgoorlie	Kalgoorlie	Kalgoorlie
+	249	Kalgan	-34.8847200	118.0130600	AU	08	0	0	Kalgan	Kalgan	Kalgan	Kalgan	Kalgan	Kalgan
+	249	Kalbarri	-27.7105000	114.1650500	AU	08	0	0	Kalbarri	Kalbarri	Kalbarri	Kalbarri	Kalbarri	Kalbarri
+	249	Kalannie	-30.3624500	117.1181100	AU	08	0	0	Kalannie	Kalannie	Kalannie	Kalannie	Kalannie	Kalannie
+	249	Jingalup	-33.9666700	117.0333300	AU	08	0	0	Jingalup	Jingalup	Jingalup	Jingalup	Jingalup	Jingalup
+	249	Jilakin	-32.6666700	118.3333300	AU	08	0	0	Jilakin	Jilakin	Jilakin	Jilakin	Jilakin	Jilakin
+	249	Jennacubbine	-31.4401700	116.7247300	AU	08	0	0	Jennacubbine	Jennacubbine	Jennacubbine	Jennacubbine	Jennacubbine	Jennacubbine
+	249	Jarrahdale	-32.3358000	116.0595100	AU	08	0	0	Jarrahdale	Jarrahdale	Jarrahdale	Jarrahdale	Jarrahdale	Jarrahdale
+	249	Jardee	-34.2833300	116.1166700	AU	08	0	0	Jardee	Jardee	Jardee	Jardee	Jardee	Jardee
+	249	Jacup	-33.8166700	119.2666700	AU	08	0	0	Jacup	Jacup	Jacup	Jacup	Jacup	Jacup
+	249	Isseka	-28.4333300	114.6333300	AU	08	0	0	Isseka	Isseka	Isseka	Isseka	Isseka	Isseka
+	249	Hyden	-32.4500000	118.8833300	AU	08	0	0	Hyden	Hyden	Hyden	Hyden	Hyden	Hyden
+	249	Hovea	-31.8833300	116.1000000	AU	08	0	0	Hovea	Hovea	Hovea	Hovea	Hovea	Hovea
+	249	Hopetoun	-33.9505700	120.1263500	AU	08	0	0	Hopetoun	Hopetoun	Hopetoun	Hopetoun	Hopetoun	Hopetoun
+	249	Hines Hill	-31.5341900	118.0747700	AU	08	0	0	Hines Hill	Hines Hill	Hines Hill	Hines Hill	Hines Hill	Hines Hill
+	249	Highbury	-33.0666700	117.2500000	AU	08	0	0	Highbury	Highbury	Highbury	Highbury	Highbury	Highbury
+	249	Herne Hill	-31.8255300	116.0227000	AU	08	0	0	Herne Hill	Herne Hill	Herne Hill	Herne Hill	Herne Hill	Herne Hill
+	249	Harvey	-33.0786300	115.9151200	AU	08	0	0	Harvey	Harvey	Harvey	Harvey	Harvey	Harvey
+	249	Hamel	-32.8833300	115.9166700	AU	08	0	0	Hamel	Hamel	Hamel	Hamel	Hamel	Hamel
+	249	Halls Creek	-18.2248500	127.6664700	AU	08	0	0	Halls Creek	Halls Creek	Halls Creek	Halls Creek	Halls Creek	Halls Creek
+	249	Guildford	-31.9000000	115.9666700	AU	08	0	0	Guildford	Guildford	Guildford	Guildford	Guildford	Guildford
+	249	Greenough	-28.9500000	114.7333300	AU	08	0	0	Greenough	Greenough	Greenough	Greenough	Greenough	Greenough
+	249	Greenmount	-31.9000000	116.0500000	AU	08	0	0	Greenmount	Гринмаунт	Greenmount	Greenmount	Greenmount	Greenmount
+	249	Greenhills	-31.9208000	116.9643500	AU	08	0	0	Greenhills	Greenhills	Greenhills	Greenhills	Greenhills	Greenhills
+	249	Greenbushes	-33.8496500	116.0581900	AU	08	0	0	Greenbushes	Greenbushes	Greenbushes	Greenbushes	Greenbushes	Greenbushes
+	249	Grass Valley	-31.6373100	116.7975900	AU	08	0	0	Grass Valley	Grass Valley	Grass Valley	Grass Valley	Grass Valley	Grass Valley
+	249	Grasmere	-35.0180600	117.7555600	AU	08	0	0	Grasmere	Grasmere	Grasmere	Grasmere	Grasmere	Grasmere
+	249	Gosnells	-32.0833300	116.0000000	AU	08	0	0	Gosnells	Gosnells	Gosnells	Gosnells	Gosnells	Gosnells
+	249	Gooseberry Hill	-31.9500000	116.0500000	AU	08	0	0	Gooseberry Hill	Gooseberry Hill	Gooseberry Hill	Gooseberry Hill	Gooseberry Hill	Gooseberry Hill
+	249	Goomalling	-31.3015600	116.8252700	AU	08	0	0	Goomalling	Goomalling	Goomalling	Goomalling	Goomalling	Goomalling
+	249	Gnowangerup	-33.9369800	118.0090400	AU	08	0	0	Gnowangerup	Gnowangerup	Gnowangerup	Gnowangerup	Gnowangerup	Gnowangerup
+	249	Gingin	-31.3472200	115.9043200	AU	08	0	0	Gingin	Gingin	Gingin	Gingin	Gingin	Gingin
+	249	Gibson	-33.6441600	121.8156800	AU	08	0	0	Gibson	Gibson	Gibson	Gibson	Gibson	Gibson
+	249	Geraldton	-28.7789700	114.6145900	AU	08	0	0	Geraldton	Джералдтон	Geraldton	Geraldton	Geraldton	Geraldton
+	249	Gascoyne Junction	-25.0499500	115.2090700	AU	08	0	0	Gascoyne Junction	Gascoyne Junction	Gascoyne Junction	Gascoyne Junction	Gascoyne Junction	Gascoyne Junction
+	249	Gabbin	-30.8010800	117.6788300	AU	08	0	0	Gabbin	Gabbin	Gabbin	Gabbin	Gabbin	Gabbin
+	249	Fremantle	-32.0545400	115.7512700	AU	08	0	0	Fremantle	Фримантл	Fremantle	Fremantle	Fremantle	Fremantle
+	249	Forest Grove	-34.0666700	115.0833300	AU	08	0	0	Forest Grove	Forest Grove	Forest Grove	Forest Grove	Forest Grove	Forest Grove
+	249	Fitzroy Crossing	-18.1971400	125.5666300	AU	08	0	0	Fitzroy Crossing	Fitzroy Crossing	Fitzroy Crossing	Fitzroy Crossing	Fitzroy Crossing	Fitzroy Crossing
+	249	Eucla	-31.6769400	128.8883400	AU	08	0	0	Eucla	Eucla	Eucla	Eucla	Eucla	Eucla
+	249	Esperance	-33.8591900	121.8916400	AU	08	0	0	Esperance	Эсперанс	Esperance	Esperance	Esperance	Esperance
+	249	Elleker	-35.0091700	117.7302800	AU	08	0	0	Elleker	Elleker	Elleker	Elleker	Elleker	Elleker
+	249	East Popanyinning	-32.6333300	117.2500000	AU	08	0	0	East Popanyinning	East Popanyinning	East Popanyinning	East Popanyinning	East Popanyinning	East Popanyinning
+	249	East Beverley	-32.0333300	117.0166700	AU	08	0	0	East Beverley	East Beverley	East Beverley	East Beverley	East Beverley	East Beverley
+	249	Dwellingup	-32.7143800	116.0622000	AU	08	0	0	Dwellingup	Двеллингап	Dwellingup	Dwellingup	Dwellingup	Dwellingup
+	249	Duranillin	-33.5158500	116.8072200	AU	08	0	0	Duranillin	Duranillin	Duranillin	Duranillin	Duranillin	Duranillin
+	249	Dumbleyung	-33.3125700	117.7393300	AU	08	0	0	Dumbleyung	Dumbleyung	Dumbleyung	Dumbleyung	Dumbleyung	Dumbleyung
+	249	Dudinin	-32.8762400	117.9053000	AU	08	0	0	Dudinin	Dudinin	Dudinin	Dudinin	Dudinin	Dudinin
+	249	Dowerin	-31.1936700	117.0395500	AU	08	0	0	Dowerin	Dowerin	Dowerin	Dowerin	Dowerin	Dowerin
+	249	Doodlakine	-31.6091800	117.8721700	AU	08	0	0	Doodlakine	Doodlakine	Doodlakine	Doodlakine	Doodlakine	Doodlakine
+	249	Donnybrook	-33.5713000	115.8244600	AU	08	0	0	Donnybrook	Donnybrook	Donnybrook	Donnybrook	Donnybrook	Donnybrook
+	249	Dongara	-29.2581800	114.9327600	AU	08	0	0	Dongara	Dongara	Dongara	Dongara	Dongara	Dongara
+	249	Chidlow	-31.8609400	116.2724300	AU	08	0	0	Chidlow	Chidlow	Chidlow	Chidlow	Chidlow	Chidlow
+	249	Derby	-17.2972700	123.6341200	AU	08	0	0	Derby	Derby	Derby	Derby	Derby	Derby
+	249	Denmark	-34.9606700	117.3532100	AU	08	0	0	Denmark	Денмарк	Denmark	Denmark	Denmark	Denmark
+	249	Port Denison	-29.2833300	114.9166700	AU	08	0	0	Port Denison	Port Denison	Port Denison	Port Denison	Port Denison	Port Denison
+	249	Deanmill	-34.2500000	116.0833300	AU	08	0	0	Deanmill	Deanmill	Deanmill	Deanmill	Deanmill	Deanmill
+	249	Darlington	-31.9166700	116.0833300	AU	08	0	0	Darlington	Darlington	Darlington	Darlington	Darlington	Darlington
+	249	Darkan	-33.3356500	116.7443500	AU	08	0	0	Darkan	Darkan	Darkan	Darkan	Darkan	Darkan
+	249	Dardanup	-33.3983000	115.7518000	AU	08	0	0	Dardanup	Dardanup	Dardanup	Dardanup	Dardanup	Dardanup
+	249	Dangin	-32.0500000	117.3166700	AU	08	0	0	Dangin	Dangin	Dangin	Dangin	Dangin	Dangin
+	249	Dandaragan	-30.6762500	115.7029500	AU	08	0	0	Dandaragan	Dandaragan	Dandaragan	Dandaragan	Dandaragan	Dandaragan
+	249	Dampier	-20.6627500	116.7125600	AU	08	0	0	Dampier	Дампир	Dampier	Dampier	Dampier	Dampier
+	249	Dalwallinu	-30.2804500	116.6601500	AU	08	0	0	Dalwallinu	Dalwallinu	Dalwallinu	Dalwallinu	Dalwallinu	Dalwallinu
+	249	Cuthbert	-35.0158300	117.7983300	AU	08	0	0	Cuthbert	Cuthbert	Cuthbert	Cuthbert	Cuthbert	Cuthbert
+	249	Cunderdin	-31.6539800	117.2337400	AU	08	0	0	Cunderdin	Cunderdin	Cunderdin	Cunderdin	Cunderdin	Cunderdin
+	249	Cue	-27.4239500	117.8973900	AU	08	0	0	Cue	Cue	Cue	Cue	Cue	Cue
+	249	Cuballing	-32.8196400	117.1758300	AU	08	0	0	Cuballing	Cuballing	Cuballing	Cuballing	Cuballing	Cuballing
+	249	Crossman	-32.7833300	116.6000000	AU	08	0	0	Crossman	Crossman	Crossman	Crossman	Crossman	Crossman
+	249	Cranbrook	-34.2500000	117.3333300	AU	08	0	0	Cranbrook	Cranbrook	Cranbrook	Cranbrook	Cranbrook	Cranbrook
+	249	Cowaramup	-33.8503600	115.1037800	AU	08	0	0	Cowaramup	Cowaramup	Cowaramup	Cowaramup	Cowaramup	Cowaramup
+	249	Cottesloe	-32.0000000	115.7666700	AU	08	0	0	Cottesloe	Cottesloe	Cottesloe	Cottesloe	Cottesloe	Cottesloe
+	249	Cosmo Newbery	-27.9961800	122.8953000	AU	08	0	0	Cosmo Newbery	Cosmo Newbery	Cosmo Newbery	Cosmo Newbery	Cosmo Newbery	Cosmo Newbery
+	249	Corrigin	-32.3338300	117.8718100	AU	08	0	0	Corrigin	Corrigin	Corrigin	Corrigin	Corrigin	Corrigin
+	249	Coorow	-29.8819400	116.0226400	AU	08	0	0	Coorow	Coorow	Coorow	Coorow	Coorow	Coorow
+	249	Coondle	-31.4833300	116.4333300	AU	08	0	0	Coondle	Coondle	Coondle	Coondle	Coondle	Coondle
+	249	Coolup	-32.7332800	115.8666700	AU	08	0	0	Coolup	Coolup	Coolup	Coolup	Coolup	Coolup
+	249	Coolgardie	-30.9526600	121.1634900	AU	08	0	0	Coolgardie	Coolgardie	Coolgardie	Coolgardie	Coolgardie	Coolgardie
+	249	Cookernup	-32.9896600	115.8799300	AU	08	0	0	Cookernup	Cookernup	Cookernup	Cookernup	Cookernup	Cookernup
+	249	Coogee	-32.1166700	115.7666700	AU	08	0	0	Coogee	Coogee	Coogee	Coogee	Coogee	Coogee
+	249	Collie	-33.3620600	116.1561700	AU	08	0	0	Collie	Collie	Collie	Collie	Collie	Collie
+	249	Cleary	-30.4364000	117.6437600	AU	08	0	0	Cleary	Cleary	Cleary	Cleary	Cleary	Cleary
+	249	Clackline	-31.7333300	116.5333300	AU	08	0	0	Clackline	Clackline	Clackline	Clackline	Clackline	Clackline
+	249	Chittering	-31.4833300	116.1000000	AU	08	0	0	Chittering	Chittering	Chittering	Chittering	Chittering	Chittering
+	249	Caversham	-31.8833300	115.9666700	AU	08	0	0	Caversham	Caversham	Caversham	Caversham	Caversham	Caversham
+	249	Carnarvon	-24.8825800	113.6571300	AU	08	0	0	Carnarvon	Carnarvon	Carnarvon	Carnarvon	Carnarvon	Carnarvon
+	249	Carnamah	-29.6887000	115.8859500	AU	08	0	0	Carnamah	Carnamah	Carnamah	Carnamah	Carnamah	Carnamah
+	249	Carmel	-32.0166700	116.1000000	AU	08	0	0	Carmel	Carmel	Carmel	Carmel	Carmel	Carmel
+	249	Cardup	-32.2500000	116.0000000	AU	08	0	0	Cardup	Cardup	Cardup	Cardup	Cardup	Cardup
+	249	Capel	-33.5580800	115.5627800	AU	08	0	0	Capel	Capel	Capel	Capel	Capel	Capel
+	249	Cannington	-32.0166700	115.9500000	AU	08	0	0	Cannington	Cannington	Cannington	Cannington	Cannington	Cannington
+	249	Canna	-28.9002500	115.8621100	AU	08	0	0	Canna	Canna	Canna	Canna	Canna	Canna
+	249	Calingiri	-31.0915900	116.4477800	AU	08	0	0	Calingiri	Calingiri	Calingiri	Calingiri	Calingiri	Calingiri
+	249	Byford	-32.2209900	116.0090000	AU	08	0	0	Byford	Байфорд	Byford	Byford	Byford	Byford
+	249	Busselton	-33.6524900	115.3455000	AU	08	0	0	Busselton	Busselton	Busselton	Busselton	Busselton	Busselton
+	249	Burracoppin	-31.3975400	118.4814500	AU	08	0	0	Burracoppin	Burracoppin	Burracoppin	Burracoppin	Burracoppin	Burracoppin
+	249	Burekup	-33.3070700	115.8136800	AU	08	0	0	Burekup	Burekup	Burekup	Burekup	Burekup	Burekup
+	249	Bunbury	-33.3271100	115.6413700	AU	08	0	0	Bunbury	Банбери	Bunbury	Bunbury	Bunbury	Bunbury
+	249	Bullsbrook	-31.6690500	115.9999000	AU	08	0	0	Bullsbrook	Bullsbrook	Bullsbrook	Bullsbrook	Bullsbrook	Bullsbrook
+	249	Bullfinch	-30.9841900	119.1085300	AU	08	0	0	Bullfinch	Bullfinch	Bullfinch	Bullfinch	Bullfinch	Bullfinch
+	249	Bullaring	-32.4963500	117.7453000	AU	08	0	0	Bullaring	Bullaring	Bullaring	Bullaring	Bullaring	Bullaring
+	249	Bruce Rock	-31.8804600	118.1474900	AU	08	0	0	Bruce Rock	Bruce Rock	Bruce Rock	Bruce Rock	Bruce Rock	Bruce Rock
+	249	Broomehill	-33.8500000	117.6500000	AU	08	0	0	Broomehill	Broomehill	Broomehill	Broomehill	Broomehill	Broomehill
+	249	Broome	-17.9553800	122.2392200	AU	08	0	0	Broome	Брум	Broome	Broome	Broome	Broome
+	249	Brookton	-32.3723500	117.0105000	AU	08	0	0	Brookton	Brookton	Brookton	Brookton	Brookton	Brookton
+	249	Bridgetown	-33.9624200	116.1359800	AU	08	0	0	Bridgetown	Bridgetown	Bridgetown	Bridgetown	Bridgetown	Bridgetown
+	249	Boyup Brook	-33.8342500	116.3877600	AU	08	0	0	Boyup Brook	Boyup Brook	Boyup Brook	Boyup Brook	Boyup Brook	Boyup Brook
+	249	Boyanup	-33.4829500	115.7283800	AU	08	0	0	Boyanup	Boyanup	Boyanup	Boyanup	Boyanup	Boyanup
+	249	Boya	-31.9333300	116.0500000	AU	08	0	0	Boya	Boya	Boya	Boya	Boya	Boya
+	249	Boulder	-30.7833300	121.4833300	AU	08	0	0	Boulder	Boulder	Boulder	Boulder	Boulder	Boulder
+	249	Boscabel	-33.6666700	117.0500000	AU	08	0	0	Boscabel	Boscabel	Boscabel	Boscabel	Boscabel	Boscabel
+	249	Borden	-34.0723700	118.2720600	AU	08	0	0	Borden	Borden	Borden	Borden	Borden	Borden
+	249	Bonnie Rock	-30.5408200	118.3649400	AU	08	0	0	Bonnie Rock	Bonnie Rock	Bonnie Rock	Bonnie Rock	Bonnie Rock	Bonnie Rock
+	249	Bolgart	-31.2666700	116.5000000	AU	08	0	0	Bolgart	Bolgart	Bolgart	Bolgart	Bolgart	Bolgart
+	249	Boddington	-32.8007100	116.4752200	AU	08	0	0	Boddington	Boddington	Boddington	Boddington	Boddington	Boddington
+	249	Bickley	-32.0000000	116.0833300	AU	08	0	0	Bickley	Bickley	Bickley	Bickley	Bickley	Bickley
+	249	Beverley	-32.1083900	116.9273600	AU	08	0	0	Beverley	Beverley	Beverley	Beverley	Beverley	Beverley
+	249	Bentley	-32.0000000	115.9166700	AU	08	0	0	Bentley	Bentley	Bentley	Bentley	Bentley	Bentley
+	249	Bencubbin	-30.8160500	117.8614300	AU	08	0	0	Bencubbin	Bencubbin	Bencubbin	Bencubbin	Bencubbin	Bencubbin
+	249	Bellevue	-31.9000000	116.0166700	AU	08	0	0	Bellevue	Bellevue	Bellevue	Bellevue	Bellevue	Bellevue
+	249	Bejoording	-31.4000000	116.5000000	AU	08	0	0	Bejoording	Bejoording	Bejoording	Bejoording	Bejoording	Bejoording
+	249	Beechina	-31.8500000	116.3166700	AU	08	0	0	Beechina	Beechina	Beechina	Beechina	Beechina	Beechina
+	249	Bedfordale	-32.1740600	116.0504000	AU	08	0	0	Bedfordale	Bedfordale	Bedfordale	Bedfordale	Bedfordale	Bedfordale
+	249	Beacon	-30.4485400	117.8629900	AU	08	0	0	Beacon	Beacon	Beacon	Beacon	Beacon	Beacon
+	249	Bassendean	-31.9090600	115.9437000	AU	08	0	0	Bassendean	Bassendean	Bassendean	Bassendean	Bassendean	Bassendean
+	249	Barberton	-30.7273600	116.0257600	AU	08	0	0	Barberton	Barberton	Barberton	Barberton	Barberton	Barberton
+	249	Ballidu	-30.5984100	116.7702600	AU	08	0	0	Ballidu	Ballidu	Ballidu	Ballidu	Ballidu	Ballidu
+	249	Balingup	-33.8000000	115.9666700	AU	08	0	0	Balingup	Balingup	Balingup	Balingup	Balingup	Balingup
+	249	Badjebup	-33.6333300	117.9000000	AU	08	0	0	Badjebup	Badjebup	Badjebup	Badjebup	Badjebup	Badjebup
+	249	Australind	-33.2792000	115.7150400	AU	08	0	0	Australind	Australind	Australind	Australind	Australind	Australind
+	249	Augusta	-34.3156600	115.1592200	AU	08	0	0	Augusta	Augusta	Augusta	Augusta	Augusta	Augusta
+	249	Arrino	-29.4435100	115.6300000	AU	08	0	0	Arrino	Arrino	Arrino	Arrino	Arrino	Arrino
+	249	Armadale	-32.1460700	116.0093000	AU	08	0	0	Armadale	Armadale	Armadale	Armadale	Armadale	Armadale
+	249	Applecross	-32.0166700	115.8333300	AU	08	0	0	Applecross	Applecross	Applecross	Applecross	Applecross	Applecross
+	249	Allanson	-33.3358800	116.0994000	AU	08	0	0	Allanson	Allanson	Allanson	Allanson	Allanson	Allanson
+	249	Aldersyde	-32.3747000	117.2833600	AU	08	0	0	Aldersyde	Aldersyde	Aldersyde	Aldersyde	Aldersyde	Aldersyde
+	249	Albany	-35.0031000	117.8659500	AU	08	0	0	Albany	Олбани	Albany	Albany	Albany	Albany
+	249	Ajana	-27.9558200	114.6301700	AU	08	0	0	Ajana	Ajana	Ajana	Ajana	Ajana	Ajana
+	249	Manypeaks	-34.8381500	118.1697500	AU	08	0	0	Manypeaks	Manypeaks	Manypeaks	Manypeaks	Manypeaks	Manypeaks
+	249	Dunsborough	-33.6151200	115.1056100	AU	08	0	0	Dunsborough	Dunsborough	Dunsborough	Dunsborough	Dunsborough	Dunsborough
+	249	Eaton	-33.3166400	115.7050300	AU	08	0	0	Eaton	Eaton	Eaton	Eaton	Eaton	Eaton
+	249	Binningup	-33.1483000	115.6951900	AU	08	0	0	Binningup	Binningup	Binningup	Binningup	Binningup	Binningup
+	249	Lancelin	-31.0225100	115.3365100	AU	08	0	0	Lancelin	Ланселин	Lancelin	Lancelin	Lancelin	Lancelin
+	249	Seabird	-31.2771700	115.4439000	AU	08	0	0	Seabird	Seabird	Seabird	Seabird	Seabird	Seabird
+	249	Guilderton	-31.3450500	115.4990400	AU	08	0	0	Guilderton	Guilderton	Guilderton	Guilderton	Guilderton	Guilderton
+	249	Two Rocks	-31.4998500	115.5873700	AU	08	0	0	Two Rocks	Two Rocks	Two Rocks	Two Rocks	Two Rocks	Two Rocks
+	249	Quinns Rocks	-31.6737900	115.7037200	AU	08	0	0	Quinns Rocks	Quinns Rocks	Quinns Rocks	Quinns Rocks	Quinns Rocks	Quinns Rocks
+	249	East Fremantle	-32.0388900	115.7666700	AU	08	0	0	East Fremantle	East Fremantle	East Fremantle	East Fremantle	East Fremantle	East Fremantle
+	249	Peppermint Grove	-31.9987800	115.7682000	AU	08	0	0	Peppermint Grove	Peppermint Grove	Peppermint Grove	Peppermint Grove	Peppermint Grove	Peppermint Grove
+	249	Claremont	-31.9875000	115.7861100	AU	08	0	0	Claremont	Claremont	Claremont	Claremont	Claremont	Claremont
+	249	Bicton	-32.0277800	115.7833300	AU	08	0	0	Bicton	Bicton	Bicton	Bicton	Bicton	Bicton
+	249	Attadale	-32.0248900	115.8020000	AU	08	0	0	Attadale	Attadale	Attadale	Attadale	Attadale	Attadale
+	249	Shenton Park	-31.9583300	115.7972200	AU	08	0	0	Shenton Park	Shenton Park	Shenton Park	Shenton Park	Shenton Park	Shenton Park
+	249	Dalkeith	-31.9958300	115.7958300	AU	08	0	0	Dalkeith	Dalkeith	Dalkeith	Dalkeith	Dalkeith	Dalkeith
+	249	Cervantes	-30.4961100	115.0671600	AU	08	0	0	Cervantes	Сервантес	Cervantes	Cervantes	Cervantes	Cervantes
+	249	Jurien Bay	-30.3059100	115.0382500	AU	08	0	0	Jurien Bay	Jurien Bay	Jurien Bay	Jurien Bay	Jurien Bay	Jurien Bay
+	249	Leeman	-29.9493700	114.9821000	AU	08	0	0	Leeman	Leeman	Leeman	Leeman	Leeman	Leeman
+	249	Horrocks	-28.3861100	114.4300000	AU	08	0	0	Horrocks	Horrocks	Horrocks	Horrocks	Horrocks	Horrocks
+	249	Drummond Cove	-28.6737900	114.6128000	AU	08	0	0	Drummond Cove	Drummond Cove	Drummond Cove	Drummond Cove	Drummond Cove	Drummond Cove
+	249	Warnbro	-32.3401700	115.7473000	AU	08	0	0	Warnbro	Warnbro	Warnbro	Warnbro	Warnbro	Warnbro
+	249	Wattleup	-32.1696200	115.8240000	AU	08	0	0	Wattleup	Wattleup	Wattleup	Wattleup	Wattleup	Wattleup
+	249	Green Head	-30.0677000	114.9679800	AU	08	0	0	Green Head	Green Head	Green Head	Green Head	Green Head	Green Head
+	249	Learmonth	-22.2500000	114.0833300	AU	08	0	0	Learmonth	Learmonth	Learmonth	Learmonth	Learmonth	Learmonth
+	249	Exmouth	-21.9306300	114.1209100	AU	08	0	0	Exmouth	Exmouth	Exmouth	Exmouth	Exmouth	Exmouth
+	249	Emu Point	-35.0000000	117.9381000	AU	08	0	0	Emu Point	Emu Point	Emu Point	Emu Point	Emu Point	Emu Point
+	249	Lower King	-34.9577800	117.9383300	AU	08	0	0	Lower King	Lower King	Lower King	Lower King	Lower King	Lower King
+	249	Tom Price	-22.6939000	117.7931000	AU	08	0	0	Tom Price	Tom Price	Tom Price	Tom Price	Tom Price	Tom Price
+	249	Karratha	-20.7376500	116.8462900	AU	08	0	0	Karratha	Karratha	Karratha	Karratha	Karratha	Karratha
+	249	Hillarys	-31.8069800	115.7404500	AU	08	0	0	Hillarys	Hillarys	Hillarys	Hillarys	Hillarys	Hillarys
+	249	Osborne Park	-31.9006600	115.8108300	AU	08	0	0	Osborne Park	Osborne Park	Osborne Park	Osborne Park	Osborne Park	Osborne Park
+	249	Burswood	-31.9587200	115.9039600	AU	08	0	0	Burswood	Burswood	Burswood	Burswood	Burswood	Burswood
+	249	Como	-31.9911900	115.8633600	AU	08	0	0	Como	Como	Como	Como	Como	Como
+	249	Coral Bay	-23.1408300	113.7763000	AU	08	0	0	Coral Bay	Coral Bay	Coral Bay	Coral Bay	Coral Bay	Coral Bay
+	249	Stirling	-31.8834300	115.8099000	AU	08	0	0	Stirling	Stirling	Stirling	Stirling	Stirling	Stirling
+	249	Erskine	-32.5571700	115.7065700	AU	08	0	0	Erskine	Erskine	Erskine	Erskine	Erskine	Erskine
+	249	Canning Vale	-32.0579800	115.9181400	AU	08	0	0	Canning Vale	Canning Vale	Canning Vale	Canning Vale	Canning Vale	Canning Vale
+	249	Shoalwater	-32.2908800	115.7110100	AU	08	0	0	Shoalwater	Shoalwater	Shoalwater	Shoalwater	Shoalwater	Shoalwater
+	249	Belmont	-31.9435000	115.9255000	AU	08	0	0	Belmont	Belmont	Belmont	Belmont	Belmont	Belmont
+	249	Paraburdoo	-23.2041700	117.6697300	AU	08	0	0	Paraburdoo	Paraburdoo	Paraburdoo	Paraburdoo	Paraburdoo	Paraburdoo
+	249	Nickol	-20.7455800	116.7954000	AU	08	0	0	Nickol	Nickol	Nickol	Nickol	Nickol	Nickol

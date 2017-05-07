@@ -1,0 +1,104 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_moderation_menu') %}
+            </ul>
+        </div>
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label id="base_link" class="btn btn-default{% if not type or type == 'add' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="javascript: openBW('base'); return false;">
+                        <input type="radio" name="looking_user_type" value="0"{% if not type or type == 'add' %} selected{% endif %}>
+                        {% helper lang.l('header_badwords_base', 'moderation') %}
+                    </label>
+                    <label id="check_link" class="btn btn-default{% if type == 'check_text' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="javascript: openBW('check'); return false;">
+                        <input type="radio" name="looking_user_type" value="1"{% if type == 'check_text' %} selected{% endif %}>
+                        {% helper lang.l('header_check_text', 'moderation') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12" id="content">
+                <div id="base_content" {% if type == 'check_text' %}class="hide"{% endif %}>
+                    <form action="{{ site_url }}admin/moderation/badwords/add" method="post" enctype="multipart/form-data"
+                          name="save_form" data-parsley-validate class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <label class="col-md-2 col-sm-2 col-xs-12">
+                                {% helper lang.l('header_add_badword', 'moderation') %}:</label>
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <input type="text" name="word" value="" class="form-control">
+                            </div>
+                            {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                            <input class="btn btn-success" type="submit" name="submit" value="{{ save_text }}">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-2">
+                                <i>{% helper lang.l('add_badword_hint', 'moderation') %}</i>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                    </form>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    {% for item in badwords %}
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="badw">
+                                <span>{{ item.original }}</span>
+                                <a href="{{ site_url }}admin/moderation/delete_badword/{{ item.id }}"
+                                    onclick="javascript: if(!confirm('{% helper lang.l('note_delete_object', 'moderation', '', 'js') %}')) return false;">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div id="check_content" {% if type != 'check_text' %}class="hide"{% endif %}>
+                    <form action="{{ site_url }}admin/moderation/badwords/check_text" method="post" enctype="multipart/form-data"
+                        name="save_form" data-parsley-validate class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <textarea name="text" class="form-control">{{ check_data.text }}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                {% helper check_text = lang.l('header_check_text', 'moderation', '', 'button') %}
+                                <input type="submit" name="submit" class="btn btn-default" value="{{ check_text }}">
+                            </div>
+                        </div>
+                    </form>
+                {% if check_data.modified %}
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {% helper lang.l('header_badword_found', 'moderation') %}:
+                        <label>{{ check_data.modified.count }}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{ check_data.modified.text }}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function openBW(type){
+        $('#link li').removeClass('active');
+        $('#'+type+'_link').addClass('active');
+        $('#content > div').hide();
+        $('#'+type+'_content').show();
+    }
+</script>
+
+{% include '@app/footer.twig' %}

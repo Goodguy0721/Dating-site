@@ -1,0 +1,5 @@
+{% for item in menu %}
+    <li{% if item.active == 1 %} class="active"{% endif %}>
+        <a id="{{ item.gid }}" href="{{ item.link }}">{{ item.value }}</a>
+    </li>
+{% endfor %}

@@ -1,0 +1,31 @@
+{% if together.media %}
+	{% set together_thumb_name = together.thumb_name %}
+	<div class="similar-products pt20">
+		<div class="search-header">
+            <div class="title">
+                {% helper lang.l('field_together', 'store') %}
+            </div>
+		</div>
+        {% set product_block %}
+            <ul class="user-gallery">
+                {% for key, item in together.media %}
+                    <li id="product_{{ item.id }}" class="ib {% if key > 0 %}ml5{% endif %}">
+                        <a href="{% helper seo.seolink('store', 'product', item) %}">
+                            {% if item.media.mediafile.thumbs[together_thumb_name] is not empty %}
+                                <img class="img-rounded img-responsive" src="{{ item.media.mediafile.thumbs[together_thumb_name] }}" />
+                            {% else %}
+                                <div class="default-{{ together_thumb_name }}-image b0">
+                                    <i class="fa fa-gift fa-5x"></i>
+                                </div>
+                            {% endif %}
+                        </a>
+                        <a href="{% helper seo.seolink('store', 'product', item) %}">
+                            {{ item.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endset %}
+        {{ product_block }}
+	</div>
+{% endif %}

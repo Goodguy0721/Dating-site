@@ -1,0 +1,57 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12 content-block">
+    <h1>
+        {% helper lang.l('header_send_money_confirm', 'send_money') %}
+    </h1>
+    <form action="{{ site_url }}send_money/save" method="POST">
+        <div class="b-member-plan">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    <div>{% helper lang.l('admin_settings_to_whom', 'send_money') %}</div>
+                    <div>{% helper lang.l('send_money_amount', 'send_money') %}</div>
+                    {% if use_fee == 'use' %}
+                        <div>{% helper lang.l('send_money_transfer_fee', 'send_money') %}</div>
+                    {% endif %}
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    <div>{{ to_user }}</div>
+                    <div>{{ full_amount }} {{ currency }}</div>
+                    {% if use_fee == 'use' %}
+                        <div>{{ transfer_fee }} {{ currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if pay_type == 'account_and_direct' or pay_type == 'direct' %}
+            <h2 class="lh40 line-top line-bottom">
+                {% helper lang.l('payment_systems', 'services') %}
+            </h2>
+            {% if billing_systems %}
+                <div class="mt30 mb5">{% helper lang.l('error_select_payment_system', 'services') %}</div>
+                <select name="system_gid" class="mtb5">
+                    <option value="account">
+                        {% helper lang.l('admin_settings_account', 'send_money') %}
+                    </option>
+                    {% for item in billing_systems %}
+                        <option value="{{ item.gid }}">
+                            {{ item.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            {% elseif pay_type == 'direct' %}
+                {% helper lang.l('error_empty_billing_system_list', 'service') %}
+            {% endif %}
+        {% else %}
+            <input type="hidden" name="system_gid" value="account">
+        {% endif %}
+        <div class="mtb5 donate-payment-btns">
+            <input type="submit" class="btn btn-primary" id="btn"
+                value="{% helper lang.l('send_money', 'send_money') %}">
+            <a class="btn btn-cancel" href="{{ site_url }}users/account/donate">
+                <i>{% helper lang.l('btn_back', 'start') %}</i>
+            </a>
+        </div>
+    </form>
+</div>
+
+{% include '@app/footer.twig' %}

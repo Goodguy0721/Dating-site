@@ -1,0 +1,29 @@
+	3329	Welisara	7.0281000	79.9014000	LK	36	0	0	Welisara	Welisara	Welisara	Welisara	Welisara	Welisara
+	3329	Wattala	6.9779000	79.8898000	LK	36	0	0	Wattala	Wattala	Wattala	Wattala	Wattala	Wattala
+	3329	Pita Kotte	6.8905000	79.9015000	LK	36	0	0	Pita Kotte	Pita Kotte	Pita Kotte	Pita Kotte	Pita Kotte	Pita Kotte
+	3329	Peliyagoda	6.9685000	79.8836000	LK	36	0	0	Peliyagoda	Peliyagoda	Peliyagoda	Peliyagoda	Peliyagoda	Peliyagoda
+	3329	Panadura	6.7132000	79.9026000	LK	36	0	0	Panadura	Panadura	Panadura	Panadura	Panadura	Panadura
+	3329	Negombo	7.2083000	79.8358000	LK	36	0	0	Negombo	Негомбо	Negombo	Negombo	Negombo	Negombo
+	3329	Mulleriyawa	6.9330000	79.9297000	LK	36	0	0	Mulleriyawa	Mulleriyawa	Mulleriyawa	Mulleriyawa	Mulleriyawa	Mulleriyawa
+	3329	Dehiwala-Mount Lavinia	6.8401900	79.8711600	LK	36	0	0	Dehiwala-Mount Lavinia	Dehiwala-Mount Lavinia	Dehiwala-Mount Lavinia	Dehiwala-Mount Lavinia	Dehiwala-Mount Lavinia	Dehiwala-Mount Lavinia
+	3329	Moratuwa	6.7730000	79.8816000	LK	36	0	0	Moratuwa	Moratuwa	Moratuwa	Moratuwa	Moratuwa	Moratuwa
+	3329	Minuwangoda	7.1663000	79.9533000	LK	36	0	0	Minuwangoda	Minuwangoda	Minuwangoda	Minuwangoda	Minuwangoda	Minuwangoda
+	3329	Maharagama	6.8480000	79.9265000	LK	36	0	0	Maharagama	Maharagama	Maharagama	Maharagama	Maharagama	Maharagama
+	3329	Sri Jayewardenepura Kotte	6.8829700	79.9070800	LK	36	0	0	Sri Jayewardenepura Kotte	Шри-Джаяварденепура-Котте	Sri Jayewardenepura Kotte	Sri Jayewardenepura Kotte	Sri Jayewardenepura Kotte	Sri Jayewardenepura Kotte
+	3329	Kotikawatta	6.9269000	79.9095000	LK	36	0	0	Kotikawatta	Kotikawatta	Kotikawatta	Kotikawatta	Kotikawatta	Kotikawatta
+	3329	Kolonnawa	6.9329000	79.8848000	LK	36	0	0	Kolonnawa	Kolonnawa	Kolonnawa	Kolonnawa	Kolonnawa	Kolonnawa
+	3329	Kelaniya	6.9553000	79.9220000	LK	36	0	0	Kelaniya	Kelaniya	Kelaniya	Kelaniya	Kelaniya	Kelaniya
+	3329	Katunayaka	7.1699200	79.8883700	LK	36	0	0	Katunayaka	Katunayaka	Katunayaka	Katunayaka	Katunayaka	Katunayaka
+	3329	Kandana	7.0480000	79.8937000	LK	36	0	0	Kandana	Kandana	Kandana	Kandana	Kandana	Kandana
+	3329	Kalutara	6.5831000	79.9593000	LK	36	0	0	Kalutara	Калутара	Kalutara	Kalutara	Kalutara	Kalutara
+	3329	Ja Ela	7.0744000	79.8919000	LK	36	0	0	Ja Ela	Ja Ela	Ja Ela	Ja Ela	Ja Ela	Ja Ela
+	3329	Horana South	6.7159000	80.0626000	LK	36	0	0	Horana South	Horana South	Horana South	Horana South	Horana South	Horana South
+	3329	Homagama	6.8440000	80.0024000	LK	36	0	0	Homagama	Homagama	Homagama	Homagama	Homagama	Homagama
+	3329	Hendala	6.9909000	79.8830000	LK	36	0	0	Hendala	Hendala	Hendala	Hendala	Hendala	Hendala
+	3329	Hanwella Ihala	6.9012000	80.0852000	LK	36	0	0	Hanwella Ihala	Hanwella Ihala	Hanwella Ihala	Hanwella Ihala	Hanwella Ihala	Hanwella Ihala
+	3329	Gampaha	7.0897000	79.9925000	LK	36	0	0	Gampaha	Gampaha	Gampaha	Gampaha	Gampaha	Gampaha
+	3329	Galkissa	6.8293000	79.8630000	LK	36	0	0	Galkissa	Galkissa	Galkissa	Galkissa	Galkissa	Galkissa
+	3329	Colombo	6.9319400	79.8477800	LK	36	0	0	Colombo	Коломбо	Colombo	Colombo	Colombo	Colombo
+	3329	Beruwala	6.4788000	79.9828000	LK	36	0	0	Beruwala	Beruwala	Beruwala	Beruwala	Beruwala	Beruwala
+	3329	Battaramulla South	6.8964000	79.9181000	LK	36	0	0	Battaramulla South	Battaramulla South	Battaramulla South	Battaramulla South	Battaramulla South	Battaramulla South
+	3329	Horawala Junction	6.4808800	80.1270800	LK	36	0	0	Horawala Junction	Horawala Junction	Horawala Junction	Horawala Junction	Horawala Junction	Horawala Junction

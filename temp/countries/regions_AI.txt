@@ -1,0 +1,3 @@
+	196	The Valley	18.2170400	-63.0578300	AI	00	0	0	The Valley	Валли	The Valley	The Valley	The Valley	The Valley
+	196	Sandy Ground Village	18.2011800	-63.0899800	AI	00	0	0	Sandy Ground Village	Sandy Ground Village	Sandy Ground Village	Sandy Ground Village	Sandy Ground Village	Sandy Ground Village
+	196	Blowing Point Village	18.1764800	-63.0937500	AI	00	0	0	Blowing Point Village	Blowing Point Village	Blowing Point Village	Blowing Point Village	Blowing Point Village	Blowing Point Village

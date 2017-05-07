@@ -1,0 +1,104 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_questions_menu') %}
+            </ul>
+        </div>
+
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="deleteForm"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_use_module', 'questions') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="hidden" name="is_active"  value="0">
+                        <input type="checkbox" name="is_active" value="1" {% if data.is_active == '1' %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_allow_own_question', 'questions') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="hidden" name="allow_own_question"  value="0">
+                        <input type="checkbox" name="allow_own_question" value="1" {% if data.allow_own_question == '1' %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_choose_action_communication', 'questions') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="action_for_communication" class="form-control">
+                            {% for key, item in data.action_for_communication %}
+                                <option value="{{ key }}" {% if item.selected %}selected{% endif %}>{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_action_description', 'questions') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div>
+                            {% for lang_id, lang_item in data.action_description %}
+                                {% if lang_id == current_lang_id %}
+                                    <textarea name="action_description[{{ lang_id }}]" class="form-control">{{ lang_item|e }}</textarea>
+                                {#
+                                {% else %}
+                                    <input type="hidden" name="action_description[{{ lang_id }}]" value="{{ lang_item|e }}" lang-editor="value" lang-editor-type="data-action_description" lang-editor-lid="{{ lang_id }}" />
+                                    #}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                        </a>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                            {% for lang_id, lang_item in data.action_description %}
+                                {% set item = attribute(langs, lang_id) %}
+                                {% if lang_id != current_lang_id %}
+                                    <label class="control-label col-md-12 col-sm-12 col-xs-12">{{ item.name }}</label>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <textarea name="action_description[{{ lang_id }}]" class="form-control">{{ lang_item|e }}</textarea>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/add_ons_items">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var status = $('#play_local_used').prop('checked');
+        if (status) {
+            $('#play_local_area').show();
+        } else {
+            $('#play_local_area').hide();
+        }
+        $('#play_local_used').click(function () {
+            $('#play_local_area').toggle();
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

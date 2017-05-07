@@ -1,0 +1,2 @@
+	725	Bantam Village	-12.1164500	96.8949700	CC	00	0	0	Bantam Village	Bantam Village	Bantam Village	Bantam Village	Bantam Village	Bantam Village
+	725	West Island	-12.1568100	96.8225100	CC	00	0	0	West Island	West Island	West Island	West Island	West Island	West Island

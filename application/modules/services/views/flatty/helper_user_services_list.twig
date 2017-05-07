@@ -1,0 +1,88 @@
+<div class="services clearfix">
+    {% set is_inactive_services = 0 %}
+    {% helper data_alert_lng = lang.l('service_activate_confirm', 'services') %}
+    {% for item in services_block_services %}
+        {% if not item.is_active %}
+            {% set is_inactive_services = 1 %}
+        {% endif %}
+        <div class="service{% if not item.is_active %} inactive hide-always{% endif %} col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="service-title clearfix">
+                <div class="service-name">
+                    {% if item.service.name_lang_gid %}
+                        {% helper lang.l(item.service.name_lang_gid, 'services') %}
+                    {% else %}
+                        {{ item.name }}
+                    {% endif %}
+                    {% if item.count %}
+                        &nbsp;({{ item.count }})
+                    {% endif %}
+                </div>
+                <div class="service-control">
+                    {% if item.is_active %}
+                        <input type="button" onclick="
+                                var href = '{{ site_url }}services/user_service_activate/{{ item.id_user }}/{{ item.id }}/{{ item.service_gid }}';
+                                var alert = '{{ data_alert_lng }}<br>{{ item.name }}<br>({{ item.description }})';
+                                if (!parseInt('{{ item.template.alert_activate }}')) {
+                                    locationHref(href);
+                                } else {
+                                    alerts.show({
+                                        text: alert.replace(/<br>/g, '\n'),
+                                        type: 'confirm',
+                                        ok_callback: function () {
+                                            locationHref(href);
+                                        }
+                                    });
+                                }" value="{% helper lang.l('btn_activate', 'services') %}" class="btn btn-primary" />
+                    {% endif %}
+                </div>
+            </div>
+            <div class="service-description">
+                {% if not item.is_active %}
+                    <div class="pb5">
+                        {% helper lang.l('activated', 'services') %}:
+                        {% helper date_format.tpl_date_format(item.date_modified, services_block_date_formats.date_format) %}
+                        {% if item.date_expires %}<br>
+                            {% if item.is_expired %}
+                                {% helper lang.l('expired', 'services') %}:
+                            {% else %}
+                                {% helper lang.l('expires', 'services') %}:
+                            {% endif %}
+                            &nbsp;{% helper date_format.tpl_date_format(item.date_expires, services_block_date_formats.date_format) %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% if item.service.description_lang_gid %}
+                    <div>
+                        <span>
+                            {% helper lang.l(item.service.description_lang_gid, services) %}
+                        </span>
+                    </div>
+                {% elseif item.description %}
+                    <div>
+                        <span>
+                            {{ item.description }}
+                        </span>
+                    </div>
+                {% endif %}
+                {% for setting_gid, setting_options in item.service.template.data_admin_array %}
+                    <div>
+                        <span>
+                            {% helper lang.l(setting_options.name_lang_gid, 'services') %}:
+                            {{ item.service.data_admin_array[setting_gid] }}
+                        </span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        {% helper lang.l('no_services', 'services') %}
+    {% endfor %}
+
+    {% if is_inactive_services %}
+        <div class="pl15">
+            <span class="a" onclick="$(this).parents('.services').find('.service.inactive').toggleClass('hide-always');">
+                {% helper lang.l('show_hide_inactive_services', 'services') %}
+            </span>
+        </div>
+    {% endif %}
+</div>

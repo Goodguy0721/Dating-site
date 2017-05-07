@@ -1,0 +1,18 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block center">
+    <h1>
+        {% helper lang.l('error_account_inactive_header', 'users') %}
+    </h1>
+    <div>
+        {% helper lang.l('error_approve_need_wait', 'users') %}
+    </div><br>
+    <div>
+        <a href="{{ site_url }}{{ module }}/index/" title="{% helper lang.l('error_account_inactive_link', 'users') %}">
+            {% helper lang.l('error_account_inactive_link', 'users') %}
+        </a>
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

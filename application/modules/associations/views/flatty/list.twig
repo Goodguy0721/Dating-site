@@ -1,0 +1,193 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    <div class="col-xs-12 col-md-12 b-associations">
+        <h1>{% helper seo.seo_tags('header_text') %}</h1>
+        <div class="col-xs-12 col-md-9">
+            {% for key, item in associations.list %}
+                <div class="b-associations__section" id="association_{{ item.id }}">
+                    {% if item.user.id != associations.profile.id %}
+                        <!-- alien question -->
+                        <div class="b-associations__item">
+                            <div class="b-associations__photo">
+                                <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                    <img class="img-responsive" width="60" src="{{ item.user.media.user_logo.thumbs.middle|e }}" alt="{{ item.user.output_name|e }}" title="{{ item.user.output_name|e }}" />
+                                </a>
+                            </div>
+                            <div class="b-associations__msg">
+                                <div class="b-associations__msg-content">
+                                    <div class="b-associations__name">
+                                        <a href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                            {{ item.user.output_name }}
+                                        </a>, {{ item.user.age }}
+                                    </div>
+                                    <div><img class="img-responsive" src="{{ item.image.thumbs.big }}" /></div>
+                                    <div class="b-associations__txt">{{ item.name }}</div>
+
+                                    <div class="b-associations__actions">
+                                        {% if item.answer is empty %}
+                                            <div class="btn-group association-action" id="association_action_{{ item.id }}">
+                                                <button class="btn btn-primary-inverted dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    {% helper lang.l('field_reply', 'associations') %} <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li data-answer="cool" data-id="{{ item.id }}">
+                                                        <a href="javascript:void(0);">{% helper lang.l('field_answer_cool', 'associations') %}</a>
+                                                    </li>
+                                                    <li data-answer="awesome" data-id="{{ item.id }}">
+                                                        <a href="javascript:void(0);">{% helper lang.l('field_answer_awesome', 'associations') %}</a>
+                                                    </li>
+                                                    <li data-answer="not_like" data-id="{{ item.id }}">
+                                                        <a href="javascript:void(0);">{% helper lang.l('field_answer_not_like', 'associations') %}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        {% endif %}
+                                        {% for key, set in settings.chat_more %}
+                                            {% if set.helper is not empty %}
+                                                <div class="b-associations__actionlink" data-name="{{ set.name }}">
+                                                    {% helper {key}.{set.helper}({
+                                                        'id_user': item.user.id,
+                                                        'user_id': item.user.id,
+                                                        'id_contact': item.user.id
+                                                    }) %}
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                        <span class="b-associations__comment">{{ settings.chat_message[lang_id] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if not (item.answer is empty) %}
+                            <!-- my answer -->
+                            <div class="b-associations__item b-associations__item_right">
+                                <div class="b-associations__msg">
+                                    <div class="b-associations__msg-content">
+                                        <div class="b-associations__name">{{ associations.profile.output_name }}, {{ associations.profile.age }}</div>
+                                        <div>{{ item.answer }}</div>
+                                    </div>
+                                </div>
+                                <div class="b-associations__photo">
+                                    <span class="g-rounded">
+                                        <img class="img-rounded img-responsive" width="60" src="{{ item.profile.media.user_logo.thumbs.middle }}" alt="{{ item.profile.output_name|e }}" title="{{ item.profile.output_name }}" />
+                                    </span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <!-- my question -->
+                        <div class="b-associations__item b-associations__item_right">
+                            <div class="b-associations__msg">
+                                <div class="b-associations__msg-content">
+                                    <div class="b-associations__name">{{ associations.profile.output_name }}, {{ associations.profile.age }}</div>
+                                    <div><img class="img-rounded img-responsive" src="{{ item.image.thumbs.big }}" /></div>
+                                    <div class="b-associations__txt">{{ item.name }}</div>
+                                </div>
+                            </div>
+                            <div class="b-associations__photo">
+                                <span class="g-rounded">
+                                    <img class="img-rounded img-responsive" width="60" src="{{ associations.profile.media.user_logo.thumbs.middle }}" alt="{{ associations.profile.output_name }}" title="{{ associations.profile.output_name }}" />
+                                </span>
+                            </div>
+                        </div>
+
+                        {% if not (item.answer is empty) %}
+                            <!-- alien answer -->
+                            <div class="b-associations__item">
+                                <div class="b-associations__photo">
+                                    <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item.profile) %}">
+                                        <img class="img-responsive" src="{{ item.profile.media.user_logo.thumbs.middle }}" alt="{{ item.profile.output_name|e }}" title="{{ item.profile.output_name }}" />
+                                    </a>
+                                </div>
+                                <div class="b-associations__msg">
+                                    <div class="b-associations__msg-content">
+                                        <div class="b-associations__name">
+                                            <a href="{% helper seo.seolink('users', 'view', item.profile) %}">
+                                                {{ item.profile.output_name }}
+                                            </a>, {{ item.profile.age }}
+                                        </div>
+                                        <div class="b-associations__txt">{{ item.answer }}</div>
+
+                                        <div class="b-associations__actions">
+                                            {% for key, set in settings.chat_more %}
+                                                {% if set.helper is not empty %}
+                                                    <div class="b-associations__actionlink" data-name="{{ set.name }}">
+                                                        {% helper {key}.{set.helper}({
+                                                            'id_user': item.profile.id,
+                                                            'user_id': item.profile.id,
+                                                            'id_contact': item.user.id
+                                                        }) %}
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                            <span class="b-associations__comment">{{ settings.chat_message[lang_id] }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                {% if key == 0  %}
+                    {% helper banners.show_banner_place('banner-980x90') %}
+                {% elseif key == 1 %}
+                    <div class="col-xs-6 no-padding-left">
+                        {% helper banners.show_banner_place('banner-320x250') %}
+                    </div>
+                    <div class="col-xs-6 no-padding-right">
+                        {% helper banners.show_banner_place('banner-320x75') %}
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="mb10">
+                    <div class="b-associations__null">
+                        <p>{% helper lang.l('header_send_first', 'associations') %}</p>
+                        <p>{% helper associations.perfect_match() %}</p>
+                        <div>
+                            <a class="btn btn-primary" href="{{ site_url }}users/search" class="button">
+                                {% helper lang.l('btn_search', 'start', '', 'button') %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% helper banners.show_banner_place('banner-980x90') %}
+            {% endfor %}
+        </div>
+        <div class="col-xs-12 col-md-3">
+            {% helper banners.show_banner_place('banner-185x155') %}
+            {% helper banners.show_banner_place('banner-185x75') %}
+        </div>
+        <div id="pages_block_2">
+            {% set page_data = page_data|merge({'type': 'full'}) %}
+            {% helper start.pagination(page_data) %}
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        loadScripts(
+            ["{% helper utils.jscript('associations', '../views/flatty/js/associations.js', 'path') %}"],
+            function () {
+                var lang_data = {
+                    answer: {
+                        cool: "{% helper lang.l('field_answer_cool', 'associations', '', 'js') %}",
+                        awesome: "{% helper lang.l('field_answer_awesome', 'associations', '', 'js') %}",
+                        not_like: "{% helper lang.l('field_answer_not_like', 'associations', '', 'js') %}"
+                    }
+                };
+                associations = new Associations({
+                    siteUrl: site_url,
+                    lang: lang_data,
+                    profile: {{ associations.profile|json_encode() }},
+                });
+            },
+            ['associations'],
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,16 @@
+	536	Beloslav	43.1833300	27.7000000	BG	61	0	0	Beloslav	Beloslav	Beloslav	Beloslav	Beloslav	Beloslav
+	536	Valchidol	43.4000000	27.5500000	BG	61	0	0	Valchidol	Valchidol	Valchidol	Valchidol	Valchidol	Valchidol
+	536	Vetrino	43.3166700	27.4333300	BG	61	0	0	Vetrino	Vetrino	Vetrino	Vetrino	Vetrino	Vetrino
+	536	Varna	43.2166700	27.9166700	BG	61	0	0	Varna	Варна	Varna	Varna	Varna	Varna
+	536	Suvorovo	43.3333300	27.6000000	BG	61	0	0	Suvorovo	Suvorovo	Suvorovo	Suvorovo	Suvorovo	Suvorovo
+	536	Provadia	43.1833300	27.4333300	BG	61	0	0	Provadia	Provadia	Provadia	Provadia	Provadia	Provadia
+	536	Kranevo	43.3333300	28.0500000	BG	61	0	0	Kranevo	Кранево	Kranevo	Kranevo	Kranevo	Kranevo
+	536	Kiten	43.0833300	27.3166700	BG	61	0	0	Kiten	Kiten	Kiten	Kiten	Kiten	Kiten
+	536	Dolni Chiflik	42.9833300	27.7166700	BG	61	0	0	Dolni Chiflik	Dolni Chiflik	Dolni Chiflik	Dolni Chiflik	Dolni Chiflik	Dolni Chiflik
+	536	Dalgopol	43.0500000	27.3500000	BG	61	0	0	Dalgopol	Dalgopol	Dalgopol	Dalgopol	Dalgopol	Dalgopol
+	536	Devnya	43.2222200	27.5694400	BG	61	0	0	Devnya	Devnya	Devnya	Devnya	Devnya	Devnya
+	536	Byala	42.8833300	27.8833300	BG	61	0	0	Byala	Byala	Byala	Byala	Byala	Byala
+	536	Avren	43.1166700	27.6666700	BG	61	0	0	Avren	Avren	Avren	Avren	Avren	Avren
+	536	Aksakovo	43.2500000	27.8166700	BG	61	0	0	Aksakovo	Aksakovo	Aksakovo	Aksakovo	Aksakovo	Aksakovo
+	536	Zlatni Pyasatsi	43.2850000	28.0418000	BG	61	0	0	Zlatni Pyasatsi	Золотые Пески	Zlatni Pyasatsi	Zlatni Pyasatsi	Zlatni Pyasatsi	Zlatni Pyasatsi
+	536	Balgarevo	43.4029600	28.4118900	BG	61	0	0	Balgarevo	Болгарево	Balgarevo	Balgarevo	Balgarevo	Balgarevo

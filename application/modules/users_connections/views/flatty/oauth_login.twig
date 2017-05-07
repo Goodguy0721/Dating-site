@@ -1,0 +1,28 @@
+{% if services|length > 0 %}
+    <div class="col-xs-12">
+        <div class="oauth-links mb10">
+            <div class="mr5 mb10">
+                {% helper lang.l('sign_in_with', 'users_connections') %}:
+            </div>
+            <ins>
+                {% for item in services %}
+                    <a href="{{ site_url }}users_connections/oauth_login/{{ item.id }}"
+                       class="btn btn-primary"
+                       data-pjax="0" title="{{ item.name|e }}">
+                        {% if item.gid == 'facebook' %}
+                            <i class="fa fa-facebook-official"></i>
+                        {% elseif item.gid == 'vkontakte' %}
+                            <i class="fa fa-vk"></i>
+                        {% elseif item.gid == 'google' %}
+                            <i class="fa fa-google"></i>
+                        {% elseif item.gid == 'linkedin' %}
+                            <i class="fa fa-linkedin"></i>
+                        {% elseif item.gid == 'twitter' %}
+                            <i class="fa fa-twitter"></i>
+                        {% endif %}
+                       </a>
+                {% endfor %}
+            </ins>
+        </div>
+    </div>
+{% endif %}

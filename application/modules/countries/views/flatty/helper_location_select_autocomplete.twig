@@ -1,0 +1,82 @@
+<div class="input-autocomplete input-autocomplete-{{ country_helper_data.rand }}"> 
+    <div class="input-group countries-input__input-group">
+        <input class="form-control" name="region_name" type="text" id="country_text_{{ country_helper_data.rand }}"
+                   value="{{ country_helper_data.location_text }}"
+                   autocomplete="off" placeholder="{% helper lang.l('field_autocomplete_placeholder', 'countries') %}">
+        <span class="button-search input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+</div>
+
+<span id="country_msg_{{ country_helper_data.rand }}" class="hide pginfo msg region_name">
+    {% helper lang.l('text_select_from_list', 'countries') %}
+</span>
+<input name="{{ country_helper_data.var_country_name }}" type="hidden"
+	   id="country_hidden_{{ country_helper_data.rand }}"
+	   value="{{ country_helper_data.country.code }}">
+<input name="{{ country_helper_data.var_region_name }}" type="hidden"
+	   id="region_hidden_{{ country_helper_data.rand }}"
+	   value="{{ country_helper_data.region.id }}">
+<input name="{{ country_helper_data.var_city_name }}" type="hidden"
+	   id="city_hidden_{{ country_helper_data.rand }}"
+	   value="{{ country_helper_data.city.id }}">
+<script>
+    $(function(){
+        loadScripts(
+            [
+                "{% helper utils.jscript('countries', '../views/flatty/js/location-autocomplete.js', 'path') %}",
+            ],
+
+            function(){
+                var autoloc_obj = new locationAutocomplete({
+                    siteUrl: '{{ site_url }}',
+                    rand: '{{ country_helper_data.rand }}',
+                    id_country: '{{ country_helper_data.country.code }}',
+                    id_region: '{{ country_helper_data.region.id }}',
+                    id_city: '{{ country_helper_data.city.id }}',
+                    searchIcon: 'fa-search',
+                    closeIcon: 'fa-times',
+                    id_bg: '{{ country_helper_data.id_bg }}'
+                });
+                
+                {% if country_helper_data.auto_detect and not country_helper_data.country.code %}
+                    if (navigator.geolocation){
+                            navigator.geolocation.getCurrentPosition(function(position) {
+
+                                var latitude  = position.coords.latitude;
+                                var longitude = position.coords.longitude;
+
+                                if(typeof(Storage) !== "undefined") {
+                                        var userLocation = latitude+";"+longitude;
+                                        if(localStorage.getItem("userLocation") != userLocation){
+                                                localStorage.setItem("userLocation", userLocation);
+                                        }
+                                }
+                                
+                                autoloc_obj.identifyLocation();
+
+                            }, function(error){
+                                var geo_error;
+                                switch(error.code) {
+                                    case error.PERMISSION_DENIED:
+                                        geo_error = "User denied the request for Geolocation."
+                                        break;
+                                    case error.POSITION_UNAVAILABLE:
+                                        geo_error = "Location information is unavailable."
+                                        break;
+                                    case error.TIMEOUT:
+                                        geo_error = "The request to get user location timed out."
+                                        break;
+                                    case error.UNKNOWN_ERROR:
+                                        geo_error = "An unknown error occurred."
+                                        break;
+                                }
+                            });
+                    }
+                {% endif %}
+            },
+            'region_{{ country_helper_data.rand }}'
+        );
+    });
+</script>

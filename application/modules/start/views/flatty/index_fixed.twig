@@ -1,0 +1,163 @@
+{% if not is_pjax %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" />
+<head DIR="{{ _LANG.rtl }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+    {% helper seo.seo_tags('robots') %}
+
+    <base href="{{ site_root }}" />
+
+    <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/summer/styles/font-awesome.css" type="text/css" />
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/summer/styles/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/summer/styles/style-flatty-{{ _LANG.rtl }}.css" type="text/css" />
+{% endif %}
+
+    {% helper seo.seo_tags('title') %}
+    {% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+
+    <script>
+        var site_rtl_settings = '{{ _LANG.rtl }}';
+        var is_pjax = parseInt('{{ is_pjax }}');
+        var js_events = {% helper json.json_encode(js_events) %};
+        var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+    </script>
+
+{% if not is_pjax %}
+	<script>
+		var site_url = '{{ site_url }}';
+		var img_folder = '{{ img_folder }}';
+		var site_error_position = 'center';
+		var use_pjax = 0;
+		var pjax_container = '#pjaxcontainer';
+	</script>
+
+    {% helper utils.jscript('', 'jquery.js') %}
+    {% helper utils.jscript('', 'jquery.pjax.js') %}
+
+	{% helper theme.js(load_type) %}
+
+    {% helper utils.jscript('', 'loading_content.js') %}
+
+    {% helper seo_advanced.seo_traker('top') %}
+</head>
+<body>
+{% helper start.demo_panel({type: 'user', place: 'top'}) %}
+<div id="pjaxcontainer" class="hp100">
+{% endif %}
+
+<script type="text/javascript">
+    $.pjax.defaults.version = 'default';
+    var messages = {% helper json.json_encode(_PREDEFINED) %};
+    var alerts;
+    var notifications;
+
+    new pginfo({messages: messages});
+    $(function(){
+        alerts = new Alerts();
+        notifications = new Notifications();
+    });
+</script>
+
+<video loop muted preload="auto" poster="{{ site_root }}uploads/themes-fixed/summer/video/firstFrame.jpg" id="bgvid">
+	<source src="{{ site_root }}uploads/themes-fixed/summer/video/video.webm" type="video/webm">
+	<source src="{{ site_root }}uploads/themes-fixed/summer/video/video.mp4" type="video/mp4">
+	<source src="{{ site_root }}uploads/themes-fixed/summer/video/video.ogv" type="video/ogg">
+</video>
+
+<div class="video-fade"></div>
+
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-lg-3" id="logo-block">
+            <a href="{{ site_url }}">
+                <img src="{{ site_root }}{{ logo_settings.path }}" border="0"
+                     alt="{% helper seo.seo_tags_default('header_text') %}"
+                     width="{{ logo_settings.width }}"
+                     height="{{ logo_settings.height }}" id="logo">
+                <img src="{{ site_root }}{{ mini_logo_settings.path }}" border="0"
+                     alt="{% helper seo.seo_tags_default('header_text') %}"
+                     width="{{ mini_logo_settings.width }}"
+                     height="{{ mini_logo_settings.height }}" id="mini_logo">
+            </a>
+        </div>
+		<div class="col-lg-6 col-lg-offset-3" id="nav-block">
+			<div class="fade-block"></div>
+			<div class="top-nav-block">
+                <div class="top-nav-link">
+					<a href="{% helper seo.seolink('users', 'login_form') %}" class="btn_tnl" data-bind="login">
+                        {% helper lang.l('btn_login', 'start') %}
+                    </a>
+				</div>
+				<div class="top-nav-link">
+					<a href="{% helper seo.seolink('users', 'registration') %}" class="btn_border" data-bind="signup">
+                        {% helper lang.l('btn_register', 'start') %}
+                    </a>
+				</div>
+				<div class="top-nav-link">
+					{% helper users.users_lang_select({type: 'menu', template: 'summer'}) %}
+                </div>
+			</div>
+		</div>
+		<div id="main-block">
+			<div id="floater"></div>
+                <div class="main-block clearfix" id="mbw1">
+                    <div id="mbw2">
+                        <h1 data-bind="text1">{% helper lang.l('text_promo', 'start') %}</h1>
+                        <div class="mb-inner-text" data-bind="text2">
+                            {% helper lang.l('text_promo_description', 'start') %}
+                        </div>
+                        <p class="text-center" id="registration"><br><br>
+                            <a href="{% helper seo.seolink('users', 'registration') %}" class="btn_border btn-registration"
+                                data-bind="signup2">{% helper lang.l('btn_register', 'start') %}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div class="controlls-block">
+		<ins>
+			<i id="play-pause" class="icon-play w icon-big edge hover"></i>
+		</ins>
+	</div>
+	<div id="footer">
+        <p class="text-center">
+            <a target="_blank" href="https://itunes.apple.com/us/app/soulcompanion.net-mobile/id784390992" class="nohover" id="btn_ios">
+            </a>
+
+            &nbsp; &nbsp;
+
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.pilotgroup.pgdatingcore" class="nohover" id="btn_android">
+            </a>
+        </p>
+        <div id="tmobile">
+            <a href="{{ site_url }}m" class="btn_tnl" data-bind="mobile">
+                {% helper lang.l('mobile_version', 'mobile') %}
+            </a>
+        </div>
+	</div>
+</div>
+{% helper users.users_lang_select({type: 'menu', template: 'sidebox'}) %}
+<script src="{{ site_root }}uploads/themes-fixed/summer/js/controls.min.js"></script>
+
+</div>
+
+{% helper cookie_policy.cookie_policy_block() %}
+{% helper languages.lang_editor() %}
+{% helper seo_advanced.seo_traker('footer') %}
+{% helper start.demo_panel({type: 'user', place: 'bottom'}) %}
+</body>
+</html>

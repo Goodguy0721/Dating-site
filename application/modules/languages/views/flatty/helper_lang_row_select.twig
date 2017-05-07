@@ -1,0 +1,8 @@
+<span><i class="fa fa-globe"></i>Language:</span>
+{% for item in languages %}
+    {% if item.status == '1' %}
+        <li {% if loop.index == loop.length %}class="last"{% endif %}>
+            <a {% if item.id == current_lang %}class="active"{% else %}onclick="locationHref('{{site_url}}languages/change_lang/{{item.id}}', 'hard');"{% endif %}>{{ item.name }}</a>{% if loop.index != loop.length %},{% endif %}
+        </li>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,64 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class='x_title'>
+            <h2>
+                {% if data.id %}
+                    {% helper lang.l('admin_header_language_change', 'languages') %}
+                {% else %}
+                    {% helper lang.l('admin_header_language_add', 'languages') %}
+                {% endif %}
+            </h2>
+            <div class='clearfix'></div>
+        </div>
+
+        <div class="x_content">
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <div class="form-group even">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'languages') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{data.name}}" name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group even">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_code', 'languages') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{data.code}}" name="code" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group even">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_rtl', 'languages') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="radio" value="ltr" name="rtl" id="ltr_val"
+                               {% if (data.rtl == 'ltr') or (not data.rtl) %}checked{% endif %} >
+                        <label for="ltr_val">
+                            {% helper lang.l('field_rtl_value_ltr', 'languages') %}
+                        </label><br>
+                        <input type="radio" value="rtl" name="rtl" id="rtl_val"
+                               {% if data.rtl == 'rtl' %}checked{% endif %} >
+                        <label for="rtl_val">
+                            {% helper lang.l('field_rtl_value_rtl', 'languages') %}
+                        </label><br>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group even">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" class="btn btn-success"
+                               value="{% helper lang.l ('btn_save','start','','button') %}">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/languages">{% helper lang.l ('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

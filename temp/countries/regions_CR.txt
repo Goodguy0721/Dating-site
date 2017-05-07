@@ -1,0 +1,35 @@
+	769	Tejar	9.7462200	-84.2336800	CR	08	0	0	Tejar	Tejar	Tejar	Tejar	Tejar	Tejar
+	769	San Vicente	9.9601600	-84.0476200	CR	08	0	0	San Vicente	San Vicente	San Vicente	San Vicente	San Vicente	San Vicente
+	769	Santiago	9.8463600	-84.3142800	CR	08	0	0	Santiago	Santiago	Santiago	Santiago	Santiago	Santiago
+	769	Santa Ana	9.9326000	-84.1825500	CR	08	0	0	Santa Ana	Santa Ana	Santa Ana	Santa Ana	Santa Ana	Santa Ana
+	769	San Rafael Arriba	9.8755600	-84.0766100	CR	08	0	0	San Rafael Arriba	San Rafael Arriba	San Rafael Arriba	San Rafael Arriba	San Rafael Arriba	San Rafael Arriba
+	769	San Rafael Abajo	9.8310000	-84.2900800	CR	08	0	0	San Rafael Abajo	San Rafael Abajo	San Rafael Abajo	San Rafael Abajo	San Rafael Abajo	San Rafael Abajo
+	769	San Rafael	9.9278700	-84.1372200	CR	08	0	0	San Rafael	San Rafael	San Rafael	San Rafael	San Rafael	San Rafael
+	769	San Pedro	9.9282900	-84.0507400	CR	08	0	0	San Pedro	San Pedro	San Pedro	San Pedro	San Pedro	San Pedro
+	769	San Miguel	9.8712100	-84.0608400	CR	08	0	0	San Miguel	San Miguel	San Miguel	San Miguel	San Miguel	San Miguel
+	769	San Marcos	9.6601000	-84.0202600	CR	08	0	0	San Marcos	San Marcos	San Marcos	San Marcos	San Marcos	San Marcos
+	769	San Juan de Dios	9.8773000	-84.0847000	CR	08	0	0	San Juan de Dios	San Juan de Dios	San Juan de Dios	San Juan de Dios	San Juan de Dios	San Juan de Dios
+	769	San Juan	9.9597400	-84.0816500	CR	08	0	0	San Juan	San Juan	San Juan	San Juan	San Juan	San Juan
+	769	San José	9.9333300	-84.0833300	CR	08	0	0	San José	Сан-Хосе	San José	San José	San José	San José
+	769	San Isidro	9.3721000	-83.7039900	CR	08	0	0	San Isidro	San Isidro	San Isidro	San Isidro	San Isidro	San Isidro
+	769	San Ignacio	9.7985300	-84.1617300	CR	08	0	0	San Ignacio	San Ignacio	San Ignacio	San Ignacio	San Ignacio	San Ignacio
+	769	San Felipe	9.9048800	-84.1055100	CR	08	0	0	San Felipe	San Felipe	San Felipe	San Felipe	San Felipe	San Felipe
+	769	Salitrillos	9.8525900	-84.0906200	CR	08	0	0	Salitrillos	Salitrillos	Salitrillos	Salitrillos	Salitrillos	Salitrillos
+	769	Salitral	9.9116300	-84.1783500	CR	08	0	0	Salitral	Salitral	Salitral	Salitral	Salitral	Salitral
+	769	Sabanilla	9.9452200	-84.0392700	CR	08	0	0	Sabanilla	Sabanilla	Sabanilla	Sabanilla	Sabanilla	Sabanilla
+	769	Purral	9.9580800	-84.0305000	CR	08	0	0	Purral	Purral	Purral	Purral	Purral	Purral
+	769	Patarrá	9.8807100	-84.0350100	CR	08	0	0	Patarrá	Patarrá	Patarrá	Patarrá	Patarrá	Patarrá
+	769	Palmichal	9.8377800	-84.2047800	CR	08	0	0	Palmichal	Palmichal	Palmichal	Palmichal	Palmichal	Palmichal
+	769	Mercedes	9.2627000	-83.5820200	CR	08	0	0	Mercedes	Mercedes	Mercedes	Mercedes	Mercedes	Mercedes
+	769	Ipís	9.9674500	-84.0132600	CR	08	0	0	Ipís	Ipís	Ipís	Ipís	Ipís	Ipís
+	769	Guadalupe	9.9480500	-84.0566500	CR	08	0	0	Guadalupe	Гвадалупе	Guadalupe	Guadalupe	Guadalupe	Guadalupe
+	769	Granadilla	9.9349100	-84.0168800	CR	08	0	0	Granadilla	Granadilla	Granadilla	Granadilla	Granadilla	Granadilla
+	769	Escazú	9.9188700	-84.1398900	CR	08	0	0	Escazú	Escazú	Escazú	Escazú	Escazú	Escazú
+	769	Daniel Flores	9.3355400	-83.6694000	CR	08	0	0	Daniel Flores	Daniel Flores	Daniel Flores	Daniel Flores	Daniel Flores	Daniel Flores
+	769	Curridabat	9.9117900	-84.0340700	CR	08	0	0	Curridabat	Curridabat	Curridabat	Curridabat	Curridabat	Curridabat
+	769	Copey	9.6454900	-83.9177700	CR	08	0	0	Copey	Copey	Copey	Copey	Copey	Copey
+	769	Colima	9.9509100	-84.0850300	CR	08	0	0	Colima	Colima	Colima	Colima	Colima	Colima
+	769	Calle Blancos	9.9500000	-84.0666700	CR	08	0	0	Calle Blancos	Calle Blancos	Calle Blancos	Calle Blancos	Calle Blancos	Calle Blancos
+	769	Aserrí	9.8587600	-84.0923000	CR	08	0	0	Aserrí	Aserrí	Aserrí	Aserrí	Aserrí	Aserrí
+	769	Alajuelita	9.9016300	-84.1004200	CR	08	0	0	Alajuelita	Alajuelita	Alajuelita	Alajuelita	Alajuelita	Alajuelita
+	769	San Vicente de Moravia	9.9616400	-84.0488000	CR	08	0	0	San Vicente de Moravia	San Vicente de Moravia	San Vicente de Moravia	San Vicente de Moravia	San Vicente de Moravia	San Vicente de Moravia

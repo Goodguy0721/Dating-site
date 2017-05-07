@@ -1,0 +1,7 @@
+<div class="hide summand inbox_new_message">{{ messages_count }}</div>
+<div class="menu-alerts-more-items">
+    {% include 'new_messages_header.twig' %}
+</div>
+<div class="menu-alerts-more-item menu-alerts-view-all clearfix tac{% if messages_count <= messages_max_count %} hide{% endif %}">
+    <a href="{% helper seo.rewrite_link('mailbox', 'inbox') %}">View all messages</a>
+</div>

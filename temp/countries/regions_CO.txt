@@ -1,0 +1,12 @@
+	758	Salento	4.6375000	-75.5702800	CO	23	0	0	Salento	Salento	Salento	Salento	Salento	Salento
+	758	Quimbaya	4.6230600	-75.7627800	CO	23	0	0	Quimbaya	Quimbaya	Quimbaya	Quimbaya	Quimbaya	Quimbaya
+	758	Pijao	4.3341900	-75.7034800	CO	23	0	0	Pijao	Pijao	Pijao	Pijao	Pijao	Pijao
+	758	Montenegro	4.5663900	-75.7511100	CO	23	0	0	Montenegro	Montenegro	Montenegro	Montenegro	Montenegro	Montenegro
+	758	La Tebaida	4.4526500	-75.7874600	CO	23	0	0	La Tebaida	La Tebaida	La Tebaida	La Tebaida	La Tebaida	La Tebaida
+	758	Génova	4.3166700	-75.7666700	CO	23	0	0	Génova	Génova	Génova	Génova	Génova	Génova
+	758	Filandia	4.6747200	-75.6583300	CO	23	0	0	Filandia	Filandia	Filandia	Filandia	Filandia	Filandia
+	758	Córdoba	4.3931800	-75.6893500	CO	23	0	0	Córdoba	Córdoba	Córdoba	Córdoba	Córdoba	Córdoba
+	758	Circasia	4.6188900	-75.6358300	CO	23	0	0	Circasia	Circasia	Circasia	Circasia	Circasia	Circasia
+	758	Calarcá	4.5294900	-75.6409100	CO	23	0	0	Calarcá	Calarcá	Calarcá	Calarcá	Calarcá	Calarcá
+	758	Buenavista	4.3539000	-75.7178200	CO	23	0	0	Buenavista	Buenavista	Buenavista	Buenavista	Buenavista	Buenavista
+	758	Armenia	4.5338900	-75.6811100	CO	23	0	0	Armenia	Armenia	Armenia	Armenia	Armenia	Armenia

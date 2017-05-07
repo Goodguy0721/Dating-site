@@ -1,0 +1,221 @@
+	3730	Ystalyfera	51.7671600	-3.7808200	GB	WLS	0	0	Ystalyfera	Ystalyfera	Ystalyfera	Ystalyfera	Ystalyfera	Ystalyfera
+	3730	Wrexham	53.0466400	-2.9913200	GB	WLS	0	0	Wrexham	Wrexham	Wrexham	Wrexham	Wrexham	Wrexham
+	3730	Wick	51.4394400	-3.5494400	GB	WLS	0	0	Wick	Wick	Wick	Wick	Wick	Wick
+	3730	Welshpool	52.6597300	-3.1471000	GB	WLS	0	0	Welshpool	Welshpool	Welshpool	Welshpool	Welshpool	Welshpool
+	3730	Victoria	51.7500000	-3.2000000	GB	WLS	0	0	Victoria	Victoria	Victoria	Victoria	Victoria	Victoria
+	3730	Valley	53.2849000	-4.5664400	GB	WLS	0	0	Valley	Valley	Valley	Valley	Valley	Valley
+	3730	Usk	51.7034700	-2.9033200	GB	WLS	0	0	Usk	Аск	Usk	Usk	Usk	Usk
+	3730	Tycroes	51.7780600	-4.0200000	GB	WLS	0	0	Tycroes	Tycroes	Tycroes	Tycroes	Tycroes	Tycroes
+	3730	Treorchy	51.6595800	-3.5058700	GB	WLS	0	0	Treorchy	Treorchy	Treorchy	Treorchy	Treorchy	Treorchy
+	3730	Treharris	51.6645700	-3.3072500	GB	WLS	0	0	Treharris	Treharris	Treharris	Treharris	Treharris	Treharris
+	3730	Tredegar	51.7725100	-3.2467900	GB	WLS	0	0	Tredegar	Tredegar	Tredegar	Tredegar	Tredegar	Tredegar
+	3730	Tonyrefail	51.5840200	-3.4304100	GB	WLS	0	0	Tonyrefail	Tonyrefail	Tonyrefail	Tonyrefail	Tonyrefail	Tonyrefail
+	3730	Tenby	51.6727900	-4.7044700	GB	WLS	0	0	Tenby	Тенби	Tenby	Tenby	Tenby	Tenby
+	3730	Taibach	51.5833300	-3.7666700	GB	WLS	0	0	Taibach	Taibach	Taibach	Taibach	Taibach	Taibach
+	3730	Swansea	51.6207900	-3.9432300	GB	WLS	0	0	Swansea	Суонси	Swansea	Swansea	Swansea	Swansea
+	3730	Seven Sisters	51.7666700	-3.7166700	GB	WLS	0	0	Seven Sisters	Seven Sisters	Seven Sisters	Seven Sisters	Seven Sisters	Seven Sisters
+	3730	Saundersfoot	51.7094500	-4.7021500	GB	WLS	0	0	Saundersfoot	Saundersfoot	Saundersfoot	Saundersfoot	Saundersfoot	Saundersfoot
+	3730	Saint Davids	51.8809400	-5.2655400	GB	WLS	0	0	Saint Davids	Сент-Дэвидз	Saint Davids	Saint Davids	Saint Davids	Saint Davids
+	3730	Saint Clears	51.8198900	-4.4978300	GB	WLS	0	0	Saint Clears	Saint Clears	Saint Clears	Saint Clears	Saint Clears	Saint Clears
+	3730	Saint Asaph	53.2581500	-3.4452400	GB	WLS	0	0	Saint Asaph	Saint Asaph	Saint Asaph	Saint Asaph	Saint Asaph	Saint Asaph
+	3730	Ruthin	53.1136800	-3.3178200	GB	WLS	0	0	Ruthin	Ратин	Ruthin	Ruthin	Ruthin	Ruthin
+	3730	Ruabon	52.9878000	-3.0388300	GB	WLS	0	0	Ruabon	Ruabon	Ruabon	Ruabon	Ruabon	Ruabon
+	3730	Rossett	53.1092100	-2.9447800	GB	WLS	0	0	Rossett	Rossett	Rossett	Rossett	Rossett	Rossett
+	3730	Risca	51.6079900	-3.1008100	GB	WLS	0	0	Risca	Risca	Risca	Risca	Risca	Risca
+	3730	Rhymney	51.7599800	-3.2855300	GB	WLS	0	0	Rhymney	Rhymney	Rhymney	Rhymney	Rhymney	Rhymney
+	3730	Rhyl	53.3192900	-3.4922800	GB	WLS	0	0	Rhyl	Рил	Rhyl	Rhyl	Rhyl	Rhyl
+	3730	Rhuddlan	53.2920300	-3.4699600	GB	WLS	0	0	Rhuddlan	Rhuddlan	Rhuddlan	Rhuddlan	Rhuddlan	Rhuddlan
+	3730	Rhosllanerchrugog	53.0097400	-3.0581400	GB	WLS	0	0	Rhosllanerchrugog	Rhosllanerchrugog	Rhosllanerchrugog	Rhosllanerchrugog	Rhosllanerchrugog	Rhosllanerchrugog
+	3730	Rhoose	51.3881800	-3.3543000	GB	WLS	0	0	Rhoose	Rhoose	Rhoose	Rhoose	Rhoose	Rhoose
+	3730	Rhondda	51.6589600	-3.4488500	GB	WLS	0	0	Rhondda	Rhondda	Rhondda	Rhondda	Rhondda	Rhondda
+	3730	Rhayader	52.3015400	-3.5114600	GB	WLS	0	0	Rhayader	Rhayader	Rhayader	Rhayader	Rhayader	Rhayader
+	3730	Resolven	51.7119300	-3.6974500	GB	WLS	0	0	Resolven	Resolven	Resolven	Resolven	Resolven	Resolven
+	3730	Radyr	51.5186400	-3.2582900	GB	WLS	0	0	Radyr	Radyr	Radyr	Radyr	Radyr	Radyr
+	3730	Pyle	51.5166700	-3.7000000	GB	WLS	0	0	Pyle	Pyle	Pyle	Pyle	Pyle	Pyle
+	3730	Pwllheli	52.8899000	-4.4145100	GB	WLS	0	0	Pwllheli	Пулхели	Pwllheli	Pwllheli	Pwllheli	Pwllheli
+	3730	Presteigne	52.2718300	-3.0057900	GB	WLS	0	0	Presteigne	Presteigne	Presteigne	Presteigne	Presteigne	Presteigne
+	3730	Prestatyn	53.3374800	-3.4077600	GB	WLS	0	0	Prestatyn	Prestatyn	Prestatyn	Prestatyn	Prestatyn	Prestatyn
+	3730	Porthmadog	52.9292400	-4.1313700	GB	WLS	0	0	Porthmadog	Портмадог	Porthmadog	Porthmadog	Porthmadog	Porthmadog
+	3730	Porthcawl	51.4790300	-3.7036200	GB	WLS	0	0	Porthcawl	Porthcawl	Porthcawl	Porthcawl	Porthcawl	Porthcawl
+	3730	Pontypridd	51.6021000	-3.3421100	GB	WLS	0	0	Pontypridd	Понтиприте	Pontypridd	Pontypridd	Pontypridd	Pontypridd
+	3730	Pontypool	51.7011100	-3.0444400	GB	WLS	0	0	Pontypool	Pontypool	Pontypool	Pontypool	Pontypool	Pontypool
+	3730	Pontycymer	51.6111800	-3.5842100	GB	WLS	0	0	Pontycymer	Pontycymer	Pontycymer	Pontycymer	Pontycymer	Pontycymer
+	3730	Pontyberem	51.7782600	-4.1689000	GB	WLS	0	0	Pontyberem	Pontyberem	Pontyberem	Pontyberem	Pontyberem	Pontyberem
+	3730	Pontarddulais	51.7142300	-4.0385900	GB	WLS	0	0	Pontarddulais	Pontarddulais	Pontarddulais	Pontarddulais	Pontarddulais	Pontarddulais
+	3730	Pentyrch	51.5288900	-3.2950000	GB	WLS	0	0	Pentyrch	Pentyrch	Pentyrch	Pentyrch	Pentyrch	Pentyrch
+	3730	Penrhyndeudraeth	52.9333300	-4.0666700	GB	WLS	0	0	Penrhyndeudraeth	Penrhyndeudraeth	Penrhyndeudraeth	Penrhyndeudraeth	Penrhyndeudraeth	Penrhyndeudraeth
+	3730	Pencoed	51.5237100	-3.5001600	GB	WLS	0	0	Pencoed	Pencoed	Pencoed	Pencoed	Pencoed	Pencoed
+	3730	Penarth	51.4386000	-3.1734200	GB	WLS	0	0	Penarth	Penarth	Penarth	Penarth	Penarth	Penarth
+	3730	Pembroke Dock	51.6916100	-4.9403600	GB	WLS	0	0	Pembroke Dock	Пемброк-док	Pembroke Dock	Pembroke Dock	Pembroke Dock	Pembroke Dock
+	3730	Pembroke	51.6746400	-4.9128600	GB	WLS	0	0	Pembroke	Pembroke	Pembroke	Pembroke	Pembroke	Pembroke
+	3730	Neyland	51.7101400	-4.9515500	GB	WLS	0	0	Neyland	Neyland	Neyland	Neyland	Neyland	Neyland
+	3730	New Tredegar	51.7205100	-3.2413000	GB	WLS	0	0	New Tredegar	New Tredegar	New Tredegar	New Tredegar	New Tredegar	New Tredegar
+	3730	Newtown	52.5166700	-3.3000000	GB	WLS	0	0	Newtown	Newtown	Newtown	Newtown	Newtown	Newtown
+	3730	Newport	51.5877400	-2.9983500	GB	WLS	0	0	Newport	Ньюпорт	Newport	Newport	Newport	Newport
+	3730	Newcastle Emlyn	52.0405600	-4.4667000	GB	WLS	0	0	Newcastle Emlyn	Newcastle Emlyn	Newcastle Emlyn	Newcastle Emlyn	Newcastle Emlyn	Newcastle Emlyn
+	3730	Newbridge	51.6666700	-3.1333300	GB	WLS	0	0	Newbridge	Newbridge	Newbridge	Newbridge	Newbridge	Newbridge
+	3730	Nelson	51.6533300	-3.2844400	GB	WLS	0	0	Nelson	Nelson	Nelson	Nelson	Nelson	Nelson
+	3730	Neath	51.6631700	-3.8044300	GB	WLS	0	0	Neath	Нит	Neath	Neath	Neath	Neath
+	3730	Narberth	51.7978400	-4.7427500	GB	WLS	0	0	Narberth	Narberth	Narberth	Narberth	Narberth	Narberth
+	3730	Mountain Ash	51.6836100	-3.3800800	GB	WLS	0	0	Mountain Ash	Mountain Ash	Mountain Ash	Mountain Ash	Mountain Ash	Mountain Ash
+	3730	Mostyn	53.3127100	-3.2676500	GB	WLS	0	0	Mostyn	Mostyn	Mostyn	Mostyn	Mostyn	Mostyn
+	3730	Montgomery	52.5613300	-3.1461200	GB	WLS	0	0	Montgomery	Montgomery	Montgomery	Montgomery	Montgomery	Montgomery
+	3730	Monmouth	51.8126500	-2.7136300	GB	WLS	0	0	Monmouth	Монмут	Monmouth	Monmouth	Monmouth	Monmouth
+	3730	Mold	53.1667400	-3.1414300	GB	WLS	0	0	Mold	Mold	Mold	Mold	Mold	Mold
+	3730	Milford Haven	51.7127800	-5.0341000	GB	WLS	0	0	Milford Haven	Milford Haven	Milford Haven	Milford Haven	Milford Haven	Milford Haven
+	3730	Merthyr Tydfil	51.7479400	-3.3777900	GB	WLS	0	0	Merthyr Tydfil	Мертир Тидвил	Merthyr Tydfil	Merthyr Tydfil	Merthyr Tydfil	Merthyr Tydfil
+	3730	Menai Bridge	53.2277500	-4.1692600	GB	WLS	0	0	Menai Bridge	Menai Bridge	Menai Bridge	Menai Bridge	Menai Bridge	Menai Bridge
+	3730	Marshfield	51.5338900	-3.0730600	GB	WLS	0	0	Marshfield	Marshfield	Marshfield	Marshfield	Marshfield	Marshfield
+	3730	Magor	51.5794400	-2.8313900	GB	WLS	0	0	Magor	Magor	Magor	Magor	Magor	Magor
+	3730	Maesteg	51.6092600	-3.6582300	GB	WLS	0	0	Maesteg	Maesteg	Maesteg	Maesteg	Maesteg	Maesteg
+	3730	Machynlleth	52.5909700	-3.8505100	GB	WLS	0	0	Machynlleth	Махинлет	Machynlleth	Machynlleth	Machynlleth	Machynlleth
+	3730	Machen	51.5959900	-3.1419000	GB	WLS	0	0	Machen	Machen	Machen	Machen	Machen	Machen
+	3730	Llwynypia	51.6333300	-3.4500000	GB	WLS	0	0	Llwynypia	Llwynypia	Llwynypia	Llwynypia	Llwynypia	Llwynypia
+	3730	Llanymynech	52.7808600	-3.0887500	GB	WLS	0	0	Llanymynech	Llanymynech	Llanymynech	Llanymynech	Llanymynech	Llanymynech
+	3730	Llanwrda	51.9679200	-3.8747800	GB	WLS	0	0	Llanwrda	Llanwrda	Llanwrda	Llanwrda	Llanwrda	Llanwrda
+	3730	Llantwit Major	51.4107000	-3.4863200	GB	WLS	0	0	Llantwit Major	Llantwit Major	Llantwit Major	Llantwit Major	Llantwit Major	Llantwit Major
+	3730	Llantwit Fardre	51.5546000	-3.3324100	GB	WLS	0	0	Llantwit Fardre	Llantwit Fardre	Llantwit Fardre	Llantwit Fardre	Llantwit Fardre	Llantwit Fardre
+	3730	Llantrisant	51.5402800	-3.3738900	GB	WLS	0	0	Llantrisant	Llantrisant	Llantrisant	Llantrisant	Llantrisant	Llantrisant
+	3730	Llansantffraid-ym-Mechain	52.7741600	-3.1585700	GB	WLS	0	0	Llansantffraid-ym-Mechain	Llansantffraid-ym-Mechain	Llansantffraid-ym-Mechain	Llansantffraid-ym-Mechain	Llansantffraid-ym-Mechain	Llansantffraid-ym-Mechain
+	3730	Llansantffraid Glan Conwy	53.2666700	-3.8000000	GB	WLS	0	0	Llansantffraid Glan Conwy	Llansantffraid Glan Conwy	Llansantffraid Glan Conwy	Llansantffraid Glan Conwy	Llansantffraid Glan Conwy	Llansantffraid Glan Conwy
+	3730	Llanrwst	53.1402100	-3.7952700	GB	WLS	0	0	Llanrwst	Llanrwst	Llanrwst	Llanrwst	Llanrwst	Llanrwst
+	3730	Llanrug	53.1478800	-4.1959600	GB	WLS	0	0	Llanrug	Llanrug	Llanrug	Llanrug	Llanrug	Llanrug
+	3730	Llan-non	52.2815000	-4.1772100	GB	WLS	0	0	Llan-non	Llan-non	Llan-non	Llan-non	Llan-non	Llan-non
+	3730	Llanidloes	52.4497700	-3.5399700	GB	WLS	0	0	Llanidloes	Llanidloes	Llanidloes	Llanidloes	Llanidloes	Llanidloes
+	3730	Llanharry	51.5142200	-3.4324000	GB	WLS	0	0	Llanharry	Llanharry	Llanharry	Llanharry	Llanharry	Llanharry
+	3730	Llanharan	51.5380500	-3.4390600	GB	WLS	0	0	Llanharan	Llanharan	Llanharan	Llanharan	Llanharan	Llanharan
+	3730	Llangollen	52.9682900	-3.1712700	GB	WLS	0	0	Llangollen	Лланголлен	Llangollen	Llangollen	Llangollen	Llangollen
+	3730	Llangefni	53.2556100	-4.3106300	GB	WLS	0	0	Llangefni	Llangefni	Llangefni	Llangefni	Llangefni	Llangefni
+	3730	Llanfairpwllgwyngyll	53.2214100	-4.2032900	GB	WLS	0	0	Llanfairpwllgwyngyll	Лланвайр Пуллгвингилл	Llanfairpwllgwyngyll	Llanfairpwllgwyngyll	Llanfairpwllgwyngyll	Llanfairpwllgwyngyll
+	3730	Llanfairfechan	53.2577900	-3.9742300	GB	WLS	0	0	Llanfairfechan	Llanfairfechan	Llanfairfechan	Llanfairfechan	Llanfairfechan	Llanfairfechan
+	3730	Llanelli	51.6819500	-4.1619100	GB	WLS	0	0	Llanelli	Лланелли	Llanelli	Llanelli	Llanelli	Llanelli
+	3730	Llandysul	52.0416600	-4.3090900	GB	WLS	0	0	Llandysul	Llandysul	Llandysul	Llandysul	Llandysul	Llandysul
+	3730	Llandybie	51.8204400	-4.0071000	GB	WLS	0	0	Llandybie	Llandybie	Llandybie	Llandybie	Llandybie	Llandybie
+	3730	Llandudno	53.3249800	-3.8314800	GB	WLS	0	0	Llandudno	Лландидно	Llandudno	Llandudno	Llandudno	Llandudno
+	3730	Llandrindod Wells	52.2416400	-3.3786800	GB	WLS	0	0	Llandrindod Wells	Llandrindod Wells	Llandrindod Wells	Llandrindod Wells	Llandrindod Wells	Llandrindod Wells
+	3730	Llandovery	51.9941500	-3.7963700	GB	WLS	0	0	Llandovery	Llandovery	Llandovery	Llandovery	Llandovery	Llandovery
+	3730	Llandeilo	51.8845900	-3.9915400	GB	WLS	0	0	Llandeilo	Llandeilo	Llandeilo	Llandeilo	Llandeilo	Llandeilo
+	3730	Llanbradach	51.6063900	-3.2302800	GB	WLS	0	0	Llanbradach	Llanbradach	Llanbradach	Llanbradach	Llanbradach	Llanbradach
+	3730	Llanberis	53.1180900	-4.1292300	GB	WLS	0	0	Llanberis	Llanberis	Llanberis	Llanberis	Llanberis	Llanberis
+	3730	Leeswood	53.1334700	-3.0946600	GB	WLS	0	0	Leeswood	Leeswood	Leeswood	Leeswood	Leeswood	Leeswood
+	3730	Lampeter	52.1128500	-4.0803900	GB	WLS	0	0	Lampeter	Lampeter	Lampeter	Lampeter	Lampeter	Lampeter
+	3730	Knighton	52.3500000	-3.0500000	GB	WLS	0	0	Knighton	Knighton	Knighton	Knighton	Knighton	Knighton
+	3730	Kilgetty	51.7320300	-4.7198300	GB	WLS	0	0	Kilgetty	Kilgetty	Kilgetty	Kilgetty	Kilgetty	Kilgetty
+	3730	Kidwelly	51.7363900	-4.3033300	GB	WLS	0	0	Kidwelly	Kidwelly	Kidwelly	Kidwelly	Kidwelly	Kidwelly
+	3730	Johnston	51.7555600	-4.9966700	GB	WLS	0	0	Johnston	Johnston	Johnston	Johnston	Johnston	Johnston
+	3730	Holywell	53.2746600	-3.2289500	GB	WLS	0	0	Holywell	Holywell	Holywell	Holywell	Holywell	Holywell
+	3730	Holyhead	53.3062100	-4.6321100	GB	WLS	0	0	Holyhead	Холихед	Holyhead	Holyhead	Holyhead	Holyhead
+	3730	Hengoed	51.6508300	-3.2316700	GB	WLS	0	0	Hengoed	Hengoed	Hengoed	Hengoed	Hengoed	Hengoed
+	3730	Hawarden	53.1847800	-3.0257800	GB	WLS	0	0	Hawarden	Хаварден	Hawarden	Hawarden	Hawarden	Hawarden
+	3730	Haverfordwest	51.8016900	-4.9691400	GB	WLS	0	0	Haverfordwest	Хаверфордуэст	Haverfordwest	Haverfordwest	Haverfordwest	Haverfordwest
+	3730	Gresford	53.0853900	-2.9706200	GB	WLS	0	0	Gresford	Gresford	Gresford	Gresford	Gresford	Gresford
+	3730	Greenfield	53.2833300	-3.2166700	GB	WLS	0	0	Greenfield	Greenfield	Greenfield	Greenfield	Greenfield	Greenfield
+	3730	Gorseinon	51.6693100	-4.0416300	GB	WLS	0	0	Gorseinon	Gorseinon	Gorseinon	Gorseinon	Gorseinon	Gorseinon
+	3730	Goodwick	52.0049100	-4.9951100	GB	WLS	0	0	Goodwick	Goodwick	Goodwick	Goodwick	Goodwick	Goodwick
+	3730	Glyn-neath	51.7475000	-3.6183300	GB	WLS	0	0	Glyn-neath	Glyn-neath	Glyn-neath	Glyn-neath	Glyn-neath	Glyn-neath
+	3730	Glanamman	51.8000000	-3.9333300	GB	WLS	0	0	Glanamman	Glanamman	Glanamman	Glanamman	Glanamman	Glanamman
+	3730	Gilwern	51.8247500	-3.0935500	GB	WLS	0	0	Gilwern	Gilwern	Gilwern	Gilwern	Gilwern	Gilwern
+	3730	Gilfach Goch	51.5921300	-3.4729600	GB	WLS	0	0	Gilfach Goch	Gilfach Goch	Gilfach Goch	Gilfach Goch	Gilfach Goch	Gilfach Goch
+	3730	Gelligaer	51.6644400	-3.2561100	GB	WLS	0	0	Gelligaer	Gelligaer	Gelligaer	Gelligaer	Gelligaer	Gelligaer
+	3730	Gaerwen	53.2211200	-4.2736200	GB	WLS	0	0	Gaerwen	Gaerwen	Gaerwen	Gaerwen	Gaerwen	Gaerwen
+	3730	Flint	53.2448800	-3.1323100	GB	WLS	0	0	Flint	Flint	Flint	Flint	Flint	Flint
+	3730	Fishguard	51.9937600	-4.9763100	GB	WLS	0	0	Fishguard	Fishguard	Fishguard	Fishguard	Fishguard	Fishguard
+	3730	Ferndale	51.6605600	-3.4475000	GB	WLS	0	0	Ferndale	Ferndale	Ferndale	Ferndale	Ferndale	Ferndale
+	3730	Ebbw Vale	51.7771400	-3.2079200	GB	WLS	0	0	Ebbw Vale	Ebbw Vale	Ebbw Vale	Ebbw Vale	Ebbw Vale	Ebbw Vale
+	3730	Dyserth	53.3003200	-3.4126200	GB	WLS	0	0	Dyserth	Dyserth	Dyserth	Dyserth	Dyserth	Dyserth
+	3730	Dolgellau	52.7422200	-3.8861100	GB	WLS	0	0	Dolgellau	Dolgellau	Dolgellau	Dolgellau	Dolgellau	Dolgellau
+	3730	Dinas Powys	51.4348600	-3.2139800	GB	WLS	0	0	Dinas Powys	Dinas Powys	Dinas Powys	Dinas Powys	Dinas Powys	Dinas Powys
+	3730	Denbigh	53.1833300	-3.4166700	GB	WLS	0	0	Denbigh	Denbigh	Denbigh	Denbigh	Denbigh	Denbigh
+	3730	Deganwy	53.3044600	-3.8273500	GB	WLS	0	0	Deganwy	Deganwy	Deganwy	Deganwy	Deganwy	Deganwy
+	3730	Cwmbran	51.6544600	-3.0228100	GB	WLS	0	0	Cwmbran	Cwmbran	Cwmbran	Cwmbran	Cwmbran	Cwmbran
+	3730	Cwmafan	51.6000000	-3.7500000	GB	WLS	0	0	Cwmafan	Cwmafan	Cwmafan	Cwmafan	Cwmafan	Cwmafan
+	3730	Crynant	51.7288900	-3.7480600	GB	WLS	0	0	Crynant	Crynant	Crynant	Crynant	Crynant	Crynant
+	3730	Crumlin	51.6777800	-3.1352800	GB	WLS	0	0	Crumlin	Crumlin	Crumlin	Crumlin	Crumlin	Crumlin
+	3730	Cross Hands	51.7930600	-4.0875000	GB	WLS	0	0	Cross Hands	Cross Hands	Cross Hands	Cross Hands	Cross Hands	Cross Hands
+	3730	Criccieth	52.9205300	-4.2346000	GB	WLS	0	0	Criccieth	Criccieth	Criccieth	Criccieth	Criccieth	Criccieth
+	3730	Cowbridge	51.4602800	-3.4416700	GB	WLS	0	0	Cowbridge	Cowbridge	Cowbridge	Cowbridge	Cowbridge	Cowbridge
+	3730	Corwen	52.9800500	-3.3773600	GB	WLS	0	0	Corwen	Corwen	Corwen	Corwen	Corwen	Corwen
+	3730	Conwy	53.2807700	-3.8303900	GB	WLS	0	0	Conwy	Конуи	Conwy	Conwy	Conwy	Conwy
+	3730	Colwyn Bay	53.2948300	-3.7267400	GB	WLS	0	0	Colwyn Bay	Colwyn Bay	Colwyn Bay	Colwyn Bay	Colwyn Bay	Colwyn Bay
+	3730	Coity	51.5220000	-3.5553100	GB	WLS	0	0	Coity	Coity	Coity	Coity	Coity	Coity
+	3730	Coedpoeth	53.0539100	-3.0623400	GB	WLS	0	0	Coedpoeth	Coedpoeth	Coedpoeth	Coedpoeth	Coedpoeth	Coedpoeth
+	3730	Clydach	51.6833300	-3.9000000	GB	WLS	0	0	Clydach	Clydach	Clydach	Clydach	Clydach	Clydach
+	3730	Chirk	52.9358600	-3.0573800	GB	WLS	0	0	Chirk	Chirk	Chirk	Chirk	Chirk	Chirk
+	3730	Chepstow	51.6408700	-2.6768300	GB	WLS	0	0	Chepstow	Чепстоу	Chepstow	Chepstow	Chepstow	Chepstow
+	3730	Carmarthen	51.8555200	-4.3053500	GB	WLS	0	0	Carmarthen	Кармартен	Carmarthen	Carmarthen	Carmarthen	Carmarthen
+	3730	Cardiff	51.4800000	-3.1800000	GB	WLS	0	0	Cardiff	Кардифф	Cardiff	Cardiff	Cardiff	Cardiff
+	3730	Caldicot	51.5866100	-2.7573600	GB	WLS	0	0	Caldicot	Caldicot	Caldicot	Caldicot	Caldicot	Caldicot
+	3730	Caerphilly	51.5745200	-3.2180000	GB	WLS	0	0	Caerphilly	Керфили	Caerphilly	Caerphilly	Caerphilly	Caerphilly
+	3730	Caernarfon	53.1412600	-4.2701600	GB	WLS	0	0	Caernarfon	Caernarfon	Caernarfon	Caernarfon	Caernarfon	Caernarfon
+	3730	Caerleon	51.6095200	-2.9537800	GB	WLS	0	0	Caerleon	Caerleon	Caerleon	Caerleon	Caerleon	Caerleon
+	3730	Caergwrle	53.1095300	-3.0380800	GB	WLS	0	0	Caergwrle	Caergwrle	Caergwrle	Caergwrle	Caergwrle	Caergwrle
+	3730	Burry Port	51.6843500	-4.2468700	GB	WLS	0	0	Burry Port	Burry Port	Burry Port	Burry Port	Burry Port	Burry Port
+	3730	Builth Wells	52.1494000	-3.4046900	GB	WLS	0	0	Builth Wells	Builth Wells	Builth Wells	Builth Wells	Builth Wells	Builth Wells
+	3730	Buckley	53.1666700	-3.0833300	GB	WLS	0	0	Buckley	Buckley	Buckley	Buckley	Buckley	Buckley
+	3730	Brynmawr	51.8000000	-3.1833300	GB	WLS	0	0	Brynmawr	Brynmawr	Brynmawr	Brynmawr	Brynmawr	Brynmawr
+	3730	Brynamman	51.8000000	-3.8666700	GB	WLS	0	0	Brynamman	Brynamman	Brynamman	Brynamman	Brynamman	Brynamman
+	3730	Brymbo	53.0666700	-3.0666700	GB	WLS	0	0	Brymbo	Brymbo	Brymbo	Brymbo	Brymbo	Brymbo
+	3730	Briton Ferry	51.6310600	-3.8189800	GB	WLS	0	0	Briton Ferry	Briton Ferry	Briton Ferry	Briton Ferry	Briton Ferry	Briton Ferry
+	3730	Bridgend	51.5058300	-3.5772200	GB	WLS	0	0	Bridgend	Бридженд	Bridgend	Bridgend	Bridgend	Bridgend
+	3730	Brecon	51.9461200	-3.3888700	GB	WLS	0	0	Brecon	Брекон	Brecon	Brecon	Brecon	Brecon
+	3730	Bow Street	52.4421300	-4.0278300	GB	WLS	0	0	Bow Street	Bow Street	Bow Street	Bow Street	Bow Street	Bow Street
+	3730	Bodelwyddan	53.2682700	-3.5007800	GB	WLS	0	0	Bodelwyddan	Bodelwyddan	Bodelwyddan	Bodelwyddan	Bodelwyddan	Bodelwyddan
+	3730	Blaenavon	51.7740200	-3.0853700	GB	WLS	0	0	Blaenavon	Blaenavon	Blaenavon	Blaenavon	Blaenavon	Blaenavon
+	3730	Blaenau-Ffestiniog	52.9946400	-3.9369700	GB	WLS	0	0	Blaenau-Ffestiniog	Blaenau-Ffestiniog	Blaenau-Ffestiniog	Blaenau-Ffestiniog	Blaenau-Ffestiniog	Blaenau-Ffestiniog
+	3730	Bishopston	51.5775000	-4.0480600	GB	WLS	0	0	Bishopston	Bishopston	Bishopston	Bishopston	Bishopston	Bishopston
+	3730	Betws-y-Coed	53.0938200	-3.8066800	GB	WLS	0	0	Betws-y-Coed	Betws-y-Coed	Betws-y-Coed	Betws-y-Coed	Betws-y-Coed	Betws-y-Coed
+	3730	Betws	51.5691700	-3.5883300	GB	WLS	0	0	Betws	Betws	Betws	Betws	Betws	Betws
+	3730	Bethesda	53.1666700	-4.0833300	GB	WLS	0	0	Bethesda	Bethesda	Bethesda	Bethesda	Bethesda	Bethesda
+	3730	Bedwas	51.5918300	-3.1988600	GB	WLS	0	0	Bedwas	Bedwas	Bedwas	Bedwas	Bedwas	Bedwas
+	3730	Beaumaris	53.2631500	-4.0923300	GB	WLS	0	0	Beaumaris	Beaumaris	Beaumaris	Beaumaris	Beaumaris	Beaumaris
+	3730	Barry	51.3997900	-3.2838000	GB	WLS	0	0	Barry	Барри	Barry	Barry	Barry	Barry
+	3730	Barmouth	52.7237700	-4.0574800	GB	WLS	0	0	Barmouth	Barmouth	Barmouth	Barmouth	Barmouth	Barmouth
+	3730	Bargoed	51.6833300	-3.2333300	GB	WLS	0	0	Bargoed	Bargoed	Bargoed	Bargoed	Bargoed	Bargoed
+	3730	Bangor	53.2275200	-4.1293600	GB	WLS	0	0	Bangor	Бангор	Bangor	Bangor	Bangor	Bangor
+	3730	Bala	52.9111100	-3.5972200	GB	WLS	0	0	Bala	Bala	Bala	Bala	Bala	Bala
+	3730	Bagillt	53.2654000	-3.1655100	GB	WLS	0	0	Bagillt	Bagillt	Bagillt	Bagillt	Bagillt	Bagillt
+	3730	Ammanford	51.7927900	-3.9883300	GB	WLS	0	0	Ammanford	Ammanford	Ammanford	Ammanford	Ammanford	Ammanford
+	3730	Amlwch	53.4098600	-4.3471200	GB	WLS	0	0	Amlwch	Amlwch	Amlwch	Amlwch	Amlwch	Amlwch
+	3730	Aberystwyth	52.4154800	-4.0829200	GB	WLS	0	0	Aberystwyth	Аберистуит	Aberystwyth	Aberystwyth	Aberystwyth	Aberystwyth
+	3730	Abertillery	51.7298100	-3.1343200	GB	WLS	0	0	Abertillery	Abertillery	Abertillery	Abertillery	Abertillery	Abertillery
+	3730	Aberporth	52.1324800	-4.5417300	GB	WLS	0	0	Aberporth	Aberporth	Aberporth	Aberporth	Aberporth	Aberporth
+	3730	Aberkenfig	51.5400000	-3.5955600	GB	WLS	0	0	Aberkenfig	Aberkenfig	Aberkenfig	Aberkenfig	Aberkenfig	Aberkenfig
+	3730	Abergele	53.2843600	-3.5822000	GB	WLS	0	0	Abergele	Abergele	Abergele	Abergele	Abergele	Abergele
+	3730	Abergavenny	51.8209800	-3.0174300	GB	WLS	0	0	Abergavenny	Абергавенни	Abergavenny	Abergavenny	Abergavenny	Abergavenny
+	3730	Aberdare	51.7143800	-3.4491800	GB	WLS	0	0	Aberdare	Абердэйр	Aberdare	Aberdare	Aberdare	Aberdare
+	3730	Abercarn	51.6473300	-3.1347600	GB	WLS	0	0	Abercarn	Abercarn	Abercarn	Abercarn	Abercarn	Abercarn
+	3730	Abercanaid	51.7236100	-3.3661100	GB	WLS	0	0	Abercanaid	Abercanaid	Abercanaid	Abercanaid	Abercanaid	Abercanaid
+	3730	Aberaeron	52.2424700	-4.2587100	GB	WLS	0	0	Aberaeron	Aberaeron	Aberaeron	Aberaeron	Aberaeron	Aberaeron
+	3730	Benllech	53.3204400	-4.2260700	GB	WLS	0	0	Benllech	Benllech	Benllech	Benllech	Benllech	Benllech
+	3730	Steynton	51.7291700	-5.0172200	GB	WLS	0	0	Steynton	Steynton	Steynton	Steynton	Steynton	Steynton
+	3730	Glandwr	51.9283300	-4.6333300	GB	WLS	0	0	Glandwr	Glandwr	Glandwr	Glandwr	Glandwr	Glandwr
+	3730	Trimsaran	51.7198800	-4.2416800	GB	WLS	0	0	Trimsaran	Trimsaran	Trimsaran	Trimsaran	Trimsaran	Trimsaran
+	3730	Tumble	51.7836100	-4.1097200	GB	WLS	0	0	Tumble	Tumble	Tumble	Tumble	Tumble	Tumble
+	3730	Southgate	51.5694400	-4.0897200	GB	WLS	0	0	Southgate	Southgate	Southgate	Southgate	Southgate	Southgate
+	3730	Pontlliw	51.6913900	-4.0105600	GB	WLS	0	0	Pontlliw	Pontlliw	Pontlliw	Pontlliw	Pontlliw	Pontlliw
+	3730	Croeserw	51.6447200	-3.6402800	GB	WLS	0	0	Croeserw	Croeserw	Croeserw	Croeserw	Croeserw	Croeserw
+	3730	Pont Rhyd-y-cyff	51.5869400	-3.6363900	GB	WLS	0	0	Pont Rhyd-y-cyff	Pont Rhyd-y-cyff	Pont Rhyd-y-cyff	Pont Rhyd-y-cyff	Pont Rhyd-y-cyff	Pont Rhyd-y-cyff
+	3730	Price Town	51.6183200	-3.5366200	GB	WLS	0	0	Price Town	Price Town	Price Town	Price Town	Price Town	Price Town
+	3730	Ogmore Vale	51.6023000	-3.5421700	GB	WLS	0	0	Ogmore Vale	Ogmore Vale	Ogmore Vale	Ogmore Vale	Ogmore Vale	Ogmore Vale
+	3730	Tonypandy	51.6220200	-3.4554400	GB	WLS	0	0	Tonypandy	Tonypandy	Tonypandy	Tonypandy	Tonypandy	Tonypandy
+	3730	Abertridwr	51.5958300	-3.2683300	GB	WLS	0	0	Abertridwr	Abertridwr	Abertridwr	Abertridwr	Abertridwr	Abertridwr
+	3730	Beddau	51.5539800	-3.3581400	GB	WLS	0	0	Beddau	Beddau	Beddau	Beddau	Beddau	Beddau
+	3730	Blackwood	51.6677800	-3.2075000	GB	WLS	0	0	Blackwood	Blackwood	Blackwood	Blackwood	Blackwood	Blackwood
+	3730	Cwmbach	51.7055600	-3.4094400	GB	WLS	0	0	Cwmbach	Cwmbach	Cwmbach	Cwmbach	Cwmbach	Cwmbach
+	3730	Rogiet	51.5885400	-2.7786800	GB	WLS	0	0	Rogiet	Rogiet	Rogiet	Rogiet	Rogiet	Rogiet
+	3730	Tintern	51.6967700	-2.6814200	GB	WLS	0	0	Tintern	Тинтерн	Tintern	Tintern	Tintern	Tintern
+	3730	Penparcau	52.4033300	-4.0741700	GB	WLS	0	0	Penparcau	Penparcau	Penparcau	Penparcau	Penparcau	Penparcau
+	3730	Y Felinheli	53.1873700	-4.2047600	GB	WLS	0	0	Y Felinheli	Y Felinheli	Y Felinheli	Y Felinheli	Y Felinheli	Y Felinheli
+	3730	Upper Corris	52.6613400	-3.8565400	GB	WLS	0	0	Upper Corris	Upper Corris	Upper Corris	Upper Corris	Upper Corris	Upper Corris
+	3730	Pontyclun	51.5216200	-3.3914500	GB	WLS	0	0	Pontyclun	Pontyclun	Pontyclun	Pontyclun	Pontyclun	Pontyclun
+	3730	Pentre	51.6542900	-3.4913300	GB	WLS	0	0	Pentre	Pentre	Pentre	Pentre	Pentre	Pentre
+	3730	Ty Croes	53.2227100	-4.4757700	GB	WLS	0	0	Ty Croes	Ty Croes	Ty Croes	Ty Croes	Ty Croes	Ty Croes
+	3730	Tyn-y-Gongl	53.3220000	-4.2324000	GB	WLS	0	0	Tyn-y-Gongl	Tyn-y-Gongl	Tyn-y-Gongl	Tyn-y-Gongl	Tyn-y-Gongl	Tyn-y-Gongl
+	3730	Garndolbenmaen	52.9736600	-4.2402100	GB	WLS	0	0	Garndolbenmaen	Garndolbenmaen	Garndolbenmaen	Garndolbenmaen	Garndolbenmaen	Garndolbenmaen
+	3730	Penysarn	53.3897800	-4.3169800	GB	WLS	0	0	Penysarn	Penysarn	Penysarn	Penysarn	Penysarn	Penysarn
+	3730	Rhosgoch	53.3769300	-4.3909300	GB	WLS	0	0	Rhosgoch	Rhosgoch	Rhosgoch	Rhosgoch	Rhosgoch	Rhosgoch
+	3730	Brynteg	53.3189800	-4.2607200	GB	WLS	0	0	Brynteg	Brynteg	Brynteg	Brynteg	Brynteg	Brynteg
+	3730	Marianglas	53.3358700	-4.2462600	GB	WLS	0	0	Marianglas	Marianglas	Marianglas	Marianglas	Marianglas	Marianglas
+	3730	Glogue	51.9677500	-4.5982900	GB	WLS	0	0	Glogue	Glogue	Glogue	Glogue	Glogue	Glogue
+	3730	Llanbedrgoch	53.3002600	-4.2364300	GB	WLS	0	0	Llanbedrgoch	Llanbedrgoch	Llanbedrgoch	Llanbedrgoch	Llanbedrgoch	Llanbedrgoch
+	3730	Penyffordd	53.1482900	-3.0458400	GB	WLS	0	0	Penyffordd	Penyffordd	Penyffordd	Penyffordd	Penyffordd	Penyffordd

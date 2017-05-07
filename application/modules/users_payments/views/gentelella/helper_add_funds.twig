@@ -1,0 +1,55 @@
+<a id="btn_add_funds" href="javascript:void(0)">
+    {% helper lang.l('link_add_funds', 'users_payments') %}
+</a>
+<script type="text/javascript">
+    var add_funds_link = "{{ site_url }}admin/users_payments/ajax_add_funds";
+    var add_funds_form_link = "{{ site_url }}admin/users_payments/ajax_add_funds_form";
+    $(function() {
+        loading_funds = new loadingContent({
+            closeBtnPadding: '15',
+            closeBtnClass: 'close',
+            loadBlockSize: 'small',
+            loadBlockTitle: '{% helper lang.l('header_add_funds_selected', 'users_payments') %}',
+            footerButtons: '<button type="button" class="btn btn-success" name="btn_save" onclick="javascript: send_add_funds();">{% helper lang.l('btn_add', 'start', '', 'button') %}</button>'
+        });
+        $('#btn_add_funds').click(function() {
+            open_add_funds(add_funds_form_link);
+            return false;
+        });
+    });
+    function open_add_funds(url){
+        $.ajax({
+            url: url,
+            type: 'GET',
+            cache: false,
+            success: function(data){
+                loading_funds.show_load_block(data);
+            }
+        });
+    }
+    function send_add_funds(){
+        var data = new Array();
+        $('.grouping:checked').each(function(i){
+            data[i] = $(this).val();
+        });
+
+        if(data.length > 0){
+            $.ajax({
+                url: add_funds_link,
+                type: 'POST',
+                cache: false,
+                dataType: 'json',
+                data: {amount: $('#add_fund_amount').val(), user_ids: data},
+                success: function(data){
+                    if(typeof(data.error) != 'undefined' && data.error != ''){
+                        error_object.show_error_block(data.error, 'error');
+                    }else{
+                        location.reload();
+                    }
+                }
+            });
+        }else{
+            error_object.show_error_block('{% helper lang.l('error_no_users_to_add_funds', 'users_payments', '', 'js') %}', 'error');
+        }
+    }
+</script>

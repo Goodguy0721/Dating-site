@@ -1,0 +1,35 @@
+<span class="user-menu-item {% if is_send %}hide{% endif %}" id="mark-as-spam-{{ rand }}">
+    <dt>
+        <a href="javascript:;" data-id="{{ object_id }}" data-type="{{ type.gid }}">
+            <i class="fa fa-flag"></i>
+        </a>
+    </dt>
+    <dd>
+        <a href="javascript:;" data-id="{{ object_id }}" data-type="{{ type.gid }}">
+            {% helper lang.l('btn_mark_as_spam', 'spam') %}
+        </a>
+    </dd>
+</span>
+<script>
+    loadScripts(
+        "{% helper utils.jscript('spam', 'spam.js', 'path') %}",
+        function(){
+            spam = new Spam({
+                siteUrl: '{{ site_root }}',
+                use_form: {% if type.form_type != 'checkbox' %}true{% else %}false{% endif %},
+                {% if is_spam_owner is not empty %}isOwner: true,{% endif %}
+                is_send: '{{ is_send }}',
+                error_is_send: '{% spaceless %}
+                    {% if is_guest %}
+                        ajax_login_link
+                    {% else %}
+                        {% helper lang.l('error_is_send_' ~ type.gid, 'spam', '', 'js') %}
+                    {% endif %}
+                {% endspaceless %}',
+                mark_as_spam_btn: 'mark-as-spam-{{ rand }} a',
+                mark_as_spam_link: '',
+            });
+        },
+        ''
+    );
+</script>

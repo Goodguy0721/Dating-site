@@ -1,0 +1,32 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    {% if role.role != 'guest' %}
+        <div class="action-block">
+            <div class="col-xs-12">
+                {% for item in  subscription_type %}
+                    <div class="row pull-left mrb20">
+                        <div class="checkbox-inline">
+                            <label>
+                                <input onclick="{% helper start.setAnalytics('access_permissions', 'radio_' ~ item.type) %}" type="radio" name="subscription_type[{{ item.type }}]" data-value="{{ item.data }}" data-type="{{ item.type }}" {% if item.data %}checked{% endif %} data-user_type="{{ role.type }}" class="flat subscription_type-js">
+                                {% helper lang.l('field_subscription_type_'  ~ item.type, 'access_permissions') %}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="x_panel">
+        <div id="access-content">            
+            {% include "list_settings.twig" %}
+        </div>
+    </div>
+</div>
+{% helper utils.jscript('access_permissions', 'AdminAccessPermissions.js') %}
+<script type='text/javascript'>
+    $(function () {
+        new AdminAccessPermissions({
+            siteUrl: '{{ site_root }}'
+        });
+    });
+</script>
+{% include '@app/footer.twig' %}

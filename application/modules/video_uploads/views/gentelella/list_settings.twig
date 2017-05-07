@@ -1,0 +1,55 @@
+{% include '@app/header.twig' %}
+<ul class="nav nav-tabs bar_tabs">
+    {{ main_menu }}
+</ul>
+
+<div class="x_panel">
+    <table cellspacing="0" cellpadding="0" class="table table-striped jambo_table" width="100%">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">{% helper lang.l('field_gid', 'video_uploads') %}</th>
+                <th class="column-title">{% helper lang.l('field_name', 'video_uploads') %}</th>
+                <th class="column-title">{% helper lang.l('field_upload_type', 'video_uploads') %}</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if configs %}
+                {% for item in configs %}
+                    <tr>
+                        <td><b>{{ item.gid }}</b></td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                            {% if item.upload_type == 'local' %}{% helper lang.l('field_upload_type_local', 'video_uploads') %}
+                            {% elseif item.upload_type == 'youtube' %}{% helper lang.l('field_upload_type_youtube', 'video_uploads') %}
+                            {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="{{ site_url }}admin/video_uploads/config_edit/{{ item.id }}"
+                                   title="{% helper lang.l('link_edit_config', 'video_uploads') %}">
+                                    {% helper lang.l('link_tableicon_edit_config', 'video_uploads') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ site_url }}admin/video_uploads/config_edit/{{ item.id }}"
+                                           title="{% helper lang.l('link_edit_config', 'video_uploads') %}">
+                                            {% helper lang.l('link_tableicon_edit_config', 'video_uploads') %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr><td colspan=3 class="text-center">{% helper lang.l('no_configs', 'video_uploads') %}</td></tr>
+                {% endif %}
+        </tbody>
+    </table>
+</div>
+{% include '@app/footer.twig' %}

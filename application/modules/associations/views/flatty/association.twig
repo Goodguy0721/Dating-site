@@ -1,0 +1,20 @@
+<div class="mtb10 ib addHeight">
+    <div id="{{ properties.last_association_id }}" class="icon-chevron-left hover fleft pointer"></div>
+    <div id="{{ properties.image_id }}" class="mlr20 fleft wdth180 helper">
+        <img class="imgChild" src="{{ obj.association_obj[key].image.thumbs.big }}" >
+    </div>
+    <div id="{{ properties.next_association_id }}" class="icon-chevron-right hover fleft pointer"></div>
+</div>
+<div class="clr"></div>
+
+<div class="mtb10" id="{{ properties.name_id }}">
+    {{ obj.association_obj[key].name }}
+</div>
+
+<div class="mtb10">
+    <button data-profile="{{ obj.profile_id }}" data-id="{{ obj.association_obj[key].id }}"
+        id="{{ properties.btn_compare_id }}" class="btn btn-primary" name="compare">
+        {{ properties.lang.compare }}
+    </button>
+    <button id="{{ properties.btn_more_id }}" class="btn btn-primary" name="more">{{ properties.lang.more }}</button>
+</div>

@@ -1,0 +1,41 @@
+<ul class="nav nav-pills nav-stacked content-pages-tree">
+    {% if page.parent_id != '0' %}
+        <li class="back">
+            <div class="info-menu-inner">
+                <a href="{% helper seo.seolink('content', 'view', parent.gid) %}">
+                    &larr;&nbsp;Back
+                </a>
+            </div>
+        </li>
+    {% endif %}
+    {% for key, item in currents %}
+        <li {% if item.id == page.id %}class="active"{% endif %}>
+            <div class="info-menu-inner">
+                <a href="{% helper seo.seolink('content', 'view', item) %}">
+                    <div class="clearfix">
+                        <div class="fleft">{{ item.title }}</div>
+                        {% if item.sub %}
+                            <div class="fright menu-arrow"><i class="fa fa-angle-right"></i></div>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </li>
+        {% if item.sub %}
+            {% for k, i in item.sub %}
+                <li  class="leaves {% if i.active %}active{% endif %}">
+                    <div class="info-menu-inner">
+                        <a href="{% helper seo.seolink('content', 'view', i) %}">
+                            <div class="clearfix">
+                                <div class="fleft">{{ i.title }}</div>
+                                {% if i.sub %}
+                                    <div class="fright menu-arrow"><i class="fa fa-angle-right"></i></div>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</ul>

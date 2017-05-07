@@ -1,0 +1,118 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div class="g-flatty-block">
+        <ul class="b-tabs b-tabs_wrapper">
+            <li class="b-tabs__item {% if method == 'friendlist' %}active{% endif %}">
+                <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('friendlist', 'index') %}">
+                    {% helper lang.l('friendlist', 'friendlist') %}{% if counts.friendlist %}&nbsp;({{ counts.friendlist }}){% endif %}
+                </a>
+            </li>
+            <li class="b-tabs__item {% if method == 'friends_requests' %}active{% endif %}">
+                <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('friendlist', 'friends_requests') %}">
+                    {% helper lang.l('friends_requests', 'friendlist') %}{% if counts.friends_requests %}&nbsp;({{ counts.friends_requests }}){% endif %}
+                </a>
+            </li>
+            <li class="b-tabs__item {% if method == 'friends_invites' %}active{% endif %}">
+                <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('friendlist', 'friends_invites') %}">
+                    {% helper lang.l('friends_invites', 'friendlist') %}{% if counts.friends_invites %}&nbsp;({{ counts.friends_invites }}){% endif %}
+                </a>
+            </li>
+        </ul>
+
+
+
+
+        {% if (method == 'friends_requests' and counts.friends_requests)
+            or (method == 'friendlist' and counts.friendlist)
+            or (method == 'friends_invites' and counts.friends_invites) %}
+            <div class="g-flatty-block__control">
+                <div class="sub-search-form">
+                    <form method="post" action="" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="search" value="{{ search|e }}" placeholder="{% helper lang.l('search', 'friendlist', '', 'button') %}" />&nbsp;
+                            <input type="submit" value="{% helper lang.l('btn_search', 'start') %}" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+        <div id="users_block" class="row g-users-gallery">
+            {% for item in list %}
+                <div class="g-users-gallery__item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="g-users-gallery__content">
+                        <div class="g-users-gallery__photo">
+                            <a class="g-pic-border g-rounded g-users-gallery__photo-img" href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                {% helper users.formatAvatar({'user': item.user, 'size': 'great'}) %}
+                            </a>
+                            <div class="g-users-gallery__actions">
+                                <div class="g-photo-actions">
+                                    {% if method != 'friends_requests' %}
+                                        <a href="{% helper seo.seolink('friendlist', 'remove', item.id_dest_user) %}"
+                                           class="btn-link" title="{% helper lang.l('action_remove', 'friendlist', '', 'button') %}">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% helper seo.seolink('friendlist', 'decline', item.id_user) %}" class="btn-link link-r-margin" title="{% helper lang.l('action_decline', 'friendlist', '', 'button') %}">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    {% endif %}
+                                </div><!-- g-photo-actions -->
+                            </div>
+                        </div>
+                        <div class="g-users-gallery__info">
+                            <div class="text-overflow g-users-gallery__date">
+                                {% helper date_format.tpl_date_format(item.date_update, page_data.date_time_format) %}
+                            </div>
+                            <div class="text-overflow g-users-gallery__name">
+                                <a href="{% helper seo.seolink('users', 'view', item.user) %}">{{ item.user.output_name }}</a>, {{ item.user.age }}
+                            </div>
+                            {% if item.user.location %}
+                                <div class="text-overflow g-users-gallery__loc">
+                                    {{ item.user.location }}
+                                </div>
+                            {% endif %}
+                            {% if (method == 'friends_requests' or method == 'friends_invites') and item.comment %}
+                                <div class="g-users-gallery__comment" title="{{ item.comment|e }}">
+                                    "{{ item.comment|nl2br }}"
+                                </div>
+                            {% endif %}
+                            {% if method == 'friends_requests' %}
+                                <div class="g-users-gallery__infobtn">
+                                    <a href="{% helper seo.seolink('friendlist', 'accept', item.id_user) %}"
+                                       class="btn btn-primary-inverted btn-sm col-xs-12" title="{% helper lang.l('action_accept', 'friendlist', '', 'button') %}">
+                                        <span class="text-overflow">{% helper lang.l('action_accept', 'friendlist', '', 'button') %}</span>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="empty text-center p10 pt20">
+                    {% helper lang.l('empty_result', 'friendlist') %}
+                </div>
+            {% endfor %}
+        </div>
+        {% if list %}
+            <div id="pages_block_2" class="tac">
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data, 'full') %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% include '@app/footer.twig' %}

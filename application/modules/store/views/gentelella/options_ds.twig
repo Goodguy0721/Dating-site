@@ -1,0 +1,102 @@
+{% include '@app/header.twig' with { load_type : 'editable|ui' } %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div id="menu" class="btn-group" data-toggle="buttons">
+                {% for lang_id, item in langs %}
+                    <label class="btn btn-default{% if lang_id == current_lang_id %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick='document.location.href="{{ site_url }}admin/store/option_fields/{{ parent }}/{{ lang_id }}"'>
+                        <input type="radio" name='{{ item.code }}' {% if lang_id == current_lang_id %} selected{% endif %}>
+                        {{ item.name }}
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="btn-group">
+              <a href="{{ site_url }}admin/store/option_fields_edit/{{ parent }}/{{ current_lang_id }}/0" class="btn btn-primary">
+                  {% helper lang.l('link_add_ds_item', 'store') %}
+              </a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ site_url }}admin/store/option_fields_edit/{{ parent }}/{{ current_lang_id }}/0">
+                      {% helper lang.l('link_add_ds_item', 'store') %}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="filter-form" id="ds_items"><br>
+                <ul name="parent_0" class="sort connected" id="clsr0ul">
+                {% for key, item in options.option %}
+                    <li id="item_{{ key }}" data-id="item_{{ key }}">
+                        <div class="editable x_panel li-icons col-md-12" id="{{ key }}">
+                            {{ item }}
+                            <div class="pull-right">
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/store/option_fields_edit/{{ parent }}/{{ current_lang_id }}/{{ key }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('btn_edit', 'start') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                  <span class="caret"></span>
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a href="{{ site_url }}admin/store/option_fields_edit/{{ parent }}/{{ current_lang_id }}/{{ key }}">
+                                        {% helper lang.l('btn_edit', 'start') %}
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="{{ site_url }}admin/store/ds_item_delete/{{ parent }}/{{ key }}/{{ current_lang_id }}" onclick="if (!confirm('{% helper lang.l('note_delete_option', 'store', '', 'js') %}')) return false;">
+                                        {% helper lang.l('btn_delete', 'start') %}
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ site_url }}application/views/gentelella/js/sortable/Sortable.min.js"></script>
+<script>
+    $(function(){
+        var sortable = Sortable.create($(clsr0ul)[0], {
+                onUpdate: function (/**Event*/evt) {
+
+                    var result = sortable.toArray();
+
+                    var data = {};
+
+                    for (var i in result) {
+                        data[result[i]] = parseInt(i) + 1;
+                    }
+
+                    $.ajax({
+                        url: '{{ site_url }}admin/store/ajax_ds_item_save_sorter/{{ parent }}/',
+                        data: {sorter: {parent_0: data }},
+                        dataType: 'json',
+                        method: 'post',
+                    });
+                },
+            });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

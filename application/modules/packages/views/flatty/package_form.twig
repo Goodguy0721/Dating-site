@@ -1,0 +1,111 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block package_form">
+    <div class="mb10">
+        <a class="btn-link" href="{{ site_url }}packages/index">
+            <i class="fa fa-long-arrow-left hover"></i>
+            <i>{% helper lang.l('back_to_packages', 'packages') %}</i>
+        </a>
+    </div>
+    <h1>
+        {% helper lang.l('header_package_settings', 'packages') %}: {{ data.name }}
+    </h1>
+
+    <div class="content-value">
+        {% if data.free_activate != true %}
+            {% if (data.pay_type == 1 or data.pay_type == 2) and is_module_installed %}
+                {% if data.disable_account_pay %}
+                    {% helper lang.l('error_account_less_then_service_price', 'services') %}
+                    <a href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+                        {% helper lang.l('link_add_founds', 'services') %}
+                    </a>
+                {% else %}
+                    {% helper lang.l('on_your_account_now', 'services') %}:
+                    <b>
+                        {% helper start.currency_format_output({'value': data.user_account}) %}
+                    </b>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+        {% helper packages.packages_list({
+            'packages': packages,
+            'hide_btn': 1,
+            'stretch': 1
+        }) %}
+
+        <form method="post" action="">
+            <div class="service-payment-form">
+                {% if data.free_activate %}
+                    <input type="submit" class="btn" name="btn_account"
+                        value="{% helper lang.l('btn_activate_free', 'services', '', 'button') %}">
+                {% else %}
+
+                    {% if (data.pay_type == 1 or data.pay_type == 2) and is_module_installed %}
+                        {% if data.disable_account_pay != true %}
+                            <div class="mt10 mb20">
+                                <input type="submit" data-pjax-submit="0" name="btn_account"
+                                    value="{% helper lang.l('btn_pay_account', 'services', '', 'button') %}" class="btn btn-primary">
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if data.pay_type == 2 or data.pay_type == 3 %}
+                        <span class="select-payment-method">
+                            {% helper lang.l('link_select_payment_method', 'services') %}
+                        </span>
+                        <div class="billing-systems-block row">
+                            {% if billing_systems %}
+                                <input type="hidden" id="system_gid" name="system_gid" value="">
+                                {% for item in billing_systems %}
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        <div class="billing-method" data-gid="{{ item.gid }}" onclick="system_gid_change('{{ item.gid }}')">
+                                            <img src="{{ item.logo_url }}" class="img-responsive" alt="{{ item.name }}" title="{{ item.name }}">
+                                        </div>
+                                    </div>
+                                    <div id="system_{{ item.gid }}" class="hide" data-tarifs="{{ item.tarifs_type }}">
+                                        <div id="details_{{ item.gid }}">{{ item.info_data }}</div>
+                                    </div>
+                                {% endfor %}
+                                <div class="col-xs-12 hide" id="details">
+                                    <label>
+                                        {% helper lang.l('field_info_data', 'payments') %}:
+                                    </label>
+                                    <div id="details_block"></div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button type="submit" name="btn_system" value="1" class="btn btn-primary">
+                                        {% helper lang.l('btn_pay_systems', 'services') %}
+                                    </button>
+                                </div>
+                            {% elseif data.pay_type == 3 %}
+                                <p>{% helper lang.l('error_empty_billing_system_list', 'service') %}</p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function system_gid_change(value) {
+        $('#details').hide();
+        if(value){
+            var details = $('#details_' + value).html();
+            if(details.length) $('#details').show().find('#details_block').html(details);
+        }
+    }
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('services', 'services.js', 'path') %}"],
+            function(){
+                services = new Services();
+            },
+            ['packages'],
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

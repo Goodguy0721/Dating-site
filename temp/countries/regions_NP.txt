@@ -1,0 +1,5 @@
+	2359	Tīkāpur	28.5000000	81.1333300	NP	FR	0	0	Tīkāpur	Tīkāpur	Tīkāpur	Tīkāpur	Tīkāpur	Tīkāpur
+	2359	Mahendranagar	28.9166700	80.3333300	NP	FR	0	0	Mahendranagar	Mahendranagar	Mahendranagar	Mahendranagar	Mahendranagar	Mahendranagar
+	2359	Dhangarhi	28.7079200	80.5961100	NP	FR	0	0	Dhangarhi	Dhangarhi	Dhangarhi	Dhangarhi	Dhangarhi	Dhangarhi
+	2359	Dadeldhurā	29.2984200	80.5805900	NP	FR	0	0	Dadeldhurā	Dadeldhurā	Dadeldhurā	Dadeldhurā	Dadeldhurā	Dadeldhurā
+	2359	Dipayal	29.2608300	80.9400000	NP	FR	0	0	Dipayal	Dipayal	Dipayal	Dipayal	Dipayal	Dipayal

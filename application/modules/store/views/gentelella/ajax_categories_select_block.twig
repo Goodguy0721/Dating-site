@@ -1,0 +1,72 @@
+<div class="load_content_controller">
+    <div class="col-md-12">
+        {% if categories %}
+            <form name="select_category" class="edit-form n100" action="" method="post" enctype="multipart/form-data">
+            <br>
+            {% for key, item in categories %}
+                <div class="form-group row">
+                    <label class="control-label col-md-9">{{ item.name }}</label>
+                    <div class="col-md-3">
+                        <input class="categories flat" type="checkbox" name="category[]"
+                            value="{{ item.name }}" id="{{ item.id }}" class="flat" {{ item.checked }}>
+                    </div>
+                </div>
+            {% endfor %}
+            </form>
+        {% else %}
+            <div class="text-center"><a href="{{ site_url }}admin/store/product_categories/">{% helper lang.l('link_create_or_activate', 'store') %}</a></div>
+        {% endif %}
+    </div>
+</div>
+<div class="clearfix"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.flat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        }).on('ifClicked', function(event) {
+            $(this).trigger('click');
+        }).on('ifChanged', function(event) {
+            $(this).trigger('change');
+        }).on('ifChecked', function() {
+            $(this).attr('checked', 'checked');
+        }).on('ifUnchecked', function() {
+            $(this).removeAttr('checked');
+        }).on('ifDisabled', function() {
+            $(this).attr('disabled', 'disabled');
+        }).on('ifEnabled', function() {
+            $(this).removeAttr('disabled');
+        });
+    });
+    $(function(){
+        $('input[name^=category]').prop('checked', false);
+        $("input[name^=category_id]").each(function(){
+            $('input#'+$(this).val()).prop('checked', true);
+        });
+        var ids = new Array();
+        var names = new Array();
+        $('#submit').unbind('click').click(function(){
+            $('.categories:checked').each(function(i){ids[i] = $(this).attr("id"); names[i] = $(this).val();});
+            $.ajax({
+                url: site_url + 'admin/store/ajax_load_options/',
+                cache: false,
+                data: {ids: ids},
+                type: "POST",
+                success: function(data) {
+                    $('span[id^=name_]').remove();
+                    $('input[id^=category_]').remove();
+                    for (var key in ids) {
+                        //safari fix
+                        $('input[id=category_'+ids[key]+']').remove();
+                        $('span[id=name_'+ids[key]+']').remove();
+                        $('span[id^=category_text_]').append('<input type="hidden" name="category_id[]" id="category_'+ids[key]+'" value="'+ids[key]+'">');
+                        $('span[id^=category_text_]').append('<span class="block_cat" id="name_'+ids[key]+'">&nbsp;'+names[key]+'</span>');
+                    }
+                    category_open.hide_load_block();
+                    $('#block_options').html(data);
+                }
+            });
+            return false;
+        });
+    });
+</script>

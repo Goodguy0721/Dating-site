@@ -1,0 +1,84 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% helper utils.jscript('', 'date.js') %}
+{% helper utils.jscript('start', 'date_formats.js') %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% include 'numerics_menu.twig' %}
+            </ul>
+        </div>
+        <div class="x_title">
+          <h2 class="col-md-12">{{ settings_name }}</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}" id="date_format">
+                <input type="hidden" id="format_id" name="format_id" value="{{ format.gid }}" />
+            {% for field, values in format.available %}
+                {% if values|length > 1 %}
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">
+                          {% helper lang.l('date_format_' ~ field, 'start') %}:</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% for item in values %}
+                            <div class="middle_short fl">
+                                <input type="radio" name="{{ field }}" id="{{ item }}" value="{{ item }}"
+                                       {% if attribute(format.current, field) == item %}checked="checked"{% endif %}
+                                       class="flat">
+                                <label for="{{ item }}">{% helper lang.l('date_format_' ~ item, 'start') %}</label>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="format">
+                        <input type="hidden" name="{{ field|e }}" id="{{ values.0|e }}" value="{{ values.0|e }}">
+                    </div>
+                {% endif %}
+            {% endfor %}
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">
+                          {% helper lang.l('template', 'start') %}:</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 tpl">
+                            <input autocomplete="off" class="form-control" type="text" name="tpl" id="tpl" value="{{ format.current.tpl|e }}"><br/>
+                            <i>
+                                {% for field, field_data in format.available %}
+                                    <span class="sample">[{{ field }}]</span>
+                                {% endfor %}
+                            </i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-12">
+                          {% helper lang.l('example', 'start') %}</label>
+                        <div id="example" class="col-sm-9 col-xs-12"></div>
+                    </div>
+                    <div class="ln_solid">
+                    <div class="form-group">
+                        <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                            <input type="submit" name="btn_save" class="btn btn-success"
+                                   value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                            <a class="btn btn-default" href="{{ site_url }}admin/start/settings/date_formats">
+                              {% helper lang.l('btn_cancel', 'start') %}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        new date_formats({
+            siteUrl: '{{ site_url }}'
+        });
+    });
+</script>
+
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,232 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_notifications_menu') %}
+            </ul>
+        </div>
+
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <a id="refresh" class="pool_link btn btn-default">
+                    {% helper lang.l('refresh_pool', 'notifications') %}
+                </a>
+                {% if allow_pool_send %}
+                    <a id="send" class="pool_link btn btn-default">
+                        {% helper lang.l('send_pools', 'notifications') %}
+                    </a>
+                {% endif %}
+                {% if allow_pool_delete %}
+                    <a id="delete" class="pool_link btn btn-default">
+                        {% helper lang.l('delete_pools', 'notifications') %}
+                    </a>
+                {% endif %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <form method="post" action="{{data.action}}" id="pool_form" name="pool_form" enctype="multipart/form-data"
+              class="form-horizontal form-label-left">
+            <div id="pool_data">
+                <table id="users" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            {% if allow_pool_send  or  allow_pool_delete %}
+                                <th class="column-title">
+                                    <input type="checkbox" id="grouping_all" onclick="javascript: checkAll(this.checked);" class="flat">
+                                </th>
+                            {% endif %}
+                            <th class="column-title text-center {% if not allow_pool_send  and  not allow_pool_delete %}first{% endif %}">
+                                {% helper lang.l('field_mail_to_email', 'notifications') %}
+                            </th>
+                            <th class="column-title text-center">
+                                {% helper lang.l('field_subject', 'notifications') %}
+                            </th>
+                            <th class="column-title text-center">
+                                {% helper lang.l('send_attempts', 'notifications') %}
+                            </th>
+                            {% if allow_pool_send  or  allow_pool_delete %}
+                                <th class="column-title text-center">
+                                    {% helper lang.l('actions', 'notifications') %}
+                                </th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in senders %}
+                            <tr class="even pointer">
+                                {% if allow_pool_send  or  allow_pool_delete %}
+                                    <td class="first w20 center">
+                                        <input type="checkbox" class="grouping flat" value="{{ item.id }}">
+                                    </td>
+                                {% endif %}
+                                <td class="text-center">
+                                    {{ item.email }}
+                                </td>
+                                <td class="text-center">
+                                    {{ item.subject }}
+                                </td>
+                                <td class="text-center">
+                                    {{ item.send_counter }}
+                                </td>
+                                {% if allow_pool_send  or  allow_pool_delete %}
+                                    <td class="icons">
+                                      <div class="btn-group">
+                                        {% if allow_pool_send %}
+                                            <a href="{{ site_url }}admin/notifications/pool_send/{{ item.id }}"
+                                               class="btn btn-primary">{% spaceless %}
+                                                {% helper lang.l('link_send_pool', 'notifications') %}
+                                            {% endspaceless %}</a>
+                                        {% elseif allow_pool_delete %}
+                                            <a href="{{ site_url }}admin/notifications/pool_delete/{{ item.id }}"
+                                               onclick="javascript:
+                                                        if(!confirm('{% helper lang.l('note_delete_pool', 'notifications', '', 'js') %}'))
+                                                        return false;"
+                                               class="btn btn-primary">
+                                                    {% helper lang.l('link_delete_pool', 'notifications') %}
+                                            </a>
+                                        {% endif %}
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                        {% if allow_pool_send %}
+                                          <li>
+                                            <a href="{{ site_url }}admin/notifications/pool_send/{{ item.id }}"
+                                               class="btn btn-primary">{% spaceless %}
+                                                {% helper lang.l('link_send_pool', 'notifications') %}
+                                            {% endspaceless %}</a>
+                                          </li>
+                                        {% endif %}
+                                        {% if allow_pool_delete %}
+                                          <li>
+                                            <a href="{{ site_url }}admin/notifications/pool_delete/{{ item.id }}"
+                                               onclick="javascript:
+                                                        if(!confirm('{% helper lang.l('note_delete_pool', 'notifications', '', 'js') %}'))
+                                                        return false;"
+                                               class="btn btn-primary">
+                                                    {% helper lang.l('link_delete_pool', 'notifications') %}
+                                            </a>
+                                          </li>
+                                        {% endif %}
+                                        </ul>
+                                      </div>
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<!-- Data tables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_pool','notifications') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+<script>
+    {% if allow_pool_send  or  allow_pool_delete %}
+    function checkAll(checked){
+        if(checked)
+            $('.grouping:enabled').prop('checked', true);
+        else
+            $('.grouping:enabled').prop('checked', false);
+    }
+    function checkBoxes(){
+        if($('.grouping:checked').length > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function getCheckBoxes(){
+        var ProductID = [];
+        $('[type=checkbox]').each(function() {
+            if (this.checked) {
+                ProductID[ProductID.length] = $(this).val();
+            }
+        });
+        return ProductID;
+    }
+    {% endif %}
+    function refresh_pool() {
+        $.ajax({
+            url: '{{ ajax_pool_url }}',
+            cache: false,
+            success: function(data){
+                $('#pool_data').html(data);
+            }
+        });
+    }
+    $('document').ready(function(){
+        $('#refresh').click(function(){
+            refresh_pool();
+            return false;
+        });
+    {% if allow_pool_send %}
+        $('#send').click(function(){
+            document.location.href = '{{ site_url }}admin/notifications/pool_send/' + getCheckBoxes();
+            return false;
+        });
+    {% endif %}
+    {% if allow_pool_delete %}
+        $('#delete').click(function(){
+            document.location.href = '{{ site_url }}admin/notifications/pool_delete/' + getCheckBoxes();
+            return false;
+        });
+    {% endif %}
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,35 @@
+<div id="category_select_{{ category_helper_data.rand }}">
+    <span id="category_text_{{ category_helper_data.rand }}">
+    {% for category in category_helper_data.categories %}
+        <span class="block_cat" id="name_{{ category.id }}">
+            {{ category.name }}
+        </span>
+        <input type="hidden" name="category_id[]" value="{{ category.id }}" id="category_{{ category.id }}">
+    {% endfor %}
+    </span>&nbsp;&nbsp;
+    <a href="#" id="category_open_{{ category_helper_data.rand }}">{% helper lang.l('link_select_categories', 'store') %}</a>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    category_open = new loadingContent({
+        loadBlockSize: 'small',
+        loadBlockLeftType: 'center',
+        loadBlockTopType: 'center',
+        loadBlockTopPoint: 100,
+        closeBtnClass: 'close',
+        loadBlockTitle: '{% helper lang.l('field_categories', 'store') %}',
+        footerButtons: '<input type="button" id="submit" name="btn_confirm_del" value="{% helper lang.l('btn_select', 'store') %}" for="select_category" class="btn btn-success">'
+    })/*.update_css_styles({'z-index': 2000}).update_css_styles({'z-index': 2000}, 'bg');*/
+    $('#category_open_{{ category_helper_data.rand }}').unbind('click').click(function(){
+        $.ajax({
+            url: site_url + 'admin/store/ajax_category_select/{{ category_helper_data.id_product }}',
+            cache: false,
+            success: function(data){
+                category_open.show_load_block(data);
+            }
+        });
+        return false;
+    });
+});
+</script>

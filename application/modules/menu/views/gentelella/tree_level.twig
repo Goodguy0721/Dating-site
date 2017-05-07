@@ -1,0 +1,65 @@
+{% for item in list %}
+    {% set id=item.id %}
+<li id="item_{{ id }}" class="x_panel">
+    <div id="clsr{{ id }}"></div>
+    <div class="js-item">
+      {% if item.sub|length %}<a class="collapse-link"><i class="fa fa-chevron-down"></i></a>{% endif %}
+      {{ item.value }} (<span><span {% if item.status != 1 %}class="hide"{% endif %}
+         title="{% helper lang.l('make_inactive', 'start') %}">
+          {% helper lang.l('btn_tableicon_is_active','start') %}
+      </span><span {% if item.status == 1 %}class="hide"{% endif %}>
+          {% helper lang.l('btn_tableicon_is_not_active','start') %}
+      </span></span>)
+      <div class="nav navbar-right panel_toolbox">
+          <div class="btn-group">
+              <span class="btn btn-primary">
+                <a href="javascript:;" class="js-activate {% if item.status != 1 %}hide{% endif %}"
+                   data-id="{{ item.id }}" data-action="0">
+                    {% helper lang.l('make_inactive','start') %}
+                </a><a href="javascript:;" class="js-activate {% if item.status == 1 %}hide{% endif %}"
+                       data-id="{{ item.id }}" data-action="1">
+                    {% helper lang.l('make_active','start') %}
+                </a>
+              </span>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                  <li>
+                    <a href="javascript:;" class="js-activate {% if item.status != 1 %}hide{% endif %}"
+                       data-id="{{ item.id }}" data-action="0">
+                        {% helper lang.l('make_inactive','start') %}
+                    </a><a href="javascript:;" class="js-activate {% if item.status == 1 %}hide{% endif %}"
+                           data-id="{{ item.id }}" data-action="1">
+                        {% helper lang.l('make_active','start') %}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ site_url }}admin/menu/items_edit/{{ item.menu_id }}/{{ item.id }}">
+                        {% helper lang.l('button_create_submenu', 'menu') %}
+                    </a>
+                  </li>
+                  <li>
+                      <a href="{{ site_url }}admin/menu/items_edit/{{ item.menu_id }}/{{ item.parent_id }}/{{ item.id }}">
+                          {% helper lang.l('link_tableicon_edit','menu') %}
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" onclick="if (confirm('{% helper lang.l('note_delete_menu_item', 'menu', '', 'js') %}'))
+                         mlSorter.deleteItem({{ item.id }}); return false;">
+                          {% helper lang.l('link_tableicon_delete','menu') %}
+                      </a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+    </div>
+
+    <ul id="clsr{{ id }}ul" class="x_content sort connected" name="parent_{{ id }}" style="display: none;">
+        {% include 'tree_level.twig' with {list: item.sub} %}
+    </ul>
+</li>
+
+{% endfor %}

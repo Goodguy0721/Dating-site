@@ -1,0 +1,21 @@
+{% for key, item in menu %}
+            <div class="col-sm-3 col-md-2">
+                <div class="footer-menu-title-block" data-title="{{ item.value }}" data-id="footer-menu-title-{{ key }}" id="footer-menu-title-{{ key }}">
+                    {{ item.value }}
+                </div>
+                {% if item.sub is not empty %}
+                    <ul class="footer-menu-list-block list-group">
+                        {% for subitem in item.sub %}
+                            <li class="footer-menu-list-group-item">
+                                <a id="footer_{{ item.gid }}_{{ subitem.gid }}" href="{{ subitem.link }}">
+                                    <div class="footer-menu-list-group-item-text">
+                                        <span class="fm-icon"><i class="fa fa-angle-right"></i></span>
+                                        {{ subitem.value }}
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}

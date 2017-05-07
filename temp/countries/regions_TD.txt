@@ -1,0 +1,2 @@
+	677	Iriba	15.1166700	22.2500000	TD	02	0	0	Iriba	Iriba	Iriba	Iriba	Iriba	Iriba
+	677	Biltine	14.5333300	20.9166700	TD	02	0	0	Biltine	Biltine	Biltine	Biltine	Biltine	Biltine

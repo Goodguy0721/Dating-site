@@ -1,0 +1,84 @@
+    {% helper data_alert_lng = lang.l('service_activate_confirm', 'services') %}
+
+    <div class="b-memberships__list">
+        {% for item in services_block_services %}
+            <div class="b-memberships__item">
+                <div class="b-member-plan">
+                    {% if item.service_user_data.is_expired == '0' %}
+                    <ul class="b-member-plan__offers">
+                        {% if item.service_user_data.count is defined %}
+                            {% for setting_options in item.service_user_data.count %}
+                                <li>
+                                        {% helper lang.l('field_count', 'users') %}:
+                                        {{ setting_options }}
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                        <li>{% helper lang.l('expires', 'services') %}:
+                            &nbsp;{% helper date_format.tpl_date_format(item.service_user_data.date_expires, services_block_date_formats.date_format) %}
+                        </li>
+                        {% endif %}
+                    </ul>
+                    {% else %}
+                    {% endif %}
+                    <div class="b-member-plan__title">{{ item.name }}</div>
+                    <ul class="b-member-plan__offers">
+                        {% if item.description %}
+                            <li>{{ item.description }}</li>
+                        {% endif %}
+                        {% for setting_gid, setting_options in item.template.data_admin_array %}
+                            <li>
+                                {{ setting_options.name }}:
+                                {{ item.data_admin[setting_gid] }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="b-member-plan__price">
+                        {% if item.price %}
+                            <div>{% helper start.currency_format_output({'value': item.price}) %}</div>
+                        {% endif %}
+
+                        {% if item.price or item.template.price_type != 1 %}
+                            <div>
+                                <input type="button" 
+                                    class="btn btn-primary btn-sm {% if item.service_user_data.is_expired == '0' %}btn-service-active{% else %}{% endif %}" 
+                                    value="{% if item.service_user_data.is_expired == '0' %}
+                                       {% helper lang.l('activated', 'services') %}
+                                    {% else %}
+                                        {% helper lang.l('btn_buy_now', 'services') %}
+                                     {% endif %}"
+                                     onclick="locationHref('{% helper seo.seolink('services', 'form', {'gid': item.gid}) %}');" />
+                            </div>
+                        {% else %}
+                            <div>
+                                <input type="button" 
+                                       class="btn btn-primary btn-sm {% if item.service_user_data.is_expired == '0' %}btn-service-active{% else %}{% endif %}" 
+                                       onclick="
+                                    var href='{{ site_url }}services/user_service_activate/{{ user_id }}/0/{{ item.gid }}';
+                                    var alert='{{ data_alert_lng|e }}<br>{{ item.name|e }}<br>({{ item.description|e }})';
+
+                                    if(!parseInt('{{ item.template.alert_activate }}')) {
+                                        locationHref(href);
+                                    } else {
+                                        alerts.show({
+                                            text: alert.replace(/<br>/g, '\n'),
+                                            type: 'confirm',
+                                            ok_callback: function(){
+                                                locationHref(href);
+                                            }
+                                        });
+                                    }" 
+                                    value="{% if item.service_user_data.is_expired == '0' %}
+                                       {% helper lang.l('activated', 'services') %}
+                                    {% else %}
+                                        {% helper lang.l('btn_buy_now', 'services') %}
+                                     {% endif %}"/>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% helper lang.l('no_services', 'services') %}
+        {% endfor %}
+    </div>

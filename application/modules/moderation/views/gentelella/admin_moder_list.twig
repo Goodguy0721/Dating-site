@@ -1,0 +1,171 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_moderation_menu') %}
+            </ul>
+        </div>
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if type_name == 'all' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/moderation'">
+                        <input type="radio" name="looking_user_type"{% if type_name == 'all' %} selected{% endif %}>
+                        {% helper lang.l('all_objects', 'moderation') %}
+                    </label>
+                {% for item in moder_types %}
+                    {% if item.mtype >= 0 %}
+                    <label id="check_link" class="btn btn-default{% if type_name == item.name %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/moderation/index/{{ item.name }}'">
+                        <input type="radio" name="looking_user_type"{% if type_name == item.name %} selected{% endif %}>
+                        {% helper lang.l('mtype_'~item.name, 'moderation') %} ({{ item.count }})
+                    </label>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="col-xs-12">
+                <table id="users" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-title text-center">{% helper lang.l('field_date_add', 'moderation') %}</th>
+                        {% if type_name == 'all' %}
+                            <th class="column-title text-center">{% helper lang.l('moder_object_type', 'moderation') %}</th>
+                        {% endif %}
+                            <th class="column-title">{% helper lang.l('moder_object', 'moderation') %}</th>
+                            <th class="column-title">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in list %}
+                        <tr class="even pointer">
+                            <td class="text-center">{{ item.date_add }}</td>
+                        {% if type_name == 'all' %}
+                            <td class="text-center" style="text-transform: capitalize">
+                                {% helper lang.l('mtype_' ~ item.type_name, 'moderation') %}
+                            </td>
+                        {% endif %}
+                            <td>{{ item.html }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                   <button onclick="document.location.href='{{site_url}}admin/moderation/approve/{{item.id}}/'"
+                                           type="button" class="btn btn-primary">
+                                        {% helper lang.l('approve_object','moderation') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{site_url}}admin/moderation/approve/{{item.id}}/">
+                                                {% helper lang.l('approve_object','moderation') %}
+                                            </a>
+                                        </li>
+                                        {% if item.avail_decline %}
+                                            <li>
+                                                <a href='{{site_url}}admin/moderation/decline/{{item.id}}/'>
+                                                    {% helper lang.l('decline_object','moderation') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if item.view_link %}
+                                            <li>
+                                                <a href="{{ item.view_link }}" target="_blank">
+                                                    {% helper lang.l('view_object','moderation') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if item.edit_link %}
+                                            <li>
+                                                <a href="{{ item.edit_link }}" target="_blank">
+                                                    {% helper lang.l('edit_object','moderation') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if item.avail_delete %}
+                                            <li>
+                                                <a href="{{ site_url }}admin/moderation/delete_object/{{ item.id }}/"
+                                                   onclick="javascript: if(!confirm('{% helper lang.l('note_delete_object', 'moderation', '', 'js') %}')) return false;">
+                                                    {% helper lang.l('delete_object','moderation') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if item.mark_adult %}
+                                            <li>
+                                                <a href="{{ site_url }}admin/moderation/mark_adult_object/{{ item.id }}/">
+                                                    {% helper lang.l('mark_adult','moderation') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "order": [[0, 'desc']],
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_objects','moderation') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [{% if type_name == 'all' %}3{% else %}2{% endif %}]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        oTable.fnSort([[0, 'desc']]);
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

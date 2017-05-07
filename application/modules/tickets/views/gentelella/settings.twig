@@ -1,0 +1,61 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_tickets_menu') %}
+            </ul>
+        </div>
+        <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+            data-parsley-validate class="form-horizontal form-label-left">
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_settings_default_alert_email', 'tickets') %}:</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" value="{{ data.default_alert_email|e }}" name="default_alert_email" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_personal_communication', 'tickets') %}:</label>
+                <div class="col-md-6 col-sm-6 col-xs-12" style="padding-top: 15px;">
+                    <input type="checkbox" value="1" class="flat tableflat"
+                           name="status_personal_communication"
+                           {% if data.status_personal_communication %}checked{% endif %} />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_load_messages', 'tickets') %}:</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" value="{{ data.load_messages|e }}" name="load_messages" class="form-control">
+                </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                    {% helper save_text = lang.l('btn_save', 'start') %}
+                    <input type="submit" class="btn btn-success" value="{{ save_text }}" name="btn_save">
+                    <button type="button" class="btn btn-default"
+                            onclick="document.location.href='{{ site_url }}admin/start/index'">
+                        {% helper lang.l('btn_cancel', 'start') %}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script src="{{ site_url }}application/views/gentelella/js/icheck/icheck.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,16 @@
+	3855	Santa Teresa	10.2340900	-66.6630800	VE	15	0	0	Santa Teresa	Santa Teresa	Santa Teresa	Santa Teresa	Santa Teresa	Santa Teresa
+	3855	San Antonio de Los Altos	10.3885400	-66.9517900	VE	15	0	0	San Antonio de Los Altos	San Antonio de Los Altos	San Antonio de Los Altos	San Antonio de Los Altos	San Antonio de Los Altos	San Antonio de Los Altos
+	3855	Petare	10.4722600	-66.8015500	VE	15	0	0	Petare	Петаре	Petare	Petare	Petare	Petare
+	3855	Ocumare del Tuy	10.1164900	-66.7760900	VE	15	0	0	Ocumare del Tuy	Ocumare del Tuy	Ocumare del Tuy	Ocumare del Tuy	Ocumare del Tuy	Ocumare del Tuy
+	3855	Los Teques	10.3444700	-67.0432500	VE	15	0	0	Los Teques	Los Teques	Los Teques	Los Teques	Los Teques	Los Teques
+	3855	Los Dos Caminos	10.4938900	-66.8286300	VE	15	0	0	Los Dos Caminos	Los Dos Caminos	Los Dos Caminos	Los Dos Caminos	Los Dos Caminos	Los Dos Caminos
+	3855	Guatire	10.4762000	-66.5426600	VE	15	0	0	Guatire	Guatire	Guatire	Guatire	Guatire	Guatire
+	3855	Guarenas	10.4673600	-66.6066300	VE	15	0	0	Guarenas	Guarenas	Guarenas	Guarenas	Guarenas	Guarenas
+	3855	El Hatillo	10.4299400	-66.8161000	VE	15	0	0	El Hatillo	El Hatillo	El Hatillo	El Hatillo	El Hatillo	El Hatillo
+	3855	Cúa	10.1589200	-66.8857500	VE	15	0	0	Cúa	Куа	Cúa	Cúa	Cúa	Cúa
+	3855	Charallave	10.2424700	-66.8572300	VE	15	0	0	Charallave	Charallave	Charallave	Charallave	Charallave	Charallave
+	3855	Chacao	10.4959800	-66.8534700	VE	15	0	0	Chacao	Chacao	Chacao	Chacao	Chacao	Chacao
+	3855	Caucagüito	10.4866600	-66.7379900	VE	15	0	0	Caucagüito	Caucagüito	Caucagüito	Caucagüito	Caucagüito	Caucagüito
+	3855	Carrizal	10.3498500	-66.9863200	VE	15	0	0	Carrizal	Каррисаль	Carrizal	Carrizal	Carrizal	Carrizal
+	3855	Baruta	10.4339800	-66.8766200	VE	15	0	0	Baruta	Baruta	Baruta	Baruta	Baruta	Baruta
+	3855	Caucaguita	10.3578200	-66.8025200	VE	15	0	0	Caucaguita	Caucaguita	Caucaguita	Caucaguita	Caucaguita	Caucaguita

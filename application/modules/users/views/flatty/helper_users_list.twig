@@ -1,0 +1,7 @@
+{% for ukey, user in users %}
+<a href="{% helper seo.seolink('users', 'view', user) %}">{{ user.output_name }}</a>, {{ user.age }} {% if user.is_new %}NEW!{% endif %}<br>
+{% if user.relevation %}Match {{ user.relevation }}%<br>{% endif %}
+{% if user.location %}{{ user.location }}<br>{% endif %}
+{% if user.ethnicity %}<strong>Ethnicity</strong>: {{ user.ethnicity_str }}<br>{% endif %}
+{% if user.living_with %}<strong>Living with:</strong> {{ user.living_with_str }}<br>{% endif %}<br>
+{% endfor %}

@@ -1,0 +1,48 @@
+{% set rand = random(11111,9999) %}
+<div class="xdisplay_inputx form-group has-feedback">
+    <input type="text" class="form-control has-feedback-left" value="{{value}}" {% if attrs.disabled %}disabled{%endif %}
+        id="{% if attrs.id %}{{ attrs.id }}{% else %}single_cal_{{rand}}{% endif %}" placeholder="" aria-describedby="inputSuccess2Status3" name="{{name}}">
+    <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+    <span id="inputSuccess2Status3" class="sr-only">(success)</span>
+</div>
+<!-- datepicker -->
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        var showCurrentDate = true;
+        {% if attrs.noSetCurrentDate %}
+            showCurrentDate = false;
+        {% endif %}
+            
+        $('#{% if attrs.id %}{{ attrs.id }}{% else %}single_cal_{{rand}}{% endif %}').daterangepicker({
+              singleDatePicker: true,
+              showDropdowns: true,
+              showCurrentDate: showCurrentDate,
+              calender_style: "picker_2",
+              locale: {
+                format: '{% if attrs.alt_format %}{{ attrs.alt_format }}{% else %}YYYY-MM-DD{% endif %}',
+              },
+              showButtonPanel: true,
+            {% if attrs.year_range.min %}
+              minDate: new Date(new Date().getFullYear() + {{ attrs.year_range.min }}, new Date().getMonth(), new Date().getDate()),
+            {% else %}
+              minDate: new Date(new Date().getFullYear(), 0), 
+            {% endif %}
+
+            {% if attrs.year_range.max %}
+              maxDate: new Date(new Date().getFullYear() + {{ attrs.year_range.max }}, new Date().getMonth(), new Date().getDate()),
+            {% endif %}
+            {% if value %}
+              startDate: new Date("{{ value }}"),
+              endDate: new Date("{{ value }}"),
+            {% endif %}
+            {% if attrs.tstamp %}
+            startDate: new Date("{{ attrs.tstamp|date('Y-m-d') }}"),
+            endDate: new Date("{{ attrs.tstamp|date('Y-m-d') }}"),
+            {% endif %}
+          }, function (start, end, label) {
+
+          });
+    });
+</script>

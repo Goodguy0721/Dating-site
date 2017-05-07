@@ -1,0 +1,22 @@
+<div class="mobile-top-menu">
+    <div class="left-box"></div>
+    <div class="mobile-menu-wrapper">
+    </div>
+    <div class="right-box"></div>
+</div>
+<div class="scroll-to-top fixed mobile-menu-item" data-id="pjaxcontainer"><button class="btn btn-primary btn-large btn-block">{% helper lang.l('button_back_to_top', 'menu') %}</button></div>
+<script>
+    $(function () {
+        loadScripts(
+            [
+                "{% helper utils.jscript('', 'slick/slick.min.js', 'path') %}",
+                "{% helper utils.jscript('menu', '../views/flatty/js/mobile-top-menu.js', 'path') %}"
+            ],
+            function () {
+                mTopMenu = new mobileTopMenu;
+            },
+            ['mTopMenu'],
+            {async: true}
+        );
+    });
+</script>

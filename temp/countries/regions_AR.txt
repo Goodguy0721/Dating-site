@@ -1,0 +1,24 @@
+	229	Zapala	-38.8991600	-70.0544200	AR	15	0	0	Zapala	Zapala	Zapala	Zapala	Zapala	Zapala
+	229	Vista Alegre	-38.7500000	-68.1833300	AR	15	0	0	Vista Alegre	Vista Alegre	Vista Alegre	Vista Alegre	Vista Alegre	Vista Alegre
+	229	Villa La Angostura	-40.7617300	-71.6463100	AR	15	0	0	Villa La Angostura	Villa La Angostura	Villa La Angostura	Villa La Angostura	Villa La Angostura	Villa La Angostura
+	229	Senillosa	-39.0141200	-68.4328100	AR	15	0	0	Senillosa	Senillosa	Senillosa	Senillosa	Senillosa	Senillosa
+	229	San Martín de los Andes	-40.1578900	-71.3533700	AR	15	0	0	San Martín de los Andes	Сан-Мартин-Де-Лос-Андес	San Martín de los Andes	San Martín de los Andes	San Martín de los Andes	San Martín de los Andes
+	229	Plottier	-38.9666700	-68.2333300	AR	15	0	0	Plottier	Plottier	Plottier	Plottier	Plottier	Plottier
+	229	Plaza Huincul	-38.9259800	-69.2086300	AR	15	0	0	Plaza Huincul	Plaza Huincul	Plaza Huincul	Plaza Huincul	Plaza Huincul	Plaza Huincul
+	229	Piedra del Águila	-40.0481100	-70.0741000	AR	15	0	0	Piedra del Águila	Piedra del Águila	Piedra del Águila	Piedra del Águila	Piedra del Águila	Piedra del Águila
+	229	Picún Leufú	-39.5235100	-69.2796600	AR	15	0	0	Picún Leufú	Picún Leufú	Picún Leufú	Picún Leufú	Picún Leufú	Picún Leufú
+	229	Neuquén	-38.9516100	-68.0591000	AR	15	0	0	Neuquén	Неукен	Neuquén	Neuquén	Neuquén	Neuquén
+	229	Mariano Moreno	-38.7502900	-70.0236700	AR	15	0	0	Mariano Moreno	Mariano Moreno	Mariano Moreno	Mariano Moreno	Mariano Moreno	Mariano Moreno
+	229	Loncopué	-38.0728400	-70.6160900	AR	15	0	0	Loncopué	Loncopué	Loncopué	Loncopué	Loncopué	Loncopué
+	229	Las Ovejas	-36.9888100	-70.7499100	AR	15	0	0	Las Ovejas	Las Ovejas	Las Ovejas	Las Ovejas	Las Ovejas	Las Ovejas
+	229	Las Lajas	-38.5232200	-70.3674400	AR	15	0	0	Las Lajas	Las Lajas	Las Lajas	Las Lajas	Las Lajas	Las Lajas
+	229	Junín de los Andes	-39.9504300	-71.0693600	AR	15	0	0	Junín de los Andes	Junín de los Andes	Junín de los Andes	Junín de los Andes	Junín de los Andes	Junín de los Andes
+	229	El Huecú	-37.6452200	-70.5800600	AR	15	0	0	El Huecú	El Huecú	El Huecú	El Huecú	El Huecú	El Huecú
+	229	Cutral-Có	-38.9342400	-69.2305200	AR	15	0	0	Cutral-Có	Cutral-Có	Cutral-Có	Cutral-Có	Cutral-Có	Cutral-Có
+	229	Chos Malal	-37.3780900	-70.2708500	AR	15	0	0	Chos Malal	Chos Malal	Chos Malal	Chos Malal	Chos Malal	Chos Malal
+	229	Centenario	-38.8295500	-68.1318000	AR	15	0	0	Centenario	Centenario	Centenario	Centenario	Centenario	Centenario
+	229	Buta Ranquil	-37.0522200	-69.8771300	AR	15	0	0	Buta Ranquil	Buta Ranquil	Buta Ranquil	Buta Ranquil	Buta Ranquil	Buta Ranquil
+	229	Barrancas	-36.8166700	-69.9166700	AR	15	0	0	Barrancas	Barrancas	Barrancas	Barrancas	Barrancas	Barrancas
+	229	Añelo	-38.3544100	-68.7884000	AR	15	0	0	Añelo	Añelo	Añelo	Añelo	Añelo	Añelo
+	229	Andacollo	-37.1794500	-70.6691200	AR	15	0	0	Andacollo	Andacollo	Andacollo	Andacollo	Andacollo	Andacollo
+	229	Aluminé	-39.2368600	-70.9197000	AR	15	0	0	Aluminé	Aluminé	Aluminé	Aluminé	Aluminé	Aluminé

@@ -1,0 +1,36 @@
+<div id="user_select_{{ select_data.rand }}" class="user-select">
+	<span id="user_text_{{ select_data.rand }}">
+		{% for item in select_data.selected %}
+			{{ item.output_name }}
+			{% if item.output_name != item.nickname %}({{ item.nickname }}){% endif %}
+			{% if select_data.max_select != 1 %}<br>{% endif %}
+			<input type="hidden" value="{{ item.id }}"
+                   name="{{ select_data.var_name }}{% if select_data.max_select != 1 %}[]{% endif %}">
+		{% endfor %}
+	</span>
+	<a href="#" id="user_link_{{ select_data.rand }}">
+        {% helper lang.l('link_manage_users', 'users') %}
+    </a>
+	{% if select_data.max_select > 1 %}
+        <i>({% helper lang.l('max_user_select', 'users') %}: {{ select_data.max_select }})</i>
+    {% endif %}<br>
+	<div class="clr"></div>
+</div>
+<script>
+	$(function() {
+		loadScripts(
+			"{% helper utils.jscript('users', 'friends-select.js', 'path') %}",
+			function() {
+				new friendsSelect({
+					siteUrl: '{{ site_url }}',
+					user_type: '{{ select_data.user_type }}',
+					selected_items: [{{ select_data.selected_str }}],
+					var_name: '{{ select_data.var_name }}',
+					max: '{{ select_data.max_select }}',
+					rand: '{{ select_data.rand }}'
+				});
+			},
+			''
+		);
+	});
+</script>

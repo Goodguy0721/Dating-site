@@ -1,0 +1,36 @@
+<div class="media-gallery-content" id="image_content">
+</div>
+<script type="text/javascript">
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('media', 'edit_media.js', 'path') %}",
+			function(){
+				ep = new editMedia({
+					siteUrl: site_url,
+					mediaId: '{{ media_id }}',
+					galleryContentParam: '{{ param }}',
+					albumId: '{{ album_id }}',
+					gallery_name: '{% if gallery_name %}{{ gallery_name }}{% else %}eventsgallery{% endif %}',
+					selections: {{ selections|json_encode() }},
+                    saveAfterSelect: true,
+					success_request: function(message) {
+						if (message){
+							error_object.show_error_block(message, 'success');
+						} else {
+							error_object.show_error_block('{% helper lang.l('image_update_success', 'media', '', 'js') %}', 'success');
+						}
+					},
+					fail_request: function(message) {
+                        error_object.show_error_block(message, 'error');
+                    },
+					error_in_adding_to_favorites: '{% helper lang.l('error_in_adding_to_favorites', 'media', '', 'js') %}',
+					success_add_to_favorites: '{% helper lang.l('success_add_to_favorites', 'media') %}',
+					rand_param: {{ rand }},
+                                        getMediaContentUrl: 'events/ajaxGetMediaContent/'
+				});
+			},
+			['ep'],
+			{async: true, cache: false}
+		);
+	});
+</script>

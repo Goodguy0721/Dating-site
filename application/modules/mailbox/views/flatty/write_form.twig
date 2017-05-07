@@ -1,0 +1,185 @@
+		{% helper input_default = lang.l('input_default', 'start', '', 'button') %}
+		<form action="" method="post" id="write_form" class="write_form">
+			{% if type != 'short' %}
+                <div class="form-group m0 btn_friendlist">
+                    <div class="col-left-w45 pos-rel">
+                        {% set user_callback %}
+                            function(variable, value, data){
+                                $('#user_hidden').val(variable.toString()).change();
+                                $('#user_text').val(value);
+                            }
+                        {% endset %}
+
+                        {% if message.recipient.id > 0 %}
+                            {%set id_to_user = message.id_to_user %}
+                        {% endif %}
+
+                        <label for="user_text" class="control-label">{% helper lang.l('field_user', 'mailbox') %}</label>
+                        <input type="text" name="name_to_user" id="user_text" autocomplete="off"
+                                       class="long form-control"
+                                       placeholder="{% helper lang.l('input_default', 'start', '', 'button') %}"
+                                       value="{% if message.recipient.id %}{{ message.recipient.output_name|striptags }}{% if message.recipient.output_name != message.recipient.nickname %} ({{ message.recipient.nickname|striptags }}){% endif %}{% endif %}"
+                                       required>&nbsp;
+                            {% helper friendlist.friend_input({
+                                'id_user': id_to_user,
+                                'var_user':
+                                'id_to_user',
+                                'values_callback': user_callback
+                            }) %}
+                        <input type="hidden" name="id_to_user" id="user_hidden" value="{{ id_to_user|e }}">
+                        <script>
+                            $(function(){
+                                loadScripts(
+                                    "{% helper utils.jscript('', 'autocomplete_input.js', 'path') %}",
+                                    function(){
+                                        user_autocomplete = new autocompleteInput({
+                                            siteUrl: '{{ site_url }}',
+                                            dataUrl: 'users/ajax_get_users_data',
+                                            id_text: 'user_text',
+                                            id_hidden: 'user_hidden',
+                                            rand: '{{ rand }}',
+                                            format_callback: function(data){
+                                                return data.output_name + (data.nickname != data.output_name ? ' (' + data.nickname + ')' : '');
+                                            }
+                                        });
+                                    },
+                                    'user_autocomplete'
+                                );
+                            });
+                        </script>
+                    </div>
+                </div>
+			{% endif %}
+
+            {% if not is_reply %}
+                <div class="form-group m0">
+                    <div class="col-left-w45">
+                        <label for="subject" class="control-label">{% helper lang.l('field_subject', 'mailbox') %}</label>
+                        <input type="text" name="subject" value="{{ message.subject|e }}"
+                               id="subject"
+                               placeholder="{% helper lang.l('input_default', 'start', '', 'button') %}"
+                               autocomplete="false" class="form-control">
+                    </div>
+                </div>
+			{% endif %}
+
+            <div class="form-group mt20">
+                <div class="mailbox_content__img fleft">
+                        <img src="{{ user_session_data.logo }}" class="img-rounded">
+                </div>
+    			<div class="form-group col-left-w45{% if not is_reply %} create_message{% endif %}">
+                    <textarea name="message" row="5" id="message"
+                        class="form-control"
+                        autocomplete="false">{{ message.message|e }}</textarea>
+                </div>
+			</div>
+
+			{% if type != 'short' or is_reply %}
+                <div class="form-group form_box">
+                    <div class="col-left-w45 pos-rel upload-btn">
+                        <span data-role="filebutton" class="btn btn-secondary">
+                            <s>
+                                {% helper lang.l('btn_choose_file', 'start') %}
+                            </s>
+                            <input type="file" name="attach" class="attach fleft"
+                                id="attach" multiple="true" size="40">
+                        </span>
+                        <div id="btn_attach" class="btn btn-default fright">
+                            {% helper lang.l('btn_upload', 'start') %}
+                        </div>
+                    </div>
+                </div>
+                <div class="attachbox {% if not message.attaches %}hide{% endif %} plr15 mb10" id="attaches">
+                    <ul>
+                        {% for item in message.attaches %}
+                            <li id="delete_upload{{ item.id }}">
+                                <a href="{{ item.link }}" target="_blank">
+                                    {{ item.name }}
+                                </a>&nbsp;
+                                <span class="gray">{{ item.size }}</span>
+                                <div class="act fright">
+                                    <a href="javascript:void(0);" class="btn_delete_upload"
+                                        data-id="{{ item.id }}">
+                                        <i class="fa fa-times fa-1x"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+                        <script>
+                            $(function(){
+                                var allowed_mimes = {{ attach_settings.allowed_mimes|json_encode() }};
+                                loadScripts(
+                                    "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                                    function(){
+                                        var lang_data = {
+                                                errors: {
+                                                    file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                                                }
+                                            };
+                                        au = new uploader({
+                                            Accept: 'application/json',
+                                            siteUrl: site_url,
+                                            zoneId: 'attachbox',
+                                            fileId: 'attach',
+                                            formId: 'write_form',
+                                            sendType: 'file',
+                                            sendId: 'btn_attach',
+                                            messageId: 'attach-input-error',
+                                            maxFileSize: '{{ attach_settings.max_size }}',
+                                            mimeType: allowed_mimes,
+                                            lang: lang_data,
+                                            cbOnSend: function(noFile) {
+                                                mb.save_{% if is_reply %}reply{% else %}message{% endif %}(function(data) {
+                                                    var options = {
+                                                        uploadUrl: 'mailbox/upload_attach/' +
+                                                            data.{% if is_reply %}reply{% else %}message{% endif %}_id};
+                                                    if (noFile) {
+                                                        au.sendNoFileApi(options);
+                                                    } else {
+                                                        au.send(options);
+                                                    }
+                                                }, true);
+                                            },
+                                            cbOnUpload: function(name, data){
+                                                var attaches = $('#attaches');
+                                                $('#attaches ul').append('<li id="delete_upload'+data.id+'"><a href="'+data.link+'" target="_blank">'+name+'</a>&nbsp;<span class="gray">'+data.size+'</span><div class="act fright"><a href="javascript:void(0);" class="btn_delete_upload" data-id="'+data.id+'"><i class="fa fa-times fa-1x"></i></a></div></li>')
+                                                    .add('#delete_upload'+data.id+'');
+                                                attaches.show();
+                                                error_object.show_error_block('{% helper lang.l('success_attach_uploaded', 'mailbox', '', 'js') %}', 'success');
+                                            },
+                                            cbOnError: function(data){
+                                                if (data.errors.length) {
+                                                    error_object.show_error_block(data.errors, 'error');
+                                                }
+                                            },
+                                            cbOnProcessError: function(data){
+                                                error_object.show_error_block(data, 'error');
+                                            }
+                                        });
+                                    },
+                                    ['au'],
+                                    {async: false}
+                                );
+                            });
+                        </script>
+            {% endif %}
+
+            {% if type == 'short' and not is_reply %}
+                <button class="btn" id="write_message_full">
+                    {% helper lang.l('link_message_form', 'mailbox') %}
+                </button>
+            {% endif %}
+
+            <div class="fright mb10">
+                <input type="button" name="btn_send" id="btn_send_message" class="btn btn-primary{% if is_reply %}-inverted{% endif %} input-lg"
+                    value="{% helper lang.l('btn_send', 'mailbox', '', 'button') %}">
+            </div>
+            <div class="clr"></div>
+
+            {% if type == 'short' and not is_reply %}
+                <input type="hidden" name="id_to_user" value="{{ user_id }}">
+            {% endif %}
+		</form>

@@ -1,0 +1,179 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 content-page">
+  <div class="info-content-block wysiwyg verifications">
+    <h1>Profile photo verification</h1>
+
+    <div class="pull-right">
+      {#<img src="{{ site_url }}application/views/flatty/img/verification.png" class="img-responsive">#}
+    </div>
+
+    <p><strong>There are three ways to verify your profile</strong></p>
+
+    <ol>
+      <li><i class="img-circle">1</i>Take a photo of yourself holding a piece of paper with "MP"
+        written on it.</li>
+      <li><i class="img-circle">2</i>Or send a copy of document with your picture on it (such as passport,
+        driving license, ID card).</li>
+      <li><i class="img-circle">3</i>Take a photo of yourself with a webcam.</li>
+    </ol>
+
+    <p><strong>Why you should get verified</strong></p>
+
+    <ul>
+      <li><i class="fa fa-check"></i>You profile will appear before nonverified members.</li>
+      <li><i class="fa fa-check"></i>Verified members profiles get more views.</li>
+      <li><i class="fa fa-check"></i>Verified members go on more dates, meet new friends and are just cooler!</li>
+      <li><i class="fa fa-check"></i>Verified members get a verified badge on their profile. A lil bling bling action.</li>
+    </ul>
+
+    <p>Upload a photo of yourself holding a sign with "MP" written on it or a document with your picture on it: </p>
+
+    <div class="media-photo-editor" style="position: relative;">
+      <div id="avatar_owner_content">
+          <form id="upload_avatar" name="upload_video" method="post"
+            enctype="multipart/form-data" role="form">
+            <div id="load_avatar">
+                <div class="form-group">
+                  <div id="dnd_upload_avatar" class="drag">
+                    <div id="dndfiles_avatar" class="drag-area">
+                      <div class="drag">
+                        Drag documents hear
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="upload-btn">
+                      <span data-role="filebutton">
+                          <span>{% helper lang.l('btn_choose_file', 'start') %}</span>
+                          <input type="file" name="avatar" id="file" />
+                      </span>
+                      &nbsp;({% helper lang.l('max', 'start') %}
+                      {% helper utils.bytesFormat(1000000) %})
+
+                      <button type="button" name="btn_use_webcamera" id="btn_use_webcamera"
+                        class="btn btn-default pull-right">
+                        {% helper lang.l('wc_btn_use_webcamera', 'users') %}
+                      </button>
+                    </div>
+                    <div style="margin: 10px 0;">
+                      <span id="attach_error_avatar"></span>
+                      <div id="attach_warning_avatar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <form name="avatar" id="stuff" class="hide" action="" method="post" enctype="multipart/form-data">
+              <div class="form-group video_capture">
+                <label id="allow">
+                  {% helper lang.l('wc_get_user_camera', 'users') %}
+                </label>
+                <video id="video" width="100%" height="240" autoplay="autoplay" class="img-responsive"></video>
+                <canvas id="canvas" class="img-responsive" width="0" height="0"></canvas>
+                <input type="file" name="avatar" id="web_avatar" class="hide" />
+              </div>
+
+              <button type="button" id="take_picture" class="btn btn-primary">
+                {% helper lang.l('wc_take_picture', 'users') %}
+              </button>
+              <button type="button" id="repicture" class="btn btn-primary hide">
+                {% helper lang.l('wc_repicture', 'users') %}
+              </button>
+              <button type="button" id="save_picture" class="btn btn-primary hide">
+                {% helper lang.l('wc_save_picture', 'users') %}
+              </button>
+              <button type="button" class="btn btn-default pull-right hide" id="btn_cancel_webcamera">
+                {% helper lang.l('btn_close', 'start') %}
+              </button>
+            </form>
+
+            <script type="text/javascript">
+              $(function() {
+                loadScripts(
+                [
+                  "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                  "{% helper utils.jscript('', 'canvas-to-blob.min.js', 'path') %}",
+                  "{% helper utils.jscript('', 'webcamera.js', 'path') %}"
+                ],
+                function() {
+                    uploaderObj = new uploader({
+                      siteUrl: site_url,
+                      Accept: 'application/json',
+                      uploadUrl: 'users/verification_save',
+                      zoneId: 'dndfiles_avatar',
+                      fileId: 'file',
+                      formId: 'upload_avatar',
+                      filebarId: 'filebar_avatar',
+                      multiFile: true,
+                      messageId: 'attach_error_avatar',
+                      warningId: 'attach_warning_avatar',
+                      maxFileSize: 1000000,
+                      mimeType: ['image/jpeg','image/jpg','image/png'],
+                      fileListInZone: true,
+                      lang: {
+                        errors: {
+                          file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                        }
+                      },
+                      cbOnUpload: function(name, data){
+
+                      },
+                      cbOnComplete: function(data){
+                        if (data.errors && data.errors.length) {
+                          error_object.show_error_block(data.errors, 'error');
+                        } else {
+                          error_object.show_error_block('File is sent successfully', 'success');
+                        }
+                      },
+                      ailedjqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+                    });
+                    web_uploader = new uploader({
+                      siteUrl: site_url,
+                      Accept: 'application/json',
+                      uploadUrl: 'users/verification_save',
+                      fileId: 'web_avatar',
+                      formId: 'upload_avatar',
+                      sendType: 'file',
+                      sendId: 'save_picture',
+                      multiFile: false,
+                      messageId: 'attach_error_avatar',
+                      warningId: 'attach_warning_avatar',
+                      maxFileSize: 1000000,
+                      mimeType: ['image/jpeg','image/jpg','image/png'],
+                      fileListInZone: true,
+                      cbOnUpload: function(name, data){
+
+                      },
+                      cbOnComplete: function(data) {
+                        if (data.errors && data.errors.length) {
+                          error_object.show_error_block(data.errors, 'error');
+                        } else {
+                          error_object.show_error_block('File is sent successfully', 'success');
+                          $('#btn_cancel_webcamera').trigger('click');
+                        }
+                      },
+                      jqueryFormPluginUrl: '{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}'
+                    });
+                    web_camera = new webcamera({
+                      wc_width: 400,
+                      wc_height: 300,
+                      wc_alert: '{% helper lang.l('wc_alert', 'users') %}',
+                      wc_load_avatar: 'load_avatar',
+                      wc_user_avatar: '',
+                      file_var: web_uploader,
+                      wc_photo_edit: 'image_content_avatar',
+                    });
+                  },
+                  ['uploaderObj', 'web_uploader', 'web_camera'],
+                  {async: false}
+                );
+              });
+            </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include '@app/footer.twig' %}

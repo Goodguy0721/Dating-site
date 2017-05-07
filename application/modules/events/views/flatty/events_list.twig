@@ -1,0 +1,90 @@
+{% include '@app/header.twig' %}
+<div class="search-header events-search clearfix">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <h1 class="title">
+            {% if header_text %}
+                {{ header_text }}
+            {% else %}
+                {% helper lang.l('header_index', 'events') %}
+            {% endif %}
+            <span class="events-navigation-button" data-mobile-pop="#eventsnav"><i class="fa fa-ellipsis-v"></i></span>
+        </h1>
+        <div class="menu">
+            {% include 'events_nav_top_links.twig' %}
+        </div>
+    </div>
+</div> 
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-lg-push-9 col-md-push-9">
+    <div class="search-param-button mb10"><a>{% helper lang.l('search_params_button', 'users') %}</a></div>
+    <div class="row">
+        <div class="events-search col-lg-12">
+            {% helper events.events_search_form({'search_type': search_type, 'action': 'search'}) %}
+        </div>
+        <div class="events-navigation col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            {% helper events.events_nav_side_links({'search_type': search_type, 'action': 'search'}) %}
+            <br>
+            {% if module_settings.is_active %}
+                <div>
+                    <a href="{% helper seo.seolink('events', 'edit') %}">
+                        {% helper lang.l('link_add', 'events') %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="events-navigation-mobile mb20">
+        <div class="b-mobile-pop" id="eventsnav">
+            <div class="b-mobile-pop__header container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:void(0);" data-mobile-pop-close="#likenav"><i class="fa fa-times fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="b-mobile-pop__content">
+                <div class="tabs tab-size-15 noPrint">
+                    {% helper events.events_nav_side_links({'search_type': search_type, 'action': 'search', 'template': 'popup'}) %}
+                </div>
+                {% if module_settings.is_active %}
+                    <div>
+                        <a href="{% helper seo.seolink('events', 'edit') %}">
+                            {% helper lang.l('link_add', 'events') %}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-lg-pull-3 col-md-pull-3">
+    <div class="events-list row clearfix">
+        {{ block }}
+    </div>
+    <!--end Events list -->
+</div>
+    
+<script type="text/javascript">
+    $('.search-param-button').click(function () {
+        $('.events-search .search-form').toggle();
+    });
+    
+    $("[data-mobile-pop]").on( "click", function() {
+        var mob_pop = $(this).attr("data-mobile-pop");
+        var is_open = $(mob_pop).hasClass('b-mobile-pop_show');
+        if(is_open) {
+            $(mob_pop).removeClass('b-mobile-pop_show');
+            $('.events-navigation-mobile').hide();
+        } else {
+            $(mob_pop).addClass("b-mobile-pop_show");
+            $('.events-navigation-mobile').show();
+        }
+    });
+    $("[data-mobile-pop-close]").on( "click", function() {
+        $(this).parents('.b-mobile-pop').removeClass('b-mobile-pop_show');
+        $('.events-navigation-mobile').hide();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,59 @@
+{% include "@app/header.twig" %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title h4">
+            {% helper lang.l('admin_header_rtl_changer', 'themes') %}
+        </div>
+        <div class="x_content">
+            <div class="form-group">
+                <label class="col-sm-3 col-xs-12 control-label">
+                  {% helper lang.l('field_theme', 'themes') %}: </label>
+                <div class="col-sm-9 col-xs-12">
+                    <select name="id_theme" id="id_theme" class="form-control">
+                        <option value="">...</option>
+                        {% for item in themes %}
+                        <option value="{{ item.id }}" {% if item.id == id_theme %}selected{% endif %}>{{ item.theme_name }}({{ item.theme_type }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            {% if id_theme %}
+            <div class="form-group">
+                <label class="col-sm-3 col-xs-12 control-label">
+                  {% helper lang.l('field_css', 'themes') %}: </label>
+                <div class="col-sm-9 col-xs-12">
+                    <select name="id_css" id="id_css" class="form-control">
+                        <option value="">...</option>
+                        {% for key, item in theme_data.css %}
+                        <option value="{{ key }}" {%if key == css_gid %}selected{% endif %}>{{ key }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            {% if css_gid %}
+            <div class="form-group">
+                <label class="col-sm-3 col-xs-12 control-label">
+                  {% helper lang.l('field_css_content', 'themes') %}: </label>
+                <div class="col-sm-9 col-xs-12">
+                    <textarea cols="80" cols="10" readonly class="form-control">{{ css_data }}</textarea>
+                </div>
+            </div>
+
+            {% endif %}
+            {% endif %}
+    </div>
+<div class="clearfix"></div>
+<script>
+$(function(){
+    $('#id_theme').bind('change', function(){
+        location.href='{{ site_url }}admin/themes/rtl_parser/'+$(this).val();
+    });
+    $('#id_css').bind('change', function(){
+        location.href='{{ site_url }}admin/themes/rtl_parser/'+$('#id_theme').val()+'/'+$(this).val();
+    });
+});
+</script>
+
+{% include "@app/footer.twig" %}

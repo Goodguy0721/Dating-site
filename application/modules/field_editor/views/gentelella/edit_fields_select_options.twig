@@ -1,0 +1,25 @@
+					<ul id="select_options" class="to_do">
+					{% for key, item in reference_data.option %}
+					<li id="option_{{ key }}">
+							<div class="pull-right">
+								<a href="javascript:void(0);" class="active_link {% if key == default_option_gid %}hide{% endif %}"
+									title="{% helper lang.l('link_default_option', 'field_editor', '', 'button') %}">
+									{% helper lang.l('link_make_default', 'field_editor') %}
+								</a>
+								<a href="javascript:void(0);" class="deactive_link {% if key != default_option_gid %}hide{% endif %}"
+									title="{% helper lang.l('link_default_option', 'field_editor', '', 'button') %}">
+									{% helper lang.l('text_default_option', 'field_editor') %}
+								</a>
+								<a href="javascript:void(0);" class="edit_link"
+									title="{% helper lang.l('link_edit_option', 'field_editor', '', 'button') %}">
+									{% helper lang.l('btn_edit', 'start') %}
+								</a>
+								<a href="javascript:void(0);" class="delete_link"
+									title="{% helper lang.l('link_delete_option', 'field_editor', '', 'button') %}">
+									{% helper lang.l('btn_delete', 'start') %}
+								</a>
+							</div>
+							{{ item|default("&nbsp;") }}
+					</li>
+					{% endfor %}
+					</ul>

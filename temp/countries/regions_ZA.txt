@@ -1,0 +1,36 @@
+	3283	Zoar	-33.4956000	21.4437300	ZA	11	0	0	Zoar	Zoar	Zoar	Zoar	Zoar	Zoar
+	3283	Arniston	-34.6673900	20.2308600	ZA	11	0	0	Arniston	Arniston	Arniston	Arniston	Arniston	Arniston
+	3283	Swellendam	-34.0226200	20.4417100	ZA	11	0	0	Swellendam	Swellendam	Swellendam	Swellendam	Swellendam	Swellendam
+	3283	Riversdale	-34.0934500	21.2572500	ZA	11	0	0	Riversdale	Riversdale	Riversdale	Riversdale	Riversdale	Riversdale
+	3283	Prince Albert	-33.2247600	22.0267300	ZA	11	0	0	Prince Albert	Prince Albert	Prince Albert	Prince Albert	Prince Albert	Prince Albert
+	3283	Plettenberg Bay	-34.0527400	23.3716000	ZA	11	0	0	Plettenberg Bay	Plettenberg Bay	Plettenberg Bay	Plettenberg Bay	Plettenberg Bay	Plettenberg Bay
+	3283	Oudtshoorn	-33.6004700	22.1995500	ZA	11	0	0	Oudtshoorn	Oudtshoorn	Oudtshoorn	Oudtshoorn	Oudtshoorn	Oudtshoorn
+	3283	Mossel Bay	-34.1830700	22.1460500	ZA	11	0	0	Mossel Bay	Моссел-Бей	Mossel Bay	Mossel Bay	Mossel Bay	Mossel Bay
+	3283	Ladismith	-33.4933100	21.2675500	ZA	11	0	0	Ladismith	Ladismith	Ladismith	Ladismith	Ladismith	Ladismith
+	3283	Knysna	-34.0362700	23.0471300	ZA	11	0	0	Knysna	Knysna	Knysna	Knysna	Knysna	Knysna
+	3283	George	-33.9630000	22.4617300	ZA	11	0	0	George	Джордж	George	George	George	George
+	3283	De Rust	-33.4903500	22.5352300	ZA	11	0	0	De Rust	De Rust	De Rust	De Rust	De Rust	De Rust
+	3283	Calitzdorp	-33.5275500	21.6762000	ZA	11	0	0	Calitzdorp	Calitzdorp	Calitzdorp	Calitzdorp	Calitzdorp	Calitzdorp
+	3283	Bredasdorp	-34.5321500	20.0403100	ZA	11	0	0	Bredasdorp	Bredasdorp	Bredasdorp	Bredasdorp	Bredasdorp	Bredasdorp
+	3283	Beaufort West	-32.3567100	22.5829500	ZA	11	0	0	Beaufort West	Beaufort West	Beaufort West	Beaufort West	Beaufort West	Beaufort West
+	3283	Albertina	-34.2054400	21.5800100	ZA	11	0	0	Albertina	Albertina	Albertina	Albertina	Albertina	Albertina
+	3283	Worcester	-33.6465100	19.4485200	ZA	11	0	0	Worcester	Вустер	Worcester	Worcester	Worcester	Worcester
+	3283	Vredendal	-31.6683300	18.5011900	ZA	11	0	0	Vredendal	Vredendal	Vredendal	Vredendal	Vredendal	Vredendal
+	3283	Stellenbosch	-33.9346200	18.8667600	ZA	11	0	0	Stellenbosch	Стелленбос	Stellenbosch	Stellenbosch	Stellenbosch	Stellenbosch
+	3283	Saldanha	-33.0116700	17.9442000	ZA	11	0	0	Saldanha	Салдана	Saldanha	Saldanha	Saldanha	Saldanha
+	3283	Rosebank	-33.9555600	18.4741700	ZA	11	0	0	Rosebank	Rosebank	Rosebank	Rosebank	Rosebank	Rosebank
+	3283	Paarl	-33.7337800	18.9752300	ZA	11	0	0	Paarl	Паарл	Paarl	Paarl	Paarl	Paarl
+	3283	Malmesbury	-33.4608000	18.7271400	ZA	11	0	0	Malmesbury	Malmesbury	Malmesbury	Malmesbury	Malmesbury	Malmesbury
+	3283	Kraaifontein	-33.8480800	18.7172400	ZA	11	0	0	Kraaifontein	Kraaifontein	Kraaifontein	Kraaifontein	Kraaifontein	Kraaifontein
+	3283	Hermanus	-34.4187000	19.2344600	ZA	11	0	0	Hermanus	Hermanus	Hermanus	Hermanus	Hermanus	Hermanus
+	3283	Grabouw	-34.1515200	19.0150900	ZA	11	0	0	Grabouw	Grabouw	Grabouw	Grabouw	Grabouw	Grabouw
+	3283	Constantia	-34.0313900	18.4183300	ZA	11	0	0	Constantia	Constantia	Constantia	Constantia	Constantia	Constantia
+	3283	Claremont	-33.9805600	18.4652800	ZA	11	0	0	Claremont	Claremont	Claremont	Claremont	Claremont	Claremont
+	3283	Ceres	-33.3688900	19.3109600	ZA	11	0	0	Ceres	Церера	Ceres	Ceres	Ceres	Ceres
+	3283	Cape Town	-33.9258400	18.4232200	ZA	11	0	0	Cape Town	Кейптаун	Cape Town	Cape Town	Cape Town	Cape Town
+	3283	Caledon	-34.2299700	19.4265000	ZA	11	0	0	Caledon	Caledon	Caledon	Caledon	Caledon	Caledon
+	3283	Atlantis	-33.5666800	18.4833500	ZA	11	0	0	Atlantis	Атлантида	Atlantis	Atlantis	Atlantis	Atlantis
+	3283	Sunset Beach	-33.8539500	18.4923100	ZA	11	0	0	Sunset Beach	Sunset Beach	Sunset Beach	Sunset Beach	Sunset Beach	Sunset Beach
+	3283	Rondebosch	-33.9633300	18.4763900	ZA	11	0	0	Rondebosch	Rondebosch	Rondebosch	Rondebosch	Rondebosch	Rondebosch
+	3283	Newlands	-33.9784600	18.4481000	ZA	11	0	0	Newlands	Newlands	Newlands	Newlands	Newlands	Newlands
+	3283	Retreat	-34.0551500	18.4761700	ZA	11	0	0	Retreat	Retreat	Retreat	Retreat	Retreat	Retreat

@@ -1,0 +1,130 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default" id="events_edit_main_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_main/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type" selected>
+                        {% helper lang.l('menu_edit_main_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default" id="events_edit_participants_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_participants/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('menu_edit_participants_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default active" id="events_edit_album_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_album/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('menu_edit_album_item', 'events') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form id="item_form" onsubmit="return" method="post" enctype="multipart/form-data" name="item_form"
+                  class="form-horizontal form-label-left">               
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_upload_photos', 'store') %}: </label>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div>{% helper lang.l('field_max_photo_size', 'store') %}: {% if photo_config.max_size %}{% helper lang.l('max', 'start') %}{% helper utils.bytes_format(photo_config.max_size) %}{% endif %}</div>
+                        <div>{% helper lang.l('field_max_width_height_photo', 'store') %}: {{ photo_config.max_width }}x{{ photo_config.max_height }}</div>
+                        <div>{% helper lang.l('field_photo_file_types', 'store') %}: {{ photo_config.file_formats_str }}</div>
+                        <div>
+                            <div id="dnd_upload" class="drag">
+                                <div id="dndfiles" class="drag-area">
+                                    <div class="drag">
+                                        <p>{% helper lang.l('drag_photos', 'media') %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="upload-btn">
+                                    <span data-role="filebutton">
+                                        <span>{% helper lang.l('btn_choose_file', 'start') %}</span>
+                                        <input type="file" class="btn btn-default" name="multiUpload" id="multiUpload" multiple />
+                                    </span>
+                                </div>
+                                &nbsp;<span id="attach-input-error"></span>
+                                <div id="attach-input-warning"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <input type="button" value="{% helper lang.l('btn_add', 'start', '', 'button') %}" name="btn_save" id="btn_mupload" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/events/media_list/{{ event_id }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<script type='text/javascript'>
+    $(function(){
+            loadScripts(
+            [
+                "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                "{% helper utils.jscript('events', 'events_media.js', 'path') %}",
+            ],
+            function(){
+                var photo_mimes = {{ photo_config.allowed_mimes|json_encode() }};
+                var event_id = {{ event_id }};
+                events_photo = new events_media({
+                        siteUrl: site_url,
+                        idEvent: event_id,
+                        photoSize: 'big',
+                        galleryContentDiv: 'events_photo',
+                        lang_delete_confirm: '{% helper lang.l('delete_confirm', 'media') %}',
+                });
+                var lang_data = {
+                        errors: {
+                            file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                        }
+                    };
+                photo_uploader = new uploader({
+                                Accept: 'application/json',
+                                siteUrl: site_url,
+                                uploadUrl: 'admin/events/ajaxSaveMedia/photo/'+event_id,
+                                zoneId: 'dndfiles',
+                                fileId: 'multiUpload',
+                                formId: 'item_form',
+                                sendType: 'file',
+                                sendId: 'btn_mupload',
+                                messageId: 'attach-input-error',
+                                warningId: 'attach-input-warning',
+                                maxFileSize: {{ photo_config.max_size }},
+                                mimeType:  photo_mimes,
+                                lang: lang_data,
+                                cbOnQueueComplete: function(data){
+                                        window.location.replace(site_url + 'admin/events/media_list/' + event_id);
+                                },
+                                createThumb: true,
+                                thumbWidth: 60,
+                                thumbHeight: 60,
+                                thumbCrop: true,
+                                thumbJpeg: false,
+                                thumbBg: 'transparent',
+                                fileListInZone: true,
+                                jqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+                   });
+                },
+                ['photo_uploader', 'events_photo'],
+                {async: false}
+            );
+        });
+</script>
+
+{% include '@app/footer.twig' %}

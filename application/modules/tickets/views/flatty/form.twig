@@ -1,0 +1,151 @@
+{% include '@app/header.twig' %}
+
+<div class="clearfix"></div>
+<div class="content-block">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <h1>{% helper seo.seo_tags('header_text') %}</h1>
+            {% if not is_auth or not settings.status_personal_communication %}
+                <div class="contact-us-form">
+                    <p class="mb10">
+                        {% helper lang.l('text_contact_form_edit', 'contact_us') %}
+                    </p>
+                    <div class="row mb20">
+                        <form action="" method="post">
+                            {% if reasons %}
+                                <div class="form-group">
+                                    <label class="col-xs-12 tali">
+                                        {% helper lang.l('field_reason', 'tickets') %}:
+                                    </label>
+                                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                        <select name="id_reason" class="form-control">
+                                            {% for item in reasons %}
+                                                <option value="{{ item.id }}" {% if data.id_reason == item.id %}selected{% endif %}>
+                                                    {{ item.name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                        <span class="pginfo msg reason"></span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <label class="col-xs-12 tali">
+                                    {% helper lang.l('field_user_name', 'tickets') %}:
+                                </label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <input type="text" name="user_name" value="{{ data.user_name|e }}" class="form-control"><br>
+                                    <span class="pginfo msg user_name"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-12 tali">
+                                    {% helper lang.l('field_user_email', 'tickets') %}:
+                                </label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <input type="text" name="user_email" value="{{ data.user_email }}" class="form-control"><br>
+                                    <span class="pginfo msg user_email"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-12 tali">
+                                    {% helper lang.l('field_subject', 'tickets') %}:
+                                </label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <input type="text" name="subject" value="{{ data.subject }}" class="form-control"><br>
+                                    <span class="pginfo msg subject"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-lg-8">
+                                    <label>
+                                        {% helper lang.l('field_message', 'tickets') %}:
+                                    </label>
+                                    <div>
+                                        <div>
+                                            <textarea name="message" class="form-control">{{ data.message }}</textarea>
+                                        </div>
+                                        <div><span class="pginfo msg message"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="captcha form-group">
+                                <label class="col-xs-12 tali">
+                                    {% helper lang.l('field_security_code', 'tickets') %}:
+                                </label>
+                                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 captcha-img">
+                                    {{ data.captcha }}<br>
+                                    <input type="text" name="captcha_code" value="" class="form-control"><br>
+                                    <span class="pginfo msg captcha_code"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-12">
+                                    <input type="submit" class="btn btn-primary" name="btn_save" value="{% helper lang.l('btn_send', 'start', '', 'button') %}">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {% helper banners.show_banner_place('banner-980x90') %}
+                </div>
+            {% else %}
+                <div class="contact-us-form">
+                    <div class="row mb20">
+                        <form action="" method="post">
+                            <div class="col-xs-12 col-lg-8">
+                                <div class="form-group">
+                                    <label>
+                                        {% helper lang.l('text_messages_admin', 'tickets') %}:
+                                    </label>
+                                    <div>
+                                        <div><textarea class="form-control" name="messages_admin" id="messages_admin"></textarea></div>
+                                        <div><span class="pginfo msg messages_admin"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-12">
+                                    <input type="button" class="btn btn-primary" name="btn_send" id="send_message" value="{% helper lang.l('btn_send', 'start', '', 'button') %}">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {% helper banners.show_banner_place('banner-980x90') %}
+                </div>
+                    {{ user.id }}
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                    <div id="tickets_content" class="tickets_lists table-div list">{{ messages_block }}</div>
+                </div>
+                <script>
+                    $(function(){
+                        loadScripts(
+                            "{% helper utils.jscript('tickets', 'tickets.js', 'path') %}",
+                            function(){
+                                messages = new tickets({
+                                    siteUrl: site_url,
+                                    idUser: id_user,
+                                    messagesLoadLimit: '{{ settings.load_messages }}',
+                                    messagesButtonMore: '{% helper lang.l('link_show_more', 'tickets') %}',
+                                });
+                            },
+                            ['messages'],
+                            {async: false}
+                        );
+                    });
+                </script>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="ptb20">
+                {% helper banners.show_banner_place('banner-320x250') %}
+                {% helper banners.show_banner_place('banner-320x75') %}
+                {% helper banners.show_banner_place('banner-185x155') %}
+                {% helper banners.show_banner_place('banner-185x75') %}
+            </div>
+        </div>
+</div>
+<div class="social-buttons-block mt10">
+{% helper social_networking.show_social_networks_like() %}
+{% helper social_networking.show_social_networks_share() %}
+{% helper social_networking.show_social_networks_comments() %}
+</div>
+{% include '@app/footer.twig' %}

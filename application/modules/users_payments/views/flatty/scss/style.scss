@@ -1,0 +1,39 @@
+.b-billing-systems {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.b-billing-systems__item {
+	margin-bottom: 15px;
+	min-width: 130px;
+	padding: 0 5px;
+}
+.b-billing-systems__link {
+	background:$content_bg;
+	border: 2px $delimiter_color solid;
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	padding: 10px 15px;
+
+	&:hover,
+	&:active {
+		border-color: rgba(0, 0, 0, 0.25);
+	}
+	&.active {
+		border-color: $link_color;
+	}
+	.img-responsive {
+		margin: 0 auto;
+	}
+}
+#amount_block{
+    display:table;
+    padding:0;
+    
+    & .form-control{
+        display: table-cell;
+    }
+    & span{
+        display: table-cell;
+    }
+}

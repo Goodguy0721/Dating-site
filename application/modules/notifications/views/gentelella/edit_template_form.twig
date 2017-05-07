@@ -1,0 +1,199 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <div id="edit_tabs" class="btn-group" data-toggle="buttons">
+                <label class="active btn btn-default" onclick="javascript: openTab('template_settings'); return false;"
+                       data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <input type="radio" name="user_type"
+                           value="{% helper lang.l('template_settings', 'notifications') %}"
+                           selected>{% helper lang.l('template_settings', 'notifications') %}
+                </label>
+            {% for key, item in langs %}
+                <label class="btn btn-default" onclick="javascript: openTab('lang{{ item.id }}'); return false;"
+                       data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                    <input type="radio" name="user_type"
+                           value="{{ item.name }}"
+                           selected>{{ item.name }}
+                </label>
+            {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <form id="tabs" method="post" action="{{data.action}}" name="save_form"
+              enctype="multipart/form-data" class="form-horizontal form-label-left">
+            <div id="template_settings" class="js-tab">
+                <div class="x_title">
+                    <h2>
+                        {% helper lang.l('admin_header_template_edit', 'notifications') %}
+                    </h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_template_gid', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            {% if allow_edit %}
+                                <input type="text" value="{{ data.gid }}" name="gid" class="form-control">
+                            {% else %}
+                                <label class="data-label">
+                                    {{ data.gid }}
+                                </label>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_template_name', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            {% if allow_edit %}
+                                <input type="text" value="{{ data.name }}" name="name" class="form-control">
+                            {% else %}
+                                <label class="data-label">
+                                    {{ data.name }}
+                                </label>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_content_type', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            {% if allow_edit %}
+                                <select name="content_type" class="form-control">
+                                    <option value="text" {% if data.content_type == 'text' %}selected{% endif %}>
+                                        {% helper lang.l('field_content_type_text', 'notifications') %}
+                                    </option>
+                                    <option value="html" {% if data.content_type == 'html' %}selected{% endif %}>
+                                        {% helper lang.l('field_content_type_html', 'notifications') %}
+                                    </option>
+                                </select>
+                            {% else %}
+                                <label class="data-label">
+                                    {{ data.content_type }}
+                                </label>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_template_vars', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            {% if allow_edit  and  allow_var_edit %}
+                                <input type="text" value="{{ data.vars_str }}" name="vars" class="form-control">
+                            {% else %}
+                                <label class="data-label">
+                                    {{ data.vars_str }}
+                                </label>
+                            {% endif %}
+                            <label class="data-label">
+                                <i>{% helper lang.l('field_template_vars_text', 'notifications') %}</i>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% for key, item in langs %}
+                {% set content=data_content[key] %}
+                <div id="lang{{ item.id }}" class="js-tab hide">
+                    <div class="x_title">
+                        <h2>
+                            {% helper lang.l('admin_header_template_content', 'notifications') %}: {{ item.name }}
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_available_global_variables', 'notifications') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                {% for var in global_vars %}
+                                    <label class="data-label">
+                                        [{{ var }}]
+                                    </label>
+                                {% else %}
+                                    <label class="data-label">
+                                        <i>{% helper lang.l('empty_variables', 'notifications') %}</i>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_available_variables', 'notifications') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                {% for var in data.vars %}
+                                    <label class="data-label">
+                                        [{{ var }}]
+                                    </label>
+                                {% else %}
+                                    <label class="data-label">
+                                        <i>{% helper lang.l('empty_variables', 'notifications') %}</i>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_subject', 'notifications') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" value="{{ content.subject }}" name="subject[{{ item.id }}]" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_content', 'notifications') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                {% if data.content_type == 'html' %}
+                                    <label class="data-label">
+                                        {{ content.content_fck }}
+                                    </label>
+                                {% else %}
+                                    <textarea name="content[{{ item.id }}]" rows="4" class="form-control">{% spaceless %}
+                                        {{ content.content }}
+                                    {% endspaceless %}</textarea>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                    <input type="submit" name="btn_save"  class="btn btn-success"
+                            value="{% helper lang.l('btn_save','start','','button') %}">
+                    <a class="btn btn-default cancel" href="{{site_url}}admin/notifications/templates">
+                        {% helper lang.l('btn_cancel','start') %}
+                    </a>
+                </div>
+                <div class='clearfix'></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openTab(id){
+        $('#tabs > .js-tab').addClass('hide');
+        $('#'+id).removeClass('hide');
+    }
+</script>
+
+{% include '@app/footer.twig' %}

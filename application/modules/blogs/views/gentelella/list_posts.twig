@@ -1,0 +1,113 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <table id="blog_posts" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_title', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('field_user', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('link_created', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('field_description', 'blogs') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in blog_posts %}
+                        <tr class="even pointer">
+                            <td>{{ item.title }}</td>
+                            <td>
+                                <a href="{{ site_url }}admin/users/edit/personal/{{ blog_data.user_id }}">
+                                    {{ blog_data.user.output_name }}
+                                </a>
+                            </td>
+                            <td>{{ item.date_created }}</td>
+                            <td>{{ item.body }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick = "document.location.href='{{ site_url }}admin/blogs/comments/{{ item.id }}'">
+                                            {% helper lang.l('link_view_comments','blogs') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/blogs/comments/{{ item.id }}">
+                                                {% helper lang.l('link_view_comments','blogs') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/blogs/edit_post/{{ item.id }}">
+                                                {% helper lang.l('link_edit_post','blogs') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/blogs/delete_post/{{ item.id }}"
+                                               onclick="javascript: if(!confirm('{% helper lang.l('note_delete_post', 'blogs', '', 'js') %}')) return false;">
+                                                {% helper lang.l('link_delete_post','blogs') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#blog_posts').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_posts','blogs') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1,3,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

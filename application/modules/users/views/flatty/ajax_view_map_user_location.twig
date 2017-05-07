@@ -1,0 +1,13 @@
+<div class="content-block load_content">
+    <h1>
+        {{ header }}
+    </h1>
+    <div class="inside">
+        {% if load_map_scripts %}
+            {% helper geomap.show_default_map('profile_view', markers, map_settings, '600', '400', 1, 'users_map_container') %}
+        {% endif %}
+
+        {% helper geomap.show_default_map('profile_view', markers, map_settings, '600', '400', 1, 'users_map_container') %}
+    </div>
+    <div class="clr"></div>
+</div>

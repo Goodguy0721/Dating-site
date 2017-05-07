@@ -1,0 +1,29 @@
+<?php
+
+$install_lang["notification_store_confirmed_recipient"] = "Подтверждено получателем, заказ не оплачен";
+$install_lang["notification_store_delivered_for"] = "Для вас доставлен подарок";
+$install_lang["notification_store_delivered_from"] = "Ваш подарок доставлен получателю";
+$install_lang["notification_store_during_delivery"] = "Ваш подарок отправлен получателю";
+$install_lang["notification_store_paid"] = "Оплата прошла успешно";
+$install_lang["notification_store_pending_payment"] = "В ожидании оплаты";
+$install_lang["notification_store_rejected_admin"] = "Заказ отклонен";
+$install_lang["notification_store_rejected_recipient"] = "Отклонено получателем, заказ не оплачен";
+$install_lang["notification_store_waits_user_consent"] = "Ожидается согласие получателя, заказ не оплачен";
+$install_lang["tpl_store_confirmed_recipient_content"] = "Здравствуйте, [sender_nickname]!\n\nПользователь [recipient_nickname] согласен принять ваш подарок #[code], вам осталось только произвести оплату заказа.";
+$install_lang["tpl_store_confirmed_recipient_subject"] = "Подтверждено получателем, заказ не оплачен";
+$install_lang["tpl_store_delivered_for_content"] = "Здравствуйте, [recipient_nickname]!\n\nДля вас доставлен подарок, который был отправлен вам пользователем [sender_nickname].";
+$install_lang["tpl_store_delivered_for_subject"] = "Для вас доставлен подарок";
+$install_lang["tpl_store_delivered_from_content"] = "Здравствуйте, [sender_nickname]!\n\nОтправленный вами заказ #[code] доставлен.";
+$install_lang["tpl_store_delivered_from_subject"] = "Ваш подарок доставлен получателю";
+$install_lang["tpl_store_during_delivery_content"] = "Здравствуйте, [sender_nickname]!\n\nВаш заказ #[code] успешно отправлен получателю.";
+$install_lang["tpl_store_during_delivery_subject"] = "Ваш подарок отправлен получателю";
+$install_lang["tpl_store_paid_content"] = "Здравствуйте, [sender_nickname]!\n\nОплата заказа #[code] прошла успешно.";
+$install_lang["tpl_store_paid_subject"] = "Оплата прошла успешно";
+$install_lang["tpl_store_pending_payment_content"] = "Здравствуйте, [sender_nickname]!\n\nУ вашего заказа #[code] новый статус '[status]'";
+$install_lang["tpl_store_pending_payment_subject"] = "В ожидании оплаты";
+$install_lang["tpl_store_rejected_admin_content"] = "[comment]";
+$install_lang["tpl_store_rejected_admin_subject"] = "Заказ отклонен";
+$install_lang["tpl_store_rejected_recipient_content"] = "Здравствуйте, [sender_nickname]!\n\nПользователь [recipient_nickname] отказался принять ваш подарок #[code].";
+$install_lang["tpl_store_rejected_recipient_subject"] = "Отклонено получателем, заказ не оплачен";
+$install_lang["tpl_store_waits_user_consent_content"] = "Здравствуйте, [sender_nickname]!\n\nУ вашего заказа #[code] новый статус '[status]'.\n\nПосле получения согласия от пользователя [recipient_nickname] необходимо будет произвести оплату заказа.";
+$install_lang["tpl_store_waits_user_consent_subject"] = "Ожидается согласие пользователя, заказ не оплачен";

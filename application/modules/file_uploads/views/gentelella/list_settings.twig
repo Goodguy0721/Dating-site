@@ -1,0 +1,123 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+    <div id="actions" class="hide">
+        {% if allow_config_add %}
+        <div class="btn-group">
+          <a href="{{ site_url }}admin/file_uploads/config_edit" class="btn btn-primary">
+            {% helper lang.l('link_add_config', 'file_uploads') %}</a>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{{ site_url }}admin/file_uploads/config_edit">
+                {% helper lang.l('link_add_config', 'file_uploads') %}</a>
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+    </div>
+    <table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">{% helper lang.l('field_gid', 'file_uploads') %}</th>
+                <th class="column-title">{% helper lang.l('field_name', 'file_uploads') %}</th>
+                <th class="column-title">{% helper lang.l('actions', 'file_uploads') %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if configs %}
+            {% for item in configs %}
+            <tr>
+                <td><strong>{{ item.gid }}</strong></td>
+                <td>{{ item.name }}</td>
+                <td class="icons">
+                  <div class="btn-group">
+                    <a href="{{ site_url }}admin/file_uploads/config_edit/{{ item.id }}"
+                       title="{% helper lang.l('link_edit_config', 'file_uploads') %}"
+                       class="btn btn-primary">
+                       {% helper lang.l('link_tableicon_edit_config', 'file_uploads') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="{{ site_url }}admin/file_uploads/config_edit/{{ item.id }}"
+                           title="{% helper lang.l('link_edit_config', 'file_uploads') %}">
+                           {% helper lang.l('link_tableicon_edit_config', 'file_uploads') %}
+                        </a>
+                      </li>
+                    {% if allow_config_add %}
+                      <li>
+                        <a href="{{ site_url }}admin/file_uploads/config_delete/{{ item.id }}"
+                            onclick="javascript: if(!confirm('{% helper lang.l('note_delete_config', 'file_uploads', '', 'js') %}')) return false;"
+                            title="{% helper lang.l('link_delete_config', 'file_uploads') %}">
+                            {% helper lang.l('link_tableicon_delete_thumb', 'file_uploads') %}
+                        </a>
+                      </li>
+                    {% endif %}
+                    </ul>
+                  </div>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan=3>{% helper lang.l('no_configs', 'file_uploads') %}</td></tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

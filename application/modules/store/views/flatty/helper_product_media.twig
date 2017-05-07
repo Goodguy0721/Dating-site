@@ -1,0 +1,22 @@
+{% for key, item_m in media %}
+	{% if item_m.media %}
+		<span class="store-photo">
+			<img class="pointer img-responsive img-center" data-click="view-media-photo" data-id-media="{{ item_m.info.media_id }}" src="{% if item_m.info.size == 'small' %}{{ item_m.media.thumbs.small }}{% elseif item_m.info.size == 'middle' %}{{ item_m.media.thumbs.middle }}{% else %}{{ item_m.media.thumbs.grand }}{% endif %}" />
+			{% if item_m.info.remove_url %}<a class="photo-remove{% if section != 'media' %} hide{% endif %}" href="{{ item_m.info.remove_url }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_photo', 'store') %}')) return false;"><img src="{{ site_root }}{{ img_folder }}icon-delete.png" width="16" height="16" border="0"></a>{% endif %}
+		</span>
+	{% elseif item_m.video_content %}
+		{% if item_m.info.size == 'big' %}
+			<div class="center-block img-center" style="width:620px; margin:0 auto;">{{ item_m.video_content.embed }}</div>
+			{% if item_m.info.remove_url %}<a class="photo-remove{% if section != 'media' %} hide{% endif %}" href="{{ item_m.info.remove_url }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_video', 'store') %}')) return false;"><img src="{{ site_root }}{{ img_folder }}icon-delete.png" width="16" height="16" border="0"></a>{% endif %}
+		{% else %}
+			<span class="store-photo">
+				<img class="pointer img-responsive img-center" data-click="view-media-video" data-id-media="0" src="{{ item_m.video_content.thumbs.big }}" />
+				{% if item_m.info.remove_url %}<a class="photo-remove{% if section != 'media' %} hide{% endif %}" href="{{ item_m.info.remove_url }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_video', 'store') %}')) return false;"><img src="{{ site_root }}{{ img_folder }}icon-delete.png" width="16" height="16" border="0"></a>{% endif %}
+			</span>
+		{% endif %}
+	{% else %}
+		<i class="fa fa-gift fa-5x"></i>
+	{% endif %}
+{% else %}
+<i class="fa fa-gift fa-5x"></i>
+{% endfor %}

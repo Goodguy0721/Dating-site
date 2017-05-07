@@ -1,0 +1,41 @@
+    <div class="form-group even">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.ld_header('flashchat_skin', 'chats') %}</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            {% helper ld_flashchat_skin = lang.ld('flashchat_skin', 'chats') %}
+            <select name="settings[server_settings][by_flashchat_free][skin]" class="form-control">
+                {% for key,item in ld_flashchat_skin.option %}
+                <option {% if chat.settings.server_settings.by_flashchat_free.skin == key %}
+                    selected="selected"{% endif %} value="{{ key }}">
+                    {{ item }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group even">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.ld_header('flashchat_lang', 'chats') %}
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            {% helper ld_flashchat_lang = lang.ld('flashchat_lang', 'chats') %}
+            <select name="settings[server_settings][by_flashchat_free][lang]" class="form-control">
+                {% for key,item in ld_flashchat_lang.option %}
+                <option {% if chat.settings.server_settings.by_flashchat_free.lang == key %}
+                    selected="selected"{% endif %}value="{{ key }}">
+                    {{ item }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group even">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('flashchat_chatroom', 'chats') %}:
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input name="settings[server_settings][by_flashchat_free][chat_room]" type="text"
+                   value="{{ chat.settings.server_settings.by_flashchat_free.chat_room }}"
+                   class="form-control">
+        </div>
+    </div>

@@ -1,0 +1,6 @@
+	3823	Urganch	41.5500000	60.6333300	UZ	05	0	0	Urganch	Ургенч	Urganch	Urganch	Urganch	Urganch
+	3823	Showot	41.6558300	60.3025000	UZ	05	0	0	Showot	Showot	Showot	Showot	Showot	Showot
+	3823	Qŭshkŭpir	41.5350000	60.3455600	UZ	05	0	0	Qŭshkŭpir	Qŭshkŭpir	Qŭshkŭpir	Qŭshkŭpir	Qŭshkŭpir	Qŭshkŭpir
+	3823	Khiwa	41.3783300	60.3638900	UZ	05	0	0	Khiwa	Хива	Khiwa	Khiwa	Khiwa	Khiwa
+	3823	Hazorasp	41.3194400	61.0741700	UZ	05	0	0	Hazorasp	Hazorasp	Hazorasp	Hazorasp	Hazorasp	Hazorasp
+	3823	Gurlan	41.8447200	60.3919400	UZ	05	0	0	Gurlan	Гурлан	Gurlan	Gurlan	Gurlan	Gurlan

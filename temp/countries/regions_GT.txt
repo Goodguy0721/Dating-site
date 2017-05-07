@@ -1,0 +1,21 @@
+	1161	Zacualpa	15.0833300	-90.8333300	GT	14	0	0	Zacualpa	Zacualpa	Zacualpa	Zacualpa	Zacualpa	Zacualpa
+	1161	Uspantán	15.3833300	-90.8333300	GT	14	0	0	Uspantán	Uspantán	Uspantán	Uspantán	Uspantán	Uspantán
+	1161	Santa Cruz del Quiché	15.0305600	-91.1488900	GT	14	0	0	Santa Cruz del Quiché	Санта-Крус-дель-Киче	Santa Cruz del Quiché	Santa Cruz del Quiché	Santa Cruz del Quiché	Santa Cruz del Quiché
+	1161	San Pedro Jocopilas	15.0944400	-91.1513900	GT	14	0	0	San Pedro Jocopilas	San Pedro Jocopilas	San Pedro Jocopilas	San Pedro Jocopilas	San Pedro Jocopilas	San Pedro Jocopilas
+	1161	San Luis Ixcán	15.7872200	-91.0950000	GT	14	0	0	San Luis Ixcán	San Luis Ixcán	San Luis Ixcán	San Luis Ixcán	San Luis Ixcán	San Luis Ixcán
+	1161	San Juan Cotzal	15.4341700	-91.0341700	GT	14	0	0	San Juan Cotzal	San Juan Cotzal	San Juan Cotzal	San Juan Cotzal	San Juan Cotzal	San Juan Cotzal
+	1161	San Bartolomé Jocotenango	15.1927800	-91.0772200	GT	14	0	0	San Bartolomé Jocotenango	San Bartolomé Jocotenango	San Bartolomé Jocotenango	San Bartolomé Jocotenango	San Bartolomé Jocotenango	San Bartolomé Jocotenango
+	1161	San Antonio Ilotenango	15.0547200	-91.2297200	GT	14	0	0	San Antonio Ilotenango	San Antonio Ilotenango	San Antonio Ilotenango	San Antonio Ilotenango	San Antonio Ilotenango	San Antonio Ilotenango
+	1161	San Andrés Sajcabajá	15.2166700	-90.9166700	GT	14	0	0	San Andrés Sajcabajá	San Andrés Sajcabajá	San Andrés Sajcabajá	San Andrés Sajcabajá	San Andrés Sajcabajá	San Andrés Sajcabajá
+	1161	Sacapulas	15.2866700	-91.0872200	GT	14	0	0	Sacapulas	Sacapulas	Sacapulas	Sacapulas	Sacapulas	Sacapulas
+	1161	Patzité	14.9666700	-91.2166700	GT	14	0	0	Patzité	Patzité	Patzité	Patzité	Patzité	Patzité
+	1161	Pachalun	14.9247200	-90.6627800	GT	14	0	0	Pachalun	Pachalun	Pachalun	Pachalun	Pachalun	Pachalun
+	1161	Nebaj	15.4058300	-91.1461100	GT	14	0	0	Nebaj	Nebaj	Nebaj	Nebaj	Nebaj	Nebaj
+	1161	Joyabaj	14.9950000	-90.8061100	GT	14	0	0	Joyabaj	Joyabaj	Joyabaj	Joyabaj	Joyabaj	Joyabaj
+	1161	Cunén	15.3375000	-91.0269400	GT	14	0	0	Cunén	Cunén	Cunén	Cunén	Cunén	Cunén
+	1161	Chinique	15.0447200	-91.0258300	GT	14	0	0	Chinique	Chinique	Chinique	Chinique	Chinique	Chinique
+	1161	Chichicastenango	14.9333300	-91.1166700	GT	14	0	0	Chichicastenango	Чичикастенанго	Chichicastenango	Chichicastenango	Chichicastenango	Chichicastenango
+	1161	Chiché	15.0086100	-91.0650000	GT	14	0	0	Chiché	Chiché	Chiché	Chiché	Chiché	Chiché
+	1161	Chicamán	15.4000000	-90.7666700	GT	14	0	0	Chicamán	Chicamán	Chicamán	Chicamán	Chicamán	Chicamán
+	1161	Chajul	15.4852800	-91.0341700	GT	14	0	0	Chajul	Chajul	Chajul	Chajul	Chajul	Chajul
+	1161	Canillá	15.1666700	-90.8500000	GT	14	0	0	Canillá	Canillá	Canillá	Canillá	Canillá	Canillá

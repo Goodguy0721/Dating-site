@@ -1,0 +1,5 @@
+	2023	Timbuktu	16.7734800	-3.0074200	ML	08	0	0	Timbuktu	Тимбукту	Timbuktu	Timbuktu	Timbuktu	Timbuktu
+	2023	Taoudenni	22.6744300	-3.9789100	ML	08	0	0	Taoudenni	Taoudenni	Taoudenni	Taoudenni	Taoudenni	Taoudenni
+	2023	Niafunké	15.9322000	-3.9906000	ML	08	0	0	Niafunké	Niafunké	Niafunké	Niafunké	Niafunké	Niafunké
+	2023	Goundam	16.4145300	-3.6707500	ML	08	0	0	Goundam	Goundam	Goundam	Goundam	Goundam	Goundam
+	2023	Araouane	18.9047600	-3.5264900	ML	08	0	0	Araouane	Araouane	Araouane	Araouane	Araouane	Araouane

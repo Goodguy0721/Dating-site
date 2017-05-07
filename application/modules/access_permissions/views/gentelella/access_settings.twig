@@ -1,0 +1,87 @@
+<div class="load_content_controller">
+    <div class="x_title h4">
+        {% if data.permissions.method %}
+            {% helper lang.l('field_permission_'~data.permissions.module_gid~'_'~data.permissions.method, 'access_permissions') %}
+        {% else %}
+            {% helper lang.l('field_permission_'~data.permissions.module_gid, 'access_permissions') %}
+        {% endif %}
+    </div>
+    <div id="access-settings-form">
+        <form action="{{ data.action }}" method="post" enctype="multipart/form-data" id="save_form" name="permissions_form" data-parsley-validate class="form-horizontal form-label-left">
+            <input type="hidden" name="send" value="1">
+            <input type="hidden" name="module[access]" value="{{ data.permissions.access }}">
+            <input type="hidden" name="module[module_gid]" value="{{ data.permissions.module_gid }}">
+            {% if data.permissions.user_type %}
+                <input type="hidden" name="permissions[user_type]" value="{{ data.permissions.user_type }}">
+            {% endif %}
+            {% if data.permissions.method %}
+                <input type="hidden" name="module[method]" value="{{ data.permissions.method }}">
+                {% set field_action = 'field_action_'~data.permissions.module_gid~'_'~data.permissions.method %}
+                {% set permission = data.permissions.module_gid~'_'~data.permissions.module_gid~'_'~data.permissions.method %}
+             {% else %}
+                 {% set field_action = 'field_action_'~data.permissions.module_gid %}
+                 {% set permission = data.permissions.module_gid~'_'~data.permissions.module_gid %}
+            {% endif %}
+            <input type="hidden" name="module[permission]" value="{{ permission }}">
+            {% for group in groups %}
+                <div class="subscription-block">
+                    <div class="h5">{{ group.current_name }}</div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l(field_action, 'access_permissions') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="hidden" value="0" name="permissions[list][{{ permission }}][{{ group.gid }}][status]">
+                                <div class="checkbox">
+                                    <input type="checkbox" value="1" name="permissions[list][{{ permission }}][{{ group.gid }}][status]" {% if access[group.gid].status != 'empty' %}checked{% endif %} class="flat">
+                               </div>
+                            </div>
+                        </div>
+                        {% helper count = access_permissions.isCount({'data': data['permissions'], 'permissions': access[group.gid]['permissions'], 'group_gid': group.gid}) %}
+                        {% if count %}
+                            {% for type, value in count %}
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                        {{ value.name }}:
+                                    </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" name="permissions[list][{{ permission }}][{{ group.gid }}][count][{{ type }}]" value="{{ value.count }}" class="form-control" {% if value.count == 0 %}placeholder="{% helper lang.l('field_unlimited', 'access_permissions') %}"{% endif %}>
+                                        <div class="clarification">{% helper lang.l('field_ziro', 'access_permissions') %}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                </div>
+            {% else %}
+                <div class="subscription-block">
+                    <div class="h5">{% helper lang.l('field_users_guest', 'access_permissions') %}</div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l(field_action, 'access_permissions') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="checkbox">
+                                    <input type="hidden" value="0" name="permissions[list][{{ permission }}][guest][status]">
+                                    <input type="checkbox" value="1" name="permissions[list][{{ permission }}][guest][status]" {% if access.guest.status != 'empty' %}checked{% endif %} class="flat">
+                                </div>
+                            </div>
+                        </div>
+                        {% helper count = access_permissions.isCount({'permissions': access.guest['permissions'], 'data': data['permissions'], 'group_gid': 'guest'}) %}
+                        {% if count %}
+                            {% for type, value in count %}
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                        {{ value.name }}:
+                                    </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" name="permissions[list][{{ permission }}][guest][count][{{ type }}]" value="{{ value.count }}" class="form-control" {% if value.count == 0 %}placeholder="{% helper lang.l('field_unlimited', 'access_permissions') %}"{% endif %}>
+                                        <div class="clarification">{% helper lang.l('field_ziro', 'access_permissions') %}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>

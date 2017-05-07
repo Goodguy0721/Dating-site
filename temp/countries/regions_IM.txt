@@ -1,0 +1,6 @@
+	1396	Ramsey	54.3227300	-4.3852600	IM	00	0	0	Ramsey	Рамси	Ramsey	Ramsey	Ramsey	Ramsey
+	1396	Port Erin	54.0848700	-4.7509900	IM	00	0	0	Port Erin	Порт-Эрин	Port Erin	Port Erin	Port Erin	Port Erin
+	1396	Peel	54.2220900	-4.6909900	IM	00	0	0	Peel	Пил	Peel	Peel	Peel	Peel
+	1396	Laxey	54.2301700	-4.3998500	IM	00	0	0	Laxey	Лакси	Laxey	Laxey	Laxey	Laxey
+	1396	Douglas	54.1500000	-4.4833300	IM	00	0	0	Douglas	Дуглас	Douglas	Douglas	Douglas	Douglas
+	1396	Castletown	54.0744500	-4.6536500	IM	00	0	0	Castletown	Каслтаун	Castletown	Castletown	Castletown	Castletown

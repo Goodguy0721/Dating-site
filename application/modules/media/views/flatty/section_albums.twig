@@ -1,0 +1,62 @@
+<div class="albums-list">
+    <div class="popup-opt-title">{% helper lang.l('albums', 'media') %}</div>
+    <div id="common_albums{% if not is_user_media_owner %}_view{% endif  %}">
+        {% for key, item in media_albums.common %}
+            <div class="clearfix album album-item {% if not is_user_media_user or not is_user_media_owner %}disabled{% endif %}
+                {% helper utils.inArray(item.id, media_in_album, 'active') %}" id="common_album_{{ item.id }}">
+                <div class="fleft">
+                    <input type="checkbox" {% if not is_user_media_user or not is_user_media_owner %}disabled{% endif %}
+                                           {% helper utils.inArray(item.id, media_in_album, 'checked') %}>
+                    <span title="{{ item.name }}">{{ item.name }}</span>
+                </div>
+                <div class="fright">
+                    <i class="fa fa-lock"></i>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if user_session_data.user_id  %}
+    <div id="user_albums">
+        {% for key, item in media_albums.user %}
+            <div class="clearfix album album-item {% helper utils.inArray(item.id, media_in_album, 'active') %}" id="user_album_{{ item.id }}">
+                <div class="fleft">
+                    <input type="checkbox" {% helper utils.inArray(item.id, media_in_album, 'checked') %}>
+                    <span title="{{ item.name }}">{{ item.name }}</span>
+                </div>
+                <div class="fright">
+                    <i class="fa fa-globe"></i>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+	<div class="mtb10">
+		<span class="pointer link-r-margin btn btn-primary" id="create_album_button">
+            <span class="a">{% helper lang.l('create_album', 'media') %}</span>
+        </span>
+		<div class="hide mt10" id="create_album_container">
+			<span class="input-w-btn">
+				<input type="text" name="album_name" class="form-control mb10" id="album_name">
+				<button id="save_album" class="btn btn-default">
+                    {% helper lang.l('btn_apply', 'start') %}
+                </button>
+			</span>
+		</div>
+	</div>
+    {% endif %}
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('media', 'albums.js', 'path') %}",
+			function(){
+				albums_obj = new albums({
+                    siteUrl: site_url,
+                    create_album_success_request: function(){}
+                });
+			},
+			['albums_obj'],
+			{async: false}
+		);
+	});
+</script>

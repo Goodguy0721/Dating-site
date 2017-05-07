@@ -1,0 +1,83 @@
+	2371	Zwijndrecht	51.8175000	4.6333300	NL	11	0	0	Zwijndrecht	Звейндрехте	Zwijndrecht	Zwijndrecht	Zwijndrecht	Zwijndrecht
+	2371	Zoetermeer	52.0575000	4.4930600	NL	11	0	0	Zoetermeer	Zoetermeer	Zoetermeer	Zoetermeer	Zoetermeer	Zoetermeer
+	2371	Wassenaar	52.1458300	4.4027800	NL	11	0	0	Wassenaar	Wassenaar	Wassenaar	Wassenaar	Wassenaar	Wassenaar
+	2371	Waddinxveen	52.0450000	4.6513900	NL	11	0	0	Waddinxveen	Waddinxveen	Waddinxveen	Waddinxveen	Waddinxveen	Waddinxveen
+	2371	Voorschoten	52.1275000	4.4486100	NL	11	0	0	Voorschoten	Voorschoten	Voorschoten	Voorschoten	Voorschoten	Voorschoten
+	2371	Voorhout	52.2216700	4.4847200	NL	11	0	0	Voorhout	Voorhout	Voorhout	Voorhout	Voorhout	Voorhout
+	2371	Voorburg	52.0741700	4.3597200	NL	11	0	0	Voorburg	Воорбург	Voorburg	Voorburg	Voorburg	Voorburg
+	2371	Vlist	51.9800000	4.8194400	NL	11	0	0	Vlist	Vlist	Vlist	Vlist	Vlist	Vlist
+	2371	Vlaardingen	51.9125000	4.3416700	NL	11	0	0	Vlaardingen	Vlaardingen	Vlaardingen	Vlaardingen	Vlaardingen	Vlaardingen
+	2371	Ter Heijde	52.0300000	4.1680600	NL	11	0	0	Ter Heijde	Ter Heijde	Ter Heijde	Ter Heijde	Ter Heijde	Ter Heijde
+	2371	Strijen	51.7452100	4.5508300	NL	11	0	0	Strijen	Strijen	Strijen	Strijen	Strijen	Strijen
+	2371	Spijkenisse	51.8450000	4.3291700	NL	11	0	0	Spijkenisse	Spijkenisse	Spijkenisse	Spijkenisse	Spijkenisse	Spijkenisse
+	2371	Sliedrecht	51.8208300	4.7763900	NL	11	0	0	Sliedrecht	Слидрехт	Sliedrecht	Sliedrecht	Sliedrecht	Sliedrecht
+	2371	's-Gravenzande	52.0016700	4.1652800	NL	11	0	0	's-Gravenzande	's-Gravenzande	's-Gravenzande	's-Gravenzande	's-Gravenzande	's-Gravenzande
+	2371	Schoonhoven	51.9475000	4.8486100	NL	11	0	0	Schoonhoven	Schoonhoven	Schoonhoven	Schoonhoven	Schoonhoven	Schoonhoven
+	2371	Schiedam	51.9191700	4.3888900	NL	11	0	0	Schiedam	Схидам	Schiedam	Schiedam	Schiedam	Schiedam
+	2371	Scheveningen	52.1046100	4.2755700	NL	11	0	0	Scheveningen	Схевенинген	Scheveningen	Scheveningen	Scheveningen	Scheveningen
+	2371	Sassenheim	52.2250000	4.5222200	NL	11	0	0	Sassenheim	Sassenheim	Sassenheim	Sassenheim	Sassenheim	Sassenheim
+	2371	Rotterdam	51.9225000	4.4791700	NL	11	0	0	Rotterdam	Роттердам	Rotterdam	Rotterdam	Rotterdam	Rotterdam
+	2371	Rijswijk	52.0363400	4.3250100	NL	11	0	0	Rijswijk	Rijswijk	Rijswijk	Rijswijk	Rijswijk	Rijswijk
+	2371	Rijnsburg	52.1900000	4.4416700	NL	11	0	0	Rijnsburg	Rijnsburg	Rijnsburg	Rijnsburg	Rijnsburg	Rijnsburg
+	2371	Ridderkerk	51.8725000	4.6027800	NL	11	0	0	Ridderkerk	Риддеркерк	Ridderkerk	Ridderkerk	Ridderkerk	Ridderkerk
+	2371	Rhoon	51.8575000	4.4222200	NL	11	0	0	Rhoon	Rhoon	Rhoon	Rhoon	Rhoon	Rhoon
+	2371	Reeuwijk	52.0466700	4.7250000	NL	11	0	0	Reeuwijk	Reeuwijk	Reeuwijk	Reeuwijk	Reeuwijk	Reeuwijk
+	2371	Poeldijk	52.0241700	4.2194400	NL	11	0	0	Poeldijk	Poeldijk	Poeldijk	Poeldijk	Poeldijk	Poeldijk
+	2371	Pijnacker	52.0195400	4.4294600	NL	11	0	0	Pijnacker	Pijnacker	Pijnacker	Pijnacker	Pijnacker	Pijnacker
+	2371	Papendrecht	51.8316700	4.6875000	NL	11	0	0	Papendrecht	Papendrecht	Papendrecht	Papendrecht	Papendrecht	Papendrecht
+	2371	Oude Wetering	52.2141700	4.6444400	NL	11	0	0	Oude Wetering	Oude Wetering	Oude Wetering	Oude Wetering	Oude Wetering	Oude Wetering
+	2371	Ouddorp	51.8116700	3.9347200	NL	11	0	0	Ouddorp	Ауддорп	Ouddorp	Ouddorp	Ouddorp	Ouddorp
+	2371	Oud-Beijerland	51.8241700	4.4125000	NL	11	0	0	Oud-Beijerland	Oud-Beijerland	Oud-Beijerland	Oud-Beijerland	Oud-Beijerland	Oud-Beijerland
+	2371	Oegstgeest	52.1800000	4.4694400	NL	11	0	0	Oegstgeest	Oegstgeest	Oegstgeest	Oegstgeest	Oegstgeest	Oegstgeest
+	2371	Noordwijkerhout	52.2616700	4.4930600	NL	11	0	0	Noordwijkerhout	Noordwijkerhout	Noordwijkerhout	Noordwijkerhout	Noordwijkerhout	Noordwijkerhout
+	2371	Noordwijk-Binnen	52.2340000	4.4447400	NL	11	0	0	Noordwijk-Binnen	Noordwijk-Binnen	Noordwijk-Binnen	Noordwijk-Binnen	Noordwijk-Binnen	Noordwijk-Binnen
+	2371	Nieuw-Lekkerland	51.8891500	4.6865300	NL	11	0	0	Nieuw-Lekkerland	Ньив-Леккерланд	Nieuw-Lekkerland	Nieuw-Lekkerland	Nieuw-Lekkerland	Nieuw-Lekkerland
+	2371	Nieuwkoop	52.1508300	4.7763900	NL	11	0	0	Nieuwkoop	Nieuwkoop	Nieuwkoop	Nieuwkoop	Nieuwkoop	Nieuwkoop
+	2371	Nieuw-Helvoet	51.8384300	4.1289700	NL	11	0	0	Nieuw-Helvoet	Nieuw-Helvoet	Nieuw-Helvoet	Nieuw-Helvoet	Nieuw-Helvoet	Nieuw-Helvoet
+	2371	Nieuwenhoorn	51.8541700	4.1430600	NL	11	0	0	Nieuwenhoorn	Nieuwenhoorn	Nieuwenhoorn	Nieuwenhoorn	Nieuwenhoorn	Nieuwenhoorn
+	2371	Naaldwijk	51.9941700	4.2097200	NL	11	0	0	Naaldwijk	Naaldwijk	Naaldwijk	Naaldwijk	Naaldwijk	Naaldwijk
+	2371	Monster	52.0258300	4.1750000	NL	11	0	0	Monster	Монстер	Monster	Monster	Monster	Monster
+	2371	Mijnsheerenland	51.7966700	4.4875000	NL	11	0	0	Mijnsheerenland	Mijnsheerenland	Mijnsheerenland	Mijnsheerenland	Mijnsheerenland	Mijnsheerenland
+	2371	Middelharnis	51.7575000	4.1652800	NL	11	0	0	Middelharnis	Middelharnis	Middelharnis	Middelharnis	Middelharnis	Middelharnis
+	2371	Maassluis	51.9233300	4.2500000	NL	11	0	0	Maassluis	Maassluis	Maassluis	Maassluis	Maassluis	Maassluis
+	2371	Maasdijk	51.9591700	4.2138900	NL	11	0	0	Maasdijk	Maasdijk	Maasdijk	Maasdijk	Maasdijk	Maasdijk
+	2371	Lisse	52.2600000	4.5569400	NL	11	0	0	Lisse	Lisse	Lisse	Lisse	Lisse	Lisse
+	2371	Liesveld	51.9325000	4.8319400	NL	11	0	0	Liesveld	Liesveld	Liesveld	Liesveld	Liesveld	Liesveld
+	2371	Leimuiden	52.2241700	4.6694400	NL	11	0	0	Leimuiden	Leimuiden	Leimuiden	Leimuiden	Leimuiden	Leimuiden
+	2371	Leiderdorp	52.1583300	4.5291700	NL	11	0	0	Leiderdorp	Лейдердорпе	Leiderdorp	Leiderdorp	Leiderdorp	Leiderdorp
+	2371	Leiden	52.1583300	4.4930600	NL	11	0	0	Leiden	Лейден	Leiden	Leiden	Leiden	Leiden
+	2371	Leerdam	51.8933300	5.0916700	NL	11	0	0	Leerdam	Leerdam	Leerdam	Leerdam	Leerdam	Leerdam
+	2371	Kwintsheul	52.0133300	4.2555600	NL	11	0	0	Kwintsheul	Kwintsheul	Kwintsheul	Kwintsheul	Kwintsheul	Kwintsheul
+	2371	Krimpen aan den IJssel	51.9166700	4.6027800	NL	11	0	0	Krimpen aan den IJssel	Krimpen aan den IJssel	Krimpen aan den IJssel	Krimpen aan den IJssel	Krimpen aan den IJssel	Krimpen aan den IJssel
+	2371	Kinderdijk	51.8858300	4.6319400	NL	11	0	0	Kinderdijk	Киндердейк	Kinderdijk	Kinderdijk	Kinderdijk	Kinderdijk
+	2371	Katwijk aan Zee	52.2033300	4.3986100	NL	11	0	0	Katwijk aan Zee	Katwijk aan Zee	Katwijk aan Zee	Katwijk aan Zee	Katwijk aan Zee	Katwijk aan Zee
+	2371	Katwijk aan den Rijn	52.1941700	4.4222200	NL	11	0	0	Katwijk aan den Rijn	Katwijk aan den Rijn	Katwijk aan den Rijn	Katwijk aan den Rijn	Katwijk aan den Rijn	Katwijk aan den Rijn
+	2371	Kaag	52.2141700	4.5569400	NL	11	0	0	Kaag	Кааг	Kaag	Kaag	Kaag	Kaag
+	2371	Honselersdijk	52.0066500	4.2244100	NL	11	0	0	Honselersdijk	Honselersdijk	Honselersdijk	Honselersdijk	Honselersdijk	Honselersdijk
+	2371	Hoek van Holland	51.9775000	4.1333300	NL	11	0	0	Hoek van Holland	Хоек ван Холланд	Hoek van Holland	Hoek van Holland	Hoek van Holland	Hoek van Holland
+	2371	Hillegom	52.2908300	4.5833300	NL	11	0	0	Hillegom	Hillegom	Hillegom	Hillegom	Hillegom	Hillegom
+	2371	Hendrik-Ido-Ambacht	51.8441700	4.6388900	NL	11	0	0	Hendrik-Ido-Ambacht	Hendrik-Ido-Ambacht	Hendrik-Ido-Ambacht	Hendrik-Ido-Ambacht	Hendrik-Ido-Ambacht	Hendrik-Ido-Ambacht
+	2371	Hellevoetsluis	51.8333300	4.1333300	NL	11	0	0	Hellevoetsluis	Hellevoetsluis	Hellevoetsluis	Hellevoetsluis	Hellevoetsluis	Hellevoetsluis
+	2371	Heinenoord	51.8260200	4.4765900	NL	11	0	0	Heinenoord	Heinenoord	Heinenoord	Heinenoord	Heinenoord	Heinenoord
+	2371	Heerjansdam	51.8358300	4.5638900	NL	11	0	0	Heerjansdam	Heerjansdam	Heerjansdam	Heerjansdam	Heerjansdam	Heerjansdam
+	2371	Haastrecht	52.0007400	4.7763900	NL	11	0	0	Haastrecht	Haastrecht	Haastrecht	Haastrecht	Haastrecht	Haastrecht
+	2371	Gouda	52.0166700	4.7083300	NL	11	0	0	Gouda	Гауда	Gouda	Gouda	Gouda	Gouda
+	2371	Gorinchem	51.8365200	4.9724300	NL	11	0	0	Gorinchem	Gorinchem	Gorinchem	Gorinchem	Gorinchem	Gorinchem
+	2371	Goedereede	51.8175000	3.9805600	NL	11	0	0	Goedereede	Goedereede	Goedereede	Goedereede	Goedereede	Goedereede
+	2371	Giessenburg	51.8508300	4.8902800	NL	11	0	0	Giessenburg	Giessenburg	Giessenburg	Giessenburg	Giessenburg	Giessenburg
+	2371	Dordrecht	51.8100000	4.6736100	NL	11	0	0	Dordrecht	Dordrecht	Dordrecht	Dordrecht	Dordrecht	Dordrecht
+	2371	Dirksland	51.7491700	4.1000000	NL	11	0	0	Dirksland	Dirksland	Dirksland	Dirksland	Dirksland	Dirksland
+	2371	De Lier	51.9750000	4.2486100	NL	11	0	0	De Lier	De Lier	De Lier	De Lier	De Lier	De Lier
+	2371	Delft	52.0066700	4.3555600	NL	11	0	0	Delft	Делфт	Delft	Delft	Delft	Delft
+	2371	Capelle aan den IJssel	51.9291700	4.5777800	NL	11	0	0	Capelle aan den IJssel	Capelle aan den IJssel	Capelle aan den IJssel	Capelle aan den IJssel	Capelle aan den IJssel	Capelle aan den IJssel
+	2371	Brielle	51.9016700	4.1625000	NL	11	0	0	Brielle	Brielle	Brielle	Brielle	Brielle	Brielle
+	2371	Boven-Hardinxveld	51.8233300	4.8819400	NL	11	0	0	Boven-Hardinxveld	Boven-Hardinxveld	Boven-Hardinxveld	Boven-Hardinxveld	Boven-Hardinxveld	Boven-Hardinxveld
+	2371	Boskoop	52.0750000	4.6555600	NL	11	0	0	Boskoop	Boskoop	Boskoop	Boskoop	Boskoop	Boskoop
+	2371	Bodegraven	52.0825000	4.7500000	NL	11	0	0	Bodegraven	Bodegraven	Bodegraven	Bodegraven	Bodegraven	Bodegraven
+	2371	Bleiswijk	52.0108300	4.5319400	NL	11	0	0	Bleiswijk	Bleiswijk	Bleiswijk	Bleiswijk	Bleiswijk	Bleiswijk
+	2371	Bergschenhoek	51.9900000	4.4986100	NL	11	0	0	Bergschenhoek	Bergschenhoek	Bergschenhoek	Bergschenhoek	Bergschenhoek	Bergschenhoek
+	2371	Benthuizen	52.0775000	4.5444400	NL	11	0	0	Benthuizen	Benthuizen	Benthuizen	Benthuizen	Benthuizen	Benthuizen
+	2371	Barendrecht	51.8566700	4.5347200	NL	11	0	0	Barendrecht	Barendrecht	Barendrecht	Barendrecht	Barendrecht	Barendrecht
+	2371	Alphen aan den Rijn	52.1291700	4.6554600	NL	11	0	0	Alphen aan den Rijn	Alphen aan den Rijn	Alphen aan den Rijn	Alphen aan den Rijn	Alphen aan den Rijn	Alphen aan den Rijn
+	2371	Alblasserdam	51.8658300	4.6611100	NL	11	0	0	Alblasserdam	Alblasserdam	Alblasserdam	Alblasserdam	Alblasserdam	Alblasserdam
+	2371	Ypenburg	52.0409800	4.3698100	NL	11	0	0	Ypenburg	Ypenburg	Ypenburg	Ypenburg	Ypenburg	Ypenburg

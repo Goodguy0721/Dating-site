@@ -1,0 +1,5 @@
+	762	Omoka	-8.9798200	-158.0530700	CK	00	0	0	Omoka	Omoka	Omoka	Omoka	Omoka	Omoka
+	762	Tauhunu	-10.4250000	-161.0352800	CK	00	0	0	Tauhunu	Tauhunu	Tauhunu	Tauhunu	Tauhunu	Tauhunu
+	762	Roto	-10.8833300	-165.8333300	CK	00	0	0	Roto	Roto	Roto	Roto	Roto	Roto
+	762	Avarua	-21.2077800	-159.7750000	CK	00	0	0	Avarua	Аваруа	Avarua	Avarua	Avarua	Avarua
+	762	Amuri	-18.8519500	-159.7929300	CK	00	0	0	Amuri	Amuri	Amuri	Amuri	Amuri	Amuri

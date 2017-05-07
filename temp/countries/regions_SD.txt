@@ -1,0 +1,9 @@
+	3346	Wad az Zāki	14.4619000	32.2065000	SD	41	0	0	Wad az Zāki	Wad az Zāki	Wad az Zāki	Wad az Zāki	Wad az Zāki	Wad az Zāki
+	3346	Um Jar Al Gharbiyya	13.8013000	32.4078000	SD	41	0	0	Um Jar Al Gharbiyya	Um Jar Al Gharbiyya	Um Jar Al Gharbiyya	Um Jar Al Gharbiyya	Um Jar Al Gharbiyya	Um Jar Al Gharbiyya
+	3346	Tandaltī	13.0166700	31.8666700	SD	41	0	0	Tandaltī	Tandaltī	Tandaltī	Tandaltī	Tandaltī	Tandaltī
+	3346	Rabak	13.1808700	32.7399900	SD	41	0	0	Rabak	Rabak	Rabak	Rabak	Rabak	Rabak
+	3346	Marabba	12.3500000	32.1833300	SD	41	0	0	Marabba	Marabba	Marabba	Marabba	Marabba	Marabba
+	3346	Kosti	13.1629000	32.6634700	SD	41	0	0	Kosti	Кусти	Kosti	Kosti	Kosti	Kosti
+	3346	Al Qiţena	14.8648000	32.3668000	SD	41	0	0	Al Qiţena	Al Qiţena	Al Qiţena	Al Qiţena	Al Qiţena	Al Qiţena
+	3346	Al Kawa	13.7463000	32.4996000	SD	41	0	0	Al Kawa	Al Kawa	Al Kawa	Al Kawa	Al Kawa	Al Kawa
+	3346	Ad Douiem	14.0012000	32.3116000	SD	41	0	0	Ad Douiem	Эд-Дуэйм	Ad Douiem	Ad Douiem	Ad Douiem	Ad Douiem

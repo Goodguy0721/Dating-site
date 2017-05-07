@@ -1,0 +1,6 @@
+	2979	Tabālah	19.9500000	42.4000000	SA	11	0	0	Tabālah	Tabālah	Tabālah	Tabālah	Tabālah	Tabālah
+	2979	Qal‘at Bīshah	20.0005400	42.6052000	SA	11	0	0	Qal‘at Bīshah	Qal‘at Bīshah	Qal‘at Bīshah	Qal‘at Bīshah	Qal‘at Bīshah	Qal‘at Bīshah
+	2979	Khamis Mushait	18.3000000	42.7333300	SA	11	0	0	Khamis Mushait	Khamis Mushait	Khamis Mushait	Khamis Mushait	Khamis Mushait	Khamis Mushait
+	2979	An Nimāş	19.1454700	42.1201000	SA	11	0	0	An Nimāş	An Nimāş	An Nimāş	An Nimāş	An Nimāş	An Nimāş
+	2979	Abha	18.2163900	42.5052800	SA	11	0	0	Abha	Абха	Abha	Abha	Abha	Abha
+	2979	Al Majāridah	19.1236100	41.9111100	SA	11	0	0	Al Majāridah	Al Majāridah	Al Majāridah	Al Majāridah	Al Majāridah	Al Majāridah

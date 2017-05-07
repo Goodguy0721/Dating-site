@@ -1,0 +1,138 @@
+{% include '@app/header.twig' %}
+{% include 'search_block.twig' %}
+<div class="container">
+    <div class="row row-content">
+        <div class="store-content">
+            <div id="form-load-block" class="pos-rel">
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 no-padding-left">
+                    <div id="cat-load-block"></div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-right">
+                    <div id="load_cart" class="hide load_cart"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row-content">
+                    <div class="store-main-block">
+                        <div class="search-header">
+                            <div class="title">
+                                {% if form_settings.search_text %}
+                                    {% helper lang.l('search_results', 'users') %}: '{{ form_settings.search_text }}'
+                                {% else %}
+                                    {% helper seo.seo_tags('header_text') %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if products %}
+                            {% if category.id %}
+                                <div class="row">
+                                    {% helper store.store_bestsellers_block({
+                                        'category_id': category.id,
+                                        'carousel_type': 'bestsellers',
+                                        'header': 'bestsellers',
+                                        'class': 'bestsellers_carousel'
+                                    }) %}
+                                </div>
+                            {% endif %}
+
+
+                        {% set col_banners %}
+                            {% helper banners.show_banner_place('banner-185x155') %}
+                            {% helper banners.show_banner_place('banner-185x75') %}
+                            {% helper banners.show_banner_place('banner-320x250') %}
+                            {% helper banners.show_banner_place('banner-320x75') %}
+                        {% endset %}
+
+                        <div class="row">
+                            <div class="col-xs-12 {% if col_banners|trim %}col-sm-9{% endif %} b-store-list">
+                                <div class="row" id="result_products_block">
+                                    {% for key, item in products %}
+                                        <div class="col-xs-6 col-sm-6 {% if col_banners|trim %}col-md-4{% else %}col-md-3{% endif %} b-store-list__item">
+                                            <div class="contrasting-block">
+                                                <a href="{% helper seo.seolink('store', 'product', item) %}">
+                                                    {% if item.media.mediafile.thumbs.big is not empty %}
+                                                        <img class="img-rounded img-responsive" src="{{ item.media.mediafile.thumbs.great }}" />
+                                                    {% else %}
+                                                        <div class="default-big-image mb5">
+                                                            <i class="fa fa-gift fa-5x"></i>
+                                                        </div>
+                                                    {% endif %}
+                                                </a>
+                                                <div class="caption">
+                                                    <div class="title-block pt5">{{ item.name }}</div>
+                                                    <div class="price">{% helper start.currency_format_output({ 'value': item.price_reduced }) %}</div>
+                                                    <div class="quick_view_wrapper" data-idproduct="{{ item.id }}" id="product_quick_view_{{ item.id }}">
+                                                        <input type="button" value="{% helper lang.l('link_quick_view', 'store') %}" class="btn btn-primary">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="clr col-sm-12">
+                                        {% helper banners.show_banner_place('banner-980x90') %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if col_banners|trim %}
+                                <div class="hidden-xs col-sm-3 b-store-list__item">
+                                    {{ col_banners }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                       {% if category.description is not empty %}
+                       {% endif %}
+                            <div id="pages_block_2">
+                                {% set page_data = page_data|merge({'type': 'full'}) %}
+                                {% helper start.pagination(page_data) %}
+                            </div>
+                        {% else %}
+                            <div class="center minh200">
+                                <h2>
+                                    {% helper lang.l('no_products', 'store') %}
+                                </h2>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    {% if category.description is not empty %}
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <div class="border-top pt20 center">
+                                    {{ category.description|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        loadScripts(
+            [
+                "{% helper utils.jscript('store', 'store_cart.js', 'path') %}",
+                "{% helper utils.jscript('store', 'store_list.js', 'path') %}"
+            ],
+            function(){
+                cart = new storeCart({
+                    siteUrl: site_url,
+                    add_cart_lang: "{% helper lang.l('button_in_cart', 'store') %}"
+                });
+                list = new storeList({
+                    siteUrl: site_url,
+                    category_id: "store/category/{{ category.id }}",
+                });
+            },
+            ['cart', 'list'],
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

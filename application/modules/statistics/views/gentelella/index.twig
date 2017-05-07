@@ -1,0 +1,172 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+			<div class="" role="tabpanel" data-example-id="togglable-tabs">
+		  	<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+					<li {% if filter == 'all' %}class="active"{% endif %}>
+						<a href="{{ site_url }}admin/statistics/index/all">
+							{% helper lang.l('filter_all_systems', 'statistics') %} ({{ filter_data.all }})
+						</a>
+					</li>
+					<li {% if filter == 'used' %}class="active"{% endif %}>
+						<a href="{{ site_url }}admin/statistics/index/used">
+							{% helper lang.l('filter_used_systems', 'statistics') %} ({{ filter_data.used }})
+						</a>
+					</li>
+					<li>
+						<a href="{{ site_url }}admin/statistics/install">
+							{% helper lang.l('filter_install_systems', 'statistics') %}
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="x_content">
+				<div id="actions" class="hide"></div>
+				<table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+					<thead>
+						<tr class="headings">
+							<th class="column-title">{% helper lang.l('field_module', 'statistics') %}</th>
+							<th class="column-title">{% helper lang.l('field_statistics_events', 'statistics') %}</th>
+							<th class="column-title">&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+				{% for item in systems %}
+						<tr>
+							<td>{{ item.module }}</td>
+							<td>
+					        {% for event in item.events %}
+					          <div class="row">
+											<div class="col-sm-6 col-md-7">
+												<b>{{ event.field_name }}</b><br>
+												{{ event.field_description }}
+											</div>
+											<div class="col-sm-2 col-md-2">
+										{% if event.status %}
+										  {% helper lang.l('btn_tableicon_is_active','start') %}
+									  {% else %}
+										  {% helper lang.l('btn_tableicon_is_not_active','start') %}
+										{% endif %}
+											</div>
+											<div class="col-sm-3 col-md-3">
+					          {% if event.status %}
+					              <a href="{{ site_url }}admin/statistics/activate_event/{{ item.id }}/{{ event.gid }}/0" class="btn btn-primary">
+													{% helper lang.l('make_inactive', 'start') %}
+												</a>
+					          {% else %}
+					              <a href="{{ site_url }}admin/statistics/activate_event/{{ item.id }}/{{ event.gid }}/1" class="btn btn-primary">
+													{% helper lang.l('make_active', 'start') %}
+												</a>
+					          {% endif %}
+					            </div>
+					          </div>
+					          {% endfor %}
+					  	</td>
+							<td class="icons">
+								<div class="btn-group">
+									{% if item.status == '1' %}
+										<a href="{{ site_url }}admin/statistics/activate/{{ item.id }}/0" class="btn btn-primary"
+											 title="{% helper lang.l('title_activate', 'statistics') %}">
+											{% helper lang.l('make_module_inactive', 'statistics') %}
+										</a>
+									{% else %}
+										<a href="{{ site_url }}admin/statistics/activate/{{ item.id }}/1" class="btn btn-primary"
+											 title="{% helper lang.l('title_deactivate', 'statistics') %}">
+											{% helper lang.l('make_module_active', 'statistics') %}
+										</a>
+									{% endif %}
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+													aria-haspopup="true" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									</button>
+									<ul class="dropdown-menu">
+										{% if item.status == '1' %}
+										<li>
+											<a href="{{ site_url }}admin/statistics/activate/{{ item.id }}/0"
+												 title="{% helper lang.l('title_activate', 'statistics') %}">
+												{% helper lang.l('make_module_inactive', 'statistics') %}
+											</a>
+										</li>
+										{% else %}
+										<li>
+											<a href="{{ site_url }}admin/statistics/activate/{{ item.id }}/1"
+												 title="{% helper lang.l('title_deactivate', 'statistics') %}">
+												{% helper lang.l('make_module_active', 'statistics') %}
+											</a>
+										</li>
+										{% endif %}
+										<li>
+											<a href="{{ site_url }}admin/statistics/reset/{{ item.id }}"
+												 onclick="javascript: if(!confirm('{% helper lang.l('note_statistics_reset', 'statistics', '', 'js') %}')) return false;"
+												 title="{% helper lang.l('title_clear', 'statistics') %}">
+												 {% helper lang.l('btn_reset', 'statistics') %}
+										 	</a>
+										</li>
+										<li>
+											<a href="{{ site_url }}admin/statistics/uninstall/{{ item.id }}"
+												 onclick="javascript: if(!confirm('{% helper lang.l('note_statistics_uninstall', 'statistics', '', 'js') %}')) return false;"
+												 title="{% helper lang.l('title_uninstall', 'statistics') %}">
+												 {% helper lang.l('btn_uninstall', 'statistics') %}
+											 </a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+				{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_modules','statistics') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': []
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+						"bSort": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

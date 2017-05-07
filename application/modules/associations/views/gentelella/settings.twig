@@ -1,0 +1,88 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_associations_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                        {% helper lang.l('field_is_active', 'associations') %}:
+                    </label>
+                    <div class="col-md-9">
+                        <input type="checkbox" name="is_active" value="1" {% if data.is_active %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                        {% helper lang.l('field_chat_more', 'associations') %}:
+                    </label>
+                    <div class="col-md-9">
+                        <select name="chat_more" class="form-control">
+                            {% for key, item in data.chat_more %}
+                                <option value="{{ key }}" {% if item.selected %}selected{% endif %}>
+                                    {{ item.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                        {% helper lang.l('field_chat_message', 'associations') %}:
+                    </label>
+                    <div class="col-md-9">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">{{ langs[current_lang_id].name }}:</label>
+                    <div class="col-md-9">
+                        <textarea name="chat_message[{{ current_lang_id }}]" rows="4" class="form-control"
+                            class="long" lang-editor="value" lang-editor-type="data-chat_message"
+                            lang-editor-lid="{{ current_lang_id }}">{{ data.chat_message[current_lang_id]|e }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in data.chat_message %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ langs[lang_id].name }}:</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <textarea name="chat_message[{{ lang_id }}]" rows="4" class="form-control"
+                                                    class="long" lang-editor="value" lang-editor-type="data-chat_message"
+                                                    lang-editor-lid="{{ lang_id }}">{{ lang_item|e }}</textarea>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save"
+                               value="{% helper lang.l('btn_save', 'start', '', 'button') %}"
+                               class="btn btn-success">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

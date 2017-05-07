@@ -1,0 +1,4 @@
+	549	Diébougou	10.9620900	-3.2496700	BF	13	0	0	Diébougou	Diébougou	Diébougou	Diébougou	Diébougou	Diébougou
+	549	Dano	11.1464000	-3.0578400	BF	13	0	0	Dano	Dano	Dano	Dano	Dano	Dano
+	549	Batié	9.8833300	-2.9166700	BF	13	0	0	Batié	Batié	Batié	Batié	Batié	Batié
+	549	Gaoua	10.2991700	-3.2508300	BF	13	0	0	Gaoua	Gaoua	Gaoua	Gaoua	Gaoua	Gaoua

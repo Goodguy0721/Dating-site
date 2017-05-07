@@ -1,0 +1,106 @@
+{% for jey, item in albums %}
+	<div class="g-users-gallery__item col-xs-6 col-sm-3 col-md-3 col-lg-2" data-album-id="{{ item.id }}">
+		<div class="album-bg"></div>
+		<div class="g-users-gallery__content">
+			<div class="g-users-gallery__photo">
+				<span class="g-pic-border g-rounded g-users-gallery__photo-img" data-click="album">
+					<img class="pointer"
+	                     src="{% if item.mediafile.media %}
+	                            {{ item.mediafile.media.mediafile.thumbs.big }}
+	                          {%elseif item.mediafile.video_content %}
+	                            {{ item.mediafile.video_content.thumbs.big }}
+	                          {% endif %}" alt="{{ item.name|e }}" title="{{ item.name|e }}" />
+                </span>
+				{% if item.mediafile.video_content %}
+                    <div class="g-users-gallery__overlay-icon pointer" data-click="album">
+                        <i class="fa fa-play w fa-4x opacity60"></i>
+                    </div>
+                {% endif %}
+
+				{% if item.description or is_user_album_owner %}
+					<div class="g-users-gallery__actions">
+						<div class="g-photo-actions">
+							{% if is_user_album_owner %}
+                                <a href="{{ site_url }}media/edit_album/{{ item.id }}"
+                                   class="edit-album">
+                                   <i class="fa fa-pencil edge w"></i>
+                                </a>
+                            {% endif %}
+                            {% if is_user_album_owner %}
+			                    <a href="{{ site_url }}media/delete_album/{{ item.id }}"
+			                       class="delete-media" data-album-id="{{ item.id }}">
+			                       <i class="fa fa-trash w fa-lg"></i>
+			                    </a>
+			                {% endif %}
+						</div>
+					</div>
+				{% endif %}
+
+				<div class="g-users-gallery__overlayinfo">
+					<div class="g-photo-statuses">
+						<div>
+							<div class="g-photo-statuses__item g-photo-statuses__item_place">
+								<span title="{% helper lang.l('album_items', 'media') %}">{{ item[albums_count_field] }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="g-users-gallery__info">
+				<div class="g-users-gallery__date" title="{{ item.name }}">
+	                {{ item.name }}
+	            </div>
+				{% if item.description or is_user_album_owner %}
+					<s class="g-users-gallery__name" title="{{ item.description }}">{{ item.description|nl2br }}</s>
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+{% else %}
+	<div class="center">
+        {% helper lang.l('no_albums', 'media') %}.
+        {% if is_user_album_owner %}
+	        <span class="pointer link-r-margin" id="create_album_button">
+	            <a class="link-dashed" href="javascript:void(0);">{% helper lang.l('create_album', 'media') %}</a>
+	        </span>
+
+	        <div class="pl10 mt10">
+				<span class="hide form-inline" id="create_album_container">
+					<div class="form-group">
+						<input class="form-control" type="text" name="album_name" id="album_name">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary" id="save_album">{% helper lang.l('btn_apply', 'start') %}</button>
+					</div>
+				</span>
+			</div>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% if albums_page == 1 %}
+	<script>
+        $(function(){
+			loadScripts(
+				"{% helper utils.jscript('media', 'albums.js', 'path') %}",
+				function(){
+					albums_list = new albums({
+						siteUrl: site_url,
+						contentDiv: '#gallery_content',
+						edit_album_success_request: function(){
+							mediagallery.properties.galleryContentPage = 1,
+							mediagallery.properties.all_loaded = 0;
+							mediagallery.load_content(1);
+							error_object.show_error_block('{% helper lang.l('album_update_success', 'media') %}', 'success');
+							this.windowObj.hide_load_block();
+						},
+					});
+				},
+				['albums_list'],
+				{async: false}
+			);
+			});
+    </script>
+{% endif %}

@@ -1,0 +1,1407 @@
+	1422	Volpago del Montello	45.7777000	12.1185700	IT	20	0	0	Volpago del Montello	Volpago del Montello	Volpago del Montello	Volpago del Montello	Volpago del Montello	Volpago del Montello
+	1422	Zuccarello	45.5381600	12.3542100	IT	20	0	0	Zuccarello	Zuccarello	Zuccarello	Zuccarello	Zuccarello	Zuccarello
+	1422	Zovencedo	45.4289300	11.5038700	IT	20	0	0	Zovencedo	Zovencedo	Zovencedo	Zovencedo	Zovencedo	Zovencedo
+	1422	Zimella	45.3315300	11.3766100	IT	20	0	0	Zimella	Zimella	Zimella	Zimella	Zimella	Zimella
+	1422	Zevio	45.3720900	11.1292900	IT	20	0	0	Zevio	Zevio	Zevio	Zevio	Zevio	Zevio
+	1422	Zero Branco	45.5995200	12.1638100	IT	20	0	0	Zero Branco	Zero Branco	Zero Branco	Zero Branco	Zero Branco	Zero Branco
+	1422	Zermeghedo	45.4758500	11.3743800	IT	20	0	0	Zermeghedo	Zermeghedo	Zermeghedo	Zermeghedo	Zermeghedo	Zermeghedo
+	1422	Zerman	45.5783100	12.2686000	IT	20	0	0	Zerman	Zerman	Zerman	Zerman	Zerman	Zerman
+	1422	Zeriolo	45.6279800	12.1040800	IT	20	0	0	Zeriolo	Zeriolo	Zeriolo	Zeriolo	Zeriolo	Zeriolo
+	1422	Zenson di Piave	45.6797100	12.4891300	IT	20	0	0	Zenson di Piave	Zenson di Piave	Zenson di Piave	Zenson di Piave	Zenson di Piave	Zenson di Piave
+	1422	Zelo	45.0491500	11.4106500	IT	20	0	0	Zelo	Zelo	Zelo	Zelo	Zelo	Zelo
+	1422	Zelarino	45.5150800	12.2079000	IT	20	0	0	Zelarino	Zelarino	Zelarino	Zelarino	Zelarino	Zelarino
+	1422	Zavena	46.0573700	11.7596800	IT	20	0	0	Zavena	Zavena	Zavena	Zavena	Zavena	Zavena
+	1422	Zanon	45.2606000	11.0603100	IT	20	0	0	Zanon	Zanon	Zanon	Zanon	Zanon	Zanon
+	1422	Zanè	45.7220000	11.4493200	IT	20	0	0	Zanè	Zanè	Zanè	Zanè	Zanè	Zanè
+	1422	Azzago	45.5465200	11.0481600	IT	20	0	0	Azzago	Azzago	Azzago	Azzago	Azzago	Azzago
+	1422	Voltago Agordino	46.2713900	12.0057400	IT	20	0	0	Voltago Agordino	Voltago Agordino	Voltago Agordino	Voltago Agordino	Voltago Agordino	Voltago Agordino
+	1422	Volpino	45.3784400	11.3340100	IT	20	0	0	Volpino	Volpino	Volpino	Volpino	Volpino	Volpino
+	1422	Volargne	45.5368400	10.8182000	IT	20	0	0	Volargne	Volargne	Volargne	Volargne	Volargne	Volargne
+	1422	Vodo	46.4192100	12.2455700	IT	20	0	0	Vodo	Vodo	Vodo	Vodo	Vodo	Vodo
+	1422	Vo	45.4564600	11.4452200	IT	20	0	0	Vo	Vo	Vo	Vo	Vo	Vo
+	1422	Chiesa di Vivaro	45.6093200	11.5467900	IT	20	0	0	Chiesa di Vivaro	Chiesa di Vivaro	Chiesa di Vivaro	Chiesa di Vivaro	Chiesa di Vivaro	Chiesa di Vivaro
+	1422	Vittorio Veneto	45.9802600	12.3006500	IT	20	0	0	Vittorio Veneto	Витторио-Венето	Vittorio Veneto	Vittorio Veneto	Vittorio Veneto	Vittorio Veneto
+	1422	Visome	46.1150300	12.2006800	IT	20	0	0	Visome	Visome	Visome	Visome	Visome	Visome
+	1422	Visnadello	45.7587100	12.2465600	IT	20	0	0	Visnadello	Visnadello	Visnadello	Visnadello	Visnadello	Visnadello
+	1422	Lancenigo-Villorba	45.7128900	12.2569700	IT	20	0	0	Lancenigo-Villorba	Lancenigo-Villorba	Lancenigo-Villorba	Lancenigo-Villorba	Lancenigo-Villorba	Lancenigo-Villorba
+	1422	Villaverla	45.6493900	11.4917600	IT	20	0	0	Villaverla	Villaverla	Villaverla	Villaverla	Villaverla	Villaverla
+	1422	Villa Raspa	45.7661700	11.9313600	IT	20	0	0	Villa Raspa	Villa Raspa	Villa Raspa	Villa Raspa	Villa Raspa	Villa Raspa
+	1422	Villanova Santa Margherita	45.7670600	12.8948200	IT	20	0	0	Villanova Santa Margherita	Villanova Santa Margherita	Villanova Santa Margherita	Villanova Santa Margherita	Villanova Santa Margherita	Villanova Santa Margherita
+	1422	Villanova Marchesana	44.9923100	11.9667500	IT	20	0	0	Villanova Marchesana	Villanova Marchesana	Villanova Marchesana	Villanova Marchesana	Villanova Marchesana	Villanova Marchesana
+	1422	Villanova del Ghebbo-Valdentro	45.0591800	11.6390100	IT	20	0	0	Villanova del Ghebbo-Valdentro	Villanova del Ghebbo-Valdentro	Villanova del Ghebbo-Valdentro	Villanova del Ghebbo-Valdentro	Villanova del Ghebbo-Valdentro	Villanova del Ghebbo-Valdentro
+	1422	Villanova	45.8367100	12.9597100	IT	20	0	0	Villanova	Villanova	Villanova	Villanova	Villanova	Villanova
+	1422	Villamarzana	45.0145700	11.6922500	IT	20	0	0	Villamarzana	Villamarzana	Villamarzana	Villamarzana	Villamarzana	Villamarzana
+	1422	Villalta	45.5774100	11.6802700	IT	20	0	0	Villalta	Villalta	Villalta	Villalta	Villalta	Villalta
+	1422	Villaganzerla	45.4361200	11.6185900	IT	20	0	0	Villaganzerla	Villaganzerla	Villaganzerla	Villaganzerla	Villaganzerla	Villaganzerla
+	1422	Villaga	45.4027300	11.5346800	IT	20	0	0	Villaga	Villaga	Villaga	Villaga	Villaga	Villaga
+	1422	Villafranca di Verona	45.3540500	10.8446200	IT	20	0	0	Villafranca di Verona	Villafranca di Verona	Villafranca di Verona	Villafranca di Verona	Villafranca di Verona	Villafranca di Verona
+	1422	Villa Fora	45.1039200	11.5513900	IT	20	0	0	Villa Fora	Villa Fora	Villa Fora	Villa Fora	Villa Fora	Villa Fora
+	1422	Villafontana	45.2929900	11.0849200	IT	20	0	0	Villafontana	Villafontana	Villafontana	Villafontana	Villafontana	Villafontana
+	1422	Villa Estense	45.1746500	11.6702200	IT	20	0	0	Villa Estense	Villa Estense	Villa Estense	Villa Estense	Villa Estense	Villa Estense
+	1422	Villadose	45.0721900	11.8989900	IT	20	0	0	Villadose	Villadose	Villadose	Villadose	Villadose	Villadose
+	1422	Villa del Ferro	45.3839200	11.4705000	IT	20	0	0	Villa del Ferro	Villa del Ferro	Villa del Ferro	Villa del Ferro	Villa del Ferro	Villa del Ferro
+	1422	Villa del Conte	45.5847500	11.8594200	IT	20	0	0	Villa del Conte	Villa del Conte	Villa del Conte	Villa del Conte	Villa del Conte	Villa del Conte
+	1422	Villa del Bosco	45.2158900	12.0307600	IT	20	0	0	Villa del Bosco	Villa del Bosco	Villa del Bosco	Villa del Bosco	Villa del Bosco	Villa del Bosco
+	1422	Villabruna-Umin	46.0567500	11.9270000	IT	20	0	0	Villabruna-Umin	Villabruna-Umin	Villabruna-Umin	Villabruna-Umin	Villabruna-Umin	Villabruna-Umin
+	1422	Villa Bartolomea	45.1546100	11.3538000	IT	20	0	0	Villa Bartolomea	Villa Bartolomea	Villa Bartolomea	Villa Bartolomea	Villa Bartolomea	Villa Bartolomea
+	1422	Villa	45.3536100	11.6872800	IT	20	0	0	Villa	Villa	Villa	Villa	Villa	Villa
+	1422	Vigonza	45.4348400	11.9746500	IT	20	0	0	Vigonza	Vigonza	Vigonza	Vigonza	Vigonza	Vigonza
+	1422	Vigonovo	45.3869100	12.0064200	IT	20	0	0	Vigonovo	Vigonovo	Vigonovo	Vigonovo	Vigonovo	Vigonovo
+	1422	Vigolo	45.6304200	11.3425600	IT	20	0	0	Vigolo	Vigolo	Vigolo	Vigolo	Vigolo	Vigolo
+	1422	Vigo di Cadore	46.4990400	12.4711100	IT	20	0	0	Vigo di Cadore	Vigo di Cadore	Vigo di Cadore	Vigo di Cadore	Vigo di Cadore	Vigo di Cadore
+	1422	Vigodarzere	45.4575100	11.8855500	IT	20	0	0	Vigodarzere	Vigodarzere	Vigodarzere	Vigodarzere	Vigodarzere	Vigodarzere
+	1422	Vigo	45.5441100	11.4155100	IT	20	0	0	Vigo	Vigo	Vigo	Vigo	Vigo	Vigo
+	1422	Vignole	46.1409800	12.1276000	IT	20	0	0	Vignole	Vignole	Vignole	Vignole	Vignole	Vignole
+	1422	Vigasio	45.3178000	10.9437100	IT	20	0	0	Vigasio	Vigasio	Vigasio	Vigasio	Vigasio	Vigasio
+	1422	Vidor	45.8665900	12.0451700	IT	20	0	0	Vidor	Vidor	Vidor	Vidor	Vidor	Vidor
+	1422	Vicenza	45.5467200	11.5475000	IT	20	0	0	Vicenza	Виченца	Vicenza	Vicenza	Vicenza	Vicenza
+	1422	Viaverde	45.5964400	11.1061800	IT	20	0	0	Viaverde	Viaverde	Viaverde	Viaverde	Viaverde	Viaverde
+	1422	Vetrego	45.4568600	12.1016300	IT	20	0	0	Vetrego	Vetrego	Vetrego	Vetrego	Vetrego	Vetrego
+	1422	Vestenanova	45.5742100	11.2286800	IT	20	0	0	Vestenanova	Vestenanova	Vestenanova	Vestenanova	Vestenanova	Vestenanova
+	1422	Vescovana	45.1342200	11.7126100	IT	20	0	0	Vescovana	Vescovana	Vescovana	Vescovana	Vescovana	Vescovana
+	1422	Veronella	45.3237800	11.3258200	IT	20	0	0	Veronella	Veronella	Veronella	Veronella	Veronella	Veronella
+	1422	Verona	45.4299000	10.9844400	IT	20	0	0	Verona	Верона	Verona	Verona	Verona	Verona
+	1422	Veniera	44.9838700	12.2572900	IT	20	0	0	Veniera	Veniera	Veniera	Veniera	Veniera	Veniera
+	1422	Venice	45.4371300	12.3326500	IT	20	0	0	Venice	Венеция	Venice	Venice	Venice	Venice
+	1422	Venas	46.4100900	12.2982400	IT	20	0	0	Venas	Venas	Venas	Venas	Venas	Venas
+	1422	Vellai	46.0368600	11.9391700	IT	20	0	0	Vellai	Vellai	Vellai	Vellai	Vellai	Vellai
+	1422	Veggiano	45.4471900	11.7128000	IT	20	0	0	Veggiano	Veggiano	Veggiano	Veggiano	Veggiano	Veggiano
+	1422	Vedelago	45.6872200	12.0185300	IT	20	0	0	Vedelago	Vedelago	Vedelago	Vedelago	Vedelago	Vedelago
+	1422	Vazzola	45.8351100	12.4085100	IT	20	0	0	Vazzola	Vazzola	Vazzola	Vazzola	Vazzola	Vazzola
+	1422	Vascon	45.7217000	12.2919000	IT	20	0	0	Vascon	Vascon	Vascon	Vascon	Vascon	Vascon
+	1422	Vas	45.9380400	11.9357900	IT	20	0	0	Vas	Vas	Vas	Vas	Vas	Vas
+	1422	Varda	46.5006400	11.8865600	IT	20	0	0	Varda	Varda	Varda	Varda	Varda	Varda
+	1422	Varago	45.7372600	12.3108300	IT	20	0	0	Varago	Varago	Varago	Varago	Varago	Varago
+	1422	Zona Artigianale Vanzo	45.2314500	11.8140400	IT	20	0	0	Zona Artigianale Vanzo	Zona Artigianale Vanzo	Zona Artigianale Vanzo	Zona Artigianale Vanzo	Zona Artigianale Vanzo	Zona Artigianale Vanzo
+	1422	Valstagna	45.8510800	11.6664200	IT	20	0	0	Valstagna	Valstagna	Valstagna	Valstagna	Valstagna	Valstagna
+	1422	Valrovina	45.7874100	11.6890900	IT	20	0	0	Valrovina	Valrovina	Valrovina	Valrovina	Valrovina	Valrovina
+	1422	Valnogaredo	45.2992000	11.6644100	IT	20	0	0	Valnogaredo	Valnogaredo	Valnogaredo	Valnogaredo	Valnogaredo	Valnogaredo
+	1422	Valli Mocenighe	45.1611300	11.5673700	IT	20	0	0	Valli Mocenighe	Valli Mocenighe	Valli Mocenighe	Valli Mocenighe	Valli Mocenighe	Valli Mocenighe
+	1422	Valli del Pasubio	45.7403000	11.2635400	IT	20	0	0	Valli del Pasubio	Valli del Pasubio	Valli del Pasubio	Valli del Pasubio	Valli del Pasubio	Valli del Pasubio
+	1422	Vallese	45.3282700	11.0860800	IT	20	0	0	Vallese	Vallese	Vallese	Vallese	Vallese	Vallese
+	1422	Valle II	45.8606700	11.3207100	IT	20	0	0	Valle II	Valle II	Valle II	Valle II	Valle II	Valle II
+	1422	Valle	45.5863800	11.4115400	IT	20	0	0	Valle	Valle	Valle	Valle	Valle	Valle
+	1422	Vallà	45.7071100	11.9327100	IT	20	0	0	Vallà	Vallà	Vallà	Vallà	Vallà	Vallà
+	1422	Valeggio sul Mincio	45.3533300	10.7363500	IT	20	0	0	Valeggio sul Mincio	Valeggio sul Mincio	Valeggio sul Mincio	Valeggio sul Mincio	Valeggio sul Mincio	Valeggio sul Mincio
+	1422	Valdobbiadene	45.8968900	11.9824500	IT	20	0	0	Valdobbiadene	Valdobbiadene	Valdobbiadene	Valdobbiadene	Valdobbiadene	Valdobbiadene
+	1422	Valdagno	45.6449800	11.2988600	IT	20	0	0	Valdagno	Valdagno	Valdagno	Valdagno	Valdagno	Valdagno
+	1422	Vacil	45.7098100	12.3090600	IT	20	0	0	Vacil	Vacil	Vacil	Vacil	Vacil	Vacil
+	1422	Trissino	45.5599400	11.3767800	IT	20	0	0	Trissino	Trissino	Trissino	Trissino	Trissino	Trissino
+	1422	Tribano	45.2091200	11.8363900	IT	20	0	0	Tribano	Tribano	Tribano	Tribano	Tribano	Tribano
+	1422	Treviso	45.6690800	12.2361400	IT	20	0	0	Treviso	Тревизо	Treviso	Treviso	Treviso	Treviso
+	1422	Trevignano	45.7367000	12.0671900	IT	20	0	0	Trevignano	Trevignano	Trevignano	Trevignano	Trevignano	Trevignano
+	1422	Trevenzuolo	45.2697400	10.9338600	IT	20	0	0	Trevenzuolo	Trevenzuolo	Trevenzuolo	Trevenzuolo	Trevenzuolo	Trevenzuolo
+	1422	Treponti	45.3672700	11.7090500	IT	20	0	0	Treponti	Treponti	Treponti	Treponti	Treponti	Treponti
+	1422	Treponti	45.2138800	12.1231900	IT	20	0	0	Treponti	Treponti	Treponti	Treponti	Treponti	Treponti
+	1422	Trepalade	45.5631700	12.4108800	IT	20	0	0	Trepalade	Trepalade	Trepalade	Trepalade	Trepalade	Trepalade
+	1422	Tremignon	45.5207600	11.8057700	IT	20	0	0	Tremignon	Tremignon	Tremignon	Tremignon	Tremignon	Tremignon
+	1422	Tregnago	45.5139700	11.1642100	IT	20	0	0	Tregnago	Tregnago	Tregnago	Tregnago	Tregnago	Tregnago
+	1422	Trecenta	45.0293700	11.4593100	IT	20	0	0	Trecenta	Trecenta	Trecenta	Trecenta	Trecenta	Trecenta
+	1422	Trebaseleghe	45.5929500	12.0439200	IT	20	0	0	Trebaseleghe	Trebaseleghe	Trebaseleghe	Trebaseleghe	Trebaseleghe	Trebaseleghe
+	1422	Tovena	45.9768100	12.1757000	IT	20	0	0	Tovena	Tovena	Tovena	Tovena	Tovena	Tovena
+	1422	Torri di Quartesolo	45.5190100	11.6246900	IT	20	0	0	Torri di Quartesolo	Torri di Quartesolo	Torri di Quartesolo	Torri di Quartesolo	Torri di Quartesolo	Torri di Quartesolo
+	1422	Torri del Benaco	45.6101300	10.6866900	IT	20	0	0	Torri del Benaco	Torri del Benaco	Torri del Benaco	Torri del Benaco	Torri del Benaco	Torri del Benaco
+	1422	Torricella	45.0418100	11.3014100	IT	20	0	0	Torricella	Torricella	Torricella	Torricella	Torricella	Torricella
+	1422	Torreselle	45.6098200	11.4252600	IT	20	0	0	Torreselle	Torreselle	Torreselle	Torreselle	Torreselle	Torreselle
+	1422	Torresella	45.7543900	12.8912800	IT	20	0	0	Torresella	Torresella	Torresella	Torresella	Torresella	Torresella
+	1422	Torreglia	45.3361700	11.7360800	IT	20	0	0	Torreglia	Torreglia	Torreglia	Torreglia	Torreglia	Torreglia
+	1422	Torre di Mosto	45.6862900	12.7002700	IT	20	0	0	Torre di Mosto	Torre di Mosto	Torre di Mosto	Torre di Mosto	Torre di Mosto	Torre di Mosto
+	1422	Torrebelvicino	45.7158300	11.3186900	IT	20	0	0	Torrebelvicino	Torrebelvicino	Torrebelvicino	Torrebelvicino	Torrebelvicino	Torrebelvicino
+	1422	Tormeno	45.5041500	11.5519400	IT	20	0	0	Tormeno	Tormeno	Tormeno	Tormeno	Tormeno	Tormeno
+	1422	Torcello	45.4979400	12.4178500	IT	20	0	0	Torcello	Torcello	Torcello	Torcello	Torcello	Torcello
+	1422	Tonezza del Cimone	45.8588900	11.3459200	IT	20	0	0	Tonezza del Cimone	Tonezza del Cimone	Tonezza del Cimone	Tonezza del Cimone	Tonezza del Cimone	Tonezza del Cimone
+	1422	Tombolo	45.6391600	11.8243500	IT	20	0	0	Tombolo	Tombolo	Tombolo	Tombolo	Tombolo	Tombolo
+	1422	Tombolino	45.5873000	12.6457800	IT	20	0	0	Tombolino	Tombolino	Tombolino	Tombolino	Tombolino	Tombolino
+	1422	Tolotti	45.4855800	11.2320200	IT	20	0	0	Tolotti	Tolotti	Tolotti	Tolotti	Tolotti	Tolotti
+	1422	Tolle	44.9544100	12.4109500	IT	20	0	0	Tolle	Tolle	Tolle	Tolle	Tolle	Tolle
+	1422	Toffanelle Vecchie	45.3458000	11.0925400	IT	20	0	0	Toffanelle Vecchie	Toffanelle Vecchie	Toffanelle Vecchie	Toffanelle Vecchie	Toffanelle Vecchie	Toffanelle Vecchie
+	1422	Toara	45.3872400	11.5135900	IT	20	0	0	Toara	Toara	Toara	Toara	Toara	Toara
+	1422	Tiser	46.2276300	12.0022900	IT	20	0	0	Tiser	Tiser	Tiser	Tiser	Tiser	Tiser
+	1422	Tignes	46.1576600	12.3424500	IT	20	0	0	Tignes	Tignes	Tignes	Tignes	Tignes	Tignes
+	1422	Thiene	45.7088000	11.4795900	IT	20	0	0	Thiene	Тьене	Thiene	Thiene	Thiene	Thiene
+	1422	Tezze	45.6901100	11.7067200	IT	20	0	0	Tezze	Tezze	Tezze	Tezze	Tezze	Tezze
+	1422	Tezze	45.5340200	11.3699700	IT	20	0	0	Tezze	Tezze	Tezze	Tezze	Tezze	Tezze
+	1422	Tessera	45.5024100	12.3263200	IT	20	0	0	Tessera	Tessera	Tessera	Tessera	Tessera	Tessera
+	1422	Terrossa	45.4634000	11.3186000	IT	20	0	0	Terrossa	Terrossa	Terrossa	Terrossa	Terrossa	Terrossa
+	1422	Terrazzo	45.1726000	11.3948500	IT	20	0	0	Terrazzo	Terrazzo	Terrazzo	Terrazzo	Terrazzo	Terrazzo
+	1422	Termine di Cadore	46.3026000	12.3205900	IT	20	0	0	Termine di Cadore	Termine di Cadore	Termine di Cadore	Termine di Cadore	Termine di Cadore	Termine di Cadore
+	1422	Teolo	45.3449600	11.6729400	IT	20	0	0	Teolo	Teolo	Teolo	Teolo	Teolo	Teolo
+	1422	Tencarola	45.3949000	11.8091900	IT	20	0	0	Tencarola	Tencarola	Tencarola	Tencarola	Tencarola	Tencarola
+	1422	Teglio Veneto	45.8163700	12.8841400	IT	20	0	0	Teglio Veneto	Teglio Veneto	Teglio Veneto	Teglio Veneto	Teglio Veneto	Teglio Veneto
+	1422	Tassei	46.0687400	12.2446400	IT	20	0	0	Tassei	Tassei	Tassei	Tassei	Tassei	Tassei
+	1422	Tarzo	45.9771100	12.2291700	IT	20	0	0	Tarzo	Tarzo	Tarzo	Tarzo	Tarzo	Tarzo
+	1422	Sant'Anna	46.1191800	12.4276000	IT	20	0	0	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna
+	1422	Taibon Agordino	46.2983800	12.0131200	IT	20	0	0	Taibon Agordino	Taibon Agordino	Taibon Agordino	Taibon Agordino	Taibon Agordino	Taibon Agordino
+	1422	Taglio di Po	45.0018900	12.2138600	IT	20	0	0	Taglio di Po	Taglio di Po	Taglio di Po	Taglio di Po	Taglio di Po	Taglio di Po
+	1422	Taglio	45.0222200	12.2108300	IT	20	0	0	Taglio	Taglio	Taglio	Taglio	Taglio	Taglio
+	1422	Susegana	45.8560400	12.2574100	IT	20	0	0	Susegana	Susegana	Susegana	Susegana	Susegana	Susegana
+	1422	Sulè	45.3211000	11.3629400	IT	20	0	0	Sulè	Sulè	Sulè	Sulè	Sulè	Sulè
+	1422	Stroppare	45.1491400	11.8205700	IT	20	0	0	Stroppare	Stroppare	Stroppare	Stroppare	Stroppare	Stroppare
+	1422	Stra	45.4112300	12.0141800	IT	20	0	0	Stra	Stra	Stra	Stra	Stra	Stra
+	1422	Stoner	45.9144500	11.6759300	IT	20	0	0	Stoner	Stoner	Stoner	Stoner	Stoner	Stoner
+	1422	Stoccareddo	45.8772600	11.6121500	IT	20	0	0	Stoccareddo	Stoccareddo	Stoccareddo	Stoccareddo	Stoccareddo	Stoccareddo
+	1422	Stienta	44.9397000	11.5437500	IT	20	0	0	Stienta	Stienta	Stienta	Stienta	Stienta	Stienta
+	1422	Stiago	45.7759800	12.8893500	IT	20	0	0	Stiago	Stiago	Stiago	Stiago	Stiago	Stiago
+	1422	Stanghella	45.1350900	11.7574100	IT	20	0	0	Stanghella	Stanghella	Stanghella	Stanghella	Stanghella	Stanghella
+	1422	Spresiano	45.7790800	12.2562800	IT	20	0	0	Spresiano	Spresiano	Spresiano	Spresiano	Spresiano	Spresiano
+	1422	Spineda	45.7503900	11.8781300	IT	20	0	0	Spineda	Spineda	Spineda	Spineda	Spineda	Spineda
+	1422	Spiazzo	45.4111500	11.4526000	IT	20	0	0	Spiazzo	Spiazzo	Spiazzo	Spiazzo	Spiazzo	Spiazzo
+	1422	Spessa	45.3361000	11.4276700	IT	20	0	0	Spessa	Spessa	Spessa	Spessa	Spessa	Spessa
+	1422	Spert	46.1132900	12.4020200	IT	20	0	0	Spert	Spert	Spert	Spert	Spert	Spert
+	1422	Soverzene	46.2033100	12.3030100	IT	20	0	0	Soverzene	Soverzene	Soverzene	Soverzene	Soverzene	Soverzene
+	1422	Sossano	45.3575400	11.5081900	IT	20	0	0	Sossano	Sossano	Sossano	Sossano	Sossano	Sossano
+	1422	Sospirolo	46.1413400	12.0736500	IT	20	0	0	Sospirolo	Sospirolo	Sospirolo	Sospirolo	Sospirolo	Sospirolo
+	1422	Sona	45.4327100	10.8399000	IT	20	0	0	Sona	Sona	Sona	Sona	Sona	Sona
+	1422	Sommacampagna	45.4052800	10.8438200	IT	20	0	0	Sommacampagna	Sommacampagna	Sommacampagna	Sommacampagna	Sommacampagna	Sommacampagna
+	1422	Solesino	45.1792200	11.7464700	IT	20	0	0	Solesino	Solesino	Solesino	Solesino	Solesino	Solesino
+	1422	Solagna	45.8195100	11.7178700	IT	20	0	0	Solagna	Solagna	Solagna	Solagna	Solagna	Solagna
+	1422	Soglio	45.8704200	11.3618200	IT	20	0	0	Soglio	Soglio	Soglio	Soglio	Soglio	Soglio
+	1422	Soffranco	46.2779800	12.2441800	IT	20	0	0	Soffranco	Soffranco	Soffranco	Soffranco	Soffranco	Soffranco
+	1422	Soave	45.4195500	11.2459400	IT	20	0	0	Soave	Soave	Soave	Soave	Soave	Soave
+	1422	Sista Alta	45.1891700	12.1533300	IT	20	0	0	Sista Alta	Sista Alta	Sista Alta	Sista Alta	Sista Alta	Sista Alta
+	1422	Silea	45.6544400	12.2970100	IT	20	0	0	Silea	Silea	Silea	Silea	Silea	Silea
+	1422	Settimo	45.4792900	10.9091000	IT	20	0	0	Settimo	Settimo	Settimo	Settimo	Settimo	Settimo
+	1422	Serraglia	45.1331100	11.5085000	IT	20	0	0	Serraglia	Serraglia	Serraglia	Serraglia	Serraglia	Serraglia
+	1422	Sernaglia della Battaglia	45.8714700	12.1330200	IT	20	0	0	Sernaglia della Battaglia	Sernaglia della Battaglia	Sernaglia della Battaglia	Sernaglia della Battaglia	Sernaglia della Battaglia	Sernaglia della Battaglia
+	1422	Seren del Grappa	45.9959400	11.8562400	IT	20	0	0	Seren del Grappa	Seren del Grappa	Seren del Grappa	Seren del Grappa	Seren del Grappa	Seren del Grappa
+	1422	Selvazzano Dentro	45.3876400	11.7923200	IT	20	0	0	Selvazzano Dentro	Selvazzano Dentro	Selvazzano Dentro	Selvazzano Dentro	Selvazzano Dentro	Selvazzano Dentro
+	1422	Selvavecchia	45.6542500	10.9724200	IT	20	0	0	Selvavecchia	Selvavecchia	Selvavecchia	Selvavecchia	Selvavecchia	Selvavecchia
+	1422	Selva di Cadore	46.4502800	12.0569400	IT	20	0	0	Selva di Cadore	Selva di Cadore	Selva di Cadore	Selva di Cadore	Selva di Cadore	Selva di Cadore
+	1422	Selva	44.9990400	11.8480900	IT	20	0	0	Selva	Selva	Selva	Selva	Selva	Selva
+	1422	Sedico	46.1056300	12.0933000	IT	20	0	0	Sedico	Sedico	Sedico	Sedico	Sedico	Sedico
+	1422	Scorzè	45.5740500	12.1115600	IT	20	0	0	Scorzè	Scorzè	Scorzè	Scorzè	Scorzè	Scorzè
+	1422	Scomigo	45.9425500	12.3201400	IT	20	0	0	Scomigo	Scomigo	Scomigo	Scomigo	Scomigo	Scomigo
+	1422	Schio	45.7126200	11.3567100	IT	20	0	0	Schio	Скио	Schio	Schio	Schio	Schio
+	1422	Schiavoni	45.2162300	11.7026400	IT	20	0	0	Schiavoni	Schiavoni	Schiavoni	Schiavoni	Schiavoni	Schiavoni
+	1422	Schiavon	45.6965400	11.6457300	IT	20	0	0	Schiavon	Schiavon	Schiavon	Schiavon	Schiavon	Schiavon
+	1422	Monte Schiavi	45.5666700	11.4000000	IT	20	0	0	Monte Schiavi	Monte Schiavi	Monte Schiavi	Monte Schiavi	Monte Schiavi	Monte Schiavi
+	1422	Scandolara	45.6146400	12.0998100	IT	20	0	0	Scandolara	Scandolara	Scandolara	Scandolara	Scandolara	Scandolara
+	1422	Scaltenigo	45.4712000	12.0810600	IT	20	0	0	Scaltenigo	Scaltenigo	Scaltenigo	Scaltenigo	Scaltenigo	Scaltenigo
+	1422	Scalchi	45.7004900	11.7280700	IT	20	0	0	Scalchi	Scalchi	Scalchi	Scalchi	Scalchi	Scalchi
+	1422	Gianesoni-Cotti di Sasso	45.8657900	11.6074800	IT	20	0	0	Gianesoni-Cotti di Sasso	Gianesoni-Cotti di Sasso	Gianesoni-Cotti di Sasso	Gianesoni-Cotti di Sasso	Gianesoni-Cotti di Sasso	Gianesoni-Cotti di Sasso
+	1422	Sarmeola	45.4240000	11.8167400	IT	20	0	0	Sarmeola	Sarmeola	Sarmeola	Sarmeola	Sarmeola	Sarmeola
+	1422	Sarmede	45.9762500	12.3858100	IT	20	0	0	Sarmede	Sarmede	Sarmede	Sarmede	Sarmede	Sarmede
+	1422	Sarmazza	45.4326400	11.3163800	IT	20	0	0	Sarmazza	Sarmazza	Sarmazza	Sarmazza	Sarmazza	Sarmazza
+	1422	Sarcedo	45.7013400	11.5296300	IT	20	0	0	Sarcedo	Sarcedo	Sarcedo	Sarcedo	Sarcedo	Sarcedo
+	1422	Sappada	46.5666300	12.6842100	IT	20	0	0	Sappada	Sappada	Sappada	Sappada	Sappada	Sappada
+	1422	San Zenone degli Ezzelini	45.7804000	11.8372000	IT	20	0	0	San Zenone degli Ezzelini	San Zenone degli Ezzelini	San Zenone degli Ezzelini	San Zenone degli Ezzelini	San Zenone degli Ezzelini	San Zenone degli Ezzelini
+	1422	San Zeno di Montagna	45.6374900	10.7321800	IT	20	0	0	San Zeno di Montagna	San Zeno di Montagna	San Zeno di Montagna	San Zeno di Montagna	San Zeno di Montagna	San Zeno di Montagna
+	1422	Sanzan	45.9778400	11.9398600	IT	20	0	0	Sanzan	Sanzan	Sanzan	Sanzan	Sanzan	Sanzan
+	1422	San Vittore	45.4295900	11.2220300	IT	20	0	0	San Vittore	San Vittore	San Vittore	San Vittore	San Vittore	San Vittore
+	1422	San Vito di Leguzzano	45.6849400	11.3887200	IT	20	0	0	San Vito di Leguzzano	San Vito di Leguzzano	San Vito di Leguzzano	San Vito di Leguzzano	San Vito di Leguzzano	San Vito di Leguzzano
+	1422	San Vito	46.4627800	12.2060800	IT	20	0	0	San Vito	San Vito	San Vito	San Vito	San Vito	San Vito
+	1422	San Vito	45.7551400	11.9155300	IT	20	0	0	San Vito	San Vito	San Vito	San Vito	San Vito	San Vito
+	1422	San Vitale	45.6155500	12.1863200	IT	20	0	0	San Vitale	San Vitale	San Vitale	San Vitale	San Vitale	San Vitale
+	1422	San Vendemiano	45.8873200	12.3516400	IT	20	0	0	San Vendemiano	San Vendemiano	San Vendemiano	San Vendemiano	San Vendemiano	San Vendemiano
+	1422	Sant'Urbano	45.1235100	11.6484600	IT	20	0	0	Sant'Urbano	Sant'Urbano	Sant'Urbano	Sant'Urbano	Sant'Urbano	Sant'Urbano
+	1422	San Trovaso	45.6288900	12.2132100	IT	20	0	0	San Trovaso	San Trovaso	San Trovaso	San Trovaso	San Trovaso	San Trovaso
+	1422	Santo Stino di Livenza	45.7255900	12.6897100	IT	20	0	0	Santo Stino di Livenza	Santo Stino di Livenza	Santo Stino di Livenza	Santo Stino di Livenza	Santo Stino di Livenza	Santo Stino di Livenza
+	1422	Santo Stefano di Cadore	46.5582700	12.5495600	IT	20	0	0	Santo Stefano di Cadore	Santo Stefano di Cadore	Santo Stefano di Cadore	Santo Stefano di Cadore	Santo Stefano di Cadore	Santo Stefano di Cadore
+	1422	Santorso	45.7338300	11.3878500	IT	20	0	0	Santorso	Santorso	Santorso	Santorso	Santorso	Santorso
+	1422	Celat-San Tomaso Agordino	46.3807200	11.9743900	IT	20	0	0	Celat-San Tomaso Agordino	Celat-San Tomaso Agordino	Celat-San Tomaso Agordino	Celat-San Tomaso Agordino	Celat-San Tomaso Agordino	Celat-San Tomaso Agordino
+	1422	Sant'Elena	45.6256200	12.3351400	IT	20	0	0	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena
+	1422	Sant'Elena	45.1874400	11.7116900	IT	20	0	0	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena	Sant'Elena
+	1422	Sant'Antonio Tortal	46.0405400	12.1630400	IT	20	0	0	Sant'Antonio Tortal	Sant'Antonio Tortal	Sant'Antonio Tortal	Sant'Antonio Tortal	Sant'Antonio Tortal	Sant'Antonio Tortal
+	1422	Sant'Antonio	45.4155500	11.4008700	IT	20	0	0	Sant'Antonio	Sant'Antonio	Sant'Antonio	Sant'Antonio	Sant'Antonio	Sant'Antonio
+	1422	Sant'Anna d'Alfaedo	45.6271900	10.9516800	IT	20	0	0	Sant'Anna d'Alfaedo	Sant'Anna d'Alfaedo	Sant'Anna d'Alfaedo	Sant'Anna d'Alfaedo	Sant'Anna d'Alfaedo	Sant'Anna d'Alfaedo
+	1422	Sant'Angelo di Piove di Sacco	45.3173500	12.0094100	IT	20	0	0	Sant'Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco	Sant'Angelo di Piove di Sacco
+	1422	Sant'Angelo	45.5203100	12.0186200	IT	20	0	0	Sant'Angelo	Sant'Angelo	Sant'Angelo	Sant'Angelo	Sant'Angelo	Sant'Angelo
+	1422	Sant'Andrea	45.4934100	11.9486200	IT	20	0	0	Sant'Andrea	Sant'Andrea	Sant'Andrea	Sant'Andrea	Sant'Andrea	Sant'Andrea
+	1422	Santandrà	45.7477800	12.2011100	IT	20	0	0	Santandrà	Santandrà	Santandrà	Santandrà	Santandrà	Santandrà
+	1422	Sant'Anastasio	45.7132100	12.6737800	IT	20	0	0	Sant'Anastasio	Sant'Anastasio	Sant'Anastasio	Sant'Anastasio	Sant'Anastasio	Sant'Anastasio
+	1422	Sant'Ambrogio di Valpollicella	45.5208900	10.8361800	IT	20	0	0	Sant'Ambrogio di Valpollicella	Sant'Ambrogio di Valpollicella	Sant'Ambrogio di Valpollicella	Sant'Ambrogio di Valpollicella	Sant'Ambrogio di Valpollicella	Sant'Ambrogio di Valpollicella
+	1422	Sant'Ambrogio	45.6061100	12.0786100	IT	20	0	0	Sant'Ambrogio	Sant'Ambrogio	Sant'Ambrogio	Sant'Ambrogio	Sant'Ambrogio	Sant'Ambrogio
+	1422	Santa Maria In Stelle	45.4933400	11.0348300	IT	20	0	0	Santa Maria In Stelle	Santa Maria In Stelle	Santa Maria In Stelle	Santa Maria In Stelle	Santa Maria In Stelle	Santa Maria In Stelle
+	1422	Santamaria in Punta	44.9746200	12.0731600	IT	20	0	0	Santamaria in Punta	Santamaria in Punta	Santamaria in Punta	Santamaria in Punta	Santamaria in Punta	Santamaria in Punta
+	1422	Santa Maria di Sala	45.5069900	12.0356500	IT	20	0	0	Santa Maria di Sala	Santa Maria di Sala	Santa Maria di Sala	Santa Maria di Sala	Santa Maria di Sala	Santa Maria di Sala
+	1422	Santa Maria	45.9525800	11.9270900	IT	20	0	0	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria
+	1422	Santa Margherita d'Adige	45.2121000	11.5575900	IT	20	0	0	Santa Margherita d'Adige	Santa Margherita d'Adige	Santa Margherita d'Adige	Santa Margherita d'Adige	Santa Margherita d'Adige	Santa Margherita d'Adige
+	1422	Santa Margherita	45.2434200	12.1250800	IT	20	0	0	Santa Margherita	Santa Margherita	Santa Margherita	Santa Margherita	Santa Margherita	Santa Margherita
+	1422	Santa Lucia	45.2821700	11.6689000	IT	20	0	0	Santa Lucia	Santa Lucia	Santa Lucia	Santa Lucia	Santa Lucia	Santa Lucia
+	1422	Santa Giustina in Colle	45.5750600	11.9003900	IT	20	0	0	Santa Giustina in Colle	Santa Giustina in Colle	Santa Giustina in Colle	Santa Giustina in Colle	Santa Giustina in Colle	Santa Giustina in Colle
+	1422	Santa Giustina	46.0811800	12.0382200	IT	20	0	0	Santa Giustina	Santa Giustina	Santa Giustina	Santa Giustina	Santa Giustina	Santa Giustina
+	1422	Santa Croce	46.0919800	12.3308200	IT	20	0	0	Santa Croce	Santa Croce	Santa Croce	Santa Croce	Santa Croce	Santa Croce
+	1422	Santa Croce Bigolina	45.6656500	11.7185200	IT	20	0	0	Santa Croce Bigolina	Santa Croce Bigolina	Santa Croce Bigolina	Santa Croce Bigolina	Santa Croce Bigolina	Santa Croce Bigolina
+	1422	Santa Cristina	45.6435000	12.1390300	IT	20	0	0	Santa Cristina	Santa Cristina	Santa Cristina	Santa Cristina	Santa Cristina	Santa Cristina
+	1422	San Siro	45.1819400	11.9196200	IT	20	0	0	San Siro	San Siro	San Siro	San Siro	San Siro	San Siro
+	1422	San Salvaro	45.2044500	11.4090300	IT	20	0	0	San Salvaro	San Salvaro	San Salvaro	San Salvaro	San Salvaro	San Salvaro
+	1422	San Rocco	45.5524800	11.0868000	IT	20	0	0	San Rocco	San Rocco	San Rocco	San Rocco	San Rocco	San Rocco
+	1422	San Rocco	44.8334600	12.3749100	IT	20	0	0	San Rocco	San Rocco	San Rocco	San Rocco	San Rocco	San Rocco
+	1422	San Quirico	45.6768500	11.2726000	IT	20	0	0	San Quirico	San Quirico	San Quirico	San Quirico	San Quirico	San Quirico
+	1422	San Pietro Viminario	45.2450100	11.8204900	IT	20	0	0	San Pietro Viminario	San Pietro Viminario	San Pietro Viminario	San Pietro Viminario	San Pietro Viminario	San Pietro Viminario
+	1422	San Pietro Polesine	45.0593600	11.3290700	IT	20	0	0	San Pietro Polesine	San Pietro Polesine	San Pietro Polesine	San Pietro Polesine	San Pietro Polesine	San Pietro Polesine
+	1422	San Pietro in Gu	45.6087900	11.6735500	IT	20	0	0	San Pietro in Gu	San Pietro in Gu	San Pietro in Gu	San Pietro in Gu	San Pietro in Gu	San Pietro in Gu
+	1422	San Pietro di Feletto	45.9139100	12.2510100	IT	20	0	0	San Pietro di Feletto	San Pietro di Feletto	San Pietro di Feletto	San Pietro di Feletto	San Pietro di Feletto	San Pietro di Feletto
+	1422	San Pietro	45.1180300	12.1818600	IT	20	0	0	San Pietro	San Pietro	San Pietro	San Pietro	San Pietro	San Pietro
+	1422	San Pietro di Cadore	46.5719000	12.5869000	IT	20	0	0	San Pietro di Cadore	San Pietro di Cadore	San Pietro di Cadore	San Pietro di Cadore	San Pietro di Cadore	San Pietro di Cadore
+	1422	San Pancrazio	45.4245200	11.0225900	IT	20	0	0	San Pancrazio	San Pancrazio	San Pancrazio	San Pancrazio	San Pancrazio	San Pancrazio
+	1422	San Nazario	45.8398200	11.6889300	IT	20	0	0	San Nazario	San Nazario	San Nazario	San Nazario	San Nazario	San Nazario
+	1422	Monte	45.4789400	11.1872900	IT	20	0	0	Monte	Monte	Monte	Monte	Monte	Monte
+	1422	San Michele Vecchio	45.5819800	12.3524800	IT	20	0	0	San Michele Vecchio	San Michele Vecchio	San Michele Vecchio	San Michele Vecchio	San Michele Vecchio	San Michele Vecchio
+	1422	San Michele al Tagliamento	45.7643500	12.9949400	IT	20	0	0	San Michele al Tagliamento	San Michele al Tagliamento	San Michele al Tagliamento	San Michele al Tagliamento	San Michele al Tagliamento	San Michele al Tagliamento
+	1422	San Michele di Piave	45.7966700	12.3463400	IT	20	0	0	San Michele di Piave	San Michele di Piave	San Michele di Piave	San Michele di Piave	San Michele di Piave	San Michele di Piave
+	1422	San Mauro di Saline	45.5645200	11.1123400	IT	20	0	0	San Mauro di Saline	San Mauro di Saline	San Mauro di Saline	San Mauro di Saline	San Mauro di Saline	San Mauro di Saline
+	1422	San Martino di Venezze	45.1253200	11.8701800	IT	20	0	0	San Martino di Venezze	San Martino di Venezze	San Martino di Venezze	San Martino di Venezze	San Martino di Venezze	San Martino di Venezze
+	1422	San Martino di Lupari	45.6512800	11.8600400	IT	20	0	0	San Martino di Lupari	San Martino di Lupari	San Martino di Lupari	San Martino di Lupari	San Martino di Lupari	San Martino di Lupari
+	1422	San Martino Buon Albergo	45.4208300	11.0956200	IT	20	0	0	San Martino Buon Albergo	San Martino Buon Albergo	San Martino Buon Albergo	San Martino Buon Albergo	San Martino Buon Albergo	San Martino Buon Albergo
+	1422	Sanguinetto	45.1856700	11.1441200	IT	20	0	0	Sanguinetto	Sanguinetto	Sanguinetto	Sanguinetto	Sanguinetto	Sanguinetto
+	1422	San Gottardo	46.1682000	12.1143900	IT	20	0	0	San Gottardo	San Gottardo	San Gottardo	San Gottardo	San Gottardo	San Gottardo
+	1422	San Giovanni Lupatoto	45.3819300	11.0447400	IT	20	0	0	San Giovanni Lupatoto	San Giovanni Lupatoto	San Giovanni Lupatoto	San Giovanni Lupatoto	San Giovanni Lupatoto	San Giovanni Lupatoto
+	1422	San Giovanni Ilarione	45.5192700	11.2370700	IT	20	0	0	San Giovanni Ilarione	San Giovanni Ilarione	San Giovanni Ilarione	San Giovanni Ilarione	San Giovanni Ilarione	San Giovanni Ilarione
+	1422	San Giorgio Maggiore	45.4277000	12.3440000	IT	20	0	0	San Giorgio Maggiore	San Giorgio Maggiore	San Giorgio Maggiore	San Giorgio Maggiore	San Giorgio Maggiore	San Giorgio Maggiore
+	1422	San Giorgio in Salici	45.4267600	10.7890600	IT	20	0	0	San Giorgio in Salici	San Giorgio in Salici	San Giorgio in Salici	San Giorgio in Salici	San Giorgio in Salici	San Giorgio in Salici
+	1422	San Giorgio in Brenta	45.6129800	11.7716500	IT	20	0	0	San Giorgio in Brenta	San Giorgio in Brenta	San Giorgio in Brenta	San Giorgio in Brenta	San Giorgio in Brenta	San Giorgio in Brenta
+	1422	San Giorgio in Bosco	45.5886300	11.8073600	IT	20	0	0	San Giorgio in Bosco	San Giorgio in Bosco	San Giorgio in Bosco	San Giorgio in Bosco	San Giorgio in Bosco	San Giorgio in Bosco
+	1422	San Giorgio di Livenza	45.6533000	12.7969200	IT	20	0	0	San Giorgio di Livenza	San Giorgio di Livenza	San Giorgio di Livenza	San Giorgio di Livenza	San Giorgio di Livenza	San Giorgio di Livenza
+	1422	San Gaetano	45.8790900	11.6782500	IT	20	0	0	San Gaetano	San Gaetano	San Gaetano	San Gaetano	San Gaetano	San Gaetano
+	1422	San Gaetano	45.6444700	12.8744100	IT	20	0	0	San Gaetano	San Gaetano	San Gaetano	San Gaetano	San Gaetano	San Gaetano
+	1422	San Francesco	45.6255400	11.0717800	IT	20	0	0	San Francesco	San Francesco	San Francesco	San Francesco	San Francesco	San Francesco
+	1422	Nove-San Floriano	46.0407500	12.3078800	IT	20	0	0	Nove-San Floriano	Nove-San Floriano	Nove-San Floriano	Nove-San Floriano	Nove-San Floriano	Nove-San Floriano
+	1422	San Floriano	45.5179600	10.9081700	IT	20	0	0	San Floriano	San Floriano	San Floriano	San Floriano	San Floriano	San Floriano
+	1422	San Fior di Sotto	45.9033900	12.3750500	IT	20	0	0	San Fior di Sotto	San Fior di Sotto	San Fior di Sotto	San Fior di Sotto	San Fior di Sotto	San Fior di Sotto
+	1422	San Fior di Sopra	45.9221900	12.3613700	IT	20	0	0	San Fior di Sopra	San Fior di Sopra	San Fior di Sopra	San Fior di Sopra	San Fior di Sopra	San Fior di Sopra
+	1422	Sandrigo	45.6608300	11.5892100	IT	20	0	0	Sandrigo	Sandrigo	Sandrigo	Sandrigo	Sandrigo	Sandrigo
+	1422	San Donato	46.0639600	11.7059100	IT	20	0	0	San Donato	San Donato	San Donato	San Donato	San Donato	San Donato
+	1422	San Donà di Piave	45.6301900	12.5681000	IT	20	0	0	San Donà di Piave	San Donà di Piave	San Donà di Piave	San Donà di Piave	San Donà di Piave	San Donà di Piave
+	1422	Sandon	45.3638500	12.0425900	IT	20	0	0	Sandon	Sandon	Sandon	Sandon	Sandon	Sandon
+	1422	San Cassiano di Livenza	45.8779800	12.5382500	IT	20	0	0	San Cassiano di Livenza	San Cassiano di Livenza	San Cassiano di Livenza	San Cassiano di Livenza	San Cassiano di Livenza	San Cassiano di Livenza
+	1422	San Briccio	45.4547600	11.1192000	IT	20	0	0	San Briccio	San Briccio	San Briccio	San Briccio	San Briccio	San Briccio
+	1422	San Bonifacio	45.3959500	11.2735200	IT	20	0	0	San Bonifacio	San Bonifacio	San Bonifacio	San Bonifacio	San Bonifacio	San Bonifacio
+	1422	San Biagio di Callalta	45.6836100	12.3772200	IT	20	0	0	San Biagio di Callalta	San Biagio di Callalta	San Biagio di Callalta	San Biagio di Callalta	San Biagio di Callalta	San Biagio di Callalta
+	1422	San Bernardino	45.2988100	10.9536000	IT	20	0	0	San Bernardino	San Bernardino	San Bernardino	San Bernardino	San Bernardino	San Bernardino
+	1422	San Bellino	45.0294300	11.5922200	IT	20	0	0	San Bellino	San Bellino	San Bellino	San Bellino	San Bellino	San Bellino
+	1422	San Basilio	44.9461800	12.1769900	IT	20	0	0	San Basilio	San Basilio	San Basilio	San Basilio	San Basilio	San Basilio
+	1422	Salzano	45.5222100	12.1015100	IT	20	0	0	Salzano	Salzano	Salzano	Salzano	Salzano	Salzano
+	1422	Salvatronda	45.6742500	11.9770900	IT	20	0	0	Salvatronda	Salvatronda	Salvatronda	Salvatronda	Salvatronda	Salvatronda
+	1422	La Salute di Livenza	45.6536600	12.8013100	IT	20	0	0	La Salute di Livenza	La Salute di Livenza	La Salute di Livenza	La Salute di Livenza	La Salute di Livenza	La Salute di Livenza
+	1422	Salizzole	45.2400400	11.0954000	IT	20	0	0	Salizzole	Salizzole	Salizzole	Salizzole	Salizzole	Salizzole
+	1422	Salionze	45.4049300	10.7225900	IT	20	0	0	Salionze	Salionze	Salionze	Salionze	Salionze	Salionze
+	1422	Salgareda	45.7050000	12.4883300	IT	20	0	0	Salgareda	Salgareda	Salgareda	Salgareda	Salgareda	Salgareda
+	1422	Salettuol	45.7651400	12.3267600	IT	20	0	0	Salettuol	Salettuol	Salettuol	Salettuol	Salettuol	Salettuol
+	1422	Saletto-San Bartolomeo	45.7263900	12.3955600	IT	20	0	0	Saletto-San Bartolomeo	Saletto-San Bartolomeo	Saletto-San Bartolomeo	Saletto-San Bartolomeo	Saletto-San Bartolomeo	Saletto-San Bartolomeo
+	1422	Saletto	45.2288900	11.5378000	IT	20	0	0	Saletto	Saletto	Saletto	Saletto	Saletto	Saletto
+	1422	Salcedo	45.7578300	11.5662100	IT	20	0	0	Salcedo	Salcedo	Salcedo	Salcedo	Salcedo	Salcedo
+	1422	Salara	44.9858600	11.4265500	IT	20	0	0	Salara	Salara	Salara	Salara	Salara	Salara
+	1422	Sala	45.7033300	12.0950000	IT	20	0	0	Sala	Sala	Sala	Sala	Sala	Sala
+	1422	Saccolongo	45.4015200	11.7486300	IT	20	0	0	Saccolongo	Saccolongo	Saccolongo	Saccolongo	Saccolongo	Saccolongo
+	1422	Brentasecca-Sabbioncello	45.3761600	11.9899100	IT	20	0	0	Brentasecca-Sabbioncello	Brentasecca-Sabbioncello	Brentasecca-Sabbioncello	Brentasecca-Sabbioncello	Brentasecca-Sabbioncello	Brentasecca-Sabbioncello
+	1422	Runzi	44.9883000	11.5063300	IT	20	0	0	Runzi	Runzi	Runzi	Runzi	Runzi	Runzi
+	1422	Rubano	45.4251400	11.7914600	IT	20	0	0	Rubano	Rubano	Rubano	Rubano	Rubano	Rubano
+	1422	Rozzampia	45.6794000	11.5023000	IT	20	0	0	Rozzampia	Rozzampia	Rozzampia	Rozzampia	Rozzampia	Rozzampia
+	1422	Rovolon	45.3667300	11.6624700	IT	20	0	0	Rovolon	Rovolon	Rovolon	Rovolon	Rovolon	Rovolon
+	1422	Rovigo	45.0698200	11.7902200	IT	20	0	0	Rovigo	Ровиго	Rovigo	Rovigo	Rovigo	Rovigo
+	1422	Rotta Sabbadina	45.1098000	11.6346600	IT	20	0	0	Rotta Sabbadina	Rotta Sabbadina	Rotta Sabbadina	Rotta Sabbadina	Rotta Sabbadina	Rotta Sabbadina
+	1422	Rottanova	45.1436100	12.0184900	IT	20	0	0	Rottanova	Rottanova	Rottanova	Rottanova	Rottanova	Rottanova
+	1422	Rossi	45.8387600	11.4119200	IT	20	0	0	Rossi	Rossi	Rossi	Rossi	Rossi	Rossi
+	1422	Rossano Veneto	45.7030800	11.8036900	IT	20	0	0	Rossano Veneto	Rossano Veneto	Rossano Veneto	Rossano Veneto	Rossano Veneto	Rossano Veneto
+	1422	Rosolina	45.0767400	12.2297700	IT	20	0	0	Rosolina	Rosolina	Rosolina	Rosolina	Rosolina	Rosolina
+	1422	Rosà	45.7019800	11.7614100	IT	20	0	0	Rosà	Rosà	Rosà	Rosà	Rosà	Rosà
+	1422	Ronco All'Adige	45.3364700	11.2365800	IT	20	0	0	Ronco All'Adige	Ronco All'Adige	Ronco All'Adige	Ronco All'Adige	Ronco All'Adige	Ronco All'Adige
+	1422	Ronchi	45.8933100	11.5884800	IT	20	0	0	Ronchi	Ronchi	Ronchi	Ronchi	Ronchi	Ronchi
+	1422	Villapiana-Ronchena	46.0333300	12.0000000	IT	20	0	0	Villapiana-Ronchena	Villapiana-Ronchena	Villapiana-Ronchena	Villapiana-Ronchena	Villapiana-Ronchena	Villapiana-Ronchena
+	1422	Roncajette	45.3452100	11.9373200	IT	20	0	0	Roncajette	Roncajette	Roncajette	Roncajette	Roncajette	Roncajette
+	1422	Roncade	45.6216500	12.3764300	IT	20	0	0	Roncade	Roncade	Roncade	Roncade	Roncade	Roncade
+	1422	Roncà	45.4798700	11.2932300	IT	20	0	0	Roncà	Roncà	Roncà	Roncà	Roncà	Roncà
+	1422	Romanziol	45.6754500	12.5015700	IT	20	0	0	Romanziol	Romanziol	Romanziol	Romanziol	Romanziol	Romanziol
+	1422	Rocca	45.9543500	11.7519500	IT	20	0	0	Rocca	Rocca	Rocca	Rocca	Rocca	Rocca
+	1422	Case Roaro	45.2419000	11.5263300	IT	20	0	0	Case Roaro	Case Roaro	Case Roaro	Case Roaro	Case Roaro	Case Roaro
+	1422	Roana	45.8769600	11.4527400	IT	20	0	0	Roana	Roana	Roana	Roana	Roana	Roana
+	1422	Rivamonte Agordino	46.2522600	12.0230300	IT	20	0	0	Rivamonte Agordino	Rivamonte Agordino	Rivamonte Agordino	Rivamonte Agordino	Rivamonte Agordino	Rivamonte Agordino
+	1422	Riese Pio X	45.7285800	11.9180100	IT	20	0	0	Riese Pio X	Riese Pio X	Riese Pio X	Riese Pio X	Riese Pio X	Riese Pio X
+	1422	Revine	45.9993500	12.2556100	IT	20	0	0	Revine	Revine	Revine	Revine	Revine	Revine
+	1422	Resana	45.6353500	11.9547200	IT	20	0	0	Resana	Resana	Resana	Resana	Resana	Resana
+	1422	Refrontolo	45.9230500	12.2086500	IT	20	0	0	Refrontolo	Refrontolo	Refrontolo	Refrontolo	Refrontolo	Refrontolo
+	1422	Recoaro Terme	45.7037300	11.2221600	IT	20	0	0	Recoaro Terme	Recoaro Terme	Recoaro Terme	Recoaro Terme	Recoaro Terme	Recoaro Terme
+	1422	Rampazzo	45.5384200	11.6845000	IT	20	0	0	Rampazzo	Rampazzo	Rampazzo	Rampazzo	Rampazzo	Rampazzo
+	1422	Ramon	45.7138600	11.8682800	IT	20	0	0	Ramon	Ramon	Ramon	Ramon	Ramon	Ramon
+	1422	Zona Produttiva Ramera	45.8657700	12.3363200	IT	20	0	0	Zona Produttiva Ramera	Zona Produttiva Ramera	Zona Produttiva Ramera	Zona Produttiva Ramera	Zona Produttiva Ramera	Zona Produttiva Ramera
+	1422	Raldon	45.3492100	11.0378600	IT	20	0	0	Raldon	Raldon	Raldon	Raldon	Raldon	Raldon
+	1422	Raccano	44.9572600	11.7295300	IT	20	0	0	Raccano	Raccano	Raccano	Raccano	Raccano	Raccano
+	1422	Quinto Vicentino	45.5753400	11.6281500	IT	20	0	0	Quinto Vicentino	Quinto Vicentino	Quinto Vicentino	Quinto Vicentino	Quinto Vicentino	Quinto Vicentino
+	1422	Quinto di Treviso	45.6435100	12.1650900	IT	20	0	0	Quinto di Treviso	Quinto di Treviso	Quinto di Treviso	Quinto di Treviso	Quinto di Treviso	Quinto di Treviso
+	1422	Quero	45.9209400	11.9315100	IT	20	0	0	Quero	Quero	Quero	Quero	Quero	Quero
+	1422	Quarto d'Altino	45.5794400	12.3733300	IT	20	0	0	Quarto d'Altino	Quarto d'Altino	Quarto d'Altino	Quarto d'Altino	Quarto d'Altino	Quarto d'Altino
+	1422	Quantin	46.1243600	12.2976500	IT	20	0	0	Quantin	Quantin	Quantin	Quantin	Quantin	Quantin
+	1422	Puos d'Alpago	46.1415400	12.3617600	IT	20	0	0	Puos d'Alpago	Puos d'Alpago	Puos d'Alpago	Puos d'Alpago	Puos d'Alpago	Puos d'Alpago
+	1422	Punta Gorzone	45.1814000	12.2647100	IT	20	0	0	Punta Gorzone	Punta Gorzone	Punta Gorzone	Punta Gorzone	Punta Gorzone	Punta Gorzone
+	1422	Pullir	46.0653700	11.9586200	IT	20	0	0	Pullir	Pullir	Pullir	Pullir	Pullir	Pullir
+	1422	Primolano	45.9659600	11.7011300	IT	20	0	0	Primolano	Primolano	Primolano	Primolano	Primolano	Primolano
+	1422	Pressana	45.2825800	11.4072400	IT	20	0	0	Pressana	Pressana	Pressana	Pressana	Pressana	Pressana
+	1422	Presina	45.5609100	11.7519800	IT	20	0	0	Presina	Presina	Presina	Presina	Presina	Presina
+	1422	Presina	45.2993000	11.3034700	IT	20	0	0	Presina	Presina	Presina	Presina	Presina	Presina
+	1422	Pren	46.0572200	11.8946300	IT	20	0	0	Pren	Pren	Pren	Pren	Pren	Pren
+	1422	Preganziol	45.6013900	12.2372200	IT	20	0	0	Preganziol	Preganziol	Preganziol	Preganziol	Preganziol	Preganziol
+	1422	Pradipozzo	45.7797800	12.7588900	IT	20	0	0	Pradipozzo	Pradipozzo	Pradipozzo	Pradipozzo	Pradipozzo	Pradipozzo
+	1422	Pozzonovo	45.1962900	11.7917100	IT	20	0	0	Pozzonovo	Pozzonovo	Pozzonovo	Pozzonovo	Pozzonovo	Pozzonovo
+	1422	Pozzoleone	45.6496500	11.6709800	IT	20	0	0	Pozzoleone	Pozzoleone	Pozzoleone	Pozzoleone	Pozzoleone	Pozzoleone
+	1422	Povegliano Veronese	45.3473000	10.8805600	IT	20	0	0	Povegliano Veronese	Povegliano Veronese	Povegliano Veronese	Povegliano Veronese	Povegliano Veronese	Povegliano Veronese
+	1422	Postuman	45.4988600	11.1189300	IT	20	0	0	Postuman	Postuman	Postuman	Postuman	Postuman	Postuman
+	1422	Postioma	45.7175300	12.1521800	IT	20	0	0	Postioma	Postioma	Postioma	Postioma	Postioma	Postioma
+	1422	Possagno	45.8479500	11.8846700	IT	20	0	0	Possagno	Possagno	Possagno	Possagno	Possagno	Possagno
+	1422	Posina	45.7910600	11.2624400	IT	20	0	0	Posina	Posina	Posina	Posina	Posina	Posina
+	1422	Porto Tolle	44.9496900	12.3245300	IT	20	0	0	Porto Tolle	Porto Tolle	Porto Tolle	Porto Tolle	Porto Tolle	Porto Tolle
+	1422	Portogruaro	45.7807100	12.8405200	IT	20	0	0	Portogruaro	Portogruaro	Portogruaro	Portogruaro	Portogruaro	Portogruaro
+	1422	Portobuffolè	45.8566500	12.5376100	IT	20	0	0	Portobuffolè	Portobuffolè	Portobuffolè	Portobuffolè	Portobuffolè	Portobuffolè
+	1422	Portegrandi I	45.5600500	12.4483200	IT	20	0	0	Portegrandi I	Portegrandi I	Portegrandi I	Portegrandi I	Portegrandi I	Portegrandi I
+	1422	Porcen	45.9977200	11.8749900	IT	20	0	0	Porcen	Porcen	Porcen	Porcen	Porcen	Porcen
+	1422	Porcellengo	45.7061300	12.1422500	IT	20	0	0	Porcellengo	Porcellengo	Porcellengo	Porcellengo	Porcellengo	Porcellengo
+	1422	Ponte Storto	45.7385200	11.7275500	IT	20	0	0	Ponte Storto	Ponte Storto	Ponte Storto	Ponte Storto	Ponte Storto	Ponte Storto
+	1422	Ponte San Nicolò	45.3671800	11.9234100	IT	20	0	0	Ponte San Nicolò	Ponte San Nicolò	Ponte San Nicolò	Ponte San Nicolò	Ponte San Nicolò	Ponte San Nicolò
+	1422	Ponterotto-Giustizia	45.4526200	11.8282800	IT	20	0	0	Ponterotto-Giustizia	Ponterotto-Giustizia	Ponterotto-Giustizia	Ponterotto-Giustizia	Ponterotto-Giustizia	Ponterotto-Giustizia
+	1422	Ponte nelle Alpi	46.1808300	12.2833300	IT	20	0	0	Ponte nelle Alpi	Ponte nelle Alpi	Ponte nelle Alpi	Ponte nelle Alpi	Ponte nelle Alpi	Ponte nelle Alpi
+	1422	Pontelongo	45.2459000	12.0258200	IT	20	0	0	Pontelongo	Pontelongo	Pontelongo	Pontelongo	Pontelongo	Pontelongo
+	1422	Ponte di Piave	45.7190400	12.4618600	IT	20	0	0	Ponte di Piave	Ponte di Piave	Ponte di Piave	Ponte di Piave	Ponte di Piave	Ponte di Piave
+	1422	Ponte di Barbarano	45.3920600	11.5784700	IT	20	0	0	Ponte di Barbarano	Ponte di Barbarano	Ponte di Barbarano	Ponte di Barbarano	Ponte di Barbarano	Ponte di Barbarano
+	1422	Zona Industriale Ponte della Muda	45.9436500	12.4539400	IT	20	0	0	Zona Industriale Ponte della Muda	Zona Industriale Ponte della Muda	Zona Industriale Ponte della Muda	Zona Industriale Ponte della Muda	Zona Industriale Ponte della Muda	Zona Industriale Ponte della Muda
+	1422	Pontecchio Polesine	45.0202000	11.8132100	IT	20	0	0	Pontecchio Polesine	Pontecchio Polesine	Pontecchio Polesine	Pontecchio Polesine	Pontecchio Polesine	Pontecchio Polesine
+	1422	Pontecasale	45.2174800	11.9629300	IT	20	0	0	Pontecasale	Pontecasale	Pontecasale	Pontecasale	Pontecasale	Pontecasale
+	1422	Ponso	45.1823200	11.5793300	IT	20	0	0	Ponso	Ponso	Ponso	Ponso	Ponso	Ponso
+	1422	Polverara	45.3094500	11.9547400	IT	20	0	0	Polverara	Polverara	Polverara	Polverara	Polverara	Polverara
+	1422	Ponte nelle Alpi-Polpet	46.1883300	12.2783300	IT	20	0	0	Ponte nelle Alpi-Polpet	Ponte nelle Alpi-Polpet	Ponte nelle Alpi-Polpet	Ponte nelle Alpi-Polpet	Ponte nelle Alpi-Polpet	Ponte nelle Alpi-Polpet
+	1422	Polesinello	44.8994700	12.3169600	IT	20	0	0	Polesinello	Polesinello	Polesinello	Polesinello	Polesinello	Polesinello
+	1422	Polesine Camerini	44.9374300	12.4403500	IT	20	0	0	Polesine Camerini	Polesine Camerini	Polesine Camerini	Polesine Camerini	Polesine Camerini	Polesine Camerini
+	1422	Polesella	44.9645700	11.7488700	IT	20	0	0	Polesella	Polesella	Polesella	Polesella	Polesella	Polesella
+	1422	Poiano	45.4702900	11.0187500	IT	20	0	0	Poiano	Poiano	Poiano	Poiano	Poiano	Poiano
+	1422	Poiana Maggiore	45.2903900	11.5025000	IT	20	0	0	Poiana Maggiore	Poiana Maggiore	Poiana Maggiore	Poiana Maggiore	Poiana Maggiore	Poiana Maggiore
+	1422	Pocol	46.5261000	12.1158600	IT	20	0	0	Pocol	Pocol	Pocol	Pocol	Pocol	Pocol
+	1422	Placa	45.7711600	11.6506900	IT	20	0	0	Placa	Placa	Placa	Placa	Placa	Placa
+	1422	Pissatola	45.0489800	11.4719100	IT	20	0	0	Pissatola	Pissatola	Pissatola	Pissatola	Pissatola	Pissatola
+	1422	Piovene Rocchette	45.7560100	11.4327300	IT	20	0	0	Piovene Rocchette	Piovene Rocchette	Piovene Rocchette	Piovene Rocchette	Piovene Rocchette	Piovene Rocchette
+	1422	Piove di Sacco-Piovega	45.2966500	12.0368300	IT	20	0	0	Piove di Sacco-Piovega	Piove di Sacco-Piovega	Piove di Sacco-Piovega	Piove di Sacco-Piovega	Piove di Sacco-Piovega	Piove di Sacco-Piovega
+	1422	Piombino Dese	45.6096400	11.9941600	IT	20	0	0	Piombino Dese	Piombino Dese	Piombino Dese	Piombino Dese	Piombino Dese	Piombino Dese
+	1422	Pio	45.0343200	11.3411300	IT	20	0	0	Pio	Pio	Pio	Pio	Pio	Pio
+	1422	Pincara	45.0006400	11.6210100	IT	20	0	0	Pincara	Pincara	Pincara	Pincara	Pincara	Pincara
+	1422	Pieve di Soligo	45.8983600	12.1712800	IT	20	0	0	Pieve di Soligo	Pieve di Soligo	Pieve di Soligo	Pieve di Soligo	Pieve di Soligo	Pieve di Soligo
+	1422	Pieve di Cadore	46.4246600	12.3641600	IT	20	0	0	Pieve di Cadore	Pieve di Cadore	Pieve di Cadore	Pieve di Cadore	Pieve di Cadore	Pieve di Cadore
+	1422	Pieve d'Alpago	46.1665800	12.3534400	IT	20	0	0	Pieve d'Alpago	Pieve d'Alpago	Pieve d'Alpago	Pieve d'Alpago	Pieve d'Alpago	Pieve d'Alpago
+	1422	Piazzola sul Brenta	45.5384500	11.7843700	IT	20	0	0	Piazzola sul Brenta	Piazzola sul Brenta	Piazzola sul Brenta	Piazzola sul Brenta	Piazzola sul Brenta	Piazzola sul Brenta
+	1422	Piazza	45.2158500	11.1424400	IT	20	0	0	Piazza	Piazza	Piazza	Piazza	Piazza	Piazza
+	1422	Pianiga	45.4570800	12.0076200	IT	20	0	0	Pianiga	Pianiga	Pianiga	Pianiga	Pianiga	Pianiga
+	1422	Pianezze	45.7414100	11.6270000	IT	20	0	0	Pianezze	Pianezze	Pianezze	Pianezze	Pianezze	Pianezze
+	1422	Pian-Fossal	46.4510100	12.0210800	IT	20	0	0	Pian-Fossal	Pian-Fossal	Pian-Fossal	Pian-Fossal	Pian-Fossal	Pian-Fossal
+	1422	Piaia	46.3863700	11.9834200	IT	20	0	0	Piaia	Piaia	Piaia	Piaia	Piaia	Piaia
+	1422	Piacenza d'Adige	45.1274900	11.5433300	IT	20	0	0	Piacenza d'Adige	Piacenza d'Adige	Piacenza d'Adige	Piacenza d'Adige	Piacenza d'Adige	Piacenza d'Adige
+	1422	Lama Pezzoli	45.0435700	11.9094200	IT	20	0	0	Lama Pezzoli	Lama Pezzoli	Lama Pezzoli	Lama Pezzoli	Lama Pezzoli	Lama Pezzoli
+	1422	Pezzan	45.6977000	12.2918200	IT	20	0	0	Pezzan	Pezzan	Pezzan	Pezzan	Pezzan	Pezzan
+	1422	Pettorazza Grimani	45.1358500	11.9877900	IT	20	0	0	Pettorazza Grimani	Pettorazza Grimani	Pettorazza Grimani	Pettorazza Grimani	Pettorazza Grimani	Pettorazza Grimani
+	1422	Peschiere I	45.2012600	11.2604600	IT	20	0	0	Peschiere I	Peschiere I	Peschiere I	Peschiere I	Peschiere I	Peschiere I
+	1422	Peschiera del Garda	45.4391200	10.6861400	IT	20	0	0	Peschiera del Garda	Peschiera del Garda	Peschiera del Garda	Peschiera del Garda	Peschiera del Garda	Peschiera del Garda
+	1422	Pescantina	45.4854800	10.8679600	IT	20	0	0	Pescantina	Pescantina	Pescantina	Pescantina	Pescantina	Pescantina
+	1422	Pernumia	45.2589900	11.7872100	IT	20	0	0	Pernumia	Pernumia	Pernumia	Pernumia	Pernumia	Pernumia
+	1422	Peri	45.6570700	10.9025600	IT	20	0	0	Peri	Peri	Peri	Peri	Peri	Peri
+	1422	Perarolo di Cadore	46.3938300	12.3563600	IT	20	0	0	Perarolo di Cadore	Perarolo di Cadore	Perarolo di Cadore	Perarolo di Cadore	Perarolo di Cadore	Perarolo di Cadore
+	1422	Perarolo	45.4762000	11.5001900	IT	20	0	0	Perarolo	Perarolo	Perarolo	Perarolo	Perarolo	Perarolo
+	1422	Pelos di Cadore	46.4893500	12.4598700	IT	20	0	0	Pelos di Cadore	Pelos di Cadore	Pelos di Cadore	Pelos di Cadore	Pelos di Cadore	Pelos di Cadore
+	1422	Pellestrina	45.2771600	12.3023800	IT	20	0	0	Pellestrina	Pellestrina	Pellestrina	Pellestrina	Pellestrina	Pellestrina
+	1422	Pellegrina	45.2285200	11.0196400	IT	20	0	0	Pellegrina	Pellegrina	Pellegrina	Pellegrina	Pellegrina	Pellegrina
+	1422	Pegolotte	45.1917800	12.0379100	IT	20	0	0	Pegolotte	Pegolotte	Pegolotte	Pegolotte	Pegolotte	Pegolotte
+	1422	Pederobba	45.8756700	11.9497700	IT	20	0	0	Pederobba	Pederobba	Pederobba	Pederobba	Pederobba	Pederobba
+	1422	Pedavena	46.0395100	11.8831000	IT	20	0	0	Pedavena	Pedavena	Pedavena	Pedavena	Pedavena	Pedavena
+	1422	Paviole	44.9150000	11.6642200	IT	20	0	0	Paviole	Paviole	Paviole	Paviole	Paviole	Paviole
+	1422	Pastrengo	45.4958800	10.7989700	IT	20	0	0	Pastrengo	Pastrengo	Pastrengo	Pastrengo	Pastrengo	Pastrengo
+	1422	Passarella	45.5943600	12.6053700	IT	20	0	0	Passarella	Passarella	Passarella	Passarella	Passarella	Passarella
+	1422	Parona	45.4788200	10.9441400	IT	20	0	0	Parona	Parona	Parona	Parona	Parona	Parona
+	1422	Papozze	44.9833300	12.1666700	IT	20	0	0	Papozze	Papozze	Papozze	Papozze	Papozze	Papozze
+	1422	Paparinetto	44.9383500	11.6969000	IT	20	0	0	Paparinetto	Paparinetto	Paparinetto	Paparinetto	Paparinetto	Paparinetto
+	1422	Paolino	45.0029800	11.6258100	IT	20	0	0	Paolino	Paolino	Paolino	Paolino	Paolino	Paolino
+	1422	Pampuro	45.1715500	11.0127400	IT	20	0	0	Pampuro	Pampuro	Pampuro	Pampuro	Pampuro	Pampuro
+	1422	Palù	45.3247300	11.1563500	IT	20	0	0	Palù	Palù	Palù	Palù	Palù	Palù
+	1422	Paese	45.6741700	12.1638900	IT	20	0	0	Paese	Paese	Paese	Paese	Paese	Paese
+	1422	Padova	45.4079700	11.8858600	IT	20	0	0	Padova	Падуя	Padova	Padova	Padova	Padova
+	1422	Padola	46.6033600	12.4793000	IT	20	0	0	Padola	Padola	Padola	Padola	Padola	Padola
+	1422	Paderno	46.1175300	12.0572400	IT	20	0	0	Paderno	Paderno	Paderno	Paderno	Paderno	Paderno
+	1422	Ossenigo	45.6729000	10.9038400	IT	20	0	0	Ossenigo	Ossenigo	Ossenigo	Ossenigo	Ossenigo	Ossenigo
+	1422	Ospitale di Cadore	46.3280800	12.3226300	IT	20	0	0	Ospitale di Cadore	Ospitale di Cadore	Ospitale di Cadore	Ospitale di Cadore	Ospitale di Cadore	Ospitale di Cadore
+	1422	Ospedaletto Euganeo	45.2184200	11.6034500	IT	20	0	0	Ospedaletto Euganeo	Ospedaletto Euganeo	Ospedaletto Euganeo	Ospedaletto Euganeo	Ospedaletto Euganeo	Ospedaletto Euganeo
+	1422	Ospedaletto	45.6619400	12.0788400	IT	20	0	0	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto
+	1422	Osigo	46.0119200	12.3500600	IT	20	0	0	Osigo	Osigo	Osigo	Osigo	Osigo	Osigo
+	1422	Orgiano	45.3336600	11.4595300	IT	20	0	0	Orgiano	Orgiano	Orgiano	Orgiano	Orgiano	Orgiano
+	1422	Oregne	46.1244200	12.0746100	IT	20	0	0	Oregne	Oregne	Oregne	Oregne	Oregne	Oregne
+	1422	Oppeano	45.3033100	11.1800500	IT	20	0	0	Oppeano	Oppeano	Oppeano	Oppeano	Oppeano	Oppeano
+	1422	Oderzo	45.7811400	12.4944200	IT	20	0	0	Oderzo	Oderzo	Oderzo	Oderzo	Oderzo	Oderzo
+	1422	Occhiobello	44.9224000	11.5813900	IT	20	0	0	Occhiobello	Occhiobello	Occhiobello	Occhiobello	Occhiobello	Occhiobello
+	1422	Noventa Vicentina	45.2943800	11.5484300	IT	20	0	0	Noventa Vicentina	Noventa Vicentina	Noventa Vicentina	Noventa Vicentina	Noventa Vicentina	Noventa Vicentina
+	1422	Noventa di Piave	45.6598100	12.5332200	IT	20	0	0	Noventa di Piave	Noventa di Piave	Noventa di Piave	Noventa di Piave	Noventa di Piave	Noventa di Piave
+	1422	Nove	45.7215900	11.6783300	IT	20	0	0	Nove	Nove	Nove	Nove	Nove	Nove
+	1422	Nogarole Rocca	45.2902700	10.8834200	IT	20	0	0	Nogarole Rocca	Nogarole Rocca	Nogarole Rocca	Nogarole Rocca	Nogarole Rocca	Nogarole Rocca
+	1422	Nogara	45.1810900	11.0600800	IT	20	0	0	Nogara	Nogara	Nogara	Nogara	Nogara	Nogara
+	1422	Noale	45.5459600	12.0644500	IT	20	0	0	Noale	Noale	Noale	Noale	Noale	Noale
+	1422	Nichesola	45.1673300	11.3669600	IT	20	0	0	Nichesola	Nichesola	Nichesola	Nichesola	Nichesola	Nichesola
+	1422	Nervesa della Battaglia	45.8123200	12.1983700	IT	20	0	0	Nervesa della Battaglia	Nervesa della Battaglia	Nervesa della Battaglia	Nervesa della Battaglia	Nervesa della Battaglia	Nervesa della Battaglia
+	1422	Nemeggio	46.0281100	11.9725700	IT	20	0	0	Nemeggio	Nemeggio	Nemeggio	Nemeggio	Nemeggio	Nemeggio
+	1422	Negrisia	45.7335300	12.4358800	IT	20	0	0	Negrisia	Negrisia	Negrisia	Negrisia	Negrisia	Negrisia
+	1422	Negrar	45.5291800	10.9389900	IT	20	0	0	Negrar	Negrar	Negrar	Negrar	Negrar	Negrar
+	1422	Navenze	46.0624200	12.2064300	IT	20	0	0	Navenze	Navenze	Navenze	Navenze	Navenze	Navenze
+	1422	Nanto	45.4334600	11.5776900	IT	20	0	0	Nanto	Nanto	Nanto	Nanto	Nanto	Nanto
+	1422	San Pietro Mussolino	45.5835900	11.2593000	IT	20	0	0	San Pietro Mussolino	San Pietro Mussolino	San Pietro Mussolino	San Pietro Mussolino	San Pietro Mussolino	San Pietro Mussolino
+	1422	Musile di Piave	45.6205700	12.5417700	IT	20	0	0	Musile di Piave	Musile di Piave	Musile di Piave	Musile di Piave	Musile di Piave	Musile di Piave
+	1422	Musano	45.7264600	12.1178500	IT	20	0	0	Musano	Musano	Musano	Musano	Musano	Musano
+	1422	Murano	45.4585700	12.3568300	IT	20	0	0	Murano	Murano	Murano	Murano	Murano	Murano
+	1422	Mozzecane	45.3076300	10.8155400	IT	20	0	0	Mozzecane	Mozzecane	Mozzecane	Mozzecane	Mozzecane	Mozzecane
+	1422	Mottinello	45.6802200	11.7800800	IT	20	0	0	Mottinello	Mottinello	Mottinello	Mottinello	Mottinello	Mottinello
+	1422	Mottarelle	45.1935800	11.6834400	IT	20	0	0	Mottarelle	Mottarelle	Mottarelle	Mottarelle	Mottarelle	Mottarelle
+	1422	Motta di Livenza	45.7755200	12.6041100	IT	20	0	0	Motta di Livenza	Motta di Livenza	Motta di Livenza	Motta di Livenza	Motta di Livenza	Motta di Livenza
+	1422	Motta	45.5954000	11.4979800	IT	20	0	0	Motta	Motta	Motta	Motta	Motta	Motta
+	1422	Mosnigo	45.8630300	12.0785200	IT	20	0	0	Mosnigo	Mosnigo	Mosnigo	Mosnigo	Mosnigo	Mosnigo
+	1422	Moruri	45.5170800	11.1075700	IT	20	0	0	Moruri	Moruri	Moruri	Moruri	Moruri	Moruri
+	1422	Moriago della Battaglia	45.8658900	12.1007700	IT	20	0	0	Moriago della Battaglia	Moriago della Battaglia	Moriago della Battaglia	Moriago della Battaglia	Moriago della Battaglia	Moriago della Battaglia
+	1422	Moranzani	45.4263400	12.2390800	IT	20	0	0	Moranzani	Moranzani	Moranzani	Moranzani	Moranzani	Moranzani
+	1422	Montorso Vicentino	45.4908900	11.3602000	IT	20	0	0	Montorso Vicentino	Montorso Vicentino	Montorso Vicentino	Montorso Vicentino	Montorso Vicentino	Montorso Vicentino
+	1422	Montorio	45.4582600	11.0658900	IT	20	0	0	Montorio	Montorio	Montorio	Montorio	Montorio	Montorio
+	1422	Monticello Conte Otto	45.5978400	11.5723400	IT	20	0	0	Monticello Conte Otto	Monticello Conte Otto	Monticello Conte Otto	Monticello Conte Otto	Monticello Conte Otto	Monticello Conte Otto
+	1422	Monticello	45.3961600	11.5988200	IT	20	0	0	Monticello	Monticello	Monticello	Monticello	Monticello	Monticello
+	1422	Monteviale	45.5592000	11.4571500	IT	20	0	0	Monteviale	Monteviale	Monteviale	Monteviale	Monteviale	Monteviale
+	1422	Monte San Lorenzo	45.5782000	11.4312500	IT	20	0	0	Monte San Lorenzo	Monte San Lorenzo	Monte San Lorenzo	Monte San Lorenzo	Monte San Lorenzo	Monte San Lorenzo
+	1422	Montepiano	45.8993500	11.3221400	IT	20	0	0	Montepiano	Montepiano	Montepiano	Montepiano	Montepiano	Montepiano
+	1422	Monte Magrè	45.6844000	11.3365400	IT	20	0	0	Monte Magrè	Monte Magrè	Monte Magrè	Monte Magrè	Monte Magrè	Monte Magrè
+	1422	Montegrotto Terme	45.3311900	11.7863400	IT	20	0	0	Montegrotto Terme	Montegrotto Terme	Montegrotto Terme	Montegrotto Terme	Montegrotto Terme	Montegrotto Terme
+	1422	Montegaldella	45.4371700	11.6702200	IT	20	0	0	Montegaldella	Montegaldella	Montegaldella	Montegaldella	Montegaldella	Montegaldella
+	1422	Monteforte d'Alpone	45.4201300	11.2844600	IT	20	0	0	Monteforte d'Alpone	Monteforte d'Alpone	Monteforte d'Alpone	Monteforte d'Alpone	Monteforte d'Alpone	Monteforte d'Alpone
+	1422	Monte di Malo	45.6601100	11.3612700	IT	20	0	0	Monte di Malo	Monte di Malo	Monte di Malo	Monte di Malo	Monte di Malo	Monte di Malo
+	1422	Montecchio Maggiore-Alte Ceccato	45.5036900	11.4120000	IT	20	0	0	Montecchio Maggiore-Alte Ceccato	Montecchio Maggiore-Alte Ceccato	Montecchio Maggiore-Alte Ceccato	Montecchio Maggiore-Alte Ceccato	Montecchio Maggiore-Alte Ceccato	Montecchio Maggiore-Alte Ceccato
+	1422	Montecchio	45.5223200	10.9814700	IT	20	0	0	Montecchio	Montecchio	Montecchio	Montecchio	Montecchio	Montecchio
+	1422	Montecchia di Crosara	45.4819000	11.2543800	IT	20	0	0	Montecchia di Crosara	Montecchia di Crosara	Montecchia di Crosara	Montecchia di Crosara	Montecchia di Crosara	Montecchia di Crosara
+	1422	Montebelluna	45.7750400	12.0490400	IT	20	0	0	Montebelluna	Монтебеллуна	Montebelluna	Montebelluna	Montebelluna	Montebelluna
+	1422	Montebello Vicentino	45.4591900	11.3827200	IT	20	0	0	Montebello Vicentino	Montebello Vicentino	Montebello Vicentino	Montebello Vicentino	Montebello Vicentino	Montebello Vicentino
+	1422	Monte	45.5659200	10.8430600	IT	20	0	0	Monte	Monte	Monte	Monte	Monte	Monte
+	1422	Montaner	45.9982200	12.3786600	IT	20	0	0	Montaner	Montaner	Montaner	Montaner	Montaner	Montaner
+	1422	Montagnana	45.2322900	11.4648300	IT	20	0	0	Montagnana	Montagnana	Montagnana	Montagnana	Montagnana	Montagnana
+	1422	Monselice	45.2390000	11.7498400	IT	20	0	0	Monselice	Monselice	Monselice	Monselice	Monselice	Monselice
+	1422	Mondini di Sopra	45.6644300	11.3409300	IT	20	0	0	Mondini di Sopra	Mondini di Sopra	Mondini di Sopra	Mondini di Sopra	Mondini di Sopra	Mondini di Sopra
+	1422	Monastier di Treviso	45.6577800	12.4175000	IT	20	0	0	Monastier di Treviso	Monastier di Treviso	Monastier di Treviso	Monastier di Treviso	Monastier di Treviso	Monastier di Treviso
+	1422	Zona Industriale di Molina	45.6791700	11.4589300	IT	20	0	0	Zona Industriale di Molina	Zona Industriale di Molina	Zona Industriale di Molina	Zona Industriale di Molina	Zona Industriale di Molina	Zona Industriale di Molina
+	1422	Mogliano Veneto	45.5559400	12.2429400	IT	20	0	0	Mogliano Veneto	Mogliano Veneto	Mogliano Veneto	Mogliano Veneto	Mogliano Veneto	Mogliano Veneto
+	1422	Modolo	46.1326700	12.2528700	IT	20	0	0	Modolo	Modolo	Modolo	Modolo	Modolo	Modolo
+	1422	Mizzole	45.4787100	11.0602100	IT	20	0	0	Mizzole	Mizzole	Mizzole	Mizzole	Mizzole	Mizzole
+	1422	Misurina	46.5810800	12.2527500	IT	20	0	0	Misurina	Misurina	Misurina	Misurina	Misurina	Misurina
+	1422	Mirano	45.4945800	12.1077500	IT	20	0	0	Mirano	Мирано	Mirano	Mirano	Mirano	Mirano
+	1422	Mirabella	45.6864400	11.5679800	IT	20	0	0	Mirabella	Mirabella	Mirabella	Mirabella	Mirabella	Mirabella
+	1422	Mira Taglio	45.4300000	12.1197200	IT	20	0	0	Mira Taglio	Мира	Mira Taglio	Mira Taglio	Mira Taglio	Mira Taglio
+	1422	Minerbe	45.2319800	11.3524900	IT	20	0	0	Minerbe	Minerbe	Minerbe	Minerbe	Minerbe	Minerbe
+	1422	Milies	45.9444000	11.9660400	IT	20	0	0	Milies	Milies	Milies	Milies	Milies	Milies
+	1422	Michellorie	45.2863600	11.3084400	IT	20	0	0	Michellorie	Michellorie	Michellorie	Michellorie	Michellorie	Michellorie
+	1422	Miane	45.9434100	12.0924600	IT	20	0	0	Miane	Miane	Miane	Miane	Miane	Miane
+	1422	Mezzavia	45.3222200	11.8110800	IT	20	0	0	Mezzavia	Mezzavia	Mezzavia	Mezzavia	Mezzavia	Mezzavia
+	1422	Mestrino	45.4413900	11.7593100	IT	20	0	0	Mestrino	Mestrino	Mestrino	Mestrino	Mestrino	Mestrino
+	1422	Mestre	45.4916700	12.2453800	IT	20	0	0	Mestre	Местре	Mestre	Mestre	Mestre	Mestre
+	1422	Merlara	45.1670000	11.4450400	IT	20	0	0	Merlara	Merlara	Merlara	Merlara	Merlara	Merlara
+	1422	Merendaore	45.7146300	11.1980700	IT	20	0	0	Merendaore	Merendaore	Merendaore	Merendaore	Merendaore	Merendaore
+	1422	Meolo	45.6197000	12.4523600	IT	20	0	0	Meolo	Meolo	Meolo	Meolo	Meolo	Meolo
+	1422	Melara	45.0642100	11.2011700	IT	20	0	0	Melara	Melara	Melara	Melara	Melara	Melara
+	1422	Mel	46.0637900	12.0900000	IT	20	0	0	Mel	Mel	Mel	Mel	Mel	Mel
+	1422	Megliadino San Vitale	45.1957700	11.5240200	IT	20	0	0	Megliadino San Vitale	Megliadino San Vitale	Megliadino San Vitale	Megliadino San Vitale	Megliadino San Vitale	Megliadino San Vitale
+	1422	Meda	45.7778200	11.4005000	IT	20	0	0	Meda	Meda	Meda	Meda	Meda	Meda
+	1422	Mazzocco Vecchio	45.5457000	12.2765500	IT	20	0	0	Mazzocco Vecchio	Mazzocco Vecchio	Mazzocco Vecchio	Mazzocco Vecchio	Mazzocco Vecchio	Mazzocco Vecchio
+	1422	Maso	45.8885200	11.3528100	IT	20	0	0	Maso	Maso	Maso	Maso	Maso	Maso
+	1422	Maseralino	45.2711700	11.8289200	IT	20	0	0	Maseralino	Maseralino	Maseralino	Maseralino	Maseralino	Maseralino
+	1422	Maserà di Padova	45.3182700	11.8654300	IT	20	0	0	Maserà di Padova	Maserà di Padova	Maserà di Padova	Maserà di Padova	Maserà di Padova	Maserà di Padova
+	1422	Maser	45.8074000	11.9750000	IT	20	0	0	Maser	Maser	Maser	Maser	Maser	Maser
+	1422	Mas	46.1519300	12.1296300	IT	20	0	0	Mas	Mas	Mas	Mas	Mas	Mas
+	1422	Marziai	45.9868800	11.9822700	IT	20	0	0	Marziai	Marziai	Marziai	Marziai	Marziai	Marziai
+	1422	Martellago	45.5438300	12.1636300	IT	20	0	0	Martellago	Martellago	Martellago	Martellago	Martellago	Martellago
+	1422	Marostica	45.7454100	11.6623700	IT	20	0	0	Marostica	Marostica	Marostica	Marostica	Marostica	Marostica
+	1422	Marola	45.7545900	11.4941900	IT	20	0	0	Marola	Marola	Marola	Marola	Marola	Marola
+	1422	Marola	45.5399400	11.6259300	IT	20	0	0	Marola	Marola	Marola	Marola	Marola	Marola
+	1422	Marini	45.7700800	11.7929900	IT	20	0	0	Marini	Marini	Marini	Marini	Marini	Marini
+	1422	Mareson-Pecol	46.3903700	12.1096800	IT	20	0	0	Mareson-Pecol	Mareson-Pecol	Mareson-Pecol	Mareson-Pecol	Mareson-Pecol	Mareson-Pecol
+	1422	Marendole	45.2272200	11.7260100	IT	20	0	0	Marendole	Marendole	Marendole	Marendole	Marendole	Marendole
+	1422	Mardimago	45.1070300	11.8374400	IT	20	0	0	Mardimago	Mardimago	Mardimago	Mardimago	Mardimago	Mardimago
+	1422	Marcon-Gaggio-Colmello	45.5644400	12.2988900	IT	20	0	0	Marcon-Gaggio-Colmello	Marcon-Gaggio-Colmello	Marcon-Gaggio-Colmello	Marcon-Gaggio-Colmello	Marcon-Gaggio-Colmello	Marcon-Gaggio-Colmello
+	1422	Marano Vicentino	45.6960000	11.4323700	IT	20	0	0	Marano Vicentino	Marano Vicentino	Marano Vicentino	Marano Vicentino	Marano Vicentino	Marano Vicentino
+	1422	Marano di Valpolicella	45.5563700	10.9162200	IT	20	0	0	Marano di Valpolicella	Marano di Valpolicella	Marano di Valpolicella	Marano di Valpolicella	Marano di Valpolicella	Marano di Valpolicella
+	1422	Mansuè	45.8211800	12.5351000	IT	20	0	0	Mansuè	Mansuè	Mansuè	Mansuè	Mansuè	Mansuè
+	1422	Mondrago	45.5865300	10.9357600	IT	20	0	0	Mondrago	Mondrago	Mondrago	Mondrago	Mondrago	Mondrago
+	1422	Malo	45.6591000	11.4160100	IT	20	0	0	Malo	Malo	Malo	Malo	Malo	Malo
+	1422	Malintrada	45.7605500	12.5830800	IT	20	0	0	Malintrada	Malintrada	Malintrada	Malintrada	Malintrada	Malintrada
+	1422	Malcesine	45.7614000	10.8086300	IT	20	0	0	Malcesine	Malcesine	Malcesine	Malcesine	Malcesine	Malcesine
+	1422	Magugnano	45.7008400	10.7622900	IT	20	0	0	Magugnano	Magugnano	Magugnano	Magugnano	Magugnano	Magugnano
+	1422	Magona	45.0896400	11.4710100	IT	20	0	0	Magona	Magona	Magona	Magona	Magona	Magona
+	1422	Magnadola	45.7205700	12.6033400	IT	20	0	0	Magnadola	Magnadola	Magnadola	Magnadola	Magnadola	Magnadola
+	1422	Maestrazza	44.9906700	12.4017600	IT	20	0	0	Maestrazza	Maestrazza	Maestrazza	Maestrazza	Maestrazza	Maestrazza
+	1422	Maerne	45.5231300	12.1547700	IT	20	0	0	Maerne	Maerne	Maerne	Maerne	Maerne	Maerne
+	1422	Vallio	45.6376400	12.4130400	IT	20	0	0	Vallio	Vallio	Vallio	Vallio	Vallio	Vallio
+	1422	Maccacari	45.1427600	11.1349900	IT	20	0	0	Maccacari	Maccacari	Maccacari	Maccacari	Maccacari	Maccacari
+	1422	Lusiana	45.7842800	11.5747800	IT	20	0	0	Lusiana	Lusiana	Lusiana	Lusiana	Lusiana	Lusiana
+	1422	Lusia	45.0984800	11.6651100	IT	20	0	0	Lusia	Lusia	Lusia	Lusia	Lusia	Lusia
+	1422	Lupia	45.6413300	11.6084200	IT	20	0	0	Lupia	Lupia	Lupia	Lupia	Lupia	Lupia
+	1422	Lumignano	45.4596800	11.5878600	IT	20	0	0	Lumignano	Lumignano	Lumignano	Lumignano	Lumignano	Lumignano
+	1422	Lugugnana	45.7327700	12.9595800	IT	20	0	0	Lugugnana	Lugugnana	Lugugnana	Lugugnana	Lugugnana	Lugugnana
+	1422	Stallavena-Lugo	45.5628900	10.9966900	IT	20	0	0	Stallavena-Lugo	Stallavena-Lugo	Stallavena-Lugo	Stallavena-Lugo	Stallavena-Lugo	Stallavena-Lugo
+	1422	Lugo	45.3671700	12.1358300	IT	20	0	0	Lugo	Lugo	Lugo	Lugo	Lugo	Lugo
+	1422	Lugagnano	45.4332700	10.8840200	IT	20	0	0	Lugagnano	Lugagnano	Lugagnano	Lugagnano	Lugagnano	Lugagnano
+	1422	Lozzo di Cadore	46.4864400	12.4449300	IT	20	0	0	Lozzo di Cadore	Lozzo di Cadore	Lozzo di Cadore	Lozzo di Cadore	Lozzo di Cadore	Lozzo di Cadore
+	1422	Lozzo Atestino	45.2938400	11.6049500	IT	20	0	0	Lozzo Atestino	Lozzo Atestino	Lozzo Atestino	Lozzo Atestino	Lozzo Atestino	Lozzo Atestino
+	1422	Lovolo	45.3795800	11.6090300	IT	20	0	0	Lovolo	Lovolo	Lovolo	Lovolo	Lovolo	Lovolo
+	1422	Lovara	45.5691000	11.3502900	IT	20	0	0	Lovara	Lovara	Lovara	Lovara	Lovara	Lovara
+	1422	Loria Bessica	45.7300000	11.8654000	IT	20	0	0	Loria Bessica	Loria Bessica	Loria Bessica	Loria Bessica	Loria Bessica	Loria Bessica
+	1422	Loreo	45.0621300	12.1881200	IT	20	0	0	Loreo	Loreo	Loreo	Loreo	Loreo	Loreo
+	1422	Lorenzi	45.6537200	11.2564300	IT	20	0	0	Lorenzi	Lorenzi	Lorenzi	Lorenzi	Lorenzi	Lorenzi
+	1422	Lorenzago di Cadore	46.4795400	12.4598400	IT	20	0	0	Lorenzago di Cadore	Lorenzago di Cadore	Lorenzago di Cadore	Lorenzago di Cadore	Lorenzago di Cadore	Lorenzago di Cadore
+	1422	Lorenzaga	45.7659100	12.6391400	IT	20	0	0	Lorenzaga	Lorenzaga	Lorenzaga	Lorenzaga	Lorenzaga	Lorenzaga
+	1422	Loreggiola	45.6089200	11.9189900	IT	20	0	0	Loreggiola	Loreggiola	Loreggiola	Loreggiola	Loreggiola	Loreggiola
+	1422	Loreggia	45.5973300	11.9476900	IT	20	0	0	Loreggia	Loreggia	Loreggia	Loreggia	Loreggia	Loreggia
+	1422	Lonigo	45.3857600	11.3840200	IT	20	0	0	Lonigo	Lonigo	Lonigo	Lonigo	Lonigo	Lonigo
+	1422	Longarone	46.2657900	12.2999200	IT	20	0	0	Longarone	Longarone	Longarone	Longarone	Longarone	Longarone
+	1422	Longare	45.4772600	11.6069600	IT	20	0	0	Longare	Longare	Longare	Longare	Longare	Longare
+	1422	Longa	45.6806000	11.6424900	IT	20	0	0	Longa	Longa	Longa	Longa	Longa	Longa
+	1422	Livinallongo del Col di Lana	46.4816200	11.9539900	IT	20	0	0	Livinallongo del Col di Lana	Livinallongo del Col di Lana	Livinallongo del Col di Lana	Livinallongo del Col di Lana	Livinallongo del Col di Lana	Livinallongo del Col di Lana
+	1422	Listolade	46.3161100	12.0067700	IT	20	0	0	Listolade	Listolade	Listolade	Listolade	Listolade	Listolade
+	1422	Lissaro	45.4606600	11.7456200	IT	20	0	0	Lissaro	Lissaro	Lissaro	Lissaro	Lissaro	Lissaro
+	1422	Limena	45.4694800	11.8457400	IT	20	0	0	Limena	Limena	Limena	Limena	Limena	Limena
+	1422	Liedolo	45.7923000	11.8203400	IT	20	0	0	Liedolo	Liedolo	Liedolo	Liedolo	Liedolo	Liedolo
+	1422	Lido di Iesolo	45.5069400	12.6469400	IT	20	0	0	Lido di Iesolo	Lido di Iesolo	Lido di Iesolo	Lido di Iesolo	Lido di Iesolo	Lido di Iesolo
+	1422	Lido	45.4105000	12.3664900	IT	20	0	0	Lido	Lido	Lido	Lido	Lido	Lido
+	1422	Libano	46.1518900	12.1547400	IT	20	0	0	Libano	Libano	Libano	Libano	Libano	Libano
+	1422	Levada	45.7344200	12.4712800	IT	20	0	0	Levada	Levada	Levada	Levada	Levada	Levada
+	1422	Levada	45.6244900	12.0568600	IT	20	0	0	Levada	Levada	Levada	Levada	Levada	Levada
+	1422	Levà	45.6659500	11.5326200	IT	20	0	0	Levà	Levà	Levà	Levà	Levà	Levà
+	1422	Lentiai	46.0450400	12.0205300	IT	20	0	0	Lentiai	Lentiai	Lentiai	Lentiai	Lentiai	Lentiai
+	1422	Lendinara	45.0830100	11.6031800	IT	20	0	0	Lendinara	Lendinara	Lendinara	Lendinara	Lendinara	Lendinara
+	1422	Le Marche	45.7059600	12.3610400	IT	20	0	0	Le Marche	Le Marche	Le Marche	Le Marche	Le Marche	Le Marche
+	1422	Legnaro	45.3423800	11.9648200	IT	20	0	0	Legnaro	Legnaro	Legnaro	Legnaro	Legnaro	Legnaro
+	1422	Legnago	45.1936500	11.3022700	IT	20	0	0	Legnago	Леньяго	Legnago	Legnago	Legnago	Legnago
+	1422	Lazise	45.5049900	10.7392300	IT	20	0	0	Lazise	Lazise	Lazise	Lazise	Lazise	Lazise
+	1422	La Valle Agordina	46.2819800	12.0684400	IT	20	0	0	La Valle Agordina	La Valle Agordina	La Valle Agordina	La Valle Agordina	La Valle Agordina	La Valle Agordina
+	1422	Lastebasse	45.9151000	11.2738900	IT	20	0	0	Lastebasse	Lastebasse	Lastebasse	Lastebasse	Lastebasse	Lastebasse
+	1422	Lapio	45.4744900	11.5356800	IT	20	0	0	Lapio	Lapio	Lapio	Lapio	Lapio	Lapio
+	1422	L'Andria	46.4491100	12.0575900	IT	20	0	0	L'Andria	L'Andria	L'Andria	L'Andria	L'Andria	L'Andria
+	1422	La Muda	46.2471600	12.0989100	IT	20	0	0	La Muda	La Muda	La Muda	La Muda	La Muda	La Muda
+	1422	Lamon	46.0471700	11.7499100	IT	20	0	0	Lamon	Lamon	Lamon	Lamon	Lamon	Lamon
+	1422	Lago	45.9861100	12.2147700	IT	20	0	0	Lago	Lago	Lago	Lago	Lago	Lago
+	1422	Giudecca	45.4247700	12.3290600	IT	20	0	0	Giudecca	Giudecca	Giudecca	Giudecca	Giudecca	Giudecca
+	1422	Laghi	45.6671600	11.7419900	IT	20	0	0	Laghi	Laghi	Laghi	Laghi	Laghi	Laghi
+	1422	Le Campagnole	45.0455300	11.4978500	IT	20	0	0	Le Campagnole	Le Campagnole	Le Campagnole	Le Campagnole	Le Campagnole	Le Campagnole
+	1422	Istrana	45.6769100	12.1011900	IT	20	0	0	Istrana	Istrana	Istrana	Istrana	Istrana	Istrana
+	1422	Isolella	45.0060700	12.0036700	IT	20	0	0	Isolella	Isolella	Isolella	Isolella	Isolella	Isolella
+	1422	Isola Vicentina	45.6293000	11.4460800	IT	20	0	0	Isola Vicentina	Isola Vicentina	Isola Vicentina	Isola Vicentina	Isola Vicentina	Isola Vicentina
+	1422	Isola della Scala	45.2694300	11.0082400	IT	20	0	0	Isola della Scala	Isola della Scala	Isola della Scala	Isola della Scala	Isola della Scala	Isola della Scala
+	1422	Isiata	45.6197500	12.6204600	IT	20	0	0	Isiata	Isiata	Isiata	Isiata	Isiata	Isiata
+	1422	Roncari	45.6085200	11.1895800	IT	20	0	0	Roncari	Roncari	Roncari	Roncari	Roncari	Roncari
+	1422	Padri	45.7807500	11.3685300	IT	20	0	0	Padri	Padri	Padri	Padri	Padri	Padri
+	1422	Piano	44.9769100	12.2117100	IT	20	0	0	Piano	Piano	Piano	Piano	Piano	Piano
+	1422	Illasi	45.4666300	11.1816500	IT	20	0	0	Illasi	Illasi	Illasi	Illasi	Illasi	Illasi
+	1422	Il Corso	45.5162400	11.5751600	IT	20	0	0	Il Corso	Il Corso	Il Corso	Il Corso	Il Corso	Il Corso
+	1422	Capitello	45.2079200	11.1401400	IT	20	0	0	Capitello	Capitello	Capitello	Capitello	Capitello	Capitello
+	1422	Gugi	45.4761900	11.0981000	IT	20	0	0	Gugi	Gugi	Gugi	Gugi	Gugi	Gugi
+	1422	Ignago-Zovo	45.5948600	11.4517200	IT	20	0	0	Ignago-Zovo	Ignago-Zovo	Ignago-Zovo	Ignago-Zovo	Ignago-Zovo	Ignago-Zovo
+	1422	Iesolo	45.5331100	12.6447500	IT	20	0	0	Iesolo	Лидо ди Езоло	Iesolo	Iesolo	Iesolo	Iesolo
+	1422	Costenieri	45.7473400	11.3118200	IT	20	0	0	Costenieri	Costenieri	Costenieri	Costenieri	Costenieri	Costenieri
+	1422	Bonelli	44.8691300	12.4623600	IT	20	0	0	Bonelli	Bonelli	Bonelli	Bonelli	Bonelli	Bonelli
+	1422	Guarda Veneta	44.9818800	11.8017800	IT	20	0	0	Guarda Veneta	Guarda Veneta	Guarda Veneta	Guarda Veneta	Guarda Veneta	Guarda Veneta
+	1422	Grumolo Pedemonte	45.7243000	11.4923600	IT	20	0	0	Grumolo Pedemonte	Grumolo Pedemonte	Grumolo Pedemonte	Grumolo Pedemonte	Grumolo Pedemonte	Grumolo Pedemonte
+	1422	Grumolo delle Abbadesse	45.5169200	11.6719800	IT	20	0	0	Grumolo delle Abbadesse	Grumolo delle Abbadesse	Grumolo delle Abbadesse	Grumolo delle Abbadesse	Grumolo delle Abbadesse	Grumolo delle Abbadesse
+	1422	Gruaro	45.8347200	12.8411100	IT	20	0	0	Gruaro	Gruaro	Gruaro	Gruaro	Gruaro	Gruaro
+	1422	Grisignano di Zocco	45.4868100	11.7079400	IT	20	0	0	Grisignano di Zocco	Grisignano di Zocco	Grisignano di Zocco	Grisignano di Zocco	Grisignano di Zocco	Grisignano di Zocco
+	1422	Grezzana	45.5227200	11.0174300	IT	20	0	0	Grezzana	Grezzana	Grezzana	Grezzana	Grezzana	Grezzana
+	1422	Gravizzi	45.1481900	11.7855300	IT	20	0	0	Gravizzi	Gravizzi	Gravizzi	Gravizzi	Gravizzi	Gravizzi
+	1422	Grassanella	45.3766000	11.2884800	IT	20	0	0	Grassanella	Grassanella	Grassanella	Grassanella	Grassanella	Grassanella
+	1422	Granze	45.1564900	11.7147100	IT	20	0	0	Granze	Granze	Granze	Granze	Granze	Granze
+	1422	Grantorto	45.6026800	11.7317500	IT	20	0	0	Grantorto	Grantorto	Grantorto	Grantorto	Grantorto	Grantorto
+	1422	Granigo	45.8690000	11.9213400	IT	20	0	0	Granigo	Granigo	Granigo	Granigo	Granigo	Granigo
+	1422	Gosaldo	46.2214200	11.9557000	IT	20	0	0	Gosaldo	Gosaldo	Gosaldo	Gosaldo	Gosaldo	Gosaldo
+	1422	Gorino	44.8229400	12.3476900	IT	20	0	0	Gorino	Gorino	Gorino	Gorino	Gorino	Gorino
+	1422	Gorgo	45.2766200	11.9013900	IT	20	0	0	Gorgo	Gorgo	Gorgo	Gorgo	Gorgo	Gorgo
+	1422	Gombion	45.4031800	11.1652600	IT	20	0	0	Gombion	Gombion	Gombion	Gombion	Gombion	Gombion
+	1422	Gognano	45.0225700	11.6771900	IT	20	0	0	Gognano	Gognano	Gognano	Gognano	Gognano	Gognano
+	1422	Godega	45.9285900	12.3968700	IT	20	0	0	Godega	Godega	Godega	Godega	Godega	Godega
+	1422	Giussago	45.7556900	12.9178500	IT	20	0	0	Giussago	Giussago	Giussago	Giussago	Giussago	Giussago
+	1422	Giazza	45.6543900	11.1228100	IT	20	0	0	Giazza	Giazza	Giazza	Giazza	Giazza	Giazza
+	1422	Giavone	45.2898500	11.3418200	IT	20	0	0	Giavone	Giavone	Giavone	Giavone	Giavone	Giavone
+	1422	Giavera del Montello	45.7937400	12.1666700	IT	20	0	0	Giavera del Montello	Giavera del Montello	Giavera del Montello	Giavera del Montello	Giavera del Montello	Giavera del Montello
+	1422	Giaroni	45.9854800	11.7872000	IT	20	0	0	Giaroni	Giaroni	Giaroni	Giaroni	Giaroni	Giaroni
+	1422	Giare	45.4752400	11.1432800	IT	20	0	0	Giare	Giare	Giare	Giare	Giare	Giare
+	1422	Giai	45.8138600	12.8199900	IT	20	0	0	Giai	Giai	Giai	Giai	Giai	Giai
+	1422	Giai di Pracurte	45.7653200	12.6769600	IT	20	0	0	Giai di Pracurte	Giai di Pracurte	Giai di Pracurte	Giai di Pracurte	Giai di Pracurte	Giai di Pracurte
+	1422	Ghisa	45.5382000	11.3833900	IT	20	0	0	Ghisa	Ghisa	Ghisa	Ghisa	Ghisa	Ghisa
+	1422	Gazzo Veronese	45.1400400	11.0788700	IT	20	0	0	Gazzo Veronese	Gazzo Veronese	Gazzo Veronese	Gazzo Veronese	Gazzo Veronese	Gazzo Veronese
+	1422	Gazzo	45.5824100	11.7072400	IT	20	0	0	Gazzo	Gazzo	Gazzo	Gazzo	Gazzo	Gazzo
+	1422	Gavello	45.0246900	11.9136800	IT	20	0	0	Gavello	Gavello	Gavello	Gavello	Gavello	Gavello
+	1422	Gares	46.3124900	11.8812300	IT	20	0	0	Gares	Gares	Gares	Gares	Gares	Gares
+	1422	Garda	45.5788900	10.7176300	IT	20	0	0	Garda	Гарда	Garda	Garda	Garda	Garda
+	1422	Galzignano	45.3079800	11.7313400	IT	20	0	0	Galzignano	Galzignano	Galzignano	Galzignano	Galzignano	Galzignano
+	1422	Gallio	45.8850600	11.5341700	IT	20	0	0	Gallio	Gallio	Gallio	Gallio	Gallio	Gallio
+	1422	Galliera Veneta	45.6675000	11.8221700	IT	20	0	0	Galliera Veneta	Galliera Veneta	Galliera Veneta	Galliera Veneta	Galliera Veneta	Galliera Veneta
+	1422	Gallese	45.5921600	12.1310100	IT	20	0	0	Gallese	Gallese	Gallese	Gallese	Gallese	Gallese
+	1422	Gaiba	44.9457300	11.4808700	IT	20	0	0	Gaiba	Gaiba	Gaiba	Gaiba	Gaiba	Gaiba
+	1422	Gaiarine	45.8808300	12.4814200	IT	20	0	0	Gaiarine	Gaiarine	Gaiarine	Gaiarine	Gaiarine	Gaiarine
+	1422	Gaianigo	45.5583700	11.6792800	IT	20	0	0	Gaianigo	Gaianigo	Gaianigo	Gaianigo	Gaianigo	Gaianigo
+	1422	Fusine	46.3758900	12.1254700	IT	20	0	0	Fusine	Fusine	Fusine	Fusine	Fusine	Fusine
+	1422	Fumane	45.5416000	10.8854800	IT	20	0	0	Fumane	Fumane	Fumane	Fumane	Fumane	Fumane
+	1422	Frontin	46.0710000	12.1468700	IT	20	0	0	Frontin	Frontin	Frontin	Frontin	Frontin	Frontin
+	1422	Friola	45.6778400	11.6788600	IT	20	0	0	Friola	Friola	Friola	Friola	Friola	Friola
+	1422	Fregona	46.0079500	12.3386400	IT	20	0	0	Fregona	Fregona	Fregona	Fregona	Fregona	Fregona
+	1422	Fratta Polesine	45.0281900	11.6426500	IT	20	0	0	Fratta Polesine	Fratta Polesine	Fratta Polesine	Fratta Polesine	Fratta Polesine	Fratta Polesine
+	1422	Frassenè	46.2531400	11.9833100	IT	20	0	0	Frassenè	Frassenè	Frassenè	Frassenè	Frassenè	Frassenè
+	1422	Frassenè	46.0099500	11.7898100	IT	20	0	0	Frassenè	Frassenè	Frassenè	Frassenè	Frassenè	Frassenè
+	1422	Foza	45.8970300	11.6305300	IT	20	0	0	Foza	Foza	Foza	Foza	Foza	Foza
+	1422	San Vendemiano-Fossamerlo	45.8918000	12.3299200	IT	20	0	0	San Vendemiano-Fossamerlo	San Vendemiano-Fossamerlo	San Vendemiano-Fossamerlo	San Vendemiano-Fossamerlo	San Vendemiano-Fossamerlo	San Vendemiano-Fossamerlo
+	1422	Fossalunga	45.6916000	12.0532000	IT	20	0	0	Fossalunga	Fossalunga	Fossalunga	Fossalunga	Fossalunga	Fossalunga
+	1422	Fossalta di Portogruaro	45.7932900	12.9099800	IT	20	0	0	Fossalta di Portogruaro	Fossalta di Portogruaro	Fossalta di Portogruaro	Fossalta di Portogruaro	Fossalta di Portogruaro	Fossalta di Portogruaro
+	1422	Fossalta di Piave	45.6449700	12.5090200	IT	20	0	0	Fossalta di Piave	Fossalta di Piave	Fossalta di Piave	Fossalta di Piave	Fossalta di Piave	Fossalta di Piave
+	1422	Fossalta	45.5755800	12.0031700	IT	20	0	0	Fossalta	Fossalta	Fossalta	Fossalta	Fossalta	Fossalta
+	1422	Fortogna	46.2302000	12.2895000	IT	20	0	0	Fortogna	Fortogna	Fortogna	Fortogna	Fortogna	Fortogna
+	1422	Forno di Zoldo	46.3501000	12.1791300	IT	20	0	0	Forno di Zoldo	Forno di Zoldo	Forno di Zoldo	Forno di Zoldo	Forno di Zoldo	Forno di Zoldo
+	1422	Forni	45.8568000	11.3617100	IT	20	0	0	Forni	Forni	Forni	Forni	Forni	Forni
+	1422	Fornaci	45.6517000	12.4373800	IT	20	0	0	Fornaci	Fornaci	Fornaci	Fornaci	Fornaci	Fornaci
+	1422	Fonzaso	46.0164000	11.7989700	IT	20	0	0	Fonzaso	Fonzaso	Fonzaso	Fonzaso	Fonzaso	Fonzaso
+	1422	Fontaniva	45.6351600	11.7538100	IT	20	0	0	Fontaniva	Fontaniva	Fontaniva	Fontaniva	Fontaniva	Fontaniva
+	1422	Fontanelle	45.8334500	12.4662500	IT	20	0	0	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle
+	1422	Monticelli-Fontana	45.4296500	11.1372900	IT	20	0	0	Monticelli-Fontana	Monticelli-Fontana	Monticelli-Fontana	Monticelli-Fontana	Monticelli-Fontana	Monticelli-Fontana
+	1422	Fongara	45.6762300	11.2314700	IT	20	0	0	Fongara	Fongara	Fongara	Fongara	Fongara	Fongara
+	1422	Follina	45.9535200	12.1198500	IT	20	0	0	Follina	Follina	Follina	Follina	Follina	Follina
+	1422	Fimon	45.4722700	11.5104500	IT	20	0	0	Fimon	Fimon	Fimon	Fimon	Fimon	Fimon
+	1422	Fiesso Umbertiano	44.9607200	11.6057600	IT	20	0	0	Fiesso Umbertiano	Fiesso Umbertiano	Fiesso Umbertiano	Fiesso Umbertiano	Fiesso Umbertiano	Fiesso Umbertiano
+	1422	Ficarolo	44.9542500	11.4366200	IT	20	0	0	Ficarolo	Ficarolo	Ficarolo	Ficarolo	Ficarolo	Ficarolo
+	1422	Ferrara di Monte Baldo	45.6740800	10.8591100	IT	20	0	0	Ferrara di Monte Baldo	Ferrara di Monte Baldo	Ferrara di Monte Baldo	Ferrara di Monte Baldo	Ferrara di Monte Baldo	Ferrara di Monte Baldo
+	1422	Feltre	46.0208500	11.9003100	IT	20	0	0	Feltre	Feltre	Feltre	Feltre	Feltre	Feltre
+	1422	Feder	46.3752400	11.8968000	IT	20	0	0	Feder	Feder	Feder	Feder	Feder	Feder
+	1422	Fecchiera	45.7423200	11.2121300	IT	20	0	0	Fecchiera	Fecchiera	Fecchiera	Fecchiera	Fecchiera	Fecchiera
+	1422	Fattoria Vecchia	45.1255700	11.9880400	IT	20	0	0	Fattoria Vecchia	Fattoria Vecchia	Fattoria Vecchia	Fattoria Vecchia	Fattoria Vecchia	Fattoria Vecchia
+	1422	Fasana Polesine	45.0967200	12.0145400	IT	20	0	0	Fasana Polesine	Fasana Polesine	Fasana Polesine	Fasana Polesine	Fasana Polesine	Fasana Polesine
+	1422	Farrò	45.9407500	12.1453700	IT	20	0	0	Farrò	Farrò	Farrò	Farrò	Farrò	Farrò
+	1422	Farra di Soligo	45.9052800	12.1244400	IT	20	0	0	Farra di Soligo	Farra di Soligo	Farra di Soligo	Farra di Soligo	Farra di Soligo	Farra di Soligo
+	1422	Farra d'Alpago	46.1207900	12.3587600	IT	20	0	0	Farra d'Alpago	Farra d'Alpago	Farra d'Alpago	Farra d'Alpago	Farra d'Alpago	Farra d'Alpago
+	1422	Farra	46.0764000	12.1123900	IT	20	0	0	Farra	Farra	Farra	Farra	Farra	Farra
+	1422	Fara Vicentino	45.7436900	11.5452900	IT	20	0	0	Fara Vicentino	Fara Vicentino	Fara Vicentino	Fara Vicentino	Fara Vicentino	Fara Vicentino
+	1422	Fanzolo	45.7121800	11.9902300	IT	20	0	0	Fanzolo	Fanzolo	Fanzolo	Fanzolo	Fanzolo	Fanzolo
+	1422	Falzè di Piave	45.8679600	12.1789100	IT	20	0	0	Falzè di Piave	Falzè di Piave	Falzè di Piave	Falzè di Piave	Falzè di Piave	Falzè di Piave
+	1422	Falcade Alto	46.3554900	11.8571200	IT	20	0	0	Falcade Alto	Falcade Alto	Falcade Alto	Falcade Alto	Falcade Alto	Falcade Alto
+	1422	Fagarè	45.7069300	12.4277000	IT	20	0	0	Fagarè	Fagarè	Fagarè	Fagarè	Fagarè	Fagarè
+	1422	Faè	46.2464700	12.2983400	IT	20	0	0	Faè	Faè	Faè	Faè	Faè	Faè
+	1422	Faè	45.7622300	12.4650100	IT	20	0	0	Faè	Faè	Faè	Faè	Faè	Faè
+	1422	Fadalto	46.0751200	12.3377100	IT	20	0	0	Fadalto	Fadalto	Fadalto	Fadalto	Fadalto	Fadalto
+	1422	Este	45.2233800	11.6637900	IT	20	0	0	Este	Este	Este	Este	Este	Este
+	1422	Erbezzo	45.6396000	11.0005700	IT	20	0	0	Erbezzo	Erbezzo	Erbezzo	Erbezzo	Erbezzo	Erbezzo
+	1422	Erbè	45.2423100	10.9713500	IT	20	0	0	Erbè	Erbè	Erbè	Erbè	Erbè	Erbè
+	1422	Eraclea	45.5776600	12.6732000	IT	20	0	0	Eraclea	Eraclea	Eraclea	Eraclea	Eraclea	Eraclea
+	1422	Dueville	45.6355600	11.5513500	IT	20	0	0	Dueville	Dueville	Dueville	Dueville	Dueville	Dueville
+	1422	Dosson	45.6360500	12.2540900	IT	20	0	0	Dosson	Dosson	Dosson	Dosson	Dosson	Dosson
+	1422	Dossobuono	45.3933300	10.9105400	IT	20	0	0	Dossobuono	Dossobuono	Dossobuono	Dossobuono	Dossobuono	Dossobuono
+	1422	Dosoledo	46.5994500	12.4917100	IT	20	0	0	Dosoledo	Dosoledo	Dosoledo	Dosoledo	Dosoledo	Dosoledo
+	1422	Dorgnan	46.0648600	11.9856500	IT	20	0	0	Dorgnan	Dorgnan	Dorgnan	Dorgnan	Dorgnan	Dorgnan
+	1422	Donzella	44.9304700	12.3311900	IT	20	0	0	Donzella	Donzella	Donzella	Donzella	Donzella	Donzella
+	1422	Dont	46.3547800	12.1436800	IT	20	0	0	Dont	Dont	Dont	Dont	Dont	Dont
+	1422	Domegge di Cadore	46.4566600	12.4072400	IT	20	0	0	Domegge di Cadore	Domegge di Cadore	Domegge di Cadore	Domegge di Cadore	Domegge di Cadore	Domegge di Cadore
+	1422	Dolo	45.4252800	12.0842900	IT	20	0	0	Dolo	Dolo	Dolo	Dolo	Dolo	Dolo
+	1422	Dolcè	45.6006900	10.8524800	IT	20	0	0	Dolcè	Dolcè	Dolcè	Dolcè	Dolcè	Dolcè
+	1422	Danta	46.5670000	12.5205500	IT	20	0	0	Danta	Danta	Danta	Danta	Danta	Danta
+	1422	Cusinati	45.6985200	11.7835000	IT	20	0	0	Cusinati	Cusinati	Cusinati	Cusinati	Cusinati	Cusinati
+	1422	Curtarolo	45.5236600	11.8369100	IT	20	0	0	Curtarolo	Curtarolo	Curtarolo	Curtarolo	Curtarolo	Curtarolo
+	1422	Curicchi	45.0196800	12.0707800	IT	20	0	0	Curicchi	Curicchi	Curicchi	Curicchi	Curicchi	Curicchi
+	1422	Curà	44.9816000	11.4712600	IT	20	0	0	Curà	Curà	Curà	Curà	Curà	Curà
+	1422	Cugnan	46.1570600	12.2895800	IT	20	0	0	Cugnan	Cugnan	Cugnan	Cugnan	Cugnan	Cugnan
+	1422	Crosare	45.2660300	11.4324900	IT	20	0	0	Crosare	Crosare	Crosare	Crosare	Crosare	Crosare
+	1422	Crosara	45.7741900	11.6140500	IT	20	0	0	Crosara	Crosara	Crosara	Crosara	Crosara	Crosara
+	1422	Crocetta del Montello	45.8366700	12.0336100	IT	20	0	0	Crocetta del Montello	Crocetta del Montello	Crocetta del Montello	Crocetta del Montello	Crocetta del Montello	Crocetta del Montello
+	1422	Crocetta	45.0707300	11.4852600	IT	20	0	0	Crocetta	Crocetta	Crocetta	Crocetta	Crocetta	Crocetta
+	1422	Crocerone	45.7368500	11.7509700	IT	20	0	0	Crocerone	Crocerone	Crocerone	Crocerone	Crocerone	Crocerone
+	1422	Crespino	44.9852700	11.8895800	IT	20	0	0	Crespino	Crespino	Crespino	Crespino	Crespino	Crespino
+	1422	Crespano del Grappa	45.8279300	11.8335800	IT	20	0	0	Crespano del Grappa	Crespano del Grappa	Crespano del Grappa	Crespano del Grappa	Crespano del Grappa	Crespano del Grappa
+	1422	Crespadoro	45.6201900	11.2258900	IT	20	0	0	Crespadoro	Crespadoro	Crespadoro	Crespadoro	Crespadoro	Crespadoro
+	1422	Creazzo	45.5315400	11.4778900	IT	20	0	0	Creazzo	Creazzo	Creazzo	Creazzo	Creazzo	Creazzo
+	1422	Crea	45.4799100	12.1479700	IT	20	0	0	Crea	Crea	Crea	Crea	Crea	Crea
+	1422	Covolo	45.7769000	11.5490300	IT	20	0	0	Covolo	Covolo	Covolo	Covolo	Covolo	Covolo
+	1422	Covolo	45.5309700	11.3971900	IT	20	0	0	Covolo	Covolo	Covolo	Covolo	Covolo	Covolo
+	1422	Costermano	45.5860600	10.7390000	IT	20	0	0	Costermano	Costermano	Costermano	Costermano	Costermano	Costermano
+	1422	Costa di Rovigo	45.0518100	11.6956000	IT	20	0	0	Costa di Rovigo	Costa di Rovigo	Costa di Rovigo	Costa di Rovigo	Costa di Rovigo	Costa di Rovigo
+	1422	Costabissara	45.5825200	11.4852900	IT	20	0	0	Costabissara	Costabissara	Costabissara	Costabissara	Costabissara	Costabissara
+	1422	Costa	45.9003200	11.6936800	IT	20	0	0	Costa	Costa	Costa	Costa	Costa	Costa
+	1422	Cortina d'Ampezzo	46.5369000	12.1390300	IT	20	0	0	Cortina d'Ampezzo	Кортина д'Ампеццо	Cortina d'Ampezzo	Cortina d'Ampezzo	Cortina d'Ampezzo	Cortina d'Ampezzo
+	1422	Corte Bragagnani	45.3036900	11.1049600	IT	20	0	0	Corte Bragagnani	Corte Bragagnani	Corte Bragagnani	Corte Bragagnani	Corte Bragagnani	Corte Bragagnani
+	1422	Corte	45.3083500	12.0717400	IT	20	0	0	Corte	Corte	Corte	Corte	Corte	Corte
+	1422	Corrubio	45.5750700	11.0132100	IT	20	0	0	Corrubio	Corrubio	Corrubio	Corrubio	Corrubio	Corrubio
+	1422	Correzzola	45.2354800	12.0673900	IT	20	0	0	Correzzola	Correzzola	Correzzola	Correzzola	Correzzola	Correzzola
+	1422	Cornuda	45.8315200	12.0059800	IT	20	0	0	Cornuda	Cornuda	Cornuda	Cornuda	Cornuda	Cornuda
+	1422	Cornegliana	45.3025400	11.8531300	IT	20	0	0	Cornegliana	Cornegliana	Cornegliana	Cornegliana	Cornegliana	Cornegliana
+	1422	Cornedo Vicentino	45.6162600	11.3322500	IT	20	0	0	Cornedo Vicentino	Cornedo Vicentino	Cornedo Vicentino	Cornedo Vicentino	Cornedo Vicentino	Cornedo Vicentino
+	1422	Cordignano	45.9493600	12.4156700	IT	20	0	0	Cordignano	Cordignano	Cordignano	Cordignano	Cordignano	Cordignano
+	1422	Corbola	45.0027200	12.0856700	IT	20	0	0	Corbola	Corbola	Corbola	Corbola	Corbola	Corbola
+	1422	Corbiolo	45.6002400	11.0305100	IT	20	0	0	Corbiolo	Corbiolo	Corbiolo	Corbiolo	Corbiolo	Corbiolo
+	1422	Corbanese	45.9457000	12.2402700	IT	20	0	0	Corbanese	Corbanese	Corbanese	Corbanese	Corbanese	Corbanese
+	1422	Conselve	45.2315400	11.8749800	IT	20	0	0	Conselve	Conselve	Conselve	Conselve	Conselve	Conselve
+	1422	Conscio	45.6170100	12.2821900	IT	20	0	0	Conscio	Conscio	Conscio	Conscio	Conscio	Conscio
+	1422	Conetta	45.1761400	11.9941900	IT	20	0	0	Conetta	Conetta	Conetta	Conetta	Conetta	Conetta
+	1422	Conegliano	45.8880500	12.3020100	IT	20	0	0	Conegliano	Конельяно	Conegliano	Conegliano	Conegliano	Conegliano
+	1422	Concordia Sagittaria	45.7611800	12.8236200	IT	20	0	0	Concordia Sagittaria	Concordia Sagittaria	Concordia Sagittaria	Concordia Sagittaria	Concordia Sagittaria	Concordia Sagittaria
+	1422	Conco	45.8004300	11.6096200	IT	20	0	0	Conco	Conco	Conco	Conco	Conco	Conco
+	1422	Concadirame	45.0937300	11.7299200	IT	20	0	0	Concadirame	Concadirame	Concadirame	Concadirame	Concadirame	Concadirame
+	1422	Concadalbero	45.2155600	12.0805600	IT	20	0	0	Concadalbero	Concadalbero	Concadalbero	Concadalbero	Concadalbero	Concadalbero
+	1422	Cona	45.1838800	12.0196700	IT	20	0	0	Cona	Cona	Cona	Cona	Cona	Cona
+	1422	Col di Prà	46.2962900	11.9318400	IT	20	0	0	Col di Prà	Col di Prà	Col di Prà	Col di Prà	Col di Prà	Col di Prà
+	1422	Cologna Veneta	45.3077700	11.3803200	IT	20	0	0	Cologna Veneta	Cologna Veneta	Cologna Veneta	Cologna Veneta	Cologna Veneta	Cologna Veneta
+	1422	Colle Santa Lucia	46.4485200	12.0139900	IT	20	0	0	Colle Santa Lucia	Colle Santa Lucia	Colle Santa Lucia	Colle Santa Lucia	Colle Santa Lucia	Colle Santa Lucia
+	1422	Colà	45.4742800	10.7425700	IT	20	0	0	Colà	Colà	Colà	Colà	Colà	Colà
+	1422	Cogollo del Cengio	45.7839700	11.4252700	IT	20	0	0	Cogollo del Cengio	Cogollo del Cengio	Cogollo del Cengio	Cogollo del Cengio	Cogollo del Cengio	Cogollo del Cengio
+	1422	Codognè	45.8604700	12.4128400	IT	20	0	0	Codognè	Codognè	Codognè	Codognè	Codognè	Codognè
+	1422	Codevigo	45.2662800	12.0996100	IT	20	0	0	Codevigo	Codevigo	Codevigo	Codevigo	Codevigo	Codevigo
+	1422	Cittadella	45.6452300	11.7845300	IT	20	0	0	Cittadella	Cittadella	Cittadella	Cittadella	Cittadella	Cittadella
+	1422	Cison di Valmarino	45.9669400	12.1426700	IT	20	0	0	Cison di Valmarino	Cison di Valmarino	Cison di Valmarino	Cison di Valmarino	Cison di Valmarino	Cison di Valmarino
+	1422	Cismon del Grappa	45.9202600	11.7281600	IT	20	0	0	Cismon del Grappa	Cismon del Grappa	Cismon del Grappa	Cismon del Grappa	Cismon del Grappa	Cismon del Grappa
+	1422	Cinto Euganeo	45.2749500	11.6606500	IT	20	0	0	Cinto Euganeo	Cinto Euganeo	Cinto Euganeo	Cinto Euganeo	Cinto Euganeo	Cinto Euganeo
+	1422	Cinto Caomaggiore	45.8275800	12.7812600	IT	20	0	0	Cinto Caomaggiore	Cinto Caomaggiore	Cinto Caomaggiore	Cinto Caomaggiore	Cinto Caomaggiore	Cinto Caomaggiore
+	1422	Cimasappada	46.5719400	12.7250000	IT	20	0	0	Cimasappada	Cimasappada	Cimasappada	Cimasappada	Cimasappada	Cimasappada
+	1422	Cima Gogna	46.5120200	12.4632900	IT	20	0	0	Cima Gogna	Cima Gogna	Cima Gogna	Cima Gogna	Cima Gogna	Cima Gogna
+	1422	Cimadolmo	45.7852400	12.3651000	IT	20	0	0	Cimadolmo	Cimadolmo	Cimadolmo	Cimadolmo	Cimadolmo	Cimadolmo
+	1422	Cibiana	46.3885600	12.2865800	IT	20	0	0	Cibiana	Cibiana	Cibiana	Cibiana	Cibiana	Cibiana
+	1422	Chiuppano	45.7630000	11.4577700	IT	20	0	0	Chiuppano	Chiuppano	Chiuppano	Chiuppano	Chiuppano	Chiuppano
+	1422	Chioggia	45.2185700	12.2777400	IT	20	0	0	Chioggia	Chioggia	Chioggia	Chioggia	Chioggia	Chioggia
+	1422	Cason del Chievo	45.4631300	10.9149300	IT	20	0	0	Cason del Chievo	Cason del Chievo	Cason del Chievo	Cason del Chievo	Cason del Chievo	Cason del Chievo
+	1422	Chies	46.1653900	12.3924900	IT	20	0	0	Chies	Chies	Chies	Chies	Chies	Chies
+	1422	Chiesa	46.3440600	12.1074500	IT	20	0	0	Chiesa	Chiesa	Chiesa	Chiesa	Chiesa	Chiesa
+	1422	Chiavicone	45.2607000	11.6194900	IT	20	0	0	Chiavicone	Chiavicone	Chiavicone	Chiavicone	Chiavicone	Chiavicone
+	1422	Chiarano	45.7295900	12.5716600	IT	20	0	0	Chiarano	Chiarano	Chiarano	Chiarano	Chiarano	Chiarano
+	1422	Chiampo	45.5474600	11.2828500	IT	20	0	0	Chiampo	Chiampo	Chiampo	Chiampo	Chiampo	Chiampo
+	1422	Cesuna	45.8377800	11.4558500	IT	20	0	0	Cesuna	Cesuna	Cesuna	Cesuna	Cesuna	Cesuna
+	1422	Cessalto	45.7135600	12.6130200	IT	20	0	0	Cessalto	Cessalto	Cessalto	Cessalto	Cessalto	Cessalto
+	1422	Cesiomaggiore	46.0867500	11.9853900	IT	20	0	0	Cesiomaggiore	Cesiomaggiore	Cesiomaggiore	Cesiomaggiore	Cesiomaggiore	Cesiomaggiore
+	1422	Cesarolo	45.7188400	13.0155500	IT	20	0	0	Cesarolo	Cesarolo	Cesarolo	Cesarolo	Cesarolo	Cesarolo
+	1422	Cesa	46.0988400	12.1595700	IT	20	0	0	Cesa	Cesa	Cesa	Cesa	Cesa	Cesa
+	1422	Ceregnano	45.0481100	11.8679200	IT	20	0	0	Ceregnano	Ceregnano	Ceregnano	Ceregnano	Ceregnano	Ceregnano
+	1422	Cerea	45.1893600	11.2166100	IT	20	0	0	Cerea	Cerea	Cerea	Cerea	Cerea	Cerea
+	1422	Cercomano	45.3189100	11.0255200	IT	20	0	0	Cercomano	Cercomano	Cercomano	Cercomano	Cercomano	Cercomano
+	1422	Ceraino	45.5736800	10.8254800	IT	20	0	0	Ceraino	Ceraino	Ceraino	Ceraino	Ceraino	Ceraino
+	1422	Centrale	45.7273700	11.4803100	IT	20	0	0	Centrale	Centrale	Centrale	Centrale	Centrale	Centrale
+	1422	Centegnano	45.3924000	11.0852200	IT	20	0	0	Centegnano	Centegnano	Centegnano	Centegnano	Centegnano	Centegnano
+	1422	Ceneselli	45.0137700	11.3693600	IT	20	0	0	Ceneselli	Ceneselli	Ceneselli	Ceneselli	Ceneselli	Ceneselli
+	1422	Cencenighe Agordino	46.3518400	11.9682300	IT	20	0	0	Cencenighe Agordino	Cencenighe Agordino	Cencenighe Agordino	Cencenighe Agordino	Cencenighe Agordino	Cencenighe Agordino
+	1422	Ceggia	45.6870000	12.6422800	IT	20	0	0	Ceggia	Ceggia	Ceggia	Ceggia	Ceggia	Ceggia
+	1422	Ca' Zuliani	44.9591600	12.4244900	IT	20	0	0	Ca' Zuliani	Ca' Zuliani	Ca' Zuliani	Ca' Zuliani	Ca' Zuliani	Ca' Zuliani
+	1422	Ca' Venier	44.9588900	12.3352800	IT	20	0	0	Ca' Venier	Ca' Venier	Ca' Venier	Ca' Venier	Ca' Venier	Ca' Venier
+	1422	Cavecchia	45.7562200	11.3715600	IT	20	0	0	Cavecchia	Cavecchia	Cavecchia	Cavecchia	Cavecchia	Cavecchia
+	1422	Cavazzana	45.0933200	11.6299000	IT	20	0	0	Cavazzana	Cavazzana	Cavazzana	Cavazzana	Cavazzana	Cavazzana
+	1422	Cavarzere	45.1351800	12.0845300	IT	20	0	0	Cavarzere	Cavarzere	Cavarzere	Cavarzere	Cavarzere	Cavarzere
+	1422	Cavanella Po	45.0313900	12.1552500	IT	20	0	0	Cavanella Po	Cavanella Po	Cavanella Po	Cavanella Po	Cavanella Po	Cavanella Po
+	1422	Cavanella d'Adige	45.1099100	12.2445200	IT	20	0	0	Cavanella d'Adige	Cavanella d'Adige	Cavanella d'Adige	Cavanella d'Adige	Cavanella d'Adige	Cavanella d'Adige
+	1422	Cavalo	45.5700700	10.8710100	IT	20	0	0	Cavalo	Cavalo	Cavalo	Cavalo	Cavalo	Cavalo
+	1422	Cavajon Veronese	45.5400900	10.7704800	IT	20	0	0	Cavajon Veronese	Cavajon Veronese	Cavajon Veronese	Cavajon Veronese	Cavajon Veronese	Cavajon Veronese
+	1422	Ca' Tron	45.6060600	12.4457700	IT	20	0	0	Ca' Tron	Ca' Tron	Ca' Tron	Ca' Tron	Ca' Tron	Ca' Tron
+	1422	Ca' Tiepolo	44.9486100	12.3391700	IT	20	0	0	Ca' Tiepolo	Ca' Tiepolo	Ca' Tiepolo	Ca' Tiepolo	Ca' Tiepolo	Ca' Tiepolo
+	1422	Castelmassa	45.0182600	11.3150500	IT	20	0	0	Castelmassa	Castelmassa	Castelmassa	Castelmassa	Castelmassa	Castelmassa
+	1422	Castello Lavazzo	46.2848000	12.3060600	IT	20	0	0	Castello Lavazzo	Castello Lavazzo	Castello Lavazzo	Castello Lavazzo	Castello Lavazzo	Castello Lavazzo
+	1422	Castello di Godego	45.6927000	11.8799800	IT	20	0	0	Castello di Godego	Castello di Godego	Castello di Godego	Castello di Godego	Castello di Godego	Castello di Godego
+	1422	Castelguglielmo	45.0253900	11.5369000	IT	20	0	0	Castelguglielmo	Castelguglielmo	Castelguglielmo	Castelguglielmo	Castelguglielmo	Castelguglielmo
+	1422	Castelgomberto	45.5826700	11.3900700	IT	20	0	0	Castelgomberto	Castelgomberto	Castelgomberto	Castelgomberto	Castelgomberto	Castelgomberto
+	1422	Castelfranco Veneto	45.6714600	11.9275500	IT	20	0	0	Castelfranco Veneto	Castelfranco Veneto	Castelfranco Veneto	Castelfranco Veneto	Castelfranco Veneto	Castelfranco Veneto
+	1422	Castelcucco	45.8302400	11.8829600	IT	20	0	0	Castelcucco	Castelcucco	Castelcucco	Castelcucco	Castelcucco	Castelcucco
+	1422	Castelcerino	45.4612200	11.2403200	IT	20	0	0	Castelcerino	Castelcerino	Castelcerino	Castelcerino	Castelcerino	Castelcerino
+	1422	Castelbaldo	45.1222600	11.4551700	IT	20	0	0	Castelbaldo	Castelbaldo	Castelbaldo	Castelbaldo	Castelbaldo	Castelbaldo
+	1422	Castana	45.8169000	11.3099100	IT	20	0	0	Castana	Castana	Castana	Castana	Castana	Castana
+	1422	Castagnole	45.6885200	12.1826000	IT	20	0	0	Castagnole	Castagnole	Castagnole	Castagnole	Castagnole	Castagnole
+	1422	Castagnaro	45.1179500	11.4091100	IT	20	0	0	Castagnaro	Castagnaro	Castagnaro	Castagnaro	Castagnaro	Castagnaro
+	1422	Casotto	45.8965600	11.3487800	IT	20	0	0	Casotto	Casotto	Casotto	Casotto	Casotto	Casotto
+	1422	Casoni	45.7594300	11.8104500	IT	20	0	0	Casoni	Casoni	Casoni	Casoni	Casoni	Casoni
+	1422	Case Olimpio	45.1542000	11.4233500	IT	20	0	0	Case Olimpio	Case Olimpio	Case Olimpio	Case Olimpio	Case Olimpio	Case Olimpio
+	1422	Case Ocaro	44.9476200	12.4615800	IT	20	0	0	Case Ocaro	Case Ocaro	Case Ocaro	Case Ocaro	Case Ocaro	Case Ocaro
+	1422	Case Matte	45.0759100	11.9985300	IT	20	0	0	Case Matte	Case Matte	Case Matte	Case Matte	Case Matte	Case Matte
+	1422	Caselle	45.7496500	11.9800400	IT	20	0	0	Caselle	Caselle	Caselle	Caselle	Caselle	Caselle
+	1422	Case Dal Moro	45.7430300	12.8331800	IT	20	0	0	Case Dal Moro	Case Dal Moro	Case Dal Moro	Case Dal Moro	Case Dal Moro	Case Dal Moro
+	1422	Toninetti	45.2186300	11.3120900	IT	20	0	0	Toninetti	Toninetti	Toninetti	Toninetti	Toninetti	Toninetti
+	1422	Case Soligo	45.7232100	12.0349600	IT	20	0	0	Case Soligo	Case Soligo	Case Soligo	Case Soligo	Case Soligo	Case Soligo
+	1422	Minotte	45.1533100	11.4744000	IT	20	0	0	Minotte	Minotte	Minotte	Minotte	Minotte	Minotte
+	1422	Casalserugo	45.3154900	11.9123200	IT	20	0	0	Casalserugo	Casalserugo	Casalserugo	Casalserugo	Casalserugo	Casalserugo
+	1422	Casalino	45.2593600	11.1889000	IT	20	0	0	Casalino	Casalino	Casalino	Casalino	Casalino	Casalino
+	1422	Casale sul Sile	45.5963800	12.3265500	IT	20	0	0	Casale sul Sile	Casale sul Sile	Casale sul Sile	Casale sul Sile	Casale sul Sile	Casale sul Sile
+	1422	Casaleone	45.1682100	11.1940100	IT	20	0	0	Casaleone	Casaleone	Casaleone	Casaleone	Casaleone	Casaleone
+	1422	Casale di Scodosia	45.1922500	11.4744200	IT	20	0	0	Casale di Scodosia	Casale di Scodosia	Casale di Scodosia	Casale di Scodosia	Casale di Scodosia	Casale di Scodosia
+	1422	Galvagna	45.7737100	12.4430000	IT	20	0	0	Galvagna	Galvagna	Galvagna	Galvagna	Galvagna	Galvagna
+	1422	Carve	46.0427700	12.1014300	IT	20	0	0	Carve	Carve	Carve	Carve	Carve	Carve
+	1422	Carpesica	45.9533500	12.2912600	IT	20	0	0	Carpesica	Carpesica	Carpesica	Carpesica	Carpesica	Carpesica
+	1422	Carmignano di Brenta	45.6257800	11.7059900	IT	20	0	0	Carmignano di Brenta	Carmignano di Brenta	Carmignano di Brenta	Carmignano di Brenta	Carmignano di Brenta	Carmignano di Brenta
+	1422	Carmignano	45.1513400	11.6480700	IT	20	0	0	Carmignano	Carmignano	Carmignano	Carmignano	Carmignano	Carmignano
+	1422	Carceri	45.1950800	11.6211500	IT	20	0	0	Carceri	Carceri	Carceri	Carceri	Carceri	Carceri
+	1422	Carbonera	45.6918200	12.2825500	IT	20	0	0	Carbonera	Carbonera	Carbonera	Carbonera	Carbonera	Carbonera
+	1422	Ca' Priuli	45.1290600	11.6079200	IT	20	0	0	Ca' Priuli	Ca' Priuli	Ca' Priuli	Ca' Priuli	Ca' Priuli	Ca' Priuli
+	1422	Caprino Veronese	45.6048900	10.7951800	IT	20	0	0	Caprino Veronese	Caprino Veronese	Caprino Veronese	Caprino Veronese	Caprino Veronese	Caprino Veronese
+	1422	Caprile	46.4378300	11.9943800	IT	20	0	0	Caprile	Caprile	Caprile	Caprile	Caprile	Caprile
+	1422	Cappella Maggiore	45.9722200	12.3585500	IT	20	0	0	Cappella Maggiore	Cappella Maggiore	Cappella Maggiore	Cappella Maggiore	Cappella Maggiore	Cappella Maggiore
+	1422	Caposotto	44.9922400	11.3139400	IT	20	0	0	Caposotto	Caposotto	Caposotto	Caposotto	Caposotto	Caposotto
+	1422	Ca' Pirami	45.5596400	12.6422200	IT	20	0	0	Ca' Pirami	Ca' Pirami	Ca' Pirami	Ca' Pirami	Ca' Pirami	Ca' Pirami
+	1422	Caorle	45.5965600	12.8758000	IT	20	0	0	Caorle	Caorle	Caorle	Caorle	Caorle	Caorle
+	1422	Cantarana	45.2006500	12.0975900	IT	20	0	0	Cantarana	Cantarana	Cantarana	Cantarana	Cantarana	Cantarana
+	1422	Canizzano	45.6367700	12.1874600	IT	20	0	0	Canizzano	Canizzano	Canizzano	Canizzano	Canizzano	Canizzano
+	1422	Ca' Negra	45.0888900	12.1658300	IT	20	0	0	Ca' Negra	Ca' Negra	Ca' Negra	Ca' Negra	Ca' Negra	Ca' Negra
+	1422	Candide	46.5891300	12.5147600	IT	20	0	0	Candide	Candide	Candide	Candide	Candide	Candide
+	1422	Candiana	45.2218400	11.9925600	IT	20	0	0	Candiana	Candiana	Candiana	Candiana	Candiana	Candiana
+	1422	Canaro	44.9339400	11.6754100	IT	20	0	0	Canaro	Canaro	Canaro	Canaro	Canaro	Canaro
+	1422	Canale d'Agordo	46.3569300	11.9142900	IT	20	0	0	Canale d'Agordo	Canale d'Agordo	Canale d'Agordo	Canale d'Agordo	Canale d'Agordo	Canale d'Agordo
+	1422	Campo San Pietro	46.0497700	12.0583500	IT	20	0	0	Campo San Pietro	Campo San Pietro	Campo San Pietro	Campo San Pietro	Campo San Pietro	Campo San Pietro
+	1422	Campo San Martino	45.5486800	11.8280900	IT	20	0	0	Campo San Martino	Campo San Martino	Campo San Martino	Campo San Martino	Campo San Martino	Campo San Martino
+	1422	Camposampiero	45.5636800	11.9353400	IT	20	0	0	Camposampiero	Camposampiero	Camposampiero	Camposampiero	Camposampiero	Camposampiero
+	1422	Camporovere	45.8803900	11.4849200	IT	20	0	0	Camporovere	Camporovere	Camporovere	Camporovere	Camporovere	Camporovere
+	1422	Camponogara	45.3795400	12.0863800	IT	20	0	0	Camponogara	Camponogara	Camponogara	Camponogara	Camponogara	Camponogara
+	1422	Campolongo Maggiore Scolaro	45.3223700	12.0374500	IT	20	0	0	Campolongo Maggiore Scolaro	Campolongo Maggiore Scolaro	Campolongo Maggiore Scolaro	Campolongo Maggiore Scolaro	Campolongo Maggiore Scolaro	Campolongo Maggiore Scolaro
+	1422	Campodoro	45.4894700	11.7526800	IT	20	0	0	Campodoro	Campodoro	Campodoro	Campodoro	Campodoro	Campodoro
+	1422	Campomezzavia	45.8336700	11.5741200	IT	20	0	0	Campomezzavia	Campomezzavia	Campomezzavia	Campomezzavia	Campomezzavia	Campomezzavia
+	1422	Campodarsego	45.4981500	11.9219400	IT	20	0	0	Campodarsego	Campodarsego	Campodarsego	Campodarsego	Campodarsego	Campodarsego
+	1422	Campocroce	45.5846200	12.2172500	IT	20	0	0	Campocroce	Campocroce	Campocroce	Campocroce	Campocroce	Campocroce
+	1422	Campiglia dei Berici	45.3354600	11.5421000	IT	20	0	0	Campiglia dei Berici	Campiglia dei Berici	Campiglia dei Berici	Campiglia dei Berici	Campiglia dei Berici	Campiglia dei Berici
+	1422	Campea	45.9305600	12.1066700	IT	20	0	0	Campea	Campea	Campea	Campea	Campea	Campea
+	1422	Campanella	45.6080800	11.2595600	IT	20	0	0	Campanella	Campanella	Campanella	Campanella	Campanella	Campanella
+	1422	Campalto	45.4806200	12.2874700	IT	20	0	0	Campalto	Campalto	Campalto	Campalto	Campalto	Campalto
+	1422	Campalto	45.4013300	11.0874700	IT	20	0	0	Campalto	Campalto	Campalto	Campalto	Campalto	Campalto
+	1422	Campagnola	45.2786600	11.9990200	IT	20	0	0	Campagnola	Campagnola	Campagnola	Campagnola	Campagnola	Campagnola
+	1422	Campagnazza	45.0537800	11.8147400	IT	20	0	0	Campagnazza	Campagnazza	Campagnazza	Campagnazza	Campagnazza	Campagnazza
+	1422	Campagna Lupia	45.3538100	12.0972700	IT	20	0	0	Campagna Lupia	Campagna Lupia	Campagna Lupia	Campagna Lupia	Campagna Lupia	Campagna Lupia
+	1422	Camisano Vicentino	45.5215600	11.7081700	IT	20	0	0	Camisano Vicentino	Camisano Vicentino	Camisano Vicentino	Camisano Vicentino	Camisano Vicentino	Camisano Vicentino
+	1422	Ca' Mello	44.9222200	12.3933300	IT	20	0	0	Ca' Mello	Ca' Mello	Ca' Mello	Ca' Mello	Ca' Mello	Ca' Mello
+	1422	Camalò	45.7532400	12.1716500	IT	20	0	0	Camalò	Camalò	Camalò	Camalò	Camalò	Camalò
+	1422	Calvene	45.7661500	11.5114600	IT	20	0	0	Calvene	Calvene	Calvene	Calvene	Calvene	Calvene
+	1422	Caltrano	45.7734600	11.4557000	IT	20	0	0	Caltrano	Caltrano	Caltrano	Caltrano	Caltrano	Caltrano
+	1422	Calto	44.9907200	11.3585400	IT	20	0	0	Calto	Calto	Calto	Calto	Calto	Calto
+	1422	Caltana	45.4827800	12.0300200	IT	20	0	0	Caltana	Caltana	Caltana	Caltana	Caltana	Caltana
+	1422	Calonega	45.5988000	11.6789400	IT	20	0	0	Calonega	Calonega	Calonega	Calonega	Calonega	Calonega
+	1422	Ca' Lino	45.1610500	12.2989000	IT	20	0	0	Ca' Lino	Ca' Lino	Ca' Lino	Ca' Lino	Ca' Lino	Ca' Lino
+	1422	Caldogno-Rettorgole-Cresole	45.6078000	11.5028000	IT	20	0	0	Caldogno-Rettorgole-Cresole	Caldogno-Rettorgole-Cresole	Caldogno-Rettorgole-Cresole	Caldogno-Rettorgole-Cresole	Caldogno-Rettorgole-Cresole	Caldogno-Rettorgole-Cresole
+	1422	Calalzo di Cadore	46.4464300	12.3817600	IT	20	0	0	Calalzo di Cadore	Calalzo di Cadore	Calalzo di Cadore	Calalzo di Cadore	Calalzo di Cadore	Calalzo di Cadore
+	1422	Grignella	45.0722200	12.1036100	IT	20	0	0	Grignella	Grignella	Grignella	Grignella	Grignella	Grignella
+	1422	Cagnola	45.2823400	11.8682700	IT	20	0	0	Cagnola	Cagnola	Cagnola	Cagnola	Cagnola	Cagnola
+	1422	Ca' Falier	45.7803000	11.8990000	IT	20	0	0	Ca' Falier	Ca' Falier	Ca' Falier	Ca' Falier	Ca' Falier	Ca' Falier
+	1422	Caerano di San Marco	45.7816000	11.9985100	IT	20	0	0	Caerano di San Marco	Caerano di San Marco	Caerano di San Marco	Caerano di San Marco	Caerano di San Marco	Caerano di San Marco
+	1422	Cadoneghe	45.4428200	11.9274900	IT	20	0	0	Cadoneghe	Cadoneghe	Cadoneghe	Cadoneghe	Cadoneghe	Cadoneghe
+	1422	Ca' Dolfin	44.9391700	12.4319400	IT	20	0	0	Ca' Dolfin	Ca' Dolfin	Ca' Dolfin	Ca' Dolfin	Ca' Dolfin	Ca' Dolfin
+	1422	Ca' del Lago	45.2166700	11.2166700	IT	20	0	0	Ca' del Lago	Ca' del Lago	Ca' del Lago	Ca' del Lago	Ca' del Lago	Ca' del Lago
+	1422	Ca' degli Oppi	45.2955000	11.1302900	IT	20	0	0	Ca' degli Oppi	Ca' degli Oppi	Ca' degli Oppi	Ca' degli Oppi	Ca' degli Oppi	Ca' degli Oppi
+	1422	Cadeasse	45.1007700	11.7512900	IT	20	0	0	Cadeasse	Cadeasse	Cadeasse	Cadeasse	Cadeasse	Cadeasse
+	1422	Ca' Corniani	45.6121200	12.8601200	IT	20	0	0	Ca' Corniani	Ca' Corniani	Ca' Corniani	Ca' Corniani	Ca' Corniani	Ca' Corniani
+	1422	Ca' Bianca	45.1922200	12.2050000	IT	20	0	0	Ca' Bianca	Ca' Bianca	Ca' Bianca	Ca' Bianca	Ca' Bianca	Ca' Bianca
+	1422	Buttapietra	45.3411000	10.9991500	IT	20	0	0	Buttapietra	Buttapietra	Buttapietra	Buttapietra	Buttapietra	Buttapietra
+	1422	Busta	45.7461400	12.0013400	IT	20	0	0	Busta	Busta	Busta	Busta	Busta	Busta
+	1422	Bussolengo	45.4690300	10.8537100	IT	20	0	0	Bussolengo	Bussolengo	Bussolengo	Bussolengo	Bussolengo	Bussolengo
+	1422	Busiago	45.5631200	11.8322000	IT	20	0	0	Busiago	Busiago	Busiago	Busiago	Busiago	Busiago
+	1422	Busche	46.0409000	11.9854000	IT	20	0	0	Busche	Busche	Busche	Busche	Busche	Busche
+	1422	Burano	45.4854800	12.4169600	IT	20	0	0	Burano	Burano	Burano	Burano	Burano	Burano
+	1422	Brugine	45.2969600	11.9920000	IT	20	0	0	Brugine	Brugine	Brugine	Brugine	Brugine	Brugine
+	1422	Marinella	45.6980500	13.0282400	IT	20	0	0	Marinella	Marinella	Marinella	Marinella	Marinella	Marinella
+	1422	Bressanvido	45.6465100	11.6343700	IT	20	0	0	Bressanvido	Bressanvido	Bressanvido	Bressanvido	Bressanvido	Bressanvido
+	1422	Bresega	45.2075800	11.5832300	IT	20	0	0	Bresega	Bresega	Bresega	Bresega	Bresega	Bresega
+	1422	Breonio	45.6237100	10.9028100	IT	20	0	0	Breonio	Breonio	Breonio	Breonio	Breonio	Breonio
+	1422	Brenton	45.5048900	11.2858300	IT	20	0	0	Brenton	Brenton	Brenton	Brenton	Brenton	Brenton
+	1422	Brendola	45.4784900	11.4394700	IT	20	0	0	Brendola	Brendola	Brendola	Brendola	Brendola	Brendola
+	1422	Breganze	45.7048900	11.5607400	IT	20	0	0	Breganze	Breganze	Breganze	Breganze	Breganze	Breganze
+	1422	Breda	45.7225000	12.3308300	IT	20	0	0	Breda	Breda	Breda	Breda	Breda	Breda
+	1422	Bovolone	45.2614200	11.1178600	IT	20	0	0	Bovolone	Bovolone	Bovolone	Bovolone	Bovolone	Bovolone
+	1422	Bovolenta	45.2689200	11.9357600	IT	20	0	0	Bovolenta	Bovolenta	Bovolenta	Bovolenta	Bovolenta	Bovolenta
+	1422	Marchesino-Bovo	45.3666700	11.0000000	IT	20	0	0	Marchesino-Bovo	Marchesino-Bovo	Marchesino-Bovo	Marchesino-Bovo	Marchesino-Bovo	Marchesino-Bovo
+	1422	Bottrighe	45.0255200	12.0823600	IT	20	0	0	Bottrighe	Bottrighe	Bottrighe	Bottrighe	Bottrighe	Bottrighe
+	1422	Bosco del Monaco	45.0218700	11.7959100	IT	20	0	0	Bosco del Monaco	Bosco del Monaco	Bosco del Monaco	Bosco del Monaco	Bosco del Monaco	Bosco del Monaco
+	1422	Bosco Chiesanuova	45.6210300	11.0322400	IT	20	0	0	Bosco Chiesanuova	Bosco Chiesanuova	Bosco Chiesanuova	Bosco Chiesanuova	Bosco Chiesanuova	Bosco Chiesanuova
+	1422	Bosco	45.8937600	11.4987200	IT	20	0	0	Bosco	Bosco	Bosco	Bosco	Bosco	Bosco
+	1422	Bosco	45.4433700	11.7953000	IT	20	0	0	Bosco	Bosco	Bosco	Bosco	Bosco	Bosco
+	1422	Bosco	45.3374000	11.1639600	IT	20	0	0	Bosco	Bosco	Bosco	Bosco	Bosco	Bosco
+	1422	Bosaro	44.9987800	11.7647100	IT	20	0	0	Bosaro	Bosaro	Bosaro	Bosaro	Bosaro	Bosaro
+	1422	Borsoi	46.1472500	12.4088000	IT	20	0	0	Borsoi	Borsoi	Borsoi	Borsoi	Borsoi	Borsoi
+	1422	Borso del Grappa	45.8102500	11.7736700	IT	20	0	0	Borso del Grappa	Borso del Grappa	Borso del Grappa	Borso del Grappa	Borso del Grappa	Borso del Grappa
+	1422	Borgoricco-San Michele delle Badesse-Sant'Eufemia	45.5352000	11.9411100	IT	20	0	0	Borgoricco-San Michele delle Badesse-Sant'Eufemia	Borgoricco-San Michele delle Badesse-Sant'Eufemia	Borgoricco-San Michele delle Badesse-Sant'Eufemia	Borgoricco-San Michele delle Badesse-Sant'Eufemia	Borgoricco-San Michele delle Badesse-Sant'Eufemia	Borgoricco-San Michele delle Badesse-Sant'Eufemia
+	1422	Borgoforte	45.1464100	11.9421800	IT	20	0	0	Borgoforte	Borgoforte	Borgoforte	Borgoforte	Borgoforte	Borgoforte
+	1422	Borgo del Molino	45.7557400	12.3939200	IT	20	0	0	Borgo del Molino	Borgo del Molino	Borgo del Molino	Borgo del Molino	Borgo del Molino	Borgo del Molino
+	1422	Borgo Bianchi	45.8037600	12.4119100	IT	20	0	0	Borgo Bianchi	Borgo Bianchi	Borgo Bianchi	Borgo Bianchi	Borgo Bianchi	Borgo Bianchi
+	1422	Borghetto	45.6085800	11.8859100	IT	20	0	0	Borghetto	Borghetto	Borghetto	Borghetto	Borghetto	Borghetto
+	1422	Borca	46.4345200	12.2223000	IT	20	0	0	Borca	Borca	Borca	Borca	Borca	Borca
+	1422	Bonisiolo	45.5823300	12.3175300	IT	20	0	0	Bonisiolo	Bonisiolo	Bonisiolo	Bonisiolo	Bonisiolo	Bonisiolo
+	1422	Bonferraro	45.1838000	11.0120100	IT	20	0	0	Bonferraro	Bonferraro	Bonferraro	Bonferraro	Bonferraro	Bonferraro
+	1422	Bonavigo	45.2583100	11.2794400	IT	20	0	0	Bonavigo	Bonavigo	Bonavigo	Bonavigo	Bonavigo	Bonavigo
+	1422	Bonavicina	45.2442600	11.1841900	IT	20	0	0	Bonavicina	Bonavicina	Bonavicina	Bonavicina	Bonavicina	Bonavicina
+	1422	Santo Stefano-Bonaldo	45.3671800	11.3319900	IT	20	0	0	Santo Stefano-Bonaldo	Santo Stefano-Bonaldo	Santo Stefano-Bonaldo	Santo Stefano-Bonaldo	Santo Stefano-Bonaldo	Santo Stefano-Bonaldo
+	1422	Bolzano Vicentino	45.6022100	11.6219800	IT	20	0	0	Bolzano Vicentino	Bolzano Vicentino	Bolzano Vicentino	Bolzano Vicentino	Bolzano Vicentino	Bolzano Vicentino
+	1422	Bolca	45.5953500	11.2083100	IT	20	0	0	Bolca	Bolca	Bolca	Bolca	Bolca	Bolca
+	1422	Boccon	45.3208500	11.6520400	IT	20	0	0	Boccon	Boccon	Boccon	Boccon	Boccon	Boccon
+	1422	Bocca Callalta	45.7049100	12.4426900	IT	20	0	0	Bocca Callalta	Bocca Callalta	Bocca Callalta	Bocca Callalta	Bocca Callalta	Bocca Callalta
+	1422	Biverone	45.6946000	12.7143100	IT	20	0	0	Biverone	Biverone	Biverone	Biverone	Biverone	Biverone
+	1422	Bionde	45.2000000	11.1000000	IT	20	0	0	Bionde	Bionde	Bionde	Bionde	Bionde	Bionde
+	1422	Bigolino	45.8666900	12.0169300	IT	20	0	0	Bigolino	Bigolino	Bigolino	Bigolino	Bigolino	Bigolino
+	1422	Bibione	45.6356500	13.0361600	IT	20	0	0	Bibione	Бибионе	Bibione	Bibione	Bibione	Bibione
+	1422	Bibano	45.9075100	12.4326600	IT	20	0	0	Bibano	Bibano	Bibano	Bibano	Bibano	Bibano
+	1422	Bevilacqua	45.2324900	11.3949600	IT	20	0	0	Bevilacqua	Bevilacqua	Bevilacqua	Bevilacqua	Bevilacqua	Bevilacqua
+	1422	Bevazzana	45.6661300	13.0598600	IT	20	0	0	Bevazzana	Bevazzana	Bevazzana	Bevazzana	Bevazzana	Bevazzana
+	1422	Bevadoro	45.5114300	11.7381800	IT	20	0	0	Bevadoro	Bevadoro	Bevadoro	Bevadoro	Bevadoro	Bevadoro
+	1422	Bettola	45.5441000	11.1243500	IT	20	0	0	Bettola	Bettola	Bettola	Bettola	Bettola	Bettola
+	1422	Bertigo	45.8625800	11.5541300	IT	20	0	0	Bertigo	Bertigo	Bertigo	Bertigo	Bertigo	Bertigo
+	1422	Bernarda	45.0084400	11.6603900	IT	20	0	0	Bernarda	Bernarda	Bernarda	Bernarda	Bernarda	Bernarda
+	1422	Bergantino	45.0614500	11.2523700	IT	20	0	0	Bergantino	Bergantino	Bergantino	Bergantino	Bergantino	Bergantino
+	1422	Belluno Veronese	45.6865800	10.8993800	IT	20	0	0	Belluno Veronese	Belluno Veronese	Belluno Veronese	Belluno Veronese	Belluno Veronese	Belluno Veronese
+	1422	Belluno	46.1426200	12.2156000	IT	20	0	0	Belluno	Беллуно	Belluno	Belluno	Belluno	Belluno
+	1422	Bellimadore	45.4963000	11.3310500	IT	20	0	0	Bellimadore	Bellimadore	Bellimadore	Bellimadore	Bellimadore	Bellimadore
+	1422	Belfiore	45.3818900	11.2108500	IT	20	0	0	Belfiore	Belfiore	Belfiore	Belfiore	Belfiore	Belfiore
+	1422	Battaglia Terme	45.2853100	11.7837500	IT	20	0	0	Battaglia Terme	Battaglia Terme	Battaglia Terme	Battaglia Terme	Battaglia Terme	Battaglia Terme
+	1422	Bassano del Grappa	45.7665600	11.7273900	IT	20	0	0	Bassano del Grappa	Бассано-дель-Граппа	Bassano del Grappa	Bassano del Grappa	Bassano del Grappa	Bassano del Grappa
+	1422	Giacciano con Baruchella	45.0671800	11.4504000	IT	20	0	0	Giacciano con Baruchella	Giacciano con Baruchella	Giacciano con Baruchella	Giacciano con Baruchella	Giacciano con Baruchella	Giacciano con Baruchella
+	1422	Bardolino	45.5411400	10.7329800	IT	20	0	0	Bardolino	Bardolino	Bardolino	Bardolino	Bardolino	Bardolino
+	1422	Barbuglio	45.1127000	11.5996300	IT	20	0	0	Barbuglio	Barbuglio	Barbuglio	Barbuglio	Barbuglio	Barbuglio
+	1422	Barbona	45.1033900	11.7048600	IT	20	0	0	Barbona	Barbona	Barbona	Barbona	Barbona	Barbona
+	1422	Barbarano Vicentino	45.4091200	11.5434200	IT	20	0	0	Barbarano Vicentino	Barbarano Vicentino	Barbarano Vicentino	Barbarano Vicentino	Barbarano Vicentino	Barbarano Vicentino
+	1422	Baone	45.2417400	11.6846300	IT	20	0	0	Baone	Baone	Baone	Baone	Baone	Baone
+	1422	Bagnolo	45.9111700	12.2731000	IT	20	0	0	Bagnolo	Bagnolo	Bagnolo	Bagnolo	Bagnolo	Bagnolo
+	1422	Bagnolo	45.2723800	10.8908100	IT	20	0	0	Bagnolo	Bagnolo	Bagnolo	Bagnolo	Bagnolo	Bagnolo
+	1422	Bagnoli di Sopra	45.1866700	11.8843300	IT	20	0	0	Bagnoli di Sopra	Bagnoli di Sopra	Bagnoli di Sopra	Bagnoli di Sopra	Bagnoli di Sopra	Bagnoli di Sopra
+	1422	Badia Polesine	45.0950800	11.4944300	IT	20	0	0	Badia Polesine	Badia Polesine	Badia Polesine	Badia Polesine	Badia Polesine	Badia Polesine
+	1422	Badia Calavena	45.5646300	11.1519700	IT	20	0	0	Badia Calavena	Badia Calavena	Badia Calavena	Badia Calavena	Badia Calavena	Badia Calavena
+	1422	Auronzo	46.5592000	12.4245600	IT	20	0	0	Auronzo	Auronzo	Auronzo	Auronzo	Auronzo	Auronzo
+	1422	Asolo	45.7885400	11.9170100	IT	20	0	0	Asolo	Asolo	Asolo	Asolo	Asolo	Asolo
+	1422	Asiago	45.8758800	11.5122300	IT	20	0	0	Asiago	Asiago	Asiago	Asiago	Asiago	Asiago
+	1422	Aselogna	45.1650200	11.2530200	IT	20	0	0	Aselogna	Aselogna	Aselogna	Aselogna	Aselogna	Aselogna
+	1422	Arzignano	45.5202700	11.3344600	IT	20	0	0	Arzignano	Арциньяно	Arzignano	Arzignano	Arzignano	Arzignano
+	1422	Arzergrande	45.2727800	12.0484000	IT	20	0	0	Arzergrande	Arzergrande	Arzergrande	Arzergrande	Arzergrande	Arzergrande
+	1422	Arzercavalli	45.2443500	11.9392500	IT	20	0	0	Arzercavalli	Arzercavalli	Arzercavalli	Arzercavalli	Arzercavalli	Arzercavalli
+	1422	Arten	46.0078400	11.8286200	IT	20	0	0	Arten	Arten	Arten	Arten	Arten	Arten
+	1422	Arsiero	45.8042200	11.3558200	IT	20	0	0	Arsiero	Arsiero	Arsiero	Arsiero	Arsiero	Arsiero
+	1422	Arsiè	45.9821100	11.7579400	IT	20	0	0	Arsiè	Arsiè	Arsiè	Arsiè	Arsiè	Arsiè
+	1422	Bosco Arsego	45.5333300	11.8666700	IT	20	0	0	Bosco Arsego	Bosco Arsego	Bosco Arsego	Bosco Arsego	Bosco Arsego	Bosco Arsego
+	1422	Arre	45.2174800	11.9285800	IT	20	0	0	Arre	Arre	Arre	Arre	Arre	Arre
+	1422	Arquà Petrarca	45.2691100	11.7204500	IT	20	0	0	Arquà Petrarca	Arquà Petrarca	Arquà Petrarca	Arquà Petrarca	Arquà Petrarca	Arquà Petrarca
+	1422	Ariano	44.9460400	12.1244800	IT	20	0	0	Ariano	Ariano	Ariano	Ariano	Ariano	Ariano
+	1422	Argine Sabato Nord	44.9494300	11.5649100	IT	20	0	0	Argine Sabato Nord	Argine Sabato Nord	Argine Sabato Nord	Argine Sabato Nord	Argine Sabato Nord	Argine Sabato Nord
+	1422	Arcugnano-Torri	45.4957900	11.5477000	IT	20	0	0	Arcugnano-Torri	Arcugnano-Torri	Arcugnano-Torri	Arcugnano-Torri	Arcugnano-Torri	Arcugnano-Torri
+	1422	Arcole	45.3612500	11.2875000	IT	20	0	0	Arcole	Arcole	Arcole	Arcole	Arcole	Arcole
+	1422	Arcade	45.7842800	12.2197200	IT	20	0	0	Arcade	Arcade	Arcade	Arcade	Arcade	Arcade
+	1422	Arabba	46.4975700	11.8748500	IT	20	0	0	Arabba	Арабба	Arabba	Arabba	Arabba	Arabba
+	1422	Anzù	46.0089400	11.9330200	IT	20	0	0	Anzù	Anzù	Anzù	Anzù	Anzù	Anzù
+	1422	Annone Veneto	45.7896500	12.6864600	IT	20	0	0	Annone Veneto	Annone Veneto	Annone Veneto	Annone Veneto	Annone Veneto	Annone Veneto
+	1422	Anguillara Veneta	45.1424900	11.8846100	IT	20	0	0	Anguillara Veneta	Anguillara Veneta	Anguillara Veneta	Anguillara Veneta	Anguillara Veneta	Anguillara Veneta
+	1422	Andraz	46.4840000	11.9839000	IT	20	0	0	Andraz	Andraz	Andraz	Andraz	Andraz	Andraz
+	1422	Altavilla Vicentina	45.5132900	11.4687700	IT	20	0	0	Altavilla Vicentina	Altavilla Vicentina	Altavilla Vicentina	Altavilla Vicentina	Altavilla Vicentina	Altavilla Vicentina
+	1422	Alleghe	46.4071800	12.0233600	IT	20	0	0	Alleghe	Alleghe	Alleghe	Alleghe	Alleghe	Alleghe
+	1422	Aldegheri	45.6079000	11.1743300	IT	20	0	0	Aldegheri	Aldegheri	Aldegheri	Aldegheri	Aldegheri	Aldegheri
+	1422	Albignasego	45.3470500	11.8678100	IT	20	0	0	Albignasego	Albignasego	Albignasego	Albignasego	Albignasego	Albignasego
+	1422	Albettone	45.3581100	11.5843000	IT	20	0	0	Albettone	Albettone	Albettone	Albettone	Albettone	Albettone
+	1422	Alberoni	45.3477400	12.3176900	IT	20	0	0	Alberoni	Alberoni	Alberoni	Alberoni	Alberoni	Alberoni
+	1422	Albero Piocioso	45.2775900	11.3999000	IT	20	0	0	Albero Piocioso	Albero Piocioso	Albero Piocioso	Albero Piocioso	Albero Piocioso	Albero Piocioso
+	1422	Albaredo d'Adige	45.3185900	11.2784300	IT	20	0	0	Albaredo d'Adige	Albaredo d'Adige	Albaredo d'Adige	Albaredo d'Adige	Albaredo d'Adige	Albaredo d'Adige
+	1422	Albaredo	45.6672500	12.0109500	IT	20	0	0	Albaredo	Albaredo	Albaredo	Albaredo	Albaredo	Albaredo
+	1422	Agugliaro	45.3251000	11.5849600	IT	20	0	0	Agugliaro	Agugliaro	Agugliaro	Agugliaro	Agugliaro	Agugliaro
+	1422	Agordo	46.2820100	12.0360800	IT	20	0	0	Agordo	Agordo	Agordo	Agordo	Agordo	Agordo
+	1422	Agna	45.1705100	11.9562500	IT	20	0	0	Agna	Agna	Agna	Agna	Agna	Agna
+	1422	Affi	45.5529700	10.7864000	IT	20	0	0	Affi	Affi	Affi	Affi	Affi	Affi
+	1422	Adria	45.0544500	12.0559900	IT	20	0	0	Adria	Адрия	Adria	Adria	Adria	Adria
+	1422	Abbazia Pisani	45.6127000	11.8542900	IT	20	0	0	Abbazia Pisani	Abbazia Pisani	Abbazia Pisani	Abbazia Pisani	Abbazia Pisani	Abbazia Pisani
+	1422	Abano Terme	45.3575300	11.7872500	IT	20	0	0	Abano Terme	Абано-Терме	Abano Terme	Abano Terme	Abano Terme	Abano Terme
+	1422	Ca' Ballarin	45.4680600	12.5138900	IT	20	0	0	Ca' Ballarin	Ca' Ballarin	Ca' Ballarin	Ca' Ballarin	Ca' Ballarin	Ca' Ballarin
+	1422	Santa Giulia	44.8378400	12.3798700	IT	20	0	0	Santa Giulia	Santa Giulia	Santa Giulia	Santa Giulia	Santa Giulia	Santa Giulia
+	1422	Gorino Veneto	44.8344100	12.3474300	IT	20	0	0	Gorino Veneto	Gorino Veneto	Gorino Veneto	Gorino Veneto	Gorino Veneto	Gorino Veneto
+	1422	Cassella	44.8671100	12.3612600	IT	20	0	0	Cassella	Cassella	Cassella	Cassella	Cassella	Cassella
+	1422	Scardovari	44.8976500	12.4546200	IT	20	0	0	Scardovari	Scardovari	Scardovari	Scardovari	Scardovari	Scardovari
+	1422	Pila	44.9679300	12.4819800	IT	20	0	0	Pila	Pila	Pila	Pila	Pila	Pila
+	1422	Villaregia	44.9579600	12.3013300	IT	20	0	0	Villaregia	Villaregia	Villaregia	Villaregia	Villaregia	Villaregia
+	1422	Ca' Cappellino	44.9913900	12.2575000	IT	20	0	0	Ca' Cappellino	Ca' Cappellino	Ca' Cappellino	Ca' Cappellino	Ca' Cappellino	Ca' Cappellino
+	1422	Borgo	44.9864700	12.0198200	IT	20	0	0	Borgo	Borgo	Borgo	Borgo	Borgo	Borgo
+	1422	Panarella	44.9893600	12.0689300	IT	20	0	0	Panarella	Panarella	Panarella	Panarella	Panarella	Panarella
+	1422	Rivà	44.9308300	12.2280600	IT	20	0	0	Rivà	Rivà	Rivà	Rivà	Rivà	Rivà
+	1422	Grillara	44.9817200	12.1914400	IT	20	0	0	Grillara	Grillara	Grillara	Grillara	Grillara	Grillara
+	1422	Malafesta	45.8261100	12.9619400	IT	20	0	0	Malafesta	Malafesta	Malafesta	Malafesta	Malafesta	Malafesta
+	1422	Fossabiuba	45.8175000	12.5536100	IT	20	0	0	Fossabiuba	Fossabiuba	Fossabiuba	Fossabiuba	Fossabiuba	Fossabiuba
+	1422	Navolè	45.8107600	12.5866600	IT	20	0	0	Navolè	Navolè	Navolè	Navolè	Navolè	Navolè
+	1422	Meduna di Livenza	45.8172000	12.6282800	IT	20	0	0	Meduna di Livenza	Meduna di Livenza	Meduna di Livenza	Meduna di Livenza	Meduna di Livenza	Meduna di Livenza
+	1422	Mure	45.8092000	12.6428500	IT	20	0	0	Mure	Mure	Mure	Mure	Mure	Mure
+	1422	Gorgo al Monticano	45.7913900	12.5500000	IT	20	0	0	Gorgo al Monticano	Gorgo al Monticano	Gorgo al Monticano	Gorgo al Monticano	Gorgo al Monticano	Gorgo al Monticano
+	1422	San Giovanni	45.7885400	12.6138100	IT	20	0	0	San Giovanni	San Giovanni	San Giovanni	San Giovanni	San Giovanni	San Giovanni
+	1422	Ai Palazzi	45.7794900	12.5533600	IT	20	0	0	Ai Palazzi	Ai Palazzi	Ai Palazzi	Ai Palazzi	Ai Palazzi	Ai Palazzi
+	1422	Piavon	45.7642900	12.5267300	IT	20	0	0	Piavon	Piavon	Piavon	Piavon	Piavon	Piavon
+	1422	Busco	45.7416300	12.5152600	IT	20	0	0	Busco	Busco	Busco	Busco	Busco	Busco
+	1422	Cavalier	45.7538900	12.5538300	IT	20	0	0	Cavalier	Cavalier	Cavalier	Cavalier	Cavalier	Cavalier
+	1422	Loncon	45.7519700	12.7112500	IT	20	0	0	Loncon	Loncon	Loncon	Loncon	Loncon	Loncon
+	1422	Corbolone	45.7496200	12.6696900	IT	20	0	0	Corbolone	Corbolone	Corbolone	Corbolone	Corbolone	Corbolone
+	1422	Lison	45.7565600	12.7521000	IT	20	0	0	Lison	Lison	Lison	Lison	Lison	Lison
+	1422	Belfiore	45.7837400	12.7273700	IT	20	0	0	Belfiore	Belfiore	Belfiore	Belfiore	Belfiore	Belfiore
+	1422	Pramaggiore Blessaglia	45.8052800	12.7250000	IT	20	0	0	Pramaggiore Blessaglia	Pramaggiore Blessaglia	Pramaggiore Blessaglia	Pramaggiore Blessaglia	Pramaggiore Blessaglia	Pramaggiore Blessaglia
+	1422	Pramaggiore	45.8150000	12.7388900	IT	20	0	0	Pramaggiore	Pramaggiore	Pramaggiore	Pramaggiore	Pramaggiore	Pramaggiore
+	1422	Sega-Malcanton	45.8077800	12.8097200	IT	20	0	0	Sega-Malcanton	Sega-Malcanton	Sega-Malcanton	Sega-Malcanton	Sega-Malcanton	Sega-Malcanton
+	1422	Gruaro-Bagnara	45.8416700	12.8511100	IT	20	0	0	Gruaro-Bagnara	Gruaro-Bagnara	Gruaro-Bagnara	Gruaro-Bagnara	Gruaro-Bagnara	Gruaro-Bagnara
+	1422	Cintello	45.8177900	12.8638300	IT	20	0	0	Cintello	Cintello	Cintello	Cintello	Cintello	Cintello
+	1422	Mazzolada	45.7545200	12.7839600	IT	20	0	0	Mazzolada	Mazzolada	Mazzolada	Mazzolada	Mazzolada	Mazzolada
+	1422	Summaga	45.7740600	12.7979200	IT	20	0	0	Summaga	Summaga	Summaga	Summaga	Summaga	Summaga
+	1422	San Giorgio al Tagliamento-Pozzi	45.7963900	12.9636100	IT	20	0	0	San Giorgio al Tagliamento-Pozzi	San Giorgio al Tagliamento-Pozzi	San Giorgio al Tagliamento-Pozzi	San Giorgio al Tagliamento-Pozzi	San Giorgio al Tagliamento-Pozzi	San Giorgio al Tagliamento-Pozzi
+	1422	Marina	45.7131400	12.9485100	IT	20	0	0	Marina	Marina	Marina	Marina	Marina	Marina
+	1422	Castello di Brussa	45.7049900	12.9511700	IT	20	0	0	Castello di Brussa	Castello di Brussa	Castello di Brussa	Castello di Brussa	Castello di Brussa	Castello di Brussa
+	1422	Revedoli	45.5518900	12.7327300	IT	20	0	0	Revedoli	Revedoli	Revedoli	Revedoli	Revedoli	Revedoli
+	1422	Bocca Fossa	45.6611100	12.7475000	IT	20	0	0	Bocca Fossa	Bocca Fossa	Bocca Fossa	Bocca Fossa	Bocca Fossa	Bocca Fossa
+	1422	Torre di Fine	45.5661100	12.7495500	IT	20	0	0	Torre di Fine	Torre di Fine	Torre di Fine	Torre di Fine	Torre di Fine	Torre di Fine
+	1422	Crepaldo	45.5949500	12.6965500	IT	20	0	0	Crepaldo	Crepaldo	Crepaldo	Crepaldo	Crepaldo	Crepaldo
+	1422	Palazzetto	45.5956500	12.6237600	IT	20	0	0	Palazzetto	Palazzetto	Palazzetto	Palazzetto	Palazzetto	Palazzetto
+	1422	Staffolo	45.6592500	12.6902500	IT	20	0	0	Staffolo	Staffolo	Staffolo	Staffolo	Staffolo	Staffolo
+	1422	Rotta	45.6732500	12.7175600	IT	20	0	0	Rotta	Rotta	Rotta	Rotta	Rotta	Rotta
+	1422	Pra' di Levada	45.6961100	12.6686100	IT	20	0	0	Pra' di Levada	Pra' di Levada	Pra' di Levada	Pra' di Levada	Pra' di Levada	Pra' di Levada
+	1422	Sant'Erasmo	45.4572200	12.4122200	IT	20	0	0	Sant'Erasmo	Sant'Erasmo	Sant'Erasmo	Sant'Erasmo	Sant'Erasmo	Sant'Erasmo
+	1422	Mazzorbo	45.4873000	12.4100700	IT	20	0	0	Mazzorbo	Mazzorbo	Mazzorbo	Mazzorbo	Mazzorbo	Mazzorbo
+	1422	Santa Maria di Piave	45.5565300	12.5746300	IT	20	0	0	Santa Maria di Piave	Santa Maria di Piave	Santa Maria di Piave	Santa Maria di Piave	Santa Maria di Piave	Santa Maria di Piave
+	1422	Chiesanuova	45.5984600	12.5796900	IT	20	0	0	Chiesanuova	Chiesanuova	Chiesanuova	Chiesanuova	Chiesanuova	Chiesanuova
+	1422	Lazzaretto	45.6050600	12.5374500	IT	20	0	0	Lazzaretto	Lazzaretto	Lazzaretto	Lazzaretto	Lazzaretto	Lazzaretto
+	1422	Mussetta di Sopra	45.6516600	12.5651400	IT	20	0	0	Mussetta di Sopra	Mussetta di Sopra	Mussetta di Sopra	Mussetta di Sopra	Mussetta di Sopra	Mussetta di Sopra
+	1422	Pralongo	45.6440700	12.4830800	IT	20	0	0	Pralongo	Pralongo	Pralongo	Pralongo	Pralongo	Pralongo
+	1422	Rovarè	45.6787100	12.4041400	IT	20	0	0	Rovarè	Rovarè	Rovarè	Rovarè	Rovarè	Rovarè
+	1422	Pero	45.7063500	12.3486700	IT	20	0	0	Pero	Pero	Pero	Pero	Pero	Pero
+	1422	Cavrie	45.7036100	12.3697200	IT	20	0	0	Cavrie	Cavrie	Cavrie	Cavrie	Cavrie	Cavrie
+	1422	Campo di Pietra	45.7039400	12.5365300	IT	20	0	0	Campo di Pietra	Campo di Pietra	Campo di Pietra	Campo di Pietra	Campo di Pietra	Campo di Pietra
+	1422	Grassaga San Giorgio	45.6767700	12.5857900	IT	20	0	0	Grassaga San Giorgio	Grassaga San Giorgio	Grassaga San Giorgio	Grassaga San Giorgio	Grassaga San Giorgio	Grassaga San Giorgio
+	1422	Santa Maria di Campagna	45.7024400	12.5987500	IT	20	0	0	Santa Maria di Campagna	Santa Maria di Campagna	Santa Maria di Campagna	Santa Maria di Campagna	Santa Maria di Campagna	Santa Maria di Campagna
+	1422	San Nicolò	45.7188300	12.5150300	IT	20	0	0	San Nicolò	San Nicolò	San Nicolò	San Nicolò	San Nicolò	San Nicolò
+	1422	Fossa	45.6926500	12.4555300	IT	20	0	0	Fossa	Fossa	Fossa	Fossa	Fossa	Fossa
+	1422	Candelù	45.7349900	12.3722400	IT	20	0	0	Candelù	Candelù	Candelù	Candelù	Candelù	Candelù
+	1422	Stabiuzzo	45.7675900	12.3802000	IT	20	0	0	Stabiuzzo	Stabiuzzo	Stabiuzzo	Stabiuzzo	Stabiuzzo	Stabiuzzo
+	1422	Cornadella	45.7776200	12.3757900	IT	20	0	0	Cornadella	Cornadella	Cornadella	Cornadella	Cornadella	Cornadella
+	1422	Ormelle	45.7778000	12.4242900	IT	20	0	0	Ormelle	Ormelle	Ormelle	Ormelle	Ormelle	Ormelle
+	1422	San Polo di Piave	45.7896900	12.3928700	IT	20	0	0	San Polo di Piave	San Polo di Piave	San Polo di Piave	San Polo di Piave	San Polo di Piave	San Polo di Piave
+	1422	Rai	45.8078900	12.3927000	IT	20	0	0	Rai	Rai	Rai	Rai	Rai	Rai
+	1422	Santa Maria del Piave	45.8222200	12.3077800	IT	20	0	0	Santa Maria del Piave	Santa Maria del Piave	Santa Maria del Piave	Santa Maria del Piave	Santa Maria del Piave	Santa Maria del Piave
+	1422	Rustignè	45.7531400	12.4835200	IT	20	0	0	Rustignè	Rustignè	Rustignè	Rustignè	Rustignè	Rustignè
+	1422	Lutrano	45.8141500	12.4731600	IT	20	0	0	Lutrano	Lutrano	Lutrano	Lutrano	Lutrano	Lutrano
+	1422	Visnà	45.8483000	12.4267900	IT	20	0	0	Visnà	Visnà	Visnà	Visnà	Visnà	Visnà
+	1422	Maserada sul Piave	45.7519500	12.3177300	IT	20	0	0	Maserada sul Piave	Maserada sul Piave	Maserada sul Piave	Maserada sul Piave	Maserada sul Piave	Maserada sul Piave
+	1422	Mura	45.9711900	12.1629200	IT	20	0	0	Mura	Mura	Mura	Mura	Mura	Mura
+	1422	Santa Maria	45.9911500	12.2299200	IT	20	0	0	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria
+	1422	Arfanta	45.9623300	12.2027000	IT	20	0	0	Arfanta	Arfanta	Arfanta	Arfanta	Arfanta	Arfanta
+	1422	Rolle	45.9513300	12.1684700	IT	20	0	0	Rolle	Rolle	Rolle	Rolle	Rolle	Rolle
+	1422	Gai	45.9679000	12.1739600	IT	20	0	0	Gai	Gai	Gai	Gai	Gai	Gai
+	1422	Valmareno	45.9665100	12.1295400	IT	20	0	0	Valmareno	Valmareno	Valmareno	Valmareno	Valmareno	Valmareno
+	1422	Premaor	45.9369400	12.1247200	IT	20	0	0	Premaor	Premaor	Premaor	Premaor	Premaor	Premaor
+	1422	Combai	45.9295300	12.0710800	IT	20	0	0	Combai	Combai	Combai	Combai	Combai	Combai
+	1422	Santo Stefano	45.9024200	12.0381600	IT	20	0	0	Santo Stefano	Santo Stefano	Santo Stefano	Santo Stefano	Santo Stefano	Santo Stefano
+	1422	Guia	45.9104100	12.0568600	IT	20	0	0	Guia	Guia	Guia	Guia	Guia	Guia
+	1422	Pedeguarda	45.9289400	12.1500000	IT	20	0	0	Pedeguarda	Pedeguarda	Pedeguarda	Pedeguarda	Pedeguarda	Pedeguarda
+	1422	Collalto	45.8716900	12.1981800	IT	20	0	0	Collalto	Collalto	Collalto	Collalto	Collalto	Collalto
+	1422	Covolo-Levada	45.8482800	12.0051500	IT	20	0	0	Covolo-Levada	Covolo-Levada	Covolo-Levada	Covolo-Levada	Covolo-Levada	Covolo-Levada
+	1422	Santi Angeli	45.8318500	12.1394900	IT	20	0	0	Santi Angeli	Santi Angeli	Santi Angeli	Santi Angeli	Santi Angeli	Santi Angeli
+	1422	Santa Maria	45.8966700	12.2350000	IT	20	0	0	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria	Santa Maria
+	1422	Santa Lucia di Piave	45.8615900	12.2939000	IT	20	0	0	Santa Lucia di Piave	Santa Lucia di Piave	Santa Lucia di Piave	Santa Lucia di Piave	Santa Lucia di Piave	Santa Lucia di Piave
+	1422	Mareno di Piave	45.8457200	12.3370300	IT	20	0	0	Mareno di Piave	Mareno di Piave	Mareno di Piave	Mareno di Piave	Mareno di Piave	Mareno di Piave
+	1422	Tempio	45.7922900	12.4320300	IT	20	0	0	Tempio	Tempio	Tempio	Tempio	Tempio	Tempio
+	1422	Calderano	45.8925500	12.4988700	IT	20	0	0	Calderano	Calderano	Calderano	Calderano	Calderano	Calderano
+	1422	Francenigo	45.9079900	12.5034700	IT	20	0	0	Francenigo	Francenigo	Francenigo	Francenigo	Francenigo	Francenigo
+	1422	Roverbasso	45.8736300	12.4552100	IT	20	0	0	Roverbasso	Roverbasso	Roverbasso	Roverbasso	Roverbasso	Roverbasso
+	1422	Albina	45.8827600	12.5135600	IT	20	0	0	Albina	Albina	Albina	Albina	Albina	Albina
+	1422	Campomolino	45.8655000	12.5136300	IT	20	0	0	Campomolino	Campomolino	Campomolino	Campomolino	Campomolino	Campomolino
+	1422	Vallonto	45.8481700	12.4821600	IT	20	0	0	Vallonto	Vallonto	Vallonto	Vallonto	Vallonto	Vallonto
+	1422	Cornarè	45.8423600	12.4998500	IT	20	0	0	Cornarè	Cornarè	Cornarè	Cornarè	Cornarè	Cornarè
+	1422	Basalghelle	45.8355500	12.5073300	IT	20	0	0	Basalghelle	Basalghelle	Basalghelle	Basalghelle	Basalghelle	Basalghelle
+	1422	Colle Umberto	45.9423800	12.3422800	IT	20	0	0	Colle Umberto	Colle Umberto	Colle Umberto	Colle Umberto	Colle Umberto	Colle Umberto
+	1422	Formeniga	45.9359200	12.2645500	IT	20	0	0	Formeniga	Formeniga	Formeniga	Formeniga	Formeniga	Formeniga
+	1422	Manzana	45.9278500	12.2715800	IT	20	0	0	Manzana	Manzana	Manzana	Manzana	Manzana	Manzana
+	1422	Fratte	45.9868200	12.3458600	IT	20	0	0	Fratte	Fratte	Fratte	Fratte	Fratte	Fratte
+	1422	Cozzuolo	45.9626000	12.2841500	IT	20	0	0	Cozzuolo	Cozzuolo	Cozzuolo	Cozzuolo	Cozzuolo	Cozzuolo
+	1422	Fratta	45.9777700	12.2190800	IT	20	0	0	Fratta	Fratta	Fratta	Fratta	Fratta	Fratta
+	1422	San Lorenzo	45.9884800	12.2747200	IT	20	0	0	San Lorenzo	San Lorenzo	San Lorenzo	San Lorenzo	San Lorenzo	San Lorenzo
+	1422	Silvella	45.9591500	12.3957500	IT	20	0	0	Silvella	Silvella	Silvella	Silvella	Silvella	Silvella
+	1422	Castello Roganzuolo	45.9207500	12.3399200	IT	20	0	0	Castello Roganzuolo	Castello Roganzuolo	Castello Roganzuolo	Castello Roganzuolo	Castello Roganzuolo	Castello Roganzuolo
+	1422	Ogliano	45.9250900	12.3040400	IT	20	0	0	Ogliano	Ogliano	Ogliano	Ogliano	Ogliano	Ogliano
+	1422	Cosniga-Zoppè	45.8875000	12.3602800	IT	20	0	0	Cosniga-Zoppè	Cosniga-Zoppè	Cosniga-Zoppè	Cosniga-Zoppè	Cosniga-Zoppè	Cosniga-Zoppè
+	1422	Levada	45.8922300	12.4039100	IT	20	0	0	Levada	Levada	Levada	Levada	Levada	Levada
+	1422	Orsago	45.9296500	12.4271200	IT	20	0	0	Orsago	Orsago	Orsago	Orsago	Orsago	Orsago
+	1422	Bidasio	45.8117100	12.2405000	IT	20	0	0	Bidasio	Bidasio	Bidasio	Bidasio	Bidasio	Bidasio
+	1422	Villagrande	46.4475100	12.0143100	IT	20	0	0	Villagrande	Villagrande	Villagrande	Villagrande	Villagrande	Villagrande
+	1422	Pescul	46.4411100	12.0700000	IT	20	0	0	Pescul	Pescul	Pescul	Pescul	Pescul	Pescul
+	1422	Villanova	46.4411500	12.2080900	IT	20	0	0	Villanova	Villanova	Villanova	Villanova	Villanova	Villanova
+	1422	Le Grazie	46.4208300	12.0077800	IT	20	0	0	Le Grazie	Le Grazie	Le Grazie	Le Grazie	Le Grazie	Le Grazie
+	1422	Ciano	45.8238900	12.0541700	IT	20	0	0	Ciano	Ciano	Ciano	Ciano	Ciano	Ciano
+	1422	Selva del Montello	45.7883500	12.1435000	IT	20	0	0	Selva del Montello	Selva del Montello	Selva del Montello	Selva del Montello	Selva del Montello	Selva del Montello
+	1422	Povegliano	45.7594700	12.2094400	IT	20	0	0	Povegliano	Povegliano	Povegliano	Povegliano	Povegliano	Povegliano
+	1422	Falzè-Signoressa	45.7502800	12.1072200	IT	20	0	0	Falzè-Signoressa	Falzè-Signoressa	Falzè-Signoressa	Falzè-Signoressa	Falzè-Signoressa	Falzè-Signoressa
+	1422	Barrucchella	45.7422200	12.1847200	IT	20	0	0	Barrucchella	Barrucchella	Barrucchella	Barrucchella	Barrucchella	Barrucchella
+	1422	Barcon	45.7217800	12.0127700	IT	20	0	0	Barcon	Barcon	Barcon	Barcon	Barcon	Barcon
+	1422	Case Pozzobon	45.7076500	12.0622800	IT	20	0	0	Case Pozzobon	Case Pozzobon	Case Pozzobon	Case Pozzobon	Case Pozzobon	Case Pozzobon
+	1422	Ponzano	45.7154100	12.2044400	IT	20	0	0	Ponzano	Ponzano	Ponzano	Ponzano	Ponzano	Ponzano
+	1422	Pozzale	46.4364500	12.3651100	IT	20	0	0	Pozzale	Pozzale	Pozzale	Pozzale	Pozzale	Pozzale
+	1422	Saltore	45.7313900	12.3022200	IT	20	0	0	Saltore	Saltore	Saltore	Saltore	Saltore	Saltore
+	1422	Fontanelle	45.6863800	12.2321600	IT	20	0	0	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle
+	1422	Mignagola	45.6886800	12.3215400	IT	20	0	0	Mignagola	Mignagola	Mignagola	Mignagola	Mignagola	Mignagola
+	1422	Colmello	45.6625900	12.1624900	IT	20	0	0	Colmello	Colmello	Colmello	Colmello	Colmello	Colmello
+	1422	Casacorba	45.6594400	12.0388900	IT	20	0	0	Casacorba	Casacorba	Casacorba	Casacorba	Casacorba	Casacorba
+	1422	Padernello	45.6815200	12.1268500	IT	20	0	0	Padernello	Padernello	Padernello	Padernello	Padernello	Padernello
+	1422	Costa	46.5880100	12.5328300	IT	20	0	0	Costa	Costa	Costa	Costa	Costa	Costa
+	1422	Fossò	45.3858000	12.0462700	IT	20	0	0	Fossò	Fossò	Fossò	Fossò	Fossò	Fossò
+	1422	Brigo-Paluello	45.4105600	12.0508300	IT	20	0	0	Brigo-Paluello	Brigo-Paluello	Brigo-Paluello	Brigo-Paluello	Brigo-Paluello	Brigo-Paluello
+	1422	Fiesso d'Artico	45.4213900	12.0294400	IT	20	0	0	Fiesso d'Artico	Fiesso d'Artico	Fiesso d'Artico	Fiesso d'Artico	Fiesso d'Artico	Fiesso d'Artico
+	1422	Taglio	45.4857400	12.1326900	IT	20	0	0	Taglio	Taglio	Taglio	Taglio	Taglio	Taglio
+	1422	Marano	45.4634500	12.1171500	IT	20	0	0	Marano	Marano	Marano	Marano	Marano	Marano
+	1422	Dogaletto	45.4145700	12.1910900	IT	20	0	0	Dogaletto	Dogaletto	Dogaletto	Dogaletto	Dogaletto	Dogaletto
+	1422	Dese	45.5296200	12.3036300	IT	20	0	0	Dese	Dese	Dese	Dese	Dese	Dese
+	1422	San Liberale	45.5477800	12.3413900	IT	20	0	0	San Liberale	San Liberale	San Liberale	San Liberale	San Liberale	San Liberale
+	1422	Altino	45.5471300	12.3988600	IT	20	0	0	Altino	Altino	Altino	Altino	Altino	Altino
+	1422	Trivignano	45.5319700	12.1868700	IT	20	0	0	Trivignano	Trivignano	Trivignano	Trivignano	Trivignano	Trivignano
+	1422	Peseggia-Gardigiano	45.5616700	12.1794400	IT	20	0	0	Peseggia-Gardigiano	Peseggia-Gardigiano	Peseggia-Gardigiano	Peseggia-Gardigiano	Peseggia-Gardigiano	Peseggia-Gardigiano
+	1422	Cappella	45.5690600	12.1403800	IT	20	0	0	Cappella	Cappella	Cappella	Cappella	Cappella	Cappella
+	1422	Rio San Martino	45.5922700	12.1115800	IT	20	0	0	Rio San Martino	Rio San Martino	Rio San Martino	Rio San Martino	Rio San Martino	Rio San Martino
+	1422	Cappelletta	45.5702700	12.0617200	IT	20	0	0	Cappelletta	Cappelletta	Cappelletta	Cappelletta	Cappelletta	Cappelletta
+	1422	Torreselle	45.6302600	12.0225000	IT	20	0	0	Torreselle	Torreselle	Torreselle	Torreselle	Torreselle	Torreselle
+	1422	Badoere	45.6342000	12.0851800	IT	20	0	0	Badoere	Badoere	Badoere	Badoere	Badoere	Badoere
+	1422	Morgano	45.6481200	12.1031100	IT	20	0	0	Morgano	Morgano	Morgano	Morgano	Morgano	Morgano
+	1422	Sant'Alberto	45.6130600	12.1347200	IT	20	0	0	Sant'Alberto	Sant'Alberto	Sant'Alberto	Sant'Alberto	Sant'Alberto	Sant'Alberto
+	1422	Lughignano	45.6253300	12.3247800	IT	20	0	0	Lughignano	Lughignano	Lughignano	Lughignano	Lughignano	Lughignano
+	1422	Casier	45.6422900	12.2932800	IT	20	0	0	Casier	Casier	Casier	Casier	Casier	Casier
+	1422	Biancade	45.6486700	12.3575300	IT	20	0	0	Biancade	Biancade	Biancade	Biancade	Biancade	Biancade
+	1422	Spercenigo	45.6647900	12.3527000	IT	20	0	0	Spercenigo	Spercenigo	Spercenigo	Spercenigo	Spercenigo	Spercenigo
+	1422	San Giacomo	45.6147400	12.4133000	IT	20	0	0	San Giacomo	San Giacomo	San Giacomo	San Giacomo	San Giacomo	San Giacomo
+	1422	Stigliano	45.5236200	12.0437700	IT	20	0	0	Stigliano	Stigliano	Stigliano	Stigliano	Stigliano	Stigliano
+	1422	Veternigo	45.5176500	12.0579300	IT	20	0	0	Veternigo	Veternigo	Veternigo	Veternigo	Veternigo	Veternigo
+	1422	Caselle	45.4862800	12.0060800	IT	20	0	0	Caselle	Caselle	Caselle	Caselle	Caselle	Caselle
+	1422	Campocroce	45.4924100	12.0537400	IT	20	0	0	Campocroce	Campocroce	Campocroce	Campocroce	Campocroce	Campocroce
+	1422	Spinea-Orgnano	45.4910700	12.1550000	IT	20	0	0	Spinea-Orgnano	Spinea-Orgnano	Spinea-Orgnano	Spinea-Orgnano	Spinea-Orgnano	Spinea-Orgnano
+	1422	Lughetto	45.3868800	12.1301500	IT	20	0	0	Lughetto	Lughetto	Lughetto	Lughetto	Lughetto	Lughetto
+	1422	Sambruson	45.4103900	12.1031100	IT	20	0	0	Sambruson	Sambruson	Sambruson	Sambruson	Sambruson	Sambruson
+	1422	Premaore	45.3624600	12.0668600	IT	20	0	0	Premaore	Premaore	Premaore	Premaore	Premaore	Premaore
+	1422	Campolongo Maggiore Liettoli	45.3394400	12.0241700	IT	20	0	0	Campolongo Maggiore Liettoli	Campolongo Maggiore Liettoli	Campolongo Maggiore Liettoli	Campolongo Maggiore Liettoli	Campolongo Maggiore Liettoli	Campolongo Maggiore Liettoli
+	1422	Rosara	45.2889300	12.1013500	IT	20	0	0	Rosara	Rosara	Rosara	Rosara	Rosara	Rosara
+	1422	Cambroso	45.2870200	12.0836100	IT	20	0	0	Cambroso	Cambroso	Cambroso	Cambroso	Cambroso	Cambroso
+	1422	Vallonga	45.2724800	12.0786000	IT	20	0	0	Vallonga	Vallonga	Vallonga	Vallonga	Vallonga	Vallonga
+	1422	Arzerello	45.2738300	12.0254200	IT	20	0	0	Arzerello	Arzerello	Arzerello	Arzerello	Arzerello	Arzerello
+	1422	Bellombra	45.0108300	12.0344400	IT	20	0	0	Bellombra	Bellombra	Bellombra	Bellombra	Bellombra	Bellombra
+	1422	Mazzorno	45.0145600	12.1125600	IT	20	0	0	Mazzorno	Mazzorno	Mazzorno	Mazzorno	Mazzorno	Mazzorno
+	1422	Retinella	45.0483100	12.1769900	IT	20	0	0	Retinella	Retinella	Retinella	Retinella	Retinella	Retinella
+	1422	Grimana	45.0577100	12.1887100	IT	20	0	0	Grimana	Grimana	Grimana	Grimana	Grimana	Grimana
+	1422	Valliera	45.0610700	12.0155100	IT	20	0	0	Valliera	Valliera	Valliera	Valliera	Valliera	Valliera
+	1422	Campelli II	45.0816200	12.0586900	IT	20	0	0	Campelli II	Campelli II	Campelli II	Campelli II	Campelli II	Campelli II
+	1422	Passetto	45.1015000	12.0596000	IT	20	0	0	Passetto	Passetto	Passetto	Passetto	Passetto	Passetto
+	1422	Granvilla	46.5675500	12.6893300	IT	20	0	0	Granvilla	Granvilla	Granvilla	Granvilla	Granvilla	Granvilla
+	1422	Cordenazzo	45.1736100	12.1405600	IT	20	0	0	Cordenazzo	Cordenazzo	Cordenazzo	Cordenazzo	Cordenazzo	Cordenazzo
+	1422	Civé	45.2081800	12.1494500	IT	20	0	0	Civé	Civé	Civé	Civé	Civé	Civé
+	1422	Ca' Zennare	45.1950000	12.1647200	IT	20	0	0	Ca' Zennare	Ca' Zennare	Ca' Zennare	Ca' Zennare	Ca' Zennare	Ca' Zennare
+	1422	Monsole	45.2007700	12.0716300	IT	20	0	0	Monsole	Monsole	Monsole	Monsole	Monsole	Monsole
+	1422	Valcerere-Dolfina	45.1533300	12.2091300	IT	20	0	0	Valcerere-Dolfina	Valcerere-Dolfina	Valcerere-Dolfina	Valcerere-Dolfina	Valcerere-Dolfina	Valcerere-Dolfina
+	1422	Tornova	45.0953500	12.1971200	IT	20	0	0	Tornova	Tornova	Tornova	Tornova	Tornova	Tornova
+	1422	Sant'Anna	45.1661000	12.2735500	IT	20	0	0	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna	Sant'Anna
+	1422	Rosolina Mare	45.1319300	12.3232400	IT	20	0	0	Rosolina Mare	Rosolina Mare	Rosolina Mare	Rosolina Mare	Rosolina Mare	Rosolina Mare
+	1422	Boccasette	44.9992400	12.4233200	IT	20	0	0	Boccasette	Boccasette	Boccasette	Boccasette	Boccasette	Boccasette
+	1422	Fogolana	45.2530100	12.1510900	IT	20	0	0	Fogolana	Fogolana	Fogolana	Fogolana	Fogolana	Fogolana
+	1422	Conche	45.2375500	12.1695300	IT	20	0	0	Conche	Conche	Conche	Conche	Conche	Conche
+	1422	Santa Maria del Mare	45.3330200	12.3213300	IT	20	0	0	Santa Maria del Mare	Santa Maria del Mare	Santa Maria del Mare	Santa Maria del Mare	Santa Maria del Mare	Santa Maria del Mare
+	1422	Costalta	46.5802200	12.5740200	IT	20	0	0	Costalta	Costalta	Costalta	Costalta	Costalta	Costalta
+	1422	Campolongo	46.5645300	12.5809800	IT	20	0	0	Campolongo	Campolongo	Campolongo	Campolongo	Campolongo	Campolongo
+	1422	Presenaio	46.5747900	12.6002900	IT	20	0	0	Presenaio	Presenaio	Presenaio	Presenaio	Presenaio	Presenaio
+	1422	Laggio di Cadore	46.4963200	12.4804700	IT	20	0	0	Laggio di Cadore	Laggio di Cadore	Laggio di Cadore	Laggio di Cadore	Laggio di Cadore	Laggio di Cadore
+	1422	Rizzios	46.4550700	12.3771300	IT	20	0	0	Rizzios	Rizzios	Rizzios	Rizzios	Rizzios	Rizzios
+	1422	Bortolot	46.3860800	12.1737100	IT	20	0	0	Bortolot	Bortolot	Bortolot	Bortolot	Bortolot	Bortolot
+	1422	Brusadaz	46.3844800	12.1391200	IT	20	0	0	Brusadaz	Brusadaz	Brusadaz	Brusadaz	Brusadaz	Brusadaz
+	1422	Pianaz	46.3823500	12.1208000	IT	20	0	0	Pianaz	Pianaz	Pianaz	Pianaz	Pianaz	Pianaz
+	1422	Fornesighe	46.3614400	12.1949000	IT	20	0	0	Fornesighe	Fornesighe	Fornesighe	Fornesighe	Fornesighe	Fornesighe
+	1422	Gavaz	46.3466400	12.1213300	IT	20	0	0	Gavaz	Gavaz	Gavaz	Gavaz	Gavaz	Gavaz
+	1422	Masarè	46.3977200	12.0140200	IT	20	0	0	Masarè	Masarè	Masarè	Masarè	Masarè	Masarè
+	1422	Cancellade	46.2713900	12.0549200	IT	20	0	0	Cancellade	Cancellade	Cancellade	Cancellade	Cancellade	Cancellade
+	1422	Noach	46.2618600	12.0482500	IT	20	0	0	Noach	Noach	Noach	Noach	Noach	Noach
+	1422	Zenich	46.2560900	12.0317900	IT	20	0	0	Zenich	Zenich	Zenich	Zenich	Zenich	Zenich
+	1422	Peron	46.1640600	12.1270300	IT	20	0	0	Peron	Peron	Peron	Peron	Peron	Peron
+	1422	Valdenogher	46.1232800	12.3880300	IT	20	0	0	Valdenogher	Valdenogher	Valdenogher	Valdenogher	Valdenogher	Valdenogher
+	1422	Broz	46.1167400	12.4065700	IT	20	0	0	Broz	Broz	Broz	Broz	Broz	Broz
+	1422	Pian Osteria	46.0911100	12.4094400	IT	20	0	0	Pian Osteria	Pian Osteria	Pian Osteria	Pian Osteria	Pian Osteria	Pian Osteria
+	1422	La Crosetta	46.0358000	12.4056200	IT	20	0	0	La Crosetta	La Crosetta	La Crosetta	La Crosetta	La Crosetta	La Crosetta
+	1422	Luca	46.0092700	12.3611200	IT	20	0	0	Luca	Luca	Luca	Luca	Luca	Luca
+	1422	Vizza	46.0130700	12.2726400	IT	20	0	0	Vizza	Vizza	Vizza	Vizza	Vizza	Vizza
+	1422	Borgo di Basso Fadalto	46.0669100	12.3273600	IT	20	0	0	Borgo di Basso Fadalto	Borgo di Basso Fadalto	Borgo di Basso Fadalto	Borgo di Basso Fadalto	Borgo di Basso Fadalto	Borgo di Basso Fadalto
+	1422	Caleipo-Sossai	46.1236100	12.2538900	IT	20	0	0	Caleipo-Sossai	Caleipo-Sossai	Caleipo-Sossai	Caleipo-Sossai	Caleipo-Sossai	Caleipo-Sossai
+	1422	Cirvoi	46.1031600	12.2395000	IT	20	0	0	Cirvoi	Cirvoi	Cirvoi	Cirvoi	Cirvoi	Cirvoi
+	1422	Castion	46.1214700	12.2350700	IT	20	0	0	Castion	Castion	Castion	Castion	Castion	Castion
+	1422	Castoi	46.1072500	12.2152000	IT	20	0	0	Castoi	Castoi	Castoi	Castoi	Castoi	Castoi
+	1422	Giamosa	46.1255600	12.1741700	IT	20	0	0	Giamosa	Giamosa	Giamosa	Giamosa	Giamosa	Giamosa
+	1422	Salce	46.1222300	12.1658200	IT	20	0	0	Salce	Salce	Salce	Salce	Salce	Salce
+	1422	Polentes	46.0855600	12.1858300	IT	20	0	0	Polentes	Polentes	Polentes	Polentes	Polentes	Polentes
+	1422	Triches	46.0788900	12.1788900	IT	20	0	0	Triches	Triches	Triches	Triches	Triches	Triches
+	1422	Carfagnoi	46.0741600	12.1639000	IT	20	0	0	Carfagnoi	Carfagnoi	Carfagnoi	Carfagnoi	Carfagnoi	Carfagnoi
+	1422	Trichiana	46.0813000	12.1409100	IT	20	0	0	Trichiana	Trichiana	Trichiana	Trichiana	Trichiana	Trichiana
+	1422	Zottier	46.0624600	12.1176300	IT	20	0	0	Zottier	Zottier	Zottier	Zottier	Zottier	Zottier
+	1422	Confos	46.0365300	12.1725100	IT	20	0	0	Confos	Confos	Confos	Confos	Confos	Confos
+	1422	Limana	46.1003900	12.1855200	IT	20	0	0	Limana	Limana	Limana	Limana	Limana	Limana
+	1422	Pasa	46.0968600	12.1263500	IT	20	0	0	Pasa	Pasa	Pasa	Pasa	Pasa	Pasa
+	1422	Orzes	46.1383300	12.1413900	IT	20	0	0	Orzes	Orzes	Orzes	Orzes	Orzes	Orzes
+	1422	Roe Alte	46.1341700	12.1183300	IT	20	0	0	Roe Alte	Roe Alte	Roe Alte	Roe Alte	Roe Alte	Roe Alte
+	1422	Bes	46.1235300	12.1519800	IT	20	0	0	Bes	Bes	Bes	Bes	Bes	Bes
+	1422	Meano	46.1036800	12.0619200	IT	20	0	0	Meano	Meano	Meano	Meano	Meano	Meano
+	1422	Carazzai	46.1113700	12.0439300	IT	20	0	0	Carazzai	Carazzai	Carazzai	Carazzai	Carazzai	Carazzai
+	1422	Cergnai	46.0969200	12.0064300	IT	20	0	0	Cergnai	Cergnai	Cergnai	Cergnai	Cergnai	Cergnai
+	1422	Marsiai	46.0841200	12.0100900	IT	20	0	0	Marsiai	Marsiai	Marsiai	Marsiai	Marsiai	Marsiai
+	1422	Bivai	46.0714500	12.0072900	IT	20	0	0	Bivai	Bivai	Bivai	Bivai	Bivai	Bivai
+	1422	Pagogna	46.0727900	12.0991900	IT	20	0	0	Pagogna	Pagogna	Pagogna	Pagogna	Pagogna	Pagogna
+	1422	Nave	46.0602500	12.0654500	IT	20	0	0	Nave	Nave	Nave	Nave	Nave	Nave
+	1422	Tremea	46.0495000	12.0873200	IT	20	0	0	Tremea	Tremea	Tremea	Tremea	Tremea	Tremea
+	1422	Villa di Villa	46.0423700	12.0634500	IT	20	0	0	Villa di Villa	Villa di Villa	Villa di Villa	Villa di Villa	Villa di Villa	Villa di Villa
+	1422	Tiago	46.0394800	12.0742800	IT	20	0	0	Tiago	Tiago	Tiago	Tiago	Tiago	Tiago
+	1422	Colderù	46.0339600	12.0254000	IT	20	0	0	Colderù	Colderù	Colderù	Colderù	Colderù	Colderù
+	1422	Tallandino	46.0434800	12.0446900	IT	20	0	0	Tallandino	Tallandino	Tallandino	Tallandino	Tallandino	Tallandino
+	1422	Tambruz	46.1334600	12.4250500	IT	20	0	0	Tambruz	Tambruz	Tambruz	Tambruz	Tambruz	Tambruz
+	1422	Sitran	46.1381500	12.3397100	IT	20	0	0	Sitran	Sitran	Sitran	Sitran	Sitran	Sitran
+	1422	Lamosano	46.1727600	12.3869100	IT	20	0	0	Lamosano	Lamosano	Lamosano	Lamosano	Lamosano	Lamosano
+	1422	Funes	46.1777800	12.4025000	IT	20	0	0	Funes	Funes	Funes	Funes	Funes	Funes
+	1422	Quers	46.1678800	12.3743800	IT	20	0	0	Quers	Quers	Quers	Quers	Quers	Quers
+	1422	Soccher-Paiane-Casan-Arsie	46.1812000	12.3100100	IT	20	0	0	Soccher-Paiane-Casan-Arsie	Soccher-Paiane-Casan-Arsie	Soccher-Paiane-Casan-Arsie	Soccher-Paiane-Casan-Arsie	Soccher-Paiane-Casan-Arsie	Soccher-Paiane-Casan-Arsie
+	1422	Provagna	46.2446300	12.3133600	IT	20	0	0	Provagna	Provagna	Provagna	Provagna	Provagna	Provagna
+	1422	Losego	46.1427300	12.2825400	IT	20	0	0	Losego	Losego	Losego	Losego	Losego	Losego
+	1422	Col-Roncan	46.1474300	12.2981600	IT	20	0	0	Col-Roncan	Col-Roncan	Col-Roncan	Col-Roncan	Col-Roncan	Col-Roncan
+	1422	Levego	46.1568300	12.2649500	IT	20	0	0	Levego	Levego	Levego	Levego	Levego	Levego
+	1422	Safforze	46.1728000	12.2543900	IT	20	0	0	Safforze	Safforze	Safforze	Safforze	Safforze	Safforze
+	1422	Tisoi	46.1636600	12.1690800	IT	20	0	0	Tisoi	Tisoi	Tisoi	Tisoi	Tisoi	Tisoi
+	1422	Gron	46.1413200	12.0895100	IT	20	0	0	Gron	Gron	Gron	Gron	Gron	Gron
+	1422	Mis	46.1540800	12.0867800	IT	20	0	0	Mis	Mis	Mis	Mis	Mis	Mis
+	1422	Bolzano	46.1628900	12.1872700	IT	20	0	0	Bolzano	Bolzano	Bolzano	Bolzano	Bolzano	Bolzano
+	1422	Villanova	46.2540100	12.3014300	IT	20	0	0	Villanova	Villanova	Villanova	Villanova	Villanova	Villanova
+	1422	Dogna	46.2594700	12.3135300	IT	20	0	0	Dogna	Dogna	Dogna	Dogna	Dogna	Dogna
+	1422	Igne	46.2651000	12.2774800	IT	20	0	0	Igne	Igne	Igne	Igne	Igne	Igne
+	1422	Codissago	46.2759600	12.3108700	IT	20	0	0	Codissago	Codissago	Codissago	Codissago	Codissago	Codissago
+	1422	Olantreghe	46.2909700	12.3028900	IT	20	0	0	Olantreghe	Olantreghe	Olantreghe	Olantreghe	Olantreghe	Olantreghe
+	1422	Davestra	46.3167800	12.3245800	IT	20	0	0	Davestra	Davestra	Davestra	Davestra	Davestra	Davestra
+	1422	Peaio	46.4150000	12.2608900	IT	20	0	0	Peaio	Peaio	Peaio	Peaio	Peaio	Peaio
+	1422	Vinigo	46.4167300	12.2694500	IT	20	0	0	Vinigo	Vinigo	Vinigo	Vinigo	Vinigo	Vinigo
+	1422	Masariè	46.3963300	12.2942700	IT	20	0	0	Masariè	Masariè	Masariè	Masariè	Masariè	Masariè
+	1422	Valle di Cadore	46.4180600	12.3343100	IT	20	0	0	Valle di Cadore	Valle di Cadore	Valle di Cadore	Valle di Cadore	Valle di Cadore	Valle di Cadore
+	1422	Rivalgo	46.3510400	12.3360000	IT	20	0	0	Rivalgo	Rivalgo	Rivalgo	Rivalgo	Rivalgo	Rivalgo
+	1422	Caralte	46.3920600	12.3678200	IT	20	0	0	Caralte	Caralte	Caralte	Caralte	Caralte	Caralte
+	1422	Col San Martino	45.9002000	12.1157500	IT	20	0	0	Col San Martino	Col San Martino	Col San Martino	Col San Martino	Col San Martino	Col San Martino
+	1422	Gorgo	45.8022200	12.8813900	IT	20	0	0	Gorgo	Gorgo	Gorgo	Gorgo	Gorgo	Gorgo
+	1422	Fossalta Maggiore	45.7343800	12.5487600	IT	20	0	0	Fossalta Maggiore	Fossalta Maggiore	Fossalta Maggiore	Fossalta Maggiore	Fossalta Maggiore	Fossalta Maggiore
+	1422	Roncadelle	45.7577800	12.4102800	IT	20	0	0	Roncadelle	Roncadelle	Roncadelle	Roncadelle	Roncadelle	Roncadelle
+	1422	Fontanellette	45.8278500	12.4289800	IT	20	0	0	Fontanellette	Fontanellette	Fontanellette	Fontanellette	Fontanellette	Fontanellette
+	1422	Bagaggiolo	45.5670100	12.4126800	IT	20	0	0	Bagaggiolo	Bagaggiolo	Bagaggiolo	Bagaggiolo	Bagaggiolo	Bagaggiolo
+	1422	Malamocco (Ex Impero)	45.7088900	13.0102700	IT	20	0	0	Malamocco (Ex Impero)	Malamocco (Ex Impero)	Malamocco (Ex Impero)	Malamocco (Ex Impero)	Malamocco (Ex Impero)	Malamocco (Ex Impero)
+	1422	Marciaga	45.5917600	10.7126100	IT	20	0	0	Marciaga	Marciaga	Marciaga	Marciaga	Marciaga	Marciaga
+	1422	Beccacivetta-Azzano	45.3743500	10.9613300	IT	20	0	0	Beccacivetta-Azzano	Beccacivetta-Azzano	Beccacivetta-Azzano	Beccacivetta-Azzano	Beccacivetta-Azzano	Beccacivetta-Azzano
+	1422	Noventa	45.4142900	11.9510100	IT	20	0	0	Noventa	Noventa	Noventa	Noventa	Noventa	Noventa
+	1422	Castelnuovo del Garda	45.4387800	10.7597800	IT	20	0	0	Castelnuovo del Garda	Castelnuovo del Garda	Castelnuovo del Garda	Castelnuovo del Garda	Castelnuovo del Garda	Castelnuovo del Garda
+	1422	Romano d'Ezzelino	45.7790200	11.7665700	IT	20	0	0	Romano d'Ezzelino	Romano d'Ezzelino	Romano d'Ezzelino	Romano d'Ezzelino	Romano d'Ezzelino	Romano d'Ezzelino
+	1422	Saonara	45.3652900	11.9848100	IT	20	0	0	Saonara	Saonara	Saonara	Saonara	Saonara	Saonara
+	1422	Cassola	45.7336000	11.7994000	IT	20	0	0	Cassola	Cassola	Cassola	Cassola	Cassola	Cassola
+	1422	San Pietro in Cariano	45.5175100	10.8862400	IT	20	0	0	San Pietro in Cariano	San Pietro in Cariano	San Pietro in Cariano	San Pietro in Cariano	San Pietro in Cariano	San Pietro in Cariano
+	1422	Carrara San Giorgio	45.2925900	11.8184100	IT	20	0	0	Carrara San Giorgio	Carrara San Giorgio	Carrara San Giorgio	Carrara San Giorgio	Carrara San Giorgio	Carrara San Giorgio
+	1422	Porto Viro	45.0267800	12.2175400	IT	20	0	0	Porto Viro	Porto Viro	Porto Viro	Porto Viro	Porto Viro	Porto Viro
+	1422	Brentino Belluno	45.6568900	10.8936800	IT	20	0	0	Brentino Belluno	Brentino Belluno	Brentino Belluno	Brentino Belluno	Brentino Belluno	Brentino Belluno
+	1422	Brenzone	45.6998900	10.7605800	IT	20	0	0	Brenzone	Brenzone	Brenzone	Brenzone	Brenzone	Brenzone
+	1422	Valmorsel-Concamarise	45.2138400	11.1311400	IT	20	0	0	Valmorsel-Concamarise	Valmorsel-Concamarise	Valmorsel-Concamarise	Valmorsel-Concamarise	Valmorsel-Concamarise	Valmorsel-Concamarise
+	1422	Lavagno	45.4386900	11.1340900	IT	20	0	0	Lavagno	Lavagno	Lavagno	Lavagno	Lavagno	Lavagno
+	1422	Pedemonte	45.9084000	11.3085900	IT	20	0	0	Pedemonte	Pedemonte	Pedemonte	Pedemonte	Pedemonte	Pedemonte
+	1422	San Pietro Valdastico	45.8867000	11.3615900	IT	20	0	0	San Pietro Valdastico	San Pietro Valdastico	San Pietro Valdastico	San Pietro Valdastico	San Pietro Valdastico	San Pietro Valdastico
+	1422	Velo d'Astico	45.7884000	11.3676900	IT	20	0	0	Velo d'Astico	Velo d'Astico	Velo d'Astico	Velo d'Astico	Velo d'Astico	Velo d'Astico
+	1422	Fonte Alto	45.8021400	11.8622300	IT	20	0	0	Fonte Alto	Fonte Alto	Fonte Alto	Fonte Alto	Fonte Alto	Fonte Alto
+	1422	Massanzago-Ca' Baglioni-San Dono	45.5563000	12.0073100	IT	20	0	0	Massanzago-Ca' Baglioni-San Dono	Massanzago-Ca' Baglioni-San Dono	Massanzago-Ca' Baglioni-San Dono	Massanzago-Ca' Baglioni-San Dono	Massanzago-Ca' Baglioni-San Dono	Massanzago-Ca' Baglioni-San Dono
+	1422	Megliadino San Fidenzio	45.2173900	11.5160000	IT	20	0	0	Megliadino San Fidenzio	Megliadino San Fidenzio	Megliadino San Fidenzio	Megliadino San Fidenzio	Megliadino San Fidenzio	Megliadino San Fidenzio
+	1422	Villanova	45.4889000	11.9747100	IT	20	0	0	Villanova	Villanova	Villanova	Villanova	Villanova	Villanova
+	1422	Vò	45.3282900	11.6415000	IT	20	0	0	Vò	Vò	Vò	Vò	Vò	Vò
+	1422	Papozze	44.9857800	12.0309200	IT	20	0	0	Papozze	Papozze	Papozze	Papozze	Papozze	Papozze
+	1422	Angiari	45.2231800	11.2768000	IT	20	0	0	Angiari	Angiari	Angiari	Angiari	Angiari	Angiari
+	1422	Boschi Sant'Anna	45.2176800	11.3562000	IT	20	0	0	Boschi Sant'Anna	Boschi Sant'Anna	Boschi Sant'Anna	Boschi Sant'Anna	Boschi Sant'Anna	Boschi Sant'Anna
+	1422	Cerro Veronese	45.5744900	11.0415900	IT	20	0	0	Cerro Veronese	Cerro Veronese	Cerro Veronese	Cerro Veronese	Cerro Veronese	Cerro Veronese
+	1422	Colognola ai Colli	45.4336900	11.1842900	IT	20	0	0	Colognola ai Colli	Colognola ai Colli	Colognola ai Colli	Colognola ai Colli	Colognola ai Colli	Colognola ai Colli
+	1422	Grancona	45.4218900	11.4516000	IT	20	0	0	Grancona	Grancona	Grancona	Grancona	Grancona	Grancona
+	1422	Roveredo di Guà	45.2730900	11.4442000	IT	20	0	0	Roveredo di Guà	Roveredo di Guà	Roveredo di Guà	Roveredo di Guà	Roveredo di Guà	Roveredo di Guà
+	1422	Roverè Veronese	45.5932900	11.0699900	IT	20	0	0	Roverè Veronese	Roverè Veronese	Roverè Veronese	Roverè Veronese	Roverè Veronese	Roverè Veronese
+	1422	Molvena	45.7446000	11.6166000	IT	20	0	0	Molvena	Molvena	Molvena	Molvena	Molvena	Molvena
+	1422	Lugo di Vicenza	45.7455000	11.5286900	IT	20	0	0	Lugo di Vicenza	Lugo di Vicenza	Lugo di Vicenza	Lugo di Vicenza	Lugo di Vicenza	Lugo di Vicenza
+	1422	San Gregorio nelle Alpi	46.1039100	12.0267000	IT	20	0	0	San Gregorio nelle Alpi	San Gregorio nelle Alpi	San Gregorio nelle Alpi	San Gregorio nelle Alpi	San Gregorio nelle Alpi	San Gregorio nelle Alpi
+	1422	San Nicolò Comelico	46.5825300	12.5273000	IT	20	0	0	San Nicolò Comelico	San Nicolò Comelico	San Nicolò Comelico	San Nicolò Comelico	San Nicolò Comelico	San Nicolò Comelico
+	1422	Monfumo	45.8308000	11.9203000	IT	20	0	0	Monfumo	Monfumo	Monfumo	Monfumo	Monfumo	Monfumo
+	1422	Terrassa Padovana	45.2440900	11.9027100	IT	20	0	0	Terrassa Padovana	Terrassa Padovana	Terrassa Padovana	Terrassa Padovana	Terrassa Padovana	Terrassa Padovana
+	1422	Castegnero	45.4424900	11.5845000	IT	20	0	0	Castegnero	Castegnero	Castegnero	Castegnero	Castegnero	Castegnero
+	1422	Sovramonte	46.0586100	11.7866000	IT	20	0	0	Sovramonte	Sovramonte	Sovramonte	Sovramonte	Sovramonte	Sovramonte
+	1422	Paderno del Grappa	45.8286000	11.8577000	IT	20	0	0	Paderno del Grappa	Paderno del Grappa	Paderno del Grappa	Paderno del Grappa	Paderno del Grappa	Paderno del Grappa
+	1422	Vallada Agordina	46.3644200	11.9339900	IT	20	0	0	Vallada Agordina	Vallada Agordina	Vallada Agordina	Vallada Agordina	Vallada Agordina	Vallada Agordina
+	1422	Cavaso del Tomba	45.8607000	11.8984000	IT	20	0	0	Cavaso del Tomba	Cavaso del Tomba	Cavaso del Tomba	Cavaso del Tomba	Cavaso del Tomba	Cavaso del Tomba
+	1422	Rivoli Veronese	45.5724900	10.8117800	IT	20	0	0	Rivoli Veronese	Rivoli Veronese	Rivoli Veronese	Rivoli Veronese	Rivoli Veronese	Rivoli Veronese
+	1422	Selva di Progno	45.6113900	11.1379900	IT	20	0	0	Selva di Progno	Selva di Progno	Selva di Progno	Selva di Progno	Selva di Progno	Selva di Progno
+	1422	Alonte	45.3658900	11.4271000	IT	20	0	0	Alonte	Alonte	Alonte	Alonte	Alonte	Alonte
+	1422	Altissimo	45.6142900	11.2518900	IT	20	0	0	Altissimo	Altissimo	Altissimo	Altissimo	Altissimo	Altissimo
+	1422	Asigliano Veneto	45.3046900	11.4464000	IT	20	0	0	Asigliano Veneto	Asigliano Veneto	Asigliano Veneto	Asigliano Veneto	Asigliano Veneto	Asigliano Veneto
+	1422	Brogliano	45.5891900	11.3654900	IT	20	0	0	Brogliano	Brogliano	Brogliano	Brogliano	Brogliano	Brogliano
+	1422	Campolongo sul Brenta	45.8271000	11.7008000	IT	20	0	0	Campolongo sul Brenta	Campolongo sul Brenta	Campolongo sul Brenta	Campolongo sul Brenta	Campolongo sul Brenta	Campolongo sul Brenta
+	1422	Carrè	45.7488000	11.4577900	IT	20	0	0	Carrè	Carrè	Carrè	Carrè	Carrè	Carrè
+	1422	Enego	45.9416000	11.7055000	IT	20	0	0	Enego	Enego	Enego	Enego	Enego	Enego
+	1422	Mason Vicentino	45.7186000	11.6068000	IT	20	0	0	Mason Vicentino	Mason Vicentino	Mason Vicentino	Mason Vicentino	Mason Vicentino	Mason Vicentino
+	1422	Montecchio Precalcino	45.6657000	11.5636000	IT	20	0	0	Montecchio Precalcino	Montecchio Precalcino	Montecchio Precalcino	Montecchio Precalcino	Montecchio Precalcino	Montecchio Precalcino
+	1422	Montegalda	45.4460900	11.6750000	IT	20	0	0	Montegalda	Montegalda	Montegalda	Montegalda	Montegalda	Montegalda
+	1422	Mossano	45.4195100	11.5538200	IT	20	0	0	Mossano	Mossano	Mossano	Mossano	Mossano	Mossano
+	1422	Mussolente	45.7792000	11.8062000	IT	20	0	0	Mussolente	Mussolente	Mussolente	Mussolente	Mussolente	Mussolente
+	1422	Pove del Grappa	45.7982000	11.7299000	IT	20	0	0	Pove del Grappa	Pove del Grappa	Pove del Grappa	Pove del Grappa	Pove del Grappa	Pove del Grappa
+	1422	Sarego	45.4076900	11.4019000	IT	20	0	0	Sarego	Sarego	Sarego	Sarego	Sarego	Sarego
+	1422	Alano di Piave	45.9068100	11.9084000	IT	20	0	0	Alano di Piave	Alano di Piave	Alano di Piave	Alano di Piave	Alano di Piave	Alano di Piave
+	1422	Altivole	45.7537000	11.9562000	IT	20	0	0	Altivole	Altivole	Altivole	Altivole	Altivole	Altivole
+	1422	Segusino	45.9170100	11.9556000	IT	20	0	0	Segusino	Segusino	Segusino	Segusino	Segusino	Segusino
+	1422	Cartura	45.2683900	11.8568100	IT	20	0	0	Cartura	Cartura	Cartura	Cartura	Cartura	Cartura
+	1422	Urbana	45.1927800	11.4449000	IT	20	0	0	Urbana	Urbana	Urbana	Urbana	Urbana	Urbana
+	1422	Vighizzolo d'Este	45.1762900	11.6247100	IT	20	0	0	Vighizzolo d'Este	Vighizzolo d'Este	Vighizzolo d'Este	Vighizzolo d'Este	Vighizzolo d'Este	Vighizzolo d'Este
+	1422	Villafranca Padovana	45.4919000	11.7935000	IT	20	0	0	Villafranca Padovana	Villafranca Padovana	Villafranca Padovana	Villafranca Padovana	Villafranca Padovana	Villafranca Padovana
+	1422	Arquà Polesine	45.0100800	11.7398100	IT	20	0	0	Arquà Polesine	Arquà Polesine	Arquà Polesine	Arquà Polesine	Arquà Polesine	Arquà Polesine
+	1422	Castelnovo Bariano	45.0273800	11.2876000	IT	20	0	0	Castelnovo Bariano	Castelnovo Bariano	Castelnovo Bariano	Castelnovo Bariano	Castelnovo Bariano	Castelnovo Bariano
+	1422	Frassinelle Polesine	44.9951800	11.6988100	IT	20	0	0	Frassinelle Polesine	Frassinelle Polesine	Frassinelle Polesine	Frassinelle Polesine	Frassinelle Polesine	Frassinelle Polesine
+	1422	Caldiero	45.4143900	11.1773900	IT	20	0	0	Caldiero	Caldiero	Caldiero	Caldiero	Caldiero	Caldiero
+	1422	Cazzano di Tramigna	45.4730900	11.2028900	IT	20	0	0	Cazzano di Tramigna	Cazzano di Tramigna	Cazzano di Tramigna	Cazzano di Tramigna	Cazzano di Tramigna	Cazzano di Tramigna
+	1422	Isola Rizza	45.2922800	11.1990000	IT	20	0	0	Isola Rizza	Isola Rizza	Isola Rizza	Isola Rizza	Isola Rizza	Isola Rizza
+	1422	Mezzane di Sotto	45.4819900	11.1272900	IT	20	0	0	Mezzane di Sotto	Mezzane di Sotto	Mezzane di Sotto	Mezzane di Sotto	Mezzane di Sotto	Mezzane di Sotto
+	1422	Roverchiara	45.2679800	11.2451000	IT	20	0	0	Roverchiara	Roverchiara	Roverchiara	Roverchiara	Roverchiara	Roverchiara
+	1422	San Pietro di Morubio	45.2424800	11.2270000	IT	20	0	0	San Pietro di Morubio	San Pietro di Morubio	San Pietro di Morubio	San Pietro di Morubio	San Pietro di Morubio	San Pietro di Morubio
+	1422	Sorgà	45.2132800	10.9798900	IT	20	0	0	Sorgà	Sorgà	Sorgà	Sorgà	Sorgà	Sorgà
+	1422	Velo Veronese	45.6066900	11.0951900	IT	20	0	0	Velo Veronese	Velo Veronese	Velo Veronese	Velo Veronese	Velo Veronese	Velo Veronese
+	1422	Cartigliano	45.7130000	11.6956000	IT	20	0	0	Cartigliano	Cartigliano	Cartigliano	Cartigliano	Cartigliano	Cartigliano
+	1422	Gambellara	45.4597900	11.3401000	IT	20	0	0	Gambellara	Gambellara	Gambellara	Gambellara	Gambellara	Gambellara
+	1422	Gambugliano	45.5879900	11.4386000	IT	20	0	0	Gambugliano	Gambugliano	Gambugliano	Gambugliano	Gambugliano	Gambugliano
+	1422	Laghi	45.8245000	11.2724900	IT	20	0	0	Laghi	Laghi	Laghi	Laghi	Laghi	Laghi
+	1422	Nogarole Vicentino	45.5601900	11.2882900	IT	20	0	0	Nogarole Vicentino	Nogarole Vicentino	Nogarole Vicentino	Nogarole Vicentino	Nogarole Vicentino	Nogarole Vicentino
+	1422	Rotzo	45.8619000	11.3961900	IT	20	0	0	Rotzo	Rotzo	Rotzo	Rotzo	Rotzo	Rotzo
+	1422	San Germano dei Berici	45.4017900	11.4713000	IT	20	0	0	San Germano dei Berici	San Germano dei Berici	San Germano dei Berici	San Germano dei Berici	San Germano dei Berici	San Germano dei Berici
+	1422	Sovizzo	45.5266900	11.4461000	IT	20	0	0	Sovizzo	Sovizzo	Sovizzo	Sovizzo	Sovizzo	Sovizzo
+	1422	Zugliano	45.7298000	11.5240000	IT	20	0	0	Zugliano	Zugliano	Zugliano	Zugliano	Zugliano	Zugliano
+	1422	Rocca Pietore	46.4339200	11.9767900	IT	20	0	0	Rocca Pietore	Rocca Pietore	Rocca Pietore	Rocca Pietore	Rocca Pietore	Rocca Pietore
+	1422	Tambre	46.1263200	12.4194100	IT	20	0	0	Tambre	Tambre	Tambre	Tambre	Tambre	Tambre
+	1422	Boara Pisani	45.1080800	11.7827100	IT	20	0	0	Boara Pisani	Boara Pisani	Boara Pisani	Boara Pisani	Boara Pisani	Boara Pisani
+	1422	Cervarese Santa Croce	45.4243900	11.6879000	IT	20	0	0	Cervarese Santa Croce	Cervarese Santa Croce	Cervarese Santa Croce	Cervarese Santa Croce	Cervarese Santa Croce	Cervarese Santa Croce
+	1422	Masi	45.1088800	11.4892000	IT	20	0	0	Masi	Masi	Masi	Masi	Masi	Masi
+	1422	San Giorgio delle Pertiche	45.5410000	11.8940100	IT	20	0	0	San Giorgio delle Pertiche	San Giorgio delle Pertiche	San Giorgio delle Pertiche	San Giorgio delle Pertiche	San Giorgio delle Pertiche	San Giorgio delle Pertiche
+	1422	Bagnolo di Po	45.0154800	11.5009100	IT	20	0	0	Bagnolo di Po	Bagnolo di Po	Bagnolo di Po	Bagnolo di Po	Bagnolo di Po	Bagnolo di Po
+	1422	Canda	45.0360800	11.5033100	IT	20	0	0	Canda	Canda	Canda	Canda	Canda	Canda
+	1422	Isola Albarella	45.0694700	12.3444100	IT	20	0	0	Isola Albarella	Isola Albarella	Isola Albarella	Isola Albarella	Isola Albarella	Isola Albarella
+	1422	Vò Vecchio	45.3270400	11.6195400	IT	20	0	0	Vò Vecchio	Vò Vecchio	Vò Vecchio	Vò Vecchio	Vò Vecchio	Vò Vecchio
+	1422	Eraclea Mare	45.5496900	12.7659100	IT	20	0	0	Eraclea Mare	Eraclea Mare	Eraclea Mare	Eraclea Mare	Eraclea Mare	Eraclea Mare
+	1422	Lovertino	45.3457600	11.6076800	IT	20	0	0	Lovertino	Lovertino	Lovertino	Lovertino	Lovertino	Lovertino
+	1422	Custoza	45.3772700	10.7966400	IT	20	0	0	Custoza	Custoza	Custoza	Custoza	Custoza	Custoza
+	1422	Punta Sabbioni	45.4471900	12.4254100	IT	20	0	0	Punta Sabbioni	Punta Sabbioni	Punta Sabbioni	Punta Sabbioni	Punta Sabbioni	Punta Sabbioni
+	1422	Ospedaletto	45.5046200	10.8421200	IT	20	0	0	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto	Ospedaletto
+	1422	Passo Pian delle Fugazze	45.7601700	11.1729900	IT	20	0	0	Passo Pian delle Fugazze	Passo Pian delle Fugazze	Passo Pian delle Fugazze	Passo Pian delle Fugazze	Passo Pian delle Fugazze	Passo Pian delle Fugazze
+	1422	Monte Borghetto	45.3569400	10.7189100	IT	20	0	0	Monte Borghetto	Monte Borghetto	Monte Borghetto	Monte Borghetto	Monte Borghetto	Monte Borghetto
+	1422	Montemerlo	45.3803300	11.7081500	IT	20	0	0	Montemerlo	Montemerlo	Montemerlo	Montemerlo	Montemerlo	Montemerlo
+	1422	Cazzago-Ex Polo	45.4415900	12.0740600	IT	20	0	0	Cazzago-Ex Polo	Cazzago-Ex Polo	Cazzago-Ex Polo	Cazzago-Ex Polo	Cazzago-Ex Polo	Cazzago-Ex Polo
+	1422	Losson della Battaglia	45.6331300	12.4815400	IT	20	0	0	Losson della Battaglia	Losson della Battaglia	Losson della Battaglia	Losson della Battaglia	Losson della Battaglia	Losson della Battaglia
+	1422	Corrubbio	45.4868500	10.9035900	IT	20	0	0	Corrubbio	Corrubbio	Corrubbio	Corrubbio	Corrubbio	Corrubbio
+	1422	Antonella	45.6665200	11.3866500	IT	20	0	0	Antonella	Antonella	Antonella	Antonella	Antonella	Antonella
+	1422	Cicona	46.1622900	11.7429400	IT	20	0	0	Cicona	Cicona	Cicona	Cicona	Cicona	Cicona
+	1422	Zortea	46.1633200	11.7489500	IT	20	0	0	Zortea	Zortea	Zortea	Zortea	Zortea	Zortea
+	1422	San Daniele	45.3451700	11.7650800	IT	20	0	0	San Daniele	San Daniele	San Daniele	San Daniele	San Daniele	San Daniele
+	1422	Pregasina	45.8511000	10.8245400	IT	20	0	0	Pregasina	Pregasina	Pregasina	Pregasina	Pregasina	Pregasina
+	1422	Penia	46.3650400	11.6354200	IT	20	0	0	Penia	Penia	Penia	Penia	Penia	Penia
+	1422	Medil	46.3546300	11.6251400	IT	20	0	0	Medil	Medil	Medil	Medil	Medil	Medil
+	1422	Forno	46.3503800	11.6279600	IT	20	0	0	Forno	Forno	Forno	Forno	Forno	Forno
+	1422	Sorte	46.3739000	11.6484300	IT	20	0	0	Sorte	Sorte	Sorte	Sorte	Sorte	Sorte
+	1422	Crespignaga	45.7936600	11.9427800	IT	20	0	0	Crespignaga	Crespignaga	Crespignaga	Crespignaga	Crespignaga	Crespignaga
+	1422	Caselle	45.4134000	10.8957000	IT	20	0	0	Caselle	Caselle	Caselle	Caselle	Caselle	Caselle
+	1422	Valgatara	45.5346700	10.9119100	IT	20	0	0	Valgatara	Valgatara	Valgatara	Valgatara	Valgatara	Valgatara
+	1422	Crocioni	45.4458600	10.8461700	IT	20	0	0	Crocioni	Crocioni	Crocioni	Crocioni	Crocioni	Crocioni
+	1422	Lanzè	45.5859900	11.6609600	IT	20	0	0	Lanzè	Lanzè	Lanzè	Lanzè	Lanzè	Lanzè
+	1422	Santa Fosca	46.4430600	12.0619600	IT	20	0	0	Santa Fosca	Santa Fosca	Santa Fosca	Santa Fosca	Santa Fosca	Santa Fosca
+	1422	Millepertiche	45.5925900	12.5060900	IT	20	0	0	Millepertiche	Millepertiche	Millepertiche	Millepertiche	Millepertiche	Millepertiche
+	1422	Trambacche	45.4176000	11.7221900	IT	20	0	0	Trambacche	Trambacche	Trambacche	Trambacche	Trambacche	Trambacche
+	1422	Sandrà	45.4606700	10.7868600	IT	20	0	0	Sandrà	Sandrà	Sandrà	Sandrà	Sandrà	Sandrà
+	1422	Navene	45.8000500	10.8387300	IT	20	0	0	Navene	Navene	Navene	Navene	Navene	Navene
+	1422	Nevegal	46.0950200	12.2874400	IT	20	0	0	Nevegal	Nevegal	Nevegal	Nevegal	Nevegal	Nevegal
+	1422	Malga Ciapela	46.4273300	11.9115900	IT	20	0	0	Malga Ciapela	Malga Ciapela	Malga Ciapela	Malga Ciapela	Malga Ciapela	Malga Ciapela
+	1422	Brentino	45.6424900	10.8725600	IT	20	0	0	Brentino	Brentino	Brentino	Brentino	Brentino	Brentino
+	1422	Musestre	45.5886400	12.3724900	IT	20	0	0	Musestre	Musestre	Musestre	Musestre	Musestre	Musestre
+	1422	Cavalcaselle	45.4369500	10.7265200	IT	20	0	0	Cavalcaselle	Cavalcaselle	Cavalcaselle	Cavalcaselle	Cavalcaselle	Cavalcaselle
+	1422	Arbizzano-Santa Maria	45.4948900	10.9383100	IT	20	0	0	Arbizzano-Santa Maria	Arbizzano-Santa Maria	Arbizzano-Santa Maria	Arbizzano-Santa Maria	Arbizzano-Santa Maria	Arbizzano-Santa Maria
+	1422	Roncanova	45.1431800	11.1034900	IT	20	0	0	Roncanova	Roncanova	Roncanova	Roncanova	Roncanova	Roncanova
+	1422	Ca' Savio	45.4537500	12.4572900	IT	20	0	0	Ca' Savio	Ca' Savio	Ca' Savio	Ca' Savio	Ca' Savio	Ca' Savio
+	1422	San Giorgio di Perlena	45.7297000	11.5837500	IT	20	0	0	San Giorgio di Perlena	San Giorgio di Perlena	San Giorgio di Perlena	San Giorgio di Perlena	San Giorgio di Perlena	San Giorgio di Perlena
+	1422	Priula-Colfosco	45.8199800	12.2584700	IT	20	0	0	Priula-Colfosco	Priula-Colfosco	Priula-Colfosco	Priula-Colfosco	Priula-Colfosco	Priula-Colfosco
+	1422	Cagnano	45.3147400	11.5037200	IT	20	0	0	Cagnano	Cagnano	Cagnano	Cagnano	Cagnano	Cagnano
+	1422	Colloredo	45.3355600	11.5110100	IT	20	0	0	Colloredo	Colloredo	Colloredo	Colloredo	Colloredo	Colloredo
+	1422	Campedel	46.2878000	12.0148400	IT	20	0	0	Campedel	Campedel	Campedel	Campedel	Campedel	Campedel
+	1422	Soccol	46.2920400	12.0090000	IT	20	0	0	Soccol	Soccol	Soccol	Soccol	Soccol	Soccol
+	1422	Curago	46.1758500	12.3654600	IT	20	0	0	Curago	Curago	Curago	Curago	Curago	Curago
+	1422	Plois	46.1736500	12.3597000	IT	20	0	0	Plois	Plois	Plois	Plois	Plois	Plois
+	1422	Torres	46.1674700	12.3614200	IT	20	0	0	Torres	Torres	Torres	Torres	Torres	Torres
+	1422	Facchin	46.1327100	12.4024300	IT	20	0	0	Facchin	Facchin	Facchin	Facchin	Facchin	Facchin
+	1422	Sopalù	46.5884800	12.5045900	IT	20	0	0	Sopalù	Sopalù	Sopalù	Sopalù	Sopalù	Sopalù
+	1422	Sega	46.6019300	12.5243300	IT	20	0	0	Sega	Sega	Sega	Sega	Sega	Sega
+	1422	Campitello	46.5770900	12.5315400	IT	20	0	0	Campitello	Campitello	Campitello	Campitello	Campitello	Campitello
+	1422	Casada	46.5727300	12.5375500	IT	20	0	0	Casada	Casada	Casada	Casada	Casada	Casada
+	1422	Costalissoio	46.5718400	12.5475000	IT	20	0	0	Costalissoio	Costalissoio	Costalissoio	Costalissoio	Costalissoio	Costalissoio
+	1422	Molini	46.1712700	12.3963500	IT	20	0	0	Molini	Molini	Molini	Molini	Molini	Molini
+	1422	Irrighe	46.1745400	12.4042500	IT	20	0	0	Irrighe	Irrighe	Irrighe	Irrighe	Irrighe	Irrighe
+	1422	Villaggio Col Pian	46.1767400	12.4169500	IT	20	0	0	Villaggio Col Pian	Villaggio Col Pian	Villaggio Col Pian	Villaggio Col Pian	Villaggio Col Pian	Villaggio Col Pian
+	1422	Bastiani	46.3567300	11.9791300	IT	20	0	0	Bastiani	Bastiani	Bastiani	Bastiani	Bastiani	Bastiani
+	1422	Chenet	46.3569400	11.9760000	IT	20	0	0	Chenet	Chenet	Chenet	Chenet	Chenet	Chenet
+	1422	Fontanelle	46.3645200	11.9744500	IT	20	0	0	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle	Fontanelle
+	1422	Cuchi	45.5770400	12.1486000	IT	20	0	0	Cuchi	Cuchi	Cuchi	Cuchi	Cuchi	Cuchi
+	1422	Pedemonte	45.5030200	10.9186500	IT	20	0	0	Pedemonte	Pedemonte	Pedemonte	Pedemonte	Pedemonte	Pedemonte
+	1422	Duna Verde	45.5674300	12.8028500	IT	20	0	0	Duna Verde	Duna Verde	Duna Verde	Duna Verde	Duna Verde	Duna Verde
+	1422	Bassone	45.4511000	10.8944900	IT	20	0	0	Bassone	Bassone	Bassone	Bassone	Bassone	Bassone
+	1422	Feriole	45.3752400	11.7536500	IT	20	0	0	Feriole	Feriole	Feriole	Feriole	Feriole	Feriole
+	1422	Porto Santa Margherita	45.5891000	12.8581900	IT	20	0	0	Porto Santa Margherita	Porto Santa Margherita	Porto Santa Margherita	Porto Santa Margherita	Porto Santa Margherita	Porto Santa Margherita

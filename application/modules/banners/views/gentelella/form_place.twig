@@ -1,0 +1,103 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                {% if data.id %}
+                    {% helper lang.l('admin_header_place_change', 'banners') %}
+                {% else %}
+                    {% helper lang.l('admin_header_place_add', 'banners') %}
+                {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="{{ data.action|e }}" name="save_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_place_name', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.name|e }}" name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_place_keyword', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.keyword|e }}" name="keyword" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_place_sizes', 'banners') %}:</label>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <input type="text" value="{{ data.width|e }}" name="width" class="form-control">
+                    </div>
+                    <label id="size_cross" class="control-label col-md-2 col-sm-2 col-xs-12" > X </label>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <input type="text" value="{{ data.height|e }}" name="height" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_place_rotate_time', 'banners') %} (sec.):</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.rotate_time|e }}" name="rotate_time" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <i>0 - {% helper lang.l('no_rotation', 'banners') %}</i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_place_in_rotation', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.places_in_rotation|e }}" name="places_in_rotation" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_access', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="access" class="form-control">
+                            <option value="0">...</option>
+                        {% for key, item in place_access_lang.option %}
+                            <option value="{{ key|e }}"{% if key == data.access %} selected{% endif %}>
+                                {{ item }}
+                            </option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_groups', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        {% for key, item in groups %}
+                            <input type="checkbox" name="place_groups[]" value="{{ item.id|e }}" class="flat" id="pg_{{ item.id }}" {% if item.selected == '1' %}checked{% endif %}>
+                            <label for="pg_{{ item.id }}">{{ item.name }}</label>
+                            <br>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/banners/places_list">
+                            {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+{% include '@app/footer.twig' %}

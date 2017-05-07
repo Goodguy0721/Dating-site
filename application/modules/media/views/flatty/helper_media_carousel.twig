@@ -1,0 +1,85 @@
+{% if media_carousel_data.media %}
+	{% if media_carousel_data.header %}
+        <h2>{{ media_carousel_data.header }}</h2>
+    {% endif %}
+	<script>
+		$(function(){
+			loadScripts(
+				[
+                    "{% helper utils.jscript('', 'jquery.jcarousel.min.js', 'path') %}",
+                    "{% helper utils.jscript('', 'init_carousel_controls.js', 'path') %}"
+                ],
+				function(){
+					var data = {{ media_carousel_data.carousel|json_encode() }};
+					$('#media_carousel_'+data.rand).removeClass('hide');
+
+					carousel{{ media_carousel_data.rand }} = $('#media_carousel_'+data.rand).find('.jcarousel').jcarousel({
+						animation: 250
+					});
+
+					carousel_controls{{ media_carousel_data.rand }} = new init_carousel_controls({
+						carousel: carousel{{ media_carousel_data.rand }},
+						carousel_images_count: data.visible,
+						carousel_total_images: data.users_count,
+						btnNext: '#directionright_'+data.rand,
+						btnPrev: '#directionleft_'+data.rand,
+						scroll: data.scroll
+					});
+				},
+				[
+                    'carousel_controls{{ media_carousel_data.rand }}',
+                    'carousel{{ media_carousel_data.rand }}'
+                ]
+			);
+		});
+	</script>
+
+	{% set media_carousel_thumb_name = media_carousel_data.carousel.thumb_name %}
+	<div id="media_carousel_{{ media_carousel_data.rand }}"
+         class="carousel-wrapper hide {% if media_carousel_data.carousel.class %}{{media_carousel_data.carousel.class }}{% endif %}">
+		<div id="directionleft_{{ media_carousel_data.rand }}"
+             class="op direction left hover-icon">
+			<div class="fa fa-chevron-left fa-lg edge hover"></div>
+		</div>
+		<div class="dimp100 box-sizing plr50">
+			<div class="jcarousel" dir="{{ _LANG.rtl }}">
+				<ul>
+					{% for item in media_carousel_data.media %}
+						<li>
+							<div class="user">
+								<div class="photo">
+									{% if item.video_content %}
+                                        <div class="overlay-icon pointer" data-click="view-media"
+                                             data-id-media="{{ item.id }}" data-place="site_gallery">
+                                            <i class="fa fa-play w fa-4x opacity60"></i>
+                                        </div>
+                                    {% endif %}
+									{% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', item) %}
+									<img class="pointer" data-click="view-media"
+                                         data-id-media="{{ item.id }}" data-place="site_gallery"
+                                         src="{% if item.media %}{{ item.media.mediafile.thumbs[media_carousel_thumb_name] }}{% elseif item.video_content %}{{ item.video_content.thumbs[media_carousel_thumb_name] }}{% endif %}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+								</div>
+							</div>
+							<div class="descr hide">
+								<div>
+                                    <a href="{% helper seo.seolink('users', 'view', item.user_info) %}">
+                                        {{ item.user_info.output_name }}
+                                    </a>, {{ item.user_info.age }}
+                                </div>
+								{% if item.user_info.location %}
+                                    <div>
+                                        {{ item.user_info.location }}
+                                    </div>
+                                {% endif %}
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div id="directionright_{{ media_carousel_data.rand }}"
+             class="op direction right hover-icon">
+			<div class="fa fa-chevron-right fa-lg edge hover"></div>
+		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,38 @@
+<form name="select_gid" class="edit-form n100" action="" method="post" enctype="multipart/form-data">
+{% for item in guides %}
+    <div class="form-group">
+        <div class="col-md-1 text-right">
+            <input type="radio" name="gid" value="{{ item }}" id="{{ item }}" class="flat">
+        </div>
+        <div class="col-md-11"><label>{{ item }}</label></div>
+    </div>
+{% endfor %}
+</form>
+<script type="text/javascript">
+$(function() {
+    $('input.flat').iCheck({
+        radioClass: 'iradio_flat-green'
+    });
+    $('input.flat').on('ifChecked', function(){
+        $('#shipping_page_gid_text').html('<input type="hidden" name="shipping_page_gid" id="gid_'+$(this).attr("id")+'" value="'+$(this).attr("id")+'"><span class="block_cat" id="name_'+$(this).attr("id")+'">&nbsp;'+$(this).val()+'</span>');
+    });
+    $('input.flat').on('ifUnchecked', function(){
+        $('#name_'+$(this).attr("id")).remove();
+        $('#category_'+$(this).attr("id")).remove();
+    });
+    $('input[name=gid]').on('ifChanged', function(){
+        var anyChecked = false;
+        $('input[name=gid]').each(function(){
+            anyChecked = anyChecked || $(this).prop('checked');
+        });
+        if (anyChecked) {
+            $('.btn-success').removeClass('disabled');
+        } else {
+            $('.btn-success').addClass('disabled');
+        }
+    });
+    $('#submit').click(function() {
+        guides_open.hide_load_block();
+    });
+});
+</script>

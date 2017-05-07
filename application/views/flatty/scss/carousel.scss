@@ -1,0 +1,14 @@
+.slick-prev, 
+.slick-next {
+    display: none !important;
+}
+
+.slick-slide {
+    float: $left;
+}
+
+.pre-main-inner-content {
+    position: relative;
+    overflow: hidden;
+}
+

@@ -1,0 +1,46 @@
+<span class="user-menu-item">
+    <span id="fav_{{ id_dest_user }}">
+        <dt>
+            <a class="add_to_fav {% if action == 'remove' %}hide{% endif %} link-r-margin"
+               data-userId="{{ id_dest_user }}" href="{% helper seo.seolink('favourites', 'add', id_dest_user) %}"
+               data-pjax="0" onclick="event.preventDefault();" title="{% helper lang.l('action_add', 'favourites') %}">
+               <i class="fa fa-heart"></i>
+            </a>
+        </dt>
+        <dd>
+            <a class="add_to_fav {% if action == 'remove' %}hide{% endif %} link-r-margin"
+               data-userId="{{ id_dest_user }}" href="{% helper seo.seolink('favourites', 'add', id_dest_user) %}"
+               data-pjax="0" onclick="event.preventDefault();" title="{% helper lang.l('action_add', 'favourites') %}">
+                {% helper lang.l('action_add', 'favourites') %}
+            </a>
+        </dd>
+
+        <dt>
+            <a class="remove_from_fav {% if action == 'add' %}hide{% endif %} link-r-margin"
+               data-userId="{{ id_dest_user }}" href="{% helper seo.seolink('favourites', 'remove', id_dest_user) %}"
+               data-pjax="0" onclick="event.preventDefault();" title="{% helper lang.l('action_remove', 'favourites') %}">
+                <i class="fa fa-heart"></i>
+            </a>
+        </dt>
+        <dd>
+            <a class="remove_from_fav {% if action == 'add' %}hide{% endif %} link-r-margin"
+               data-userId="{{ id_dest_user }}" href="{% helper seo.seolink('favourites', 'remove', id_dest_user) %}"
+               data-pjax="0" onclick="event.preventDefault();" title="{% helper lang.l('action_remove', 'favourites') %}">
+                {% helper lang.l('action_remove', 'favourites') %}
+            </a>
+        </dd>
+    </span>
+</span>
+<script>
+	$(function() {
+		loadScripts(
+            ["{% helper utils.jscript('favourites', 'favourites.js', 'path') %}"],
+            function() {
+                favouritesObj = new favourites({
+                    siteUrl: site_url
+                });
+            },
+            'favouritesObj'
+        );
+	});
+</script>

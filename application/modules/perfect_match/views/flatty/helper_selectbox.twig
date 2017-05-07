@@ -1,0 +1,22 @@
+<input type="hidden" name="user_type" id="looking_user_type" value="{{ sb_selected }}">
+<div class="selectBox" id="looking_user_type_box">
+	<div class="label">
+        {% if sb_default %}{{ sb_default }}{% else %}&nbsp;{% endif %}
+    </div>
+    <div class="arrow"></div>
+	<div class="data">
+		<ul>
+			{% for key, item in sb_option %}
+                <li gid="{{ key }}">
+                    <span>{{ item }}</span>
+                </li>
+            {% endfor %}
+		</ul>
+	</div>
+</div>
+<script>
+    if (typeof selects === 'undefined') {
+        selects = [];
+        selects.push('looking_user_type');
+    }
+</script>

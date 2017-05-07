@@ -1,0 +1,3 @@
+	1002	Nadi	-17.8030900	177.4161700	FJ	05	0	0	Nadi	Нанди	Nadi	Nadi	Nadi	Nadi
+	1002	Lautoka	-17.6168600	177.4504900	FJ	05	0	0	Lautoka	Lautoka	Lautoka	Lautoka	Lautoka	Lautoka
+	1002	Ba	-17.5343000	177.6740700	FJ	05	0	0	Ba	Ba	Ba	Ba	Ba	Ba

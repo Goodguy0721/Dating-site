@@ -1,0 +1,70 @@
+{% include '@app/header.twig' %}
+
+<div class="lc">
+
+</div>
+<div class="rc">
+	<div class="content-block">
+		<h1>Тест Embed code</h1>
+		<div class="content-value">
+
+			<div class="edit_block">
+
+				<form action="" method="post">
+                    <div class="form-group">
+                        <label>
+                            Enable services:
+                        </label>
+                        <div class="v">
+                            {% for key, item in services %}
+                                {% if key %}, {% endif %}{{ item }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Embed code:
+                        </label>
+                        <textarea name="embed" class="form-control">{{ data.embed|e }}</textarea>
+
+                    </div>
+                    <br>
+                    <input type="submit" class="btn" name="btn_save"
+                        value="{% helper lang.l('btn_send', 'start', '', 'button') %}">
+
+				</form>
+
+				{% if video_data %}
+                    <div class="clr"></div><br>
+
+                    <h3>Полученные данные</h3>
+                    {% for key, item in video_data %}
+                        <div class="r">
+                            <div class="f">
+                                {{ key }}:
+                            </div>
+                            <div class="v">
+                                {{ item }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% if embed %}
+                        <div class="r">
+                            <div class="f">Returned embed: </div>
+                            <div class="v">
+                                {{ embed|e }}
+                            </div>
+                        </div>
+                        <div class="r">
+                            {{ embed }}
+                        </div>
+                    {% endif %}
+				{% endif %}
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

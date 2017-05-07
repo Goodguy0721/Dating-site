@@ -1,0 +1,33 @@
+{% if template_data.price_type == 1 %}
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_price', 'services') %}
+            ({% helper start.currency_format_output() %}):</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" value="{{ price }}" name="price" class="form-control">
+        </div>
+    </div>
+{% endif %}
+{% for item in template_data.data_admin_array %}
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {{ item.name }}
+            {% if item.type == 'price' %}
+                ({% helper start.currency_format_output() %})
+            {% endif %}:
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+        {% if item.type == 'string' %}
+            <input type="text" value="{{ item.value|e }}" name="data_admin[{{ item.gid }}]" class="form-control">
+        {% elseif item.type == 'int' %}
+            <input type="text" value="{{ item.value|e }}" name="data_admin[{{ item.gid }}]" class="form-control">
+        {% elseif item.type == 'price' %}
+            <input type="text" value="{{ item.value|e }}" name="data_admin[{{ item.gid }}]" class="form-control">
+        {% elseif item.type == 'text' %}
+            <textarea name="data_admin[{{ item.gid }}]" class="form-control">{{ item.value|e }}</textarea>
+        {% elseif item.type == 'checkbox' %}
+            <input type="checkbox" value="1" class="form-control" name="data_admin[{{ item.gid }}]" {% if item.value == '1' %}checked{% endif %}>
+        {% endif %}
+        </div>
+    </div>
+{% endfor %}

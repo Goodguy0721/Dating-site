@@ -1,0 +1,57 @@
+<input type="hidden" name="{{ select_data.var_name }}">
+<div id="user_select_{{ select_data.rand }}" class="user-select">
+	<span id="user_text_{{ select_data.rand }}">
+	{% for item in select_data.selected %}
+	{{ item.nickname }} ({{ item.output_name }}){% if select_data.max_select != 1 %}<br>{% endif %}
+    <input type="hidden" name="{{ select_data.var_name }}{% if select_data.max_select != 1 %}[]{% endif %}" value="{{ item.id }}">
+	{% endfor %}
+	</span>
+	<a href="#" id="user_link_{{ select_data.rand }}">
+        {% helper lang.l('link_manage_users', 'users') %}
+    </a>
+    {% if select_data.max_select > 1 %}
+        <i>({% helper lang.l('max_user_select', 'users') %}: {{ select_data.max_select }})</i>
+    {% endif %}<br>
+	<div class="clearfix"></div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('users', 'users-select.js', 'path') %}",
+            function(){
+                new usersSelect({
+                    siteUrl: '{{ site_url }}',
+                    user_type: '{{ select_data.user_type }}',
+                    selected_items: [{{ select_data.selected_str }}],
+                    var_name: '{{ select_data.var_name }}',
+                    max: '{{ select_data.max_select }}',
+                    rand: '{{ select_data.rand }}',
+                    load_user_link: 'admin/users/ajax_get_users_data/',
+                    load_selected_data_link: 'admin/users/ajax_get_selected_users/',
+                    load_form: 'admin/users/ajax_get_users_form/',
+										checkboxClass: 'flat',
+										reloadSelectedCallback: function() {
+											$('input.flat').iCheck({
+									        checkboxClass: 'icheckbox_flat-green',
+									        radioClass: 'iradio_flat-green'
+									    }).on('ifClicked', function(event) {
+									        $(this).trigger('click');
+									    }).on('ifChanged', function(event) {
+									        $(this).trigger('change');
+									    }).on('ifChecked', function() {
+									        $(this).attr('checked', 'checked');
+									    }).on('ifUnchecked', function() {
+									        $(this).removeAttr('checked');
+									    }).on('ifDisabled', function() {
+									        $(this).attr('disabled', 'disabled');
+									    }).on('ifEnabled', function() {
+									        $(this).removeAttr('disabled');
+									    });
+										},
+                });
+            },
+            ''
+        );
+    });
+</script>

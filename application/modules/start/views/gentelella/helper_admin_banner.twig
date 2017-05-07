@@ -1,0 +1,31 @@
+{% helper utils.jscript('start', 'admin-banners.js') %}
+
+<script type="text/javascript">
+	$(function(){
+		banners = new storeBanners({
+            lang_code: "{{ lang_code }}",
+			langs: {
+                custom: {
+                    header: "{% helper lang.l('banners_header_custom', 'start', '', 'js') %}",
+                    description: "{% helper lang.l('banners_description_custom', 'start', '', 'js') %}",
+                    button: "{% helper lang.l('banners_button_custom', 'start', '', 'js') %}"
+                },
+                design: {
+                    header: "{% helper lang.l('banners_header_design', 'start', '', 'js') %}",
+                    description: "{% helper lang.l('banners_description_design', 'start', '', 'js') %}",
+                    button: "{% helper lang.l('banners_button_design', 'start', '', 'js') %}"
+                },
+                modules: {
+                    header: "{% helper lang.l('banners_header_modules', 'start', '', 'js') %}",
+                    description: "{% helper lang.l('banners_description_modules', 'start', '', 'js') %}",
+                    button: "{% helper lang.l('banners_button_modules', 'start', '', 'js') %}"
+                },
+                packages: {
+                    header: "{% helper lang.l('banners_header_packages', 'start', '', 'js') %}",
+                    description: "{% helper lang.l('banners_description_packages', 'start', '', 'js') %}",
+                    button: "{% helper lang.l('banners_button_packages', 'start', '', 'js') %}"
+                }
+            }
+		});
+	});
+</script>

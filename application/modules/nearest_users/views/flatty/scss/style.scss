@@ -1,0 +1,38 @@
+.nearest_users_input_block {
+    .circle_slider_block {
+        display: none;
+    }
+}
+
+.search-header .menu {
+    .show_map_link {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+}
+
+.content-block .nearest-users-search-header {
+    .menu {
+        position: relative;
+        right: auto;
+    }
+}
+
+.nearest_users_map_form {
+    #circle_radius_slider_bottom {
+        height: 5px;
+        border: none;
+        border-radius: 5px;
+        background: $delimiter_color;
+        
+        .ui-slider-handle {
+            border-radius: 50%; 
+            left: 3.1603%; 
+            height: 0.9em; 
+            width: 0.9em; 
+            border-color: rgb(153, 153, 153);
+        }
+    }
+}

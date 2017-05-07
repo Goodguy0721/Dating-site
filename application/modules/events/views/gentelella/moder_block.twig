@@ -1,0 +1,13 @@
+<div class="form-group">
+    <div>
+        <b>{% helper lang.l('field_name', 'events') %}</b>: {{ data.name }}
+    </div>
+    <div>
+        <b>{% helper lang.l('field_description', 'events') %}</b>: {{ data.description }}
+    </div>
+    <div> 
+        <a href="{% if data.image_moderation.thumbs.big %}{{ data.image_moderation.file_url }}{% else %}{{ data.image.file_url }}{% endif %}" target="_blank">
+            <img src="{% if data.image_moderation.thumbs.big %}{{ data.image_moderation.thumbs.big }}{% else %}{{ data.image.thumbs.big }}{% endif %}" title="{{ data.name }}" alt="{{ data.name }}">
+        </a>
+    </div>
+</div>

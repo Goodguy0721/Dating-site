@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html DIR="{{ _LANG.rtl }}">
+<head>
+    <meta http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="revisit-after" content="3 days">
+    <meta name="robot" content="All">
+    {% helper seo.seo_tags('title|description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+    <script src="{{ site_url }}application/views/gentelella/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/loading_content.js"></script>
+    {% helper theme.js(load_type) %}
+    {% helper theme.css(load_type) %}
+    <script type="text/javascript">
+        var site_url = '{{ site_url }}';
+        var site_rtl_settings = '{{ _LANG.rtl }}';
+        var site_error_position = 'left';
+        var is_pjax = 0;
+        var use_pjax = 0;
+    </script>
+
+    <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="{{ site_url }}application/views/gentelella/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{{ site_url }}application/views/gentelella/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ site_url }}application/views/gentelella/css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom styling plus plugins -->
+    <link href="{{ site_url }}application/views/gentelella/css/custom.css" rel="stylesheet">
+    <link href="{{ site_url }}application/views/gentelella/css/icheck/flat/green.css" rel="stylesheet" />
+    <link href="{{ site_url }}application/views/gentelella/css/floatexamples.css" rel="stylesheet" type="text/css" />
+
+    {% helper utils.jscript('', 'easyTooltip.min.js') %}
+</head>
+
+<body class="nav-md">
+    {% helper start.demo_panel({type: 'admin', place: 'top'}) %}
+    <div id="error_block">
+        {% for item in _PREDEFINED.error %}
+            {% if item.text %}
+                {{ item.text }}<br>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div id="info_block">
+        {% for item in _PREDEFINED.info %}
+            {% if item.text %}
+                {{ item.text }}<br>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div id="success_block">
+        {% for item in _PREDEFINED.success %}
+            {% if item.text %}
+                {{ item.text }}<br>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="container body">
+        <div class="main_container">
+
+        <!-- Left column -->
+            <div class="left-sidebar" id="left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title">
+                        <a class="site_title" href="{{ site_url }}admin/">
+                            <img src="{{ site_root }}{{ logo_settings.path }}" border="0" alt="logo"
+                                width="{{ logo_settings.width }}" height="{{ logo_settings.height }}" class="site-logo">
+                                <img src="{{ site_root }}{{ mini_logo_settings.path }}" border="0" alt="logo"
+                                    width="{{ mini_logo_settings.width }}" height="{{ mini_logo_settings.height }}" class="site-mini-logo">
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <!-- Menu -->
+                    {% if initial_setup %}
+                        {% helper install.get_initial_setup_menu(step) %}
+                    {% elseif modules_setup %}
+                        {% helper install.get_modules_setup_menu(step) %}
+                    {% elseif product_setup %}
+                        {% helper install.get_product_setup_menu(step) %}
+                    {% else %}
+                        {% if auth_type == 'admin' %}
+                            {% helper fast_navigation.fast_navigation_helper() %}
+                        {% endif %}
+                        {% helper menu.get_admin_main_menu() %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        <!-- Right column -->
+            <div class="right-sidebar">
+
+                <div id="top_nav" class="top_nav">
+                    <div class="nav_menu {% if menu_disabled %}hide{% endif %}">
+
+                        <nav role="navigation">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-4 col-xs-2">
+                                    <div class="nav toggle">
+                                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                                    </div>
+                                    <div class="nav navbar-nav nav-left sm-hide">
+                                        <h2>{% helper start.product_version() %}</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 col-xs-10">
+
+                                {% if auth_type == 'admin' %}
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <ul class="list-inline">
+                                            <li>
+                                            {% if not empty(modules_setup) %}
+                                                <a href="{{ site_url }}admin/install/logoff" class="logoff">
+                                                    {% helper lang.l('btn_logoff', 'start') %}
+                                                </a>
+                                            {% elseif not empty(initial_setup) or not empty(product_setup) %}
+
+                                            {% elseif auth_type == 'admin' %}
+                                                {% helper ausers.logOff() %}
+                                            {% endif %}
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.datingpro.com/information/contact/" target="_blank">
+                                                    {% helper lang.l('btn_support', 'start') %}
+                                                </a>
+                                            </li>
+                                            {% if empty(initial_setup) and empty(modules_setup) and empty(product_setup) %}
+                                            <li>
+                                                {% helper users.users_lang_select() %}
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </li>
+                                </ul>
+                                {% endif %}
+
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <script src="{{ site_url }}application/views/gentelella/js/menu.js"></script>
+                </div>
+                <div class="right_col" role="main">
+                    <div class="">
+                        <div class="page-title {% if hide_page_header %}hide{% endif %}">
+                            {% if _PREDEFINED.back_link %}
+                            <div class="quest-block back-link">
+                                <a href="{{ _PREDEFINED.back_link }}" class="back">
+                                    {% helper lang.l('btn_back', 'start') %}</a>&nbsp;
+                            </div>
+                            {% endif %}
+                            <div class="title_left">
+                                <h3>{{ _PREDEFINED.header }}</h3>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">

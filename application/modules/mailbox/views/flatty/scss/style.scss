@@ -1,0 +1,404 @@
+/* mailbox */
+.mailbox_content .edit_block #save_status {
+  line-height: 3em;
+}
+.mailbox_content .panel.panel-default > .panel-heading {
+  background-color: #fff;
+  padding: 15px;
+}
+.mailbox_content .panel.panel-default {
+  padding-right: 0;
+  padding-left: 0;
+}
+.mailbox_content .navbar-collapse {
+  padding: 0;
+  display: block;
+}
+.mailbox_content .scroll_menu__hor {
+  margin-top: -10px;
+}
+.mailbox_content .scroll_menu__hor li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.mailbox_content .scroll_menu__hor li:first-child {
+  margin-left: 0;
+}
+.mailbox_content .nav li > a.btn-primary:hover {
+  background-color: #fff;
+}
+.mailbox_content .scroll_menu__hor li > a.active {
+  color: $font_color;
+}
+.mailbox_content .scroll_menu__hor .btn.active, .mailbox_content .scroll_menu__hor .btn:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.mailbox_content label {
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+.mailbox_content label span {
+  margin-#{$left}: 5px;
+}
+.mailbox_content .panel-body {
+  padding: 0;
+}
+.mailbox_content .panel-body .row {
+  border-bottom: 1px solid rgba(0,0,0,0.13);
+  min-height: 50px;
+  margin: 0;
+}
+.mailbox_content div[data-role="date"] {
+  color: $contrast_color;
+  position: absolute;
+  right: -2px;
+  width: 25%;
+}
+.mailbox_content div[data-role="date"] > div {
+  width: 25%;
+  text-align: right;
+}
+.mailbox_content .valign_middle {
+  display: table-cell;
+  vertical-align: middle;
+  min-height: 50px;
+}
+.mailbox_content .search-form {
+  margin-#{$right}: -11px;
+}
+.mailbox_content_label {
+  width: 20px;
+  height: 50px;
+  float: $left;
+  padding-top: 10px;
+}
+.mailbox_content .navbar-form input[type="text"] {
+  max-width: 150px;
+  float: $left;
+}
+.mailbox_content .navbar-form {
+  margin-right: 10px;
+  padding-top: 2px;
+}
+.mailbox_content .btn-primary-inverted {
+  margin-#{$left}: 3px;
+  line-height: 0.8em;
+}
+.mailbox_content a.btn-primary-inverted:hover {
+  color: #fff;
+  background-color: $input_color;
+  border-color: $input_color;
+}
+.mailbox_content .point {
+  margin-left: 0;
+}
+.mailbox_content .write_message {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  box-shadow: none;
+}
+.mailbox_content .scroll_menu {
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mailbox_content #all_checkbox label {
+  margin-left: -5px;
+}
+.valign_middle.date {
+  float: right;
+  padding-top: 15px;
+}
+#mailbox_top_menu .mleft #all_checkbox {
+  padding-left: 2px;
+  padding-right: 5px;
+  height: 30px;
+}
+.mailbox_content .no-padding-left {
+  padding: 0;
+}
+.mailbox_view .subject, .main_subject {
+  font-size: 18px;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+.mailbox_view .valign_middle {
+  display: table-cell;
+  vertical-align: middle;
+  height: 60px;
+}
+.mailbox_view .input-lg {
+  height: 40px;
+}
+.thread li img, .mailbox_view img, #reply_form img, #write_form img, .write_form .mailbox_content__img {
+  max-width: 35px;
+  max-height: 35px;
+}
+.write_form .col-left-w45 {
+  margin-#{$left}: 45px;
+  margin-bottom: 10px;
+}
+.col-left-w45.pos-rel {
+  height: 50px;
+}
+.form-group.col-rigft-w-45.create_message textarea {
+  margin-right: 0px;
+  width: 100%;
+  float: left;
+}
+.tab-submenu li {
+  margin-left: 0;
+  padding: 0;
+  display: inline;
+}
+.delim-space {
+  border-bottom: 1px solid rgba(0,0,0,0.13);
+}
+.tab-submenu {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+}
+.mailbox_content .thread a.link {
+  color: $font_color;
+  font-weight: bold;
+}
+.mailbox_content .thread .logo {
+  max-width: 50px;
+  padding-left: 0;
+}
+.mailbox_content .thread li {
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.13);
+  padding-top: 10px;
+}
+.mailbox_content .top_panel ul li {
+  float: left;
+  padding-right: 5px;
+  padding-top: 3px;
+}
+.mailbox_content .tab-submenu.top_panel {
+  height: 40px;
+  margin-top: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.13);
+}
+.mailbox_content .nicklink {
+  width: calc(100% - 35px);
+  float: right;
+  min-height: 35px;
+}
+.addressbar {
+  min-height: 45px;
+}
+.mailbox_content .view {
+  border-bottom: 1px solid rgba(0,0,0,0.13);
+  padding-bottom: 15px;
+}
+.mailbox_content input[name="btn_send"], #mailbox_content input[name="btn_send"] {
+  height: 38px;
+}
+/*#write_form .form_box input[name="attach"] {
+  max-width: 65%;
+}*/
+#write_form .upload-btn .btn {
+    background: transparent;
+    line-height: unset;
+    color: $link_color;
+    &:hover {
+        color: $input_color;
+        background-color:rgba($input_color, 0.1);
+        border-color: $input_color;
+    }
+}
+.attachbox {
+  background: $html_bg;
+  padding: 0 15px;
+  clear: both;
+}
+.attachbox ul {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.attachbox ul li {
+  margin-left: 0;
+  padding-top: 10px;
+}
+#mailbox_top_menu .mleft #all_checkbox, #mailbox_delete, #mailbox_untrash, #mailbox_delete_forever, #unmark_spam, #mark_spam, #save_message {
+  padding-left: 0;
+  padding-right: 0;
+  height: 50px;
+}
+.mailbox_content .no-padding-left {
+  padding: 0;
+}
+#user_select_items li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.mailbox_friendlist #user_select_items li:nth-child(2n) {
+  background: $html_bg;
+}
+.mailbox_friendlist #user_select_items li:hover {
+  background: #eaeaed;
+  cursor: pointer;
+}
+.mailbox_content button[data-role="btn"] {
+  position: absolute;
+  #{$right}: 1px;
+  bottom: -5px;
+  height: 32px;
+  border-radius: 0 4px 4px 0;
+}
+.btn_friendlist .icon_list {
+  display: none;
+}
+.mailbox_content .btn_edit_message, .mailbox_content .btn_read_message {
+  position: relative;
+}
+.mailbox_content .date_right {
+  position: absolute;
+  #{$right}: 0px;
+}
+.mailbox_content .message {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 22px;
+  line-height: 1.4em;
+}
+.mailbox_content .message.full {
+  height: auto;
+}
+.mailbox_content textarea[name="message"]{
+  resize: vertical;
+  overflow:visible
+}
+.panel-heading__rightbtn {
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+  #mailbox_top_menu .mleft {
+    margin-left: 0;
+  }
+  .mailbox_content .mailbox_top_menu {
+    padding-left: 10px;
+  }
+  .mailbox_content .output_name {
+    white-space: nowrap;
+    min-width: 145px;
+    width: 25%;
+    overflow: hidden;
+    min-height: 35px;
+  }
+  .mailbox_content .output_name, .mailbox_content .subject {
+    padding-top: 14px;
+  }
+  .mailbox_content .subject {
+    margin-#{$left}: 145px;
+  }
+  .mailbox_content .output_name {
+    float: none;
+  }
+    .panel-heading__rightbtn {
+        text-align: $right;
+        .btn {
+            width: auto;
+        }
+    }
+}
+@media (max-width: 767px) {
+  .mailbox_content .top_panel {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+  }
+  .mailbox_content .navbar-form {
+    margin: 0 auto;
+    padding-top: 0px;
+    text-align: center;
+  }
+  .mailbox_content .form {
+    width: 100%;
+  }
+  .mailbox_content .mailbox_top_menu {
+    height: 95px;
+  }
+  .mailbox_content .search-form {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .mailbox_content .navbar-form input[type="text"] {
+    max-width: 70%;
+    display: inline-table;
+    float: none;
+  }
+  .mailbox_content #all_checkbox, .mailbox_content .mailbox_top_menu i + span, .mailbox_content .edit_block .mailbox_top_menu i + span {
+    display: none;
+  }
+  .mailbox_content .top_panel .btn, .mailbox_content .tab-submenu .btn {
+    box-shadow: 0 0 2px #636363;
+    width: 40px;
+  }
+  .mailbox_content .scroll_menu .scroll_menu__hor {
+    width: 100%;
+    height: 55px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 5px;
+  }
+
+  .mailbox_content .point {
+    margin-right: -35px;
+    padding-right: 0;
+  }
+  #mailbox_top_menu .mleft .fleft {
+    margin-left: 5px;
+  }
+  .mailbox_content div[data-role="date"] {
+    width: 60%;
+  }
+  .mailbox_content .search-form:before {
+    display: table;
+    content: "";
+  }
+  #all_checkbox label {
+    margin-left: -5px;
+  }
+  .mailbox_content .output_name {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    float: none;
+  }
+  .mailbox_content .output_name {
+    float: none !important;
+    display: block;
+    min-width: 125px;
+  }
+  .mailbox_content .subject {
+    float: none !important;
+    display: block;
+    min-width: 125px;
+    margin-left: 0px;
+    padding-top: 0px;
+  }
+  .mailbox_view .subject {
+    height: auto;
+    display: block;
+  }
+  .mailbox_content .btn_friendlist .icon_list {
+    display: block;
+    line-height: 1.2em;
+  }
+  .mailbox_content .btn_friendlist .icon_list + span {
+    display: none;
+  }
+    .panel-heading__rightbtn {
+        width: 100%;
+    }
+}
+/* end mailbox */

@@ -1,0 +1,2 @@
+	241	Oranjestad	12.5239800	-70.0270300	AW	00	0	0	Oranjestad	Ораньестад	Oranjestad	Oranjestad	Oranjestad	Oranjestad
+	241	Arasji	12.6166700	-70.0666700	AW	00	0	0	Arasji	Arasji	Arasji	Arasji	Arasji	Arasji

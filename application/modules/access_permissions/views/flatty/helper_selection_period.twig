@@ -1,0 +1,53 @@
+<div class="selection-period">
+    {% if periods|length > 1 %}
+        <div class="selector">
+            <div id="periods-progress-bar" class="progress">            
+                {% for  key, period in periods %}
+                    <div class="progress-bar progress-bar-{{ period.class }} {% if period.is_selected %}selected-js{% endif %}" style="width: {{ period.width }}%" data-id="{{ period.id }}" data-price="{{ period.price }}" data-period="{{ period.period }}" data-key="{{ key }}">
+                        <div class="period-description">
+                            {% if period.is_selected %}
+                                <i class="fa fa-circle"></i>
+                             {% else %}
+                                 <div class="delimiter">|</div>
+                            {% endif %}
+                            <div class="period">{{ period.period_str }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="saving">
+            <div id="saving" class="hide">
+                {% helper lang.l('field_saving', 'access_permissions') %}
+                <span data-action="saving">0</span>{% helper start.currency_format_output() %}
+            </div>
+        </div>
+    {% else %}
+        <div class="singl-period" data-group="{{ group.gid }}" data-id="{{ periods.0.id }}" data-price="{{ periods.0.price }}" data-period="{{ periods.0.period }}">{{ periods.0.period_str }}</div>
+    {% endif %}
+    <div class="actions-block">
+        <div class="btn-group">
+                <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" data-action="pay-systems" data-group="{{ group.gid }}">
+                    {% helper lang.l('field_buy', 'access_permissions') %}
+                    <span id="set-price">{{ periods.0.price }}</span>
+                    {% helper start.currency_format_output() %}
+                    <span class="caret"></span>
+                </button>
+                <ul id="pay-systems-list-{{ group.gid }}" class="dropdown-menu" role="menu">
+                    <li>
+                        <a class="cursor-pointer" data-action="set-paysystem" data-gid="account">
+                           {% helper lang.l('btn_pay_account', 'services') %}
+                        </a>
+                    </li>
+                    {% for  system in billing_systems%}
+                        <li>
+                            <a class="cursor-pointer" data-action="set-paysystem"  data-gid="{{ system.gid }}">
+                                <img src="{{ system.logo_url }}">
+                                {{ system.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        </div>
+    </div>
+</div>

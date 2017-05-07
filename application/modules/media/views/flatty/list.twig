@@ -1,0 +1,101 @@
+{% for key, item in media %}
+	{% if item.status != 1 or item.permissions == 0 or
+          (item.id_parent and ((item.media and not item.mediafile) or
+          (item.video_content and not item.media_video))) %}
+		{% set is_active='0' %}
+	{% else %}
+		{% set is_active='1' %}
+	{% endif %}
+	<div class="g-users-gallery__item col-xs-6 col-sm-6 col-md-4 col-lg-3">
+		<div class="g-users-gallery__content">
+            {% if item.upload_gid == 'gallery_audio' %}
+                {% include 'view_audio_item.twig' %}
+            {% else %}
+    			<div class="g-users-gallery__photo {% if not is_active %}inactive{% endif %}">
+    				{% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', item) %}
+    				<a class="g-pic-border g-rounded g-users-gallery__photo-img" href="javascript:void(0);" data-click="view-media" data-id-media="{{ item.id }}">
+                        <img class="pointer"
+                            src="{% if item.media %}{{ item.media.mediafile.thumbs.big }}{% elseif item.video_content %}{{ item.video_content.thumbs.big }}{% endif %}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+                    </a>
+    				{% if item.status == 0 %}
+    					<div class="g-users-gallery__overlay-icon {% if is_active %}pointer{% endif %}"
+                             title="{% helper lang.l('moderation_wait', 'media') %}">
+                            <i class="fa fa-clock-o w fa-4x opacity60"></i>
+                        </div>
+    				{% elseif item.status == -1 %}
+    					<div class="g-users-gallery__overlay-icon {% if is_active %}pointer{% endif %}"
+                             title="{% helper lang.l('moderation_decline', 'media') %}">
+                            <i class="fa fa-times-circle-o w fa-4x opacity60"></i>
+                        </div>
+    				{% elseif item.video_content %}
+    					<div class="g-users-gallery__overlay-icon {% if is_active %}pointer{% endif %}"
+                             data-click="view-media" data-id-media="{{ item.id }}">
+                            <i class="fa fa-play w fa-4x opacity60"></i>
+                        </div>
+    				{% endif %}
+
+                    <div class="g-users-gallery__actions">
+                        <div class="g-photo-actions">
+                            <a href="javascript:void(0);" data-click="view-media" data-id-media="{{ item.id }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+
+                            <a href="{{ site_url }}media/delete_media/{{ item.id }}" class="delete-media">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div><!-- g-photo-actions -->
+                    </div>
+
+
+                    <div class="g-users-gallery__overlayinfo">
+						{% if item.permissions == 0 %}
+                            <p>
+                                {% helper lang.l('permissions_restrict', 'media') %}
+                            </p>
+                        {% endif %}
+						{% if item.id_parent and ((item.media and not item.mediafile) or
+                                                  (item.video_content and not item.media_video)) %}
+                            <p>
+                                {% helper lang.l('media_deleted_by_owner', 'media') %}
+                            </p>
+                        {% endif %}
+						<div class="g-photo-statuses">
+							<div>
+								<div class="g-photo-statuses__item g-photo-statuses__item_place" data-gid="media{{ item.id }}">
+                                    <i class="fa fa-eye"></i>
+                                    <span class="view_num">{{ item.views }}</span>
+                                </div>
+								<div class="g-photo-statuses__item">
+                                    {% helper likes.like_block({
+                                        'gid': 'media' ~ item.id,
+                                        'type': 'button',
+                                        'btn_class': 'edge w'
+                                    }) %}
+                                </div>
+								{% if item.is_adult %}
+                                    <div class="g-photo-statuses__item g-photo-statuses__item_place">
+                                        <i class="fa fa-female"></i>
+                                        <span>18+</span>
+                                    </div>
+                                {% endif %}
+								{% if item.id_user != item.id_owner %}
+                                    <div class="g-photo-statuses__item g-photo-statuses__item_place">
+                                        {% helper spam.mark_as_spam_block({
+                                            'object_id': item.id,
+                                            'type_gid': 'media_object',
+                                            'template': 'whitebutton'
+                                        }) %}
+                                    </div>
+                                {% endif %}
+							</div>
+    					</div>
+    				</div>
+    			</div>
+            {% endif %}
+		</div>
+	</div>
+{% else %}
+	<div class="center">
+        {% helper lang.l('no_media', 'media') %}
+    </div>
+{% endfor %}

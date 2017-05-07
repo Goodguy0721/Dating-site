@@ -1,0 +1,134 @@
+<div id="actions" class="hide">
+    <div class="btn-group">
+        <a href="{{ site_url }}admin/field_editor/section_edit/{{ type }}/" class="btn btn-primary">
+            {% helper lang.l('link_add_section', 'field_editor') %}
+        </a>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ site_url }}admin/field_editor/section_edit/{{ type }}/">
+                    {% helper lang.l('link_add_section', 'field_editor') %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ site_url }}admin/field_editor/sections/{{ type }}/sort">
+                    {% helper lang.l('link_sorting_mode', 'field_editor') %}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="filter" class="hide">
+  <div class="col-sm-3 col-xs-12">
+    <select id="section" class="form-control">
+    {% for item in types %}
+        <option value="{{ item.gid }}" {% if type == item.gid %}selected{% endif %}>{{ item.name }}</option>
+    {% endfor %}
+    </select>
+  </div>
+</div>
+<table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table">
+    <thead>
+        <tr class="headings">
+            <th>{% helper lang.l('field_section_name', 'field_editor') %}</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if sections %}
+        {% for item in sections %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td class="icons">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary"
+                            onclick="document.location.href = '{{ site_url }}admin/field_editor/section_edit/{{ type }}/{{ item.id }}'">
+                        {% helper lang.l('btn_edit','start') %}
+                    </button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ site_url }}admin/field_editor/section_edit/{{ type }}/{{ item.id }}">
+                                {% helper lang.l('btn_edit','start') %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ site_url }}admin/field_editor/section_delete/{{ type }}/{{ item.id }}"
+                                onclick="javascript: if (!confirm('{% helper lang.l('note_delete_section', 'field_editor', '', 'js') %}')) return false;">
+                                {% helper lang.l('btn_delete','start') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+{% include '@app/pagination.twig' %}
+
+<script>
+  $(function() {
+    $(document).off('change', '#section').on('change', '#section', function(e) {
+      location.href = '{{ site_url }}admin/field_editor/sections/' + $(this).val();
+    });
+  });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_sections','field_editor') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions"><"filter">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+        var filter = $("#filter");
+        $('#data_wrapper').find('.filter').html(filter.html());
+        actions.remove();
+    });
+</script>

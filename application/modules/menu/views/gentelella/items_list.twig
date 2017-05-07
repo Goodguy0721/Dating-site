@@ -1,0 +1,70 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div id="actions" class="x_content">
+          <div class="btn-group">
+            <a href="{{ site_url }}admin/menu/items_edit/{{ menu_data.id }}" class="btn btn-primary">
+                {% helper lang.l('link_add_menu_item', 'menu') %}
+            </a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ site_url }}admin/menu/items_edit/{{ menu_data.id }}">
+                    {% helper lang.l('link_add_menu_item', 'menu') %}
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="javascript: mlSorter.update_sorting(); return false">
+                    {% helper lang.l('link_save_sorter', 'menu') %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="x_content">
+          <div id="menu_items">
+              <ul name="parent_0" class="to_do sort connected" id="clsr0ul">
+                  {% include 'tree_level.twig' with {list: menu} %}
+              </ul>
+          </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var mlSorter;
+    $(function () {
+        mlSorter = new multilevelSorter({
+            siteUrl: '{{ site_url }}',
+            urlSaveSort: 'admin/menu/ajax_save_item_sorter',
+            urlDeleteItem: 'admin/menu/ajax_item_delete/',
+        });
+    });
+</script>
+
+<script>
+  $('#menu_items').find('li').off('click').on('click', '.js-activate', function(){
+      var action = $(this).data("action");
+      var item_id = $(this).data("id");
+      $.ajax({
+          url: "{{ site_url }}admin/menu/ajax_item_activate/" + action + "/" + item_id,
+          type: 'get',
+          cache: false,
+          success: function(data) {
+              $(this).parents('.js-item').first().find('.hide')
+                     .removeClass('hide').siblings().addClass('hide');
+          }.bind(this)
+      });
+  });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,17 @@
+{% for item in user_messages %}
+	<dl class="pointer">
+		<dt class="w650">
+            <div class="addressbar bold">
+                <font>
+                    {% helper date_format.tpl_date_format(item.date_created, page_data.date_format) %}
+                </font>
+                <font>
+                    {{ item.output_name }}
+                </font>
+            </div>
+            <div class="view{% if item.is_new and item.is_admin_sender %} bold{% endif %}">
+                {{ item.message }}
+            </div>
+		</dt>
+	</dl>
+{% endfor %}

@@ -1,0 +1,139 @@
+<div class="content-block load_content">
+    <h1>
+        {% helper lang.l('add_video', 'media') %}
+    </h1>
+
+    <div class="m10 oh popup-form">
+        <form id="upload_video" action="{{ site_url }}media/save_video"
+              method="post" name="upload_video"
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="f-title">
+                    {% helper lang.l('field_files', 'media') %}:
+                </div>
+                <div class="f-block">
+                    <input type="file" class="form-control" name="videofile" id="videofile" />(
+                    {% if media_config.max_size == '0' %}
+                        {% helper lang.l('int_unlimited', 'uploads') %}
+                    {% else %}
+                        {% helper lang.l('max', 'start') %}
+                        {% helper utils.bytesFormat(media_config.max_size) %}
+                    {% endif %})&nbsp;
+                    <span id="attach-input-error"></span>
+                    <div id="attach-input-warning"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="f-title">
+                    {% helper lang.l('field_or_embed_code', 'media') %}
+                </div>
+                <div class="f-block">
+                    <textarea class="form-control" name="embed_code"></textarea>
+                </div>
+            </div>
+
+            {% if user_albums %}
+                <div class="form-group">
+                    <div class="f-title">
+                        {% helper lang.l('albums', 'media') %}:
+                    </div>
+                    <div class="f-block">
+                        <select class="form-control input-sm" name="id_album">
+                            <option value="0">
+                                {% helper lang.l('please_select', 'media') %}
+                            </option>
+                            {% for key, item in user_albums %}
+                                <option value="{{ item.id }}" {% if item.id == id_album %}selected{% endif %}>
+                                    {{ item.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="f-title">
+                    {% helper lang.l('field_permitted_for', 'media') %}:
+                </div>
+                <div class="f-block">
+                    {% helper ld_permissions = lang.ld('permissions', 'media') %}
+                    <select class="form-control input-sm" name="permissions">
+                        {% for key, item in ld_permissions.option %}
+                            <option value="{{ key }}" {% if key == 4 %}selected{% endif %}>
+                                {{ item }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="f-title">
+                    {% helper lang.l('field_description', 'media') %}:
+                </div>
+                <div class="f-block">
+                    <textarea class="form-control" name="description">{{ data.description|e }}</textarea>
+                </div>
+            </div>
+
+            <button" name="btn_upload" id="btn_upload" class="btn btn-primary">
+                {% helper lang.l('btn_save', 'start') %}
+            </button>
+        </form>
+    </div>
+    <div class="clr"></div>
+</div>
+{% autoescape false %}
+    <script>
+        $(function () {
+            var allowed_mimes = {{ media_config.allowed_mimes|json_encode }};
+                    loadScripts(
+                            "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                            function () {
+                                var lang_data = {
+                                    errors: {
+                                        file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                                    }
+                                };
+                                vu = new uploader({
+                                    siteUrl: site_url,
+                                    Accept: 'application/json',
+                                    uploadUrl: 'media/save_video',
+                                    //zoneId: 'dragAndDropFiles',
+                                    fileId: 'videofile',
+                                    formId: 'upload_video',
+                                    sendType: 'file',
+                                    sendId: 'btn_upload',
+                                    //multiFile: false,
+                                    messageId: 'attach-input-error',
+                                    warningId: 'attach-input-warning',
+                                    maxFileSize: '{{ media_config.max_size }}',
+                                    mimeType: allowed_mimes,
+                                    allowEmptyFile: true,
+                                    lang: lang_data,
+                                    cbOnUpload: function (name, data) {
+                                        if (window.sitegallery) {
+                                            sitegallery.reload();
+                                        } else if (window.mediagallery) {
+                                            mediagallery.reload();
+                                        }
+                                        if (window.mediagallery) {
+                                            mediagallery.properties.windowObj.hide_load_block();
+                                        }
+                                    },
+                                    cbOnComplete: function (data) {
+                                        if (data.errors.length) {
+                                            error_object.show_error_block(data.errors, 'error');
+                                        }
+                                        $('#videofile').val('');
+                                    },
+                                    jqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+                                });
+                            },
+                            ['vu'],
+                            {async: false}
+                    );
+        });
+    </script>
+{% endautoescape %}

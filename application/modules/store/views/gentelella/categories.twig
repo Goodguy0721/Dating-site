@@ -1,0 +1,232 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+          <div id="actions" class="hide">
+            <div class="btn-group">
+              <a href="{{ site_url }}admin/store/edit_category/" class="btn btn-primary">
+                  {% helper lang.l('link_add_category', 'store') %}
+              </a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ site_url }}admin/store/edit_category/">
+                      {% helper lang.l('link_add_category', 'store') %}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">&nbsp;</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="column-title">{% helper lang.l('field_category_name', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_products_active', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_bestsellers_active', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in categories %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>
+                        {% if  not item.sort.first %}
+                            <a href="{{ site_url }}admin/store/sort_categories/{{ item.id }}/up" style="text-decoration: none;">&uarr;</a>&nbsp;
+                        {% endif %}
+                        {% if not item.sort.last %}
+                            <a href="{{ site_url }}admin/store/sort_categories/{{ item.id }}/down" style="text-decoration: none;">&darr;</a>
+                        {% endif %}
+                        </td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                        {% if item.product_active_count %}
+                            <a class="prod" data-id="{{ item.id }}" href="javascript:void(0);" style="text-decoration: none;">
+                        {% endif %}
+                            {{ item.product_active_count }}
+                        {% if item.product_active_count %}</a>{% endif %}
+                            ({% if item.product_all_count %}<a class="prod" data-id="{{ item.id }}" href="return false;" style="text-decoration: none;">
+                        {% endif %}
+                            {{ item.product_all_count }}
+                            {% if item.product_all_count %}</a>{% endif %})
+                        </td>
+                        <td>
+                            {% if item.bestsellers_active_count %}
+                                <a class="best" data-id="{{ item.id }}" href="javascript:void(0);" style="text-decoration: none;">
+                            {% endif %}
+                            {{ item.bestsellers_active_count }}
+                            {% if item.bestsellers_active_count %}
+                                </a>
+                            {% endif %}
+                            ({% if item.bestsellers_count %}
+                                <a class="best" data-id="{{ item.id }}" href="javascript:void(0);" style="text-decoration: none;">
+                            {% endif %}
+                            {{ item.bestsellers_count }}
+                            {% if item.bestsellers_count %}
+                                </a>
+                            {% endif %})
+                        </td>
+                        <td>
+                          {% if item.status %}
+                              {% helper lang.l('btn_tableicon_is_active','start') %}
+                          {% else %}
+                              {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                          {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div id="move_block">
+                                <div class="btn-group">
+                                 {% if item.status %}
+                                    <button type="button" class="btn btn-primary"
+                                             title="{% helper lang.l('link_deactivate_category', 'store') %}"
+                                             onclick="document.location.href='{{ site_url }}admin/store/status_category/{{ item.id }}/0'">
+                                         {% helper lang.l('make_inactive','start') %}
+                                    </button>
+                                 {% else %}
+                                    <button type="button" class="btn btn-primary"
+                                             title="{% helper lang.l('link_activate_category', 'store') %}"
+                                             onclick="document.location.href='{{ site_url }}admin/store/status_category/{{ item.id }}/1'">
+                                         {% helper lang.l('make_active','start') %}
+                                    </button>
+                                 {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      {% if item.status %}
+                                        <li>
+                                          <a href="{{ site_url }}admin/store/status_category/{{ item.id }}/0">
+                                              {% helper lang.l('make_inactive','start') %}
+                                          </a>
+                                        </li>
+                                      {% else %}
+                                        <li>
+                                           <a href="{{ site_url }}admin/store/status_category/{{ item.id }}/1">
+                                                {% helper lang.l('make_active','start') %}
+                                           </a>
+                                        </li>
+                                      {% endif %}
+                                        <li>
+                                          <a href="{{ site_url }}admin/store/category/{{ item.id }}">{% spaceless %}
+                                              {% helper lang.l('link_tableicon_edit_form_fields', 'field_editor') %}
+                                          {% endspaceless %}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/store/edit_category/{{ item.id }}">
+                                                {% helper lang.l('btn_edit','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="javascript: if(!confirm('{% helper lang.l('note_delete_category', 'store', '', 'js') %}')) return false;"
+                                               href="{{ site_url }}admin/store/delete_category/{{ item.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script>
+var best_link = '{{ site_url }}admin/store/products/bestsellers/';
+var prod_link = '{{ site_url }}admin/store/products/active/';
+var save_link = '{{ site_url }}admin/store/ajax_set_session_data/';
+$(function(){
+    $(".best").click(function() {
+        var id = $(this).data('id');
+        var category_data = { search_category: id };
+        $.ajax({
+            url: save_link,
+            cache: false,
+            data: { products_list: category_data },
+            type: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                if (data.status == true) {
+                    location.href = best_link;
+                }
+            }
+        });
+    });
+    $(".prod").click(function() {
+        var id = $(this).data('id');
+        var category_data = { search_category: id };
+        $.ajax({
+            url: save_link,
+            cache: false,
+            data: { products_list: category_data },
+            type: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                if (data.status == true) {
+                    location.href = prod_link;
+                }
+            }
+        });
+    });
+});
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_categories','store') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,2,3,4,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "bSort": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

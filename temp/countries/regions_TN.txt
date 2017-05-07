@@ -1,0 +1,2 @@
+	3592	Tataouine	32.9296700	10.4517700	TN	34	0	0	Tataouine	Tataouine	Tataouine	Tataouine	Tataouine	Tataouine
+	3592	Remada	32.3166200	10.3955100	TN	34	0	0	Remada	Remada	Remada	Remada	Remada	Remada

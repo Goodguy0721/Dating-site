@@ -1,0 +1,10 @@
+	1987	Cukai	4.2500000	103.4166700	MY	13	0	0	Cukai	Cukai	Cukai	Cukai	Cukai	Cukai
+	1987	Paka	4.6374000	103.4368000	MY	13	0	0	Paka	Пак	Paka	Paka	Paka	Paka
+	1987	Kertih	4.5141000	103.4483000	MY	13	0	0	Kertih	Kertih	Kertih	Kertih	Kertih	Kertih
+	1987	Kuala Terengganu	5.3302000	103.1408000	MY	13	0	0	Kuala Terengganu	Куала-Тренгану	Kuala Terengganu	Kuala Terengganu	Kuala Terengganu	Kuala Terengganu
+	1987	Marang	5.2056000	103.2059000	MY	13	0	0	Marang	Маранг	Marang	Marang	Marang	Marang
+	1987	Kuala Besut	5.8330300	102.5551400	MY	13	0	0	Kuala Besut	Kuala Besut	Kuala Besut	Kuala Besut	Kuala Besut	Kuala Besut
+	1987	Jertih	5.7336000	102.4897000	MY	13	0	0	Jertih	Jertih	Jertih	Jertih	Jertih	Jertih
+	1987	Kampung Pasir Panjang	5.9181400	102.7190700	MY	13	0	0	Kampung Pasir Panjang	Kampung Pasir Panjang	Kampung Pasir Panjang	Kampung Pasir Panjang	Kampung Pasir Panjang	Kampung Pasir Panjang
+	1987	Kampung Pasir Hantu	5.8969600	102.7268600	MY	13	0	0	Kampung Pasir Hantu	Kampung Pasir Hantu	Kampung Pasir Hantu	Kampung Pasir Hantu	Kampung Pasir Hantu	Kampung Pasir Hantu
+	1987	Kampung Kuala Besut	5.8329700	102.5506100	MY	13	0	0	Kampung Kuala Besut	Kampung Kuala Besut	Kampung Kuala Besut	Kampung Kuala Besut	Kampung Kuala Besut	Kampung Kuala Besut

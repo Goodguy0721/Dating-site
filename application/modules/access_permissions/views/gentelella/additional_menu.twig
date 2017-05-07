@@ -1,0 +1,5 @@
+{% for gid, name in types %}
+    <li {% if user_type == gid %}class="active"{% endif %}>
+        <a id="{{gid }}" href="{{ site_url }}admin/access_permissions/userTypes/{{gid }}/">{{name }} </a>
+    </li>
+{% endfor%}

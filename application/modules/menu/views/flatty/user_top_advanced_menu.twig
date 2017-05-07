@@ -1,0 +1,35 @@
+    {% for key, item in menu %}
+        <li class="menu-group {% if item.active is not empty or item.in_chain is not empty %}active"{% endif %}">
+            {% if item.sub is not empty %}
+                <span id="user_{{ item.gid }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}{% if item.indicator %}<span class="num">{{ item.indicator }}</span>{% endif %}
+                </span>
+            {% else %}
+                <a id="user_{{ item.gid }}" href="{{ item.link }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}{% if item.indicator %}<span class="badge summand {{ item.indicator_gid }}">{{ item.indicator }}</span>{% endif %}
+
+                    {% if item.gid == 'tickets_advanced_item' %}
+                        {% helper tickets.admin_new_messages({template: 'left', is_admin: '1'}) %}
+                    {% endif %}
+
+                </a>
+            {% endif %}
+        </li>
+        <li class="menu-empty">
+            <ul class="submenu noPrint">
+                {% for key, s in item.sub %}
+                    <li class="menu-item {% if s.active %}class="active"{% endif %}">
+                        <a id="user_{{ item.gid }}_{{ s.gid }}" href="{{ s.link }}">
+                            {{ s.value }}{% if s.indicator %}<span class="num">{{ s.indicator }}</span>{% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}

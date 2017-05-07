@@ -1,0 +1,21 @@
+<div class="categories-list">
+    <div class="cat-scroller">
+        <ul class="list-group">
+            {% for key, item in categories %}
+                <li class="list-group-item {% if item.active %}active{% endif %}">
+                    <a class="" href="{% helper seo.seolink('store', 'category', item) %}">
+                        <div class="category-item">
+                            {% if item.product_active_count %}
+                                <span class="ml10 badge fright">{{ item.product_active_count }}</span>
+                            {% endif %}
+                            {{ item.name }}
+                        </div>
+                    </a>
+                </li>
+            {% else %}
+                <li class="list-group-item">{% helper lang.l('no_categories', 'store') %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% helper utils.jscript('', 'jquery-slimscroll.js', '') %}

@@ -1,0 +1,300 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if filter == 'all' %}active{% endif %}{% if filter_data.all %} disabled{% endif %}">
+                    <a href="{% if filter_data.all %}{{ site_url }}admin/users/index/all/{{ user_type }}{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_all_users', 'users') %} ({{ filter_data.all }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'not_active' %}active{% endif %}{% if not filter_data.not_active %} disabled{% endif %}">
+                    <a href="{% if filter_data.not_active %}{{ site_url }}admin/users/index/not_active/{{ user_type }}{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_not_active_users', 'users') %} ({{ filter_data.not_active }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'active' %}active{% endif %}{% if not filter_data.active %} disabled{% endif %}">
+                    <a href="{% if filter_data.active %}{{ site_url }}admin/users/index/active/{{ user_type }}{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_active_users', 'users') %} ({{ filter_data.active }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'not_confirm' %}active{% endif %}{% if not filter_data.not_confirm %} disabled{% endif %}">
+                    <a href="{% if filter_data.not_confirm %}{{ site_url }}admin/users/index/not_confirm/{{ user_type }}{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_not_confirm_users', 'users') %} ({{ filter_data.not_confirm }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'deleted' %}active{% endif %}{% if not filter_data.deleted %} disabled{% endif %}">
+                    <a href="{% if filter_data.deleted %}{{ site_url }}admin/users/deleted{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_deleted_users', 'users') %} ({{ filter_data.deleted }})
+                    </a>
+                </li>
+
+                {% helper incomplete_signup.not_registered_add_filter(filter) %}
+
+            </ul>
+        </div>
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{% helper lang.l('header_filters', 'users') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content hide">
+                <form method="post" enctype="multipart/form-data" data-parsley-validate
+                    class="form-horizontal form-label-left">
+                    <input type="hidden" name="filter" value="{{ filter|e }}">
+                    <input type="hidden" name="order" value="{{ order|e }}">
+                    <input type="hidden" name="order_direction" value="{{ order_direction|e }}">
+                    <div class="filter-form">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('search_by', 'users') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="val_text"
+                                               value="{{ search_param.text|e }}"
+                                               class="form-control">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <select name="type_text" class="form-control">
+                                            <option value="all"
+                                                    {% if search_param.type == 'all' %} selected{% endif %}>
+                                                {% helper lang.l('filter_all', 'users') %}
+                                            </option>
+                                            <option value="email"
+                                                    {% if search_param.type == 'email' %} selected{% endif %}>
+                                                {% helper lang.l('field_email', 'users') %}
+                                            </option>
+                                            <option value="fname"
+                                                    {% if search_param.type == 'fname' %} selected{% endif %}>
+                                                {% helper lang.l('field_fname', 'users') %}
+                                            </option>
+                                            <option value="sname"
+                                                    {% if search_param.type == 'sname' %} selected{% endif %}>
+                                                {% helper lang.l('field_sname', 'users') %}
+                                            </option>
+                                            <option value="nickname"
+                                                    {% if search_param.type == 'nickname' %} selected{% endif %}>
+                                                {% helper lang.l('field_nickname', 'users') %}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_deleted_from', 'users') %}:
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <input type="text" id="date_deleted_from" name="date_deleted_from"
+                                               maxlength="10" class="form-control"
+                                               value="{{ search_param.date_deleted.from|e }}">
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-12 text-center">
+                                        <label class="data-label" for="date_deleted_to">
+                                            {% helper lang.l('to', 'users') %}
+                                        </label>
+                                    </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="date_deleted_to" name="date_deleted_to"
+                                                   maxlength="10" class="form-control"
+                                                   value="{{ search_param.date_deleted.to|e }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3">
+                                <input type="submit" name="btn_search"  class="btn btn-primary"
+                                       value="{% helper lang.l('header_user_find', 'users') %}">
+                            </div>
+                            <div class='clearfix'></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+              <div class="btn-group">
+                <a id="users_link_add" href="{{ site_url }}admin/users/edit/personal/" class="btn btn-primary">
+                    {% helper lang.l('link_add_user', 'users') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a onclick="$('#users_link_add').trigger('click'); return false;" href="{{ site_url }}admin/users/edit/personal/">
+                        {% helper lang.l('link_add_user', 'users') %}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">
+                            {% helper lang.l('field_nickname', 'users') %}
+                        </th>
+                        <th class="column-title">
+                            {% helper lang.l('field_email', 'users') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_deleted_date', 'users') %}
+                        </th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in users %}
+                        <tr class="even pointer]">
+                            <td class="first">
+                                <b>{{ item.nickname }}</b>
+                                <br>{{ item.fname }} {{ item.sname }}
+                            </td>
+                            <td>{{ item.email }}</td>
+                            <td  class="text-center">
+                                {% helper date_format.tpl_date_format(item.date_deleted, page_data.date_format) %}
+                            </td>
+                            <td class="icons">
+                              <div class="btn-group">
+                                <span class="btn btn-primary">
+                                  {% helper users.delete_select_block({id_user: item.id_user, callback_user: item.data, deleted: 1}) %}
+                                </span>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                      {% helper users.delete_select_block({id_user: item.id_user, callback_user: item.data, deleted: 1}) %}
+                                    </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+    var reload_link = '{{ site_url }}admin/users/deleted/';
+    var filter = '{{ filter }}';
+    var order = '{{ order }}';
+    var loading_content;
+    var order_direction = '{{ order_direction }}';
+
+    $(function () {
+        now = new Date();
+        yr = (new Date(now.getYear() - 80, 0, 1).getFullYear()) + ':' + (new Date(now.getYear() - 18, 0, 1).getFullYear());
+        $("#date_deleted_from").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            dateFormat: 'yy-mm-dd',
+            onClose: function (selectedDate) {
+                $("#date_deleted_to").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        $("#date_deleted_to").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            dateFormat: 'yy-mm-dd',
+            onClose: function (selectedDate) {
+                $("#date_deleted_from").datepicker("option", "maxDate", selectedDate);
+            }
+        });
+    });
+    function reload_this_page(value) {
+        var link = reload_link + filter + '/' + value + '/' + order + '/' + order_direction;
+        location.href = link;
+    }
+   delete_select_block = new loadingContent({
+        closeBtnPadding: '15',
+        closeBtnClass: 'close',
+        loadBlockSize: 'big',
+        loadBlockTitle: '{% helper lang.l('admin_header_delete_user', 'users') %}',
+        footerButtons: '<input type="submit" id="full_delete" class="btn btn-primary" name="btn_confirm_del" value="{% helper lang.l('btn_confirm_del', 'users', '', 'js') %}" disabled form="delete_user">'
+    })
+    function reload_this_page(value) {
+        var link = reload_link + filter + '/' + value + '/' + order + '/' + order_direction;
+        location.href = link;
+    }
+</script>
+
+<!-- TABLES -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "Search all columns:"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

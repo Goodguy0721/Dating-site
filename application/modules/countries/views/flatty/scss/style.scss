@@ -1,0 +1,61 @@
+.input-autocomplete {
+    .input-group {
+        padding: 0;
+    }    
+    .button-search {
+        position: relative;
+        border: 1px solid $delimiter_color;
+        z-index: 999;
+    }
+    
+    & .input-group .form-control {
+        border-#{$right}: none;
+        border-top-#{$right}-radius: 0 !important;
+        border-bottom-#{$right}-radius: 0 !important;
+    }
+    
+    & .input-group .input-group-addon {
+        border-#{$left}: none;
+    }
+    
+    & .input-group .form-control:focus + .input-group-addon {
+        border-color: #66afe9;
+        outline: 0;
+    }
+}
+
+
+.dropdown .country-msg {
+    text-align: center;
+    border-top: 1px solid $delimiter_color;
+    color: #66afe9;
+    cursor: pointer;
+
+    .pginfo {
+        text-decoration: none;
+        border-bottom: 1px dashed #66afe9;        
+    }
+}
+
+.autocomplete-error {
+    padding: 10px 0;
+    text-align: center;
+}
+
+#location_select_items {
+    padding: 20px;
+    background-color:#F5F5F5;
+    max-height: 270px;
+    overflow-y: scroll;
+    
+    .location-item {
+        cursor: pointer;
+        padding-bottom:5px;
+    }    
+}
+
+.controller-actions {
+    .select-back {
+        padding-bottom: 10px;
+    }
+}

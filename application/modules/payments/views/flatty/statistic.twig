@@ -1,0 +1,80 @@
+{% include '@app/header.twig' %}
+
+<div class="col-lg-12">
+	<h1>
+        {% helper lang.l('header_my_payments_statistic', 'payments') %}
+    </h1>
+
+	<table class="list">
+        <tr>
+            <th class="w30">
+                ID
+            </th>
+            <th class="w150">
+                {% helper lang.l('field_date_add', 'payments') %}
+            </th>
+            <th>
+                {% helper lang.l('field_amount', 'payments') %}
+            </th>
+            <th>
+                {% helper lang.l('field_payment_type', 'payments') %}
+            </th>
+            <th>
+                {% helper lang.l('field_billing_type', 'payments') %}
+            </th>
+            <th>
+                {% helper lang.l('field_status', 'payments') %}
+            </th>
+        </tr>
+        {% for key, item in payments %}
+            <tr>
+                <td>
+                    {{ item.id }}
+                </td>
+                <td>
+                    {% helper date_format.tpl_date_format(item.date_add, page_data.date_format) %}
+                </td>
+                <td>
+                    {% helper start.currency_format_output({
+                        'value': item.amount,
+                        'cur_gid': item.currency_gid,
+                        'use_gid': '1'
+                    }) %}
+                </td>
+                <td>
+                    {% helper lang.l('payment_type_name_' ~ item.payment_type_gid, 'payments') %}
+                    ({{ item.payment_data.name }})
+                </td>
+                <td>
+                    {{ item.system_gid }}
+                </td>
+                <td>
+                    {% if item.status == '1' %}
+                        <font class="success">
+                            {% helper lang.l('payment_status_approved', 'payments') %}
+                        </font>
+                    {% elseif item.status == '-1' %}
+                        <font class="error">
+                            {% helper lang.l('payment_status_declined', 'payments') %}
+                        </font>
+                    {% else %}
+                        {% helper lang.l('payment_status_wait', 'payments') %}
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td class="center" colspan="6">
+                    {% helper lang.l('no_payments', 'payments') %}
+                </td>
+            </tr>
+        {% endfor %}
+	</table>
+	<div id="pages_block_2">
+        {% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

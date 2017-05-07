@@ -1,0 +1,9 @@
+{% include '@app/header.twig' %}
+    {% for gid, item in properties %}
+    <div class="settings-block with-{{gid}}" onclick="javascript: location.href = '{{site_url}}admin/properties/property/{{gid}}';">
+        <a href="{{site_url}}admin/properties/property/{{gid}}">
+            <h6>{{item.header}}</h6>
+        </a>
+    </div>
+    {% endfor %}
+{% include '@app/footer.twig' %}

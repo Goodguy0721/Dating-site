@@ -1,0 +1,44 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+	<div class="x_title h4">
+	{% if data.id %}
+		{% helper lang.l('admin_header_config_change', 'uploads') %}
+	{% else %}
+		{% helper lang.l('admin_header_config_add', 'uploads') %}
+	{% endif %}
+	</div>
+	<div class="x_content">
+		<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">
+					{% helper lang.l('field_default_img', 'uploads') %}: </label>
+				<div class="col-md-9 col-xs-9 col-xs-12">
+					<input type="file" value="" name="default_img" class="file form-control">
+					{% if data.default_img %}<br>
+						<a href="{{ data.default_img_url }}" target="blank">
+								{% helper lang.l('view_source_link', 'uploads') %}</a>
+						{% for item in thumbs %}
+						<a href="{{ data.default_url }}{{ item.prefix }}-{{ data.default_img }}" class="tooltip" id="thumb_{{ item.id }}">
+							{% helper lang.l('btn_view', 'start') %} {{ item.width }}x{{ item.height }}</a>
+						<div class="hide" id="tt_thumb_{{ item.id }}">
+							<img src="{{ data.default_url }}{{ item.prefix }}-{{ data.default_img }}">
+						</div>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<div class="vol-xs-12 col-md-offset-3 col-sm-offset-3">
+					<button class="btn btn-success" type="submit" name="btn_save" value="1">
+						{% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+					<a class="btn btn-cancel" href="{{ site_url }}admin/file_uploads/test">
+						{% helper lang.l('btn_cancel', 'start') %}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% include '@app/footer.twig' %}

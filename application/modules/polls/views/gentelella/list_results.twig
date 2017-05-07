@@ -1,0 +1,173 @@
+{% include '@app/header.twig' %}
+
+{% set language = poll_data.language %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if filter == 'all' %}active{% endif %}{% if not filter_data.all %} hide{% endif %}">
+                    <a href="{{ site_url }}admin/polls/results/{{ poll.id }}/all">
+                        {% helper lang.l('poll_type_0', 'polls') %} ({{ filter_data.all }})
+                    </a>
+                </li>
+                {% for key, item in user_types %}
+                    <li class="{% if filter == item %}active{% endif %}{% if not attribute(filter_data, item) %} hide{% endif %}">
+                        <a href="{{ site_url }}admin/polls/results/{{ poll.id }}/{{ item }}">
+                            {{ item }} ({{ attribute(filter_data, item) }})
+                        </a>
+                    </li>
+                {% endfor %}
+                <li class="{% if filter == 'authorized' %}active{% endif %}{% if not filter_data.authorized %} hide{% endif %}">
+                    <a href="{{ site_url }}admin/polls/results/{{ poll.id }}/authorized">
+                        {% helper lang.l('poll_type_1', 'polls') %} ({{ filter_data.authorized }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'not_authorized' %}active{% endif %}{% if not filter_data.not_authorized %} hide{% endif %}">
+                    <a href="{{ site_url }}admin/polls/results/{{ poll.id }}/not_authorized">
+                        {% helper lang.l('poll_type_2', 'polls') %} ({{ filter_data.not_authorized }})
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="x_title">
+            {% helper polls.show_poll_results_block(poll.id) %}
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title no-link">
+                            <a href="{{ sort_links.user_id }}"{% if order == 'user_id' %} class="{{ order_direction|lower }}"{% endif %}>
+                                {% helper lang.l('user', 'polls') %}
+                            </a>
+                        </th>
+                        <th class="column-title no-link">
+                            <a href="{{ sort_links.date_add }}"{% if order == 'date_add' %} class="{{ order_direction|lower }}"{% endif %}>
+                                {% helper lang.l('respond_date', 'polls') %}
+                            </a>
+                        </th>
+                        <th class="column-title no-link">
+                            <a href="{{ sort_links.ip }}"{% if order == 'ip' %} class="{{ order_direction|lower }}"{% endif %}>
+                                {% helper lang.l('respond_ip', 'polls') %}
+                            </a>
+                        </th>
+                    {% for key, item in answers_links %}
+                        <th class="column-title no-link">
+                            <a href="{{ item }}">
+                                <div style="display:inline-table;width:20px;height:10px;background-color:#{{ attribute(poll.answers_colors, key) }};"></div>
+                                <a style="display:inline;line-height:10px;" {% if order == key %} class="{{ order_direction|lower }}"{% endif %}></a>
+                            </a>
+                        </th>
+                    {% endfor %}
+                        <th class="column-title no-link">{% helper lang.l('comment', 'polls') %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, item in results_data %}
+                    <tr class="even pointer">
+                        <td class="user-tooltip" id="hide_{{ key }}">
+                            {% if not item.user_id %}
+                                {% helper lang.l('guest', 'polls') %}
+                            {% else %}
+                                {{ item.user.nickname }}
+                                {% if item.user_type %}
+                                    ({{ item.user.user_type_str }})
+                                {% endif %}
+                            {% endif %}
+                            <span id="span_hide_{{ key }}" class="hide">
+                                <div class="tooltip-info">
+                                    <b>{% helper lang.l('browser', 'polls') %}: {{ item.agent }}</b>
+                                </div>
+                            </span>
+                        </td>
+                        <td>{{ item.response_date }}</td>
+                        <td>{{ item.ip }}</td>
+
+                        {% for a_key, a_item in answers_links %}
+                            {% set answer_item = 'answer_' ~ a_key %}
+                            <td>
+                                {% if attribute(item, answer_item) %}
+                                    <div style="display:inline-table;width:20px;height:10px;background-color:#{{ attribute(poll.answers_colors, a_key) }};"></div>
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                        <td>{{ item.comment }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('input#grouping_all').bind('click', function () {
+            var checked = $(this).is(':checked');
+            if (checked) {
+                $('input[type=checkbox]').prop('checked', true);
+            } else {
+                $('input[type=checkbox]').prop('checked', false);
+            }
+        });
+        $(function () {
+            $(".user-tooltip").each(function () {
+                $(this).easyTooltip({
+                    useElement: 'span_' + $(this).attr('id')
+                });
+            });
+        });
+    });
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_results','polls') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2,3,4,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

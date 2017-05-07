@@ -1,0 +1,299 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if filter == 'all' %}active{% endif %}{% if not filter_data.all %} disabled{% endif %}">
+                    <a href="{% if filter_data.all %}{{ site_url }}admin/store/products/all{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_all_products', 'store') %} ({{ filter_data.all }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'active' %}active{% endif %}{% if not filter_data.active %} disabled{% endif %}">
+                    <a href="{% if filter_data.active %}{{ site_url }}admin/store/products/active{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_active_products', 'store') %} ({{ filter_data.active }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'inactive' %}active{% endif %}{% if not filter_data.inactive %} disabled{% endif %}">
+                    <a href="{% if filter_data.inactive %}{{ site_url }}admin/store/products/inactive{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_inactive_products', 'store') %} ({{ filter_data.inactive }})
+                    </a>
+                </li>
+                <li class="{% if filter == 'bestsellers' %}active{% endif %}{% if not filter_data.bestsellers %} disabled{% endif %}">
+                    <a href="{% if filter_data.bestsellers %}{{ site_url }}admin/store/products/bestsellers{% else %}javascript:;{% endif %}">
+                        {% helper lang.l('filter_bestsellers_products', 'store') %} ({{ filter_data.bestsellers }})
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{% helper lang.l('header_filters', 'users') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content hide">
+                <form method="post" enctype="multipart/form-data" data-parsley-validate
+                      class="form-horizontal form-label-left" name="save_form"
+                      action="{{ data.action }}">
+                    <input type="hidden" name="filter" value="{{ filter|escape }}">
+                    <input type="hidden" name="order" value="{{ order|escape }}">
+                    <input type="hidden" name="order_direction" value="{{ order_direction|escape }}">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3">{% helper lang.l('search_by', 'store') %}:</label>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <input type="text" name="val_text" value="{{ search_param.text|escape }}" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <select name="category" class="form-control">
+                                        <option value="" {% if not search_param.category_id %} selected{% endif %}>{% helper lang.l('filter_all', 'store') %}</option>
+                                    {% for item in categories %}
+                                        <option value="{{ item.id }}" {% if search_param.category_id == item.id %} selected{% endif %}>{{ item.name }}</option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3">{% helper lang.l('price_form', 'store') %}:</label>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <input type="text" name="price_min" class="form-control" value="{{ search_param.price.min|escape }}">
+                                </div>
+                                <div class="col-sm-2 text-center form-control-static">
+                                    {% helper lang.l('to', 'store') %}
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="text" name="price_max" class="form-control" value="{{ search_param.price.max|escape }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <input type="submit" value="{% helper lang.l('button_products_find', 'store', '', 'button') %}" name="btn_search" class="btn btn_primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <a href="{{ site_url }}admin/store/product/" class="btn btn-primary">
+                        {% helper lang.l('link_add_product', 'store') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ site_url }}admin/store/product/">
+                                {% helper lang.l('link_add_product', 'store') %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="info-number" id="delete_select_block">
+                                {% helper lang.l('link_delete_products', 'store') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <table id="users" class="table table-striped responsive-utilities jambo_table tableflat bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('field_product_sort', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_product_photo', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_product_name', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_product_price', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('field_product_date_modified', 'store') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="8">
+                            {#<a href="javascript: return false;" class="info-number" id='delete_select_block'
+                                style="position: absolute; top: 40px; color:#fff; font-weight:500;">
+                                {% helper lang.l('link_delete_products', 'store') %}
+                            </a>#}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in products %}
+                    <tr>
+                        <td class="text-center"><input type="checkbox" class="flat grouping" value="{{ item.id }}" id="prod_{{ item.id }}" data="table_records"></td>
+                        <td>
+                            {% if  not item.sort.first %}
+                            <a href="{{ site_url }}admin/store/sort_product/{{ item.id }}/up" style="text-decoration: none;">&uarr;</a>&nbsp;
+                            {% endif %}
+                            {% if not item.sort.last %}
+                            <a href="{{ site_url }}admin/store/sort_product/{{ item.id }}/down" style="text-decoration: none;">&darr;</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ site_url }}admin/store/product/media/{{ item.id }}">
+                                {% helper store.store_media({
+                                        'id_product' : item.id,
+                                        'size' : 'small',
+                                        'amount' : 'single',
+                                        'type' : 'photo'
+                                    }) %}
+                            </a>
+                        </td>
+                        <td>{{ item.name }}</td>
+                        <td>{% helper start.currency_format_output({ 'value' : item.price_reduced }) %}</td>
+                        <td>{% helper date_format.tpl_date_format(item.date_updated, page_data.date_format) %}</td>
+                        <td>
+                      {% if item.status %}
+                          {% helper lang.l('btn_tableicon_is_active','start') %}
+                      {% else %}
+                          {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                      {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div id="move_block">
+                                <div class="btn-group">
+                                {% if item.status %}
+                                    <button type="button" class="btn btn-primary"
+                                            title="{% helper lang.l('link_deactivate_product', 'store', '', 'button') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/store/status_product/{{ item.id }}/0'">
+                                        {% helper lang.l('make_inactive','start') %}
+                                    </button>
+                                {% else %}
+                                    <button type="button" class="btn btn-primary"
+                                            title="{% helper lang.l('link_activate_product', 'store', '', 'button') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/store/status_product/{{ item.id }}/1'">
+                                        {% helper lang.l('make_active','start') %}
+                                    </button>
+                                {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        {% if item.status %}
+                                            <a href="{{ site_url }}admin/store/status_product/{{ item.id }}/0">
+                                                {% helper lang.l('make_inactive','start') %}
+                                            </a>
+                                        {% else %}
+                                            <a href="{{ site_url }}admin/store/status_product/{{ item.id }}/1">
+                                                {% helper lang.l('make_active','start') %}
+                                            </a>
+                                        {% endif %}
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/store/product/description/{{ item.id }}">
+                                                {% helper lang.l('btn_edit','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="javascript: if(!confirm('{% helper lang.l('note_delete_product', 'store', '', 'js') %}')) return false;"
+                                               href="{{ site_url }}admin/store/delete_product/{{ item.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js', 'script') %}
+<link href='{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css' rel='stylesheet' type='text/css' media='screen' />
+<script type="text/javascript">
+    var reload_link = "{{ site_url }}admin/store/products/";
+    var filter = '{{ filter }}';
+    var order = '{{ order }}';
+    var loading_content;
+    var order_direction = '{{ order_direction }}';
+    $(document).off('click', '#delete_select_block').on('click', '#delete_select_block', function() {
+        if(!confirm("{% helper lang.l('note_delete_product', 'store', '', 'js') %}")) return false;
+        $('#check-all').iCheck('uncheck');
+        var data = new Array();
+        $('.grouping:checked').each(function(i){
+            data[i] = $(this).val();
+            $($(this).parents('tr').get(0)).remove();
+        });
+        if(data.length > 0){
+            $.ajax({
+                url: site_url + 'admin/store/ajax_delete_products/',
+                data: {product_ids: data},
+                type: "POST",
+                cache: false,
+                success: function(data) {
+                    error_object.show_error_block(data, 'success');
+                }
+            });
+        } else {
+            error_object.show_error_block('{% helper lang.l("error_no_products_to_change_group", "store", '', "js") %}', 'error');
+        }
+    });
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_products','store') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,2,4,5,6,7]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

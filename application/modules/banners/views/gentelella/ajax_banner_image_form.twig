@@ -1,0 +1,114 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_link', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+    {% if data.user_id == 0 %}
+        <input type="text" value="{{ data.link }}" name="link" class="form-control">
+    {% else %}
+        <input type="hidden" name="link" value="{{ data.link|e }}">{{ data.link }}
+    {% endif %}
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_alt_text', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+    {% if data.user_id == 0 %}
+        <input type="text" value="{{ data.alt_text|e }}" name="alt_text" class="form-control">
+    {% else %}
+        <input type="hidden" name="alt_text" value="{{ data.alt_text|e }}">{{ data.alt_text }}
+    {% endif %}
+    </div>
+</div>
+{% if data.user_id == 0 %}
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_number_of_clicks', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <input type="text" value="{{ data.number_of_clicks|e }}" name="number_of_clicks" class="form-control">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_number_of_views', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <input type="text" value="{{ data.number_of_views|e }}" name="number_of_views" class="form-control">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_expiration_date', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="checkbox-outer">
+        <div class="checkbox-inner">
+          <input type="checkbox" name="expiration_date_on" value="1" {% if data.expiration_date_on %}checked{% endif %} class="flat">
+        </div>
+        {% if (data.expiration_date != 0) and (data.expiration_date|date('U') > 0) %}
+          {% set expiration_date = data.expiration_date %}
+        {% else %}
+          {% set expiration_date = '' %}
+        {% endif %}
+        {% helper start.getCalendarInput('expiration_date', expiration_date, {id: "expiration_date"}) %}
+      </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_new_window', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <input type="checkbox" value="1" name="new_window"{% if data.new_window == 1 %}checked{% endif %} class="flat">
+    </div>
+</div>
+{% endif %}
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+        {% helper lang.l('field_image', 'banners') %}:
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+    {% if data.user_id == 0 %}
+        <input type="file" value="" name="banner_image_file" class="form-control">
+        {% if data.banner_image %}
+            <br>
+            <a href="{{ data.media.banner_image.file_url }}" id="view_banner" target="blank">
+                {% helper lang.l('btn_preview', 'start') %}
+            </a>&nbsp;&nbsp;
+            <input type="checkbox" name="banner_image_delete" value="1" id="banner_image_delete" class="flat">
+            <label for="banner_image_delete">
+                {% helper lang.l('field_image_delete', 'banners') %}
+            </label>
+        {% endif %}
+    {% else %}
+        <a href="{{ data.media.banner_image.file_url }}" id="view_banner" target="blank">
+            {% helper lang.l('btn_preview', 'start') %}
+        </a>
+    {% endif %}
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('input.flat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        }).on('ifClicked', function(event) {
+            $(this).trigger('click');
+        }).on('ifChanged', function(event) {
+            $(this).trigger('change');
+        }).on('ifChecked', function() {
+            $(this).attr('checked', 'checked');
+        }).on('ifUnchecked', function() {
+            $(this).removeAttr('checked');
+        }).on('ifDisabled', function() {
+            $(this).attr('disabled', 'disabled');
+        }).on('ifEnabled', function() {
+            $(this).removeAttr('disabled');
+        });
+
+        admin_banners.initImageForm();
+    });
+</script>

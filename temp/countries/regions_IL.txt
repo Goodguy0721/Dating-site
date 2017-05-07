@@ -1,0 +1,12 @@
+	1402	Tel Aviv	32.0808800	34.7805700	IL	05	0	0	Tel Aviv	Тель-Авив	Tel Aviv	Tel Aviv	Tel Aviv	Tel Aviv
+	1402	Ramat HaSharon	32.1461300	34.8394000	IL	05	0	0	Ramat HaSharon	Ramat HaSharon	Ramat HaSharon	Ramat HaSharon	Ramat HaSharon	Ramat HaSharon
+	1402	Ramat Gan	32.0822700	34.8106500	IL	05	0	0	Ramat Gan	Рамат-Ган	Ramat Gan	Ramat Gan	Ramat Gan	Ramat Gan
+	1402	Or Yehuda	32.0292300	34.8578800	IL	05	0	0	Or Yehuda	Or Yehuda	Or Yehuda	Or Yehuda	Or Yehuda	Or Yehuda
+	1402	Kefar Shemaryahu	32.1852900	34.8208200	IL	05	0	0	Kefar Shemaryahu	Kefar Shemaryahu	Kefar Shemaryahu	Kefar Shemaryahu	Kefar Shemaryahu	Kefar Shemaryahu
+	1402	H̱olon	32.0103400	34.7791800	IL	05	0	0	H̱olon	Холон	H̱olon	H̱olon	H̱olon	H̱olon
+	1402	Herzliyya	32.1662700	34.8253600	IL	05	0	0	Herzliyya	Герцлия	Herzliyya	Herzliyya	Herzliyya	Herzliyya
+	1402	Giv‘at Shemu’él	32.0781700	34.8485800	IL	05	0	0	Giv‘at Shemu’él	Giv‘at Shemu’él	Giv‘at Shemu’él	Giv‘at Shemu’él	Giv‘at Shemu’él	Giv‘at Shemu’él
+	1402	Giv‘atayim	32.0722500	34.8125300	IL	05	0	0	Giv‘atayim	Гиватаим	Giv‘atayim	Giv‘atayim	Giv‘atayim	Giv‘atayim
+	1402	Bené Beraq	32.0807400	34.8338000	IL	05	0	0	Bené Beraq	Bené Beraq	Bené Beraq	Bené Beraq	Bené Beraq	Bené Beraq
+	1402	Bat Yam	32.0237900	34.7518500	IL	05	0	0	Bat Yam	Бат-Ям	Bat Yam	Bat Yam	Bat Yam	Bat Yam
+	1402	Azor	32.0243000	34.8063200	IL	05	0	0	Azor	Azor	Azor	Azor	Azor	Azor

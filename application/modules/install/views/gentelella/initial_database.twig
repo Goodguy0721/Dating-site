@@ -1,0 +1,92 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+		<div class="x_content">
+			<form method="post" action="{{ data.action }}" data-parsley-validate class="form-horizontal form-label-left">
+					<div class="x_title">
+						<h4>Database settings</h4>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">
+								Permissions for config file:</label>
+							<div class="col-sm-9 col-xs-12">
+								{% if data.config_writeable %}
+									<font class="label label-success">file <b>'{{ data.config_file }}'</b> is writable</font>
+								{% else %}
+									<font class="label label-danger">Please change file permissions to 777 <b>'{{ data.config_file }}'</b></font>
+								{% endif %}
+							</div>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">DB host: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.db_host|e }}" name="db_host" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-3 col-sm-9">DB name: </label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" value="{{ data.db_name|e }}" name="db_name" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">DB user: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.db_user|e }}" name="db_user" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">DB password: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.db_password|e }}" name="db_password" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">DB prefix: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.db_prefix|e }}" name="db_prefix" class="form-control">
+							</div>
+					</div>
+
+					<div class="x_title">
+						<h3>Server info</h3>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">Server Name: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.server|e }}" name="server" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+							<label class="col-sm-3 col-xs-12">Site path: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.site_path|e }}" name="site_path" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12">Subfolder: </label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" value="{{ data.subfolder|e }}" name="subfolder" class="form-control">
+							</div>
+					</div>
+
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+			{% if data.config_writeable %}
+					<input type="submit" name="save_install_db" value="Next" class="btn btn-success">
+					<a href="{{ site_url }}admin/install/install_database" class="btn btn-primary">Refresh</a>
+			{% else %}
+					<input type="button" name="save_install_db" value="Next" class="btn btn-success" disabled>
+					<a href="{{ site_url }}admin/install/install_database" class="btn btn-primary">Refresh</a>
+			{% endif %}
+				</div>
+			</form>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+</div>
+
+{% include '@app/footer.twig' %}

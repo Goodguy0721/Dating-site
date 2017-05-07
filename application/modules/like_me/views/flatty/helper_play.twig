@@ -1,0 +1,52 @@
+
+    {% if user_data is not empty %}
+    	<div class="b-likeme__media" data-profile_id="{{ user_data.id }}">
+    		<div class="b-likeme__image">
+				<div id="congratulations" class="center"></div>
+				<div class="b-likeme_h100 pos-rel">
+					<img src="{{ user_data.media.user_logo.thumbs.grand }}"
+                         alt="{{ user_data.output_name }}"
+                         title="{{ user_data.output_name }}" class="img-responsive" />
+
+                    <div class="b-likeme__name">
+                        <a href="{% helper seo.seolink('users', 'view', user_data) %}" class="like_me-name">{{ user_data.output_name }}</a>,
+                        <span class="like_me-age">&nbsp;{{ user_data.age }}</span>
+                        {% if user_data.living_with %}
+                        <br><strong>Living with:</strong> {{ user_data.living_with_str }}
+                        {% endif %}
+                    </div>
+				</div>
+    		</div>
+
+            <div id="action-button" class="b-likeme__actions">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-xs-6">
+                            <a id="skip_button" href="javascript:void(0);" class="btn btn-primary btn-lg">
+                                <span class="fa fa-long-arrow-right"></span>
+                                {% helper lang.l('button_skip', 'like_me') %}
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a id="like_button" href="javascript:void(0);" class="btn btn-primary btn-lg">
+                                <i class="fa fa-heart"></i>
+                                {% helper lang.l('button_like', 'like_me') %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    	<div class="b-likeme__null">
+            <h2>
+                {% helper lang.l('empty_users_list', 'like_me') %}
+            </h2>
+    		<div>
+    			{% for key, item in play_more %}
+    				{% set field='field_play_more_' ~ key %}
+                    <input type="button" id="go-{{ key }}" value="{% helper lang.l(field, 'like_me') %}" class="btn btn-secondary">
+    			{% endfor %}
+    		</div>
+    	</div>
+    {% endif %}

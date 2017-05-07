@@ -1,0 +1,253 @@
+	1108	Gílofos	39.8505600	21.7886100	GR	ESYE13	0	0	Gílofos	Gílofos	Gílofos	Gílofos	Gílofos	Gílofos
+	1108	Tríkomon	39.9802800	21.3163900	GR	ESYE13	0	0	Tríkomon	Tríkomon	Tríkomon	Tríkomon	Tríkomon	Tríkomon
+	1108	Trikokkiá	39.8779800	21.6205100	GR	ESYE13	0	0	Trikokkiá	Trikokkiá	Trikokkiá	Trikokkiá	Trikokkiá	Trikokkiá
+	1108	Trifýllion	39.8880600	21.6386100	GR	ESYE13	0	0	Trifýllion	Trifýllion	Trifýllion	Trifýllion	Trifýllion	Trifýllion
+	1108	Sitarás	39.9475000	21.4038900	GR	ESYE13	0	0	Sitarás	Sitarás	Sitarás	Sitarás	Sitarás	Sitarás
+	1108	Priónia	39.8830600	21.3661100	GR	ESYE13	0	0	Priónia	Priónia	Priónia	Priónia	Priónia	Priónia
+	1108	Pigadítsa	39.9841700	21.4113900	GR	ESYE13	0	0	Pigadítsa	Pigadítsa	Pigadítsa	Pigadítsa	Pigadítsa	Pigadítsa
+	1108	Perivólion- PREVALE	39.9794400	21.1163900	GR	ESYE13	0	0	Perivólion- PREVALE	Perivólion- PREVALE	Perivólion- PREVALE	Perivólion- PREVALE	Perivólion- PREVALE	Perivólion- PREVALE
+	1108	Paróreion	39.9972200	21.3066700	GR	ESYE13	0	0	Paróreion	Paróreion	Paróreion	Paróreion	Paróreion	Paróreion
+	1108	Paraskeví	39.9066700	21.7622200	GR	ESYE13	0	0	Paraskeví	Paraskeví	Paraskeví	Paraskeví	Paraskeví	Paraskeví
+	1108	Panagía	39.9700000	21.7241700	GR	ESYE13	0	0	Panagía	Panagía	Panagía	Panagía	Panagía	Panagía
+	1108	Paliouriá	39.9519400	21.7200000	GR	ESYE13	0	0	Paliouriá	Paliouriá	Paliouriá	Paliouriá	Paliouriá	Paliouriá
+	1108	Neochórion	39.9897200	21.6816700	GR	ESYE13	0	0	Neochórion	Neochórion	Neochórion	Neochórion	Neochórion	Neochórion
+	1108	Monachítion	39.9675000	21.2730600	GR	ESYE13	0	0	Monachítion	Monachítion	Monachítion	Monachítion	Monachítion	Monachítion
+	1108	Mikrolívadon	39.9480600	21.2380600	GR	ESYE13	0	0	Mikrolívadon	Mikrolívadon	Mikrolívadon	Mikrolívadon	Mikrolívadon	Mikrolívadon
+	1108	Kranéa	39.8963900	21.2808300	GR	ESYE13	0	0	Kranéa	Kranéa	Kranéa	Kranéa	Kranéa	Kranéa
+	1108	Kipoureíon	39.9525000	21.3608300	GR	ESYE13	0	0	Kipoureíon	Kipoureíon	Kipoureíon	Kipoureíon	Kipoureíon	Kipoureíon
+	1108	Katákali	39.9011100	21.6786100	GR	ESYE13	0	0	Katákali	Katákali	Katákali	Katákali	Katákali	Katákali
+	1108	Kallithéa	39.8475000	21.3552800	GR	ESYE13	0	0	Kallithéa	Каллифея	Kallithéa	Kallithéa	Kallithéa	Kallithéa
+	1108	Karperón	39.9466700	21.6130600	GR	ESYE13	0	0	Karperón	Karperón	Karperón	Karperón	Karperón	Karperón
+	1108	Ánoixis	39.9105600	21.5655600	GR	ESYE13	0	0	Ánoixis	Ánoixis	Ánoixis	Ánoixis	Ánoixis	Ánoixis
+	1108	Eláti	39.9758300	21.8188900	GR	ESYE13	0	0	Eláti	Eláti	Eláti	Eláti	Eláti	Eláti
+	1108	Díporon	39.9866700	21.6488900	GR	ESYE13	0	0	Díporon	Díporon	Díporon	Díporon	Díporon	Díporon
+	1108	Diasellákion	39.8886100	21.7244400	GR	ESYE13	0	0	Diasellákion	Diasellákion	Diasellákion	Diasellákion	Diasellákion	Diasellákion
+	1108	Deskáti	39.9225000	21.8027800	GR	ESYE13	0	0	Deskáti	Deskáti	Deskáti	Deskáti	Deskáti	Deskáti
+	1108	Dasochórion	39.8780600	21.8097200	GR	ESYE13	0	0	Dasochórion	Dasochórion	Dasochórion	Dasochórion	Dasochórion	Dasochórion
+	1108	Ágios Geórgios	39.8680600	21.7572200	GR	ESYE13	0	0	Ágios Geórgios	Ágios Geórgios	Ágios Geórgios	Ágios Geórgios	Ágios Geórgios	Ágios Geórgios
+	1108	Avdélla	40.0000000	21.1333300	GR	ESYE13	0	0	Avdélla	Avdélla	Avdélla	Avdélla	Avdélla	Avdélla
+	1108	Dímitra	39.9433300	21.6561100	GR	ESYE13	0	0	Dímitra	Dímitra	Dímitra	Dímitra	Dímitra	Dímitra
+	1108	Anthrakiá	39.9205600	21.5119400	GR	ESYE13	0	0	Anthrakiá	Anthrakiá	Anthrakiá	Anthrakiá	Anthrakiá	Anthrakiá
+	1108	Aimilianós	39.9616700	21.4394400	GR	ESYE13	0	0	Aimilianós	Aimilianós	Aimilianós	Aimilianós	Aimilianós	Aimilianós
+	1108	Ágioi Theódoroi	39.9777800	21.4994400	GR	ESYE13	0	0	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi
+	1108	Zoúzouli	40.1749500	21.0296400	GR	ESYE13	0	0	Zoúzouli	Zoúzouli	Zoúzouli	Zoúzouli	Zoúzouli	Zoúzouli
+	1108	Zevgostási	40.3835700	21.1660300	GR	ESYE13	0	0	Zevgostási	Zevgostási	Zevgostási	Zevgostási	Zevgostási	Zevgostási
+	1108	Giouroúki	40.8584000	21.6049000	GR	ESYE13	0	0	Giouroúki	Giouroúki	Giouroúki	Giouroúki	Giouroúki	Giouroúki
+	1108	Gérmas	40.4550400	21.4290400	GR	ESYE13	0	0	Gérmas	Gérmas	Gérmas	Gérmas	Gérmas	Gérmas
+	1108	Xinó Neró	40.6902800	21.6232400	GR	ESYE13	0	0	Xinó Neró	Xinó Neró	Xinó Neró	Xinó Neró	Xinó Neró	Xinó Neró
+	1108	Vronteró	40.7416500	21.0175200	GR	ESYE13	0	0	Vronteró	Vronteró	Vronteró	Vronteró	Vronteró	Vronteró
+	1108	Vráchos	40.3520000	21.0901100	GR	ESYE13	0	0	Vráchos	Vráchos	Vráchos	Vráchos	Vráchos	Vráchos
+	1108	Votáni	40.4147300	21.3068300	GR	ESYE13	0	0	Votáni	Votáni	Votáni	Votáni	Votáni	Votáni
+	1108	Voskochórion	40.3763900	22.0033300	GR	ESYE13	0	0	Voskochórion	Voskochórion	Voskochórion	Voskochórion	Voskochórion	Voskochórion
+	1108	Vogatsikó	40.4143600	21.3801500	GR	ESYE13	0	0	Vogatsikó	Vogatsikó	Vogatsikó	Vogatsikó	Vogatsikó	Vogatsikó
+	1108	Vyssiniá	40.6221800	21.3123000	GR	ESYE13	0	0	Vyssiniá	Vyssiniá	Vyssiniá	Vyssiniá	Vyssiniá	Vyssiniá
+	1108	Vévi	40.7673300	21.6159500	GR	ESYE13	0	0	Vévi	Vévi	Vévi	Vévi	Vévi	Vévi
+	1108	Vérga	40.5520400	21.4463700	GR	ESYE13	0	0	Vérga	Vérga	Vérga	Vérga	Vérga	Vérga
+	1108	Velventós	40.2516700	22.0630600	GR	ESYE13	0	0	Velventós	Velventós	Velventós	Velventós	Velventós	Velventós
+	1108	Végora	40.6801500	21.7147100	GR	ESYE13	0	0	Végora	Végora	Végora	Végora	Végora	Végora
+	1108	Vatochóri	40.6704800	21.1480400	GR	ESYE13	0	0	Vatochóri	Vatochóri	Vatochóri	Vatochóri	Vatochóri	Vatochóri
+	1108	Vasileiáda	40.5644100	21.4303900	GR	ESYE13	0	0	Vasileiáda	Vasileiáda	Vasileiáda	Vasileiáda	Vasileiáda	Vasileiáda
+	1108	Varikó	40.5396700	21.5029200	GR	ESYE13	0	0	Varikó	Varikó	Varikó	Varikó	Varikó	Varikó
+	1108	Valtónera	40.6364300	21.5861400	GR	ESYE13	0	0	Valtónera	Valtónera	Valtónera	Valtónera	Valtónera	Valtónera
+	1108	Tsotílion	40.2666700	21.3166700	GR	ESYE13	0	0	Tsotílion	Tsotílion	Tsotílion	Tsotílion	Tsotílion	Tsotílion
+	1108	Tsákoni	40.4778000	21.1603300	GR	ESYE13	0	0	Tsákoni	Tsákoni	Tsákoni	Tsákoni	Tsákoni	Tsákoni
+	1108	Tropaioúchos	40.7404600	21.4412600	GR	ESYE13	0	0	Tropaioúchos	Tropaioúchos	Tropaioúchos	Tropaioúchos	Tropaioúchos	Tropaioúchos
+	1108	Tripótamos	40.8259100	21.5004000	GR	ESYE13	0	0	Tripótamos	Tripótamos	Tripótamos	Tripótamos	Tripótamos	Tripótamos
+	1108	Trílofo	40.4598300	20.8738900	GR	ESYE13	0	0	Trílofo	Trílofo	Trílofo	Trílofo	Trílofo	Trílofo
+	1108	Trígonon	40.7411400	21.2033200	GR	ESYE13	0	0	Trígonon	Trígonon	Trígonon	Trígonon	Trígonon	Trígonon
+	1108	Triandafilliá	40.6976200	21.3981100	GR	ESYE13	0	0	Triandafilliá	Triandafilliá	Triandafilliá	Triandafilliá	Triandafilliá	Triandafilliá
+	1108	Toichío	40.5833800	21.3045300	GR	ESYE13	0	0	Toichío	Toichío	Toichío	Toichío	Toichío	Toichío
+	1108	Stená	40.4353400	21.0408100	GR	ESYE13	0	0	Stená	Stená	Stená	Stená	Stená	Stená
+	1108	Stavropótamos	40.5452300	21.3931600	GR	ESYE13	0	0	Stavropótamos	Stavropótamos	Stavropótamos	Stavropótamos	Stavropótamos	Stavropótamos
+	1108	Spílaia	40.4044300	21.1774000	GR	ESYE13	0	0	Spílaia	Spílaia	Spílaia	Spílaia	Spílaia	Spílaia
+	1108	Sotíras	40.6740300	21.6652100	GR	ESYE13	0	0	Sotíras	Sotíras	Sotíras	Sotíras	Sotíras	Sotíras
+	1108	Smíxi	40.0572200	21.1238900	GR	ESYE13	0	0	Smíxi	Smíxi	Smíxi	Smíxi	Smíxi	Smíxi
+	1108	Agía Kyriakí	40.2780600	22.1097200	GR	ESYE13	0	0	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí
+	1108	Skopós	40.8676200	21.6429500	GR	ESYE13	0	0	Skopós	Skopós	Skopós	Skopós	Skopós	Skopós
+	1108	Skopiá	40.7634600	21.4103900	GR	ESYE13	0	0	Skopiá	Skopiá	Skopiá	Skopiá	Skopiá	Skopiá
+	1108	Sklíthro	40.6219200	21.5048000	GR	ESYE13	0	0	Sklíthro	Sklíthro	Sklíthro	Sklíthro	Sklíthro	Sklíthro
+	1108	Sitariá	40.7909400	21.5429000	GR	ESYE13	0	0	Sitariá	Sitariá	Sitariá	Sitariá	Sitariá	Sitariá
+	1108	Sidirochóri	40.5946600	21.2725100	GR	ESYE13	0	0	Sidirochóri	Sidirochóri	Sidirochóri	Sidirochóri	Sidirochóri	Sidirochóri
+	1108	Siátista	40.2619400	21.5441700	GR	ESYE13	0	0	Siátista	Siátista	Siátista	Siátista	Siátista	Siátista
+	1108	Sérvia	40.1797200	21.9944400	GR	ESYE13	0	0	Sérvia	Sérvia	Sérvia	Sérvia	Sérvia	Sérvia
+	1108	Samarína	40.1013900	21.0152800	GR	ESYE13	0	0	Samarína	Samarína	Samarína	Samarína	Samarína	Samarína
+	1108	Rodónas	40.6628800	21.6314000	GR	ESYE13	0	0	Rodónas	Rodónas	Rodónas	Rodónas	Rodónas	Rodónas
+	1108	Ptolemaḯda	40.5147200	21.6786100	GR	ESYE13	0	0	Ptolemaḯda	Ptolemaḯda	Ptolemaḯda	Ptolemaḯda	Ptolemaḯda	Ptolemaḯda
+	1108	Pteléa	40.4613900	21.0731200	GR	ESYE13	0	0	Pteléa	Pteléa	Pteléa	Pteléa	Pteléa	Pteléa
+	1108	Psarádes	40.8300700	21.0313500	GR	ESYE13	0	0	Psarádes	Psarádes	Psarádes	Psarádes	Psarádes	Psarádes
+	1108	Próti	40.8158200	21.3950200	GR	ESYE13	0	0	Próti	Próti	Próti	Próti	Próti	Próti
+	1108	Prásino	40.7246300	21.1972800	GR	ESYE13	0	0	Prásino	Prásino	Prásino	Prásino	Prásino	Prásino
+	1108	Poreiá	40.4885000	21.2124000	GR	ESYE13	0	0	Poreiá	Poreiá	Poreiá	Poreiá	Poreiá	Poreiá
+	1108	Polypótamo	40.7173800	21.3669800	GR	ESYE13	0	0	Polypótamo	Polypótamo	Polypótamo	Polypótamo	Polypótamo	Polypótamo
+	1108	Polyplátano	40.8777900	21.4069400	GR	ESYE13	0	0	Polyplátano	Polyplátano	Polyplátano	Polyplátano	Polyplátano	Polyplátano
+	1108	Polýmylos	40.3633300	22.0619400	GR	ESYE13	0	0	Polýmylos	Polýmylos	Polýmylos	Polýmylos	Polýmylos	Polýmylos
+	1108	Polykéraso	40.5934500	21.3655000	GR	ESYE13	0	0	Polykéraso	Polykéraso	Polykéraso	Polykéraso	Polykéraso	Polykéraso
+	1108	Polykárpi	40.5215400	21.3214400	GR	ESYE13	0	0	Polykárpi	Polykárpi	Polykárpi	Polykárpi	Polykárpi	Polykárpi
+	1108	Polýfyton	40.3163900	22.1144400	GR	ESYE13	0	0	Polýfyton	Polýfyton	Polýfyton	Polýfyton	Polýfyton	Polýfyton
+	1108	Polyánemo	40.5346900	21.0391200	GR	ESYE13	0	0	Polyánemo	Polyánemo	Polyánemo	Polyánemo	Polyánemo	Polyánemo
+	1108	Platý	40.8137400	21.1322900	GR	ESYE13	0	0	Platý	Platý	Platý	Platý	Platý	Platý
+	1108	Platanórrevma	40.1966700	22.0205600	GR	ESYE13	0	0	Platanórrevma	Platanórrevma	Platanórrevma	Platanórrevma	Platanórrevma	Platanórrevma
+	1108	Pisodhérion	40.7862000	21.2479900	GR	ESYE13	0	0	Pisodhérion	Pisodhérion	Pisodhérion	Pisodhérion	Pisodhérion	Pisodhérion
+	1108	Pýli	40.7764800	21.0388600	GR	ESYE13	0	0	Pýli	Pýli	Pýli	Pýli	Pýli	Pýli
+	1108	Péfkos	40.3890700	20.9535900	GR	ESYE13	0	0	Péfkos	Péfkos	Péfkos	Péfkos	Péfkos	Péfkos
+	1108	Pefkófyto	40.2958000	20.9593500	GR	ESYE13	0	0	Pefkófyto	Pefkófyto	Pefkófyto	Pefkófyto	Pefkófyto	Pefkófyto
+	1108	Petropouláki	40.3661000	21.1213900	GR	ESYE13	0	0	Petropouláki	Petropouláki	Petropouláki	Petropouláki	Petropouláki	Petropouláki
+	1108	Pétres	40.7288800	21.6729000	GR	ESYE13	0	0	Pétres	Pétres	Pétres	Pétres	Pétres	Pétres
+	1108	Pérasma	40.7528900	21.4676500	GR	ESYE13	0	0	Pérasma	Pérasma	Pérasma	Pérasma	Pérasma	Pérasma
+	1108	Pentávryso	40.4537600	21.1421600	GR	ESYE13	0	0	Pentávryso	Pentávryso	Pentávryso	Pentávryso	Pentávryso	Pentávryso
+	1108	Pelargós	40.6152400	21.7551900	GR	ESYE13	0	0	Pelargós	Pelargós	Pelargós	Pelargós	Pelargós	Pelargós
+	1108	Pedinó	40.6597800	21.5885800	GR	ESYE13	0	0	Pedinó	Pedinó	Pedinó	Pedinó	Pedinó	Pedinó
+	1108	Paróri	40.8599700	21.3680200	GR	ESYE13	0	0	Paróri	Paróri	Paróri	Paróri	Paróri	Paróri
+	1108	Pappagiánnis	40.8386600	21.4979300	GR	ESYE13	0	0	Pappagiánnis	Pappagiánnis	Pappagiánnis	Pappagiánnis	Pappagiánnis	Pappagiánnis
+	1108	Palaístra	40.8027800	21.5168500	GR	ESYE13	0	0	Palaístra	Palaístra	Palaístra	Palaístra	Palaístra	Palaístra
+	1108	Palaiográtsanon	40.2152800	22.0658300	GR	ESYE13	0	0	Palaiográtsanon	Palaiográtsanon	Palaiográtsanon	Palaiográtsanon	Palaiográtsanon	Palaiográtsanon
+	1108	Oxyá	40.7402300	21.1318600	GR	ESYE13	0	0	Oxyá	Oxyá	Oxyá	Oxyá	Oxyá	Oxyá
+	1108	Oxyá	40.6093800	21.3498700	GR	ESYE13	0	0	Oxyá	Oxyá	Oxyá	Oxyá	Oxyá	Oxyá
+	1108	Omorfokklisiá	40.4298100	21.1199200	GR	ESYE13	0	0	Omorfokklisiá	Omorfokklisiá	Omorfokklisiá	Omorfokklisiá	Omorfokklisiá	Omorfokklisiá
+	1108	Oinói	40.5165600	21.0844300	GR	ESYE13	0	0	Oinói	Oinói	Oinói	Oinói	Oinói	Oinói
+	1108	Nóstimo	40.3875200	21.2046400	GR	ESYE13	0	0	Nóstimo	Nóstimo	Nóstimo	Nóstimo	Nóstimo	Nóstimo
+	1108	Nymfaío	40.6443300	21.4943800	GR	ESYE13	0	0	Nymfaío	Nymfaío	Nymfaío	Nymfaío	Nymfaío	Nymfaío
+	1108	Níki	40.9092000	21.4203800	GR	ESYE13	0	0	Níki	Níki	Níki	Níki	Níki	Níki
+	1108	Níki	40.3789800	21.1053800	GR	ESYE13	0	0	Níki	Níki	Níki	Níki	Níki	Níki
+	1108	Nestório	40.4127800	21.0622200	GR	ESYE13	0	0	Nestório	Nestório	Nestório	Nestório	Nestório	Nestório
+	1108	Néos Káfkasos	40.8906200	21.4729700	GR	ESYE13	0	0	Néos Káfkasos	Néos Káfkasos	Néos Káfkasos	Néos Káfkasos	Néos Káfkasos	Néos Káfkasos
+	1108	Néo Kostarázi	40.4350300	21.3316100	GR	ESYE13	0	0	Néo Kostarázi	Néo Kostarázi	Néo Kostarázi	Néo Kostarázi	Néo Kostarázi	Néo Kostarázi
+	1108	Neochoráki	40.8283800	21.5422400	GR	ESYE13	0	0	Neochoráki	Neochoráki	Neochoráki	Neochoráki	Neochoráki	Neochoráki
+	1108	Milítsa	40.4533700	21.3301800	GR	ESYE13	0	0	Milítsa	Milítsa	Milítsa	Milítsa	Milítsa	Milítsa
+	1108	Mileón	40.8257000	21.1344300	GR	ESYE13	0	0	Mileón	Mileón	Mileón	Mileón	Mileón	Mileón
+	1108	Mikrolímni	40.7451300	21.1152400	GR	ESYE13	0	0	Mikrolímni	Mikrolímni	Mikrolímni	Mikrolímni	Mikrolímni	Mikrolímni
+	1108	Metamórfosi	40.5647600	21.3202200	GR	ESYE13	0	0	Metamórfosi	Metamórfosi	Metamórfosi	Metamórfosi	Metamórfosi	Metamórfosi
+	1108	Mesóvracho	40.4654600	20.9878300	GR	ESYE13	0	0	Mesóvracho	Mesóvracho	Mesóvracho	Mesóvracho	Mesóvracho	Mesóvracho
+	1108	Mesopotamía	40.5025200	21.1611000	GR	ESYE13	0	0	Mesopotamía	Mesopotamía	Mesopotamía	Mesopotamía	Mesopotamía	Mesopotamía
+	1108	Mesonísion	40.7916500	21.4627400	GR	ESYE13	0	0	Mesonísion	Mesonísion	Mesonísion	Mesonísion	Mesonísion	Mesonísion
+	1108	Mesochóri	40.8845200	21.5120300	GR	ESYE13	0	0	Mesochóri	Mesochóri	Mesochóri	Mesochóri	Mesochóri	Mesochóri
+	1108	Mesókampos	40.8945200	21.5133500	GR	ESYE13	0	0	Mesókampos	Mesókampos	Mesókampos	Mesókampos	Mesókampos	Mesókampos
+	1108	Melíti	40.8343400	21.5842600	GR	ESYE13	0	0	Melíti	Melíti	Melíti	Melíti	Melíti	Melíti
+	1108	Melissótopos	40.5777400	21.3979100	GR	ESYE13	0	0	Melissótopos	Melissótopos	Melissótopos	Melissótopos	Melissótopos	Melissótopos
+	1108	Melás	40.7035500	21.2645400	GR	ESYE13	0	0	Melás	Melás	Melás	Melás	Melás	Melás
+	1108	Melánthio	40.3956800	21.1290900	GR	ESYE13	0	0	Melánthio	Melánthio	Melánthio	Melánthio	Melánthio	Melánthio
+	1108	Mavrochóri	40.5122400	21.3203800	GR	ESYE13	0	0	Mavrochóri	Mavrochóri	Mavrochóri	Mavrochóri	Mavrochóri	Mavrochóri
+	1108	Mavrókampos	40.6280100	21.2331200	GR	ESYE13	0	0	Mavrókampos	Mavrókampos	Mavrókampos	Mavrókampos	Mavrókampos	Mavrókampos
+	1108	Marína	40.8623800	21.4931900	GR	ESYE13	0	0	Marína	Marína	Marína	Marína	Marína	Marína
+	1108	Maniákoi	40.5006400	21.2444600	GR	ESYE13	0	0	Maniákoi	Maniákoi	Maniákoi	Maniákoi	Maniákoi	Maniákoi
+	1108	Maniáki	40.6917900	21.7748800	GR	ESYE13	0	0	Maniáki	Maniáki	Maniáki	Maniáki	Maniáki	Maniáki
+	1108	Makrochóri	40.6734300	21.2631700	GR	ESYE13	0	0	Makrochóri	Makrochóri	Makrochóri	Makrochóri	Makrochóri	Makrochóri
+	1108	Lófoi	40.7953600	21.5878300	GR	ESYE13	0	0	Lófoi	Lófoi	Lófoi	Lófoi	Lófoi	Lófoi
+	1108	Livadherón	40.0333300	21.9333300	GR	ESYE13	0	0	Livadherón	Livadherón	Livadherón	Livadherón	Livadherón	Livadherón
+	1108	Lithiá	40.5207200	21.4100200	GR	ESYE13	0	0	Lithiá	Lithiá	Lithiá	Lithiá	Lithiá	Lithiá
+	1108	Limnochóri	40.6225500	21.5567600	GR	ESYE13	0	0	Limnochóri	Limnochóri	Limnochóri	Limnochóri	Limnochóri	Limnochóri
+	1108	Levkón	40.7899000	21.1401000	GR	ESYE13	0	0	Levkón	Levkón	Levkón	Levkón	Levkón	Levkón
+	1108	Leptokaryés	40.7464500	21.5092700	GR	ESYE13	0	0	Leptokaryés	Leptokaryés	Leptokaryés	Leptokaryés	Leptokaryés	Leptokaryés
+	1108	Lágka	40.3491400	21.0811500	GR	ESYE13	0	0	Lágka	Lágka	Lágka	Lágka	Lágka	Lágka
+	1108	Levaía	40.6453100	21.7031300	GR	ESYE13	0	0	Levaía	Levaía	Levaía	Levaía	Levaía	Levaía
+	1108	Lachanókipoi	40.4471900	21.2143900	GR	ESYE13	0	0	Lachanókipoi	Lachanókipoi	Lachanókipoi	Lachanókipoi	Lachanókipoi	Lachanókipoi
+	1108	Laimós	40.8362800	21.1406100	GR	ESYE13	0	0	Laimós	Laimós	Laimós	Laimós	Laimós	Laimós
+	1108	Krókos	40.2666700	21.8166700	GR	ESYE13	0	0	Krókos	Krókos	Krókos	Krókos	Krókos	Krókos
+	1108	Krystallopigí	40.6366000	21.0847700	GR	ESYE13	0	0	Krystallopigí	Krystallopigí	Krystallopigí	Krystallopigí	Krystallopigí	Krystallopigí
+	1108	Krateró	40.8561500	21.3121100	GR	ESYE13	0	0	Krateró	Krateró	Krateró	Krateró	Krateró	Krateró
+	1108	Kranochóri	40.4574800	21.0990600	GR	ESYE13	0	0	Kranochóri	Kranochóri	Kranochóri	Kranochóri	Kranochóri	Kranochóri
+	1108	Kraniónas	40.6194800	21.2135400	GR	ESYE13	0	0	Kraniónas	Kraniónas	Kraniónas	Kraniónas	Kraniónas	Kraniónas
+	1108	Kozáni	40.3011100	21.7863900	GR	ESYE13	0	0	Kozáni	Козани	Kozáni	Kozáni	Kozáni	Kozáni
+	1108	Kótas	40.6933200	21.1705400	GR	ESYE13	0	0	Kótas	Kótas	Kótas	Kótas	Kótas	Kótas
+	1108	Koromiliá	40.5355300	21.1820900	GR	ESYE13	0	0	Koromiliá	Koromiliá	Koromiliá	Koromiliá	Koromiliá	Koromiliá
+	1108	Korisós	40.5049000	21.3770300	GR	ESYE13	0	0	Korisós	Korisós	Korisós	Korisós	Korisós	Korisós
+	1108	Komninádes	40.5186600	20.9970900	GR	ESYE13	0	0	Komninádes	Komninádes	Komninádes	Komninádes	Komninádes	Komninádes
+	1108	Komniná	40.6000000	21.7833300	GR	ESYE13	0	0	Komniná	Komniná	Komniná	Komniná	Komniná	Komniná
+	1108	Kolokynthoú	40.5050300	21.2111000	GR	ESYE13	0	0	Kolokynthoú	Kolokynthoú	Kolokynthoú	Kolokynthoú	Kolokynthoú	Kolokynthoú
+	1108	Kolchikí	40.7390000	21.4835200	GR	ESYE13	0	0	Kolchikí	Kolchikí	Kolchikí	Kolchikí	Kolchikí	Kolchikí
+	1108	Koíla	40.3333300	21.7833300	GR	ESYE13	0	0	Koíla	Koíla	Koíla	Koíla	Koíla	Koíla
+	1108	Klítos	40.4333300	21.8666700	GR	ESYE13	0	0	Klítos	Klítos	Klítos	Klítos	Klítos	Klítos
+	1108	Kleisoúra	40.5355100	21.4697700	GR	ESYE13	0	0	Kleisoúra	Kleisoúra	Kleisoúra	Kleisoúra	Kleisoúra	Kleisoúra
+	1108	Kleidí	40.7484400	21.6403500	GR	ESYE13	0	0	Kleidí	Kleidí	Kleidí	Kleidí	Kleidí	Kleidí
+	1108	Kladhorrákhi	40.8267300	21.3958700	GR	ESYE13	0	0	Kladhorrákhi	Kladhorrákhi	Kladhorrákhi	Kladhorrákhi	Kladhorrákhi	Kladhorrákhi
+	1108	Kypséli	40.2885800	21.0292300	GR	ESYE13	0	0	Kypséli	Kypséli	Kypséli	Kypséli	Kypséli	Kypséli
+	1108	Chrysí	40.2744700	20.9749000	GR	ESYE13	0	0	Chrysí	Chrysí	Chrysí	Chrysí	Chrysí	Chrysí
+	1108	Chionáto	40.4767200	21.0149300	GR	ESYE13	0	0	Chionáto	Chionáto	Chionáto	Chionáto	Chionáto	Chionáto
+	1108	Chiliódendro	40.4872300	21.1913600	GR	ESYE13	0	0	Chiliódendro	Chiliódendro	Chiliódendro	Chiliódendro	Chiliódendro	Chiliódendro
+	1108	Chálara	40.6455200	21.2329400	GR	ESYE13	0	0	Chálara	Chálara	Chálara	Chálara	Chálara	Chálara
+	1108	Kélli	40.7866700	21.6889500	GR	ESYE13	0	0	Kélli	Kélli	Kélli	Kélli	Kélli	Kélli
+	1108	Kefalári	40.5659800	21.2704800	GR	ESYE13	0	0	Kefalári	Kefalári	Kefalári	Kefalári	Kefalári	Kefalári
+	1108	Káto Pteriá	40.5112800	21.0462400	GR	ESYE13	0	0	Káto Pteriá	Káto Pteriá	Káto Pteriá	Káto Pteriá	Káto Pteriá	Káto Pteriá
+	1108	Léfki	40.5209300	21.2077900	GR	ESYE13	0	0	Léfki	Léfki	Léfki	Léfki	Léfki	Léfki
+	1108	Káto Kleinés	40.8489900	21.3973500	GR	ESYE13	0	0	Káto Kleinés	Káto Kleinés	Káto Kleinés	Káto Kleinés	Káto Kleinés	Káto Kleinés
+	1108	Káto Kalliníki	40.8646500	21.4663000	GR	ESYE13	0	0	Káto Kalliníki	Káto Kalliníki	Káto Kalliníki	Káto Kalliníki	Káto Kalliníki	Káto Kalliníki
+	1108	Katafýgion	40.2544400	22.1391700	GR	ESYE13	0	0	Katafýgion	Katafýgion	Katafýgion	Katafýgion	Katafýgion	Katafýgion
+	1108	Kastoria	40.5216500	21.2634100	GR	ESYE13	0	0	Kastoria	Kastoria	Kastoria	Kastoria	Kastoria	Kastoria
+	1108	Kastanófyto	40.3622700	21.1564400	GR	ESYE13	0	0	Kastanófyto	Kastanófyto	Kastanófyto	Kastanófyto	Kastanófyto	Kastanófyto
+	1108	Kastaniá	40.1700000	22.0188900	GR	ESYE13	0	0	Kastaniá	Kastaniá	Kastaniá	Kastaniá	Kastaniá	Kastaniá
+	1108	Kariaí	40.7612400	21.1490200	GR	ESYE13	0	0	Kariaí	Kariaí	Kariaí	Kariaí	Kariaí	Kariaí
+	1108	Símos Ioannídis	40.7786200	21.3580300	GR	ESYE13	0	0	Símos Ioannídis	Símos Ioannídis	Símos Ioannídis	Símos Ioannídis	Símos Ioannídis	Símos Ioannídis
+	1108	Vélos	40.3798900	21.2947500	GR	ESYE13	0	0	Vélos	Vélos	Vélos	Vélos	Vélos	Vélos
+	1108	Kalochóri	40.4858800	21.1337300	GR	ESYE13	0	0	Kalochóri	Kalochóri	Kalochóri	Kalochóri	Kalochóri	Kalochóri
+	1108	Kallithéa	40.7987400	21.1545200	GR	ESYE13	0	0	Kallithéa	Kallithéa	Kallithéa	Kallithéa	Kallithéa	Kallithéa
+	1108	Itéa	40.8358200	21.5135100	GR	ESYE13	0	0	Itéa	Itéa	Itéa	Itéa	Itéa	Itéa
+	1108	Léchovo	40.5844200	21.4921800	GR	ESYE13	0	0	Léchovo	Léchovo	Léchovo	Léchovo	Léchovo	Léchovo
+	1108	Ypsiló	40.4399900	21.1604400	GR	ESYE13	0	0	Ypsiló	Ypsiló	Ypsiló	Ypsiló	Ypsiló	Ypsiló
+	1108	Ímera	40.2963900	22.0336100	GR	ESYE13	0	0	Ímera	Ímera	Ímera	Ímera	Ímera	Ímera
+	1108	Ieropigí	40.5788600	21.0811000	GR	ESYE13	0	0	Ieropigí	Ieropigí	Ieropigí	Ieropigí	Ieropigí	Ieropigí
+	1108	Ydroússa	40.7217000	21.4610800	GR	ESYE13	0	0	Ydroússa	Ydroússa	Ydroússa	Ydroússa	Ydroússa	Ydroússa
+	1108	Grevená	40.0845200	21.4274400	GR	ESYE13	0	0	Grevená	Grevená	Grevená	Grevená	Grevená	Grevená
+	1108	Galatiní	40.3166700	21.5500000	GR	ESYE13	0	0	Galatiní	Galatiní	Galatiní	Galatiní	Galatiní	Galatiní
+	1108	Foteiní	40.5414900	21.3410200	GR	ESYE13	0	0	Foteiní	Foteiní	Foteiní	Foteiní	Foteiní	Foteiní
+	1108	Flórina	40.7819700	21.4098100	GR	ESYE13	0	0	Flórina	Flórina	Flórina	Flórina	Flórina	Flórina
+	1108	Flámpouro	40.7059500	21.5220500	GR	ESYE13	0	0	Flámpouro	Flámpouro	Flámpouro	Flámpouro	Flámpouro	Flámpouro
+	1108	Filótas	40.6252000	21.7085100	GR	ESYE13	0	0	Filótas	Filótas	Filótas	Filótas	Filótas	Filótas
+	1108	Farángi	40.7124300	21.7882900	GR	ESYE13	0	0	Farángi	Farángi	Farángi	Farángi	Farángi	Farángi
+	1108	Fanós	40.6735800	21.6018000	GR	ESYE13	0	0	Fanós	Fanós	Fanós	Fanós	Fanós	Fanós
+	1108	Ethnikó	40.8705400	21.3550600	GR	ESYE13	0	0	Ethnikó	Ethnikó	Ethnikó	Ethnikó	Ethnikó	Ethnikó
+	1108	Erátira	40.3500000	21.5166700	GR	ESYE13	0	0	Erátira	Erátira	Erátira	Erátira	Erátira	Erátira
+	1108	Eptachóri	40.2222400	21.0213000	GR	ESYE13	0	0	Eptachóri	Eptachóri	Eptachóri	Eptachóri	Eptachóri	Eptachóri
+	1108	Embórion	40.4833300	21.5500000	GR	ESYE13	0	0	Embórion	Embórion	Embórion	Embórion	Embórion	Embórion
+	1108	Drosopigí	40.6892300	21.4542800	GR	ESYE13	0	0	Drosopigí	Drosopigí	Drosopigí	Drosopigí	Drosopigí	Drosopigí
+	1108	Dispilió	40.4814800	21.2878600	GR	ESYE13	0	0	Dispilió	Dispilió	Dispilió	Dispilió	Dispilió	Dispilió
+	1108	Dipotamiá	40.4880800	20.9866200	GR	ESYE13	0	0	Dipotamiá	Dipotamiá	Dipotamiá	Dipotamiá	Dipotamiá	Dipotamiá
+	1108	Dendrochóri	40.5810800	21.1459500	GR	ESYE13	0	0	Dendrochóri	Dendrochóri	Dendrochóri	Dendrochóri	Dendrochóri	Dendrochóri
+	1108	Ágios Germanós	40.8387500	21.1585500	GR	ESYE13	0	0	Ágios Germanós	Ágios Germanós	Ágios Germanós	Ágios Germanós	Ágios Germanós	Ágios Germanós
+	1108	Ágios Vartholomaíos	40.7607600	21.5278200	GR	ESYE13	0	0	Ágios Vartholomaíos	Ágios Vartholomaíos	Ágios Vartholomaíos	Ágios Vartholomaíos	Ágios Vartholomaíos	Ágios Vartholomaíos
+	1108	Ágios Panteleímonas	40.7239800	21.7482500	GR	ESYE13	0	0	Ágios Panteleímonas	Ágios Panteleímonas	Ágios Panteleímonas	Ágios Panteleímonas	Ágios Panteleímonas	Ágios Panteleímonas
+	1108	Ágios Nikólaos Korisoú	40.5001600	21.3969800	GR	ESYE13	0	0	Ágios Nikólaos Korisoú	Ágios Nikólaos Korisoú	Ágios Nikólaos Korisoú	Ágios Nikólaos Korisoú	Ágios Nikólaos Korisoú	Ágios Nikólaos Korisoú
+	1108	Ágios Ilías	40.3605700	21.1882100	GR	ESYE13	0	0	Ágios Ilías	Ágios Ilías	Ágios Ilías	Ágios Ilías	Ágios Ilías	Ágios Ilías
+	1108	Ágios Antónios	40.6353500	21.2751200	GR	ESYE13	0	0	Ágios Antónios	Ágios Antónios	Ágios Antónios	Ágios Antónios	Ágios Antónios	Ágios Antónios
+	1108	Ágios Achílleios	40.7884100	21.0788500	GR	ESYE13	0	0	Ágios Achílleios	Ágios Achílleios	Ágios Achílleios	Ágios Achílleios	Ágios Achílleios	Ágios Achílleios
+	1108	Agía Paraskeví	40.8791700	21.3797600	GR	ESYE13	0	0	Agía Paraskeví	Agía Paraskeví	Agía Paraskeví	Agía Paraskeví	Agía Paraskeví	Agía Paraskeví
+	1108	Agía Kyriakí	40.5248500	21.1203200	GR	ESYE13	0	0	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí	Agía Kyriakí
+	1108	Agía Ánna	40.4364100	21.0833000	GR	ESYE13	0	0	Agía Ánna	Agía Ánna	Agía Ánna	Agía Ánna	Agía Ánna	Agía Ánna
+	1108	Avgí	40.4491300	21.1754100	GR	ESYE13	0	0	Avgí	Avgí	Avgí	Avgí	Avgí	Avgí
+	1108	Avgí	40.3441700	22.0413900	GR	ESYE13	0	0	Avgí	Avgí	Avgí	Avgí	Avgí	Avgí
+	1108	Ávra	40.2841700	22.0238900	GR	ESYE13	0	0	Ávra	Ávra	Ávra	Ávra	Ávra	Ávra
+	1108	Atrapós	40.7242700	21.4054600	GR	ESYE13	0	0	Atrapós	Atrapós	Atrapós	Atrapós	Atrapós	Atrapós
+	1108	Asprógeia	40.6134100	21.4695400	GR	ESYE13	0	0	Asprógeia	Asprógeia	Asprógeia	Asprógeia	Asprógeia	Asprógeia
+	1108	Aspronéri	40.4257000	21.2354000	GR	ESYE13	0	0	Aspronéri	Aspronéri	Aspronéri	Aspronéri	Aspronéri	Aspronéri
+	1108	Asprokklisiá	40.4062300	21.2563600	GR	ESYE13	0	0	Asprokklisiá	Asprokklisiá	Asprokklisiá	Asprokklisiá	Asprokklisiá	Asprokklisiá
+	1108	Armenokhórion	40.8025700	21.4608500	GR	ESYE13	0	0	Armenokhórion	Armenokhórion	Armenokhórion	Armenokhórion	Armenokhórion	Armenokhórion
+	1108	Argos Orestiko	40.4535400	21.2588900	GR	ESYE13	0	0	Argos Orestiko	Argos Orestiko	Argos Orestiko	Argos Orestiko	Argos Orestiko	Argos Orestiko
+	1108	Árdhassa	40.4833300	21.6333300	GR	ESYE13	0	0	Árdhassa	Árdhassa	Árdhassa	Árdhassa	Árdhassa	Árdhassa
+	1108	Apóskepos	40.5590900	21.2510200	GR	ESYE13	0	0	Apóskepos	Apóskepos	Apóskepos	Apóskepos	Apóskepos	Apóskepos
+	1108	Anthiró	40.3691100	21.1984900	GR	ESYE13	0	0	Anthiró	Anthiró	Anthiró	Anthiró	Anthiró	Anthiró
+	1108	Pteriá	40.5054800	21.0545200	GR	ESYE13	0	0	Pteriá	Pteriá	Pteriá	Pteriá	Pteriá	Pteriá
+	1108	Áno Melás	40.7150800	21.2655300	GR	ESYE13	0	0	Áno Melás	Áno Melás	Áno Melás	Áno Melás	Áno Melás	Áno Melás
+	1108	Áno Kómi	40.2333300	21.8333300	GR	ESYE13	0	0	Áno Kómi	Áno Kómi	Áno Kómi	Áno Kómi	Áno Kómi	Áno Kómi
+	1108	Áno Kleinés	40.8455700	21.3821400	GR	ESYE13	0	0	Áno Kleinés	Áno Kleinés	Áno Kleinés	Áno Kleinés	Áno Kleinés	Áno Kleinés
+	1108	Áno Kalliníki	40.8602800	21.4525400	GR	ESYE13	0	0	Áno Kalliníki	Áno Kalliníki	Áno Kalliníki	Áno Kalliníki	Áno Kalliníki	Áno Kalliníki
+	1108	Áno Ydroússa	40.7002900	21.4758400	GR	ESYE13	0	0	Áno Ydroússa	Áno Ydroússa	Áno Ydroússa	Áno Ydroússa	Áno Ydroússa	Áno Ydroússa
+	1108	Antígonos	40.6398500	21.7617100	GR	ESYE13	0	0	Antígonos	Antígonos	Antígonos	Antígonos	Antígonos	Antígonos
+	1108	Andartikón	40.7589000	21.2071300	GR	ESYE13	0	0	Andartikón	Andartikón	Andartikón	Andartikón	Andartikón	Andartikón
+	1108	Anatolikón	40.5500000	21.7500000	GR	ESYE13	0	0	Anatolikón	Anatolikón	Anatolikón	Anatolikón	Anatolikón	Anatolikón
+	1108	Anárgyroi	40.6026200	21.6116900	GR	ESYE13	0	0	Anárgyroi	Anárgyroi	Anárgyroi	Anárgyroi	Anárgyroi	Anárgyroi
+	1108	Anarrákhi	40.4833300	21.5666700	GR	ESYE13	0	0	Anarrákhi	Anarrákhi	Anarrákhi	Anarrákhi	Anarrákhi	Anarrákhi
+	1108	Ammoudára	40.4234000	21.2776100	GR	ESYE13	0	0	Ammoudára	Ammoudára	Ammoudára	Ammoudára	Ammoudára	Ammoudára
+	1108	Ammochóri	40.7820300	21.4845800	GR	ESYE13	0	0	Ammochóri	Ammochóri	Ammochóri	Ammochóri	Ammochóri	Ammochóri
+	1108	Amýntaio	40.6896700	21.6797400	GR	ESYE13	0	0	Amýntaio	Amýntaio	Amýntaio	Amýntaio	Amýntaio	Amýntaio
+	1108	Ampelókipoi	40.4658200	21.3100100	GR	ESYE13	0	0	Ampelókipoi	Ampelókipoi	Ampelókipoi	Ampelókipoi	Ampelókipoi	Ampelókipoi
+	1108	Ampelochóri	40.4299400	21.2607600	GR	ESYE13	0	0	Ampelochóri	Ampelochóri	Ampelochóri	Ampelochóri	Ampelochóri	Ampelochóri
+	1108	Álona	40.7768400	21.3032600	GR	ESYE13	0	0	Álona	Álona	Álona	Álona	Álona	Álona
+	1108	Akrítas	40.8144900	21.3023000	GR	ESYE13	0	0	Akrítas	Akrítas	Akrítas	Akrítas	Akrítas	Akrítas
+	1108	Akriní	40.4333300	21.9000000	GR	ESYE13	0	0	Akriní	Akriní	Akriní	Akriní	Akriní	Akriní
+	1108	Achláda	40.8619800	21.6138300	GR	ESYE13	0	0	Achláda	Achláda	Achláda	Achláda	Achláda	Achláda
+	1108	Aianí	40.1666700	21.8166700	GR	ESYE13	0	0	Aianí	Aianí	Aianí	Aianí	Aianí	Aianí
+	1108	Aetós	40.6612100	21.5539500	GR	ESYE13	0	0	Aetós	Aetós	Aetós	Aetós	Aetós	Aetós
+	1108	Káto Pteléa	40.4664200	21.0731200	GR	ESYE13	0	0	Káto Pteléa	Káto Pteléa	Káto Pteléa	Káto Pteléa	Káto Pteléa	Káto Pteléa
+	1108	Néa Kotýli	40.3434100	21.0309600	GR	ESYE13	0	0	Néa Kotýli	Néa Kotýli	Néa Kotýli	Néa Kotýli	Néa Kotýli	Néa Kotýli
+	1108	Levéntis	40.3597200	22.0316700	GR	ESYE13	0	0	Levéntis	Levéntis	Levéntis	Levéntis	Levéntis	Levéntis
+	1108	Ágioi Theódoroi	40.3708300	22.0205600	GR	ESYE13	0	0	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi	Ágioi Theódoroi
+	1108	Grámos	40.3914000	20.8359700	GR	ESYE13	0	0	Grámos	Grámos	Grámos	Grámos	Grámos	Grámos

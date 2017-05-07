@@ -1,0 +1,6 @@
+	2408	Waspam	14.7418900	-83.9717000	NI	17	0	0	Waspam	Waspam	Waspam	Waspam	Waspam	Waspam
+	2408	Waslala	13.2333300	-85.3833300	NI	17	0	0	Waslala	Waslala	Waslala	Waslala	Waslala	Waslala
+	2408	Siuna	13.7332100	-84.7772500	NI	17	0	0	Siuna	Siuna	Siuna	Siuna	Siuna	Siuna
+	2408	Puerto Cabezas	14.0350700	-83.3888200	NI	17	0	0	Puerto Cabezas	Пуэрто-Кабесас	Puerto Cabezas	Puerto Cabezas	Puerto Cabezas	Puerto Cabezas
+	2408	Prinzapolka	13.4070800	-83.5645200	NI	17	0	0	Prinzapolka	Prinzapolka	Prinzapolka	Prinzapolka	Prinzapolka	Prinzapolka
+	2408	Bonanza	14.0288500	-84.5910300	NI	17	0	0	Bonanza	Bonanza	Bonanza	Bonanza	Bonanza	Bonanza

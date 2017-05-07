@@ -1,0 +1,9 @@
+	2302	Tmourghout	33.9065000	-4.0269600	MA	58	0	0	Tmourghout	Tmourghout	Tmourghout	Tmourghout	Tmourghout	Tmourghout
+	2302	Tirhanimîne	35.2361900	-3.9545300	MA	58	0	0	Tirhanimîne	Tirhanimîne	Tirhanimîne	Tirhanimîne	Tirhanimîne	Tirhanimîne
+	2302	Taza	34.2100000	-4.0100000	MA	58	0	0	Taza	Таза	Taza	Taza	Taza	Taza
+	2302	Taounate	34.5366100	-4.6400900	MA	58	0	0	Taounate	Таунат	Taounate	Taounate	Taounate	Taounate
+	2302	Tahla	34.0496500	-4.4216200	MA	58	0	0	Tahla	Tahla	Tahla	Tahla	Tahla	Tahla
+	2302	Imzoûrene	35.1500000	-3.8600000	MA	58	0	0	Imzoûrene	Imzoûrene	Imzoûrene	Imzoûrene	Imzoûrene	Imzoûrene
+	2302	Guercif	34.2256800	-3.3536100	MA	58	0	0	Guercif	Guercif	Guercif	Guercif	Guercif	Guercif
+	2302	Imzouren	35.1463700	-3.8506300	MA	58	0	0	Imzouren	Imzouren	Imzouren	Imzouren	Imzouren	Imzouren
+	2302	Al Hoceïma	35.2516500	-3.9372300	MA	58	0	0	Al Hoceïma	Al Hoceïma	Al Hoceïma	Al Hoceïma	Al Hoceïma	Al Hoceïma

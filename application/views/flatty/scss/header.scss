@@ -1,0 +1,325 @@
+header{
+    background-color: $header_bg;	
+    /*height: 45px;*/
+    height:100px;
+    padding-top:25px;
+}
+
+.main-nav{
+    float: $left;
+    margin: 0;
+}
+.link-open-menu {
+    background-color: $header_bg;
+    color: #ffffff;
+}
+
+.link-open-menu:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.main-nav li{
+    float: $left;
+    padding: 8px 12px;
+    font-size: 20px;
+}
+
+.main-menu {
+    margin-top: -20px;
+}
+
+.main-menu .menu-empty {
+    line-height: 0;
+}
+
+.main-menu .menu-group {
+    text-transform:uppercase;
+    margin: 20px 0 -20px;
+    padding: 0;
+    line-height: 40px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.main-menu .menu-group > * {
+    display: block;
+    padding-left: 40px;
+    text-decoration: none;
+}
+
+.main-menu .menu-item {
+    margin: 10px 0 -10px;
+    padding: 0;
+    line-height: 40px;
+    vertical-align: bottom;
+}
+
+.main-menu .menu-item > * {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    /*padding-right: 40px;*/    
+}
+
+.main-menu i {
+    float: left;
+    margin-left: -25px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 40px;    
+}
+
+.main-menu .badge {
+    background-color: $status_color;
+    color: #fff;
+    position: absolute;
+    #{$right}: 5px;
+    top: 20%;
+/*    transform: translateY(-50%);*/
+    max-width: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.main-menu span {
+    color: $contrast_color;
+}
+
+.left-menu__user {
+    padding-left: 15px;
+    padding-right: 10px;
+
+    .user-short-inf__account {
+        background: $content_bg;
+        box-shadow: -9px 0 4px #fff;
+    }
+}
+
+.main-menu a,
+.main-menu a:hover,
+.main-menu a:focus,
+.main-menu a:active,
+.main-menu a:visited {
+    color: $font_color;
+    text-decoration: none;
+}
+
+.main-menu i {
+    color: $descr_color;
+}
+
+.button-search{
+    position: absolute;
+    margin-#{$left}: -27px;
+    z-index: 1000;
+    color: $contrast_color;
+    background: none;
+    border: none;
+    margin-top: 7px;
+}
+.logo-mobile-version{
+    text-align: center;
+    color: $contrast_color;
+}
+.close_left_menu{
+    color: #ffffff;
+    display: block;
+    float: $left;
+    font-size: 20px;
+    height: 46px;
+    line-height: inherit;
+    cursor: pointer;
+    text-align: center;
+    width: 46px;
+}
+header a , .ui-header a{
+    color: #ffffff;
+    text-decoration: none;
+}	
+header a:hover , .ui-header a:hover{
+    color:#ffffff;
+    text-decoration: none;
+}
+.header-color{
+    background: $header_bg;
+    height: 46px;
+}
+.header-color{
+    background: $header_bg;
+    height: 46px;
+}
+.footer-menu{
+    background: $footer_bg;
+}
+.user-icon-mobile{
+    width: 29px;
+    height: 29px;
+    border: 1px solid $delimiter_color;
+    border-radius: 3px;
+    float: $right;
+    margin: 8px 0px 8px 8px;
+}
+.search-for-mobile{
+    height: 30px; 
+}
+.fltr-important{
+    float: $right !important;
+}
+.main-nav li:hover, .main-nav li:focus{
+    background: #f2788c;
+}
+.main-nav a:hover,.main-nav a:focus{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*.pre-main-inner-content{
+    padding-top: 46px;
+}*/
+
+@media (max-width: 767px){
+
+    .account_menu  ul>li{
+        background: $content_bg;
+        border-top: 0px solid $delimiter_color;
+        border-bottom: 0px solid $delimiter_color;
+        border-left: 1px solid $delimiter_color;
+        border-right: 1px solid $delimiter_color;
+        border-radius: 0;
+        margin: 0;
+    }
+    .account_menu  ul>li:hover{
+        background: #ccc;
+    }
+    .account_menu  ul>li>a{
+        border-radius: 0;
+    }
+    .account_menu  ul>li:first-child{
+        border-top: 1px solid $delimiter_color;
+        border-radius: 5px 5px 0px 0px;
+    } 
+    .account_menu  ul>li:last-child{
+        border-bottom: 1px solid $delimiter_color;
+        border-radius: 0px 0px 5px 5px;
+    }     
+    .account_menu  ul>li:first-child>a{
+        border-radius: 5px 5px 0px 0px;
+    }    
+    .account_menu  ul>li:last-child>a{
+        border-radius: 0px 0px 5px 5px;
+    }
+    
+    .left-menu .btn-slide {
+        display: block;
+        height: 30px;
+    }
+
+    .search{
+        padding: 4px 8px;
+    }
+    .search-for-mobile{
+        border-radius: 5px !important;
+    }
+    .ui-loader,.ui-btn-inner{
+        display:none;
+    }
+    .quick-search{
+        background: rgba(0, 0, 0, 0.05);
+        height: 45px;
+    }
+    .quick-search-top {
+        display:none;
+    }
+    .hide-in-mobile{
+        display: none !important;
+    }
+    .info {
+        display: none !important;
+    }
+}
+@media (min-width: 768px){
+    .quick-search-top {
+        float: $right;
+    }
+    .quick-search-top .input-group{
+        padding: 8px 0 8px 0;
+    }
+    .quick-search-top .input-group input[type="search"]{
+        height: 29px;
+        border-radius: 5px;	
+    }
+    .quick-search{
+        height: 45px;
+        
+    }
+    .search-top-input{
+        padding: 5pt;
+        width: 81%;
+        float: $right;
+    }
+}
+
+.left-menu {
+    font-size: 90%;
+}
+
+.left-menu-header {
+    position: relative;
+    line-height: 45px;
+    z-index: 1002;
+}
+.breadcrumbs{
+    font-size: 12px;
+    color: $descr_color;
+    padding-top: 11px;
+}
+.breadcrumbs a {
+    font-size: 12px;
+    color: $descr_color;
+}
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    color: $link_color;
+    text-decoration: none;
+}
+.static-alert-block {
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+    position: relative;
+    .alert-info {
+        display: block !important;
+    }
+}
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 15px;
+}
+.alert-success {
+  color: $alert_success_color;
+  background-color: $alert_success_bg;
+  border-color: $alert_success_border;
+}
+.alert-info {
+  color: $alert_info_color;
+  background-color: $alert_info_bg;
+  border-color: $alert_info_border;
+}
+.alert-warning {
+  color: $alert_warning_color;
+  background-color: $alert_warning_bg;
+  border-color: $alert_warning_border;
+}
+.alert-danger {
+  color: $alert_error_color;
+  background-color: $alert_error_bg;
+  border-color: $alert_error_border;
+}

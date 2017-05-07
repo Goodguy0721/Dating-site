@@ -1,0 +1,134 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('name', 'chats') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in chats %}
+                    <tr class="even pointer">
+                        <td>
+                            {% if item.installed %}
+                            <a href="{{ site_url }}admin/chats/settings/{{ item.gid }}">
+                                {{ item.name }}
+                            </a>
+                            {% else %}
+                                {{ item.name }}
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if item.installed %}
+                              {% if item.active %}
+                                {% helper lang.l('btn_tableicon_is_active','start') %}
+                              {% else %}
+                                {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                              {% endif %}
+                            {% else %}
+                              {% helper lang.l('no_installed','chats') %}
+                            {% endif %}
+                        </td>
+                        <td class="icons">
+                            {% if item.installed %}
+                              <div class="btn-group">
+                                {% if item.active %}
+                                    <button type="button" class="btn btn-primary" title="{% helper lang.l('make_inactive','start') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/chats/deactivate/{{ item.gid }}'">
+                                        {% helper lang.l('btn_tableicon_is_active','start') %}
+                                    </button>
+                                {% else %}
+                                    <button type="button" class="btn btn-primary" title="{% helper lang.l('make_active','start') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/chats/activate/{{ item.gid }}'">
+                                        {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                                    </button>
+                                {% endif %}
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    {% if item.active %}
+                                        <a href="{{ site_url }}admin/chats/deactivate/{{ item.gid }}">
+                                          {% helper lang.l('btn_tableicon_is_active','start') %}</a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/chats/activate/{{ item.gid }}">
+                                            {% helper lang.l('btn_tableicon_is_not_active','start') %}</a>
+                                    {% endif %}
+                                  </li>
+                                  <li>
+                                    <a href="{{ site_url }}admin/chats/settings/{{ item.gid }}">
+                                        {% helper lang.l('link_tableicon_settings', 'chats') %}</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            {% elseif item.has_files %}
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/chats/installation/{{ item.gid }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('install', 'chats') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a href="{{ site_url }}admin/chats/installation/{{ item.gid }}">
+                                        {% helper lang.l('install', 'chats') %}
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            {% elseif item.vendor_url %}
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/chats/installation/{{ item.gid }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('install', 'chats') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a href="{{ item.vendor_url }}"
+                                       class="btn btn-primary">
+                                        {% helper lang.l('get_files', 'chats') %}
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            {% else %}
+                                {% helper lang.l('no_files', 'chats') %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('chats', 'admin-chats.js') %}
+
+<script type="text/javascript">
+    var chats;
+    $(function () {
+        chats = new adminChats({
+            siteUrl: '{{ site_url }}'
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

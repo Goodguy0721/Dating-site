@@ -1,0 +1,74 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_send_money_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('admin_settings_use_fee', 'send_money') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="hidden" name="use_fee" value="">
+                        <input type="checkbox" name="use_fee" value="use" {% if data.use_fee == 'use' %}checked{% endif %} id="use_fee" class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('admin_settings_settings_fee', 'send_money') %}:</label>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <input type="number" name="fee_price" value="{{ data.fee_price }}" id="fee_price" min="0" class="form-control">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <select name="fee_currency" class="form-control">
+                            {% set currencies = data.currencies %}
+                            {% for currency in currencies %}
+                                <option {% if data.fee_currency == currency %}selected="selected"{% endif %}>{{ currency }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('admin_settings_to_whom', 'send_money') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="to_whom" class="form-control">
+                            <option {% if data.to_whom == 'to_all' %}selected="selected"{% endif %} value="to_all">{% helper lang.l('admin_settings_all', 'send_money') %}</option>
+                            <option {% if data.to_whom == 'to_friends' %}selected="selected"{% endif %} value="to_friends">{% helper lang.l('admin_settings_friends', 'send_money') %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('admin_settings_transfer_type', 'send_money') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="transfer_type" class="form-control">
+                            {% set transfer_types = data.transfer_types %}
+                            {% for key, type in transfer_types %}
+                            <option value="{{ key }}"{% if data.transfer_type == key %} selected="selected"{% endif %}>{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/add_ons_items">
+                            {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

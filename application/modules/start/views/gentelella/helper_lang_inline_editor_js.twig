@@ -1,0 +1,15 @@
+<script src="{{ site_url }}application/views/gentelella/js/lang_inline_editor.js"></script>
+<script type="text/javascript">
+    var inlineEditor;
+    $(function(){
+        inlineEditor = new langInlineEditor({
+            siteUrl: '{{ site_url }}',
+            {% helper lang_edit = lang.l('header_inline_lang_edit', 'start') %}
+            langTitle: '{{ lang_edit|e('js') }}',
+            {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+            footerButtons: '<input type="button" id="lie_save" class="btn btn-success" name="btn_save" value="{{ save_text|e('js') }}">',
+            multiple: '{{ multiple|e('js') }}',
+            {% if textarea %}textarea: true,{% endif %}
+        });
+    });
+</script>

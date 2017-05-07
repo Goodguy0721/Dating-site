@@ -1,0 +1,10 @@
+	2202	Ifalik Village	7.2543900	144.4533800	FM	04	0	0	Ifalik Village	Ifalik Village	Ifalik Village	Ifalik Village	Ifalik Village	Ifalik Village
+	2202	Fais Village	9.7561200	140.5142200	FM	04	0	0	Fais Village	Fais Village	Fais Village	Fais Village	Fais Village	Fais Village
+	2202	Satawal Village	7.3803500	147.0259800	FM	04	0	0	Satawal Village	Satawal Village	Satawal Village	Satawal Village	Satawal Village	Satawal Village
+	2202	Lamotrek Village	7.4575800	146.3784100	FM	04	0	0	Lamotrek Village	Lamotrek Village	Lamotrek Village	Lamotrek Village	Lamotrek Village	Lamotrek Village
+	2202	Elato Village	7.5102300	146.1705900	FM	04	0	0	Elato Village	Elato Village	Elato Village	Elato Village	Elato Village	Elato Village
+	2202	Fais	9.7660000	140.5200000	FM	04	0	0	Fais	Fais	Fais	Fais	Fais	Fais
+	2202	Faraulep Village	8.5888900	144.5202900	FM	04	0	0	Faraulep Village	Faraulep Village	Faraulep Village	Faraulep Village	Faraulep Village	Faraulep Village
+	2202	Eauripik Village - temp LL	6.6872200	143.0821000	FM	04	0	0	Eauripik Village - temp LL	Eauripik Village - temp LL	Eauripik Village - temp LL	Eauripik Village - temp LL	Eauripik Village - temp LL	Eauripik Village - temp LL
+	2202	Ngulu Village	8.2970000	137.4899000	FM	04	0	0	Ngulu Village	Ngulu Village	Ngulu Village	Ngulu Village	Ngulu Village	Ngulu Village
+	2202	Colonia	9.5163800	138.1216700	FM	04	0	0	Colonia	Colonia	Colonia	Colonia	Colonia	Colonia

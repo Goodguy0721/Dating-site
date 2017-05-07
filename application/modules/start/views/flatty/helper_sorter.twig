@@ -1,0 +1,23 @@
+<div class="form-inline">
+<select id="sorter-select-{{ sort_rand }}" class="form-control">
+	{% for key, item in sort_links %}
+		<option value="{{ key }}" {% if key == sort_order %}selected{% endif %}>
+            {{ item }}
+        </option>
+	{% endfor %}
+</select>
+<i id="sorter-dir-{{ sort_rand }}" data-role="sorter-dir" class="fa fa-arrow-{% if sort_direction == 'ASC' %}up{% else %}down{% endif %} gray"></i>
+<a href="{{ sort_url }}" id="sorter-link-{{ sort_rand }}" class="hide">Go!</a>
+<script>
+	$('#sorter-select-{{ sort_rand }}').unbind('change').bind('change', function(){
+		var url = $('#sorter-link-{{ sort_rand }}').attr('href') + '/' + $(this).find('option:selected').val() + '/{% if sort_direction == 'ASC' %}DESC{% else %}ASC{% endif %}';
+		$('#sorter-link-{{ sort_rand }}').attr('href', url).trigger('click');
+	});
+	$('#sorter-dir-{{ sort_rand }}').unbind('click').bind('click', function(){
+		var url = $('#sorter-link-{{ sort_rand }}').attr('href') + '/' +
+                  $('#sorter-select-{{ sort_rand }} option:selected').val() + '/' +
+                  '{% if sort_direction == 'ASC' %}DESC{% else %}ASC{% endif %}';
+		$('#sorter-link-{{ sort_rand }}').attr('href', url).trigger('click');
+	});
+</script>
+</div>

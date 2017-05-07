@@ -1,0 +1,34 @@
+<div class="load_content_controller">
+    <div class="x_title h4">
+    {% if option_gid %}
+      {% helper lang.l('header_change_select_option', 'field_editor') %}
+    {% else %}
+      {% helper lang.l('header_add_select_option', 'field_editor') %}
+    {% endif %}
+  </div>
+    <div>
+        <form method="post" action="" name="save_form">
+            <div id="change_option_block">
+                {% for key, item in lang_data %}
+                    <div class="row form-group">
+                        <label class="col-xs-12">
+                            {{ item.name }}&nbsp;<span>({{ item.field_name }})</span>: </label>
+                        <div class="col-xs-12">
+                            <input type="text" name="{{ key|escape }}" value="{{ item.value|escape }}" class="form-control">
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="row form-group">
+              <div class="col-xs-12">
+                <button class="btn btn-success" type="button" name="btn_save" value="1" id="btn_save">
+                  {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                <a class="btn btn-default" href="#" id="btn_cancel">
+                  {% helper lang.l('btn_cancel', 'start') %}</a>
+              </div>
+            </div>
+        </form>
+    </div>
+</div>

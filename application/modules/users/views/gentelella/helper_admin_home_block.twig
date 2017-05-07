@@ -1,0 +1,73 @@
+<a class="panel-heading collapsed" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+    <h4 class="panel-title">{% helper lang.l('stat_header_users', 'users') %}</h4>
+</a>
+<div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne1">
+    <div class="panel-body">
+        <table class="table">
+        {% if stat_users.index_method %}
+            <tr>
+                <td>
+                    <a id="users_link_all" href="{{ site_url }}admin/users/index/">
+                        {% helper lang.l('stat_header_all', 'users') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="users_link_all_num" href="{{ site_url }}admin/users/index/">
+                        {{ stat_users.all }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a id="users_link_active" href="{{ site_url }}admin/users/index/active">
+                        {% helper lang.l('stat_header_active', 'users') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="users_link_active_num" href="{{ site_url }}admin/users/index/active">
+                        {{ stat_users.active }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a id="users_link_not_active" href="{{ site_url }}admin/users/index/not_active">
+                        {% helper lang.l('stat_header_blocked', 'users') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="users_link_not_active_num" href="{{ site_url }}admin/users/index/not_active">
+                        {{ stat_users.blocked }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a id="users_link_not_confirm" href="{{ site_url }}admin/users/index/not_confirm">
+                        {% helper lang.l('stat_header_unconfirmed', 'users') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="users_link_not_confirm_num" href="{{ site_url }}admin/users/index/not_confirm">
+                        {{ stat_users.unconfirm }}
+                    </a>
+                </td>
+            </tr>
+        {% endif %}
+        {% if stat_users.moderation_method %}
+            <tr>
+                <td>
+                    <a id="users_link_user_logo" href="{{ site_url }}admin/moderation/index/user_logo">
+                        {% helper lang.l('stat_header_moderation_icons', 'users') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="users_link_user_logo_num" href="{{ site_url }}admin/moderation/index/user_logo">
+                        {{ stat_users.icons }}
+                    </a>
+                </td>
+            </tr>
+        {% endif %}
+        </table>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<br>
+<ul id="operators_sorting">
+    {% for key, item in system_data.operators_data %}
+        <li id="operator_{{ key }}" class="panel">
+            <div class="icons pull-right">
+                {% if attribute(system_data.tarifs_status, key) > 0 %}
+                    <a href="#" class="deactivate_link">
+                        {% helper lang.l('make_inactive','start') %}
+                    </a>
+                {% else %}
+                    <a href="#" class="activate_link">
+                        {% helper lang.l('make_active','start') %}
+                    </a>
+                {% endif %}
+                <a href="#" class="add_link">
+                    {% helper lang.l('btn_add','start') %}
+                </a>
+                <a href="#" class="edit_link">
+                    {% helper lang.l('btn_edit','start') %}
+                </a>
+                <a href="#" class="delete_link">
+                    {% helper lang.l('btn_delete','start') %}
+                </a>
+            </div>
+
+            {% helper lang.l('field_system_tarifs', 'payments') %}
+            ({{ item|default('&nbsp;') }}, {% helper start.currency_output() %}):
+          {% if attribute(system_data.tarifs_status, key) > 0 %}
+            {% helper lang.l('btn_tableicon_is_inactive','start') %}
+          {% else %}
+            {% helper lang.l('btn_tableicon_is_active','start') %}
+          {% endif %}
+
+            <div class="tarifs form-group" id="{{ key }}_tarifs_block">
+                {% for tarif_key, tarif_item in attribute(system_data.tarifs_data, key) %}
+                    <div class="tarif_row form-group">
+                      <div class="media">
+                        <a href="#" class="remove_link pull-right">
+                            {% helper lang.l('btn_delete','start') %}</a>
+                        <div class="media-body">
+                          <input type="text" name="tarifs_data[{{ key }}][]" value="{{ tarif_item|e }}" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                {% else %}
+                    {% for i in range(0, 2) %}
+                        <div class="tarif_row form-group">
+                          <div class="media">
+                            <a href="#" class="remove_link pull-right">
+                              {% helper lang.l('btn_delete','start') %}</a>
+                            <div class="media-body">
+                              <input type="text" name="tarifs_data[{{ key }}][]" value="" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                <div class="tarif_row form-group">
+                  <div class="media">
+                    <a href="#" class="remove_link pull-right">
+                      {% helper lang.l('btn_delete','start') %}</a>
+                    <div class="media-body">
+                      <input type="text" name="tarifs_data[{{ key }}][]" value="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="{{ key }}_tarif_block" class="form-group hide">
+                <div class="tarif_row form-group">
+                  <div class="media">
+                    <a href="#" class="remove_link pull-right">
+                        {% helper lang.l('btn_delete','start') %}</a>
+                    <div class="media-body">
+                      <input type="text" name="tarifs_data[{{ key }}][]" value=""  class="form-control">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

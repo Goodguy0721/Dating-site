@@ -1,0 +1,122 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_pages_in_group', 'banners') %} : {{ group_data.name }}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="form-group">
+                <div class="row zebra">
+                    <ol id="group_pages" class="connectSort">
+                        {% for key, item in group_pages %}
+                            <li id="group_pages_{{ key }}" class="x_panel cursor-pointer">
+                                <b class="name">{{ item.name }}</b><br>
+                                <i>{{ site_url }}<span class="link">{{ item.link }}</span></i>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                    <input type="button" class="btn btn-success" name="btn_save" value="{{ save_text }}" onclick="javascript: save_pages();">
+                    <a class="btn btn-default" href="{{ site_url }}admin/banners/groups_list">
+                        {% helper lang.l('btn_cancel', 'start') %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_free_pages', 'banners') %}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="form-group">
+                <select onchange="javascript: load_pages(this.value);" class="form-control">
+                    <option value="0">...</option>
+                    {% for item in modules %}
+                        <option value="{{ item.id }}">
+                            {{ item.module_name }} ({{ item.module_data.module_name }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                    <ol id="module_pages" class="connectSort">
+                        <br><br>
+                    </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var url = '{{ site_url }}admin/banners/ajax_get_modules_pages/';
+    var save_url = '{{ site_url }}admin/banners/ajax_save_group_pages/{{ group_data.id }}';
+    var return_url = '{{ site_url }}admin/banners/groups_list';
+    $(function () {
+        $("#group_pages, #module_pages").sortable({
+            connectWith: '.connectSort',
+            placeholder: 'limiter',
+            scroll: true,
+            forcePlaceholderSize: true
+        }).disableSelection();
+    });
+    function load_pages(val) {
+        if (val == 0) {
+            $("#module_pages").html();
+            return;
+        }
+
+        $.ajax({
+            url: url + val,
+            cache: false,
+            success: function (data) {
+                $("#module_pages").html(data);
+                $("#group_pages").sortable({
+                    connectWith: '.connectSort',
+                    scroll: true,
+                    forcePlaceholderSize: true
+                }).disableSelection();
+                $("#module_pages").sortable({
+                    connectWith: '.connectSort',
+                    items: 'li.sortable',
+                    scroll: true,
+                    forcePlaceholderSize: true
+                }).disableSelection();
+            }
+        });
+
+    }
+
+    function save_pages() {
+        var data = new Object();
+        $("#group_pages li").each(function (i) {
+            var id = $(this).attr('id');
+            data[i] = {
+                name: $('#' + id + ' .name').html(),
+                link: $('#' + id + ' .link').html()
+            };
+        });
+        $.ajax({
+            url: save_url,
+            type: 'POST',
+            data: {pages: data},
+            cache: false,
+            success: function (data) {
+                location.href = return_url;
+            }
+        });
+    }
+</script>
+
+{% include '@app/footer.twig' %}

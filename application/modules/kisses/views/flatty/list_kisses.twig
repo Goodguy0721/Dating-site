@@ -1,0 +1,87 @@
+<div class="content-block load_content">
+    <h1>
+            {% helper lang.l('kisses_form_title', 'kisses') %}
+    </h1>
+    <div class="modal-body scroll inside">
+        <div class="row">
+            {% if kisses|length > 0 %}
+                <form id="kisses_form" action="" method="post" role="form">
+                    <div>
+                        {% helper lang.l('kisses_annotation', 'kisses') %}
+                    </div>
+                    <div class="scroll_f_kiss">
+                        <ul class="list-inline">
+                            {% for kiss in kisses %}
+                                <li>
+                                    <label for="kiss-{{ kiss.id }}">
+                                        <input type="radio" value="{{ kiss.id }}" id="kiss-{{ kiss.id }}" name="kiss" />
+                                        <img src="{{ file_url }}{{ kiss.image|e }}" alt="{{ kiss.id }}" />
+                                    </label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="message-kiss">
+                        <div>
+                            {% helper lang.l('message', 'kisses') %}
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" maxlength="{{ maxlength }}"
+                                row="5" cols="50" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" value="{{ object_id }}" name="object_id">
+                    <input type="button" name="btn_send" id="btn_send_kisses" class="btn btn-primary"
+                        value="{% helper lang.l('kiss', 'kisses', '', 'button') %}">
+                    <div id="symbols" class="fright">{{ maxlength }}</div>
+                </form>
+            {% else %}
+                {% helper lang.l('no_kisses', 'kisses') %}
+            {% endif %}
+        </div>
+	</div>
+</div>
+<script>
+    loadScripts(
+		"{% helper utils.jscript('', 'jquery-slimscroll.js', 'path') %}",
+        function(){},
+        '',
+		{async: false}
+    );
+    $(function() {
+        $('#kisses_form li').on("click", function() {
+            $("#kisses_form li").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+        $('label img').on('click', function() {
+            $("#" + $(this).parents("label").attr("for")).click();
+        });
+
+        var maxLength = $('#message').attr('maxlength');
+        $('#message').keyup(function() {
+            var curLength = $('#message').val().length;
+            $(this).val($(this).val().substr(0, maxLength));
+
+            var remaning = maxLength - curLength;
+
+            if (remaning < 0) {
+                remaning = 0;
+            }
+
+            $('#symbols').html(remaning);
+
+            if (remaning < 10) {
+                $('#symbols').addClass('warning');
+            } else {
+                $('#symbols').removeClass('warning');
+            }
+        });
+        $('.scroll_f_kiss').slimScroll({
+            height: '100px',
+            railVisible: true,
+            alwaysVisible: true
+        });
+
+    });
+</script>

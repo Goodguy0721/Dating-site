@@ -1,0 +1,225 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+    <div class="content-block">
+        <h1>
+            {% helper seo.seo_tags('header_text') %}
+        </h1>
+
+        <div class="edit_block">
+            {% if user.user_open_id and not user.password %}
+                <p>
+                    {% helper lang.l('text_open_id_use', 'users') %}
+                    <b>
+                        {{ user.user_open_id }}
+                    </b>
+                </p>
+                <p>
+                    {% helper lang.l('text_open_id_create_password', 'users') %}
+                </p>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="email"  class="col-xs-12 tali">
+                            {% helper lang.l('field_email', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="text" name="email" value="{{ user.email }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"  class="col-xs-12 tali">
+                            {% helper lang.l('field_password', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                    </div>
+                    {% if use_repassword is not empty %}
+                        <div class="form-group">
+                            <label for="repassword"  class="col-xs-12 tali">
+                                {% helper lang.l('field_repassword', 'users') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                                <input type="password" name="repassword" class="form-control">
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="r">
+                        <div class="b">
+                            <input type="submit" name="btn_account_create" class="btn"
+                                   value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+            {% elseif user.user_open_id and user.password %}
+                <p>
+                    {% helper lang.l('text_open_id_use', 'users') %}
+                    <b>
+                        {{ user.user_open_id }}
+                    </b>
+                </p>
+                <p>
+                    {% helper lang.l('text_open_id_and_password_used', 'users') %}
+                </p>
+                <form action="" method="post" class="ptb10">
+                    <div class="form-group">
+                        <label for="email"  class="col-xs-12 tali">
+                            {% helper lang.l('field_email', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="text" name="email" value="{{ user.email }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"  class="col-xs-12 tali">
+                            {% helper lang.l('field_phone', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="text" name="phone" value="{{ user.phone }}">
+                        </div>
+                    </div>
+                    <div class="r">
+                        <div class="v">
+                            <input type="checkbox" name="show_adult" id="show_adult"
+                                   value="1" {% if user.show_adult %}checked{% endif %} />
+                            <label for="show_adult">
+                                {% helper lang.l('field_show_adult', 'users') %}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="r">
+                        <div class="b">
+                            <input type="submit" class="btn" name="btn_contact_save"
+                                   value="{% helper lang.l('btn_save', 'start', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+
+                <form action="" method="post" class="ptb10">
+                    <div class="r">
+                        <div class="f">
+                            {% helper lang.l('field_password', 'users') %}:
+                        </div>
+                        <div class="v">
+                            <input type="password" name="password">
+                        </div>
+                    </div>
+                    {% if use_repassword is not empty %}
+                        <div class="r">
+                            <div class="f">
+                                {% helper lang.l('field_repassword', 'users') %}:
+                            </div>
+                            <div class="v">
+                                <input type="password" name="repassword">
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="r">
+                        <div class="b">
+                            <input type="submit" class="btn" name="btn_password_save"
+                                   value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+            {% else %}
+                <form action="" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="email"  class="col-xs-12 tali">
+                            {% helper lang.l('field_email', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="text" name="email" value="{{ user.email|e }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"  class="col-xs-12 tali">
+                            {% helper lang.l('field_phone', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="text" name="phone" value="{{ user.phone|e }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="hidden" name="show_adult" value="0">
+                            <input type="checkbox" name="show_adult" id="show_adult" value="1" {% if user.show_adult %}checked{% endif %}>
+                            {% helper lang.l('field_show_adult', 'users') %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="submit" class="btn btn-primary" name="btn_contact_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+
+                <form action="" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="password"  class="col-xs-12 tali">
+                            {% helper lang.l('field_password', 'users') %}:
+                        </label>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                    </div>
+                    {% if use_repassword is not empty %}
+                        <div class="form-group">
+                            <label for="repassword"  class="col-xs-12 tali">
+                                {% helper lang.l('field_repassword', 'users') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                                <input type="password" name="repassword" class="form-control">
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="submit" class="btn btn-primary" name="btn_password_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+            {% helper users_connections.show_social_networking_link() %}
+        </div>
+        <div class="edit_block ptb10">
+            {% helper subscriptions.get_user_subscriptions_form('account') %}
+        </div>
+        <div class="ptb10 line top">
+            <a class="a" onclick="ability_delete_available_view.check_available();">
+                {% helper lang.l('delete_account', 'users') %}
+            </a>
+        </div>
+    </div>
+</div>
+<div class="clr"></div>
+<script>
+    $(function () {
+        loadScripts(
+                "{% helper utils.jscript('', 'available_view.js', 'path') %}",
+                function () {
+                    ability_delete_available_view = new available_view({
+                        siteUrl: site_url,
+                        checkAvailableAjaxUrl: 'users/ajax_available_ability_delete/',
+                        buyAbilityAjaxUrl: 'users/ajax_activate_ability_delete/',
+                        buyAbilityFormId: 'ability_form',
+                        buyAbilitySubmitId: 'ability_form_submit',
+                        formType: 'list',
+                        alert_type: 'delete_profile',
+                        alert_ok_button: '{% helper lang.l('btn_confirm_delete_profile', 'users', '', 'js') %}',
+                        alert_cancel_button: '{% helper lang.l('btn_not_confirm_delete_profile', 'users', '', 'js') %}',
+                        lang_delete_confirm: '{% helper lang.l('text_delete_confirm', 'users', '', 'js') %}',
+                        success_request: function (message) {
+                            error_object.show_error_block(message, 'success');
+                            locationHref(site_url);
+                        },
+                        fail_request: function (message) {
+                            error_object.show_error_block(message, 'error');
+                        },
+                    });
+                },
+                ['ability_delete_available_view'],
+                {async: false}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

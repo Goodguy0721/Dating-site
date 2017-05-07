@@ -1,0 +1,44 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">File</th>
+                        <th class="column-title">Name</th>
+                        <th class="column-title">Description</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, item in updates %}
+                    <tr>
+                        <td class="first"><b>{{ key }}</b></td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            <a href="{{ site_url }}admin/install/product_update/{{ key }}" class="btn btn-primary">Install</a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                  <a href="{{ site_url }}admin/install/product_update/{{ key }}">Install</a>
+                                </li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

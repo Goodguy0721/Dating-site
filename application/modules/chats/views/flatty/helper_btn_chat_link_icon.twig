@@ -1,0 +1,72 @@
+<span class="user-menu-item">
+    <dt>
+        <a href="{{ site_url }}chat/cometchat/cometchat_embedded.php" class="link-r-margin chat_btn"
+           data-chat="{{ chat_gid }}" data-user="{{ user_id }}" target="_blank"
+           title="{% helper lang.l('chat', 'chats') %}">
+            <i class="fa fa-comments"></i>
+        </a>
+    </dt>
+    <dd>
+        <a href="{{ site_url }}chat/cometchat/cometchat_embedded.php" class="link-r-margin chat_btn"
+           data-chat="{{ chat_gid }}" data-user="{{ user_id }}" target="_blank"
+           title="{% helper lang.l('chat', 'chats') %}">
+            {% helper lang.l('chat', 'chats') %}
+        </a>
+    </dd>
+</span>
+{#<script type="text/javascript">
+    $(function(){
+        $('.chat_btn').on('click', function(){
+            switch ($(this).data('chat')) {
+              case 'flashchat':
+                document.location.href = site_url + 'chats/';
+                break;
+              case 'cometchat':
+                $('#cometchat_userstab').click();
+                $('#cometchat_userlist_' + $(this).data('user')).click();
+                jqcc.cometchat.chatWith($(this).data('user'));
+                break;
+              case 'pg_videochat':
+                invite_form_to_videochat = new loadingContent({
+                    loadBlockWidth: '400px',
+                    closeBtnClass: 'w'
+                });
+                $.ajax({
+                    url: site_url + 'chats/ajax_invite_form/'+$(this).data('user'),
+                    cache: false,
+                    success: function(data) {
+                        if (data=='error_online') {
+                            error_object.show_error_block("{% helper lang.l('text_try_later', 'chats') %}", 'error');
+                        }else if (data.length < 30){
+                            var redirect_url = site_url + 'chats/go_to_chat/' + data;
+                            document.location.href = redirect_url;
+                        } else{
+                            invite_form_to_videochat.show_load_block(data);
+                        }
+                    }
+                });
+                break;
+              case 'oovoochat':
+                invite_form_to_videochat = new loadingContent({
+                    loadBlockWidth: '400px',
+                    closeBtnClass: 'w'
+                });
+                $.ajax({
+                    url: site_url + 'chats/ajax_invite_form/'+$(this).data('user'),
+                    cache: false,
+                    success: function(data) {
+                        if (data=='error_online') {
+                            error_object.show_error_block("{% helper lang.l('text_try_later', 'chats') %}", 'error');
+                        }else if (data.length < 30){
+                            var redirect_url = site_url + 'chats/go_to_chat/' + data;
+                            document.location.href = redirect_url;
+                        } else{
+                            invite_form_to_videochat.show_load_block(data);
+                        }
+                    }
+                });
+                break;
+            }
+        });
+    });
+</script>#}

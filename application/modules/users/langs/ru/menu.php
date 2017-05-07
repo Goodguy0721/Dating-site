@@ -1,0 +1,35 @@
+<?php
+
+$install_lang["admin_menu_main_items_users_menu_item"] = "Пользователи";
+$install_lang["admin_menu_main_items_users_menu_item_tooltip"] = "";
+$install_lang["admin_users_menu_groups_list_item"] = "Группы";
+$install_lang["admin_users_menu_groups_list_item_tooltip"] = "";
+$install_lang["admin_users_menu_system-users-item"] = "Настройки пользователей";
+$install_lang["admin_users_menu_system-users-item_tooltip"] = "Настройки модерации, возрастного диапазона, просмотр анкет неавторизованными пользователями";
+$install_lang["admin_users_menu_users_list_item"] = "Пользователи";
+$install_lang["admin_users_menu_users_list_item_tooltip"] = "";
+$install_lang["guest_main_menu_main-menu-login-item"] = "Войти";
+$install_lang["guest_main_menu_main-menu-login-item_tooltip"] = "";
+$install_lang["guest_main_menu_main-menu-registration-item"] = "Регистрация";
+$install_lang["guest_main_menu_main-menu-registration-item_tooltip"] = "";
+$install_lang["settings_menu_account-item"] = "Аккаунт";
+$install_lang["settings_menu_account-item_tooltip"] = "";
+$install_lang["settings_menu_logout-item"] = "Выйти";
+$install_lang["settings_menu_logout-item_tooltip"] = "";
+$install_lang["settings_menu_my-profile-item"] = "Моя анкета";
+$install_lang["settings_menu_my-profile-item_tooltip"] = "";
+$install_lang["settings_menu_settings-item"] = "Настройки";
+$install_lang["settings_menu_settings-item_tooltip"] = "";
+$install_lang["user_alerts_menu_visitors_new_item"] = "Посетители анкеты";
+$install_lang["user_top_advanced_menu_account_advanced_item"] = "Аккаунт";
+$install_lang["user_top_advanced_menu_account_advanced_item_tooltip"] = "";
+$install_lang["user_top_advanced_menu_settings_advanced_item"] = "Настройки";
+$install_lang["user_top_advanced_menu_settings_advanced_item_tooltip"] = "";
+$install_lang["user_top_menu_user-menu-people_guests_item"] = "Мои гости";
+$install_lang["user_top_menu_user-menu-people_guests_item_tooltip"] = "";
+$install_lang["user_top_menu_user-menu-people_my_account_item"] = "Мой счет";
+$install_lang["user_top_menu_user-menu-people_my_account_item_tooltip"] = "";
+$install_lang["user_top_menu_user-menu-people_search_item"] = "Поиск";
+$install_lang["user_top_menu_user-menu-people_search_item_tooltip"] = "";
+$install_lang["user_top_menu_user-menu-people_top_users_item"] = "Популярные пользователи";
+$install_lang["user_top_menu_user-menu-people_top_users_item_tooltip"] = "";

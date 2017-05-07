@@ -1,0 +1,71 @@
+    <div class="g-flatty-block">
+        <h2>{% helper lang.l('header_my_payments_statistic', 'payments') %}</h2>
+        <div class="b-payments-history">
+            <div class="table-responsive vertical-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="active">
+                            <th>ID</th>
+                            <th>{% helper lang.l('field_date_add', 'payments') %}</th>
+                            <th>{% helper lang.l('field_amount', 'payments') %}</th>
+                            <th>{% helper lang.l('field_payment_type', 'payments') %}</th>
+                            <th>{% helper lang.l('field_billing_type', 'payments') %}</th>
+                            <th>{% helper lang.l('field_status', 'payments') %}</th>
+                        </tr>
+                    </thead>
+                {% for key, item in payments_helper_payments %}
+                    <tr>
+                        <td scope="row">
+                            {{ item.id }}
+                        </td>
+                        <td>
+                            {% helper date_format.tpl_date_format(item.date_add, payments_helper_page_data.date_format) %}
+                        </td>
+                        <td>
+                            {% helper start.currency_format_output({'value': item.amount}) %}
+                        </td>
+                        <td>
+                            {{ item.payment_type_gid }} ({{ item.payment_data.name }})
+                        </td>
+                        <td>
+                            {{ item.system_gid }}
+                        </td>
+                        <td>
+                            {% if item.status == '1' %}
+                                <font class="success">
+                                    {% helper lang.l('payment_status_approved', 'payments') %}
+                                </font>
+                            {% elseif item.status == '-1' %}
+                                <font class="error">
+                                    {% helper lang.l('payment_status_declined', 'payments') %}</font>
+                            {% else %}
+                                {% helper lang.l('payment_status_wait', 'payments') %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td class="center" colspan="6">
+                            {% helper lang.l('payment_history_empty_results', 'payments') %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+                <div>
+                    {% set page_data = payments_helper_page_data|merge({'type': 'full'}) %}
+                    {% helper start.pagination(page_data) %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            td:nth-of-type(1):before { content: "ID"; }
+            td:nth-of-type(2):before { content: "{% helper lang.l('field_date_add', 'payments') %}"; }
+            td:nth-of-type(3):before { content: "{% helper lang.l('field_amount', 'payments') %}"; }
+            td:nth-of-type(4):before { content: "{% helper lang.l('field_payment_type', 'payments') %}"; }
+            td:nth-of-type(5):before { content: "{% helper lang.l('field_billing_type', 'payments') %}"; }
+            td:nth-of-type(6):before { content: "{% helper lang.l('field_status', 'payments') %}"; }
+        }
+    </style>

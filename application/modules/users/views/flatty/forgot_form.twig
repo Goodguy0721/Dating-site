@@ -1,0 +1,34 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 content-block load_content">
+    <div class="page-header">
+        <h1>
+            {% helper seo.seotag('header_text') %}
+        </h1>
+
+        <p class="header-comment">
+            {% helper lang.l('text_restore', 'users') %}
+        </p>
+    </div>
+
+    <div class="inside logform">
+        <form action="" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="email" class="col-xs-12 tali">
+                    {% helper lang.l('field_email', 'users') %}:
+                </label>
+                <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                    <input type="text" name="email" value="{{ data.email|e }}" id="email" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="submit" name="btn_save" class="btn btn-primary" value="{% helper lang.l('btn_save', 'start') %}">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

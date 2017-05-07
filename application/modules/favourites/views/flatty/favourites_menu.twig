@@ -1,0 +1,14 @@
+<div class="tabs tab-size-15 noPrint">
+	<ul>
+		<li {% if tab == 'my_favs' %}class="active"{% endif %}>
+			<a data-pjax-no-scroll="1" href="{% helper seo.seolink('favourites', 'my_favs') %}">
+                {% helper lang.l('my_fav', 'favourites') %}
+            </a>
+		</li>
+		<li {% if tab != 'my_favs' %}class="active"{% endif %} id="inbox">
+			<a data-pjax-no-scroll="1" href="{% helper seo.seolink('favourites', 'i_am_their_fav') %}">
+                {% helper lang.l('fav_me', 'favourites') %}
+            </a>
+		</li>
+	</ul>
+</div>

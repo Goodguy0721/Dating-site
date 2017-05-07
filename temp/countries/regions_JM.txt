@@ -1,0 +1,7 @@
+	1455	Savanna-la-Mar	18.2189500	-78.1332000	JM	16	0	0	Savanna-la-Mar	Savanna-la-Mar	Savanna-la-Mar	Savanna-la-Mar	Savanna-la-Mar	Savanna-la-Mar
+	1455	Petersfield	18.2615800	-78.0711700	JM	16	0	0	Petersfield	Petersfield	Petersfield	Petersfield	Petersfield	Petersfield
+	1455	Negril	18.2684400	-78.3481000	JM	16	0	0	Negril	Негрил	Negril	Negril	Negril	Negril
+	1455	Frome	18.2940700	-78.1546900	JM	16	0	0	Frome	Frome	Frome	Frome	Frome	Frome
+	1455	Darliston	18.2373100	-77.9762600	JM	16	0	0	Darliston	Darliston	Darliston	Darliston	Darliston	Darliston
+	1455	Bluefields	18.1660200	-78.0270200	JM	16	0	0	Bluefields	Bluefields	Bluefields	Bluefields	Bluefields	Bluefields
+	1455	Bethel Town	18.2950400	-77.9511200	JM	16	0	0	Bethel Town	Bethel Town	Bethel Town	Bethel Town	Bethel Town	Bethel Town

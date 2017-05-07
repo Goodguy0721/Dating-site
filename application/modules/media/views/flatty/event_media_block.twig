@@ -1,0 +1,56 @@
+{% set thumb_name = recent_thumb.name %}
+<div>
+    <i class="fa fa-camera"></i>
+    {{ event_media_count }}&nbsp;{% helper lang.l('header_user_photos', 'media') %}
+</div>
+<div  class="album-items clearfix">
+    {% for item in recent_photos_data.media %}
+        <div id="events-photo-{{ item.id }}"  class="col-md-3 col-sm-4 col-xs-2 album-item g-events-gallery__photo">
+            <span class="a g-events-gallery__photo-img" data-click="view-media" data-id-album="{{ album_id }}" data-user-id="{{ item.id_owner }}" data-id-media="{{ item.id }}">
+                {% if item.upload_gid == 'events_video' %}
+                    {% helper text_media_video = lang.l('text_media_video', 'media', '', 'button', item) %}
+                    <img class="middle img-responsive" src="{{ item.video_content.thumbs[thumb_name] }}" width="{{ recent_thumb.width }}" alt="{{ text_media_video }}" title="{{ text_media_video }}" />
+                {% else %}
+                    {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', item) %}
+                    <img class="middle img-responsive" src="{{ item.media.mediafile.thumbs[thumb_name] }}" width="{{ recent_thumb.width }}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+                {% endif %} 
+            </span>
+            <div class="g-events-gallery__actions">
+                <div class="g-photo-actions">
+                    <a class="btn-link delete-media" ata-id-album="{{ album_id }}" data-user-id="{{ item.id_owner }}" data-id-media="{{ item.id }}" href="{{ site_url }}events/deleteImage/{{ item.id }}">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    $(function () {
+        loadScripts(
+                "{% helper utils.jscript('events', 'events_media.js', 'path') %}",
+                function () {
+                    event_recent_mediagallery = new events_media({
+                        siteUrl: site_url,
+                        gallery_name: 'event_recent_mediagallery',
+                        galleryContentPage: 1,
+                        galleryContentParam: 'event',
+                        albumId: '{{ album_id }}',
+                        all_loaded: 1,
+                        lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+                        galleryContentDiv: 'event_recent_photos',
+                        post_data: {filter_duplicate: 1},
+                        load_on_scroll: false,
+                        sorterId: '',
+                        direction: 'desc',
+                        refreshRecentPhotosDiv: '#event_recent_photos',
+                        refreshRecentPhotosButton: '#refresh_event_recent_photos',
+                        recentMediaUrl: 'media/ajax_get_event_recent_media/{{ album_id }}',
+                        viewMediaUrl: 'events/ajaxViewMedia',
+                    });
+                },
+                'event_recent_mediagallery',
+                {async: false}
+        );
+    });
+</script>

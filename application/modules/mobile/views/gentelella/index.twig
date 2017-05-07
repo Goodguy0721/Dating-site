@@ -1,0 +1,34 @@
+{% include '@app/header.twig' with {load_type : 'ui'} %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_android_url', 'mobile') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="url" name="android_url" value="{{ mobile_settings.android_url }}" class="form-control" id="android_url">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('admin_settings_ios_url', 'mobile') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="url" name="ios_url" value="{{ mobile_settings.ios_url }}" class="form-control" id="ios_url">
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/add_ons_items">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+	</div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

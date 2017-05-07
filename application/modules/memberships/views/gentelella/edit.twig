@@ -1,0 +1,259 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_content membership-edit">
+      <div class="x_panel">
+        <form action="{{ data.action }}" method="post" enctype="multipart/form-data" id="save_form" name="save_form"
+              data-parsley-validate class="form-horizontal form-label-left">
+            <div class="form-group"> <!--Membership ID-->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_gid','memberships') %}:&nbsp;*
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" name="data[gid]" value="{{membership.gid|escape}}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group"> <!--Membership Name-->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_name','memberships') %}: &nbsp;*
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    {% for lang_id, lang_item  in langs %}
+                        {% set name = 'name_' ~ lang_id %}
+                        {% if lang_id == current_lang_id %}
+                            <input type="text" name="data[name_{{lang_id}}]" value="{{membership.name|escape}}" class="form-control"
+                               lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{lang_id}}" />
+                        {% else %}
+                            <input type="hidden" name="data[name_{{lang_id}}]" value="{{membership.name|escape}}" class="form-control"
+                               lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{lang_id}}" />
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                        </a>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                {% for lang_id, item in langs %}
+                                    {% if lang_id != current_lang_id %}
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                        <div class="col-md-10 col-sm-10 col-xs-12">
+                                            <input type="text" name="langs[{{ lang_id }}]" class="form-control"
+                                                   value="{% if validate_lang %}{{ attribute(validate_lang, lang_id) }}{% else %}{{ data.name }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"> <!-- User Type -->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_user_type_enabled','memberships') %}:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    {% for key, item in user_types %}
+                        <input type="checkbox" name="data[user_type_enabled][]" id="user_type_{{key}}"
+                           {% if (not membership.user_type_disabled_array) or (not in_array(key, membership.user_type_disabled_array)) %}
+                                checked
+                           {% endif %}
+                           value="{{key}}" class="flat">
+                       <label for="user_type_{{key}}">{{item}}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-group"> <!-- Payment Type -->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_pay_type','memberships') %}:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <select name="data[pay_type]" class="form-control">
+                        {% for pay_type in pay_types %}
+                            <option value="{{pay_type}}" {% if membership.pay_type == pay_type %}selected{% endif %}>
+                                {% set transform_payment_type='payment_type_' ~ pay_type %} <!--as a result of transformation from *.tpl to *.twig-->
+                                {% helper lang.l(transform_payment_type, 'memberships') %}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group"> <!-- Price -->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_price','memberships') %} ({% helper start.currency_format_output() %}): &nbsp;*
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="number" min="0" step=".01" value="{{membership.price|escape}}" name="data[price]" class="form-control">
+                </div>
+            </div>
+            <div class="form-group"> <!-- Period -->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_period','memberships') %}: &nbsp;*
+                </label>
+                <div class="col-md-3 col-sm-3 col-xs-8">
+                    <input type="number" min="0" step="1" name="data[period_count]" value="{{membership.period_count|escape}}" class="form-control">
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <select name="data[period_type]" class="form-control">
+                        {% for period_type in period_types %}
+                            {% set transform_period_type='period_type_' ~ period_type %} <!--as a result of transformation from *.tpl to *.twig-->
+                            <option value="{{period_type}}" {% if membership.period_type == period_type %}selected{% endif %}>
+                                {% helper lang.l(transform_period_type,'memberships') %}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group"> <!-- Description -->
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l ('field_description','memberships') %}:
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    {% for lang_id,lang_item in langs %}
+                        {% set description = 'description_'.lang_id %}
+                        {% if lang_id == current_lang_id %}
+                            <textarea name="data[description_{{lang_id}}]" class="form-control" lang-editor="value"
+                                      lang-editor-type="data-description" lang-editor-lid="{{lang_id}}"
+                                      >{{membership[description]|escape|trim}}</textarea>
+                        {% else %}
+                            <input type="hidden" name="data[description_{{lang_id}}]" value="{{membership[description]|escape|trim}}"
+                               lang-editor="value" lang-editor-type="data-description" lang-editor-lid="{{lang_id}}"
+                               class="form-control">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="accordion col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                        <a class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                        </a>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                {% for lang_id, item in langs %}
+                                    {% if lang_id != current_lang_id %}
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                        <div class="col-md-10 col-sm-10 col-xs-12">
+                                            <textarea name="data[description_{{lang_id}}]" class="form-control" lang-editor="value"
+                                                      lang-editor-type="data-description" lang-editor-lid="{{lang_id}}"
+                                                      >{{membership[description]|escape|trim}}</textarea>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+
+            <div class="form-group"> <!-- Buttons -->
+                <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                    <input type="submit" name="save" value="{% helper lang.l('btn_save','start') %}" class="btn btn-success">
+                    <a class="btn btn-default" href="{{site_url}}admin/memberships">{% helper lang.l('btn_cancel','start') %}</a>
+                </div>
+            </div>
+
+        </form>
+      </div>
+      <div class="clearfix"></div>
+
+        {% if membership.id %} <!-- Membership option -->
+      <div class="x_panel">
+            <h2>{% helper lang.l('admin_header_services','memberships') %}</h2><br>
+            <table class="data table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title text-center">{% helper lang.l('field_service_name','memberships') %}</th>
+                        <th class="column-title text-center">{% helper lang.l('field_service_status','memberships') %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in services %}
+                        <tr>
+                            <td class="text-center">{{item.name}}</td>
+                            <td class="text-center center">
+                                {% set service_id = item.id %}
+                                {% if membership.services_array[service_id].is_active %}
+                                    <a class="btn-service-activity" data-activity="true" data-id="{{item.id}}"
+                                       href="{{site_url}}admin/memberships/deactivate_service/{{membership.id}}/{{item.id}}"
+                                       title="{% helper lang.l('link_deactivate_service','memberships') %}">
+                                        <i class="fa fa-circle"></i>
+                                    </a>
+                                {% else %}
+                                    <a class="btn-service-activity" data-activity="false" data-id="{{item.id}}"
+                                       href="{{site_url}}admin/memberships/activate_service/{{membership.id}}/{{item.id}}"
+                                       title="{% helper lang.l('link_activate_service','memberships') %}">
+                                        <i class="fa fa-circle-o"></i>
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr><td colspan="4" class="text-center">{% helper lang.l('no_services','memberships') %}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            {% set params %}
+                {% for item in services %}
+                    {% if not empty(item.template.data_membership_array) %}
+                        {% set service_id=item.id %}
+                        <div class="edit-form n150">
+                            <div class="row header">{{item.name}}</div>
+                            {% for name, type in item.template.data_membership_array %}
+                                <div class="form-goup">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{{name}}</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="params[{{service_id}}][{{name}}]" class="form-control"
+                                               value="{{membership.services_list[service_id].data_admin[name]|escape}}">
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endset %}
+            {% if params|trim %}
+                <br><br>
+                <h2>{% helper lang.l('admin_header_params','memberships') %}</h2><br>
+                <form method="post" action="{{data.action}}" id="save_params_form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{params}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="submit" name="save_params" value="{%helper lang.l('btn_save','start') %}" class="btn btn-success">
+                            <a class="cancel" href="{{site_url}}admin/memberships">{% helper lang.l('btn_cancel','start') %}</a>
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+
+          </div>
+        {% endif %}
+    </div>
+</div>
+
+{% helper utils.jscript_by_theme('memberships', 'memberships-admin.js', '', 'gentelella') %}
+<script>
+    $(function () {
+        var membershipsA = new membershipsAdmin({
+            siteUrl: '{{site_root}}',
+            membershipId: '{{membership.id}}',
+            parent: '.membership-edit'
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,18 @@
+{% if not error %}
+    {% for module_name, item in data %}
+        <div class="mb20">
+            <h2>{% helper lang.l('admin_header_module_name', 'fast_navigation') %} - {{ module_name }}:</h2>
+            {% for subitem in item %}
+                <div class="ml20">
+                    <a href="{{ site_url }}{{ subitem.url }}" class="capitalize">{{ subitem.keywords }}</a>
+                </div>
+            {% else %}
+                <div class="center">{% helper lang.l('not_found', 'fast_navigation') %}</div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="center">{% helper lang.l('not_found', 'fast_navigation') %}</div>
+    {% endfor %}
+{% else %}
+    <div class="center">{{ error }}</div>
+{% endif%}

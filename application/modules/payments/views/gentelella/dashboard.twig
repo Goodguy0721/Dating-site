@@ -1,0 +1,18 @@
+<div class="form-group">
+      <label>{% helper lang.l('field_payment_user', 'payments') %}:</label> <a href="{{ site_url }}admin/users/edit/personal/{{ data.user.id }}" target="_blank" >{{ data.user.output_name }}</a><br>
+      <label>{% helper lang.l('field_payment_amount', 'payments') %}:</label> {% helper start.currency_format_output({value: data.amount}) %}<br>
+      <label>{% helper lang.l('field_payment_type', 'payments') %}</label> {{ data.payment_type_gid }}<br>
+      {% if data.payment_data.comment %}
+      <label>{% helper lang.l('html_field_comment', 'payments') %}</label><br>{{ data.payment_data.comment }}<br>
+      {% endif %}
+</div>
+<div class="form-group">
+    {% if data.dashboard_status == 'payment_sended' %}
+    <a class="btn btn-success js-dashboard-action" href="{{site_url}}admin/payments/payment_status/approve/{{ data.id }}/1">
+      {% helper lang.l('link_payment_approve', 'payments') %}</a>
+    <a class="btn btn-danger js-dashboard-action" href="{{site_url}}admin/payments/payment_status/decline/{{ data.id }}/0">
+      {% helper lang.l('link_payment_decline', 'payments') %}</a>
+    {% else %}
+    <label>{% helper lang.l('text_status', 'start') %}:</label> {% helper lang.l('status_' ~ data.dashboard_status, 'payments') %}
+    {% endif %}
+</div>

@@ -1,0 +1,214 @@
+{% include '@app/header.twig' with {load_type:'ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <a class="collapse-link">
+            <div class="x_title">
+                <h2> {% helper lang.l('admin_header_payment_system_change', 'payments') %} </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><i class="fa fa-chevron-up"></i></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+        <div class="x_content">
+            <br>
+            <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+                <div class="form-group"> <!-- Name system -->
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_system_name', 'payments') %}:
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        {{ data.name }}
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group"> <!-- System used? -->
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_system_use', 'payments') %}:
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        {% if data.in_use %}
+                            {% helper lang.l('system_in_use', 'payments') %}
+                        {% else %}
+                            {% helper lang.l('system_not_in_use', 'payments') %}
+                        {% endif %}
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                {% for key, item in data.map %} <!-- Custom fields -->
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {{ item.name }}:
+                        </label>
+
+                        {% if item.type == 'text' %}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="map[{{ key }}]" value="{{ item.value|e }}" class="form-control">
+                            </div>
+                        {% elseif item.type == 'textarea' %}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <textarea name="map[{{ key }}]" rows="10" cols="80" class="form-control">
+                                    {{ item.value }}
+                                </textarea>
+                            </div>
+                        {% endif %}
+                        <div class="clearfix"></div>
+                    </div>
+                {% endfor %}
+
+                {% if data.tarifs_editable or data.tarifs_type %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_system_tarifs', 'payments') %}:
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="#" id="add_operator_link">
+                                {% if data.tarifs_type == 2 %}
+                                    {% helper lang.l('link_system_operator_add_new','payments') %}
+                                {% else %}
+                                    {% helper lang.l('link_system_tarif_add_new','payments') %}
+                                {% endif %}
+                            </a>
+                            <div class="system-operators" id="system_tarifs_block">
+                                {{ system_tarifs_block }}
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    {% if operator_gid %}
+                  		{% helper edit_operator_headline = lang.l('admin_header_systems_operator_edit', 'payments') %}
+                  	{% else %}
+                  		{% helper edit_operator_headline = lang.l('admin_header_systems_operator_add', 'payments') %}
+                  	{% endif %}
+                    <script type="text/javascript">
+                        var PaymentSystemTarifs_obj;
+                        loadScripts(
+                            "{% helper utils.jscript('payments', 'payment-system-tarifs.js', 'path') %}",
+                            function () {
+                                PaymentSystemTarifs_obj = new PaymentSystemTarifs({
+                                    siteUrl: '{{ site_root }}',
+                                    systemGid: '{{ data.gid }}',
+                                    useOperators: '{% if data.tarifs_type == 2 %}true{% else %}false{% endif %}',
+                                    contentObj: new loadingContent({
+                                      loadBlockSize: 'big',
+                                      loadBlockTitle: '{{ edit_operator_headline }}',
+                                      footerButtons: '<input type="button" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" id="btn_save" class="btn btn-primary">',
+                                    }),
+                                });
+                            },
+                            'PaymentSystemTarifs_obj'
+                        );
+                    </script>
+                {% endif %}
+
+                <div class="form-group">  <!-- Details -->
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_info_data', 'payments') %}:
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        {% for lang_id, lang_item in langs %}
+                            {% set name='info_data_' ~ lang_id %}
+                            {% if lang_id == current_lang_id %}
+                                <textarea name="info[{{ name }}]" rows="4" cols="60" class="form-control">{{ attribute(data, name)|e }}</textarea>
+                            {% else %}
+                                <input type="hidden" name="info[{{ name }}]" value="{{ attribute(data, name)|e }}" class="form-control"
+                                        lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="accordion col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    {% for lang_id, item in langs %}
+                                        {% if lang_id != current_lang_id %}
+                                             {% set name='info_data_' ~ lang_id %}
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                <div class="col-md-10 col-sm-10 col-xs-12">
+                                                    <textarea name="info[{{ lang_id }}]" rows="4" cols="60" class="form-control">{{ attribute(data, name)|e }}</textarea>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="ln_solid"></div>
+
+                    <!-- Buttons -->
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                            {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                            <input type="submit" name="btn_save" value="{{ save_text }}" class="btn btn-success">
+                            <a class="btn btn-default" href="{{ site_url }}admin/payments/systems">
+                                {% helper lang.l('btn_cancel', 'start') %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="x_panel">
+        <a class="collapse-link">
+            <div class="x_title">
+                <h2> {% helper lang.l('admin_header_logo_upload', 'payments') %} </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><i class="fa fa-chevron-down"></i></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+        <div class="x_content hide">
+            <br>
+            <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_logo_file', 'payments') %}:
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="file" value="" name="logo" class="form-control"><br>
+                        <img src="{{ data.logo_url }}" class="img-responsive" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                {% if data.logo %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_logo_delete', 'payments') %}:
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="checkbox" name="logo_delete" value="1" class="flat">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {% endif %}
+
+                <div class="ln_solid"></div>
+
+                <!-- Buttons -->
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" name="btn_save" value="{{ save_text }}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/payments/systems">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% include '@app/footer.twig' %}

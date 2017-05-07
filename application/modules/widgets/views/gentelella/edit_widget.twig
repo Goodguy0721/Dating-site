@@ -1,0 +1,160 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                        {% helper lang.l('field_widget_size', 'widgets') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% helper sizes = lang.ld('widget_size', 'widgets') %}
+                        <select name="data[size]" class="form-control">
+                            {% for key, item in sizes.option %}
+                            <option value="{{ key }}" {% if widget.size == key %}selected{% endif %}>{{ item }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+		<div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                        {% helper lang.l('field_widget_title', 'widgets') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% set name = 'title_' ~ current_lang_id %}
+                        <input type="text" name="data[title_{{ current_lang_id }}]" value="{{ widget[name]|escape }}" lang-editor="value" lang-editor-type="data-title" lang-editor-lid="{{ current_lang_id }}" class="form-control">
+                    </div>
+		</div>
+            {% if count(langs) > 1 %}
+                <div class="form-group">
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'services') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in langs %}
+                                    {% set name = 'title_' ~ lang_id %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                                {{ lang_item.name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <input type="text" name="data[title_{{ lang_id }}]"
+                                                       value="{{ widget[name]|escape }}"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+		<div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                        {% helper lang.l('field_widget_footer', 'widgets') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% set name = 'footer_' ~ current_lang_id %}
+                        <input type="text" name="data[footer_{{ current_lang_id }}]" value="{{ widget[name]|escape }}" lang-editor="value" lang-editor-type="data-footer" lang-editor-lid="{{ current_lang_id }}" class="form-control" >
+                    </div>
+		</div>
+            {% if count(langs) > 1 %}
+                <div class="form-group">
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion2" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'services') %}</h4>
+                            </a>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in langs %}
+                                    {% set name = 'footer_' ~ lang_id %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                                {{ lang_item.name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <input type="text" name="data[footer_{{ lang_id }}]"
+                                                       value="{{ widget[name]|escape }}"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+		            <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_widget_colors', 'widgets') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% helper utils.jscript('', 'colorsets/jscolor/jscolor.js', 'script') %}
+                        {% helper lang.l('colors_background', 'widgets') %}
+                        <input type="text" name="data[colors][background]" value="{{ widget.colors.background|escape }}" class="color-pick form-control" id="colors_background">
+                        {% helper lang.l('colors_border', 'widgets') %}
+                        <input type="text" name="data[colors][border]" value="{{ widget.colors.border|escape }}" class="color-pick form-control" id="colors_border">
+                        {% helper lang.l('colors_text', 'widgets') %}
+                        <input type="text" name="data[colors][text]" value="{{ widget.colors.text|escape }}" class="color-pick form-control" id="colors_text">
+                        {% helper lang.l('colors_link', 'widgets') %}
+                        <input type="text" name="data[colors][link]" value="{{ widget.colors.link|escape }}" class="color-pick form-control" id="colors_link">
+                        {% helper lang.l('colors_block', 'widgets') %}
+                        <input type="text" name="data[colors][block]" value="{{ widget.colors.block|escape }}" class="color-pick form-control" id="colors_block">
+                    </div>
+		            </div>
+
+                {{ settings_form }}
+
+                <div class="clearfix"></div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+                    </div>
+                </div>
+            </form>
+	</div>
+    </div>
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_preview', 'widgets') %}</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li>
+                <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content hide">
+            <div class="preview">{{ widget_code }}</div>
+        </div>
+    </div>
+    <div class="x_panel">
+	<div class="x_title">
+            <h2>{% helper lang.l('admin_header_widget_code', 'widgets') %}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="form-group">
+                <textarea name="data[code]" rows="12" id="code" readonly
+                    class="form-control">{% include 'widget_code.twig' %}</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        $('#code').bind('click', function() {
+          this.select();
+        }).trigger('click');
+    });
+</script>
+
+{% include '@app/footer.twig' %}

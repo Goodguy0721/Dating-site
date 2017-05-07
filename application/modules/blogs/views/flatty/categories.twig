@@ -1,0 +1,38 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+	<h1>{% helper lang.l('header_blog', 'blogs') %}</h1>
+	{% include 'blog_menu.twig' %}
+	<div style="margin-top:15px">
+		{% for item in categories %}
+			<div class="fleft" style="width:45%; padding:5px 30px 5px 0px">{% if item.blogs_count > 0 %}<a href="{{ site_url }}blogs/view_category/{{ item.gid }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}<span class="fright">{{ item.blogs_count }} {% helper lang.l('blogs', 'blogs') %}</span></div>
+		{% endfor %}
+	</div>
+	<div class="clr"></div>
+	{% if tags_count > 0 %}
+	<h2 class="line top bottom linked">
+		{% helper lang.l('tags_cloud', 'blogs') %}
+	</h2>
+	{% for item in tags %}
+		<a style="padding-right:5px" href="javascript:void(0)" onclick="TagsSearch('{{ item }}')">{{ item }}</a>
+	{% endfor %}
+	{% endif %}
+	<div id="by_tags_search"></div>
+</div>
+<div class="clr"></div>
+<script type="text/javascript">
+	function TagsSearch(tag){
+		$('#by_tags_search').html('');
+		$.ajax({
+			url: '{{ site_url }}blogs/searh_by_tag/',
+			data: {tag: tag},
+			success: function(resp) {
+				$('#by_tags_search').html(resp);
+			},
+			type: 'POST',
+			async: false
+		});
+	}
+</script>
+
+{% include '@app/footer.twig' %}

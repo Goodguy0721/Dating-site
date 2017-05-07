@@ -1,0 +1,10 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+	<h1>{% helper lang.l('header_edit_a_blog', 'blogs') %}</h1>
+	{% include 'blog_menu.twig' %}
+	{% include 'add_blog_form.twig' with {data: blog} %}
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,92 @@
+.homepage-wall h1{
+    
+}
+.homepage-wall .form-group {
+    margin-bottom: 0px;
+}
+.wall-post-content {
+    line-height: 15pt;
+}
+.wall-perm-form .permission-header {
+    font-weight: bold;
+    margin: 20px 0;
+}
+.wall-perm-form .permission-item {
+    line-height: 40px;
+}
+#wall_gallery {
+    .gallery-window {
+        img {
+            margin:auto;
+        }
+    }
+    .load_content_left::after {
+        left: 20px;
+    }
+    .load_content_right::after {
+        right: 20px;
+    }
+    .load_content_close {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* timeline form, new post, add */
+.b-timeline-addpost {
+    background: rgba(#09090E, 0.05);
+    margin-bottom: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px 15px;
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+}
+.b-timeline-addpost_message {
+
+    &.innactive {
+        height: 39px;
+    }
+}
+.b-timeline-addpost__file {
+    margin: 10px 0 30px;
+}
+.b-timeline-addpost__embed {
+    margin: 10px 0 30px;
+
+    textarea {
+        height: 39px;
+    }
+}
+.b-timeline-addpost__controls {
+    display: none;
+    line-height: 0;
+
+    a {
+        display: block;
+        line-height: 20px;
+    }
+}
+.b-timeline-addpost__controls_right {
+    text-align: right;
+
+    input {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .b-timeline-addpost__controls {
+        a {
+            display: inline-block;
+        }
+    }
+
+   .b-timeline-addpost__controls_right {
+        input {
+            display: inline-block;
+        }
+    } 
+}

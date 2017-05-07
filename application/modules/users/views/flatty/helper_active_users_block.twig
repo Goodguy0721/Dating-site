@@ -1,0 +1,55 @@
+{% set thumb_name=recent_thumb.name %}
+<div class="active-users clearfix" id="active_users_inner">
+    <div  class="title-block" data-title="{% helper lang.l('header_active_users', 'users') %}" data-id="active-user-title" id="active-user-title">
+        <span>
+            {% helper lang.l('header_active_users', 'users') %}
+        </span>
+        <span class="fright refresh_active_users" id="refresh_active_users">
+            <i class="fa fa-refresh"></i>
+        </span>
+    </div>
+    <div class="active-users-filter-wrapper">
+        <a href="javascript:void(0);" class="refresh_active_users active-users-filter {% if not active_user_type %}selected{% endif %}" user_type="0">{% helper lang.l('filter_all', 'users') %}</a>
+        {% for key,user_type in user_types %}
+            &nbsp;<a href="javascript:void(0);" class="refresh_active_users active-users-filter{% if key == active_user_type %} selected{% endif %}" user_type="{{key}}">{{user_type}}</a>
+        {% endfor %}
+    </div>
+    <div class="clearfix"></div>
+    {% for item in active_users_block_data.users %}
+        <span class="a">
+            <div class="fleft">
+                {% set text_user_logo %}
+                    {% helper lang.l('text_user_logo', 'users', '', 'button', item) %}
+                {% endset %}
+                <a href="{% helper seo.seolink('users', 'view', item) %}">
+                    <img class="small" src="{{ attribute(item.media.user_logo.thumbs, thumb_name) }}" width="{{ recent_thumb.width }}" alt="{{ text_user_logo }}" title="{{ text_user_logo }}" />
+                </a>
+            </div>
+        </span>
+    {% endfor %}
+</div>
+<script>
+    $(function () {
+
+        $('.refresh_active_users').unbind('click').click(function () {
+            var user_type;
+            if ($(this).hasClass('active-users-filter')) {
+                user_type = $(this).attr('user_type');
+            } else {
+                user_type = $('.active-users-filter.selected').attr('user_type');
+            }
+
+            $.ajax({
+                url: site_url + 'users/ajax_refresh_active_users',
+                type: 'POST',
+                data: {count: 16, "user_type": user_type},
+                dataType: "html",
+                cache: false,
+                success: function (data) {
+                    $('#active_users').html(data);
+                }
+            });
+            return false;
+        });
+    });
+</script>

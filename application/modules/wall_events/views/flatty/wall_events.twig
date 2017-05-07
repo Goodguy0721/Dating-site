@@ -1,0 +1,58 @@
+{% for e in events %}
+	{% if e.html %}
+		{% set e_user_id = e.id_poster %}
+		{% if users[e_user_id] %}
+			{% set e_user = users[e_user_id] %}
+		{% else %}
+			{% set e_user = users[0] %}
+		{% endif %}
+        <div class="media b-media-wallpost" id="wall_event_{{ e.id }}" gid="{{ e.event_type_gid }}">
+            <div class="media-left">
+                {% helper text_wall_photo = lang.l('text_wall_photo', 'wall', '', 'button', e) %}
+                <a class="g-pic-border g-rounded" href="{% spaceless %}
+                        {% if e_user.id is not empty %}
+                            {% helper seo.seolink('users', 'view', e_user) %}
+                        {% else %}
+                            {% helper seo.seolink('users', 'untitled') %}
+                        {% endif %}
+                    {% endspaceless %}">
+                    {% helper users.formatAvatar({'user': e_user, 'size': 'small', 'id': 'avatar_' ~ e_user.id ~ '_e_' ~ e.id }) %}
+                </a>
+            </div>
+            <div class="media-body">
+                <span class="b-media-wallpost__heading">
+                    <a href="{% spaceless %}
+                            {% if e_user.id is not empty %}
+                                {% helper seo.seolink('users', 'view', e_user) %}
+                            {% else %}
+                                {% helper seo.seolink('users', 'untitled') %}
+                            {% endif %}
+                        {% endspaceless %}">
+                        {{ e_user.output_name }}
+                    </a>
+                </span>
+
+                {{ e.html }}
+
+                <div class="b-media-wallpost__footer">
+                    <span class="fright">
+                        {% helper likes.like_block({
+                            'gid': 'wevt' ~ e.id,
+                            'type': 'button'
+                        }) %}
+                    </span>
+                    <span>
+                        {% helper comments.comments_form({
+                            'gid': 'wall_events',
+                            'id_obj': e.id,
+                            'hidden': 1,
+                            'count': e.comments_count,
+                            'view': 'icon'
+                        }) %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+	{% endif %}
+{% endfor %}

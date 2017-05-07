@@ -1,0 +1,92 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_send_money_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('admin_view_data', 'send_money') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_username', 'send_money') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_sender_username', 'send_money') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_amount', 'send_money') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_transfer_fee', 'send_money') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_status', 'send_money') %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item.date_created }}</td>
+                        <td>{{ item.user }}</td>
+                        <td>{{ item.sender_user }}</td>
+                        <td>{{ item.amount }}</td>
+                        <td>{{ item.transfer_fee }}</td>
+                        <td id="status_{{ item.rand }}">
+                        {% set status = item.status %}
+                        {% if status == "waiting" %}
+                            <font class="">{% helper lang.l("send_money_waiting", "send_money") %}</font>
+                        {% elseif status == "approved" %}
+                            <font class="success">{% helper lang.l("send_money_approved", "send_money") %}</font>
+                        {% elseif status == "declined" and item.declined_by_sender == '1' %}
+                            <font class="error">{% helper lang.l("send_money_declined_by_sender", "send_money") %}</font>
+                        {% else %}
+                            <font class="error">{% helper lang.l("send_money_declined_by_user", "send_money") %}</font>
+                        {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('admin_view_no_data','send_money') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1,2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

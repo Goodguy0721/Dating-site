@@ -1,0 +1,22 @@
+<li{% if section == 'overview' %} class="active"{% endif %}>
+    <a href="{{ site_url }}admin/start/settings/overview">
+        {% helper lang.l('sett_overview_item', 'start') %}
+    </a>
+</li>
+<li{% if section == 'numerics' %} class="active"{% endif %}>
+    <a href="{{ site_url }}admin/start/settings/numerics">
+        {% helper lang.l('sett_numerics_item', 'start') %}
+    </a>
+</li>
+{% for key, item in other_settings %}
+    <li{% if key == section %} class="active"{% endif %}>
+        <a href="{{ site_url }}admin/start/settings/{{ key }}">
+            {% helper lang.l('sett_' ~ key ~ '_item', 'start') %}
+        </a>
+    </li>
+{% endfor %}
+<li{% if section == 'date_formats' %} class="active"{% endif %}>
+    <a href="{{ site_url }}admin/start/settings/date_formats">
+        {% helper lang.l('sett_date_formats_item', 'start') %}
+    </a>
+</li>

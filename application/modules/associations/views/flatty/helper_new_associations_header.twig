@@ -1,0 +1,8 @@
+<div class="menu-alerts-more-item clearfix {% if not count %}hide-always{% endif %}">
+    <a id="associations_link_{{ gid }}" href="{{ site_url }}associations/index">
+        {% helper lang.l('header_view_association', 'associations') %}: 
+        <b class="summand {{ gid }}_count fright">
+            {{ count }}
+        </b>
+    </a>
+</div>

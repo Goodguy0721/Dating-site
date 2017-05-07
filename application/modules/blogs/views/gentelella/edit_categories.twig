@@ -1,0 +1,48 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form action="{{ data.action }}" method="post" 
+                enctype="multipart/form-data" name="save_form"
+                data-parsley-validate class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_gid', 'languages') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% if option_gid is not empty %}
+                            {{ option_gid }}
+                        {% else %}
+                            <input type="text" value="" name="option_gid" class="form-control" />
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% for lang_id,item in langs %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {{ item.name }}: 
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ attribute(lang_data, lang_id)|e }}" name="lang_data[{{ lang_id }}]" class="form-control">
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/blogs/categories">
+                            {% helper lang.l('btn_cancel', 'start' )%}</a>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

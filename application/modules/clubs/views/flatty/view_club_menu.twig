@@ -1,0 +1,24 @@
+<div class="profile-menu clearfix">
+    <ul>
+        {% helper profile_section_name = lang.l('filter_section_profile', 'clubs') %}
+        <li {% if profile_section == 'profile' %}class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('clubs', 'view', club) %}">
+                {{ profile_section_name }}
+            </a>
+        </li>
+
+        {% helper gallery_section_name = lang.l('filter_section_gallery', 'clubs') %}
+        <li {% if profile_section == 'gallery' %}class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('clubs', 'media', club) %}">
+                {{ gallery_section_name }}
+            </a>
+        </li>
+
+        {% helper forum_section_name = lang.l('filter_section_forum', 'clubs') %}
+        <li {% if profile_section == 'forum' %}class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('clubs', 'forum', club) %}">
+                {{ forum_section_name }}
+            </a>
+        </li>
+    </ul>
+</div>

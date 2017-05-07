@@ -1,0 +1,96 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+            {% if data.id %}
+                {% helper lang.l('admin_header_reason_change', 'tickets') %}
+            {% else %}
+                {% helper lang.l('admin_header_reason_add', 'tickets') %}
+            {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" name="save_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'tickets') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="name[{{ cur_lang }}]" class="form-control"
+                               value="{% if validate_lang %}{% spaceless %}
+                                            {{ attribute(validate_lang, cur_lang) }}
+                                      {% endspaceless %}{% else %}{% spaceless %}
+                                          {{ attribute(data.names, cur_lang) }}
+                                      {% endspaceless %}{% endif %}">
+                    </div>
+
+            {% if languages_count > 1 %}
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel">
+                                    <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
+                                       data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                       <h4 class="panel-title">{% helper lang.l('others_languages', 'tickets') %}</h4>
+                                    </a>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                        {% for lang_id, item in languages %}
+                                            {% if lang_id != cur_lang %}
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                <div class="col-md-10 col-sm-10 col-xs-12">
+                                                    <input type="text" name="name[{{ lang_id }}]"
+                                                           value="{% if validate_lang %}{% spaceless %}
+                                                                        {{ attribute(validate_lang, lang_id) }}
+                                                                  {% endspaceless %}{% else %}{% spaceless %}
+                                                                      {{ attribute(data.names, lang_id) }}
+                                                                  {% endspaceless %}{% endif %}"
+                                                           class="form-control">
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mails', 'tickets') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.mails_string|e }}" name="mails" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <i>{% helper lang.l('field_mails_text', 'tickets') %}</i>
+                    </div>
+                </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                    {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                    <input type="submit" class="btn btn-success" value="{{ save_text }}" name="btn_save">
+                    <button type="button" class="btn btn-default"
+                            onclick="document.location.href='{{ site_url }}admin/tickets/reasons/'">
+                        {% helper lang.l('btn_cancel', 'start') %}
+                    </button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

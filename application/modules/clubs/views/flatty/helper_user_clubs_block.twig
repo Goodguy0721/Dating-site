@@ -1,0 +1,15 @@
+<style type="text/css">
+	.user-clubs__header { font-size: 1.2em; font-weight: bold; }
+	.user-clubs-block { margin: 20px 0; }
+</style>
+
+<div class="user-clubs-block clearfix ">
+	<div class="user-clubs__header">
+		{% helper lang.l('header_user_clubs', 'clubs') %}
+	</div>
+	<div class="user-clubs__clubs">
+		{% for group in helper_user_clubs.clubs %}
+			<a class="user-clubs__clubs" href="{% helper seo.seolink('clubs', 'view', group) %}">{{ group.title }}</a>{% if loop.last is empty %}, {% endif %}
+		{% endfor %}
+	</div>
+</div>

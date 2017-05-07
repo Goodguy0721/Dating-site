@@ -1,0 +1,57 @@
+{% helper is_module_installed = utils.depends('banners',
+                                              'memberships',
+                                              'users_payments',
+                                              'payments',
+                                              'send_money',
+                                              'send_vip',
+                                              'access_permissions') %}
+<div class="title">
+    {% helper lang.l('header_account', 'users') %}
+</div>
+<div class="row">
+    <div class="my-account-menu col-xs-12 col-sm-8 col-md-7 col-lg-7 clearfix">
+        <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                {#% if is_module_installed.memberships %}
+                    <a {% if action == 'memberships'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'account', 'memberships') %}">
+                        {% helper lang.l('header_memberships', 'users') %}
+                    </a>
+                {% endif %#}
+                {% if is_module_installed.access_permissions %}
+                    <a {% if action == 'access_permissions'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('access_permissions', 'index') %}">
+                        {% helper lang.l('header_users_groups', 'access_permissions') %}
+                    </a>
+                {% endif %}
+                </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <a {% if action == 'services'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'account', 'services') %}">
+                    {% helper lang.l('header_services', 'users') %}
+                </a>
+            </div>
+            {% if is_module_installed.users_payments %}
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <a {% if action == 'update'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'account', 'update') %}">
+                        {% helper lang.l('header_account_update', 'users') %}
+                    </a>
+                </div>
+            {% endif %}
+            {% if is_module_installed.payments %}
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a {% if action == 'payments_history'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'account', 'payments_history') %}">
+                        {% helper lang.l('header_my_payments_statistic', 'payments') %}
+                    </a>
+                </div>
+            {% endif %}
+            {% if is_module_installed.banners %}
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <a {% if action == 'banners'%}class="active"{% endif %} data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'account', 'banners') %}">
+                        {% helper lang.l('header_my_banners', 'banners') %}
+                    </a>
+                </div>
+            {% endif %}
+            <div class="col-xs-6 col-sm-4 col-md-4">
+                {% helper start.donate(action) %}
+            </div>
+        </div>
+    </div>
+</div>

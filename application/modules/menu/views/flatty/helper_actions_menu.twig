@@ -1,0 +1,18 @@
+<div class="btn-group list-action-menu">
+    {% helper mailbox.send_message_button({'id_user': user_id, 'view_type': 'button'}) %}
+    <button type="button" class="btn btn-primary-inverted dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>{% helper friendlist.friendlist_links({'id_user': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper blacklist.blacklist_button({'id_user': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper favourites.favourites_button({'id_user': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper im.im_chat_add_button({'id_contact': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper chats.helper_btn_chat({user_id: data.id, 'view_type': 'link'}) %}</li>
+        <li>{% helper winks.wink({'user_id': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper kisses.kisses_list({'user_id': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper associations.button({'id_user': user_id, 'view_type': 'link'}) %}</li>
+        <li>{% helper spam.mark_as_spam_block({'object_id': user_id, 'type_gid': 'users_object', 'template': 'link'}) %}</li>
+    </ul>
+</div>

@@ -1,0 +1,11 @@
+	2454	Tuapa	-18.9500000	-169.9000000	NU	00	0	0	Tuapa	Tuapa	Tuapa	Tuapa	Tuapa	Tuapa
+	2454	Mutalau	-18.9333300	-169.8333300	NU	00	0	0	Mutalau	Mutalau	Mutalau	Mutalau	Mutalau	Mutalau
+	2454	Mamakula	-18.9500000	-169.9000000	NU	00	0	0	Mamakula	Mamakula	Mamakula	Mamakula	Mamakula	Mamakula
+	2454	Makefu	-18.9833300	-169.9166700	NU	00	0	0	Makefu	Makefu	Makefu	Makefu	Makefu	Makefu
+	2454	Liku	-19.0333300	-169.7833300	NU	00	0	0	Liku	Liku	Liku	Liku	Liku	Liku
+	2454	Lakepa	-18.9833300	-169.8000000	NU	00	0	0	Lakepa	Lakepa	Lakepa	Lakepa	Lakepa	Lakepa
+	2454	Hikutivake	-18.9647800	-169.8833900	NU	00	0	0	Hikutivake	Hikutivake	Hikutivake	Hikutivake	Hikutivake	Hikutivake
+	2454	Hakupu	-19.1275300	-169.8462300	NU	00	0	0	Hakupu	Hakupu	Hakupu	Hakupu	Hakupu	Hakupu
+	2454	Fatiau	-19.1166700	-169.9000000	NU	00	0	0	Fatiau	Fatiau	Fatiau	Fatiau	Fatiau	Fatiau
+	2454	Avatele	-19.1000000	-169.9166700	NU	00	0	0	Avatele	Avatele	Avatele	Avatele	Avatele	Avatele
+	2454	Alofi	-19.0545100	-169.9176800	NU	00	0	0	Alofi	Алофис	Alofi	Alofi	Alofi	Alofi

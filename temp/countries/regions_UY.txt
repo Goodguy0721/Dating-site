@@ -1,0 +1,5 @@
+	3809	Villa Sara	-33.2534000	-54.4194700	UY	19	0	0	Villa Sara	Villa Sara	Villa Sara	Villa Sara	Villa Sara	Villa Sara
+	3809	Vergara	-32.9333300	-53.9500000	UY	19	0	0	Vergara	Vergara	Vergara	Vergara	Vergara	Vergara
+	3809	Tupambaé	-32.8333300	-54.7666700	UY	19	0	0	Tupambaé	Tupambaé	Tupambaé	Tupambaé	Tupambaé	Tupambaé
+	3809	Treinta y Tres	-33.2333300	-54.3833300	UY	19	0	0	Treinta y Tres	Treinta y Tres	Treinta y Tres	Treinta y Tres	Treinta y Tres	Treinta y Tres
+	3809	Santa Clara de Olimar	-32.9166700	-54.9666700	UY	19	0	0	Santa Clara de Olimar	Santa Clara de Olimar	Santa Clara de Olimar	Santa Clara de Olimar	Santa Clara de Olimar	Santa Clara de Olimar

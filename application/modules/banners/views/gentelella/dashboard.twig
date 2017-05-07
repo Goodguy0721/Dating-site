@@ -1,0 +1,30 @@
+    {% if data.dashboard_status != 'banner_deleted' %}
+    <div class="form-group">
+      <a href="{{ data.media.banner_image.file_url }}" target="_blank">
+      <img src="{{ data.media.banner_image.file_url }}" class="img-responsive fixed_height_200">
+      </a>
+    </div>
+    {% endif %}
+    <div class="form-group">
+      <label>{% helper lang.l('field_user', 'banners') %}:</label> <a href="{{ site_url }}admin/users/edit/personal/{{ data.user.id }}">{{ data.user.output_name }}</a><br>
+      <label>{% helper lang.l('field_link', 'banners') %}:</label> {{ data.link }}<br>
+      <label>{% helper lang.l('field_alt_text', 'banners') %}:</label> {{ data.alt_text }}<br>
+    </div>
+    <div class="form-group">
+      {% if data.dashboard_status == 'banner_added' %}
+      {% if not data.banner_groups %}
+      <a class="btn btn-success" href="{{ site_url }}admin/banners/edit/{{ data.id }}/1" target="_blank" >
+        {% helper lang.l('link_edit_banner','banners') %}
+      </a>
+      {% else %}
+      <a class="btn btn-success js-dashboard-action" href="{{ site_url }}admin/banners/approve/{{ data.id }}/1">
+        {% helper lang.l('link_banner_approve','banners') %}
+      </a>
+      {%endif %}
+      <a class="btn btn-danger js-dashboard-action" href="{{ site_url }}admin/banners/delete/{{ data.id }}/0">
+        {% helper lang.l('link_delete_banner','banners') %}
+      </a>
+      {% else %}
+      <label>{% helper lang.l('text_status', 'start') %}:</label> {% helper lang.l('status_' ~ data.dashboard_status, 'banners') %}
+      {% endif %}
+    </div>

@@ -1,0 +1,51 @@
+<div class="product-for">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-padding-left" id="for_friend">
+        <input type="hidden" name="receiver_id" value="{{ user_data.id }}">
+        <div class="select-for block mb10">
+            <div>
+                <i class="fa fa-check-circle check"></i>
+            </div>
+            {% if user_data.id is not empty %}
+                <div class="select-user">
+                    <div class="select-user-image">
+                        <img class="img-rounded img-responsive" src="{{ user_data.media.user_logo.thumbs.small }}" alt="{{ user_data.output_name }}">
+                    </div>
+                    <div class="select-user-description">
+                        <div class="strong-username">
+                            {{ user_data.output_name }}
+                        </div>
+                        <div class="text-overflow">
+                            <i class="fa fa-map-marker g"></i>&nbsp;{{ user_data.location }}
+                        </div>
+                        {% if not receivers_sel %}
+                            <div class="text-overflow">
+                                <a href="#" id="change_user" data-pjax="0">
+                                    {% helper lang.l('link_change_user', 'store') %}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="select-user">
+                    <a href="#" id="change_user" data-pjax="0">
+                        {% helper lang.l('header_user_select', 'users') %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if not receivers_sel %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-padding-left" id="for_myself">
+        <div class="select-for block">
+            <div>
+                <i class="fa fa-check-circle check"></i>
+            </div>
+            <div class="center block-for-myself">
+                <div class="strong-username">{% helper lang.l('field_order_for_myself', 'store') %}</div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+</div>

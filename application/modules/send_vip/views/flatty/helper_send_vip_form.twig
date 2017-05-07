@@ -1,0 +1,182 @@
+<div class="content-block load_content">
+    {% set user_callback %}
+        function(variable, value, data){
+            $('#user_hidden').val(variable.toString()).change();
+            $('#user_text').val(value);
+        }
+    {% endset %}
+
+    {% if friends_count == 0 and friends_only != 'to_all' %}
+        <h1>{% helper lang.l('send_vip', 'send_vip') %}</h1>
+        <div class="inside send-money-find-friends">
+            <p>
+                {% helper lang.l('send_vip_find_friends', 'send_vip') %}
+            </p>
+            <a href="{{ site_url }}users/search" class="btn btn-primary">
+                {% helper lang.l('btn_search', 'send_vip') %}
+            </a>
+        </div>
+    {% else %}
+    <script>
+        $(function(){
+            loadScripts(
+            "{% helper utils.jscript('', 'autocomplete_input.js', 'path') %}",
+                function(){
+                    user_autocomplete = new autocompleteInput({
+                        siteUrl: '{{ site_root }}',
+                        dataUrl: 'users/ajax_get_users_data',
+                        id_text: 'user_text',
+                        id_hidden: 'user_hidden',
+                        user_id: {{ user_id }},
+                        rand: '{{ rand }}',
+                        format_callback: function(data){
+                            return data.output_name + (data.nickname != data.output_name ?
+                                ' (' + data.nickname + ')' : '');
+                        }
+                    });
+                },
+                'user_autocomplete'
+            );
+        });
+        $(function(){
+            $('#for_friends').unbind('click').click(function(){
+                if ($('#for_friends').prop('checked')) {
+                    $('#friend_list').removeClass('hide');
+                    $('#user_text').addClass('hide');
+                } else {
+                    $('#user_text').removeClass('hide');
+                    $('#friend_list').addClass('hide');
+                }
+            });
+        });
+    </script>
+
+    <div  class="send-vip-form-wrapper">
+        <h1>{% helper lang.l('send_vip', 'send_vip') %}</h1>
+        <form id="send_form" class="send-vip-form" method="post" action="{{ site_url }}send_vip/confirm">
+            <div class='row'>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label>{% helper lang.l('admin_settings_to_whom', 'send_vip') %}</label>
+                        {% if friends_count != 0 %}
+                            <select id="friend_list" name="friend"
+                                    class="form-control{% if friends_only == 'to_all' %} hide {% endif %}">
+                                {% for friend_id, item in friends_list %}
+                                    <option value="{{ friend_id }}">
+                                        {{ item }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                        {% if friends_only == 'to_all' %}
+                            <input type="text" id="user_text" name="user_text"
+                                   placeholder="" class="form-control">
+                        {% else %}
+                            <span id="user_text" class="hide"></span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    {% if friends_count != 0 %}
+                        {% if friends_only == 'to_all' %}
+                        <label for="for_friends" class="checkbox-inline mtb20">
+                            <input type="checkbox" id="for_friends">
+                            {% helper lang.l('admin_settings_friends', 'send_vip') %}
+                        </label>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <input type="hidden" name="id_user" id="user_hidden">
+            </div>
+            <script>
+                $('#memberships').unbind('change').change(function(){
+                    var id = $('#memberships').val();
+                    var memberships = JSON.stringify({{ js_memberships }});
+                        memberships = JSON.parse(memberships);
+
+                    if (id == 0) {
+                        var membershipCost = 0;
+                    } else {
+                        var membershipCost = parseFloat(memberships[id]['price']);
+                    }
+
+                    var koef = parseFloat({{ koef }});
+                    var cost = membershipCost;
+                    var fee  = '{{ use_fee }}';
+                    if (fee == 'use') {
+                        if (koef != 1) {
+                            cost += membershipCost * koef;
+                        } else {
+                            cost += membershipCost + parseFloat({{ transfer_fee }});
+                        }
+                    }
+                    $('#output').text(cost);
+                    for (i = 1; i <= {{ memberships_count }}; i++) {
+                        if (i == id) {
+                            $('#membership_' + i).removeClass('hide');
+                            $('.membership_options_' + i).removeClass('hide');
+                        } else {
+                            $('#membership_' + i).addClass('hide');
+                            $('.membership_options_' + i).addClass('hide');
+                        }
+                    }
+                    if (id == 0) {
+                        $('.services_names').addClass('hide');
+                    } else {
+                        $('.services_names').removeClass('hide');
+                    }
+                    console.log(id);
+                });
+            </script>
+
+            <div class="form-group row">
+                <div class="col-md-5">
+                    <label>{% helper lang.l('send_vip_select_memberships', 'send_vip') %}</label>
+                    <select id="memberships" name="membership" class="form-control">
+                        <option value="0"></option>
+                        {% for item in memberships %}
+                        <option value="{{ item.id }}">
+                            {{ item.name }} ({{ item.price }} {{ cur_currency }})
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="b-memberships__list">
+                {% for mkey, membership in memberships %}
+                    <div class="b-memberships__item hide" id="membership_{{ membership.id }}">
+                        <div class="b-member-plan">
+                            <div class="b-member-plan__advert">{{ membership.period_count }} {{ membership.period_type_output }}</div>
+                            <div class="b-member-plan__title">{{ membership.name }}</div>
+                            <ul class="b-member-plan__offers">
+                                {% for tpl_gid, service in all_services %}
+                                    {% set mId = membership.id %}
+                                    {% if service.membership_templates[mId] %}
+                                        <li class="membership_options_{{ membership.id }}">{{ service.name }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if use_fee == 'use' %}
+                <div class="send-vip-fee clearfix">
+                    <div class='fleft'>{% helper lang.l('send_vip_transfer_live', 'send_vip') %}
+                        <div id='output' pattern='\d+(\.\d{2})?'>0</div>
+                        <span>{{ cur_currency }} ({{ transfer_fee }} {% if koef == '1' %}{{ cur_currency }}{% else %}{{ currency }}{% endif %})</span>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="send-vip-btn">
+                <button type="submit" form="send_form" name="btn_send_vip_save"
+                        class="btn btn-primary" value="1">
+                    {% helper lang.l('send_vip', 'send_vip') %}
+                </button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>

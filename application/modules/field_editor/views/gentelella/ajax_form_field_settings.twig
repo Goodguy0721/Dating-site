@@ -1,0 +1,117 @@
+<div class="load_content_controller">
+	<div class="x_title h4">
+		{% helper lang.l('header_change_field_settings', 'field_editor') %}
+	</div>
+	<div>
+		<form id="save_section_name">
+				{% if field_type == 'select' %}
+					<div class="row form-group">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_select_search_type', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="search_type" id="field_search_type" class="form-control">
+								<option value="one" {% if field.settings.search_type == 'one' %}selected{% endif %}>
+									{% helper lang.l('field_select_search_type_one', 'field_editor') %}</option>
+								<option value="many" {% if field.settings.search_type == 'many' %}selected{% endif %}>
+									{% helper lang.l('field_select_search_type_many', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-group{% if field.settings.search_type == 'many' %} hide{% endif %}" id="field_view_type_one">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_select_view_type_header', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="view_type[one]" class="form-control">
+								<option value="select" {% if field.settings.view_type == 'select' %}selected{% endif %}>
+									{% helper lang.l('field_select_view_type_select', 'field_editor') %}</option>
+								<option value="radio" {% if field.settings.view_type == 'radio' %}selected{% endif %}>
+									{% helper lang.l('field_select_view_type_radio', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-group{% if field.settings.search_type == 'one' or not field.settings.search_type %} hide{% endif %}" id="field_view_type_many">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_select_view_type_header', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="view_type[many]" class="form-control">
+								<option value="select" {% if field.settings.view_type == 'select' %}selected{% endif %}>
+									{% helper lang.l('field_select_view_type_multi', 'field_editor') %}</option>
+								<option value="radio" {% if field.settings.view_type == 'radio' %}selected{% endif %}>
+									{% helper lang.l('field_select_view_type_checkbox', 'field_editor') %}</option>
+								<option value="slider" {% if field.settings.view_type == 'slider' %}selected{% endif %}>
+									{% helper lang.l('field_select_view_type_slider', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+				{% elseif field_type == 'text' %}
+					<div class="row form-group">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_text_search_type', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="search_type" id="field_search_type" class="form-control">
+								<option value="text" {% if field.settings.search_type == 'text' %}selected{% endif %}>
+									{% helper lang.l('field_search_type_text', 'field_editor') %}</option>
+								<option value="number" {% if field.settings.search_type == 'number' %}selected{% endif %}>
+									{% helper lang.l('field_search_type_number', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-group{% if field.settings.search_type == 'number' %} hide{% endif %}" id="field_view_type_text">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_text_view_type_header', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="view_type[text]" class="form-control">
+								<option value="equal" {% if field.settings.view_type == 'equal' %}selected{% endif %}>
+									{% helper lang.l('field_text_view_type_exact', 'field_editor') %}</option>
+								<option value="range" {% if field.settings.view_type == 'range' %}selected{% endif %}>
+									{% helper lang.l('field_text_view_type_like', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-group{% if field.settings.search_type == 'text' or not field.settings.search_type %} hide{% endif %}" id="field_view_type_number">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_text_view_type_header', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="view_type[number]" class="form-control">
+								<option value="equal" {% if field.settings.view_type == 'equal' %}selected{% endif %}>
+									{% helper lang.l('field_text_view_type_exact', 'field_editor') %}</option>
+								<option value="range" {% if field.settings.view_type == 'range' %}selected{% endif %}>
+									{% helper lang.l('field_text_view_type_range', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+				{% elseif field_type == 'range' %}
+					<div class="row form-group">
+						<label class="control-label col-xs-12">
+							{% helper lang.l('field_text_search_type', 'field_editor') %}: </label>
+						<div class="col-xs-12">
+							<select name="search_type" id="field_search_type" class="form-control">
+								<option value="range" {% if field.settings.search_type == 'range' %}selected{% endif %}>
+									{% helper lang.l('field_search_type_range', 'field_editor') %}</option>
+								<option value="number" {% if field.settings.search_type == 'number' %}selected{% endif %}>
+									{% helper lang.l('field_search_type_number', 'field_editor') %}</option>
+							</select>
+						</div>
+					</div>
+				{% endif %}
+			<div class="clearfix"></div>
+			<div class="ln_solid"></div>
+			<div class="form-group">
+					<input type="hidden" name="section_gid" value="{{ section_gid }}" id="ajax_section_gid">
+					<input class="btn btn-success" type="button" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}"
+					id="save_settings_btn">
+					{# <a class="btn btn-primary" href="#" id="cancel_save_settings" onclick="return false;">{% helper lang.l('btn_cancel', 'start') %}</a> #}
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+	$(function(){
+		$('#field_search_type').bind('change', function(){
+			$(this).find('option').each(function(){
+				$('#field_view_type_'+$(this).val()).hide();
+			});
+			$('#field_view_type_'+$(this).val()).show();
+		});
+	});
+</script>

@@ -1,0 +1,112 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% helper utils.jscript('', 'easyTooltip.min.js') %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title h4">
+		{% if data.id %}
+			{% helper lang.l('admin_header_config_change', 'uploads') %}
+		{% else %}
+			{% helper lang.l('admin_header_config_add', 'uploads') %}
+		{% endif %}
+		</div>
+		<div class="x_content">
+			<form class="form-horizontal" method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_name', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="text" value="{{ data.name }}" name="name" class="form-control">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_gid', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="text" value="{{ data.gid }}" name="gid" class="form-control">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_max_width', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="text" value="{{ data.max_width }}" name="max_width" class="form-control"> px
+							<i>{% helper lang.l('int_unlimit_condition', 'uploads') %}</i>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_max_height', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="text" value="{{ data.max_height }}" name="max_height" class="form-control"> px
+							<i>{% helper lang.l('int_unlimit_condition', 'uploads') %}</i>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_max_size', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="text" value="{{ data.max_size }}" name="max_size" class="form-control"> b
+							<i>{% helper lang.l('int_unlimit_condition', 'uploads') %}</i>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_name_format', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<select name="name_format" id="name_format" class="form-control">
+							{% for key, item in lang_name_format.option %}
+								<option value="{{ key }}" {% if key == data.name_format %}selected{% endif %}>{{ item }}</option>
+							{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_file_formats', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+						{% for item in formats %}
+							<input class="flat" type="checkbox" name="file_formats[]" value="{{ item }}"
+								{% if data.enable_formats[item] %}checked{% endif %} id="frm_{{ item }}">
+							<label for="frm_{{ item }}">{{ item }}</label><br>
+						{% endfor %}
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-xs-12 col-sm-3">
+							{% helper lang.l('field_default_img', 'uploads') %}: </label>
+						<div class="col-md-4 col-xs-12 col-sm-6">
+							<input type="file" value="" name="default_img" class="file">
+						{% if data.default_img %}
+							<br><a href="{{ data.default_img_url }}" target="blank">{% helper lang.l('view_source_link', 'uploads') %}</a>
+							{% for item in thumbs %}
+							<a href="{{ data.default_url }}{{ item.prefix }}-{{ data.default_img }}" class="tooltip" id="thumb_{{ item.id }}">
+								{% helper lang.l('btn_view', 'start') %} {{ item.width }}x{{ item.height }}</a>
+								<div class="hide" id="tt_thumb_{{ item.id }}">
+									<img src="{{ data.default_url }}{{ item.prefix }}-{{ data.default_img }}">
+								</div>
+								{% endfor %}
+						{% endif %}
+						</div>
+					</div>
+					<div class="ln_solid"></div>
+					<div class="col-md-offset-3 col-md-9 col-sm-offset-3 col-sm-9">
+						<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+						<a class="btn btn-default" href="{{ site_url }}admin/uploads/configs">{% helper lang.l('btn_cancel', 'start') %}</a>
+					</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+<script type='text/javascript'>
+	$(function(){
+		$(".tooltip").each(function(){
+			$(this).easyTooltip({
+				useElement: 'tt_'+$(this).attr('id')
+			});
+		});
+	});
+</script>
+{% include '@app/footer.twig' %}

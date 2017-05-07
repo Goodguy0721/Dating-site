@@ -1,0 +1,16 @@
+<div class="hlBox" id="{{ hlb_id }}_box" data-multiselect="{{ hlb_multiselect }}"
+    data-defaults={{ hlb_selected|json_encode() }} data-input="{{ hlb_input }}">
+	<div class="data">
+		<div id="{{ hlb_id }}_inputs"></div>
+		<ul>
+			{% for key, item in hlb_value %}
+				<li data-value="{{ key }}">
+                    {{ item }}
+                </li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+<script>
+    hlboxes.push('{{ hlb_id }}');
+</script>

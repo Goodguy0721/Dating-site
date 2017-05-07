@@ -1,0 +1,27 @@
+<a class="panel-heading collapsed" role="tab" id="headingTwo1" data-toggle="collapse"
+    data-parent="#accordion1" href="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1">
+    <h4 class="panel-title">{% helper lang.l('stat_header_spam', 'spam') %}</h4>
+</a>
+<div id="collapseTwo1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo1">
+    <div class="panel-body">
+        <table class="table">
+        {% if stat_spam.index_method %}
+            {% for item in stat_spam.types %}
+                {% set stat_header = 'stat_header_spam_' ~ item.gid %}
+                <tr>
+                    <td>
+                        <a id="spam_link_{{ item.gid }}" href="{{ site_url }}admin/spam/index/{{ item.gid }}">
+                            {% helper lang.l(stat_header, 'spam') %}
+                        </a>
+                    </td>
+                    <td>
+                        <a id="spam_link_{{ item.gid }}_num" href="{{ site_url }}admin/spam/index/{{ item.gid }}">
+                            {{ item.obj_count }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </table>
+    </div>
+</div>

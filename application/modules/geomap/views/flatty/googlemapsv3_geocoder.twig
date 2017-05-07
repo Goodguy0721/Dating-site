@@ -1,0 +1,28 @@
+<script>
+	var geocoder;
+	geocoder_loader = function() {
+		geocoder = new GoogleMapsv3_Geocoder({});
+	}
+</script>
+
+{% if not geomap_js_loaded %}
+	<script>
+		$(function() {
+			loadScripts(
+				[
+					"{% helper utils.jscript('geomap', 'googlemapsv3.js', 'path') %}",
+					"https://maps.google.com/maps/api/js?v=3.9&libraries=places&sensor=true&key={{ map_reg_key }}&callback=geocoder_loader"
+				],
+				function(){
+					geocoder_loader();
+				},
+				'geocoder',
+				{crossDomain: true}
+			);
+		});
+	</script>
+{% else %}
+	<script>
+        geocoder_loader();
+    </script>
+{% endif %}

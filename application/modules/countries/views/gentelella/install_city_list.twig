@@ -1,0 +1,57 @@
+{% include "@app/header.twig" %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_countries_menu') %}
+            </ul>
+        </div>
+        <div class = "x_title">
+            {{ regions_list_length }}
+            {#<h4>{% helper lang.l('countries_install_progress', 'countries') %}</h4>#}
+            <h4>{{ country.name }}: {% helper lang.l('cities_install_progress', 'countries') %}</h4>
+            <div class="progress" id="overall_bar">
+                <div class="bar progress-bar progress-bar-warning" style="width:0%"
+                     id="overall_bar" aria-valuenow="0">
+                    0%
+                </div>
+            </div>
+        </div>
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12" id="region_reload">
+                {% for c_key, c_item in regions_list %}
+                    <div class="col-md-12 col-sm-12 col-xs-12 country-block">
+                        <span id="region_{{ loop.index0 }}">
+                            {{ c_item.name }}
+                        </span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+            <div class="ln_solid"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12" id="back_btn" class="hide">
+                <a href="{{ back_link }}" class="btn btn-default">
+                    {% helper lang.l('btn_back', 'start') %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/progressbar/bootstrap-progressbar.min.js"></script>
+
+<script>
+var country_install;
+$(function(){
+    country_install=new adminCountries({
+        siteUrl: '{{ site_url }}',
+        regions: [{% for key, item in regions %}{% if key %}, {% endif %}'{{ item }}'{% endfor %}],
+        country_code: '{{ country.code }}'
+    });
+    country_install.start_city_install();
+});
+</script>
+
+{% include "@app/footer.twig" %}

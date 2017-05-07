@@ -1,0 +1,155 @@
+{% include "@app/header.twig" with ({'load_type': 'editable|ui'}) %}
+{#% helper utils.jscript('', 'admin-multilevel-sorter.js') %#}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                {% helper lang.l('field_bestsellers', 'store') %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+        <!-- Filters -->
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{% helper lang.l('header_filters', 'start') %}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content hide">
+                    <form method="post" enctype="multipart/form-data" data-parsley-validate
+                          class="form-horizontal form-label-left" name="save_form"
+                          action="{{ data.action }}">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_product_name', 'store') %}:</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="val_text" value="{{ search_param.text }}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_categories', 'store') %}:</label>
+                            <div class="col-sm-9">
+                                <select name="category" class="form-control">
+                                    <option value="" {% if not search_param.category_id %} selected{% endif %}>{% helper lang.l('filter_all', 'store') %}</option>
+                                    {% for item in categories %}
+                                    <option value="{{ item.id }}" {% if search_param.category_id==item.id %} selected{% endif %}>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit" name="btn_search" value="1">
+                                    {% helper lang.l('button_products_find', 'store') %}</button>
+                                <button class="btn btn-default" type="submit" name="btn_reset" value="1">
+                                    {% helper lang.l('button_reset', 'store') %}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="bestsellers row" id="ds_items">
+            <ul name="parent_0" class="sort connected" id="clsr0ul">
+            {% for bestseller in bestsellers %}
+                <li class="best_item col-sm-6" id="item_{{ bestseller.id }}" data-id="item_{{ bestseller.id }}">
+                    <div class="x_panel">
+                        <a class="btn btn-primary pull-right" href="{{ site_url }}admin/store/bestsellers_delete/{{ bestseller.id }}">
+                            {% helper lang.l('link_delete_product', 'store') %}
+                        </a>
+                        <h4>
+                            <a href="{{ site_url }}admin/store/product/description/{{ bestseller.id }}"
+                                class="text-overflow">{{ bestseller.name }}</a>
+                        </h4>
+
+                        <div class="media photo_item">
+                            <div class="media-left">
+                                <a href="{{ site_url }}admin/store/product/description/{{ bestseller.id }}">
+                                    {% helper store.store_media({'module': '', 'id_product': bestseller.id, 'size': 'middle', 'amount': 'single', 'type': 'photo'}) %}
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                {% if bestseller.price > bestseller.price_reduced %}
+                                    <strong>{% helper start.currency_format_output({'value': bestseller.price_reduced}) %}
+                                    <del>{% helper start.currency_format_output({'value': bestseller.price}) %}</del></strong>
+                                {% else %}
+                                    <strong>{% helper start.currency_format_output({'value': bestseller.price}) %}</strong>
+                                {% endif %}
+
+                                <br>
+
+                                {% for key, opt in bestseller.options %}
+                                    {% if key < 4 %}
+                                        {% set option_id = 'option_' ~ opt.id %}
+                                        <div class="field">
+                                            {% helper option = store.store_options_values({'header': opt.name, 'type': opt.type, 'id': opt.id, 'options': bestseller[option_id], 'action': 'view'}) %}
+                                            {% helper utils.truncate(option, 300, '...') %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+            </div>
+            {% if not bestsellers %}
+                <div class="col-md-12 text-center">
+                    {% helper lang.l('no_products', 'store') %}
+                </div>
+            {% endif %}
+            {% include "@app/pagination.twig" %}
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<script src="{{ site_url }}application/views/gentelella/js/sortable/Sortable.min.js"></script>
+<script type="text/javascript">
+    var category_id = '{% if search_param.category_id %}{{ search_param.category_id }}{% else %}0{% endif %}';
+    $(function () {
+        var sortable = Sortable.create($(clsr0ul)[0], {
+            onUpdate: function (/**Event*/evt) {
+
+                var result = sortable.toArray();
+
+                var data = {};
+
+                for (var i in result) {
+                    data[result[i]] = parseInt(i) + 1;
+                }
+
+                $.ajax({
+                    url: '{{ site_url }}admin/store/ajax_bestsellers_save_sorting/' + category_id + '/',
+                    data: {sorter: {parent_0: data}},
+                    dataType: 'json',
+                    method: 'post',
+                });
+            },
+        });
+    });
+</script>
+
+{#<script>
+var mlSorter;
+var category_id = '{% if search_param.category_id %}{{ search_param.category_id }}{% else %}0{% endif %}';
+$(function(){
+    mlSorter = new multilevelSorter({
+        siteUrl: '{{ site_url }}',
+        itemsBlockID: 'pages',
+        urlSaveSort: 'admin/store/ajax_bestsellers_save_sorting/' + category_id + '/',
+    });
+});
+</script>#}
+
+{% include '@app/footer.twig' %}

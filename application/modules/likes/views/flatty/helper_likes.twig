@@ -1,0 +1,17 @@
+<script>
+	$(function(){
+		var data = {{ likes_helper_data|json_encode() }};
+		loadScripts(
+			'{% helper utils.jscript('likes', '../views/flatty/js/likes.js', 'path') %}',
+			function(){
+				likes = new Likes({
+					siteUrl: site_url,
+					likeTitle: data.like_title,
+					canLike: data.can_like
+				});
+			},
+			'',
+			{async: true}
+		);
+	});
+</script>

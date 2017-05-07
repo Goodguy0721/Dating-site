@@ -1,0 +1,183 @@
+{% include '@app/header.twig' %}
+{% helper utils.jscript('', 'number-format.js', '') %}
+<div class="store-content">
+    <div class="container">
+        <div class="row-content">
+            <div class="search-header">
+                <div class="title col-xs-12 col-sm-10 col-md-10 col-lg-10 no-padding-left">
+                    {% helper seo.seo_tags('header_text') %}:&nbsp;#{{ preorders.code }} ({{ preorders.status_text }})
+                </div>
+                <div class="link-order_log col-xs-12 col-sm-2 col-md-2 col-lg-2 no-padding-left">
+                    <button type="button" class="btn btn-default btn-xs fright"><i class="fa fa-history"></i>&nbsp;{% helper lang.l('link_order_log', 'store') %}</button>
+                </div>
+            </div>
+            <div id="order_log_block_{{ preorders.id }}" class="col-xs-12 col-lg-12 order-log-block"></div>
+            <div class="preorder-main-block col-xs-12">
+                <form method="post" action="{{ form_settings.action }}" id="order_block" enctype="multipart/form-data">
+                    <div class="contrasting-block clearfix">
+                        <div class="cart-header-block">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 no-padding-left">{% helper lang.l('field_product_description', 'store') %}</div>
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">{% helper lang.l('field_count', 'store') %}</div>
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">{% helper lang.l('field_product_price', 'store') %}</div>
+                        </div>
+                        <div class="cart-products">
+                            {% for item in preorders.items %}
+                                <div class="cart-product-item clearfix">
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 no-padding-left">
+                                        <div class="product-image">
+                                            {% if item.product.media.mediafile.thumbs.middle is not empty %}
+                                                <img src="{{ item.product.media.mediafile.thumbs.middle }}"
+                                                     alt="{{ item.product.name|e }}" title="{{ item.product.name|e }}" class="img-rounded img-responsive">
+                                            {% else %}
+                                                <div class="default-middle-image">
+                                                    <i class="fa fa-gift fa-4x"></i>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="product-description">
+                                        <div class="product-name">{{ item.product.name }}</div>
+                                            {% for opt in item.product.options %}
+                                                {% set option_id = opt.id %}
+                                                <div>
+                                                    {% helper store.store_options_values({
+                                                        'header': opt.name,
+                                                        'id': opt.id,
+                                                        'options': item.options[option_id],
+                                                        'action': 'view',
+                                                        'source': 'user'
+                                                    }) %}
+                                                </div>
+                                            {% endfor %}
+                                            <div class="preorder-item-title">{% helper lang.l('field_count', 'store') %}:&nbsp;{{ item.count }}</div>
+                                            <div class="preorder-item-title">{% helper lang.l('field_product_price', 'store') %}:&nbsp;{% helper start.currency_format_output({'value': item.price}) %}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hide-in-mobile">
+                                        {{ item.count }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 hide-in-mobile">
+                                       {% helper start.currency_format_output({'value': item.price}) %}
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="cart-product-item clearfix">
+                                    {% helper lang.l('field_cart_empty', 'store') %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% if preorders.is_formed == 0 %}
+                        <div class="cart-total">
+                            {% helper lang.l('field_total', 'store') %}
+                            (<span class="order_count">{{ preorders.products_count }}</span>
+                            &nbsp;{% helper lang.l('field_pc', 'store') %}):&nbsp;
+                            <span class="order_price" data-price="{{ preorders.total }}">
+                                {% helper start.currency_format_output({
+                                    'value': preorders.total
+                                }) %}
+                            </span>
+                        </div>
+                    {% endif %}
+                    {% if preorders.status != 'status_canceled_sender' %}
+                        <div  id="receivers">
+                            <div class="search-header">
+                                <div class="title col-xs-12 col-sm-10 col-md-10 col-lg-10 no-padding-left">
+                                    {% helper lang.l('header_for', 'store') %}
+                                </div>
+                                {% helper store.store_present_receivers({'user': preorders.id_user}) %}
+                            </div>
+                        </div>
+                        {% if preorders.is_formed == 0 %}
+                            <div class="hide col-xs-12 no-padding-left" id="address">
+                                {% helper store.store_address_block() %}
+                            </div>
+                            <div id="shipping-methods" class="col-xs-12 no-padding-left list orders"></div>
+                            <div class="col-xs-12 no-padding-left">
+                                <div class="delivery-block">
+                                    <div id="terms_delivery">
+                                        <input type="checkbox" name="agree_terms_delivery" value="1">
+                                        {% helper lang.l('field_agree', 'store') %}
+                                        <span class="link-terms-delivery">
+                                            {% helper lang.l('field_terms_delivery', 'store') %}&nbsp;<i class="fa fa-info"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding-left">
+                                <div class="result-block">
+                                    <div class="col-xs-12 result-order">
+                                        <div>
+                                            {% helper lang.l('field_total', 'store') %}
+                                            (<span class="order_count">{{ preorders.products_count }}</span>
+                                            &nbsp;{% helper lang.l('field_pc', 'store') %}):&nbsp;
+                                            <span class="order_price" data-price="{{ preorders.total }}">
+                                                {% helper start.currency_format_output({'value': preorders.total}) %}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            {% helper lang.l('field_shipping_cost', 'store') %}&nbsp;
+                                            <span class="shipping_name"></span>:&nbsp;
+                                            <span class="shipping_total">0</span>
+                                        </div>
+                                        <div class="title-block">
+                                            {% helper lang.l('field_total_value', 'store') %}&nbsp;
+                                            (<span class="order_count">{{ preorders.products_count }}</span>
+                                            &nbsp;{% helper lang.l('field_pc', 'store') %}):&nbsp;
+                                            <span id="order_total">
+                                                {% helper start.currency_format_output({'value': preorders.total}) %}
+                                            </span>
+                                        </div>
+                                        <a class="mt20 mr10 btn btn-cancel" href="javascript:void(0);" id="canceled_sender">
+                                            {% helper lang.l('button_cancel_an_order', 'store') %}
+                                        </a>
+                                        <input id="create_order" type="button" name="create" value="{% helper lang.l('button_checkout', 'store') %}" class="btn btn-primary">
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </form>
+                <div class="col-xs-12 no-padding-left">
+                    {% if preorders.is_formed == 1 %}
+                        <div class="total-preorder">
+                            <div class="search-header">
+                                <div class="title">
+                                    {% helper lang.l('field_total_with_delivery', 'store') %}
+                                    ({{ preorders.products_count }}&nbsp;{% helper lang.l('field_pc', 'store') %}):&nbsp;
+                                    {% helper start.currency_format_output({'value': preorders.total}) %}
+                                </div>
+                            </div>
+                            {% helper services.service_form({'gid': 'store_service'}) %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var currency_output = {% helper start.currency_format_regexp_output() %};
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('store', 'store_orders.js', 'path') %}",
+            function(){
+                var data_order = {{ data_order }};
+                orders = new storeOrders({
+                    siteUrl: site_url,
+                    data_order: data_order,
+                    order: {
+                        id_order: '{{ preorders.id }}',
+                        shipping_id: '{{ preorders.id_shipping }}',
+                        price: '{{ preorders.total }}',
+                        is_formed: '{{ preorders.is_formed }}',
+                        status: '{{ preorders.status }}',
+                    }
+                });
+            },
+            'orders',
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

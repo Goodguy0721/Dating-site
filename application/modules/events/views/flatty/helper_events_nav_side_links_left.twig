@@ -1,0 +1,120 @@
+{% if event.is_owner %}
+    <dl class="dl-horizontal pg-dl-icons menu-actions">
+        <dt>
+            <a class="link-r-margin" title="{% helper lang.l('link_edit_event', 'events') %}"
+                href="{% helper seo.seolink('events', 'edit', event.id) %}">
+                <i class="fa fa-pencil hover"></i>
+            </a>
+        </dt>
+        <dd>
+            <a class="link-r-margin" title="{% helper lang.l('link_edit_event', 'events') %}"
+                href="{% helper seo.seolink('events', 'edit', event.id) %}">
+                {% helper lang.l('link_edit_event', 'events') %}
+            </a>
+        </dd>
+
+        <dt>
+            <a data-media="event_photo" class="link-r-margin a" title="{% helper lang.l('btn_upload_photo', 'media') %}">
+                <i class="fa fa-picture-o"></i>
+            </a>
+        </dt>
+        <dd>
+            <a data-media="event_photo" class="link-r-margin a" title="{% helper lang.l('btn_upload_photo', 'media') %}">
+                {% helper lang.l('btn_upload_photo', 'media') %}
+            </a>
+        </dd>
+        <script>
+                $(function(){
+                        loadScripts(
+                                "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+                                function(){
+                                        eventphoto = new media({
+                                                siteUrl: site_url,
+                                                addPhotoID: 'event_photo',
+                                                addPhotoUrl: 'events/ajaxGetForm/image',
+                                                idUser: {{ event.fk_user_id }},
+                                                albumId: {{ event.album_id }},
+                                                recentMediaUrl: 'media/ajax_get_event_recent_media/{{ event.album_id }}',
+                                        });
+                                },
+                                ['eventphoto'],
+                                {async: true}
+                        );
+                });
+        </script>
+
+        <dt>
+            <a class="link-r-margin event-delete a" title="{% helper lang.l('link_delete_event', 'events') %}">
+                <i class="fa fa-trash-o"></i>
+            </a>
+        </dt>
+        <dd>
+            <a class="link-r-margin event-delete a" title="{% helper lang.l('link_delete_event', 'events') %}">
+                {% helper lang.l('link_delete_event', 'events') %}
+            </a>
+        </dd>
+    </dl>
+{% else %}
+    <dl class="dl-horizontal pg-dl-icons menu-actions">
+        <dt>
+            <a title="{% helper lang.l('button_contact', 'events') %}" class="link-r-margin mailbox_connect a" data-pjax="0">
+                <i class="fa fa-comments" data-flash="0"></i>
+            </a>
+        </dt>
+        <dd>
+            <a title="{% helper lang.l('button_contact', 'events') %}" class="link-r-margin mailbox_connect a" data-pjax="0">
+                {% helper lang.l('button_contact', 'events') %}        
+            </a>
+        </dd>
+        
+        {% if settings.event_settings.is_upload_media %}
+            <dt>
+                <a data-media="event_photo" class="link-r-margin a" title="{% helper lang.l('btn_upload_photo', 'media') %}">
+                    <i class="fa fa-picture-o"></i>
+                </a>
+            </dt>
+            <dd>
+                <a data-media="event_photo" class="link-r-margin a" title="{% helper lang.l('btn_upload_photo', 'media') %}">
+                    {% helper lang.l('btn_upload_photo', 'media') %}
+                </a>
+            </dd>
+            <script>
+                    $(function(){
+                            loadScripts(
+                                    "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+                                    function(){
+                                            eventphoto = new media({
+                                                    siteUrl: site_url,
+                                                    addPhotoID: 'event_photo',
+                                                    addPhotoUrl: 'events/ajaxGetForm/image',
+                                                    idUser: {{ event.fk_user_id }},
+                                                    albumId: {{ event.album_id }},
+                                                    recentMediaUrl: 'media/ajax_get_event_recent_media/{{ event.album_id }}',
+                                            });
+                                    },
+                                    ['eventphoto'],
+                                    {async: true}
+                            );
+                    });
+            </script>
+        {% endif %}
+    </dl>
+{% endif %}
+
+<script type="text/javascript">
+    $('.event-delete').off().on('click', function(){
+        var is_delete = confirm('{% helper lang.l('note_alert_delete_event', 'events') %}');
+        if(is_delete) {
+            $.ajax({
+                dataType: 'json',
+                url: '{% helper seo.seolink('events', 'ajaxDelete', event.id) %}',
+                success: function (data) {
+                    if(data.success) {
+                        error_object.show_error_block(data.success, 'success');
+                        locationHref('{% helper seo.seolink('events', 'search') %}');
+                    }
+                }
+            });
+        }
+    });
+</script>

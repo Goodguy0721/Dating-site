@@ -1,0 +1,103 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+	<div class="mailbox_content">
+		<h1 class="hide">
+	        {% helper seo.seo_tags('header_text') %}
+	    </h1>
+
+	    {% set folder=message.folder %}
+
+		<div class="panel panel-default">
+	    	<div class="panel-heading">
+				{% include 'mailbox_menu.twig' %}
+            </div>
+			<div id="mailbox_content" class="edit_block">
+				<div class="mailbox_top_menu tab-submenu delim-space">
+					<div class="fright">
+						<span id="save_status" class="hide">
+		                    {% helper lang.l('text_message_saved', 'mailbox') %}
+		                </span>
+					</div>
+                    <div id="save_message" class="valign_middle pl5">
+	                    <div class="btn btn-default input-sx b0" role="btn">
+	                		<i class="fa fa-save fa-1x"
+	                                title="{% helper lang.l('link_message_save', 'mailbox', '', 'button') %}">
+	                        </i>
+	                        <span>{% helper lang.l('link_message_save', 'mailbox', '', 'button') %}</span>
+	                	</div>
+                	</div>
+
+                    <div id="message_delete" class="valign_middle pl5">
+	                    <div class="btn btn-default input-sx b0" role="btn">
+	                    	<i class="fa fa fa-trash fa-1x"
+	                                title="{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}">
+	                        </i>
+	                        <span>{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}</span>
+	                	</div>
+                	</div>
+				</div>
+
+				<h2 class="hide">
+		            {% helper lang.l('header_message_edit', 'mailbox') %}
+		        </h2>
+
+				<div class="p10">
+					{% include 'write_form.twig' %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clr"></div>
+
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('', 'available_view.js', 'path') %}",
+			function(){
+				send_message_available_view = new available_view({
+					siteUrl: site_url,
+					checkAvailableAjaxUrl: 'mailbox/ajax_available_send_message/',
+					buyAbilityAjaxUrl: 'mailbox/ajax_activate_send_message/',
+					buyAbilityFormId: 'ability_form',
+					buyAbilitySubmitId: 'ability_form_submit',
+					success_request: function(message){
+                        mb.save_message(function(){
+                            mb.send_message()
+                        }, true)
+                    },
+					fail_request: function(message){
+                        error_object.show_error_block(message, 'error');
+                    },
+				});
+			},
+			['send_message_available_view'],
+			{async: false}
+		);
+
+		loadScripts(
+			"{% helper utils.jscript('mailbox', 'mailbox-flatty.js', 'path') %}",
+			function(){
+				mb = new mailbox({
+					siteUrl: site_url,
+					folder: '{{ folder }}',
+					sendAvailableView: send_message_available_view,
+					writeMessage: true,
+					messageId: {{ message.id }},
+				});
+			},
+			['mb'],
+			{async: false}
+		);
+	});
+</script>
+
+{% include '@app/footer.twig' %}

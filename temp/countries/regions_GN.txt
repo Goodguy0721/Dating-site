@@ -1,0 +1,6 @@
+	1179	Yomou	7.5674800	-9.2628300	GN	N	0	0	Yomou	Yomou	Yomou	Yomou	Yomou	Yomou
+	1179	Nzérékoré	7.7562400	-8.8179000	GN	N	0	0	Nzérékoré	Нзерекоре	Nzérékoré	Nzérékoré	Nzérékoré	Nzérékoré
+	1179	Macenta	8.5435100	-9.4709900	GN	N	0	0	Macenta	Масента	Macenta	Macenta	Macenta	Macenta
+	1179	Lola	7.8000000	-8.5333300	GN	N	0	0	Lola	Lola	Lola	Lola	Lola	Lola
+	1179	Gueckedou	8.5674400	-10.1336000	GN	N	0	0	Gueckedou	Gueckedou	Gueckedou	Gueckedou	Gueckedou	Gueckedou
+	1179	Beyla	8.6901100	-8.6486900	GN	N	0	0	Beyla	Beyla	Beyla	Beyla	Beyla	Beyla

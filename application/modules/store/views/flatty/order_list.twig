@@ -1,0 +1,209 @@
+{% include '@app/header.twig' %}
+<div class="store-content">
+    <div class="container">
+        <div class="row-content">
+            <div class="search-header">
+                <div class="title col-xs-12 no-padding-left">
+                    {% helper lang.l('header_main_sections', 'store') %}:&nbsp;{{ page_header }}
+                </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li{% if action == 'preorders' %} class="active"{% endif %}>
+                    <a data-pjax-no-scroll="1" href="{% helper seo.seolink('store', 'order_list', {'action': 'preorders'}) %}">
+                        {% helper lang.l('header_preorders', 'store') %}
+                    </a>
+                </li>
+                <li{% if action == 'orders' %} class="active"{% endif %}>
+                    <a data-pjax-no-scroll="1" href="{% helper seo.seolink('store', 'order_list', {'action': 'orders'}) %}">
+                        {% helper lang.l('header_orders', 'store') %}
+                    </a>
+                </li>
+                <li{% if action == 'history' %} class="active"{% endif %}>
+                    <a data-pjax-no-scroll="1" href="{% helper seo.seolink('store', 'order_list', {'action': 'history'}) %}">
+                        {% helper lang.l('header_history', 'store') %}
+                    </a>
+                </li>
+            </ul>
+            <div class="orders-block clearfix">
+                {% if action == 'preorders' %}
+                    <div class="line top">
+                        {% if order_data is not empty %}
+                            <div class="order-header-block">
+                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                    {% helper lang.l('field_details', 'store') %}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_update', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_price', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    {% helper lang.l('field_status', 'store') %}
+                                </div>
+                            </div>
+                            <div class="hide col-xs-12 no-padding-left">
+                                {% helper lang.l('no_preorders', 'store') %}
+                            </div>
+                            {% for item in order_data %}
+                                <div class="js-order-product">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                        {% helper lang.l('header_preorder', 'store') %}&nbsp;
+                                        <a href="{% helper seo.seolink('store', 'preorder', item) %}">
+                                            #{{ item.code }}
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {{ item.date_updated }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {% helper start.currency_format_output({'value': item.total}) %}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {{ item.status_text }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="javascript:void(0);" class="canceled_sender fright"
+                                           data-orderid="{{ item.id }}">
+                                            {% helper lang.l('button_cancel_an_order', 'store') %}
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-xs-12 center">
+                                {% helper lang.l('no_preorders', 'store') %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif action == 'orders' %}
+                    <div class="line top">
+                        {% if order_data is not empty %}
+                            <div class="order-header-block">
+                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                    {% helper lang.l('field_details', 'store') %}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_update', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_price', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    {% helper lang.l('field_status', 'store') %}
+                                </div>
+                            </div>
+                            {% for item in order_data %}
+                                <div class="js-order-product">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                        <div>
+                                            {% helper lang.l('header_order', 'store') %}&nbsp;
+                                            <a href="{% helper seo.seolink('store', 'order', item) %}">
+                                                #{{ item.code }}
+                                            </a>
+                                        </div>
+                                        <div>
+                                            {% helper lang.l('header_for', 'store') %}
+                                            <a href="{% helper seo.seolink('users', 'view', item.id_user) %}">
+                                                {{ item.user }}
+                                            </a>&nbsp;
+                                            {% if item.id_customer == item.id_user %}
+                                                ({% helper lang.l('header_me', 'store') %})
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {{ item.date_updated }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {% helper start.currency_format_output({'value': item.total}) %}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                        {{ item.status_text }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-xs-12 no-padding-left center">
+                                {% helper lang.l('no_orders', 'store') %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif action == 'history' %}
+                    <div class="line top pos-rel">
+                        {% if order_data is not empty %}
+                            <div class="order-header-block">
+                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                    {% helper lang.l('field_details', 'store') %}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_update', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    {% helper lang.l('field_price', 'store' )%}
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    {% helper lang.l('field_status', 'store') %}
+                                </div>
+                            </div>
+                            <div class="hide col-xs-12 no-padding-left">
+                                {% helper lang.l('no_history', 'store') %}
+                            </div>
+
+                            {% for item in order_data %}
+                                <div class="js-order-product">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-left">
+                                        {% if item.is_formed %}
+                                            {% helper lang.l('header_order', 'store') %}
+                                        {% else %}
+                                            {% helper lang.l('header_preorder', 'store') %}
+                                        {% endif %}
+                                        &nbsp;#{{ item.code }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {{ item.date_updated }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        {% helper start.currency_format_output({'value': item.total}) %}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        {{ item.status_text }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        <span class="mlr20 pointer">
+                                            <i class="fa fa-folder-o fa-lg view_order_history" data-id="{{ item.id }}"></i>
+                                        </span>
+                                        <span class="mlr20 pointer">
+                                            <i class="fa fa-trash fa-lg delete_order_history" data-id="{{ item.id }}"></i>
+                                        </span>
+                                    </div>
+                                    <div id="order_log_block_{{ item.id }}" class="col-xs-12 no-padding-left"></div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-xs-12 no-padding-left center">
+                                {% helper lang.l('no_history', 'store') %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('store', 'store_orders.js', 'path') %}",
+            function(){
+                orders = new storeOrders({
+                    siteUrl: site_url,
+                });
+            },
+            'orders',
+            {async: true}
+        );
+    });
+</script>
+
+{% include '@app/footer.twig' %}

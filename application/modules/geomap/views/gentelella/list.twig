@@ -1,0 +1,138 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 x_panel">
+	<table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+		<thead>
+			<tr class="headings">
+				<th class="column-group">{% helper lang.l('field_title', 'geomap') %}</th>
+				<th class="column-title">{% helper lang.l('field_status', 'geomap') %}</th>
+				<th class="column-title">{% helper lang.l('field_regkey', 'geomap') %}</th>
+				<th class="column-title">{% helper lang.l('field_link', 'geomap') %}</th>
+				<th class="column-title">&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+	{% for item in drivers %}
+			<tr>
+				<td>{{ item.name }}</td>
+				<td>
+		                    {% if item.status %}
+		                        {% helper lang.l('btn_tableicon_is_active','start') %}
+		                    {% else %}
+		                        {% helper lang.l('btn_tableicon_is_not_active','start') %}
+		                    {% endif %}
+				</td>
+				<td>
+		                    {% if item.need_regkey %}
+		                        {{ item.regkey }}
+		                    {% else %}
+		                        {% helper lang.l('driver_key_notrequired', 'geomap') %}
+		                    {% endif %}
+				</td>
+				<td>
+		                    <a href="{{ item.link }}" target="_blank">
+		                        <button type="button" class="btn btn-primary">
+		                                {% if item.need_regkey %}
+		                                        {% helper lang.l('driver_registration', 'geomap') %}
+		                                {% else %}
+		                                        {% helper lang.l('driver_info', 'geomap') %}
+		                                {% endif %}
+		                        </button>
+		                    </a>
+				</td>
+				<td class="icons">
+		            <div class="btn-group">
+								{% if not item.status %}
+										<a class="btn btn-primary" href="{{ site_url }}admin/geomap/activate/{{ item.gid }}">
+											{% helper lang.l('make_active','start') %}
+										</a>
+							  {% elseif item.need_regkey %}
+		                <button type="button"
+		                    class="btn btn-primary"
+		                    onclick = "document.location.href='{{ site_url }}admin/geomap/edit/{{ item.gid }}'">
+		                        {% helper lang.l('link_tableicon_edit_driver', 'geomap', '', 'button') %}
+		                </button>
+		            {% else %}
+		                <button type="button"
+		                    class="btn btn-primary"
+		                    onclick = "document.location.href='{{ site_url }}admin/geomap/settings/{{ item.gid }}'">
+		                        {% helper lang.l('link_tableicon_settings_driver', 'geomap', '', 'button') %}
+		                </button>
+		            {% endif %}
+		                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+		                        aria-haspopup="true" aria-expanded="false">
+		                    <span class="caret"></span>
+		                    <span class="sr-only">Toggle Dropdown</span>
+		                </button>
+		                <ul class="dropdown-menu">
+										{% if not item.status %}
+												<li>
+													<a href="{{ site_url }}admin/geomap/activate/{{ item.gid }}">
+														{% helper lang.l('make_active','start') %}
+													</a>
+												</li>
+										{% endif %}
+		                {% if item.need_regkey %}
+		                    <li>
+		                        <a href="{{ site_url }}admin/geomap/edit/{{ item.gid }}">
+		                            {% helper lang.l('link_tableicon_edit_driver', 'geomap') %}</a>
+		                    </li>
+		                {% endif %}
+		                    <li>
+		                        <a href="{{ site_url }}admin/geomap/settings/{{ item.gid }}">
+		                            {% helper lang.l('link_tableicon_settings_driver', 'geomap') %}</a>
+		                    </li>
+		                </ul>
+		            </div>
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% include '@app/pagination.twig' %}
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_drivers', 'geomap') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

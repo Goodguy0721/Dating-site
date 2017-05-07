@@ -1,0 +1,8 @@
+<div class="menu-alerts-more-item clearfix {% if not events_count %}hide-always{% endif %}">
+    <a id="events_link_event_requests" href="{{ site_url }}events/search/requests">
+        {% helper lang.l('text_event_requests', 'events') %}:
+        <b class="summand event_requests_count fright">
+            {{ events_count }}
+        </b>
+    </a>
+</div>

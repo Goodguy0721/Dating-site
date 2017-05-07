@@ -1,0 +1,47 @@
+{% include '@app/header.twig' %}
+
+<div class="content-module-block">
+    <div class="col-md-3">
+        <h1>
+            {% helper seo.seo_tags('header_text') %}
+        </h1>
+        <ul class="nav nav-pills nav-stacked content-pages-tree">
+            {% for item in pages %}
+                <li>
+                    <div class="info-menu-inner">
+                        <a href="{% helper seo.seolink('content', 'view', item) %}">
+                            <div class="clearfix">
+                                <div class="fleft">{{ item.title }}</div>
+                                {% if item.sub %}
+                                    <div class="fright menu-arrow"><i class="fa fa-angle-right"></i></div>
+                                    {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {% if item.sub %}
+                    {% for k, i in item.sub %}
+                        <li  class="leaves {% if i.active %}active{% endif %}">
+                            <div class="info-menu-inner">
+                                <a href="{% helper seo.seolink('content', 'view', i) %}">
+                                    <div class="clearfix">
+                                        <div class="fleft">{{ i.title }}</div>
+                                        {% if i.sub %}
+                                            <div class="fright menu-arrow"><i class="fa fa-angle-right"></i></div>
+                                            {% endif %}
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+                <div class="empty">
+                    {% helper lang.l('no_content_yet_header', 'content') %}
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="clr"></div>
+</div>
+{% include '@app/footer.twig' %}

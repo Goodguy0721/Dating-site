@@ -1,0 +1,79 @@
+.packages-block {
+    & .package-block {
+        margin-bottom: 10px;
+
+        & .contrasting-block {
+            border-width: 2px;
+            margin-bottom: 0;
+
+            padding: 0px;
+            & .package-name {
+                background: rgba(9, 9, 14, 0.05);
+                padding: 10px 0px;
+                border-bottom: 1px solid $delimiter_color;
+                & span {
+                    padding: 0px 15px;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+            & .package-services {
+                & .service-description {
+                    color: $descr_color;
+                    font-size: 12px;
+                    padding-bottom: 10px;
+                }
+                & .price {
+                    margin: 10px 0px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+            .package-services__info {
+                padding: 0 10px 10px;
+            }
+        }
+    }
+}
+.content-block{
+    &.package_form{
+        padding:0 15px;
+
+        & .content-value .packages-block{
+            padding:0;
+        }
+    }
+}
+.package_form {
+    & .btn-link{
+    color:$link_color;
+        &:hover, &:focus{
+            color:$link_color;
+        }
+    }
+}
+
+.service-payment-form  {
+    .billing-systems-block {
+        margin-top: 20px;
+        display: none;
+    }    
+    .billing-method {
+        border: 2px solid $delimiter_color;
+        background-color: $content_bg;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        &:hover {
+            border: 2px solid $link_color;
+        }
+        &.selected {
+            border: 2px solid $link_color;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+}

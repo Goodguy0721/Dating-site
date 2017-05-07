@@ -1,0 +1,18 @@
+	3427	Douliu	23.7094400	120.5433300	TW	04	0	0	Douliu	Юнь-линь	Douliu	Douliu	Douliu	Douliu
+	3427	Yujing	23.1249300	120.4613800	TW	04	0	0	Yujing	Yujing	Yujing	Yujing	Yujing	Yujing
+	3427	Tainan	22.9908300	120.2133300	TW	04	0	0	Tainan	Тайнань	Tainan	Tainan	Tainan	Tainan
+	3427	Taichung	24.1469000	120.6839000	TW	04	0	0	Taichung	Тайчжун	Taichung	Taichung	Taichung	Taichung
+	3427	Daxi	24.8837300	121.2904300	TW	04	0	0	Daxi	Та-Си-чен	Daxi	Daxi	Daxi	Daxi
+	3427	Buli	23.9663900	120.9695200	TW	04	0	0	Buli	Пули	Buli	Buli	Buli	Buli
+	3427	Nantou	23.9156600	120.6638700	TW	04	0	0	Nantou	Наньтоу	Nantou	Nantou	Nantou	Nantou
+	3427	Magong	23.5654000	119.5862700	TW	04	0	0	Magong	Магун	Magong	Magong	Magong	Magong
+	3427	Lugu	23.7463900	120.7525000	TW	04	0	0	Lugu	Лугу	Lugu	Lugu	Lugu	Lugu
+	3427	Yilan	24.7570000	121.7530000	TW	04	0	0	Yilan	Yilan	Yilan	Yilan	Yilan	Yilan
+	3427	Hualien City	23.9769400	121.6044400	TW	04	0	0	Hualien City	Hualien City	Hualien City	Hualien City	Hualien City	Hualien City
+	3427	Hsinchu	24.8036100	120.9686100	TW	04	0	0	Hsinchu	Синьчжу	Hsinchu	Hsinchu	Hsinchu	Hsinchu
+	3427	Hengchun	22.0041700	120.7438900	TW	04	0	0	Hengchun	Hengchun	Hengchun	Hengchun	Hengchun	Hengchun
+	3427	Keelung	25.1282500	121.7419000	TW	04	0	0	Keelung	Ши-лун	Keelung	Keelung	Keelung	Keelung
+	3427	Alishan	23.5152800	120.8102800	TW	04	0	0	Alishan	Alishan	Alishan	Alishan	Alishan	Alishan
+	3427	Taoyuan City	24.9936800	121.2969600	TW	04	0	0	Taoyuan City	Таоюань	Taoyuan City	Taoyuan City	Taoyuan City	Taoyuan City
+	3427	Taitung City	22.7583000	121.1444000	TW	04	0	0	Taitung City	Taitung City	Taitung City	Taitung City	Taitung City	Taitung City
+	3427	Zhongxing New Village	23.9590800	120.6851600	TW	04	0	0	Zhongxing New Village	Zhongxing New Village	Zhongxing New Village	Zhongxing New Village	Zhongxing New Village	Zhongxing New Village

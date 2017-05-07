@@ -1,0 +1,401 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div id="menu" class="btn-group" data-toggle="buttons">
+            {% for lang_id, item in languages %}
+                    <label class="btn btn-default {% if lang_id == current_lang %}active{% endif %}"
+                           onclick="document.location.href='{{ site_url }}admin/content/promo/{{ lang_id }}' ">
+                        <input type="radio" {% if lang_id == current_lang %}selected{% endif %}>
+                        {{item.name}}
+                    </label>
+            {% endfor %}
+        </div><br><br>
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_promo_block_main', 'content') %}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="" name="save_form" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <div class="form-group">    <!-- Type of promo content -->
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_promo_type', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="content_type" id="content_type" class="form-control">
+                            <option value="t" {% if promo_data.content_type == 't' %} selected{% endif %}>
+                                {% helper lang.l('field_promo_type_text', 'content') %}
+                            </option>
+                            <option value="f"{% if promo_data.content_type == 'f' %} selected{% endif %}>
+                                {% helper lang.l('field_promo_type_flash', 'content') %}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div id="content_block_t" class="js-content_block_box">
+                    <div class="form-group">    <!-- Block width -->
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_width', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="t[block_width_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_width_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_width_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                                <option value="%"{% if promo_data.block_width_unit == '%' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_percent', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="t[block_width]" value="{{ promo_data.block_width }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_width_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                    <div class="form-group">    <!-- Block heigth -->
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_height', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="t[block_height_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_height_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_height_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="t[block_height]" value="{{ promo_data.block_height }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_height_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content_block_s" class="js-content_block_box" {% if promo_data.content_type != 's' %}style="display:none"{% endif %}>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_width', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="s[block_width_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_width_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_width_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                                <option value="%"{% if promo_data.block_width_unit == '%' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_percent', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="block_width" value="{{ promo_data.block_width }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_width_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_height', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="s[block_height_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_height_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_height_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="s[block_height]" value="{{ promo_data.block_height }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_height_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content_block_f" class="js-content_block_box" {% if promo_data.content_type != 'f' %}style="display:none"{% endif %}>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_width', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="f[block_width_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_width_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_width_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                                <option value="%"{% if promo_data.block_width_unit == '%' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_percent', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="f[block_width]" value="{{ promo_data.block_width }}" class="form-control js-unit_val"
+                                {% if promo_data.block_width_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_height', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="f[block_height_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_height_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_height_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="f[block_height]" value="{{ promo_data.block_height }}" class="form-control js-unit_val"
+                                {% if promo_data.block_height_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content_block_v" class="js-content_block_box" {% if promo_data.content_type != 'v' %}style="display:none"{% endif %}>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_width', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select name="v[block_width_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_width_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}
+                                </option>
+                                <option value="px"{% if promo_data.block_width_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}
+                                </option>
+                                <option value="%"{% if promo_data.block_width_unit == '%' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_percent', 'content') %}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="v[block_width]" value="{{ promo_data.block_width }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_width_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_block_height', 'content') %}:
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <select name="v[block_height_unit]" class="form-control js-units">
+                                <option value="auto"{% if promo_data.block_height_unit == 'auto' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_auto', 'content') %}</option>
+                                <option value="px"{% if promo_data.block_height_unit == 'px' %} selected{% endif %}>
+                                    {% helper lang.l('field_block_unit_px', 'content') %}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <input type="text" name="v[block_height]" value="{{ promo_data.block_height }}" class="form-control js-unit_val"
+                                   {% if promo_data.block_height_unit == 'auto' %} disabled{% endif %}>
+                        </div>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save_settings"  class="btn btn-success"
+                               value="{% helper lang.l('btn_save','start','','button') %}">
+                        <a href="{{ site_url }}admin/menu/content_items" class="btn btn-default">
+                          {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+
+            <script>
+                $('#content_type').bind('change', function () {
+                    $('.js-content_block_box').hide();
+                    $('#content_block_' + $(this).val()).show();
+                });
+            </script>
+
+            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                    <li{% if content_type == 't' %} class="active"{% endif %}>
+                      <a href="{{site_url}}admin/content/promo/{{current_lang}}/t">
+                        {% helper lang.l('field_promo_type_text', 'content') %}</a>
+                    </li>
+                    <li{% if content_type == 'f' %} class="active"{% endif %}>
+                        <a href="{{site_url}}admin/content/promo/{{current_lang}}/f">
+                          {% helper lang.l('field_promo_type_flash', 'content') %}</a>
+                    </li>
+                </ul>
+            </div>
+
+            {% if content_type == 't' %}
+            <form method="post" action="{{ site_url }}admin/content/promo/{{ current_lang }}/{{ content_type }}"
+                  name="save_form"  enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_promo_text', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {{ promo_data.promo_text_fck }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_block_img_align_hor', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="block_align_hor" class="form-control">
+                            <option value="center"{% if promo_data.block_align_hor == 'center' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_center', 'content') %}
+                            </option>
+                            <option value="left"{% if promo_data.block_align_hor == 'left' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_left', 'content') %}
+                            </option>
+                            <option value="right"{% if promo_data.block_align_hor == 'right' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_right', 'content') %}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_block_img_align_ver', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="block_align_ver" class="form-control">
+                            <option value="center"{% if promo_data.block_align_ver == 'center' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_center', 'content') %}
+                            </option>
+                            <option value="top"{% if promo_data.block_align_ver == 'top' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_top', 'content') %}
+                            </option>
+                            <option value="bottom"{% if promo_data.block_align_ver == 'bottom' %} selected{% endif %}>
+                                {% helper lang.l('field_block_img_align_bottom', 'content') %}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_block_img_repeating', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="block_image_repeat" class="form-control">
+                            <option value="repeat"{% if promo_data.block_image_repeat == 'repeat' %} selected{% endif %}>{% helper lang.l('field_block_img_repeat', 'content') %}</option>
+                            <option value="no-repeat"{% if promo_data.block_image_repeat == 'no-repeat' %} selected{% endif %}>{% helper lang.l('field_block_img_no_repeat', 'content') %}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_promo_img', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="promo_image" class="form-control">
+                        {% if promo_data.promo_image %}<br>
+                            <img src="{{ promo_data.media.promo_image.file_url }}" width="500">
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if promo_data.promo_image %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_promo_image_delete', 'content') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="checkbox" name="promo_image_delete" value="1" class="flat">
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="nl_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save_content"  class="btn btn-success"
+                               value="{% helper lang.l('btn_save','start','','button') %}">
+                    </div>
+                </div>
+            </form>
+
+            {% elseif content_type == 'f' %}
+            <form method="post" action="{{ site_url }}admin/content/promo/{{ current_lang }}/{{ content_type }}"
+                  name="save_form"  enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_promo_flash', 'content') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="promo_flash" class="from-control"><br>
+                        {% if promo_data.promo_flash %}
+                            <i>{% helper lang.l('field_promo_flash_uploaded', 'content') %}</i>
+                            <object width="100%" height="100%"
+                                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                                    classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                                <param value="Always" name="allowScriptAccess">
+                                <param value="{{ promo_data.media.promo_flash.file_url }}" name="movie">
+                                <param value="false" name="menu">
+                                <param value="high" name="quality">
+                                <param value="opaque" name="wmode">
+                                <param value="" name="flashvars">
+                                <embed width="100%" height="100%"
+                                       pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                                       type="application/x-shockwave-flash" swliveconnect="FALSE" menu="false" wmode="opaque"
+                                       allowscriptaccess="Always" quality="high" flashvars=""
+                                       src="{{ promo_data.media.promo_flash.file_url }}">
+                            </object>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if promo_data.promo_flash %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_promo_flash_delete', 'content') %}:</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="checkbox" name="promo_flash_delete" value="1" class="flat">
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="nl_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save_content"  class="btn btn-success"
+                               value="{% helper lang.l('btn_save','start','','button') %}">
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+
+
+            <script type="text/javascript">
+                $(function () {
+                    $('.js-units').bind('change', function () {
+                        if ($(this).val() == 'auto') {
+                            $(this).parent().parent().find('input.js-unit_val').attr('disabled', 'disabled');
+                        } else {
+                            $(this).parent().parent().find('input.js-unit_val').removeAttr('disabled');
+                        }
+                    });
+                });
+            </script>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,364 @@
+	2198	Carrillos (Los Carrillos)	21.4069400	-102.6969400	MX	32	0	0	Carrillos (Los Carrillos)	Carrillos (Los Carrillos)	Carrillos (Los Carrillos)	Carrillos (Los Carrillos)	Carrillos (Los Carrillos)	Carrillos (Los Carrillos)
+	2198	El Tuiche	21.3680000	-102.8118600	MX	32	0	0	El Tuiche	El Tuiche	El Tuiche	El Tuiche	El Tuiche	El Tuiche
+	2198	El Jagüey	21.4447200	-102.8436100	MX	32	0	0	El Jagüey	El Jagüey	El Jagüey	El Jagüey	El Jagüey	El Jagüey
+	2198	Las Tijeras	21.4580600	-102.7080600	MX	32	0	0	Las Tijeras	Las Tijeras	Las Tijeras	Las Tijeras	Las Tijeras	Las Tijeras
+	2198	Pastoría	21.5036100	-102.6911100	MX	32	0	0	Pastoría	Pastoría	Pastoría	Pastoría	Pastoría	Pastoría
+	2198	Plan del Sauz	21.4905600	-102.8105600	MX	32	0	0	Plan del Sauz	Plan del Sauz	Plan del Sauz	Plan del Sauz	Plan del Sauz	Plan del Sauz
+	2198	Las Trojes	21.2777800	-102.9261100	MX	32	0	0	Las Trojes	Las Trojes	Las Trojes	Las Trojes	Las Trojes	Las Trojes
+	2198	Los González	21.3008300	-102.9355600	MX	32	0	0	Los González	Los González	Los González	Los González	Los González	Los González
+	2198	El Fresno	21.3769700	-103.0351900	MX	32	0	0	El Fresno	El Fresno	El Fresno	El Fresno	El Fresno	El Fresno
+	2198	Colonia Francisco I. Madero	21.4405400	-103.0238000	MX	32	0	0	Colonia Francisco I. Madero	Colonia Francisco I. Madero	Colonia Francisco I. Madero	Colonia Francisco I. Madero	Colonia Francisco I. Madero	Colonia Francisco I. Madero
+	2198	El Capulincito	21.4755600	-102.9719400	MX	32	0	0	El Capulincito	El Capulincito	El Capulincito	El Capulincito	El Capulincito	El Capulincito
+	2198	La Cuartilla	21.5047200	-102.9725000	MX	32	0	0	La Cuartilla	La Cuartilla	La Cuartilla	La Cuartilla	La Cuartilla	La Cuartilla
+	2198	Los Guajes	21.1684900	-103.4023400	MX	32	0	0	Los Guajes	Los Guajes	Los Guajes	Los Guajes	Los Guajes	Los Guajes
+	2198	La Tetilla	21.2760600	-103.4681500	MX	32	0	0	La Tetilla	La Tetilla	La Tetilla	La Tetilla	La Tetilla	La Tetilla
+	2198	El Ojo de Agua	21.3305300	-103.3799300	MX	32	0	0	El Ojo de Agua	El Ojo de Agua	El Ojo de Agua	El Ojo de Agua	El Ojo de Agua	El Ojo de Agua
+	2198	El Muro	21.2914100	-103.5995200	MX	32	0	0	El Muro	El Muro	El Muro	El Muro	El Muro	El Muro
+	2198	La Majada	21.5447200	-102.7791700	MX	32	0	0	La Majada	La Majada	La Majada	La Majada	La Majada	La Majada
+	2198	Rincón de Diego	21.5325000	-102.8208300	MX	32	0	0	Rincón de Diego	Rincón de Diego	Rincón de Diego	Rincón de Diego	Rincón de Diego	Rincón de Diego
+	2198	Casas Grandes (Santo Domingo)	21.5197600	-102.7680900	MX	32	0	0	Casas Grandes (Santo Domingo)	Casas Grandes (Santo Domingo)	Casas Grandes (Santo Domingo)	Casas Grandes (Santo Domingo)	Casas Grandes (Santo Domingo)	Casas Grandes (Santo Domingo)
+	2198	Alto de la Palmita	21.6247200	-102.8133300	MX	32	0	0	Alto de la Palmita	Alto de la Palmita	Alto de la Palmita	Alto de la Palmita	Alto de la Palmita	Alto de la Palmita
+	2198	La Media Luna	21.6944400	-102.8372200	MX	32	0	0	La Media Luna	La Media Luna	La Media Luna	La Media Luna	La Media Luna	La Media Luna
+	2198	El Mezquite	21.6602800	-102.8866700	MX	32	0	0	El Mezquite	El Mezquite	El Mezquite	El Mezquite	El Mezquite	El Mezquite
+	2198	Santa Rosa	21.6025000	-102.9497200	MX	32	0	0	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa
+	2198	El Saucillo	21.7205600	-102.7980600	MX	32	0	0	El Saucillo	El Saucillo	El Saucillo	El Saucillo	El Saucillo	El Saucillo
+	2198	San Pedro Apóstol	21.7346700	-102.9250900	MX	32	0	0	San Pedro Apóstol	San Pedro Apóstol	San Pedro Apóstol	San Pedro Apóstol	San Pedro Apóstol	San Pedro Apóstol
+	2198	San José de Tapias	21.7890400	-103.1063300	MX	32	0	0	San José de Tapias	San José de Tapias	San José de Tapias	San José de Tapias	San José de Tapias	San José de Tapias
+	2198	Los Cardos	21.8207300	-103.1095700	MX	32	0	0	Los Cardos	Los Cardos	Los Cardos	Los Cardos	Los Cardos	Los Cardos
+	2198	La Luz	21.8003500	-102.8768600	MX	32	0	0	La Luz	La Luz	La Luz	La Luz	La Luz	La Luz
+	2198	Remudadero de Arriba	21.8251200	-102.9287000	MX	32	0	0	Remudadero de Arriba	Remudadero de Arriba	Remudadero de Arriba	Remudadero de Arriba	Remudadero de Arriba	Remudadero de Arriba
+	2198	El Picacho (Hidalgo)	21.5480600	-103.4491700	MX	32	0	0	El Picacho (Hidalgo)	El Picacho (Hidalgo)	El Picacho (Hidalgo)	El Picacho (Hidalgo)	El Picacho (Hidalgo)	El Picacho (Hidalgo)
+	2198	El Zapotito	21.5655600	-103.4325000	MX	32	0	0	El Zapotito	El Zapotito	El Zapotito	El Zapotito	El Zapotito	El Zapotito
+	2198	Mesa Grande	21.5545900	-103.4157800	MX	32	0	0	Mesa Grande	Mesa Grande	Mesa Grande	Mesa Grande	Mesa Grande	Mesa Grande
+	2198	San Antonio de la Cofradía	21.7331800	-103.2739500	MX	32	0	0	San Antonio de la Cofradía	San Antonio de la Cofradía	San Antonio de la Cofradía	San Antonio de la Cofradía	San Antonio de la Cofradía	San Antonio de la Cofradía
+	2198	Los Pilares	22.0016700	-102.8572200	MX	32	0	0	Los Pilares	Los Pilares	Los Pilares	Los Pilares	Los Pilares	Los Pilares
+	2198	San Miguel	22.0340000	-102.8512500	MX	32	0	0	San Miguel	San Miguel	San Miguel	San Miguel	San Miguel	San Miguel
+	2198	Las Trojes	22.0383300	-102.8588900	MX	32	0	0	Las Trojes	Las Trojes	Las Trojes	Las Trojes	Las Trojes	Las Trojes
+	2198	San José	22.0483300	-102.8447200	MX	32	0	0	San José	San José	San José	San José	San José	San José
+	2198	El Soyate (El Zoyate)	22.1158300	-102.8319400	MX	32	0	0	El Soyate (El Zoyate)	El Soyate (El Zoyate)	El Soyate (El Zoyate)	El Soyate (El Zoyate)	El Soyate (El Zoyate)	El Soyate (El Zoyate)
+	2198	Los Pocitos	22.1108300	-102.8322200	MX	32	0	0	Los Pocitos	Los Pocitos	Los Pocitos	Los Pocitos	Los Pocitos	Los Pocitos
+	2198	Los Bancos	22.1002800	-102.9472200	MX	32	0	0	Los Bancos	Los Bancos	Los Bancos	Los Bancos	Los Bancos	Los Bancos
+	2198	Las Presitas	22.0816700	-102.9952800	MX	32	0	0	Las Presitas	Las Presitas	Las Presitas	Las Presitas	Las Presitas	Las Presitas
+	2198	Ojo de Agua Grande	22.1411100	-102.9711100	MX	32	0	0	Ojo de Agua Grande	Ojo de Agua Grande	Ojo de Agua Grande	Ojo de Agua Grande	Ojo de Agua Grande	Ojo de Agua Grande
+	2198	Maravillas	22.1365000	-103.0534400	MX	32	0	0	Maravillas	Maravillas	Maravillas	Maravillas	Maravillas	Maravillas
+	2198	El Machucado (Colonia el Rosario)	21.9465200	-101.4437600	MX	32	0	0	El Machucado (Colonia el Rosario)	El Machucado (Colonia el Rosario)	El Machucado (Colonia el Rosario)	El Machucado (Colonia el Rosario)	El Machucado (Colonia el Rosario)	El Machucado (Colonia el Rosario)
+	2198	Pueblito de Guadalupe (El Pueblito)	22.0354700	-101.5812700	MX	32	0	0	Pueblito de Guadalupe (El Pueblito)	Pueblito de Guadalupe (El Pueblito)	Pueblito de Guadalupe (El Pueblito)	Pueblito de Guadalupe (El Pueblito)	Pueblito de Guadalupe (El Pueblito)	Pueblito de Guadalupe (El Pueblito)
+	2198	La Laborcilla	22.1074900	-101.7264800	MX	32	0	0	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla
+	2198	El Nigromante	22.1537300	-101.7105600	MX	32	0	0	El Nigromante	El Nigromante	El Nigromante	El Nigromante	El Nigromante	El Nigromante
+	2198	Mesa los Tanques	22.2794400	-101.4769400	MX	32	0	0	Mesa los Tanques	Mesa los Tanques	Mesa los Tanques	Mesa los Tanques	Mesa los Tanques	Mesa los Tanques
+	2198	San Carlos	22.3500100	-101.4804600	MX	32	0	0	San Carlos	San Carlos	San Carlos	San Carlos	San Carlos	San Carlos
+	2198	La Piedrera	22.3783300	-101.4572200	MX	32	0	0	La Piedrera	La Piedrera	La Piedrera	La Piedrera	La Piedrera	La Piedrera
+	2198	Tanquecillos	22.4672200	-101.4133300	MX	32	0	0	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos
+	2198	Ahijaderos	22.3700000	-101.4725000	MX	32	0	0	Ahijaderos	Ahijaderos	Ahijaderos	Ahijaderos	Ahijaderos	Ahijaderos
+	2198	La Joya	22.4005600	-101.6208300	MX	32	0	0	La Joya	La Joya	La Joya	La Joya	La Joya	La Joya
+	2198	La Mazamorra	22.3938900	-101.5058300	MX	32	0	0	La Mazamorra	La Mazamorra	La Mazamorra	La Mazamorra	La Mazamorra	La Mazamorra
+	2198	La Presa de San José	22.4361100	-101.5216700	MX	32	0	0	La Presa de San José	La Presa de San José	La Presa de San José	La Presa de San José	La Presa de San José	La Presa de San José
+	2198	El Zacatal	22.4589900	-101.4797900	MX	32	0	0	El Zacatal	El Zacatal	El Zacatal	El Zacatal	El Zacatal	El Zacatal
+	2198	El Carmen	22.2686100	-101.5905600	MX	32	0	0	El Carmen	El Carmen	El Carmen	El Carmen	El Carmen	El Carmen
+	2198	La Calerilla	22.2494700	-101.6081300	MX	32	0	0	La Calerilla	La Calerilla	La Calerilla	La Calerilla	La Calerilla	La Calerilla
+	2198	Colonia José María Morelos	22.3679400	-101.7944900	MX	32	0	0	Colonia José María Morelos	Colonia José María Morelos	Colonia José María Morelos	Colonia José María Morelos	Colonia José María Morelos	Colonia José María Morelos
+	2198	Providencia	22.3572700	-101.8306300	MX	32	0	0	Providencia	Providencia	Providencia	Providencia	Providencia	Providencia
+	2198	La Trinidad	22.4397700	-101.8107900	MX	32	0	0	La Trinidad	La Trinidad	La Trinidad	La Trinidad	La Trinidad	La Trinidad
+	2198	Colonia Madero (Madero)	22.4219900	-102.0072500	MX	32	0	0	Colonia Madero (Madero)	Colonia Madero (Madero)	Colonia Madero (Madero)	Colonia Madero (Madero)	Colonia Madero (Madero)	Colonia Madero (Madero)
+	2198	Santo Tomás Venaditos (Venaditos)	22.5211200	-102.1055400	MX	32	0	0	Santo Tomás Venaditos (Venaditos)	Santo Tomás Venaditos (Venaditos)	Santo Tomás Venaditos (Venaditos)	Santo Tomás Venaditos (Venaditos)	Santo Tomás Venaditos (Venaditos)	Santo Tomás Venaditos (Venaditos)
+	2198	Colonia Hidalgo	22.5069600	-102.2385600	MX	32	0	0	Colonia Hidalgo	Colonia Hidalgo	Colonia Hidalgo	Colonia Hidalgo	Colonia Hidalgo	Colonia Hidalgo
+	2198	Piedra Gorda	22.5075900	-102.3318700	MX	32	0	0	Piedra Gorda	Piedra Gorda	Piedra Gorda	Piedra Gorda	Piedra Gorda	Piedra Gorda
+	2198	Colonia Río Verde	22.4738900	-102.4305600	MX	32	0	0	Colonia Río Verde	Colonia Río Verde	Colonia Río Verde	Colonia Río Verde	Colonia Río Verde	Colonia Río Verde
+	2198	Las Martinas	22.3180600	-102.5025000	MX	32	0	0	Las Martinas	Las Martinas	Las Martinas	Las Martinas	Las Martinas	Las Martinas
+	2198	La Saladita	22.4550000	-102.5252800	MX	32	0	0	La Saladita	La Saladita	La Saladita	La Saladita	La Saladita	La Saladita
+	2198	Saucillo	22.4080600	-102.7672200	MX	32	0	0	Saucillo	Saucillo	Saucillo	Saucillo	Saucillo	Saucillo
+	2198	El Saucito	22.4788900	-102.7963900	MX	32	0	0	El Saucito	El Saucito	El Saucito	El Saucito	El Saucito	El Saucito
+	2198	El Salto Prieto	22.5030600	-102.5227800	MX	32	0	0	El Salto Prieto	El Salto Prieto	El Salto Prieto	El Salto Prieto	El Salto Prieto	El Salto Prieto
+	2198	Colonia Lázaro Cárdenas	22.1934200	-103.0195000	MX	32	0	0	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas
+	2198	El Molino	22.2569400	-102.9286100	MX	32	0	0	El Molino	El Molino	El Molino	El Molino	El Molino	El Molino
+	2198	La Magdalena	22.3858300	-102.9363900	MX	32	0	0	La Magdalena	La Magdalena	La Magdalena	La Magdalena	La Magdalena	La Magdalena
+	2198	El Vergel (El Niño Jesús)	22.4972200	-103.0055600	MX	32	0	0	El Vergel (El Niño Jesús)	El Vergel (El Niño Jesús)	El Vergel (El Niño Jesús)	El Vergel (El Niño Jesús)	El Vergel (El Niño Jesús)	El Vergel (El Niño Jesús)
+	2198	Arroyo Seco de Abajo	22.5250400	-103.0681500	MX	32	0	0	Arroyo Seco de Abajo	Arroyo Seco de Abajo	Arroyo Seco de Abajo	Arroyo Seco de Abajo	Arroyo Seco de Abajo	Arroyo Seco de Abajo
+	2198	El Capulín de los Ruiz	22.3859600	-103.4192500	MX	32	0	0	El Capulín de los Ruiz	El Capulín de los Ruiz	El Capulín de los Ruiz	El Capulín de los Ruiz	El Capulín de los Ruiz	El Capulín de los Ruiz
+	2198	San Judas	22.4147600	-103.5332700	MX	32	0	0	San Judas	San Judas	San Judas	San Judas	San Judas	San Judas
+	2198	San Diego	22.4994400	-103.9802800	MX	32	0	0	San Diego	San Diego	San Diego	San Diego	San Diego	San Diego
+	2198	El Arbolito	22.6058800	-101.5462900	MX	32	0	0	El Arbolito	El Arbolito	El Arbolito	El Arbolito	El Arbolito	El Arbolito
+	2198	General Pánfilo Natera	22.6646100	-102.1100600	MX	32	0	0	General Pánfilo Natera	General Pánfilo Natera	General Pánfilo Natera	General Pánfilo Natera	General Pánfilo Natera	General Pánfilo Natera
+	2198	Pozo de Jarillas	22.6527900	-102.1978200	MX	32	0	0	Pozo de Jarillas	Pozo de Jarillas	Pozo de Jarillas	Pozo de Jarillas	Pozo de Jarillas	Pozo de Jarillas
+	2198	Las Coloradas	22.6515600	-102.2298700	MX	32	0	0	Las Coloradas	Las Coloradas	Las Coloradas	Las Coloradas	Las Coloradas	Las Coloradas
+	2198	Laguna Honda	22.5850000	-102.5069400	MX	32	0	0	Laguna Honda	Laguna Honda	Laguna Honda	Laguna Honda	Laguna Honda	Laguna Honda
+	2198	Laguna de Arriba	22.7197000	-102.4720700	MX	32	0	0	Laguna de Arriba	Laguna de Arriba	Laguna de Arriba	Laguna de Arriba	Laguna de Arriba	Laguna de Arriba
+	2198	Rancho el Bordo	22.7544400	-102.2013900	MX	32	0	0	Rancho el Bordo	Rancho el Bordo	Rancho el Bordo	Rancho el Bordo	Rancho el Bordo	Rancho el Bordo
+	2198	San Salvador del Bajío	22.7988900	-102.2836100	MX	32	0	0	San Salvador del Bajío	San Salvador del Bajío	San Salvador del Bajío	San Salvador del Bajío	San Salvador del Bajío	San Salvador del Bajío
+	2198	El Porvenir	22.8188900	-102.2256000	MX	32	0	0	El Porvenir	El Porvenir	El Porvenir	El Porvenir	El Porvenir	El Porvenir
+	2198	Delgadillo	22.5337400	-102.6492600	MX	32	0	0	Delgadillo	Delgadillo	Delgadillo	Delgadillo	Delgadillo	Delgadillo
+	2198	Macías	22.5816700	-102.6177800	MX	32	0	0	Macías	Macías	Macías	Macías	Macías	Macías
+	2198	El Pescado	22.6144400	-102.6513900	MX	32	0	0	El Pescado	El Pescado	El Pescado	El Pescado	El Pescado	El Pescado
+	2198	Rancho Nuevo	22.6472200	-102.6508300	MX	32	0	0	Rancho Nuevo	Rancho Nuevo	Rancho Nuevo	Rancho Nuevo	Rancho Nuevo	Rancho Nuevo
+	2198	Lechuguilla	22.5411100	-102.6758300	MX	32	0	0	Lechuguilla	Lechuguilla	Lechuguilla	Lechuguilla	Lechuguilla	Lechuguilla
+	2198	El Carcelero	22.5747200	-102.7530600	MX	32	0	0	El Carcelero	El Carcelero	El Carcelero	El Carcelero	El Carcelero	El Carcelero
+	2198	Presa de Maravillas	22.5836500	-102.7377200	MX	32	0	0	Presa de Maravillas	Presa de Maravillas	Presa de Maravillas	Presa de Maravillas	Presa de Maravillas	Presa de Maravillas
+	2198	El Vergel	22.5387500	-102.8136100	MX	32	0	0	El Vergel	El Vergel	El Vergel	El Vergel	El Vergel	El Vergel
+	2198	Estancia de los García	22.6675000	-102.8705600	MX	32	0	0	Estancia de los García	Estancia de los García	Estancia de los García	Estancia de los García	Estancia de los García	Estancia de los García
+	2198	El Mastranto	22.6872200	-102.5427800	MX	32	0	0	El Mastranto	El Mastranto	El Mastranto	El Mastranto	El Mastranto	El Mastranto
+	2198	Estancia de los Berumen	22.5457400	-103.1785000	MX	32	0	0	Estancia de los Berumen	Estancia de los Berumen	Estancia de los Berumen	Estancia de los Berumen	Estancia de los Berumen	Estancia de los Berumen
+	2198	La Cañada	22.6489200	-103.0729900	MX	32	0	0	La Cañada	La Cañada	La Cañada	La Cañada	La Cañada	La Cañada
+	2198	Santa Gertrudis	22.7055600	-102.9547200	MX	32	0	0	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis
+	2198	Rosales	22.7608300	-102.8930600	MX	32	0	0	Rosales	Rosales	Rosales	Rosales	Rosales	Rosales
+	2198	El Chacuaco	22.6450000	-103.5558300	MX	32	0	0	El Chacuaco	El Chacuaco	El Chacuaco	El Chacuaco	El Chacuaco	El Chacuaco
+	2198	Calera de Castañón	22.7619400	-103.3922200	MX	32	0	0	Calera de Castañón	Calera de Castañón	Calera de Castañón	Calera de Castañón	Calera de Castañón	Calera de Castañón
+	2198	Colonia Morelos	22.8547200	-103.3511100	MX	32	0	0	Colonia Morelos	Colonia Morelos	Colonia Morelos	Colonia Morelos	Colonia Morelos	Colonia Morelos
+	2198	El Tulillo	22.5267600	-104.1245400	MX	32	0	0	El Tulillo	El Tulillo	El Tulillo	El Tulillo	El Tulillo	El Tulillo
+	2198	Paso de Huasamota	22.6469900	-104.0522800	MX	32	0	0	Paso de Huasamota	Paso de Huasamota	Paso de Huasamota	Paso de Huasamota	Paso de Huasamota	Paso de Huasamota
+	2198	Los Zapotes	22.5272200	-104.1402800	MX	32	0	0	Los Zapotes	Los Zapotes	Los Zapotes	Los Zapotes	Los Zapotes	Los Zapotes
+	2198	La Luz	22.8800000	-102.3102800	MX	32	0	0	La Luz	La Luz	La Luz	La Luz	La Luz	La Luz
+	2198	El Lampotal	22.8958300	-102.4194400	MX	32	0	0	El Lampotal	El Lampotal	El Lampotal	El Lampotal	El Lampotal	El Lampotal
+	2198	El Bimbalete	23.0164300	-102.2920700	MX	32	0	0	El Bimbalete	El Bimbalete	El Bimbalete	El Bimbalete	El Bimbalete	El Bimbalete
+	2198	San Ramón	23.1511000	-102.4287000	MX	32	0	0	San Ramón	San Ramón	San Ramón	San Ramón	San Ramón	San Ramón
+	2198	La Soledad (Benjamín Félix)	22.9855600	-102.6769400	MX	32	0	0	La Soledad (Benjamín Félix)	La Soledad (Benjamín Félix)	La Soledad (Benjamín Félix)	La Soledad (Benjamín Félix)	La Soledad (Benjamín Félix)	La Soledad (Benjamín Félix)
+	2198	La India	22.9939900	-102.5525000	MX	32	0	0	La India	La India	La India	La India	La India	La India
+	2198	General Enrique Estrada	22.9974700	-102.7425600	MX	32	0	0	General Enrique Estrada	General Enrique Estrada	General Enrique Estrada	General Enrique Estrada	General Enrique Estrada	General Enrique Estrada
+	2198	San Ángel	23.0547200	-102.7547200	MX	32	0	0	San Ángel	San Ángel	San Ángel	San Ángel	San Ángel	San Ángel
+	2198	Las Catarinas	23.0911500	-102.6159700	MX	32	0	0	Las Catarinas	Las Catarinas	Las Catarinas	Las Catarinas	Las Catarinas	Las Catarinas
+	2198	Providencia de Rivera (Providencia la Estanzuela)	23.1268200	-102.8237400	MX	32	0	0	Providencia de Rivera (Providencia la Estanzuela)	Providencia de Rivera (Providencia la Estanzuela)	Providencia de Rivera (Providencia la Estanzuela)	Providencia de Rivera (Providencia la Estanzuela)	Providencia de Rivera (Providencia la Estanzuela)	Providencia de Rivera (Providencia la Estanzuela)
+	2198	San Miguel de Sosa	23.1518200	-102.8060100	MX	32	0	0	San Miguel de Sosa	San Miguel de Sosa	San Miguel de Sosa	San Miguel de Sosa	San Miguel de Sosa	San Miguel de Sosa
+	2198	Palmira	23.1141700	-102.7002800	MX	32	0	0	Palmira	Palmira	Palmira	Palmira	Palmira	Palmira
+	2198	Las Hermanas	22.9764700	-103.1769400	MX	32	0	0	Las Hermanas	Las Hermanas	Las Hermanas	Las Hermanas	Las Hermanas	Las Hermanas
+	2198	La Soledad	23.0234900	-103.2391900	MX	32	0	0	La Soledad	La Soledad	La Soledad	La Soledad	La Soledad	La Soledad
+	2198	Rancho los Hernández (Las Presas)	23.1217000	-103.0537300	MX	32	0	0	Rancho los Hernández (Las Presas)	Rancho los Hernández (Las Presas)	Rancho los Hernández (Las Presas)	Rancho los Hernández (Las Presas)	Rancho los Hernández (Las Presas)	Rancho los Hernández (Las Presas)
+	2198	San José del Alamito	23.1411600	-103.0409200	MX	32	0	0	San José del Alamito	San José del Alamito	San José del Alamito	San José del Alamito	San José del Alamito	San José del Alamito
+	2198	Las Pomas (Las Palomas)	22.8861100	-103.3711100	MX	32	0	0	Las Pomas (Las Palomas)	Las Pomas (Las Palomas)	Las Pomas (Las Palomas)	Las Pomas (Las Palomas)	Las Pomas (Las Palomas)	Las Pomas (Las Palomas)
+	2198	Jamaica	22.8761100	-103.5019400	MX	32	0	0	Jamaica	Jamaica	Jamaica	Jamaica	Jamaica	Jamaica
+	2198	El Salitre	22.9477900	-103.4683800	MX	32	0	0	El Salitre	El Salitre	El Salitre	El Salitre	El Salitre	El Salitre
+	2198	La Luz	23.0384300	-103.7429000	MX	32	0	0	La Luz	La Luz	La Luz	La Luz	La Luz	La Luz
+	2198	Santa Ana	23.2136900	-102.7388600	MX	32	0	0	Santa Ana	Santa Ana	Santa Ana	Santa Ana	Santa Ana	Santa Ana
+	2198	El Peñón	23.4496800	-102.6750200	MX	32	0	0	El Peñón	El Peñón	El Peñón	El Peñón	El Peñón	El Peñón
+	2198	El Noventa	23.4687700	-102.6708900	MX	32	0	0	El Noventa	El Noventa	El Noventa	El Noventa	El Noventa	El Noventa
+	2198	La Manga	23.2832900	-102.9777400	MX	32	0	0	La Manga	La Manga	La Manga	La Manga	La Manga	La Manga
+	2198	Cieneguitas de Plenitud	23.2316200	-103.1231400	MX	32	0	0	Cieneguitas de Plenitud	Cieneguitas de Plenitud	Cieneguitas de Plenitud	Cieneguitas de Plenitud	Cieneguitas de Plenitud	Cieneguitas de Plenitud
+	2198	San Martín de Pajaritos	23.2429500	-103.2683800	MX	32	0	0	San Martín de Pajaritos	San Martín de Pajaritos	San Martín de Pajaritos	San Martín de Pajaritos	San Martín de Pajaritos	San Martín de Pajaritos
+	2198	La Lagunita	23.3632900	-103.7292300	MX	32	0	0	La Lagunita	La Lagunita	La Lagunita	La Lagunita	La Lagunita	La Lagunita
+	2198	Santa Bárbara	23.4176900	-103.9038000	MX	32	0	0	Santa Bárbara	Santa Bárbara	Santa Bárbara	Santa Bárbara	Santa Bárbara	Santa Bárbara
+	2198	Soledad de Piedras Azules (La Soledad de Piedra)	23.4314400	-103.9297800	MX	32	0	0	Soledad de Piedras Azules (La Soledad de Piedra)	Soledad de Piedras Azules (La Soledad de Piedra)	Soledad de Piedras Azules (La Soledad de Piedra)	Soledad de Piedras Azules (La Soledad de Piedra)	Soledad de Piedras Azules (La Soledad de Piedra)	Soledad de Piedras Azules (La Soledad de Piedra)
+	2198	El Escritorio	23.4409300	-103.6914000	MX	32	0	0	El Escritorio	El Escritorio	El Escritorio	El Escritorio	El Escritorio	El Escritorio
+	2198	Los Álamos (Rancho de los Castillo)	23.4581100	-103.9240500	MX	32	0	0	Los Álamos (Rancho de los Castillo)	Los Álamos (Rancho de los Castillo)	Los Álamos (Rancho de los Castillo)	Los Álamos (Rancho de los Castillo)	Los Álamos (Rancho de los Castillo)	Los Álamos (Rancho de los Castillo)
+	2198	La Mancha	23.5975700	-101.7883000	MX	32	0	0	La Mancha	La Mancha	La Mancha	La Mancha	La Mancha	La Mancha
+	2198	Primero de Mayo (San Juan de Ulúa)	23.8042600	-101.7047800	MX	32	0	0	Primero de Mayo (San Juan de Ulúa)	Primero de Mayo (San Juan de Ulúa)	Primero de Mayo (San Juan de Ulúa)	Primero de Mayo (San Juan de Ulúa)	Primero de Mayo (San Juan de Ulúa)	Primero de Mayo (San Juan de Ulúa)
+	2198	Rancho el Trébol	23.5588800	-102.0750900	MX	32	0	0	Rancho el Trébol	Rancho el Trébol	Rancho el Trébol	Rancho el Trébol	Rancho el Trébol	Rancho el Trébol
+	2198	Vista Hermosa	23.6034700	-102.0059200	MX	32	0	0	Vista Hermosa	Vista Hermosa	Vista Hermosa	Vista Hermosa	Vista Hermosa	Vista Hermosa
+	2198	Allende (San Eusebio)	23.7590600	-102.3044400	MX	32	0	0	Allende (San Eusebio)	Allende (San Eusebio)	Allende (San Eusebio)	Allende (San Eusebio)	Allende (San Eusebio)	Allende (San Eusebio)
+	2198	San Francisco	23.5726400	-102.6005500	MX	32	0	0	San Francisco	San Francisco	San Francisco	San Francisco	San Francisco	San Francisco
+	2198	Emiliano Zapata (El Terreadero)	23.5597200	-102.8880600	MX	32	0	0	Emiliano Zapata (El Terreadero)	Emiliano Zapata (El Terreadero)	Emiliano Zapata (El Terreadero)	Emiliano Zapata (El Terreadero)	Emiliano Zapata (El Terreadero)	Emiliano Zapata (El Terreadero)
+	2198	La Soledad	23.5632100	-103.0550400	MX	32	0	0	La Soledad	La Soledad	La Soledad	La Soledad	La Soledad	La Soledad
+	2198	Ignacio Zaragoza (La Rastrera)	23.7068600	-103.0993400	MX	32	0	0	Ignacio Zaragoza (La Rastrera)	Ignacio Zaragoza (La Rastrera)	Ignacio Zaragoza (La Rastrera)	Ignacio Zaragoza (La Rastrera)	Ignacio Zaragoza (La Rastrera)	Ignacio Zaragoza (La Rastrera)
+	2198	El Castro	23.5877700	-103.2200000	MX	32	0	0	El Castro	El Castro	El Castro	El Castro	El Castro	El Castro
+	2198	Quince de Septiembre (Santa Rosa)	23.5702700	-103.3543300	MX	32	0	0	Quince de Septiembre (Santa Rosa)	Quince de Septiembre (Santa Rosa)	Quince de Septiembre (Santa Rosa)	Quince de Septiembre (Santa Rosa)	Quince de Septiembre (Santa Rosa)	Quince de Septiembre (Santa Rosa)
+	2198	El Lindero	23.5761000	-103.3735000	MX	32	0	0	El Lindero	El Lindero	El Lindero	El Lindero	El Lindero	El Lindero
+	2198	Cañas	23.7436600	-103.2440100	MX	32	0	0	Cañas	Cañas	Cañas	Cañas	Cañas	Cañas
+	2198	Marcelina	23.7084000	-103.5578400	MX	32	0	0	Marcelina	Marcelina	Marcelina	Marcelina	Marcelina	Marcelina
+	2198	Colonia Lázaro Cárdenas	23.5370900	-103.7903100	MX	32	0	0	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas	Colonia Lázaro Cárdenas
+	2198	San José de la Palma	23.6928200	-103.6507900	MX	32	0	0	San José de la Palma	San José de la Palma	San José de la Palma	San José de la Palma	San José de la Palma	San José de la Palma
+	2198	Providencia	23.7155000	-103.7348600	MX	32	0	0	Providencia	Providencia	Providencia	Providencia	Providencia	Providencia
+	2198	San Pedro Chupaderos (Chupaderos)	23.7811100	-103.6819400	MX	32	0	0	San Pedro Chupaderos (Chupaderos)	San Pedro Chupaderos (Chupaderos)	San Pedro Chupaderos (Chupaderos)	San Pedro Chupaderos (Chupaderos)	San Pedro Chupaderos (Chupaderos)	San Pedro Chupaderos (Chupaderos)
+	2198	Refugio de Santa Rita	24.0093800	-102.0508500	MX	32	0	0	Refugio de Santa Rita	Refugio de Santa Rita	Refugio de Santa Rita	Refugio de Santa Rita	Refugio de Santa Rita	Refugio de Santa Rita
+	2198	San Martín de Minillas (San Martín)	24.0906400	-101.9921200	MX	32	0	0	San Martín de Minillas (San Martín)	San Martín de Minillas (San Martín)	San Martín de Minillas (San Martín)	San Martín de Minillas (San Martín)	San Martín de Minillas (San Martín)	San Martín de Minillas (San Martín)
+	2198	Colonia Flores García	23.8840600	-103.4555000	MX	32	0	0	Colonia Flores García	Colonia Flores García	Colonia Flores García	Colonia Flores García	Colonia Flores García	Colonia Flores García
+	2198	Campo Dieciséis (La Honda)	24.0550700	-103.4075400	MX	32	0	0	Campo Dieciséis (La Honda)	Campo Dieciséis (La Honda)	Campo Dieciséis (La Honda)	Campo Dieciséis (La Honda)	Campo Dieciséis (La Honda)	Campo Dieciséis (La Honda)
+	2198	El Grullo	24.1028300	-103.3561000	MX	32	0	0	El Grullo	El Grullo	El Grullo	El Grullo	El Grullo	El Grullo
+	2198	Quince de Enero	23.8908300	-103.7846600	MX	32	0	0	Quince de Enero	Quince de Enero	Quince de Enero	Quince de Enero	Quince de Enero	Quince de Enero
+	2198	Las Playas	24.2913400	-101.9255000	MX	32	0	0	Las Playas	Las Playas	Las Playas	Las Playas	Las Playas	Las Playas
+	2198	Leocadio Guerrero Uno (Cuba)	24.3488800	-102.2299000	MX	32	0	0	Leocadio Guerrero Uno (Cuba)	Leocadio Guerrero Uno (Cuba)	Leocadio Guerrero Uno (Cuba)	Leocadio Guerrero Uno (Cuba)	Leocadio Guerrero Uno (Cuba)	Leocadio Guerrero Uno (Cuba)
+	2198	Compostela (Hacienda de Compostela)	24.8600000	-101.7800000	MX	32	0	0	Compostela (Hacienda de Compostela)	Compostela (Hacienda de Compostela)	Compostela (Hacienda de Compostela)	Compostela (Hacienda de Compostela)	Compostela (Hacienda de Compostela)	Compostela (Hacienda de Compostela)
+	2198	Los Rodriguez	24.6141800	-101.9899800	MX	32	0	0	Los Rodriguez	Los Rodriguez	Los Rodriguez	Los Rodriguez	Los Rodriguez	Los Rodriguez
+	2198	El Tepozán	24.6718300	-102.1184800	MX	32	0	0	El Tepozán	El Tepozán	El Tepozán	El Tepozán	El Tepozán	El Tepozán
+	2198	San Isidro	24.5974300	-102.4923700	MX	32	0	0	San Isidro	San Isidro	San Isidro	San Isidro	San Isidro	San Isidro
+	2198	San Gil (Los Ladrillos)	22.7294400	-101.4283300	MX	32	0	0	San Gil (Los Ladrillos)	San Gil (Los Ladrillos)	San Gil (Los Ladrillos)	San Gil (Los Ladrillos)	San Gil (Los Ladrillos)	San Gil (Los Ladrillos)
+	2198	Los Pozos (Tanque Santa Rosa)	22.9072200	-102.2072200	MX	32	0	0	Los Pozos (Tanque Santa Rosa)	Los Pozos (Tanque Santa Rosa)	Los Pozos (Tanque Santa Rosa)	Los Pozos (Tanque Santa Rosa)	Los Pozos (Tanque Santa Rosa)	Los Pozos (Tanque Santa Rosa)
+	2198	El Zapote	23.4559200	-101.9347700	MX	32	0	0	El Zapote	El Zapote	El Zapote	El Zapote	El Zapote	El Zapote
+	2198	El Socorro	23.1583000	-102.2484900	MX	32	0	0	El Socorro	El Socorro	El Socorro	El Socorro	El Socorro	El Socorro
+	2198	Zacatecas	22.7684300	-102.5814100	MX	32	0	0	Zacatecas	Сакатекас	Zacatecas	Zacatecas	Zacatecas	Zacatecas
+	2198	Hierbabuena	22.8973200	-103.3148300	MX	32	0	0	Hierbabuena	Hierbabuena	Hierbabuena	Hierbabuena	Hierbabuena	Hierbabuena
+	2198	Villanueva	22.3565300	-102.8836100	MX	32	0	0	Villanueva	Villanueva	Villanueva	Villanueva	Villanueva	Villanueva
+	2198	Villa Hidalgo	22.3568200	-101.7125900	MX	32	0	0	Villa Hidalgo	Villa Hidalgo	Villa Hidalgo	Villa Hidalgo	Villa Hidalgo	Villa Hidalgo
+	2198	Villa González Ortega	22.5122200	-101.9161600	MX	32	0	0	Villa González Ortega	Villa González Ortega	Villa González Ortega	Villa González Ortega	Villa González Ortega	Villa González Ortega
+	2198	Villa García	22.1624600	-101.9553000	MX	32	0	0	Villa García	Villa García	Villa García	Villa García	Villa García	Villa García
+	2198	Villa de Cos	23.2932900	-102.3502000	MX	32	0	0	Villa de Cos	Villa de Cos	Villa de Cos	Villa de Cos	Villa de Cos	Villa de Cos
+	2198	Norias de la Venta	22.2875000	-102.0241700	MX	32	0	0	Norias de la Venta	Norias de la Venta	Norias de la Venta	Norias de la Venta	Norias de la Venta	Norias de la Venta
+	2198	Valparaíso	22.7710400	-103.5699100	MX	32	0	0	Valparaíso	Valparaíso	Valparaíso	Valparaíso	Valparaíso	Valparaíso
+	2198	Trancoso	22.7354200	-102.3669700	MX	32	0	0	Trancoso	Trancoso	Trancoso	Trancoso	Trancoso	Trancoso
+	2198	Tlacotes	22.5738900	-102.3338900	MX	32	0	0	Tlacotes	Tlacotes	Tlacotes	Tlacotes	Tlacotes	Tlacotes
+	2198	Teul de González Ortega	21.4634000	-103.4613100	MX	32	0	0	Teul de González Ortega	Teul de González Ortega	Teul de González Ortega	Teul de González Ortega	Teul de González Ortega	Teul de González Ortega
+	2198	Tepechitlán	21.6706300	-103.3264000	MX	32	0	0	Tepechitlán	Tepechitlán	Tepechitlán	Tepechitlán	Tepechitlán	Tepechitlán
+	2198	Tenanguillo	21.9177000	-102.9058900	MX	32	0	0	Tenanguillo	Tenanguillo	Tenanguillo	Tenanguillo	Tenanguillo	Tenanguillo
+	2198	Tanquecillos	24.3532900	-101.5215300	MX	32	0	0	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos	Tanquecillos
+	2198	Talpa	21.8346500	-103.3781500	MX	32	0	0	Talpa	Talpa	Talpa	Talpa	Talpa	Talpa
+	2198	Tacoaleche	22.8201000	-102.4047600	MX	32	0	0	Tacoaleche	Tacoaleche	Tacoaleche	Tacoaleche	Tacoaleche	Tacoaleche
+	2198	Tabasco	21.8628600	-102.9110500	MX	32	0	0	Tabasco	Табаско	Tabasco	Tabasco	Tabasco	Tabasco
+	2198	Sombrerete	23.6348200	-103.6421400	MX	32	0	0	Sombrerete	Sombrerete	Sombrerete	Sombrerete	Sombrerete	Sombrerete
+	2198	Ex-Hacienda de Sierra Hermosa (La Finca)	23.6141700	-101.7252800	MX	32	0	0	Ex-Hacienda de Sierra Hermosa (La Finca)	Ex-Hacienda de Sierra Hermosa (La Finca)	Ex-Hacienda de Sierra Hermosa (La Finca)	Ex-Hacienda de Sierra Hermosa (La Finca)	Ex-Hacienda de Sierra Hermosa (La Finca)	Ex-Hacienda de Sierra Hermosa (La Finca)
+	2198	Sauz de los García de Abajo	22.8502800	-103.0594400	MX	32	0	0	Sauz de los García de Abajo	Sauz de los García de Abajo	Sauz de los García de Abajo	Sauz de los García de Abajo	Sauz de los García de Abajo	Sauz de los García de Abajo
+	2198	El Saucillo	23.5703400	-102.7558800	MX	32	0	0	El Saucillo	El Saucillo	El Saucillo	El Saucillo	El Saucillo	El Saucillo
+	2198	Los Santiagos	21.6550000	-102.9600000	MX	32	0	0	Los Santiagos	Los Santiagos	Los Santiagos	Los Santiagos	Los Santiagos	Los Santiagos
+	2198	Santiago	22.4547700	-101.4589800	MX	32	0	0	Santiago	Santiago	Santiago	Santiago	Santiago	Santiago
+	2198	Santa Rosa (Las Mangas)	22.5988900	-102.3875000	MX	32	0	0	Santa Rosa (Las Mangas)	Santa Rosa (Las Mangas)	Santa Rosa (Las Mangas)	Santa Rosa (Las Mangas)	Santa Rosa (Las Mangas)	Santa Rosa (Las Mangas)
+	2198	José María Morelos (Santa Mónica)	23.6055600	-103.1102800	MX	32	0	0	José María Morelos (Santa Mónica)	José María Morelos (Santa Mónica)	José María Morelos (Santa Mónica)	José María Morelos (Santa Mónica)	José María Morelos (Santa Mónica)	José María Morelos (Santa Mónica)
+	2198	Santa María de la Paz	21.5116700	-103.4061100	MX	32	0	0	Santa María de la Paz	Santa María de la Paz	Santa María de la Paz	Santa María de la Paz	Santa María de la Paz	Santa María de la Paz
+	2198	Santa Gertrudis	22.5219400	-102.5141700	MX	32	0	0	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis	Santa Gertrudis
+	2198	Santa Fe	22.6577800	-101.5358300	MX	32	0	0	Santa Fe	Santa Fe	Santa Fe	Santa Fe	Santa Fe	Santa Fe
+	2198	Santa Clara	21.7033300	-102.9500000	MX	32	0	0	Santa Clara	Santa Clara	Santa Clara	Santa Clara	Santa Clara	Santa Clara
+	2198	San Rafael (José María Morelos)	24.5912700	-102.1103400	MX	32	0	0	San Rafael (José María Morelos)	San Rafael (José María Morelos)	San Rafael (José María Morelos)	San Rafael (José María Morelos)	San Rafael (José María Morelos)	San Rafael (José María Morelos)
+	2198	San Pedro Piedra Gorda	22.4482000	-102.3500000	MX	32	0	0	San Pedro Piedra Gorda	San Pedro Piedra Gorda	San Pedro Piedra Gorda	San Pedro Piedra Gorda	San Pedro Piedra Gorda	San Pedro Piedra Gorda
+	2198	San Pedro de Pastoría	22.5538900	-103.6002800	MX	32	0	0	San Pedro de Pastoría	San Pedro de Pastoría	San Pedro de Pastoría	San Pedro de Pastoría	San Pedro de Pastoría	San Pedro de Pastoría
+	2198	La Reforma (San Nicolás)	24.4120200	-101.3194900	MX	32	0	0	La Reforma (San Nicolás)	La Reforma (San Nicolás)	La Reforma (San Nicolás)	La Reforma (San Nicolás)	La Reforma (San Nicolás)	La Reforma (San Nicolás)
+	2198	San Nicolás	21.6166700	-102.9838900	MX	32	0	0	San Nicolás	San Nicolás	San Nicolás	San Nicolás	San Nicolás	San Nicolás
+	2198	Independencia San Martín (San Martín)	24.0602800	-103.0850000	MX	32	0	0	Independencia San Martín (San Martín)	Independencia San Martín (San Martín)	Independencia San Martín (San Martín)	Independencia San Martín (San Martín)	Independencia San Martín (San Martín)	Independencia San Martín (San Martín)
+	2198	San Marcos del Teyra (San Marcos)	24.2412500	-102.1770900	MX	32	0	0	San Marcos del Teyra (San Marcos)	San Marcos del Teyra (San Marcos)	San Marcos del Teyra (San Marcos)	San Marcos del Teyra (San Marcos)	San Marcos del Teyra (San Marcos)	San Marcos del Teyra (San Marcos)
+	2198	San Macario	23.9487300	-102.1794900	MX	32	0	0	San Macario	San Macario	San Macario	San Macario	San Macario	San Macario
+	2198	San Luis de la Palma	22.8394400	-103.3722200	MX	32	0	0	San Luis de la Palma	San Luis de la Palma	San Luis de la Palma	San Luis de la Palma	San Luis de la Palma	San Luis de la Palma
+	2198	Tanque de San Juan	22.6794400	-102.9408300	MX	32	0	0	Tanque de San Juan	Tanque de San Juan	Tanque de San Juan	Tanque de San Juan	Tanque de San Juan	Tanque de San Juan
+	2198	San José de la Estrella (Casa Colorada)	23.7144400	-103.6708300	MX	32	0	0	San José de la Estrella (Casa Colorada)	San José de la Estrella (Casa Colorada)	San José de la Estrella (Casa Colorada)	San José de la Estrella (Casa Colorada)	San José de la Estrella (Casa Colorada)	San José de la Estrella (Casa Colorada)
+	2198	San José del Río	23.2023300	-103.2711300	MX	32	0	0	San José del Río	San José del Río	San José del Río	San José del Río	San José del Río	San José del Río
+	2198	Estación San José	23.1897200	-102.7847200	MX	32	0	0	Estación San José	Estación San José	Estación San José	Estación San José	Estación San José	Estación San José
+	2198	San Isidro de los González (Corrales de Piedras)	22.8463900	-103.3575000	MX	32	0	0	San Isidro de los González (Corrales de Piedras)	San Isidro de los González (Corrales de Piedras)	San Isidro de los González (Corrales de Piedras)	San Isidro de los González (Corrales de Piedras)	San Isidro de los González (Corrales de Piedras)	San Isidro de los González (Corrales de Piedras)
+	2198	San Isidro del Salto	22.6703400	-102.8202800	MX	32	0	0	San Isidro del Salto	San Isidro del Salto	San Isidro del Salto	San Isidro del Salto	San Isidro del Salto	San Isidro del Salto
+	2198	San Ignacio	22.5375000	-101.3761100	MX	32	0	0	San Ignacio	San Ignacio	San Ignacio	San Ignacio	San Ignacio	San Ignacio
+	2198	San Felipe	23.7435600	-102.1260800	MX	32	0	0	San Felipe	San Felipe	San Felipe	San Felipe	San Felipe	San Felipe
+	2198	San Diego	22.4772200	-102.2647200	MX	32	0	0	San Diego	San Diego	San Diego	San Diego	San Diego	San Diego
+	2198	San Diego	22.3495800	-103.3826600	MX	32	0	0	San Diego	San Diego	San Diego	San Diego	San Diego	San Diego
+	2198	Tlaltenango de Sánchez Román	21.7822100	-103.3029800	MX	32	0	0	Tlaltenango de Sánchez Román	Tlaltenango de Sánchez Román	Tlaltenango de Sánchez Román	Tlaltenango de Sánchez Román	Tlaltenango de Sánchez Román	Tlaltenango de Sánchez Román
+	2198	San Bartolo	22.2334400	-103.4073800	MX	32	0	0	San Bartolo	San Bartolo	San Bartolo	San Bartolo	San Bartolo	San Bartolo
+	2198	San Alberto	23.9463900	-102.9444400	MX	32	0	0	San Alberto	San Alberto	San Alberto	San Alberto	San Alberto	San Alberto
+	2198	Salto de San Juan	24.0063200	-101.4357800	MX	32	0	0	Salto de San Juan	Salto de San Juan	Salto de San Juan	Salto de San Juan	Salto de San Juan	Salto de San Juan
+	2198	Saín Alto	23.5802300	-103.2481400	MX	32	0	0	Saín Alto	Saín Alto	Saín Alto	Saín Alto	Saín Alto	Saín Alto
+	2198	Río Grande	23.8252100	-103.0317800	MX	32	0	0	Río Grande	Río Grande	Río Grande	Río Grande	Río Grande	Río Grande
+	2198	Real de Ángeles	22.4202800	-101.8822200	MX	32	0	0	Real de Ángeles	Real de Ángeles	Real de Ángeles	Real de Ángeles	Real de Ángeles	Real de Ángeles
+	2198	Rancho Viejo	22.2538800	-103.5244000	MX	32	0	0	Rancho Viejo	Rancho Viejo	Rancho Viejo	Rancho Viejo	Rancho Viejo	Rancho Viejo
+	2198	Santa Cruz	24.3128300	-102.1247000	MX	32	0	0	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz	Santa Cruz
+	2198	La Peñita	23.5991700	-103.6355600	MX	32	0	0	La Peñita	La Peñita	La Peñita	La Peñita	La Peñita	La Peñita
+	2198	Lázaro Cárdenas (Rancho Grande)	23.4505600	-102.9625000	MX	32	0	0	Lázaro Cárdenas (Rancho Grande)	Lázaro Cárdenas (Rancho Grande)	Lázaro Cárdenas (Rancho Grande)	Lázaro Cárdenas (Rancho Grande)	Lázaro Cárdenas (Rancho Grande)	Lázaro Cárdenas (Rancho Grande)
+	2198	Jazminal	24.0805100	-101.8772000	MX	32	0	0	Jazminal	Jazminal	Jazminal	Jazminal	Jazminal	Jazminal
+	2198	San Rafael de Ábrego	23.2033300	-103.3316700	MX	32	0	0	San Rafael de Ábrego	San Rafael de Ábrego	San Rafael de Ábrego	San Rafael de Ábrego	San Rafael de Ábrego	San Rafael de Ábrego
+	2198	Colonia Purísima del Maguey	23.0321800	-102.8941800	MX	32	0	0	Colonia Purísima del Maguey	Colonia Purísima del Maguey	Colonia Purísima del Maguey	Colonia Purísima del Maguey	Colonia Purísima del Maguey	Colonia Purísima del Maguey
+	2198	Pozos de Gamboa	22.9486100	-102.5701000	MX	32	0	0	Pozos de Gamboa	Pozos de Gamboa	Pozos de Gamboa	Pozos de Gamboa	Pozos de Gamboa	Pozos de Gamboa
+	2198	Plateros	23.2292200	-102.8429000	MX	32	0	0	Plateros	Plateros	Plateros	Plateros	Plateros	Plateros
+	2198	Pinos	22.2957100	-101.5757900	MX	32	0	0	Pinos	Pinos	Pinos	Pinos	Pinos	Pinos
+	2198	Pastoría	22.4866600	-102.0816200	MX	32	0	0	Pastoría	Pastoría	Pastoría	Pastoría	Pastoría	Pastoría
+	2198	Pacheco (Estación Pacheco)	24.0113800	-102.4321900	MX	32	0	0	Pacheco (Estación Pacheco)	Pacheco (Estación Pacheco)	Pacheco (Estación Pacheco)	Pacheco (Estación Pacheco)	Pacheco (Estación Pacheco)	Pacheco (Estación Pacheco)
+	2198	Noria de Gaspar (Gaspar)	23.6067700	-102.2794400	MX	32	0	0	Noria de Gaspar (Gaspar)	Noria de Gaspar (Gaspar)	Noria de Gaspar (Gaspar)	Noria de Gaspar (Gaspar)	Noria de Gaspar (Gaspar)	Noria de Gaspar (Gaspar)
+	2198	Nochistlán	21.3654500	-102.8465900	MX	32	0	0	Nochistlán	Nochistlán	Nochistlán	Nochistlán	Nochistlán	Nochistlán
+	2198	Nieves	23.9964000	-103.0190700	MX	32	0	0	Nieves	Nieves	Nieves	Nieves	Nieves	Nieves
+	2198	Morelos	22.8621400	-102.6106200	MX	32	0	0	Morelos	Morelos	Morelos	Morelos	Morelos	Morelos
+	2198	Monte Escobedo	22.3036200	-103.5675100	MX	32	0	0	Monte Escobedo	Monte Escobedo	Monte Escobedo	Monte Escobedo	Monte Escobedo	Monte Escobedo
+	2198	Miguel Auza	24.2929200	-103.4500000	MX	32	0	0	Miguel Auza	Miguel Auza	Miguel Auza	Miguel Auza	Miguel Auza	Miguel Auza
+	2198	Mezquital del Oro	21.2166700	-103.3627800	MX	32	0	0	Mezquital del Oro	Mezquital del Oro	Mezquital del Oro	Mezquital del Oro	Mezquital del Oro	Mezquital del Oro
+	2198	Mexicanos	22.1944400	-101.9719400	MX	32	0	0	Mexicanos	Mexicanos	Mexicanos	Mexicanos	Mexicanos	Mexicanos
+	2198	Mendoza	23.3342500	-102.6984200	MX	32	0	0	Mendoza	Mendoza	Mendoza	Mendoza	Mendoza	Mendoza
+	2198	La Labor del Márquez	22.7216700	-102.9975000	MX	32	0	0	La Labor del Márquez	La Labor del Márquez	La Labor del Márquez	La Labor del Márquez	La Labor del Márquez	La Labor del Márquez
+	2198	Majoma	23.8585000	-101.7149800	MX	32	0	0	Majoma	Majoma	Majoma	Majoma	Majoma	Majoma
+	2198	Luis Moya	22.4323700	-102.2486400	MX	32	0	0	Luis Moya	Luis Moya	Luis Moya	Luis Moya	Luis Moya	Luis Moya
+	2198	Los Ríos	22.5780600	-102.9730600	MX	32	0	0	Los Ríos	Los Ríos	Los Ríos	Los Ríos	Los Ríos	Los Ríos
+	2198	San Juan de los Hornillos	23.0624800	-103.1110900	MX	32	0	0	San Juan de los Hornillos	San Juan de los Hornillos	San Juan de los Hornillos	San Juan de los Hornillos	San Juan de los Hornillos	San Juan de los Hornillos
+	2198	Los Guapos	21.8726600	-103.2550600	MX	32	0	0	Los Guapos	Los Guapos	Los Guapos	Los Guapos	Los Guapos	Los Guapos
+	2198	Los Encinos	24.1950000	-101.0986100	MX	32	0	0	Los Encinos	Los Encinos	Los Encinos	Los Encinos	Los Encinos	Los Encinos
+	2198	Los Cuevas	22.7538900	-102.9666700	MX	32	0	0	Los Cuevas	Los Cuevas	Los Cuevas	Los Cuevas	Los Cuevas	Los Cuevas
+	2198	Arellanos	21.7868400	-102.9885900	MX	32	0	0	Arellanos	Arellanos	Arellanos	Arellanos	Arellanos	Arellanos
+	2198	Los Ángeles	22.9772200	-102.7272200	MX	32	0	0	Los Ángeles	Los Ángeles	Los Ángeles	Los Ángeles	Los Ángeles	Los Ángeles
+	2198	Loreto	22.2724800	-101.9889800	MX	32	0	0	Loreto	Loreto	Loreto	Loreto	Loreto	Loreto
+	2198	Lo de Vega	22.7200000	-102.5186100	MX	32	0	0	Lo de Vega	Lo de Vega	Lo de Vega	Lo de Vega	Lo de Vega	Lo de Vega
+	2198	Lo de Mena	23.5469400	-103.6622200	MX	32	0	0	Lo de Mena	Lo de Mena	Lo de Mena	Lo de Mena	Lo de Mena	Lo de Mena
+	2198	La Virgen	22.4363900	-102.3497200	MX	32	0	0	La Virgen	La Virgen	La Virgen	La Virgen	La Virgen	La Virgen
+	2198	La Tapia	22.7627800	-103.0141700	MX	32	0	0	La Tapia	La Tapia	La Tapia	La Tapia	La Tapia	La Tapia
+	2198	Las Mesas	21.2163900	-103.3294400	MX	32	0	0	Las Mesas	Las Mesas	Las Mesas	Las Mesas	Las Mesas	Las Mesas
+	2198	Las Pilas del Álamo	22.6931000	-103.6061000	MX	32	0	0	Las Pilas del Álamo	Las Pilas del Álamo	Las Pilas del Álamo	Las Pilas del Álamo	Las Pilas del Álamo	Las Pilas del Álamo
+	2198	Palmas Altas	22.8486100	-103.1497200	MX	32	0	0	Palmas Altas	Palmas Altas	Palmas Altas	Palmas Altas	Palmas Altas	Palmas Altas
+	2198	Los Mota	22.7511100	-102.9744400	MX	32	0	0	Los Mota	Los Mota	Los Mota	Los Mota	Los Mota	Los Mota
+	2198	Las Lajas	22.6869400	-102.8447200	MX	32	0	0	Las Lajas	Las Lajas	Las Lajas	Las Lajas	Las Lajas	Las Lajas
+	2198	La Silleta	21.1369400	-103.4152800	MX	32	0	0	La Silleta	La Silleta	La Silleta	La Silleta	La Silleta	La Silleta
+	2198	San Blas de Copudas	22.5547200	-102.1475000	MX	32	0	0	San Blas de Copudas	San Blas de Copudas	San Blas de Copudas	San Blas de Copudas	San Blas de Copudas	San Blas de Copudas
+	2198	Predio las Borregas (Rancho San José)	22.6638900	-102.1591700	MX	32	0	0	Predio las Borregas (Rancho San José)	Predio las Borregas (Rancho San José)	Predio las Borregas (Rancho San José)	Predio las Borregas (Rancho San José)	Predio las Borregas (Rancho San José)	Predio las Borregas (Rancho San José)
+	2198	Las Ánimas	21.1449600	-103.3116200	MX	32	0	0	Las Ánimas	Las Ánimas	Las Ánimas	Las Ánimas	Las Ánimas	Las Ánimas
+	2198	La Purísima	23.2619400	-103.2858300	MX	32	0	0	La Purísima	La Purísima	La Purísima	La Purísima	La Purísima	La Purísima
+	2198	Hacienda la Purísima de Carrillo	22.7283300	-103.3633300	MX	32	0	0	Hacienda la Purísima de Carrillo	Hacienda la Purísima de Carrillo	Hacienda la Purísima de Carrillo	Hacienda la Purísima de Carrillo	Hacienda la Purísima de Carrillo	Hacienda la Purísima de Carrillo
+	2198	La Presita	24.3473100	-101.7218400	MX	32	0	0	La Presita	La Presita	La Presita	La Presita	La Presita	La Presita
+	2198	La Pendencia	22.4377800	-101.5758300	MX	32	0	0	La Pendencia	La Pendencia	La Pendencia	La Pendencia	La Pendencia	La Pendencia
+	2198	La Muralla	23.5433300	-103.7933300	MX	32	0	0	La Muralla	La Muralla	La Muralla	La Muralla	La Muralla	La Muralla
+	2198	La Muralla	23.5435500	-103.2939600	MX	32	0	0	La Muralla	La Muralla	La Muralla	La Muralla	La Muralla	La Muralla
+	2198	Mezquituta	21.2405200	-103.1778300	MX	32	0	0	Mezquituta	Mezquituta	Mezquituta	Mezquituta	Mezquituta	Mezquituta
+	2198	La Laborcilla	22.9394400	-102.7366700	MX	32	0	0	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla	La Laborcilla
+	2198	La Hondita	22.4008300	-101.8155600	MX	32	0	0	La Hondita	La Hondita	La Hondita	La Hondita	La Hondita	La Hondita
+	2198	La Florida	22.6836100	-103.6025000	MX	32	0	0	La Florida	La Florida	La Florida	La Florida	La Florida	La Florida
+	2198	La Estancia	21.8219400	-102.9513900	MX	32	0	0	La Estancia	La Estancia	La Estancia	La Estancia	La Estancia	La Estancia
+	2198	San José de la Era	22.8507300	-102.4223900	MX	32	0	0	San José de la Era	San José de la Era	San José de la Era	San José de la Era	San José de la Era	San José de la Era
+	2198	Juchipila	21.4086200	-103.1166300	MX	32	0	0	Juchipila	Juchipila	Juchipila	Juchipila	Juchipila	Juchipila
+	2198	Juan Aldama	24.2915400	-103.3924900	MX	32	0	0	Juan Aldama	Juan Aldama	Juan Aldama	Juan Aldama	Juan Aldama	Juan Aldama
+	2198	Jomulquillo	22.6842300	-103.0573100	MX	32	0	0	Jomulquillo	Jomulquillo	Jomulquillo	Jomulquillo	Jomulquillo	Jomulquillo
+	2198	Jerez de García Salinas	22.6486200	-102.9903400	MX	32	0	0	Jerez de García Salinas	Херес-де-Гарсия-Салинас	Jerez de García Salinas	Jerez de García Salinas	Jerez de García Salinas	Jerez de García Salinas
+	2198	Jalpa	21.6344800	-102.9791900	MX	32	0	0	Jalpa	Jalpa	Jalpa	Jalpa	Jalpa	Jalpa
+	2198	Hacienda Toribio	23.0833300	-102.6833300	MX	32	0	0	Hacienda Toribio	Hacienda Toribio	Hacienda Toribio	Hacienda Toribio	Hacienda Toribio	Hacienda Toribio
+	2198	Guerreros	22.7908000	-102.4950400	MX	32	0	0	Guerreros	Guerreros	Guerreros	Guerreros	Guerreros	Guerreros
+	2198	J. Guadalupe de la R.	23.2786100	-102.3383300	MX	32	0	0	J. Guadalupe de la R.	J. Guadalupe de la R.	J. Guadalupe de la R.	J. Guadalupe de la R.	J. Guadalupe de la R.	J. Guadalupe de la R.
+	2198	Guadalupe	22.7475300	-102.5187400	MX	32	0	0	Guadalupe	Гвадалупе	Guadalupe	Guadalupe	Guadalupe	Guadalupe
+	2198	Gruñidora	24.2141700	-101.9207800	MX	32	0	0	Gruñidora	Gruñidora	Gruñidora	Gruñidora	Gruñidora	Gruñidora
+	2198	Trinidad García de la Cadena	21.2100000	-103.4644400	MX	32	0	0	Trinidad García de la Cadena	Trinidad García de la Cadena	Trinidad García de la Cadena	Trinidad García de la Cadena	Trinidad García de la Cadena	Trinidad García de la Cadena
+	2198	El Garabatillo	23.0458300	-102.2838900	MX	32	0	0	El Garabatillo	El Garabatillo	El Garabatillo	El Garabatillo	El Garabatillo	El Garabatillo
+	2198	Estación Fuertes (Fuertes)	24.5354200	-102.4161400	MX	32	0	0	Estación Fuertes (Fuertes)	Estación Fuertes (Fuertes)	Estación Fuertes (Fuertes)	Estación Fuertes (Fuertes)	Estación Fuertes (Fuertes)	Estación Fuertes (Fuertes)
+	2198	Fresnillo	23.1812600	-102.8713600	MX	32	0	0	Fresnillo	Fresnillo	Fresnillo	Fresnillo	Fresnillo	Fresnillo
+	2198	Estación Margarita	24.6397200	-101.3783300	MX	32	0	0	Estación Margarita	Estación Margarita	Estación Margarita	Estación Margarita	Estación Margarita	Estación Margarita
+	2198	La Escondida de Abajo	21.6752800	-102.9622200	MX	32	0	0	La Escondida de Abajo	La Escondida de Abajo	La Escondida de Abajo	La Escondida de Abajo	La Escondida de Abajo	La Escondida de Abajo
+	2198	Encinillas	22.5358300	-102.3430600	MX	32	0	0	Encinillas	Encinillas	Encinillas	Encinillas	Encinillas	Encinillas
+	2198	Emiliano Zapata (San Antonio del Burro)	23.5788500	-102.1613000	MX	32	0	0	Emiliano Zapata (San Antonio del Burro)	Emiliano Zapata (San Antonio del Burro)	Emiliano Zapata (San Antonio del Burro)	Emiliano Zapata (San Antonio del Burro)	Emiliano Zapata (San Antonio del Burro)	Emiliano Zapata (San Antonio del Burro)
+	2198	Colonia Emancipación	23.2410500	-103.0522100	MX	32	0	0	Colonia Emancipación	Colonia Emancipación	Colonia Emancipación	Colonia Emancipación	Colonia Emancipación	Colonia Emancipación
+	2198	El Vergel	23.5771100	-103.8668800	MX	32	0	0	El Vergel	El Vergel	El Vergel	El Vergel	El Vergel	El Vergel
+	2198	San Blas de Copudas (El Tildío)	22.5546000	-102.1372200	MX	32	0	0	San Blas de Copudas (El Tildío)	San Blas de Copudas (El Tildío)	San Blas de Copudas (El Tildío)	San Blas de Copudas (El Tildío)	San Blas de Copudas (El Tildío)	San Blas de Copudas (El Tildío)
+	2198	El Tesorero	22.8263900	-102.9852800	MX	32	0	0	El Tesorero	El Tesorero	El Tesorero	El Tesorero	El Tesorero	El Tesorero
+	2198	El Sauz	24.2186600	-103.0905300	MX	32	0	0	El Sauz	El Sauz	El Sauz	El Sauz	El Sauz	El Sauz
+	2198	El Sauz de Oriente	22.7613900	-103.4522200	MX	32	0	0	El Sauz de Oriente	El Sauz de Oriente	El Sauz de Oriente	El Sauz de Oriente	El Sauz de Oriente	El Sauz de Oriente
+	2198	El Salto	22.4996800	-101.5182900	MX	32	0	0	El Salto	El Salto	El Salto	El Salto	El Salto	El Salto
+	2198	El Salitre	22.4033300	-101.7805600	MX	32	0	0	El Salitre	El Salitre	El Salitre	El Salitre	El Salitre	El Salitre
+	2198	El Rodeo	24.8643900	-102.1852900	MX	32	0	0	El Rodeo	El Rodeo	El Rodeo	El Rodeo	El Rodeo	El Rodeo
+	2198	El Resbalón	22.7451700	-103.5782800	MX	32	0	0	El Resbalón	El Resbalón	El Resbalón	El Resbalón	El Resbalón	El Resbalón
+	2198	El Refugio de Ábrego (Benito Juárez)	23.1727700	-103.3039100	MX	32	0	0	El Refugio de Ábrego (Benito Juárez)	El Refugio de Ábrego (Benito Juárez)	El Refugio de Ábrego (Benito Juárez)	El Refugio de Ábrego (Benito Juárez)	El Refugio de Ábrego (Benito Juárez)	El Refugio de Ábrego (Benito Juárez)
+	2198	El Refugio	23.0684200	-102.5336900	MX	32	0	0	El Refugio	El Refugio	El Refugio	El Refugio	El Refugio	El Refugio
+	2198	El Ranchito	24.6611100	-102.1316700	MX	32	0	0	El Ranchito	El Ranchito	El Ranchito	El Ranchito	El Ranchito	El Ranchito
+	2198	El Porvenir (El Porvenir del Carmen)	24.0170000	-103.1403300	MX	32	0	0	El Porvenir (El Porvenir del Carmen)	El Porvenir (El Porvenir del Carmen)	El Porvenir (El Porvenir del Carmen)	El Porvenir (El Porvenir del Carmen)	El Porvenir (El Porvenir del Carmen)	El Porvenir (El Porvenir del Carmen)
+	2198	El Porvenir	23.6252700	-102.7100000	MX	32	0	0	El Porvenir	El Porvenir	El Porvenir	El Porvenir	El Porvenir	El Porvenir
+	2198	El Pocito	22.3347200	-103.4736100	MX	32	0	0	El Pocito	El Pocito	El Pocito	El Pocito	El Pocito	El Pocito
+	2198	El Palmarito	22.4525000	-101.8047200	MX	32	0	0	El Palmarito	El Palmarito	El Palmarito	El Palmarito	El Palmarito	El Palmarito
+	2198	El Naranjal	22.8730600	-102.9355600	MX	32	0	0	El Naranjal	El Naranjal	El Naranjal	El Naranjal	El Naranjal	El Naranjal
+	2198	El Jazmín	24.6713000	-102.1392100	MX	32	0	0	El Jazmín	El Jazmín	El Jazmín	El Jazmín	El Jazmín	El Jazmín
+	2198	El Jagüey	22.2596400	-103.0005300	MX	32	0	0	El Jagüey	El Jagüey	El Jagüey	El Jagüey	El Jagüey	El Jagüey
+	2198	El Encino	23.6916800	-102.1384600	MX	32	0	0	El Encino	El Encino	El Encino	El Encino	El Encino	El Encino
+	2198	El Chepinque	22.4436100	-102.0783300	MX	32	0	0	El Chepinque	El Chepinque	El Chepinque	El Chepinque	El Chepinque	El Chepinque
+	2198	El Carnerito (El Carnero)	24.0996800	-103.1588500	MX	32	0	0	El Carnerito (El Carnero)	El Carnerito (El Carnero)	El Carnerito (El Carnero)	El Carnerito (El Carnero)	El Carnerito (El Carnero)	El Carnerito (El Carnero)
+	2198	Villa Insurgentes (El Calabazal)	23.7430600	-103.8425000	MX	32	0	0	Villa Insurgentes (El Calabazal)	Villa Insurgentes (El Calabazal)	Villa Insurgentes (El Calabazal)	Villa Insurgentes (El Calabazal)	Villa Insurgentes (El Calabazal)	Villa Insurgentes (El Calabazal)
+	2198	El Bermejo (La Mezquitera)	22.8480600	-102.4033300	MX	32	0	0	El Bermejo (La Mezquitera)	El Bermejo (La Mezquitera)	El Bermejo (La Mezquitera)	El Bermejo (La Mezquitera)	El Bermejo (La Mezquitera)	El Bermejo (La Mezquitera)
+	2198	Felipe Ángeles (El Barranco)	23.2619400	-103.2752800	MX	32	0	0	Felipe Ángeles (El Barranco)	Felipe Ángeles (El Barranco)	Felipe Ángeles (El Barranco)	Felipe Ángeles (El Barranco)	Felipe Ángeles (El Barranco)	Felipe Ángeles (El Barranco)
+	2198	Baño de Santa Cruz	23.1541700	-103.0200000	MX	32	0	0	Baño de Santa Cruz	Baño de Santa Cruz	Baño de Santa Cruz	Baño de Santa Cruz	Baño de Santa Cruz	Baño de Santa Cruz
+	2198	El Auxilio	23.1694400	-102.9636100	MX	32	0	0	El Auxilio	El Auxilio	El Auxilio	El Auxilio	El Auxilio	El Auxilio
+	2198	Potrero de Dolores (Gustavo Lara)	23.2133300	-102.4238900	MX	32	0	0	Potrero de Dolores (Gustavo Lara)	Potrero de Dolores (Gustavo Lara)	Potrero de Dolores (Gustavo Lara)	Potrero de Dolores (Gustavo Lara)	Potrero de Dolores (Gustavo Lara)	Potrero de Dolores (Gustavo Lara)
+	2198	Dolores	22.6000400	-102.3197000	MX	32	0	0	Dolores	Dolores	Dolores	Dolores	Dolores	Dolores
+	2198	Cruz Verde	21.9185500	-102.9002000	MX	32	0	0	Cruz Verde	Cruz Verde	Cruz Verde	Cruz Verde	Cruz Verde	Cruz Verde
+	2198	Concepcion del Oro	24.6132600	-101.4184400	MX	32	0	0	Concepcion del Oro	Concepcion del Oro	Concepcion del Oro	Concepcion del Oro	Concepcion del Oro	Concepcion del Oro
+	2198	Concepción de la Norma	23.8449600	-101.9607800	MX	32	0	0	Concepción de la Norma	Concepción de la Norma	Concepción de la Norma	Concepción de la Norma	Concepción de la Norma	Concepción de la Norma
+	2198	Colonia Plenitud	23.2325000	-103.0750000	MX	32	0	0	Colonia Plenitud	Colonia Plenitud	Colonia Plenitud	Colonia Plenitud	Colonia Plenitud	Colonia Plenitud
+	2198	Cofradía	21.5571300	-103.0358100	MX	32	0	0	Cofradía	Cofradía	Cofradía	Cofradía	Cofradía	Cofradía
+	2198	Clavellinas	24.3763900	-100.8980600	MX	32	0	0	Clavellinas	Clavellinas	Clavellinas	Clavellinas	Clavellinas	Clavellinas
+	2198	La Ciénega del Oso	22.7205600	-104.2644400	MX	32	0	0	La Ciénega del Oso	La Ciénega del Oso	La Ciénega del Oso	La Ciénega del Oso	La Ciénega del Oso	La Ciénega del Oso
+	2198	San Juan de Arriba	22.8091700	-103.5433300	MX	32	0	0	San Juan de Arriba	San Juan de Arriba	San Juan de Arriba	San Juan de Arriba	San Juan de Arriba	San Juan de Arriba
+	2198	San Juan de Abajo	22.7975000	-103.5491700	MX	32	0	0	San Juan de Abajo	San Juan de Abajo	San Juan de Abajo	San Juan de Abajo	San Juan de Abajo	San Juan de Abajo
+	2198	Chalchihuites	23.4749800	-103.8829300	MX	32	0	0	Chalchihuites	Chalchihuites	Chalchihuites	Chalchihuites	Chalchihuites	Chalchihuites
+	2198	Cerrito de Dolores	22.0040900	-101.4094100	MX	32	0	0	Cerrito de Dolores	Cerrito de Dolores	Cerrito de Dolores	Cerrito de Dolores	Cerrito de Dolores	Cerrito de Dolores
+	2198	Casas Coloradas	22.6286100	-102.4841700	MX	32	0	0	Casas Coloradas	Casas Coloradas	Casas Coloradas	Casas Coloradas	Casas Coloradas	Casas Coloradas
+	2198	El Carrizal	23.6406300	-103.0186200	MX	32	0	0	El Carrizal	El Carrizal	El Carrizal	El Carrizal	El Carrizal	El Carrizal
+	2198	Cañitas de Felipe Pescador	23.6058400	-102.7263900	MX	32	0	0	Cañitas de Felipe Pescador	Cañitas de Felipe Pescador	Cañitas de Felipe Pescador	Cañitas de Felipe Pescador	Cañitas de Felipe Pescador	Cañitas de Felipe Pescador
+	2198	Cañada Blanca	24.4475000	-102.4727800	MX	32	0	0	Cañada Blanca	Cañada Blanca	Cañada Blanca	Cañada Blanca	Cañada Blanca	Cañada Blanca
+	2198	La Campechana	23.6508800	-102.0991400	MX	32	0	0	La Campechana	La Campechana	La Campechana	La Campechana	La Campechana	La Campechana
+	2198	Víctor Rosales	22.9488900	-102.7022200	MX	32	0	0	Víctor Rosales	Víctor Rosales	Víctor Rosales	Víctor Rosales	Víctor Rosales	Víctor Rosales
+	2198	Buenavista de Rivera	23.1341700	-102.8330600	MX	32	0	0	Buenavista de Rivera	Buenavista de Rivera	Buenavista de Rivera	Buenavista de Rivera	Buenavista de Rivera	Buenavista de Rivera
+	2198	La Boquilla	23.2005600	-103.1536100	MX	32	0	0	La Boquilla	La Boquilla	La Boquilla	La Boquilla	La Boquilla	La Boquilla
+	2198	Bernalejo	22.6930600	-104.2263900	MX	32	0	0	Bernalejo	Bernalejo	Bernalejo	Bernalejo	Bernalejo	Bernalejo
+	2198	Gonzales Ortega	23.1805600	-102.4758800	MX	32	0	0	Gonzales Ortega	Gonzales Ortega	Gonzales Ortega	Gonzales Ortega	Gonzales Ortega	Gonzales Ortega
+	2198	Aranzazú (El Cobre)	24.6175300	-101.4547800	MX	32	0	0	Aranzazú (El Cobre)	Aranzazú (El Cobre)	Aranzazú (El Cobre)	Aranzazú (El Cobre)	Aranzazú (El Cobre)	Aranzazú (El Cobre)
+	2198	Apozol	21.4695200	-103.0907600	MX	32	0	0	Apozol	Apozol	Apozol	Apozol	Apozol	Apozol
+	2198	Apaseo	24.2644400	-103.0388900	MX	32	0	0	Apaseo	Apaseo	Apaseo	Apaseo	Apaseo	Apaseo
+	2198	Agua Nueva	23.7863900	-102.1613900	MX	32	0	0	Agua Nueva	Agua Nueva	Agua Nueva	Agua Nueva	Agua Nueva	Agua Nueva
+	2198	Agua Fría de Arriba	22.8025000	-103.5961100	MX	32	0	0	Agua Fría de Arriba	Agua Fría de Arriba	Agua Fría de Arriba	Agua Fría de Arriba	Agua Fría de Arriba	Agua Fría de Arriba
+	2198	San Antonio de Ábrego (La Puerta de los L.)	23.1841700	-103.3700000	MX	32	0	0	San Antonio de Ábrego (La Puerta de los L.)	San Antonio de Ábrego (La Puerta de los L.)	San Antonio de Ábrego (La Puerta de los L.)	San Antonio de Ábrego (La Puerta de los L.)	San Antonio de Ábrego (La Puerta de los L.)	San Antonio de Ábrego (La Puerta de los L.)
+	2198	Manantial de la Honda (Carboneras)	24.1166400	-103.5769300	MX	32	0	0	Manantial de la Honda (Carboneras)	Manantial de la Honda (Carboneras)	Manantial de la Honda (Carboneras)	Manantial de la Honda (Carboneras)	Manantial de la Honda (Carboneras)	Manantial de la Honda (Carboneras)
+	2198	Melchor Ocampo	24.8311100	-101.6425000	MX	32	0	0	Melchor Ocampo	Melchor Ocampo	Melchor Ocampo	Melchor Ocampo	Melchor Ocampo	Melchor Ocampo
+	2198	Bimbaletes	22.2483300	-102.0030600	MX	32	0	0	Bimbaletes	Bimbaletes	Bimbaletes	Bimbaletes	Bimbaletes	Bimbaletes

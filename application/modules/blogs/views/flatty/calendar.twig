@@ -1,0 +1,149 @@
+{% include '@app/header.twig' %}
+
+<style>
+.title_big_calendar {
+    display: table;
+    padding: 10px 20px;
+    width: 95%;
+}
+.big_calendar {width: 100%; font-size: 11px; }
+.big_calendar .white td {
+    border: 1px solid #fcf4ec;
+}
+.big_calendar .white td {
+    padding-left: 0;
+}
+.big_calendar td, .small_calendar td {
+    border: 1px solid #ffffff;
+}
+.big_calendar td {
+    padding: 4px 0;
+    width: 14%;
+}
+.big_calendar .white td {
+    padding: 13px 0;
+    text-align: center;
+    width: 14%;
+}
+.big_calendar span {
+    padding-left: 8px;
+}
+.small_calendar .current_day, .big_calendar .current_day {
+    color: #ffffff;
+}
+</style>
+
+<div class="content-block">
+<h1>{% helper lang.l('header_blog', 'blogs') %}</h1>
+{% include 'blog_menu.twig' %}
+	
+<div class="title_big_calendar">
+	<a class="small-left-arr" href="{{ site_url }}blogs/calendar/month/back_month/{{ selected_month.year }}/{{ selected_month.mon }}" title="{{ prev_mounth }}"><i class="fa fa-angle-double-left"></i></a>&nbsp;
+	{{ selected_month.month }},&nbsp;{{ selected_month.year }}
+	&nbsp;<a href="{{ site_url }}blogs/calendar/month/next_month/{{ selected_month.year }}/{{ selected_month.mon }}" title="{{ next_mounth }}"><i class="fa fa-angle-double-right"></i></a>
+</div>
+<!-- /Calendar menu -->
+<table class="big_calendar">
+	<tr class="white bg-highlight_bg">
+		<td>{% helper lang.l('monday', 'blogs') %}</td>
+		<td>{% helper lang.l('tuesday', 'blogs') %}</td>
+		<td>{% helper lang.l('wednesday', 'blogs') %}</td>
+		<td>{% helper lang.l('thursday', 'blogs') %}</td>
+		<td>{% helper lang.l('friday', 'blogs') %}</td>
+		<td>{% helper lang.l('saturday', 'blogs') %}</td>
+		<td>{% helper lang.l('sunday', 'blogs') %}</td>
+	</tr>
+	{% for week in current_month %}
+		<tr>
+			<td {% if week.1.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.1 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.1.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.1.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+
+			<td {% if week.2.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.2 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.2.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.2.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+			<td {% if week.3.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.3 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.3.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.3.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+			<td {% if week.4.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.4 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.4.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.4.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+			<td {% if week.5.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.5 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.5.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.5.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+			<td {% if week.6.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.6 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.6.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.6.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+			<td {% if week.0.current_day == 'true' %}class="current_day bg-main_bg"{% endif %}>
+				{% if week.0 == "false" %}
+					&nbsp;
+				{% else %}
+					<span>{{ week.0.mday }}</span><div style="padding-top:8px;">&nbsp;</div>
+					{% for blog in week.0.blog %}
+						<a href="{{ blog.post_link }}">
+							{% helper utils.truncate(blog.title, 20) %}
+						</a><br />
+					{% endfor %}
+				{% endif %}
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

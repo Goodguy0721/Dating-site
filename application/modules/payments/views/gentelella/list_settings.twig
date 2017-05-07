@@ -1,0 +1,206 @@
+{% include '@app/header.twig' %}
+
+{% helper utils.jscript('payments', 'admin-payments-settings.js') %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">      
+        <div class="x_content">
+            <form method="post" action="{{ site_url }}admin/payments/update_currency_rates"
+                  name="save_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal">
+              <div class="form-group">
+                  <label class="col-xs-12">
+                    {% helper lang.l('header_currency_rates_update_auto', 'payments') %}</label>
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-12">
+                    <div class="row">
+                      <div class="checkbox">
+                        <label>
+                          <input type="hidden" name="use_rates_update" value="0" />
+                          <input type="checkbox" name="use_rates_update" value="1" id="use_rates_update" {% if use_rates_update %}checked{% endif %} class="flat">
+                          {% helper lang.l('text_currency_rates_update', 'payments') %}</label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-4 col-sm-8 col-xs-12">
+                    <select name="rates_driver" id="driver_select" class="form-control">
+                  {% for item in updaters %}
+                      <option value="{{ item }}" {% if item == rates_update_driver %}selected{% endif %}>
+                        {% helper lang.l('currency_updater_' ~ item, 'payments') %}</option>
+                  {% endfor %}
+                    </select>
+                  </div>
+                  <button type="submit" name="bt_auto" id="rates_update_driver" class="btn btn-success">
+                    {% helper lang.l('link_currency_rates_update_auto', 'payments') %}</button>
+              </div>
+              <div class="form-group">
+                <label class="col-xs-12">
+                    {% helper lang.l('header_currency_rates_update_manual', 'payments') %}</label>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="col-md-4 col-sm-8 col-xs-12">
+                        <select name="rates_driver" id="manual_select" class="form-control">
+                            {% for item in updaters %}
+                            <option value="{{ item }}">
+                                {% helper lang.l('currency_updater_' ~ item, 'payments') %}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" name="bt_manual" class="btn btn-primary" id="rates_update_manual">
+                      {% helper lang.l('link_currency_rates_update_manual', 'payments') %}</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="clearfix"></div>
+
+            <div id="actions" class="hide">
+              <div class="btn-group">
+                <a href="{{ site_url }}admin/payments/settings_edit" class="btn btn-primary">
+                    {% helper lang.l('link_add_currency', 'payments') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="{{ site_url }}admin/payments/settings_edit">
+                        {% helper lang.l('link_add_currency', 'payments') %}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_currency_gid', 'payments') %}</th>
+                        <th class="column-title">{% helper lang.l('field_currency_name', 'payments') %}</th>
+                        <th class="column-title">{% helper lang.l('field_currency_default', 'payments') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in currency %}
+                    <tr class="even pointer">
+                        <td class="a-center">{{ item.gid }}</td>
+                        <td class="a-center">{{ item.name }} ({{ item.abbr }})</td>
+                        <td class="a-center icons">
+                            {% if item.is_default %}
+                              {% helper lang.l('btn_tableicon_is_active','start') %}
+                            {% else %}
+                              {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                            {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                              {% if not item.is_default %}
+                                  <button type="button"
+                                      class="btn btn-primary" title="{% helper lang.l('link_default_currency','payments') %}"
+                                      onclick = "document.location.href='{{ site_url }}admin/payments/settings_use/{{ item.id }}'">
+                                          {% helper lang.l('link_default_currency','payments') %}
+                                  </button>
+                              {% else %}
+                                <button type="button" class="btn btn-primary"
+                                        onclick = "document.location.href='{{ site_url }}admin/payments/settings_edit/{{ item.id }}'">
+                                    {% helper lang.l('link_edit_currency','payments') %}
+                                </button>
+                              {% endif %}
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  {% if not item.is_default %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/payments/settings_use/{{ item.id }}">
+                                                {% helper lang.l('link_default_currency','payments') %}
+                                        </a>
+                                    </li>
+                                  {% endif %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/payments/settings_edit/{{ item.id }}">
+                                            {% helper lang.l('link_edit_currency','payments') %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="javascript: if(!confirm('{% helper lang.l('note_delete_currency', 'payments', '', 'js') %}')) return false;"
+                                           href="{{ site_url }}admin/payments/settings_delete/{{ item.id }}">
+                                            {% helper lang.l('link_delete_currency','payments') %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        new AdminPaymentsSettings({
+            siteUrl: '{{ site_url }}',
+        });
+    });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2,3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

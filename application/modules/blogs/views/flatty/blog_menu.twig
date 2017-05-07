@@ -1,0 +1,9 @@
+<div class="tabs tab-size-15 noPrint">
+	<ul>
+		<li{% if action == 'my_blog' %} class="active"{% endif %}><a data-pjax-no-scroll="1" href="{% helper seo.seolink('blogs', 'index') %}">{% if menu_first_tab_name %}{{ menu_first_tab_name }}{% else %}{% helper lang.l('header_my_blog', 'blogs') %}{% endif %}</a></li>
+		<li{% if action == 'calendar' %} class="active"{% endif %}><a data-pjax-no-scroll="1" href="{% helper seo.seolink('blogs', 'calendar') %}">{% helper lang.l('header_blog_calendar', 'blogs') %}</a></li>
+		<li{% if action == 'friends' %} class="active"{% endif %}><a data-pjax-no-scroll="1" href="{% helper seo.seolink('blogs', 'friends') %}">{% helper lang.l('header_blog_friends', 'blogs') %}</a></li>
+		<li{% if action == 'categories' %} class="active"{% endif %}><a data-pjax-no-scroll="1" href="{% helper seo.seolink('blogs', 'categories') %}">{% helper lang.l('header_blog_categories', 'blogs') %}</a></li>
+	</ul>
+</div>
+

@@ -1,0 +1,187 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+      <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+            data-parsley-validate class="form-horizontal form-label-left">
+      <div class="col-sm-6 col-xs-12">
+          <div class="x_title h4">
+              {% if sections.set.id %}
+                  {% helper lang.l('admin_header_set_change', 'themes') %}
+              {% else %}
+                  {% helper lang.l('admin_header_set_add', 'themes') %}
+              {% endif %}
+          </div>
+
+              <div class="row form-group">
+                  <label class="control-label col-md-4 col-sm-4 col-xs-12">
+                    {% helper lang.l('field_name', 'themes') %}: </label>
+                  <div class="col-sm-8 col-sm-8 col-xs-12">
+                    <input type="text" class="form-control" value="{{ sections.set.set_name|e }}" name="set_name">
+                  </div>
+              </div>
+              <div class="row form-group">
+                  <label class="control-label col-sm-4 col-xs-12">
+                    {% helper lang.l('field_set_gid', 'themes') %}:</label>
+                  <div class="col-sm-8 col-xs-12">
+                    <input type="text" class="form-control" name="set_gid" id="set_gid" value="{{ sections.set.set_gid }}">
+                  </div>
+              </div>
+              <input type="hidden" name="scheme_type" value="light" />
+
+
+          {% for section_gid, section in sections.section %}
+              <h2 class="x_title">{% helper lang.l('section_' ~ section_gid, 'themes') %}</h2>
+              {% for key, single_section in section %}
+              <div class="row form-group">
+                  <label class="control-label col-sm-4 col-xs-12">
+                    {% helper lang.l('field_' ~ key, 'themes') %} (px):</label>
+                  <div class="col-sm-8 col-xs-12">
+                      {% if single_section.type == 'file' %}
+                          <input type="file" class="col-xs-12 form-control" name="{{ key }}" id="{{ key }}"  >
+                          {% if single_section.value %}
+                          <div class="checkbox">
+                              <label>
+                                  <input type="checkbox" name="{{ key }}_delete" />
+                                  {% helper lang.l('field_delete_' ~ key, 'themes') %}
+                              </label>
+      						            <p><img src="{{ single_section.value | e }}" class="img-responsive"></p>
+                          </div>
+                          {% endif %}
+                      {% elseif single_section.type == 'color' %}
+                          <input type="text" size="10" class="color-pick form-control" name="{{ key }}" id="{{ key }}" value="{{ single_section.value|e }}">
+                      {% elseif single_section.type == 'checkbox' %}
+                          <div class="checkbox">
+                              <label>
+                                  <input type="checkbox" name="{{ key }}" id="{{ key }}" value="1" {% if single_section.value %}checked{% endif %} />
+                              </label>
+                          </div>
+                      {% elseif single_section.type == 'text' %}
+                          <input type="text" class="form-control" name="{{ key }}" id="{{ key }}" value="{{ single_section.value|e }}">
+                      {% elseif single_section.type == 'font' %}
+                          <div class="input-group">
+                              <input type="text" class="form-control" size="3" name="{{ key }}" id="{{ key }}" value="{{ single_section.value }}">
+                              <span class="input-group-addon">{{ single_section.unit }}</span>
+                          </div>
+      			          {% endif %}
+                  </div>
+              </div>
+              {% endfor %}
+          {% endfor %}
+
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-sm-8 col-xs-12 col-sm-offset-4">
+              <input type="submit" class="btn btn-success" name="btn_save" value="{% helper lang.l('btn_save', 'start') %}">
+              <a class="btn btn-default" href="{{ site_url }}admin/themes/sets/{{ id_theme }}">
+                {% helper lang.l('btn_cancel', 'start') %}</a>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm-6 col-xs-12">
+          <div class="visible-xs" style="height: 50px;"></div>
+          <div class="x_title h4">
+            {% helper lang.l('admin_header_generate', 'themes') %}
+          </div>
+          <script type="text/javascript">
+              var schemeSettings = {{ scheme_json }};
+              var main_bg = '{{ set.color_settings.main_bg }}';
+              var is_new = {% if set.id %}false{% else %}true{% endif %};
+          </script>
+
+          {% helper utils.jscript('', 'colorsets/jscolor/jscolor.js') %}
+          {% helper utils.jscript('', 'colorsets/color_colorblind.js') %}
+          {% helper utils.jscript('', 'colorsets/color_scheme.js') %}
+
+          <link type="text/css" rel="stylesheet" href="{{ site_root }}{{ js_folder }}colorsets/color_scheme.css" />
+          <div>
+                  <div id="color_enter">
+                    <div>
+                        {% helper lang.l('select_color_header', 'themes') %}:<br>
+                          <div id="image">
+                            <div id="wheelarea"></div>
+                            <div id="pointer0"></div>
+                            <div id="pointer1"></div>
+                            <div id="pointer2"></div>
+                            <div id="pointer3"></div>
+                        </div>
+                        <div id="maincolorhue"></div>
+
+                      </div>
+                      <div class="clearfix"></div>
+
+                  </div>
+          </div>
+          <div id="coltable">
+              <div id="all_examples"></div>
+              <div id="manual_color_block row form-group">
+                  <label class="control-label col-sm-4 col-xs-12 manual-title">
+                    <b>{% helper lang.l('manual_color_header', 'themes') %} (°):</b></label>
+                  <div class="col-sm-8 col-xs-12">
+                    <input type="text" name="manual_h" id="manual_h" value="" class="form-control">
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+                  <div class="row form-group">
+                      <label class="control-label col-sm-4 col-xs-12">
+                        {% helper lang.l('field_scheme_name', 'themes') %}:</label>
+                      <div class="col-sm-8 col-xs-12">
+                          <select id="sample_scheme_type" class="btn btn-default dropdown-toggle">
+                              <option value="light">{% helper lang.l('field_scheme_name_light', 'themes') %}</option>
+                              <option value="dark">{% helper lang.l('field_scheme_name_dark', 'themes') %}</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                      <label class="control-label col-sm-4 col-xs-12">
+                        {% helper lang.l('field_preset', 'themes') %}:</label>
+                      <div class="col-sm-8 col-xs-12">
+                          <select id="sample_preset"  class="btn btn-default dropdown-toggle">
+                              <option value="default">{% helper lang.l('field_preset_default', 'themes') %}</option>
+                              <option value="pastel">{% helper lang.l('field_preset_pastel', 'themes') %}</option>
+                              <option value="soft">{% helper lang.l('field_preset_soft', 'themes') %}</option>
+                              <option value="hard">{% helper lang.l('field_preset_hard', 'themes') %}</option>
+                              <option value="light">{% helper lang.l('field_preset_light', 'themes') %}</option>
+                              <option value="pale">{% helper lang.l('field_preset_pale', 'themes') %}</option>
+                          </select>
+                      </div>
+                  </div>
+
+              {% for section_gid, section in sections.section %}
+                  {% set colors %}
+                      {% for key, single_section in section %}
+                          {% if single_section.autochange == 'yes' %}
+                              {% if single_section.type == 'color' %}
+                  <div class="row form-group" id="sample_{{ key }}">
+      								<label class="control-label col-sm-4 col-xs-12">
+                        {% helper lang.l('field_' ~ key, 'themes') %}:</label>
+      								<div class="col-sm-8 col-xs-12 v"></div>
+                  </div>
+                              {% endif %}
+                          {% endif %}
+                      {% endfor %}
+                  {% endset %}
+
+                  {% if colors|trim %}
+                      <h2 class="x_title">
+                        {% helper lang.l('section_' ~ section_gid, 'themes') %}</h2>
+                      {{ colors }}
+                  {% endif %}
+              {% endfor %}
+
+              <div class="clearfix"></div>
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-sm-8 col-xs-12 col-sm-offset-4">
+                  <input type="button" class="btn btn-primary" name="btn_save" value="{% helper lang.l('btn_apply', 'start') %}" id="color_sheme_save" onclick="javascript: apply();">
+                </div>
+              </div>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% include '@app/footer.twig' %}

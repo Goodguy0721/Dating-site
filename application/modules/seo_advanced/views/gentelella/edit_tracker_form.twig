@@ -1,0 +1,101 @@
+{% include '@app/header.twig' %}
+
+<form class="x_panel form-horizontal" method="post" action="{{ data.action }}" name="save_form">
+	<div class="x_title h4">
+			{% helper lang.l('admin_header_seo_tracker_editing', 'seo_advanced') %}</div>
+	<div class="x_content">
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_use_ga_tracker', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input type="radio" class="flat" value="1" {% if data.seo_ga_default_activate %}checked{% endif %} name="seo_ga_default_activate" id="ga_active_yes">
+				<label for="ga_active_yes">{% helper lang.l('use_ga_tracker_yes', 'seo_advanced') %}</label>&nbsp;
+				<input type="radio" class="flat" value="0" {% if not data.seo_ga_default_activate %}checked{% endif %} name="seo_ga_default_activate" id="ga_active_no">
+				<label for="ga_active_no">{% helper lang.l('use_ga_tracker_no', 'seo_advanced') %}</label>
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_ga_account_id', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input class="form-control" type="text" value="{{ data.seo_ga_default_account_id }}" name="seo_ga_default_account_id" id="input_ga_active" {% if not data.seo_ga_default_activate %}disabled{% endif %}>
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('ga_tracker_hint', 'seo_advanced') %}</div>
+		</div>
+
+		<!-- other trackers -->
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_use_other_tracker', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input type="radio" class="flat" value="1" {% if data.seo_ga_manual_activate %}checked{% endif %} name="seo_ga_manual_activate" id="other_active_yes">
+				<label for="other_active_yes">{% helper lang.l('use_ga_tracker_yes', 'seo_advanced') %}</label>&nbsp;
+				<input type="radio" class="flat" value="0" {% if not data.seo_ga_manual_activate %}checked{% endif %} name="seo_ga_manual_activate" id="other_active_no">
+				<label for="other_active_no">{% helper lang.l('use_ga_tracker_no', 'seo_advanced') %}</label>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_code_placement', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input type="radio" class="flat" value="top" {% if data.seo_ga_manual_placement == 'top' %}checked{% endif %} name="seo_ga_manual_placement" id="other_top">
+				<label for="other_top">{% helper lang.l('tracker_top', 'seo_advanced') %}</label>&nbsp;
+				<input type="radio" class="flat" value="footer" {% if data.seo_ga_manual_placement == 'footer' %}checked{% endif %} name="seo_ga_manual_placement" id="other_footer">
+				<label for="other_footer">{% helper lang.l('tracker_footer', 'seo_advanced') %}</label>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_other_code', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12"><textarea class="form-control" name="seo_ga_manual_tracker_code" id="input_other_active" style="height: 170px" {% if not data.seo_ga_manual_activate %}disabled{% endif %}>{{ data.seo_ga_manual_tracker_code }}</textarea></div>
+		</div>
+		<!-- other trackers -->
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('other_tracker_hint', 'seo_advanced') %}</div>
+		</div>
+		<div class="ln_solid"></div>
+		<div class="row form-group">
+			<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+				<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+				<a class="btn btn-default" href="{{ site_url }}admin/seo_advanced">{% helper lang.l('btn_cancel', 'start') %}</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+<script>
+	function check_tag(gid, checked){
+		if (checked) {
+			$('#input_'+gid).removeAttr("disabled");
+		}else{
+			$('#input_'+gid).attr('disabled', 'disabled');
+		}
+	}
+    
+    $(function() {
+        $('#ga_active_yes').bind('click', function() {
+            check_tag('ga_active', true);
+        });
+        
+        $('#ga_active_no').bind('click', function() {
+            check_tag('ga_active', false);
+        });
+        
+        $('#other_active_yes').bind('click', function() {
+            check_tag('other_active', true);
+        });
+        
+        $('#other_active_no').bind('click', function() {
+            check_tag('other_active', false);
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

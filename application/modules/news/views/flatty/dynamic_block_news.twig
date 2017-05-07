@@ -1,0 +1,33 @@
+{% if dynamic_block_news_data.news_count %}
+	<div{% if not dynamic_block_news_data.params.transparent %} class="bg-html_bg"{% endif %}>
+		<h2 class="text-overflow p0">
+            {% helper lang.l('header_news', 'news') %}
+        </h2>
+		<div class="dynamic-subsections" data-count="{{ dynamic_block_news_data.news_count }}">
+			{% for item in dynamic_block_news_data.news %}
+				<div class="news-dyn-block-item box-sizing">
+					<h3 class="text-overflow" title="{{ item.name|e }}">
+                        {% if item.name %}
+                            {{ item.name }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </h3>
+					<div>
+						{% if item.img %}
+                            {% helper text_news_photo = lang.l('text_news_photo', 'news', '', 'button', item) %}
+                            <img class="fleft mr5 mb5" src="{{ item.media.img.thumbs.small }}"
+                                 alt="{{ text_news_photo }}" title="{{ text_news_photo }}" />
+						{% endif %}
+						{{ item.annotation }}
+					</div>
+					<div class="ptb10">
+                        <button class="inline-btn" onclick="locationHref('{% helper seo.seolink('news', 'view', item) %}');">
+                            {% helper lang.l('btn_view_more', 'start') %}
+                        </button>
+                    </div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

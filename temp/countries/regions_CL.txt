@@ -1,0 +1,13 @@
+	692	Talagante	-33.6638600	-70.9273400	CL	12	0	0	Talagante	Talagante	Talagante	Talagante	Talagante	Talagante
+	692	Santiago	-33.4569400	-70.6482700	CL	12	0	0	Santiago	Сантьяго	Santiago	Santiago	Santiago	Santiago
+	692	San Bernardo	-33.5921800	-70.6996000	CL	12	0	0	San Bernardo	Сан-Бернардо	San Bernardo	San Bernardo	San Bernardo	San Bernardo
+	692	Puente Alto	-33.6116900	-70.5757700	CL	12	0	0	Puente Alto	Пуэнте-Альто	Puente Alto	Puente Alto	Puente Alto	Puente Alto
+	692	Peñaflor	-33.6062700	-70.8764900	CL	12	0	0	Peñaflor	Пеньяфлор	Peñaflor	Peñaflor	Peñaflor	Peñaflor
+	692	Paine	-33.8079600	-70.7410900	CL	12	0	0	Paine	Пейн	Paine	Paine	Paine	Paine
+	692	Melipilla	-33.6890900	-71.2152800	CL	12	0	0	Melipilla	Мелипилья	Melipilla	Melipilla	Melipilla	Melipilla
+	692	Lampa	-33.2863000	-70.8756200	CL	12	0	0	Lampa	Lampa	Lampa	Lampa	Lampa	Lampa
+	692	El Monte	-33.6796900	-70.9848200	CL	12	0	0	El Monte	El Monte	El Monte	El Monte	El Monte	El Monte
+	692	Chicureo Abajo	-33.2837900	-70.6533300	CL	12	0	0	Chicureo Abajo	Chicureo Abajo	Chicureo Abajo	Chicureo Abajo	Chicureo Abajo	Chicureo Abajo
+	692	Buin	-33.7325700	-70.7428100	CL	12	0	0	Buin	Буин	Buin	Buin	Buin	Buin
+	692	La Pintana	-33.5833100	-70.6341900	CL	12	0	0	La Pintana	La Pintana	La Pintana	La Pintana	La Pintana	La Pintana
+	692	Lo Prado	-33.4443000	-70.7255200	CL	12	0	0	Lo Prado	Lo Prado	Lo Prado	Lo Prado	Lo Prado	Lo Prado

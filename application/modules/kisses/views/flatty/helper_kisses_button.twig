@@ -1,0 +1,23 @@
+<button id="btn-kisses-{{ kisses_button_rand }}" class="btn btn-primary form-control">
+    {% helper lang.l('kiss', 'kisses') %}
+</button><br />
+<script>
+    $(function () {
+        loadScripts(
+                "{% helper utils.jscript('kisses', 'kisses.js', 'path') %}",
+                function () {
+                    kisses = new Kisses({
+                        siteUrl: site_url,
+                        use_form: true,
+                        btnForm: 'btn-kisses-{{ kisses_button_rand }}',
+                        urlGetForm: 'kisses/ajax_get_kisses/{{ user_id }}',
+                        urlSendForm: 'kisses/ajax_set_kisses/{{ user_id }}',
+                        dataType: '{% if is_user %}html{% else %}json{% endif %}',
+                    });
+                },
+                ['kisses'],
+                {async: false}
+        );
+
+    });
+</script>

@@ -1,0 +1,25 @@
+	3694	Rukungiri	-0.8411100	29.9419400	UG	W	0	0	Rukungiri	Rukungiri	Rukungiri	Rukungiri	Rukungiri	Rukungiri
+	3694	Nyachera	-0.9000000	30.4166700	UG	W	0	0	Nyachera	Nyachera	Nyachera	Nyachera	Nyachera	Nyachera
+	3694	Ntungamo	-0.8833300	29.6500000	UG	W	0	0	Ntungamo	Ntungamo	Ntungamo	Ntungamo	Ntungamo	Ntungamo
+	3694	Ntungamo	-0.8794400	30.2641700	UG	W	0	0	Ntungamo	Ntungamo	Ntungamo	Ntungamo	Ntungamo	Ntungamo
+	3694	Muhororo	0.9380600	30.7594400	UG	W	0	0	Muhororo	Muhororo	Muhororo	Muhororo	Muhororo	Muhororo
+	3694	Mbarara	-0.6046700	30.6485100	UG	W	0	0	Mbarara	Мбарара	Mbarara	Mbarara	Mbarara	Mbarara
+	3694	Masindi Port	1.6960600	32.0860800	UG	W	0	0	Masindi Port	Masindi Port	Masindi Port	Masindi Port	Masindi Port	Masindi Port
+	3694	Masindi	1.6744400	31.7150000	UG	W	0	0	Masindi	Масинди	Masindi	Masindi	Masindi	Masindi
+	3694	Kyenjojo	0.6327800	30.6213900	UG	W	0	0	Kyenjojo	Kyenjojo	Kyenjojo	Kyenjojo	Kyenjojo	Kyenjojo
+	3694	Kisoro	-1.2853800	29.6849700	UG	W	0	0	Kisoro	Kisoro	Kisoro	Kisoro	Kisoro	Kisoro
+	3694	Kiruhura	-0.1966400	30.8444600	UG	W	0	0	Kiruhura	Kiruhura	Kiruhura	Kiruhura	Kiruhura	Kiruhura
+	3694	Kilembe	0.1983500	30.0130200	UG	W	0	0	Kilembe	Kilembe	Kilembe	Kilembe	Kilembe	Kilembe
+	3694	Kigorobya	1.6162000	31.3089000	UG	W	0	0	Kigorobya	Kigorobya	Kigorobya	Kigorobya	Kigorobya	Kigorobya
+	3694	Kibale	0.8000000	31.0666700	UG	W	0	0	Kibale	Kibale	Kibale	Kibale	Kibale	Kibale
+	3694	Kasese	0.1833300	30.0833300	UG	W	0	0	Kasese	Kasese	Kasese	Kasese	Kasese	Kasese
+	3694	Kanungu	-0.9575000	29.7897200	UG	W	0	0	Kanungu	Kanungu	Kanungu	Kanungu	Kanungu	Kanungu
+	3694	Kamwenge	0.1866000	30.4539300	UG	W	0	0	Kamwenge	Kamwenge	Kamwenge	Kamwenge	Kamwenge	Kamwenge
+	3694	Kagadi	0.9605600	30.7966700	UG	W	0	0	Kagadi	Kagadi	Kagadi	Kagadi	Kagadi	Kagadi
+	3694	Kabale	-1.2485700	29.9899300	UG	W	0	0	Kabale	Kabale	Kabale	Kabale	Kabale	Kabale
+	3694	Ibanda	-0.1339800	30.4961600	UG	W	0	0	Ibanda	Ibanda	Ibanda	Ibanda	Ibanda	Ibanda
+	3694	Hoima	1.4331400	31.3524100	UG	W	0	0	Hoima	Hoima	Hoima	Hoima	Hoima	Hoima
+	3694	Fort Portal	0.6617400	30.2748000	UG	W	0	0	Fort Portal	Форт-Портал	Fort Portal	Fort Portal	Fort Portal	Fort Portal
+	3694	Bwizibwera	-0.5916700	30.6286100	UG	W	0	0	Bwizibwera	Bwizibwera	Bwizibwera	Bwizibwera	Bwizibwera	Bwizibwera
+	3694	Bundibugyo	0.7111700	30.0646900	UG	W	0	0	Bundibugyo	Bundibugyo	Bundibugyo	Bundibugyo	Bundibugyo	Bundibugyo
+	3694	Margherita	0.4186100	29.8911100	UG	W	0	0	Margherita	Margherita	Margherita	Margherita	Margherita	Margherita

@@ -1,0 +1,76 @@
+	2887	Krasnyy Chikoy	50.3632100	108.7544500	RU	93	0	0	Krasnyy Chikoy	Красный Чикой	Krasnyy Chikoy	Krasnyy Chikoy	Krasnyy Chikoy	Krasnyy Chikoy
+	2887	Zhireken	52.8265700	117.3072500	RU	93	0	0	Zhireken	Жирекен	Zhireken	Zhireken	Zhireken	Zhireken
+	2887	Zabaykal’sk	49.6513000	117.3255700	RU	93	0	0	Zabaykal’sk	Забайкальск	Zabaykal’sk	Zabaykal’sk	Zabaykal’sk	Zabaykal’sk
+	2887	Yablonovo	51.8436100	112.7627600	RU	93	0	0	Yablonovo	Яблоново	Yablonovo	Yablonovo	Yablonovo	Yablonovo
+	2887	Vershino-Shakhtaminskiy	51.3002400	117.8876200	RU	93	0	0	Vershino-Shakhtaminskiy	Вершино-Шахтаминский	Vershino-Shakhtaminskiy	Vershino-Shakhtaminskiy	Vershino-Shakhtaminskiy	Vershino-Shakhtaminskiy
+	2887	Vershino-Darasunskiy	52.3660400	115.5266100	RU	93	0	0	Vershino-Darasunskiy	Вершино-Дарасунский	Vershino-Darasunskiy	Vershino-Darasunskiy	Vershino-Darasunskiy	Vershino-Darasunskiy
+	2887	Verkh-Usugli	52.7000000	115.1666700	RU	93	0	0	Verkh-Usugli	Verkh-Usugli	Verkh-Usugli	Verkh-Usugli	Verkh-Usugli	Verkh-Usugli
+	2887	Ust’-Karsk	52.7020600	118.8016300	RU	93	0	0	Ust’-Karsk	Усть-Карск	Ust’-Karsk	Ust’-Karsk	Ust’-Karsk	Ust’-Karsk
+	2887	Verkhniy Umykey	52.1383300	116.5437100	RU	93	0	0	Verkhniy Umykey	Verkhniy Umykey	Verkhniy Umykey	Verkhniy Umykey	Verkhniy Umykey	Verkhniy Umykey
+	2887	Ulety	51.3558900	112.4843000	RU	93	0	0	Ulety	Улеты	Ulety	Ulety	Ulety	Ulety
+	2887	Ul’durga	52.5399200	115.1178000	RU	93	0	0	Ul’durga	Ul’durga	Ul’durga	Ul’durga	Ul’durga	Ul’durga
+	2887	Tupik	54.4253000	119.9327000	RU	93	0	0	Tupik	Тупик	Tupik	Tupik	Tupik	Tupik
+	2887	Tarbagatay	51.1755900	109.0948400	RU	93	0	0	Tarbagatay	Тарбагатай	Tarbagatay	Tarbagatay	Tarbagatay	Tarbagatay
+	2887	Sretensk	52.2478000	117.7083500	RU	93	0	0	Sretensk	Сретенск	Sretensk	Sretensk	Sretensk	Sretensk
+	2887	Соловьевск	49.8983900	115.7265500	RU	93	0	0	Соловьевск	Соловьевск	Соловьевск	Соловьевск	Соловьевск	Соловьевск
+	2887	Smolenka	52.1352300	113.4974000	RU	93	0	0	Smolenka	Смоленка	Smolenka	Smolenka	Smolenka	Smolenka
+	2887	Shilka	51.8500000	116.0333300	RU	93	0	0	Shilka	Шилка	Shilka	Shilka	Shilka	Shilka
+	2887	Shelopugino	51.6528600	117.5630300	RU	93	0	0	Shelopugino	Шелопугино	Shelopugino	Shelopugino	Shelopugino	Shelopugino
+	2887	Sbega	53.3192000	118.5228300	RU	93	0	0	Sbega	Сбега	Sbega	Sbega	Sbega	Sbega
+	2887	Priiskovyy	51.9333300	116.6333300	RU	93	0	0	Priiskovyy	Приисковый	Priiskovyy	Priiskovyy	Priiskovyy	Priiskovyy
+	2887	Priargunsk	50.3691000	119.1012000	RU	93	0	0	Priargunsk	Приаргунск	Priargunsk	Priargunsk	Priargunsk	Priargunsk
+	2887	Petrovsk-Zabaykal’skiy	51.2753000	108.8430100	RU	93	0	0	Petrovsk-Zabaykal’skiy	Петровск-Забайкальский	Petrovsk-Zabaykal’skiy	Petrovsk-Zabaykal’skiy	Petrovsk-Zabaykal’skiy	Petrovsk-Zabaykal’skiy
+	2887	Pervomayskiy	51.6701300	115.6254300	RU	93	0	0	Pervomayskiy	Первомайский	Pervomayskiy	Pervomayskiy	Pervomayskiy	Pervomayskiy
+	2887	Orlovskiy	51.0333300	114.8333300	RU	93	0	0	Orlovskiy	Орловский	Orlovskiy	Orlovskiy	Orlovskiy	Orlovskiy
+	2887	Olovyannaya	50.9500000	115.5666700	RU	93	0	0	Olovyannaya	Оловянная	Olovyannaya	Olovyannaya	Olovyannaya	Olovyannaya
+	2887	Novopavlovka	51.2172400	109.2130500	RU	93	0	0	Novopavlovka	Новопавловка	Novopavlovka	Novopavlovka	Novopavlovka	Novopavlovka
+	2887	Novokruchininskiy	51.7836000	113.7759100	RU	93	0	0	Novokruchininskiy	Новокручининский	Novokruchininskiy	Novokruchininskiy	Novokruchininskiy	Novokruchininskiy
+	2887	Nizhniy Tsasuchey	50.5166700	115.1333300	RU	93	0	0	Nizhniy Tsasuchey	Нижний Цасучей	Nizhniy Tsasuchey	Nizhniy Tsasuchey	Nizhniy Tsasuchey	Nizhniy Tsasuchey
+	2887	Nerchinskiy Zavod	51.3082900	119.6159700	RU	93	0	0	Nerchinskiy Zavod	Нерчинский Завод	Nerchinskiy Zavod	Nerchinskiy Zavod	Nerchinskiy Zavod	Nerchinskiy Zavod
+	2887	Nerchinsk	51.9833300	116.5833300	RU	93	0	0	Nerchinsk	Нерчинск	Nerchinsk	Nerchinsk	Nerchinsk	Nerchinsk
+	2887	Mogzon	51.7406000	111.9655500	RU	93	0	0	Mogzon	Могзон	Mogzon	Mogzon	Mogzon	Mogzon
+	2887	Mogoytuy	51.2833300	114.9166700	RU	93	0	0	Mogoytuy	Могойтуй	Mogoytuy	Mogoytuy	Mogoytuy	Mogoytuy
+	2887	Mogocha	53.7341700	119.7651500	RU	93	0	0	Mogocha	Могоча	Mogocha	Mogocha	Mogocha	Mogocha
+	2887	Makkaveyevo	51.7532500	113.9454000	RU	93	0	0	Makkaveyevo	Маккавеево	Makkaveyevo	Makkaveyevo	Makkaveyevo	Makkaveyevo
+	2887	Kyra	49.5790300	111.9763800	RU	93	0	0	Kyra	Кыра	Kyra	Kyra	Kyra	Kyra
+	2887	Kurort-Darasun	51.1990500	113.7159900	RU	93	0	0	Kurort-Darasun	КУРОРТ ДАРАСУН	Kurort-Darasun	Kurort-Darasun	Kurort-Darasun	Kurort-Darasun
+	2887	Krasnokamensk	50.0979000	118.0369000	RU	93	0	0	Krasnokamensk	Краснокаменск	Krasnokamensk	Krasnokamensk	Krasnokamensk	Krasnokamensk
+	2887	Kokuy	52.2063400	117.5541200	RU	93	0	0	Kokuy	Кокуй	Kokuy	Kokuy	Kokuy	Kokuy
+	2887	Klyuchevskiy	53.5336000	119.4526900	RU	93	0	0	Klyuchevskiy	Ключевский	Klyuchevskiy	Klyuchevskiy	Klyuchevskiy	Klyuchevskiy
+	2887	Klichka	50.4457000	117.9960000	RU	93	0	0	Klichka	Кличка	Klichka	Klichka	Klichka	Klichka
+	2887	Kholbon	51.8833300	116.2500000	RU	93	0	0	Kholbon	Холбон	Kholbon	Kholbon	Kholbon	Kholbon
+	2887	Khilok	51.3677700	110.4680400	RU	93	0	0	Khilok	Хилок	Khilok	Khilok	Khilok	Khilok
+	2887	Karymskoye	51.6166700	114.3500000	RU	93	0	0	Karymskoye	Карымское	Karymskoye	Karymskoye	Karymskoye	Karymskoye
+	2887	Kalga	50.9253800	118.8995800	RU	93	0	0	Kalga	Калга	Kalga	Kalga	Kalga	Kalga
+	2887	Kalanguy	51.0166700	116.5166700	RU	93	0	0	Kalanguy	Калангуй	Kalanguy	Kalanguy	Kalanguy	Kalanguy
+	2887	Kadaya	50.9325400	119.2946800	RU	93	0	0	Kadaya	Кадая	Kadaya	Kadaya	Kadaya	Kadaya
+	2887	Itaka	53.8878000	118.7102500	RU	93	0	0	Itaka	Итака	Itaka	Itaka	Itaka	Itaka
+	2887	Guney	50.5143000	114.5565000	RU	93	0	0	Guney	Гуней	Guney	Guney	Guney	Guney
+	2887	Gazimurskiy Zavod	51.5535200	118.3446000	RU	93	0	0	Gazimurskiy Zavod	Газимурский Завод	Gazimurskiy Zavod	Gazimurskiy Zavod	Gazimurskiy Zavod	Gazimurskiy Zavod
+	2887	Dul’durga	50.6761100	113.5930600	RU	93	0	0	Dul’durga	Дульдурга	Dul’durga	Dul’durga	Dul’durga	Dul’durga
+	2887	Drovyanaya	51.5762000	113.0407800	RU	93	0	0	Drovyanaya	Дровяная	Drovyanaya	Drovyanaya	Drovyanaya	Drovyanaya
+	2887	Domna	51.8971200	113.1573000	RU	93	0	0	Domna	Домна	Domna	Domna	Domna	Domna
+	2887	Davenda	53.5535500	119.3199300	RU	93	0	0	Davenda	Давенда	Davenda	Davenda	Davenda	Davenda
+	2887	Dauriya	49.9333300	116.8666700	RU	93	0	0	Dauriya	Даурия	Dauriya	Dauriya	Dauriya	Dauriya
+	2887	Darasun	51.6594000	113.9751500	RU	93	0	0	Darasun	Дарасун	Darasun	Darasun	Darasun	Darasun
+	2887	Chita	52.0317100	113.5008700	RU	93	0	0	Chita	Чита	Chita	Chita	Chita	Chita
+	2887	Chernyshevsk	52.5220900	117.0171200	RU	93	0	0	Chernyshevsk	Чернышевск	Chernyshevsk	Chernyshevsk	Chernyshevsk	Chernyshevsk
+	2887	Chara	56.9063900	118.2630600	RU	93	0	0	Chara	Старая Чара	Chara	Chara	Chara	Chara
+	2887	Bukachacha	52.9833300	116.9166700	RU	93	0	0	Bukachacha	Букачача	Bukachacha	Bukachacha	Bukachacha	Bukachacha
+	2887	Budulan	50.5666700	114.9000000	RU	93	0	0	Budulan	Будулан	Budulan	Budulan	Budulan	Budulan
+	2887	Borzya	50.3833300	116.5166700	RU	93	0	0	Borzya	Борзя	Borzya	Borzya	Borzya	Borzya
+	2887	Bol’shaya Tura	51.6164200	114.1124200	RU	93	0	0	Bol’shaya Tura	Большая Тура	Bol’shaya Tura	Bol’shaya Tura	Bol’shaya Tura	Bol’shaya Tura
+	2887	Bal’zoy	51.3570000	112.3675400	RU	93	0	0	Bal’zoy	Бальзой	Bal’zoy	Bal’zoy	Bal’zoy	Bal’zoy
+	2887	Balyaga	51.1529300	108.9276700	RU	93	0	0	Balyaga	Баляга	Balyaga	Balyaga	Balyaga	Balyaga
+	2887	Baley	51.5816600	116.6339500	RU	93	0	0	Baley	Балей	Baley	Baley	Baley	Baley
+	2887	Bada	51.3910000	109.8614500	RU	93	0	0	Bada	Бада	Bada	Bada	Bada	Bada
+	2887	Atamanovka	51.9333300	113.6333300	RU	93	0	0	Atamanovka	Атаманская	Atamanovka	Atamanovka	Atamanovka	Atamanovka
+	2887	Arbagar	51.9333300	116.2500000	RU	93	0	0	Arbagar	Арбагар	Arbagar	Arbagar	Arbagar	Arbagar
+	2887	Amazar	53.8603300	120.8792500	RU	93	0	0	Amazar	Амазар	Amazar	Amazar	Amazar	Amazar
+	2887	Aleksandrovskiy Zavod	50.9252500	117.9377300	RU	93	0	0	Aleksandrovskiy Zavod	Александровский Завод	Aleksandrovskiy Zavod	Aleksandrovskiy Zavod	Aleksandrovskiy Zavod	Aleksandrovskiy Zavod
+	2887	Aksha	50.2813900	113.2866700	RU	93	0	0	Aksha	Акша	Aksha	Aksha	Aksha	Aksha
+	2887	Aginskoye	51.1000000	114.5300000	RU	93	0	0	Aginskoye	Агинское	Aginskoye	Aginskoye	Aginskoye	Aginskoye
+	2887	Ablatukan	51.2442400	112.1273900	RU	93	0	0	Ablatukan	Аблатукан	Ablatukan	Ablatukan	Ablatukan	Ablatukan
+	2887	Abagaytuy	49.5833300	117.8333300	RU	93	0	0	Abagaytuy	Абагайтуй	Abagaytuy	Abagaytuy	Abagaytuy	Abagaytuy
+	2887	Kuanda	56.3161100	116.0805600	RU	93	0	0	Kuanda	Куанда	Kuanda	Kuanda	Kuanda	Kuanda
+	2887	Novaya Chara	56.8163900	118.2986100	RU	93	0	0	Novaya Chara	Новая Чара	Novaya Chara	Novaya Chara	Novaya Chara	Novaya Chara

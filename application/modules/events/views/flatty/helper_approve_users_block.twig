@@ -1,0 +1,54 @@
+<div>
+    <div  class="title-block">
+        <span>
+            {% helper lang.l('text_attending', 'events') %} ({{ settings.participants_count }})
+        </span>
+    </div>
+    {% if approved_users %}
+    <div class="album-items participants clearfix">
+        {% for item in approved_users %}
+            <div class="album-item col-xs-1 col-sm-2 col-md-3 g-events-gallery__photo">
+                <span class="a g-events-gallery__photo-img">
+                    <a href="{% helper seo.seolink('users', 'view', item.user) %}">
+                        <img class="small img-responsive" src="{{ item.user.media.user_logo.thumbs.small }}" width="60px" />
+                    </a>
+                </span>
+                {% if event.is_owner %}
+                    <div class="g-events-gallery__actions">
+                        <div class="g-photo-actions">
+                            <a href="{{ site_url }}events/ajaxDeleteUser/{{ event_id }}/{{ item.user.id }}" class="btn-link delete-user">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div> 
+                {% endif %}
+            </div>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if settings.participants_count > approved_users_count %}
+        <div class="event-people-list">
+            <span id="show_approved_list" class="a">
+                {% helper lang.l('text_people_list', 'events') %}
+            </span>
+        </div>
+    {% endif %}
+    
+    <script type="text/javascript">
+        $('#show_approved_list').off().on('click', function(){
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: '{% helper seo.seolink('events', 'ajaxGetApprovedList', event.id) %}',
+                success: function (data) {
+                    if(data.content) {
+                        $('.attending').html(data.content);
+                    }
+                },
+            });        
+        });
+    </script>
+    
+</div>

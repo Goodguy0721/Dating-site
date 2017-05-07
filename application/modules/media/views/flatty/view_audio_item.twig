@@ -1,0 +1,90 @@
+<div class="g-users-gallery__audio b-audiocell {% if not is_active %}inactive{% endif %}">
+
+    <div class="audio-content" data-id-media="{{item.id}}">
+
+        <div id="timeline_{{item.id}}" class="timeline list-timeline timeline_{{item.id}}">
+            <div id="playhead_{{item.id}}" class="playhead playhead_{{item.id}}"></div>
+        </div>
+
+        <div id="play_{{item.id}}" class="play-track b-audiocell__play"><i class="fa fa-play fa-lg"></i></div>
+        <div id="duration_{{item.id}}" class="duration_{{item.id}} duration-time duration-glr b-audiocell__time"></div>
+        <div class="clearfix"></div>
+
+        {% if user_id == item.id_owner %}
+        <div class="g-users-gallery__actions">
+            <div class="g-photo-actions">
+                <a href="javascript:void(0);" data-click="view-media" data-id-media="{{item.id}}"><i class="fa fa-pencil edge w"></i></a>
+                <a href="{{site_url}}media/delete_media/{{item.id}}" class="delete-media delete-audio plr5"><i class="fa fa-remove w icon-big"></i></a>
+            </div>
+        </div>
+        {% endif %}
+
+        <div id="audioname_{{item.id}}" class="audioname_{{item.id}} b-audiocell__txt">
+            {{item.fname}}
+        </div>
+
+        <audio id="player_{{item.id}}" preload="auto" src="{{item.media.mediafile.file_url}}"></audio>
+    </div>
+    <script>
+        var audiocellWidth = $(".b-audiocell").outerWidth();
+        $('.g-users-gallery__audio').css('height', audiocellWidth + "px");
+
+        function contentResize() {
+            var audiocellWidth = $(".b-audiocell").outerWidth();
+
+            $(".g-users-gallery__content").each(function(key,element){
+                $(element).children('div:first').css('height', audiocellWidth + "px");
+            });
+        }
+        $(function () {
+            contentResize();
+            window.onresize = function () {
+                contentResize();
+            };
+        });
+    </script>
+    <a href="javascript:void(0);" data-click="view-media" data-id-media="{{ item.id }}">
+        {% if item.status == 0 %}
+        <div class="g-users-gallery__overlay-icon{% if is_active %} pointer{% endif %}" title="{% helper lang.l('moderation_wait', 'media') %}"><i class="fa fa-clock-o fa-4x opacity60"></i></div>
+        {% elseif item.status == -1 %}
+        <div class="g-users-gallery__overlay-icon{% if is_active %} pointer{% endif %}" title="{% helper lang.l('moderation_decline', 'media') %}"><i class="fa fa-times-circle-o fa-4x opacity60"></i></div>
+        {% else %}
+        <div class="g-users-gallery__overlay-icon">
+            <i class="fa fa-music fa-4x opacity60"></i>
+        </div>
+        {% endif %}
+    </a>
+    <div class="g-users-gallery__overlayinfo">
+        <div class="g-photo-statuses">
+            <div class="fleft">
+                {% if item.permissions == 0 %}
+                    <div class="g-photo-statuses__item g-photo-statuses__item_place">
+                        {% helper lang.l('permissions_restrict', 'media') %}
+                    </div>
+                {% endif %}
+                {% if item.id_parent and ((item.media and not item.mediafile) or (item.video_content and not item.media_video)) %}
+                    <div class="g-photo-statuses__item g-photo-statuses__item_place">
+                        {% helper lang.l('media_deleted_by_owner', 'media') %}
+                    </div>
+                {% endif %}
+
+                <div class="g-photo-statuses__item g-photo-statuses__item_place" data-gid="media{{item.id}}">
+                    <i class="fa fa-music edge w">&nbsp;</i>
+                    <span class="view_num">{{item.views}}</span>
+                </div>
+
+                {% if item.id_user != item.id_owner %}
+                    <div class="g-photo-statuses__item" title="not owner">
+                        <i class="fa fa-file-o"></i>
+                    </div>
+                {% endif %}
+
+                {#insert likes helper here#}
+                {% if item.is_adult %}<div class="g-photo-statuses__item g-photo-statuses__item_place"><i class="fa fa-female edge w">&nbsp;</i><span>18+</span></div>{% endif %}
+                {% if item.id_user != item.id_owner %}
+                    <div class="g-photo-statuses__item g-photo-statuses__item_place"></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

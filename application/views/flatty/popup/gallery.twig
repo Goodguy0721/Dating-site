@@ -1,0 +1,17 @@
+<div id="{{ block_background_id }}" class="load_content_bg gallery-type">
+    <div id="{{ block_id }}" class="media-gallery-popup">
+        {% if use_close_button %}
+            <div id="{{ close_button_id }}" class="media-gallery-popup__close hide">
+                <i class="fa fa-times"></i>
+            </div>
+        {% endif %}
+        {% if headline %}
+            <div class="media-gallery-popup__header">
+                {{ headline }}
+            </div>
+        {% endif %}
+        <div id="{{ block_id }}_content" class="media-gallery-popup__body">
+
+        </div>
+    </div>
+</div>

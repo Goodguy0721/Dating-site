@@ -1,0 +1,39 @@
+<div class="load_content_controller">
+	<div class="x_title h4">
+	{% if section_gid %}
+		{% helper lang.l('header_edit_form_section', 'field_editor') %}
+	{% else %}
+		{% helper lang.l('header_add_form_section', 'field_editor') %}
+	{% endif %}
+	</div>
+	<div>
+		<form id="save_section_name">
+				<div class="form-group">
+					<label class="control-label col-xs-12">
+						{% helper lang.l('field_name', 'field_editor') %}: </label>
+					<div class="col-xs-12">
+						<input type="text" value="{{ data[cur_lang]|escape }}" name="langs[{{ cur_lang }}]" class="form-control">
+					</div>
+				</div>
+		{% for lang_id, item in languages %}
+			{% if lang_id != cur_lang %}
+				<div class="form-group">
+					<label class="control-label col-xs-12">
+							{{ item.name }}: </label>
+					<div class="col-xs-12">
+						<input type="text" value="{{ data[lang_id]|escape }}" name="langs[{{ lang_id }}]" class="form-control">
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+			<div class="clearfix"></div>
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<input type="hidden" name="section_gid" value="{{ section_gid|escape }}" id="ajax_section_gid">
+
+				<input class="btn btn-success" type="button" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" id="save_section_btn">
+					{# <a class="btn btn-primary" href="#" id="cancel_save_section" onclick="return false;">{% helper lang.l('btn_cancel', 'start') %}</a> #}
+			`</div>
+		</form>
+	</div>
+</div>

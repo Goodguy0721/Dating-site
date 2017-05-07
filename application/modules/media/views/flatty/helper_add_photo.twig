@@ -1,0 +1,19 @@
+<button id="media_photo"  class="btn btn-primary form-control mb20" data-media="media_photo">
+    {% helper lang.l('btn_upload_photo', 'media') %}
+</button>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+			function(){
+				mediaphoto = new media({
+					siteUrl: site_url,
+                    addPhotoID: 'media_photo',
+                	idUser: {{ user.id }},
+                });
+			},
+			['mediaphoto'],
+			{async: true}
+		);
+	});
+</script>

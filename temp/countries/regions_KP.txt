@@ -1,0 +1,4 @@
+	2466	Kapsan-ŭp	41.0902800	128.2933300	KP	13	0	0	Kapsan-ŭp	Капсане-до	Kapsan-ŭp	Kapsan-ŭp	Kapsan-ŭp	Kapsan-ŭp
+	2466	Hyesan-dong	41.3975600	128.1787300	KP	13	0	0	Hyesan-dong	Hyesan-dong	Hyesan-dong	Hyesan-dong	Hyesan-dong	Hyesan-dong
+	2466	Hyesan-si	41.4016700	128.1777800	KP	13	0	0	Hyesan-si	Hyesan-si	Hyesan-si	Hyesan-si	Hyesan-si	Hyesan-si
+	2466	Sŭngjibaegam	41.2427800	128.7988900	KP	13	0	0	Sŭngjibaegam	Sŭngjibaegam	Sŭngjibaegam	Sŭngjibaegam	Sŭngjibaegam	Sŭngjibaegam

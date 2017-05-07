@@ -1,0 +1,168 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_social_networking_menu') %}
+            </ul>
+        </div>
+
+    {% if allow_add %}
+        <div class="x_title">
+            <a href="{{ site_url }}admin/social_networking/service_edit" class="btn btn-primary">
+                {% helper lang.l('link_add_service', 'social_networking') %}
+            </a>
+            <div class="clearfix"></div>
+        </div>
+    {% endif %}
+        <div class="x_content">
+            <table id="data" class="table table-striped jambo_table" width="100%">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_name', 'social_networking') %}</th>
+                        <th class="column-title">{% helper lang.l('field_oauth', 'social_networking') %}</th>
+                        <th class="column-title">{% helper lang.l('field_active', 'social_networking') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                {% if services %}
+                    {% for item in services %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>
+                                {% if item.oauth_enabled %}
+                                    {% if item.oauth_status %}
+                                        <a type="button" class="btn btn-primary networkinkg-status" title="{% helper lang.l('note_disable_login', 'social_networking') %}"
+                                                href="{{ site_url }}admin/social_networking/oauth_active/{{ item.id }}/0">
+                                            {% helper lang.l('btn_tableicon_yes','start') %}
+                                        </a>
+                                    {% else %}
+                                        <a type="button" class="btn btn-primary networkinkg-status" title="{% helper lang.l('note_enable_login', 'social_networking') %}"
+                                                href="{{ site_url }}admin/social_networking/oauth_active/{{ item.id }}/1">
+                                            {% helper lang.l('btn_tableicon_no','start') %}
+                                        </a>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                {% if item.status %}
+                                    <a type="button" class="btn btn-primary" title="{% helper lang.l('note_disable_widget', 'social_networking') %}"
+                                            href="{{ site_url }}admin/social_networking/service_active/{{ item.id }}/0">
+                                        {% helper lang.l('btn_tableicon_yes','start') %}
+                                    </a>
+                                {% else %}
+                                    <a type="button" class="btn btn-primary btn-outline" title="{% helper lang.l('note_enable_widget', 'social_networking') %}"
+                                            href="{{ site_url }}admin/social_networking/service_active/{{ item.id }}/1">
+                                        {% helper lang.l('btn_tableicon_no','start') %}
+                                    </a>
+                                {% endif %}
+                            </td>
+                            <td class="icons">
+                              {% if item.app_enabled or allow_edit or allow_delete %}
+                                <div class="btn-group">
+                                  {% if item.app_enabled %}
+                                  <a href="{{ site_url }}admin/social_networking/application/{{ item.id }}/" class="btn btn-primary">
+                                      {% helper lang.l('link_application', 'social_networking') %}
+                                  </a>
+                                  {% elseif allow_edit %}
+                                    <a href="{{ site_url }}admin/social_networking/service_edit/{{ item.id }}" class="btn btn-primary"
+                                       title="{% helper lang.l('link_edit_service', 'social_networking') %}">
+                                       {% helper lang.l('btn_edit', 'start') %}
+                                    </a>
+                                  {% elseif allow_delete %}
+                                    <a href="{{ site_url }}admin/social_networking/service_delete/{{ item.id }}" class="btn btn-primary"
+                                      title="{% helper lang.l('link_delete_service', 'social_networking') %}"
+                                      onclick="javascript: if (!confirm('{% helper lang.l('note_delete_service', 'social_networking', '', 'js') %}')) return false;">
+                                        {% helper lang.l('btn_delete', 'start') %}
+                                    </a>
+                                  {% endif %}
+                                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                          aria-haspopup="true" aria-expanded="false">
+                                      <span class="caret"></span>
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      {% if item.app_enabled %}
+                                      <li>
+                                        <a href="{{ site_url }}admin/social_networking/application/{{ item.id }}/">
+                                            {% helper lang.l('link_application', 'social_networking') %}
+                                        </a>
+                                      </li>
+                                      {% endif %}
+                                      {% if allow_edit %}
+                                      <li>
+                                        <a href="{{ site_url }}admin/social_networking/service_edit/{{ item.id }}"
+                                           title="{% helper lang.l('link_edit_service', 'social_networking') %}">
+                                           {% helper lang.l('btn_edit', 'start') %}
+                                        </a>
+                                      </li>
+                                      {% endif %}
+                                      {% if allow_delete %}
+                                      <li>
+                                        <a href="{{ site_url }}admin/social_networking/service_delete/{{ item.id }}" class="btn btn-primary"
+                                          title="{% helper lang.l('link_delete_service', 'social_networking') %}"
+                                          onclick="javascript: if (!confirm('{% helper lang.l('note_delete_service', 'social_networking', '', 'js') %}')) return false;">
+                                            {% helper lang.l('btn_delete', 'start') %}
+                                        </a>
+                                      </li>
+                                      {% endif %}
+                                  </ul>
+                                </div>
+                              {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_services','social_networking') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

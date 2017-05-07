@@ -1,0 +1,10 @@
+<span class="pointer {{ cart_button.class }}">
+    <i class="fa fa-shopping-cart"></i>&nbsp;
+    <span class="hide-in-mobile">
+        {% helper lang.l('cart', 'store') %}:&nbsp;
+    </span>
+    <span id="product_count">
+        {{ cart_button.cart.products_count }}
+    </span>
+    <i class="fa fa-caret-down"></i>
+</span>

@@ -1,0 +1,4 @@
+	1441	Tanda	7.8033500	-3.1683200	CI	92	0	0	Tanda	Tanda	Tanda	Tanda	Tanda	Tanda
+	1441	Sinfra	6.6210300	-5.9114400	CI	92	0	0	Sinfra	Sinfra	Sinfra	Sinfra	Sinfra	Sinfra
+	1441	Bouna	9.2692700	-2.9951000	CI	92	0	0	Bouna	Буна	Bouna	Bouna	Bouna	Bouna
+	1441	Bondoukou	8.0402000	-2.8000300	CI	92	0	0	Bondoukou	Бондуку	Bondoukou	Bondoukou	Bondoukou	Bondoukou

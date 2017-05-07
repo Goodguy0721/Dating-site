@@ -1,0 +1,27 @@
+{% for key, item in media_list %}
+    <div class="g-users-gallery__item col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="g-users-gallery__content">
+            <div class="g-users-gallery__photo">
+                <a class="g-pic-border g-rounded g-users-gallery__photo-img" href="javascript:void(0);" data-click="view-media" data-id-media="{{ item.id }}">
+                    {% if item.video_content %}
+                        <div class="g-users-gallery__overlay-icon pointer">
+                            <i class="fa fa-play w fa-4x opacity60"></i>
+                        </div>
+                    {% endif %}
+                    {% helper text_media_photo = lang.l('text_media_photo', 'clubs', '', 'button', item) %}
+                    <img src="{% spaceless %}
+                         {% if item.media %}
+                             {{ item.media.thumbs.big }}
+                         {% elseif item.video_content %}
+                             {{ item.video_content.thumbs.big }}
+                         {% endif %}
+                         {% endspaceless %}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+                </a>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="center">
+        {% helper lang.l('no_media', 'clubs') %}
+    </div>
+{% endfor %}

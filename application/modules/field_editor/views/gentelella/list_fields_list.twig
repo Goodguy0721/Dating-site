@@ -1,0 +1,148 @@
+
+        <div id="actions" class="hide">
+          <div class="btn-group">
+            <a class="btn btn-primary" href="{{ site_url }}admin/field_editor/field_edit/{{ type }}/{{ section }}">
+                {% helper lang.l('link_add_field', 'field_editor') %}</a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ site_url }}admin/field_editor/field_edit/{{ type }}/{{ section }}">
+                    {% helper lang.l('link_add_field', 'field_editor') %}</a>
+              </li>
+              <li>
+                <a href="{{ site_url }}admin/field_editor/fields/{{ type }}/{{ section }}/sort">
+                  {% helper lang.l('link_sorting_mode', 'field_editor') %}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="filter" class="hide">
+          <div class="row form-group">
+            <div class="col-md-2 col-sm-2 col-xs-12">
+              <select id="section" class="form-control">
+              {% for item in types %}
+                <option value="{{ item.gid }}" {% if type == item.gid %}selected{% endif %}>{{ item.name }}</options>
+              {% endfor %}
+              </select>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+              <select name="section" onchange="javascript: reload_this_page(this.value);" class="form-control">
+              {% for key, item in sections %}
+                <option value="{{ item.gid }}" {% if section == item.gid %}selected{% endif %}>{{ item.name }}</option>
+              {% endfor %}
+            </select>
+            </div>
+          </div>
+        </div>
+        <table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table" width="100%">
+            <thead>
+                <tr>
+                    <th>{% helper lang.l('field_field_name', 'field_editor') %}</th>
+                    <th>{% helper lang.l('field_field_type', 'field_editor') %}</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in fields %}
+              <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.field_type }}</td>
+                <td class="icons">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary"
+                            onclick="document.location.href = '{{ site_url }}admin/field_editor/field_edit/{{ type }}/{{ section }}/{{ item.id }}'">
+                      {% helper lang.l('btn_edit','start') %}
+                    </button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="{{ site_url }}admin/field_editor/field_edit/{{ type }}/{{ section }}/{{ item.id }}">
+                          {% helper lang.l('btn_edit','start') %}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ site_url }}admin/field_editor/field_delete/{{ type }}/{{ section }}/{{ item.id }}">
+                          {% helper lang.l('btn_delete','start') %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% include '@app/pagination.twig' %}
+
+        <script>
+          $(function() {
+            $(document).off('change', '#section').on('change', '#section', function(e) {
+              location.href = '{{ site_url }}admin/field_editor/fields/' + $(this).val();
+            });
+          });
+        </script>
+
+        <script type="text/javascript">
+            var reload_link = "{{ site_url }}admin/field_editor/fields/{{ type }}/";
+            function reload_this_page(value) {
+                var link = reload_link + value;
+                location.href = link;
+            }
+        </script>
+
+        <!-- Datatables -->
+        <script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+        <script>
+            var asInitVals = new Array();
+            $(document).ready(function () {
+                var oTable = $('#data').dataTable({
+                    "oLanguage": {
+                        "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                        "sEmptyTable": "{% helper lang.l('no_fields', 'field_editor') %}"
+                    },
+                    "aoColumnDefs": [
+                        {
+                            'bSortable': false,
+                            'aTargets': [2]
+                        } //disables sorting for column one
+                    ],
+                    'iDisplayLength': 10,
+                    "bPaginate": false,
+                    "bInfo": false,
+                    "dom": 'T<"clearfix"><"filter"><"clearfix"><"actions">lfrtip',
+                });
+                $("tfoot input").keyup(function () {
+                    /* Filter on the column based on the index of this element's parent <th> */
+                    oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+                });
+                $("tfoot input").each(function (i) {
+                    asInitVals[i] = this.value;
+                });
+                $("tfoot input").focus(function () {
+                    if (this.className == "search_init") {
+                        this.className = "";
+                        this.value = "";
+                    }
+                });
+                $("tfoot input").blur(function (i) {
+                    if (this.value == "") {
+                        this.className = "search_init";
+                        this.value = asInitVals[$("tfoot input").index(this)];
+                    }
+                });
+                var actions = $("#actions");
+                $('#data_wrapper').find('.actions').html(actions.html());
+                actions.remove();
+                var filter = $("#filter");
+                $('#data_wrapper').find('.filter').html(filter.html());
+                filter.remove();
+            });
+        </script>

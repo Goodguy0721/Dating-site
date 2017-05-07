@@ -1,0 +1,189 @@
+{% if not is_pjax %}
+<!DOCTYPE html>
+<html dir="{{ _LANG.rtl }}" lang="ru">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="revisit-after" content="3 days">
+        <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/bootstrap-{{ _LANG.rtl }}.css">
+        {% helper seo.seo_tags('robots') %}
+
+        <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+        <!-- For iPhone 4 Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+        <!-- For iPad: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+        <!-- For iPhone: -->
+        <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+        <link href="{{ site_root }}application/views/flatty/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <!-- link href="{{ site_root }}application/views/flatty/css/swiper.min.css" rel="stylesheet" type="text/css" -->
+{% endif %}
+
+        {% helper seo.seo_tags("title") %}
+        {% helper seo.seo_tags("description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description") %}
+
+        <script>
+            var site_rtl_settings = '{{ _LANG.rtl }}';
+            var is_pjax = parseInt('{{ is_pjax }}');
+            var js_events = {{ js_events|json_encode() }};
+            var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+        </script>
+
+{% if not is_pjax %}
+        {% helper theme.include_css('print', 'print') %}
+        {% helper theme.include_css('style', 'screen') %}
+        {% helper theme.css(load_type) %}
+
+        <script>
+            var site_url = '{{ site_url}}';
+            var site_root = '{{ site_root }}';
+            var theme = '{{ theme }}';
+            var img_folder = '{{ img_folder}}';
+            var site_error_position = 'center';
+            var use_pjax = parseInt('{{ use_pjax }}');
+            var pjax_container = '#pjaxcontainer';
+        </script>
+
+        {% helper utils.jscript('', 'jquery.js') %} 
+        {% helper utils.jscript('', 'jquery.pjax.js') %} 
+        {% helper theme.js(load_type) %}
+        
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
+		{% helper utils.jscript('', 'twig.js/twig.js') %}
+        <script src="{{ site_root }}application/views/flatty/js/loading_content.js"></script>
+
+        <script type="text/javascript">
+            var jQueryShow = $.fn.show;
+            $.fn.show = function() {
+                jQueryShow.apply(this);
+                this.removeClass('hide');
+                return this;
+            };
+        </script>
+        {% helper seo_advanced.seo_traker('top') %}
+    </head>
+    <body>
+    {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+    <div id="pjaxcontainer" class="pjaxcontainer">
+{% endif %}
+        <div class="pjaxcontainer-inner">
+            <script type="text/javascript">
+                $.pjax.defaults.version = 'default';
+                var messages = {% if _PREDEFINED %}{{ _PREDEFINED|json_encode(constant('JSON_FORCE_OBJECT')) }}{% else %}{}{% endif %};
+                var alerts;
+                var notifications;
+                new pginfo({'messages': messages});
+                $(function () {
+                    alerts = new Alerts();
+                    notifications = new Notifications();
+                });
+            </script>
+            <div class="main-inner-content">
+                <div data-role="page" id="main_page">
+                    <div class="container">
+                        <div class="row row-content">
+                            <div class="index-social">
+                                <h1 class="social_logo fleft">
+                                    <a href="{{ site_url }}" class="logo-block">
+                                        <img src="{{ site_root }}{{ logo_settings.path }}" alt="{% helper seo.seo_tags_default(header_text) %}">
+                                    </a>
+                                </h1>
+                                
+                                <div class="auth-links fright">
+                                    {% helper users.auth_links({template: 'helper_auth_links_social'}) %}
+                                </div>
+
+                                <div class="language-selector">
+                                    {% helper users.users_lang_select({template: 'social'}) %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-text-block">
+                        <div class="promo-text">
+                            {% helper lang.l('text_social_promo', 'start') %}
+                            <div>
+                                <a href="{% helper seo.seolink('users', 'registration') %}" class="reg-btn btn btn-default btn-lg">
+                                    {% helper lang.l('btn_sign_up', 'users') %}
+                                </a>
+                            </div>
+                            {% helper mobile.mobile_app_links() %}
+                        </div>
+                    </div>
+
+                                
+                </div>
+                {% helper cookie_policy.cookie_policy_block() %}
+                <div class="logo-mobile-version"></div>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="footer-languages">
+                                {% helper languages.lang_row_select() %}
+                            </ul>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <ul class="footer-banners">
+                                {% helper banners.show_banner_place('bottom-banner') %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {% helper menu.get_menu('user_footer_menu', 'user_footer_menu_social') %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <div class="container">
+                        <div class="row">
+                            <div class="copyright">
+                                {% if DEMO_MODE %}
+                                    <div class="content">
+                                        <div class="col-sm-6 col-md-6 copyright-link">{{ demo_copyright }}</div>
+                                        <div class="col-sm-2 col-md-2 starter-link">
+                                            <form action="http://socialbiz.pro/"><button class="btn" type="submit">Get started</button></form>
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 creted-link">
+                                            <p>Site created using <a href="http://socialbiz.pro" class="btn">PG SocialBiz</a></p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                {% else %}[copyright]{% endif %}
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>        
+        <script>
+            $('body').removeClass('index-page site-page').addClass('index-page');
+        </script>
+
+{% if empty(is_pjax) %}
+        </div>
+        {% helper languages.lang_editor() %}
+		{% helper seo_advanced.seo_traker('footer') %}
+        {% helper start.demo_panel({type: 'user', place: 'bottom'}) %}
+	</body>
+</html>
+{% endif %}
+

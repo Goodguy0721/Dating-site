@@ -1,0 +1,4 @@
+	3687	Tumaseu Village	-7.4878400	178.6794200	TV	VAI	0	0	Tumaseu Village	Tumaseu Village	Tumaseu Village	Tumaseu Village	Tumaseu Village	Tumaseu Village
+	3687	Temotu Village	-7.4616800	178.6674800	TV	VAI	0	0	Temotu Village	Temotu Village	Temotu Village	Temotu Village	Temotu Village	Temotu Village
+	3687	Asau Village	-7.4902600	178.6801600	TV	VAI	0	0	Asau Village	Asau Village	Asau Village	Asau Village	Asau Village	Asau Village
+	3687	Motufoua School	-7.4899600	178.6925600	TV	VAI	0	0	Motufoua School	Motufoua School	Motufoua School	Motufoua School	Motufoua School	Motufoua School

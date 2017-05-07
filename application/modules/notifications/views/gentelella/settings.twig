@@ -1,0 +1,204 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_notifications_menu') %}
+            </ul>
+        </div>
+
+        <div class='x_title'>
+            <h2>{% helper lang.l('admin_header_settings_editing', 'notifications') %}</h2>
+            <div class='clearfix'></div>
+        </div>
+        <div class='x_content'>
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data"
+                  class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_charset', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_charset }}"
+                               name="mail_charset" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_protocol', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="mail_protocol" class="form-control">
+                            {% for key, item in protocol_lang.option %}
+                                <option {% if key == settings_data.mail_protocol %}selected{% endif %}
+                                        value="{{ key }}">
+                                    {{ item }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_mailpath', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_mailpath }}"
+                               name="mail_mailpath" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_smtp_host', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_smtp_host }}"
+                               name="mail_smtp_host" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_smtp_user', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_smtp_user }}"
+                               name="mail_smtp_user" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_smtp_pass', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_smtp_pass }}"
+                               name="mail_smtp_pass" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_smtp_port', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_smtp_port }}"
+                               name="mail_smtp_port" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_useragent', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_useragent }}"
+                               name="mail_useragent" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_from_email', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_from_email }}"
+                               name="mail_from_email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_from_name', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_from_name }}"
+                               name="mail_from_name" class="form-control">
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                        <input type="submit" name="btn_save"  class="btn btn-success"
+                                value="{% helper lang.l('btn_save','start','','button') %}">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/start/menu/content_items">
+                            {% helper lang.l('btn_cancel','start') %}</a>
+                    </div>
+                    <div class='clearfix'></div>
+                </div>
+            </form>
+        </div>
+
+        <div class='x_title'>
+            <h2>{% helper lang.l('admin_header_settings_dkim', 'notifications') %}</h2>
+            <div class='clearfix'></div>
+        </div>
+        <div class='x_content'>
+            <form method="post" action="{{data.action}}" name="dkim_form" enctype="multipart/form-data"
+                  class="form-horizontal form-label-left">
+                {% if openssl_loaded %}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_dkim_domain_selector', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" value="{{ settings_data.dkim_domain_selector }}"
+                                   name="dkim_domain_selector" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('field_dkim_secret_key', 'notifications') %}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea name="dkim_private_key" class="form-control">{% spaceless %}
+                                {{ settings_data.dkim_private_key }}
+                            {% endspaceless %}</textarea>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="form-group">
+                        {% helper lang.l('dkim_no_openssl', 'notifications') %}
+                    </div>
+                {% endif %}
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                        <input type="submit" name="btn_dkim"  class="btn btn-success"
+                                value="{% helper lang.l('btn_save','start','','button') %}">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/start/menu/content_items">
+                          {% helper lang.l('btn_cancel','start') %}</a>
+                    </div>
+                    <div class='clearfix'></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_settings_testing', 'notifications') %}</h2>
+            <div class='clearfix'></div>
+        </div>
+        <div class='x_content'>
+            <form method="post" action="{{data.action}}" name="test_form" enctype="multipart/form-data"
+                  class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_mail_to_email', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ settings_data.mail_to_email }}"
+                               name="mail_to_email" class="form-control">
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                        <input type="submit" name="btn_test"  class="btn btn-success"
+                               value="{% helper lang.l ('btn_send', 'start', '', 'button') %}">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/start/menu/content_items">
+                            {% helper lang.l('btn_cancel','start') %}</a>
+                    </div>
+                    <div class='clearfix'></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

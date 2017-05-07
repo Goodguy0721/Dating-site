@@ -1,0 +1,139 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_events_menu') %}
+            </ul>
+        </div>
+        <div class="x_title">
+        {% if participants_count > 0 %}
+            <a href="{{ site_url }}admin/events/deleteParticipantSelect/" id="delete_selected" class="btn btn-primary">
+                {% helper lang.l('link_delete_selected', 'events') %}
+            </a>
+        {% endif %}
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}" id="participants_form">
+                <table id="users" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-title"><input type="checkbox" id="grouping_all" class="flat"></th>
+                            <th class="column-title">{% helper lang.l('field_name', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_event_name', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_status', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_date', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_actions', 'events') %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for participant in participants %}
+                        <tr>
+                            <td class="text-center"><input type="checkbox" class="grouping flat" value="{{ participant.id }}" name="ids[]"></td>
+                            <td class="text-center"><a href="admin/users/edit/personal/{{ participant.fk_user_id }}">{{ participant.user.nickname }}</a><br>{{ participant.user.fname }} {{ participant.user.sname }}</td>
+                            <td class="text-center"><a href="admin/events/edit_main/{{ participant.fk_event_id }}">{{ participant.event[event_name] }}</a></td>
+                            <td class="text-center">
+                                {{ participant.status }}
+                            </td>
+                            <td class="text-center">{{ participant.response_date }}</td>
+                            <td class="">
+				<div>
+                                    {% if participant.status == 'pending' %}
+                                        <a href="{{ site_url }}admin/events/participant_status/{{ participant.id }}/approved">
+                                            <i class="fa fa-check" title="{% helper lang.l('link_accept_participant', 'events') %}"></i>
+                                        </a>
+                                        <a href="{{ site_url }}admin/events/participant_status/{{ participant.id }}/declined">
+                                            <i class="fa fa-close" title="{% helper lang.l('link_decline_participant', 'events') %}"></i>
+                                        </a>
+                                    {% elseif participant.status == 'approved' %}
+                                        <a href="{{ site_url }}admin/events/participant_status/{{ participant.id }}/declined">
+                                            <i class="fa fa-circle-o" title="{% helper lang.l('link_decline_participant', 'events') %}"></i>
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/events/participant_status/{{ participant.id }}/approved">
+                                            <i class="fa fa-circle" title="{% helper lang.l('link_accept_participant', 'events') %}"></i>
+                                        </a>
+                                    {% endif %}
+                                    <a href="{{ site_url }}admin/tickets/answer/{{ participant.id }}">
+                                        <i class="fa fa-envelope-o" title="{% helper lang.l('link_connect_participant', 'events') %}"></i>
+                                    </a>
+                                    <a href="{{ site_url }}admin/events/remind_participant/{{ participant.id }}">
+                                        <i class="fa fa-clock-o" title="{% helper lang.l('link_remind_participant', 'events') %}"></i>
+                                    </a>
+                                    <a href="{{ site_url }}admin/events/deleteParticipant/{{ participant.id }}"><i class="fa fa-trash"></i></a>
+				</div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+    $('#grouping_all').bind('click', function(){
+        var checked = $(this).is(':checked');
+        if (checked) {
+            $('input.grouping').prop('checked', true);
+        } else {
+            $('input.grouping').prop('checked', false);
+        }
+    });
+    $('#delete_selected').bind('click', function(){
+        if (!$('input[type=checkbox].grouping').is(':checked')) return false;
+        if (!confirm('{% helper lang.l('note_alerts_delete_all', 'events', '', 'js') %}')) return false;
+        $('#participants_form').attr('action', $(this).attr('href')).submit();
+        return false;
+    });
+});
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "Search all columns:"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

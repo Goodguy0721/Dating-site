@@ -1,0 +1,254 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            {% helper lang.l('admin_header_subscription_edit', 'subscriptions') %}
+        </div>
+        <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data"
+              class="form-horizontal form-label-left">
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_subscription_name', 'subscriptions') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    {% set lang_gid = data.lang_gid %}
+                    {% set name_i = data.name_i %}
+                    <input value="{% if validate_lang_var %}{% spaceless %}
+                                    {{ validate_lang_var.cur_lang }}
+                                  {% endspaceless %}{% else %}{% spaceless %}
+                                    {% helper lang.l(data.name_i, 'subscriptions', cur_lang) %}
+                                  {% endspaceless %}{% endif %}"
+                           name="langs[{{ cur_lang }}]" class="form-control" type="text" >
+
+                    {% if languages_count > 1 %}
+                        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel">
+                                <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                </a>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        {% for lang_id, item in languages %}
+                                            {% if lang_id != cur_lang %}
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12">
+                                                        <input type="text" name="langs[{{ lang_id }}]" class="form-control"
+                                                            value="{% if validate_lang %}{% spaceless %}
+                                                                        {{ attribute(validate_lang, lang_id) }}
+                                                                   {% endspaceless %}{% else %}{% spaceless %}
+                                                                        {% helper lang.l(data.name_i, 'subscriptions', lang_id) %}
+                                                                   {% endspaceless %}{% endif %}">
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_subscribe_type', 'subscriptions') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select name="subscribe_type" class="form-control">
+                        <option {% if data.subscribe_type == 'auto' %}selected{% endif %}
+                                value="auto">
+                            {% helper lang.l('field_subscribe_type_auto', 'subscriptions') %}
+                        </option>
+                        <option {% if data.subscribe_type == 'user' %}selected{% endif %}
+                                value="user" >
+                            {% helper lang.l('field_subscribe_type_user', 'subscriptions') %}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_id_template', 'subscriptions') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select name="id_template" class="form-control">
+                        {% for item in templates %}
+                            <option {% if data.id_template == item.id %}selected{% endif %}
+                                    value="{{ item.id }}">
+                                {{ item.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_id_content_type', 'subscriptions') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select name="id_content_type" class="form-control">
+                        {% for item in content_types %}
+                            <option {% if data.id_content_type == item.id %}selected{% endif %}
+                                    value="{{ item.id }}">
+                                {{ item.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            {% helper utils.jscript('','jquery-ui.custom.min.js') %}
+            <link href='{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css' rel='stylesheet' type='text/css' media='screen'>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('field_scheduler', 'subscriptions') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="row">
+                         <div class="col-md-2 col-sm-2 col-xs-12">
+                            <input {% if data.scheduler.type == 1 %}checked{% endif %}
+                                   type="radio" name="scheduler_type" value="1" class="flat">
+                            {% helper lang.l('manual', 'subscriptions') %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <input {% if data.scheduler.type == 2 %}checked{% endif %}
+                                   type="radio" name="scheduler_type" value="2" class="flat">
+                            {% helper lang.l('in_time', 'subscriptions') %}
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                            <div class="col-md-6 col-sm-8 col-xs-12">
+                              <div class="row">
+                                {% if data.scheduler.type == 2 %}
+                                  {% set scheduler_date = data.scheduler.date %}
+                                {% else %}
+                                  {% set scheduler_date = '' %}
+                                {% endif %}
+                                {% helper start.getCalendarInput('scheduler_date2', scheduler_date, {id: 'datepicker1'}) %}
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                              <div class="row">
+                                <select name="scheduler_hours2" class="form-control">
+                                    {% for item in hours %}
+                                        <option value="{{ item }}"
+                                            {% if data.scheduler.hours == item and data.scheduler.type == 2 %}
+                                                selected
+                                            {% endif %}>
+                                            {{ item }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                              <div class="row">
+                                <select name="scheduler_minutes2" class="form-control">
+                                    {% for item in minutes %}
+                                        <option {% if data.scheduler.minutes == item and data.scheduler.type == 2 %}selected{% endif %}
+                                                value="{{ item }}">
+                                            {{ item }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <input {% if data.scheduler.type == 3 %}checked{% endif %}
+                                   type="radio" name="scheduler_type" value="3" class="flat">
+                            {% helper lang.l('every_time', 'subscriptions') %}
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="row">
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <select name="scheduler_period" class="form-control">
+                                        <option value="day" {% if data.scheduler.period == 'day' %}selected{% endif %}>
+                                            {% helper lang.l('day', 'subscriptions') %}
+                                        </option>
+                                        <option value="week" {% if data.scheduler.period == 'week' %}selected{% endif %}>
+                                            {% helper lang.l('week', 'subscriptions') %}
+                                        </option>
+                                        <option value="month" {% if data.scheduler.period == 'month' %}selected{% endif %}>
+                                            {% helper lang.l('month', 'subscriptions') %}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <label class="data-label">
+                                        {% helper lang.l('since', 'subscriptions') %}
+                                    </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="row">
+                                   {% if data.scheduler.type == 3 %}
+                                     {% set scheduler_date = data.scheduler.date %}
+                                   {% else %}
+                                     {% set scheduler_date = '' %}
+                                   {% endif %}
+                                     {% helper start.getCalendarInput('scheduler_date3', scheduler_date, {id: 'datepicker2'}) %}
+                                  </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                  <div class="row">
+                                    <select name="scheduler_hours3" class="form-control">
+                                        {% for item in hours %}
+                                            <option {% if data.scheduler.hours == item and data.scheduler.type == 3 %}selected{% endif %}
+                                                    value="{{ item }}">
+                                                {{ item }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                  <div class="row">
+                                    <select name="scheduler_minutes3" class="form-control">
+                                        {% for item in minutes %}
+                                            <option {% if data.scheduler.minutes == item and data.scheduler.type == 3 %}selected{% endif %}
+                                                    value="{{ item }}">
+                                                {{ item }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                    <input type="submit" name="btn_save"  class="btn btn-success"
+                            value="{% helper lang.l('btn_save','start','','button') %}">
+                    <a class="btn btn-default cancel" href="{{site_url}}admin/subscriptions/index">
+                        {% helper lang.l('btn_cancel','start') %}
+                    </a>
+                </div>
+                <div class='clearfix'></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

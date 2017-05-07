@@ -1,0 +1,220 @@
+{% if not is_pjax %}
+<!DOCTYPE html>
+<html dir="{{ _LANG.rtl }}" lang="ru">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="revisit-after" content="3 days">
+    <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/bootstrap-{{ _LANG.rtl }}.css">
+    {% helper seo.seo_tags('robots') %}
+
+    <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+    <link href="{{ site_root }}application/views/flatty/css/font-awesome.css" rel="stylesheet" type="text/css">
+{% endif %}
+
+    {% helper seo.seo_tags("title") %}
+    {% helper seo.seo_tags("description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description") %}
+
+    <script type="text/javascript">
+        var site_rtl_settings = '{{ _LANG.rtl }}';
+        var is_pjax = parseInt('{{ is_pjax }}');
+        var js_events = {{ js_events|json_encode() }};
+        var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+    </script>
+
+{% if not is_pjax %}
+    {% helper theme.include_css('print', 'print') %}
+    {% helper theme.include_css('style', 'screen') %}
+    {% helper theme.css(load_type) %}
+
+    <script type="text/javascript">
+        var site_url = '{{ site_url}}';
+        var theme = '{{ theme }}';
+        var img_folder = '{{ img_folder}}';
+        var site_error_position = 'center';
+        var use_pjax = parseInt('{{ use_pjax }}');
+        var pjax_container = '#pjaxcontainer';
+    </script>
+
+    {% helper utils.jscript('', 'jquery.js') %}
+    {% helper utils.jscript('', 'jquery.pjax.js') %}
+    {% helper theme.js(load_type) %}
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    {% helper utils.jscript('', 'twig.js/twig.js') %}
+    <script src="{{ site_root }}application/views/flatty/js/loading_content.js"></script>
+
+    <script type="text/javascript">
+        var jQueryShow = $.fn.show;
+        $.fn.show = function() {
+            jQueryShow.apply(this);
+            this.removeClass('hide');
+            return this;
+        };
+    </script>
+    {% helper seo_advanced.seo_traker('top') %}
+</head>
+<body>
+    {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+    {% helper chats.chats_block() %}
+    {% helper likes.likes() %}
+    {% helper audio_uploads.audio_bottom_controls() %}
+    <div class="bottom-btns" id="bottom-btns">
+        {% helper im.im_chat_button() %}
+        {% helper shoutbox.shoutbox_button() %}
+    </div>
+    <div id="pjaxcontainer" class="pjaxcontainer">
+{% endif %}
+
+    <div class="pjaxcontainer-inner">
+        <script type="text/javascript">
+            $.pjax.defaults.version = 'default';
+            var messages = {% if _PREDEFINED %}{{ _PREDEFINED|json_encode(constant('JSON_FORCE_OBJECT')) }}{% else %}{}{% endif %};
+            var alerts;
+            var notifications;
+            new pginfo({'messages': messages});
+            $(function () {
+                alerts = new Alerts();
+                notifications = new Notifications();
+            });
+        </script>
+
+        {# Переделать под бутстрап #}
+        <div id="error_block">{% for item in _PREDEFINED.error %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+        <div id="info_block">{% for item in _PREDEFINED.info %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+        <div id="success_block">{% for item in _PREDEFINED.success %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+
+        <div class="video-chat">
+            <header>
+                <div class="video-chat__right-link">
+                    <ul>
+                        <li>
+                            <a href="javascript:;" id="complete-chat" title="{% helper lang.l('link_chat_complete', 'chats') %}">
+                                <i class="fa fa-sign-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="col-chat" id="col-chat">
+                <div class="col-chat-item">
+                    <video autoplay id="oovoo-local-video" muted="muted"></video>
+                    <div id="my_info_block" class="info_block hide">
+                        <div class="video-chat__info-block-1">
+                            {% helper lang.l('text_my_infotext_1', 'chats') %}
+                        </div>
+                        <div class="video-chat__info-block-2">
+                            {% helper lang.l('text_my_infotext_2', 'chats') %}
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="chat-control">
+                        <div class="chat-control-video">
+                            <span class="text">
+                                <i class="camera fa fa-video-camera hide" id="pauseVideo"></i>
+                            </span>
+                            <span class="text">
+                                <i class="microphone fa fa-microphone hide" id="pauseAudio"></i>
+                            </span>
+                        </div>
+                        <div class="chat-control-pause">
+                            <span class="text">
+                                <i class="pause fa fa-pause hide" id="pauseChat"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-chat-item">
+                    <video autoplay id="oovoo-remote-video"></video>
+                    <div id="his_info_block" class="info_block hide">
+                        <div class="video-chat__info-block-1" id="his_info_block_text">
+                            {% helper lang.l('text_complete_lang', 'chats') %}
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="chat-control">
+                        <div class="chat-control-pause">
+                            {% if last_chat.is_invited %}
+                                {% helper blacklist.blacklist_button({id_user: last_chat.invited_user_id, type_button: 'for_videochat'}) %}
+                            {% else %}
+                                {% helper blacklist.blacklist_button({id_user: last_chat.invite_user_id, type_button: 'for_videochat'}) %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="block-user" id="chat_user_block">
+                        {% if last_chat.is_invited %}
+                            <a href="{{ last_chat.invite.link }}" target="_blank">
+                                <img src="{{ last_chat.invite.media.user_logo.thumbs.middle }}" />
+                            </a>
+                        {% else %}
+                            <a href="{{ last_chat.invited.link }}" target="_blank">
+                                <img src="{{ last_chat.invited.media.user_logo.thumbs.middle }}" />
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function() {
+                    loadScripts(
+                        [
+                            "https://code.oovoo.com/webrtc/oovoosdk-2.0.0.min.js",
+                            "{% helper utils.jscript('chats', 'oovoochat.js', 'path') %}"
+                        ],
+                        function(){
+                            var chat_data = {{ chat_json_data }};
+                            var settings_data = {{ settings_json_data }};
+                            oovoochat = new Oovoochat({
+                                site_url: 			site_url,
+                                appToken:           settings_data.app_token,
+                                testMode:           settings_data.test_mode ? true : false,
+                                conferenceId:       'OOVOO_WEB_RTC' + chat_data.id,
+                                sessionToken:       '{{ sessionToken }}',
+                                participantId:      {{ participantId|raw }} + 1000000000,
+                                participantName:    '{{ participantName }}',
+                                localVideoId:       'oovoo-local-video',
+                                remoteVideoId:      'oovoo-remote-video',
+                                saveSessionUrl:     'chats/saveSession/' + chat_data.id,
+
+
+                                id_chat: 			chat_data.id,
+                                id_inviter_user: 	chat_data.invite_user_id,
+                                id_invited_user: 	chat_data.invited_user_id,
+                                is_inviter: 		chat_data.is_inviter,
+                                inviter_photo: 		chat_data.invite.media.user_logo.thumbs.small,
+                                invited_photo: 		chat_data.invited.media.user_logo.thumbs.small,
+                                waiting_lang: 		'{% helper lang.l('text_waiting_lang', 'chats', '', 'js') %}',
+                                pause_lang: 		'{% helper lang.l('text_pause_lang', 'chats', '', 'js') %}',
+                                close_alert_text: 	'{% helper lang.l('text_close_alert', 'chats', '', 'js') %}',
+                                error_support: 		'{% helper lang.l('text_error_support', 'chats', '', 'js') %}',
+                                connect_now: 		'{% helper lang.l('text_connect_now', 'chats', '', 'js') %}',
+                                completeMessage: 	'{{ complete_lang }}',
+                            });
+                        },
+                        'oovoochat',
+                        {async: true}
+                    );
+                });
+            </script>
+
+{% if empty(is_pjax) %}
+        </div>
+
+        {% helper languages.lang_editor() %}
+		{% helper seo_advanced.seo_traker('footer') %}
+        {% helper start.demo_panel({type: 'user', place: 'bottom'}) %}
+	</body>
+</html>
+{% endif %}

@@ -1,0 +1,4 @@
+	240	Yerevan	40.1811100	44.5136100	AM	11	0	0	Yerevan	Ереван	Yerevan	Yerevan	Yerevan	Yerevan
+	240	K’anak’erravan	40.2473900	44.5351100	AM	11	0	0	K’anak’erravan	K’anak’erravan	K’anak’erravan	K’anak’erravan	K’anak’erravan	K’anak’erravan
+	240	Jrashen	40.0527500	44.5125900	AM	11	0	0	Jrashen	Джрашен	Jrashen	Jrashen	Jrashen	Jrashen
+	240	Vardadzor	40.1870100	45.1921200	AM	11	0	0	Vardadzor	Vardadzor	Vardadzor	Vardadzor	Vardadzor	Vardadzor

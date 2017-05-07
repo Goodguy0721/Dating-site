@@ -1,0 +1,118 @@
+	2508	Chuhar Jamāli	24.3895300	67.9923400	PK	05	0	0	Chuhar Jamāli	Chuhar Jamāli	Chuhar Jamāli	Chuhar Jamāli	Chuhar Jamāli	Chuhar Jamāli
+	2508	Pir Jo Goth	27.5917800	68.6184800	PK	05	0	0	Pir Jo Goth	Pir Jo Goth	Pir Jo Goth	Pir Jo Goth	Pir Jo Goth	Pir Jo Goth
+	2508	Khairpur	27.5294800	68.7617000	PK	05	0	0	Khairpur	Хайрпура	Khairpur	Khairpur	Khairpur	Khairpur
+	2508	Ādilpur	27.9369700	69.3186800	PK	05	0	0	Ādilpur	Ādilpur	Ādilpur	Ādilpur	Ādilpur	Ādilpur
+	2508	Wārāh	27.4480500	67.7965400	PK	05	0	0	Wārāh	Wārāh	Wārāh	Wārāh	Wārāh	Wārāh
+	2508	Umarkot	25.3615700	69.7362400	PK	05	0	0	Umarkot	Umarkot	Umarkot	Umarkot	Umarkot	Umarkot
+	2508	Ubauro	28.1642900	69.7311400	PK	05	0	0	Ubauro	Ubauro	Ubauro	Ubauro	Ubauro	Ubauro
+	2508	Thul	28.2403400	68.7758800	PK	05	0	0	Thul	Thul	Thul	Thul	Thul	Thul
+	2508	Thatta	24.7474500	67.9235300	PK	05	0	0	Thatta	Thatta	Thatta	Thatta	Thatta	Thatta
+	2508	Thāru Shāh	26.9423000	68.1175900	PK	05	0	0	Thāru Shāh	Thāru Shāh	Thāru Shāh	Thāru Shāh	Thāru Shāh	Thāru Shāh
+	2508	Tangwāni	28.2788600	68.9976000	PK	05	0	0	Tangwāni	Tangwāni	Tangwāni	Tangwāni	Tangwāni	Tangwāni
+	2508	Tando Muhammad Khān	25.1230100	68.5357700	PK	05	0	0	Tando Muhammad Khān	Tando Muhammad Khān	Tando Muhammad Khān	Tando Muhammad Khān	Tando Muhammad Khān	Tando Muhammad Khān
+	2508	Tāndo Mittha Khān	25.9944400	69.2024700	PK	05	0	0	Tāndo Mittha Khān	Tāndo Mittha Khān	Tāndo Mittha Khān	Tāndo Mittha Khān	Tāndo Mittha Khān	Tāndo Mittha Khān
+	2508	Tando Jām	25.4271800	68.5361900	PK	05	0	0	Tando Jām	Tando Jām	Tando Jām	Tando Jām	Tando Jām	Tando Jām
+	2508	Tando Bāgo	24.7885700	68.9661400	PK	05	0	0	Tando Bāgo	Tando Bāgo	Tando Bāgo	Tando Bāgo	Tando Bāgo	Tando Bāgo
+	2508	Tando Allāhyār	25.4626300	68.7192300	PK	05	0	0	Tando Allāhyār	Tando Allāhyār	Tando Allāhyār	Tando Allāhyār	Tando Allāhyār	Tando Allāhyār
+	2508	Tando Ādam	25.7681800	68.6619600	PK	05	0	0	Tando Ādam	Tando Ādam	Tando Ādam	Tando Ādam	Tando Ādam	Tando Ādam
+	2508	Talhār	24.8833300	68.8166700	PK	05	0	0	Talhār	Talhār	Talhār	Talhār	Talhār	Talhār
+	2508	Sukkur	27.7051600	68.8573800	PK	05	0	0	Sukkur	Суккур	Sukkur	Sukkur	Sukkur	Sukkur
+	2508	Sobhodero	27.3047500	68.3971500	PK	05	0	0	Sobhodero	Sobhodero	Sobhodero	Sobhodero	Sobhodero	Sobhodero
+	2508	Sīta Road	27.0333300	67.8500000	PK	05	0	0	Sīta Road	Sīta Road	Sīta Road	Sīta Road	Sīta Road	Sīta Road
+	2508	Sinjhoro	26.0303100	68.8089800	PK	05	0	0	Sinjhoro	Sinjhoro	Sinjhoro	Sinjhoro	Sinjhoro	Sinjhoro
+	2508	Shikārpur	27.9570600	68.6378900	PK	05	0	0	Shikārpur	Shikārpur	Shikārpur	Shikārpur	Shikārpur	Shikārpur
+	2508	Shāhpur Chākar	26.1549700	68.6509300	PK	05	0	0	Shāhpur Chākar	Shāhpur Chākar	Shāhpur Chākar	Shāhpur Chākar	Shāhpur Chākar	Shāhpur Chākar
+	2508	Shāhdādpur	25.9253900	68.6228000	PK	05	0	0	Shāhdādpur	Shāhdādpur	Shāhdādpur	Shāhdādpur	Shāhdādpur	Shāhdādpur
+	2508	Shahdād Kot	27.8472600	67.9067900	PK	05	0	0	Shahdād Kot	Shahdād Kot	Shahdād Kot	Shahdād Kot	Shahdād Kot	Shahdād Kot
+	2508	Sehwān	26.4249500	67.8612600	PK	05	0	0	Sehwān	Sehwān	Sehwān	Sehwān	Sehwān	Sehwān
+	2508	Sann	26.0403000	68.1376300	PK	05	0	0	Sann	Sann	Sann	Sann	Sann	Sann
+	2508	Sānghar	26.0465600	68.9481000	PK	05	0	0	Sānghar	Sānghar	Sānghar	Sānghar	Sānghar	Sānghar
+	2508	Samaro	25.2814700	69.3965400	PK	05	0	0	Samaro	Samaro	Samaro	Samaro	Samaro	Samaro
+	2508	Sakrand	26.1383900	68.2736100	PK	05	0	0	Sakrand	Sakrand	Sakrand	Sakrand	Sakrand	Sakrand
+	2508	Rustam	27.9670500	68.8038600	PK	05	0	0	Rustam	Rustam	Rustam	Rustam	Rustam	Rustam
+	2508	Rohri	27.6922300	68.8950600	PK	05	0	0	Rohri	Rohri	Rohri	Rohri	Rohri	Rohri
+	2508	Ratodero	27.8029600	68.2870800	PK	05	0	0	Ratodero	Ratodero	Ratodero	Ratodero	Ratodero	Ratodero
+	2508	Rānīpur	27.2879200	68.5050500	PK	05	0	0	Rānīpur	Rānīpur	Rānīpur	Rānīpur	Rānīpur	Rānīpur
+	2508	Rājo Khanāni	24.9840500	68.8535700	PK	05	0	0	Rājo Khanāni	Rājo Khanāni	Rājo Khanāni	Rājo Khanāni	Rājo Khanāni	Rājo Khanāni
+	2508	Rādhan	27.1833300	67.9500000	PK	05	0	0	Rādhan	Rādhan	Rādhan	Rādhan	Rādhan	Rādhan
+	2508	Kambar	27.5875300	68.0006600	PK	05	0	0	Kambar	Камбар	Kambar	Kambar	Kambar	Kambar
+	2508	Pithoro	25.5112200	69.3780300	PK	05	0	0	Pithoro	Pithoro	Pithoro	Pithoro	Pithoro	Pithoro
+	2508	Phūlji	26.8825100	67.6807000	PK	05	0	0	Phūlji	Phūlji	Phūlji	Phūlji	Phūlji	Phūlji
+	2508	Pāno Āqil	27.8561900	69.1111100	PK	05	0	0	Pāno Āqil	Pāno Āqil	Pāno Āqil	Pāno Āqil	Pāno Āqil	Pāno Āqil
+	2508	Pad Īdan	26.7747500	68.3019700	PK	05	0	0	Pad Īdan	Pad Īdan	Pad Īdan	Pad Īdan	Pad Īdan	Pad Īdan
+	2508	Nawābshāh	26.2483300	68.4095500	PK	05	0	0	Nawābshāh	Nawābshāh	Nawābshāh	Nawābshāh	Nawābshāh	Nawābshāh
+	2508	Naushahro Fīroz	26.8401000	68.1226500	PK	05	0	0	Naushahro Fīroz	Naushahro Fīroz	Naushahro Fīroz	Naushahro Fīroz	Naushahro Fīroz	Naushahro Fīroz
+	2508	Naudero	27.6668400	68.3609000	PK	05	0	0	Naudero	Naudero	Naudero	Naudero	Naudero	Naudero
+	2508	Nasīrābād	27.3813700	67.9164400	PK	05	0	0	Nasīrābād	Nasīrābād	Nasīrābād	Nasīrābād	Nasīrābād	Nasīrābād
+	2508	Naukot	24.8586900	69.4023800	PK	05	0	0	Naukot	Naukot	Naukot	Naukot	Naukot	Naukot
+	2508	Nabīsar	25.0685400	69.6418600	PK	05	0	0	Nabīsar	Nabīsar	Nabīsar	Nabīsar	Nabīsar	Nabīsar
+	2508	Moro	26.6645900	68.0015600	PK	05	0	0	Moro	Moro	Moro	Moro	Moro	Moro
+	2508	Mithi	24.7370100	69.7970700	PK	05	0	0	Mithi	Mithi	Mithi	Mithi	Mithi	Mithi
+	2508	Mīrwāh Gorchani	25.3092800	69.0521100	PK	05	0	0	Mīrwāh Gorchani	Mīrwāh Gorchani	Mīrwāh Gorchani	Mīrwāh Gorchani	Mīrwāh Gorchani	Mīrwāh Gorchani
+	2508	Mīrpur Sakro	24.5474200	67.6277100	PK	05	0	0	Mīrpur Sakro	Mīrpur Sakro	Mīrpur Sakro	Mīrpur Sakro	Mīrpur Sakro	Mīrpur Sakro
+	2508	Mīrpur Mathelo	28.0213600	69.5491400	PK	05	0	0	Mīrpur Mathelo	Mīrpur Mathelo	Mīrpur Mathelo	Mīrpur Mathelo	Mīrpur Mathelo	Mīrpur Mathelo
+	2508	Mirpur Khas	25.5251000	69.0159000	PK	05	0	0	Mirpur Khas	Мирпур-Хас	Mirpur Khas	Mirpur Khas	Mirpur Khas	Mirpur Khas
+	2508	Mīrpur Batoro	24.7286100	68.2602600	PK	05	0	0	Mīrpur Batoro	Mīrpur Batoro	Mīrpur Batoro	Mīrpur Batoro	Mīrpur Batoro	Mīrpur Batoro
+	2508	Mīro Khān	27.7599100	68.0921200	PK	05	0	0	Mīro Khān	Mīro Khān	Mīro Khān	Mīro Khān	Mīro Khān	Mīro Khān
+	2508	Mehar	27.1806700	67.8228800	PK	05	0	0	Mehar	Mehar	Mehar	Mehar	Mehar	Mehar
+	2508	Mātli	25.0431200	68.6556800	PK	05	0	0	Mātli	Mātli	Mātli	Mātli	Mātli	Mātli
+	2508	Matiāri	25.5970900	68.4467000	PK	05	0	0	Matiāri	Matiāri	Matiāri	Matiāri	Matiāri	Matiāri
+	2508	Madeji	27.7544300	68.4525600	PK	05	0	0	Madeji	Madeji	Madeji	Madeji	Madeji	Madeji
+	2508	Lārkāna	27.5589800	68.2120400	PK	05	0	0	Lārkāna	Ларкане	Lārkāna	Lārkāna	Lārkāna	Lārkāna
+	2508	Lakhi	27.8495800	68.6993600	PK	05	0	0	Lakhi	Lakhi	Lakhi	Lakhi	Lakhi	Lakhi
+	2508	Kunri	25.1784700	69.5691300	PK	05	0	0	Kunri	Kunri	Kunri	Kunri	Kunri	Kunri
+	2508	Kotri	25.3656600	68.3083100	PK	05	0	0	Kotri	Kotri	Kotri	Kotri	Kotri	Kotri
+	2508	Kot Diji	27.3427200	68.7083400	PK	05	0	0	Kot Diji	Kot Diji	Kot Diji	Kot Diji	Kot Diji	Kot Diji
+	2508	Khānpur	27.8435800	69.4137300	PK	05	0	0	Khānpur	Khānpur	Khānpur	Khānpur	Khānpur	Khānpur
+	2508	Khairpur Nathan Shāh	27.0906400	67.7348900	PK	05	0	0	Khairpur Nathan Shāh	Khairpur Nathan Shāh	Khairpur Nathan Shāh	Khairpur Nathan Shāh	Khairpur Nathan Shāh	Khairpur Nathan Shāh
+	2508	Khairpur	28.0643700	69.7036300	PK	05	0	0	Khairpur	Хайрпура	Khairpur	Khairpur	Khairpur	Khairpur
+	2508	Khadro	26.1472300	68.7176400	PK	05	0	0	Khadro	Khadro	Khadro	Khadro	Khadro	Khadro
+	2508	Keti Bandar	24.1442200	67.4509400	PK	05	0	0	Keti Bandar	Keti Bandar	Keti Bandar	Keti Bandar	Keti Bandar	Keti Bandar
+	2508	Kashmor	28.4326000	69.5836400	PK	05	0	0	Kashmor	Kashmor	Kashmor	Kashmor	Kashmor	Kashmor
+	2508	Kario	24.8081700	68.6044800	PK	05	0	0	Kario	Kario	Kario	Kario	Kario	Kario
+	2508	Karaundi	26.8974500	68.4068100	PK	05	0	0	Karaundi	Karaundi	Karaundi	Karaundi	Karaundi	Karaundi
+	2508	Karachi	24.9056000	67.0822000	PK	05	0	0	Karachi	Карачи	Karachi	Karachi	Karachi	Karachi
+	2508	Kandiāro	27.0591800	68.2102200	PK	05	0	0	Kandiāro	Kandiāro	Kandiāro	Kandiāro	Kandiāro	Kandiāro
+	2508	Kandiāri	26.9155000	68.5219300	PK	05	0	0	Kandiāri	Kandiāri	Kandiāri	Kandiāri	Kandiāri	Kandiāri
+	2508	Kandhkot	28.2439600	69.1823500	PK	05	0	0	Kandhkot	Kandhkot	Kandhkot	Kandhkot	Kandhkot	Kandhkot
+	2508	Kadhan	24.4804100	68.9855100	PK	05	0	0	Kadhan	Kadhan	Kadhan	Kadhan	Kadhan	Kadhan
+	2508	Johi	26.6920600	67.6133000	PK	05	0	0	Johi	Johi	Johi	Johi	Johi	Johi
+	2508	Jhol	25.9550700	68.8882100	PK	05	0	0	Jhol	Jhol	Jhol	Jhol	Jhol	Jhol
+	2508	Jāti	24.3539000	68.2670600	PK	05	0	0	Jāti	Jāti	Jāti	Jāti	Jāti	Jāti
+	2508	Jacobābād	28.2810000	68.4387600	PK	05	0	0	Jacobābād	Jacobābād	Jacobābād	Jacobābād	Jacobābād	Jacobābād
+	2508	Islāmkot	24.6990400	70.1798200	PK	05	0	0	Islāmkot	Islāmkot	Islāmkot	Islāmkot	Islāmkot	Islāmkot
+	2508	Hyderabad	25.3924200	68.3736600	PK	05	0	0	Hyderabad	Хайдарабад	Hyderabad	Hyderabad	Hyderabad	Hyderabad
+	2508	Hingorja	27.2108800	68.4159800	PK	05	0	0	Hingorja	Hingorja	Hingorja	Hingorja	Hingorja	Hingorja
+	2508	Ghotki	28.0060400	69.3160800	PK	05	0	0	Ghotki	Ghotki	Ghotki	Ghotki	Ghotki	Ghotki
+	2508	Ghauspur	28.1390600	69.0830500	PK	05	0	0	Ghauspur	Ghauspur	Ghauspur	Ghauspur	Ghauspur	Ghauspur
+	2508	Ghāro	24.7424100	67.5856500	PK	05	0	0	Ghāro	Ghāro	Ghāro	Ghāro	Ghāro	Ghāro
+	2508	Garhi Yāsīn	27.9069000	68.5109600	PK	05	0	0	Garhi Yāsīn	Garhi Yāsīn	Garhi Yāsīn	Garhi Yāsīn	Garhi Yāsīn	Garhi Yāsīn
+	2508	Garhi Khairo	28.0602900	67.9803300	PK	05	0	0	Garhi Khairo	Garhi Khairo	Garhi Khairo	Garhi Khairo	Garhi Khairo	Garhi Khairo
+	2508	Goth Garelo	27.4351700	68.0755000	PK	05	0	0	Goth Garelo	Goth Garelo	Goth Garelo	Goth Garelo	Goth Garelo	Goth Garelo
+	2508	Gambat	27.3514500	68.5205100	PK	05	0	0	Gambat	Gambat	Gambat	Gambat	Gambat	Gambat
+	2508	Dokri	27.3742700	68.0967300	PK	05	0	0	Dokri	Dokri	Dokri	Dokri	Dokri	Dokri
+	2508	Diplo	24.4666700	69.5840100	PK	05	0	0	Diplo	Diplo	Diplo	Diplo	Diplo	Diplo
+	2508	Digri	25.1557900	69.1112900	PK	05	0	0	Digri	Digri	Digri	Digri	Digri	Digri
+	2508	Dhoro Naro	25.5048400	69.5709000	PK	05	0	0	Dhoro Naro	Dhoro Naro	Dhoro Naro	Dhoro Naro	Dhoro Naro	Dhoro Naro
+	2508	Daur	26.4583400	68.3191500	PK	05	0	0	Daur	Daur	Daur	Daur	Daur	Daur
+	2508	Daulatpūr	26.5015800	67.9707900	PK	05	0	0	Daulatpūr	Daulatpūr	Daulatpūr	Daulatpūr	Daulatpūr	Daulatpūr
+	2508	Darya Khān Marri	26.6776500	68.2866600	PK	05	0	0	Darya Khān Marri	Darya Khān Marri	Darya Khān Marri	Darya Khān Marri	Darya Khān Marri	Darya Khān Marri
+	2508	Dāro Mehar	24.7946300	68.1805200	PK	05	0	0	Dāro Mehar	Dāro Mehar	Dāro Mehar	Dāro Mehar	Dāro Mehar	Dāro Mehar
+	2508	Dadu	26.7328600	67.7763100	PK	05	0	0	Dadu	Dadu	Dadu	Dadu	Dadu	Dadu
+	2508	Chor	25.5166700	69.7666700	PK	05	0	0	Chor	Chor	Chor	Chor	Chor	Chor
+	2508	Chambar	25.2931300	68.8120100	PK	05	0	0	Chambar	Chambar	Chambar	Chambar	Chambar	Chambar
+	2508	Chak	27.8583800	68.8337800	PK	05	0	0	Chak	Chak	Chak	Chak	Chak	Chak
+	2508	Bulri	24.8666700	68.3333300	PK	05	0	0	Bulri	Bulri	Bulri	Bulri	Bulri	Bulri
+	2508	Bozdar	27.1827500	68.6360400	PK	05	0	0	Bozdar	Bozdar	Bozdar	Bozdar	Bozdar	Bozdar
+	2508	Bhit Shāh	25.8043700	68.4926500	PK	05	0	0	Bhit Shāh	Bhit Shāh	Bhit Shāh	Bhit Shāh	Bhit Shāh	Bhit Shāh
+	2508	Bhiria	26.9104100	68.1946600	PK	05	0	0	Bhiria	Bhiria	Bhiria	Bhiria	Bhiria	Bhiria
+	2508	Bhān	26.5583100	67.7213900	PK	05	0	0	Bhān	Bhān	Bhān	Bhān	Bhān	Bhān
+	2508	Berāni	25.7850000	68.8068600	PK	05	0	0	Berāni	Berāni	Berāni	Berāni	Berāni	Berāni
+	2508	Bāndhi	26.5876100	68.3021500	PK	05	0	0	Bāndhi	Bāndhi	Bāndhi	Bāndhi	Bāndhi	Bāndhi
+	2508	Bāgarji	27.7543100	68.7586600	PK	05	0	0	Bāgarji	Bāgarji	Bāgarji	Bāgarji	Bāgarji	Bāgarji
+	2508	Badīn	24.6560000	68.8370000	PK	05	0	0	Badīn	Badīn	Badīn	Badīn	Badīn	Badīn
+	2508	New Bādāh	27.3416700	68.0319400	PK	05	0	0	New Bādāh	New Bādāh	New Bādāh	New Bādāh	New Bādāh	New Bādāh
+	2508	Tando Ghulām Ali	25.1311100	68.8675900	PK	05	0	0	Tando Ghulām Ali	Tando Ghulām Ali	Tando Ghulām Ali	Tando Ghulām Ali	Tando Ghulām Ali	Tando Ghulām Ali
+	2508	Jām Sāhib	26.2958300	68.6291700	PK	05	0	0	Jām Sāhib	Jām Sāhib	Jām Sāhib	Jām Sāhib	Jām Sāhib	Jām Sāhib
+	2508	Sethārja Old	27.2127000	68.4688300	PK	05	0	0	Sethārja Old	Sethārja Old	Sethārja Old	Sethārja Old	Sethārja Old	Sethārja Old
+	2508	Nooriabad	25.1750400	67.7995500	PK	05	0	0	Nooriabad	Nooriabad	Nooriabad	Nooriabad	Nooriabad	Nooriabad

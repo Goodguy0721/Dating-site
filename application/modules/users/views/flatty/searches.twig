@@ -1,0 +1,46 @@
+{% include '@app/header.twig' %}
+
+<div class="search-header">
+    <h1 class="title">
+      Saved searches</h1>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 user-search">
+    <div class="g-flatty-block">
+        <ul class="mp-saved-searches">
+      {% for item in searches %}
+          <li id="item-block-{{ item.id }}">
+            <div class="media">
+                <div class="pull-right">
+                  <a href="{{ site_url }}users/load_saved_search/{{ item.id }}" class="btn btn-primary ">
+                    Load search</a>
+                  <a href="{{ site_url }}users/delete_saved_search/{{ item.id }}" class="btn btn-primary">
+                    Delete</a>
+                </div>
+                <div class="media-body">
+                  Search <b>{{ item.date_search }}</b><br>
+                  {# { item.name } #}
+                </div>
+            </div>
+          </li>
+      {% else %}
+          <li class="text-center">
+            No saved searches</li>
+      {% endfor %}
+        </ul>
+        {% if searches %}
+        <div id="pages_block_2" class="tac">
+            {% set page_data = page_data|merge({'type': 'full'}) %}
+            {% helper start.pagination(page_data) %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% include '@app/footer.twig' %}

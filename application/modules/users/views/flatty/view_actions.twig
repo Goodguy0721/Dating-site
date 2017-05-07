@@ -1,0 +1,135 @@
+	{% if is_owner %}
+        <dl class="dl-horizontal pg-dl-icons menu-actions">
+            <dt>
+                <a class="link-r-margin" title="{% helper lang.l('edit_my_profile', 'start', '', 'button') %}"
+                    href="{% helper seo.seolink('users', 'profile', {'section-code': 'personal', 'section-name': personal_section_name}) %}">
+                    <i class="fa fa-pencil hover"></i>
+                </a>
+            </dt>
+            <dd>
+                <a class="link-r-margin" title="{% helper lang.l('edit_my_profile', 'start', '', 'button') %}"
+                    href="{% helper seo.seolink('users', 'profile', {'section-code': 'personal', 'section-name': personal_section_name}) %}">
+                    {% helper lang.l('edit_my_profile', 'start') %}
+                </a>
+            </dd>
+
+            {% if data.services_status.highlight_in_search.status %}
+                <dt>
+                    <a class="link-r-margin" title="{{ data.services_status.highlight_in_search.name|e }}"
+                        onclick="highlight_in_search_available_view.check_available();">
+                        <i class="fa fa-sun-o hover zoom20"></i>
+                    </a>
+                </dt>
+                <dd>
+                    <a class="link-r-margin" title="{{ data.services_status.highlight_in_search.name|e }}"
+                        onclick="highlight_in_search_available_view.check_available();">
+                        {{ data.services_status.highlight_in_search.name }}
+                    </a>
+                </dd>
+            {% endif %}
+
+            {% if data.services_status.up_in_search.status %}
+                <dt>
+                    <a class="link-r-margin" title="{{ data.services_status.up_in_search.name|e }}"
+                        onclick="up_in_search_available_view.check_available();">
+                        <i class="fa fa-level-up hover zoom20"></i>
+                    </a>
+                </dt>
+                <dd>
+                    <a class="link-r-margin" title="{{ data.services_status.up_in_search.name|e }}"
+                        onclick="up_in_search_available_view.check_available();">
+                        {{ data.services_status.up_in_search.name }}
+                    </a>
+                </dd>
+            {% endif %}
+
+            {% if data.services_status.hide_on_site.status %}
+                <dt>
+                    <a class="link-r-margin" title="{{ data.services_status.hide_on_site.name|e }}"
+                        onclick="hide_on_site_available_view.check_available();">
+                        <i class="fa fa-eye-slash icon-big edge hover zoom20"></i>
+                    </a>
+                </dt>
+                <dd>
+                    <a class="link-r-margin" title="{{ data.services_status.hide_on_site.name|e }}"
+                        onclick="hide_on_site_available_view.check_available();">
+                        {{ data.services_status.hide_on_site.name }}
+                    </a>
+                </dd>
+            {% endif %}
+
+            <script type="text/javascript">
+                $(function(){
+                    loadScripts(
+                        [
+                            "{% helper utils.jscript('', 'available_view.js', 'path') %}",
+                        ],
+                        function(){
+                            highlight_in_search_available_view = new available_view({
+                                siteUrl: site_url,
+                                checkAvailableAjaxUrl: 'users/ajax_available_highlight_in_search/',
+                                buyAbilityAjaxUrl: 'users/ajax_activate_highlight_in_search/',
+                                buyAbilityFormId: 'ability_form',
+                                buyAbilitySubmitId: 'ability_form_submit',
+                                success_request: function(message) {
+                                    error_object.show_error_block(message, 'success');
+                                    locationHref('');
+                                },
+                                fail_request: function(message) {
+                                    error_object.show_error_block(message, 'error');
+                                },
+                            });
+                            up_in_search_available_view = new available_view({
+                                siteUrl: site_url,
+                                checkAvailableAjaxUrl: 'users/ajax_available_up_in_search/',
+                                buyAbilityAjaxUrl: 'users/ajax_activate_up_in_search/',
+                                buyAbilityFormId: 'ability_form',
+                                buyAbilitySubmitId: 'ability_form_submit',
+                                success_request: function(message) {
+                                    error_object.show_error_block(message, 'success');
+                                    locationHref('');
+                                },
+                                fail_request: function(message) {
+                                    error_object.show_error_block(message, 'error');
+                                },
+                            });
+                            hide_on_site_available_view = new available_view({
+                                siteUrl: site_url,
+                                checkAvailableAjaxUrl: 'users/ajax_available_hide_on_site/',
+                                buyAbilityAjaxUrl: 'users/ajax_activate_hide_on_site/',
+                                buyAbilityFormId: 'ability_form',
+                                buyAbilitySubmitId: 'ability_form_submit',
+                                success_request: function(message) {
+                                    error_object.show_error_block(message, 'success');
+                                    locationHref('');
+                                },
+                                fail_request: function(message) {
+                                    error_object.show_error_block(message, 'error');
+                                },
+                            });
+                        },
+                        ['highlight_in_search_available_view', 'up_in_search_available_view', 'hide_on_site_available_view'],
+                        {async: false}
+                    );
+                });
+            </script>
+
+            {% helper referral_links.referral_link({'user_id': data.id, 'view_type': 'link_icon'}) %}
+        </dl>
+    {% else %}
+        <div class="mb20 user-profile-view__mainbtn">
+            {% helper mailbox.send_message_button({'id_user': data.id, 'view_type': 'button', 'type': 'quick'}) %}
+        </div>
+        <div class="dl-horizontal pg-dl-icons menu-actions">
+            {% helper friendlist.friendlist_links({'id_user': data.id, 'view_type': 'link_icon'}) %}
+            {% helper blacklist.blacklist_button({'id_user': data.id, 'view_type': 'link_icon'}) %}
+            {% helper favourites.favourites_button({'id_user': data.id, 'view_type': 'link_icon'}) %}
+            {% helper im.im_chat_add_button({'id_contact': data.id, 'view_type': 'link_icon'}) %}
+            {% helper chats.helper_btn_chat({user_id: data.id, 'view_type': 'link_icon'}) %}
+            {% helper winks.wink({'user_id': data.id, 'view_type': 'link_icon'}) %}
+            {% helper kisses.kisses_list({'user_id': data.id, 'view_type': 'link_icon'}) %}
+            {% helper associations.button({'id_user': data.id, 'view_type': 'link_icon'}) %}
+            {% helper questions.questions_list({'user_id': data.id, 'view_type': 'link_icon'}) %}
+            {% helper spam.mark_as_spam_block({'object_id': data.id, 'type_gid': 'users_object', 'view_type': 'link_icon'}) %}
+        </div>
+    {% endif %}

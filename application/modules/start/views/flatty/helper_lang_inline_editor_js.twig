@@ -1,0 +1,9 @@
+{% helper utils.jscript('start', 'lang_inline_editor.js', '') %}
+<script>
+    var inlineEditor{{ rand }};
+    $(function(){
+        inlineEditor{{ rand }} = new langInlineEditor({
+            siteUrl: site_url,
+        });
+    });
+</script>

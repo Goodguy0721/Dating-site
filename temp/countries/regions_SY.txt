@@ -1,0 +1,5 @@
+	3423	Tartouss	34.8890200	35.8865900	SY	14	0	0	Tartouss	Тартус	Tartouss	Tartouss	Tartouss	Tartouss
+	3423	Satita	34.8183600	36.1137600	SY	14	0	0	Satita	Satita	Satita	Satita	Satita	Satita
+	3423	Duraykīsh	34.8963700	36.1313800	SY	14	0	0	Duraykīsh	Duraykīsh	Duraykīsh	Duraykīsh	Duraykīsh	Duraykīsh
+	3423	Bāniyās	35.1818800	35.9487100	SY	14	0	0	Bāniyās	Банияс	Bāniyās	Bāniyās	Bāniyās	Bāniyās
+	3423	Kaff al-Jaa	35.0863800	36.2060500	SY	14	0	0	Kaff al-Jaa	Kaff al-Jaa	Kaff al-Jaa	Kaff al-Jaa	Kaff al-Jaa	Kaff al-Jaa

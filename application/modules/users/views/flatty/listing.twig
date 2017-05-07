@@ -1,0 +1,65 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    <h1>
+        {% helper seo.seotag('header_text') %}
+    </h1>
+
+    <p class="header-comment">
+        {% helper lang.l('text_listing_edit', 'users') %}
+    </p>
+
+    <div class="sorter" id="sorter_block">
+        <ul>
+            <li>
+                {% helper lang.l('filter_header', 'start') %}:
+            </li>
+            <li {%if filter == 'all' %}class="active"{% endif %}>
+                <a href="{% helper seo.seolink('users', 'listing', 'all') %}">
+                    {% helper lang.l('filter_all', 'users') %}
+                    {% if filter != 'all' %}({{ filter_data.all }}){% endif %}
+                </a>
+            </li>
+            <li {% if filter == 'icon' %}class="active"{% endif %}>
+                <a href="{% helper seo.seolink('users', 'listing', {'data': 'icon'}) %}">
+                    {% helper lang.l('filter_icon', 'users') %}
+                    {% if filter != 'icon' %}({{ filter_data.icon }}){% endif %}
+                </a>
+            </li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+
+    <div>
+        {% include '@app/pagination.twig' %}
+
+        {% for item in users %}
+            <div class="user-block">
+                {% set text_user_logo %}
+                    {% helper lang.l('text_user_logo', 'users', '', 'button', {'user_name': item.output_name}) %}
+                {% endset %}
+
+                {% if item.media.user_logo.thumbs.middle %}
+                    <div class="logo-img">
+                        <a href="{% helper seo.seolink('users', 'view', item) %}">
+                            <img src="{{ item.media.user_logo.thumbs.middle }}"
+                                 alt="{{ text_user_logo }}" title="{{ text_user_logo }}" />
+                        </a>
+                    </div>
+                    <div class="clr"></div>
+                {% endif %}
+
+                <a href="{% helper seo.seolink('users', 'view', item) %}" class="nick"
+                   alt="{{ item.nickname|e }}" title="{{ item.nickname|e }}">
+                    {% helper utils.truncate(item.nickname, 10) %}
+                </a><br>
+            </div>
+        {% endfor %}
+        <div class="clr"></div>
+
+        {% include '@app/pagination.twig' %}
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,42 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class='x_title'>
+            <h2>
+                {% if add_flag %}
+                    {% helper lang.l('admin_header_ds_item_add', 'properties') %}
+                {% else %}
+                    {% helper lang.l('admin_header_ds_item_change', 'properties') %}
+                {% endif %}
+                &nbsp;[ID = {{option_gid}}]
+            </h2>
+            <div class='clearfix'></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                {% for lang_id, item in langs %}
+                    <div class="form-group even">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {{item.name}}:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" value="{{lang_data[lang_id]|escape}}" name="lang_data[{{lang_id}}]" class="form-control">
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                        <input type="submit" name="btn_save" class="btn btn-success"
+                               value="{% helper lang.l ('btn_save','start','','button') %}">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/properties/property/{{current_gid}}/{{current_lang_id}}/">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

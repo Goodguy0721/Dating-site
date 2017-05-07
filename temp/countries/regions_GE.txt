@@ -1,0 +1,4 @@
+	1067	Ts’khinvali	42.2276400	43.9686100	GE	73	0	0	Ts’khinvali	Цхинвали	Ts’khinvali	Ts’khinvali	Ts’khinvali	Ts’khinvali
+	1067	Khashuri	41.9941400	43.5999400	GE	73	0	0	Khashuri	ХАШУРИ	Khashuri	Khashuri	Khashuri	Khashuri
+	1067	Kaspi	41.9252000	44.4256800	GE	73	0	0	Kaspi	КАСПИ	Kaspi	Kaspi	Kaspi	Kaspi
+	1067	Gori	41.9842200	44.1157800	GE	73	0	0	Gori	Гори	Gori	Gori	Gori	Gori

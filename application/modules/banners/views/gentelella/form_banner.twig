@@ -1,0 +1,177 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% helper utils.jscript('banners', 'admin_banner.js') %}
+<script type="text/javascript">
+    var admin_banners;
+    $(function(){
+        admin_banners =  new AdminBanners({
+            siteUrl: '{{ site_url }}',
+            banner_id: '{{ data.id }}',
+            init_banner_form: true
+        });
+    });
+</script>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                {% if data.id %}
+                    {% helper lang.l('admin_header_banner_change', 'banners') %}
+                {% else %}
+                    {% helper lang.l('admin_header_banners_add', 'banners') %}
+                {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" name="save_form" enctype="multipart/form-data"
+                data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'banners') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.name|e }}" name="name" class="form-control">
+                    </div>
+                </div>
+            {% if data.user_id != 0 %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_user', 'banners') %}:
+                    </label>
+                    <label class="col-md-9 col-sm-9 col-xs-12">
+                        {{ data.user.output_name }}
+                    </label>
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_status', 'banners') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="checkbox" value="1" name="status"
+                               class="flat" {% if data.status %}checked{% endif %}>
+                    </div>
+                </div>
+            {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('banner_place', 'banners') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    {% if data.user_id == 0 %}
+                        <select id="banner_place" name="banner_place_id" class="form-control">
+                            <option value="" {% if data.banner_place_id %}selected{% endif %}>...</option>
+                        {% for place in places %}
+                            <option value="{{ place.id }}" {% if place.id == data.banner_place_id %}selected{% endif %}>
+                                {{ place.name }} ({{ place.width }}x{{ place.height }})
+                            </option>
+                        {% endfor %}
+                        </select>
+                    {% else %}
+                        <input type="hidden" name="banner_place_id" value="{{ data.banner_place_id|e }}">
+                        {% if data.banner_place_id %}
+                            {% for place in places %}
+                                {% if place.id == data.banner_place_id %}
+                                    {{ place.name }} ({{ place.width }}x{{ place.height }})
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            ...
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="form-group" id="banner_groups">{{ banner_place_block }}</div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_type', 'banners') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    {% if data.user_id == 0 %}
+                        <select name="banner_type" id="banner_type" class="form-control">
+                            <option value="0">...</option>
+                            {% for key, item in banner_type_lang.option %}
+                                <option value="{{ key }}" {% if key == data.banner_type %}selected{% endif %}>
+                                    {{ item }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    {% else %}
+                        <input type="hidden" name="banner_type" value="{{ data.banner_type|e }}">
+                        {% for key, item in banner_type_lang.option %}
+                            {% if key == data.banner_type %}{{ item }}{% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="form-group" id="second_form">{{ banner_type_block }}</div>
+                <div class="form-group" id="result"></div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        {% if (data.id > 0) and (data.expiration_date != 0) and (data.expiration_date|date('U') > 0) %}
+                            <a href="javascript:void(0)" id="view_{{ data.id }}" class="btn btn-primary">
+                              {% helper lang.l('link_view_banner','banners') %}
+                            </a>
+                            <a class="btn btn-default" href="{{ site_url }}admin/banners{% if data.user_id %}/index/user{% endif %}">
+                                {% helper lang.l('btn_cancel', 'start') %}
+                            </a>
+                            <div id="view_{{ data.id }}_content" class="preview"></div>
+                        {% else %}
+                            {% helper save_text = lang.l('link_banner_approve', 'banners', '', 'button') %}
+                            <input type="submit" class="btn btn-success disabled" name="btn_save" value="{{ save_text }}">
+                            <a class="btn btn-default" href="{{ site_url }}admin/banners{% if data.user_id %}/index/user{% endif %}">
+                                {% helper lang.l('btn_cancel', 'start') %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- PNotify -->
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/notify/pnotify.core.js"></script>
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/notify/pnotify.buttons.js"></script>
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/notify/pnotify.nonblock.js"></script>
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/errors.js"></script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css"
+    rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+
+var reload_link = "{{ site_url }}admin/users/index/";
+var filter = '{{ filter }}';
+var order = '{{ order }}';
+var loading_content;
+var order_direction = '{{ order_direction }}';
+errorObj = new Errors;
+
+$(document).ready(function(){
+    $('input[name="btn_save"]').on('click', function(e) {
+        if($('.btn-success').hasClass('disabled')){
+            e.preventDefault();
+            errorObj.show_error_block("{% helper lang.l('error_group_not_selected', 'banners', '', 'js') %}", 'error');
+        }
+    });
+    
+    $(function() {
+        $("a[id^='view_']").off().on('click', function() {
+            $("div.preview").html('');
+            //var banner_id =  $(this).attr('id').replace(/\D+/g, '');
+            $.ajax({
+                url: '{{ site_url }}admin/banners/preview/' + {{ data.id }},
+                success: function(data){
+                    $('#view_' + {{ data.id }} + '_content').html(data).show();
+                }
+            });
+        });
+        $(document).click(function(){$("div.preview").html('')});
+    });
+});
+</script>
+
+{% include '@app/footer.twig' %}

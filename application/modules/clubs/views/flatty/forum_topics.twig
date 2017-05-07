@@ -1,0 +1,49 @@
+{% include '@app/header.twig' %}
+
+{# <link rel="stylesheet" type="text/css" href="{{ site_url }}application/modules/clubs/views/flatty/css/style-{{ _LANG.rtl }}.css"> #}
+
+<style type="text/css">
+    .view-group__forum-topics {}
+    .forum-topics__item { padding: 10px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
+    .forum-topics__item:last-of-type { border-bottom: none; }
+</style>
+
+<div class="user-profile-view">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        {% include 'view_left_block.twig' %}
+
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-image'}) %}
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-video'}) %}
+
+        {% helper banners.show_banner_place('banner-185x75') %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+    </div>
+
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" style="margin-top:15px;">
+        <div class="description">
+            {% include 'view_club_menu.twig' %}
+            <div class="view-user">
+                <div class="view-group__forum-topics">
+                    {% for topic in topics %}
+                        <div class="forum-topics__item clearfix">
+                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                <a href="{{ site_url }}clubs/topic/{{ topic.id }}">{{ topic.name }}</a>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                {{ topic.posts_count }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="forum-topics__item no-topics clearfix">
+                            {% helper lang.l('no_forum_topics', 'clubs') %}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% helper banners.show_banner_place('banner-980x90') %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

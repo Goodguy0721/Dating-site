@@ -1,0 +1,115 @@
+{% include '@app/header.twig' %}
+<div class="breadcrumbs col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <div>Homepage > Events</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+	<!-- Events list -->
+	<div class="events-list left-row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="events-header row">
+                <div class="title col-xs-6 col-sm-6 col-md-8 col-lg-8">Upcoming events</div>
+                <div class="menu col-xs-6 col-sm-6 col-md-4 col-lg-4 no-padding-right">
+                    <a href="" class="active"><i class="fa fa-list"></i>&nbsp;List</a>
+                    <a href=""><i class="fa fa-globe"></i>&nbsp;Map</a>
+                    <a href=""><i class="fa fa-calendar"></i>&nbsp;Calendar</a>
+                </div>
+            </div>
+        </div>
+            {% for event in events %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 no-padding-right">
+                    <div class="events-block">
+                        <img src="{{ event.image.file_url }}">
+                        <div class="title">
+                            {{ event.name_1 }}
+                        </div>
+                        <div class="category">
+                            {% helper lang.ld('category', 'events') %}
+                            {% for key, category in ld_category.option %}
+                                {% if key == event.category %}
+                                    {{ category }}
+                                {% endif %}
+                            {% endfor %}
+                         </div>
+                        <div class="location">
+                            <i class="fa fa-map-marker"></i>&nbsp;{{ event.venue }}, {{ event.city }}
+                        </div>
+                        <div class="shedule">
+                            Fri, Aug 11 | 10:00 - 12:00
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for event in events %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 no-padding-right">
+                    <div class="events-block">
+                        <img src="{{ event.image.file_url }}">
+                        <div class="title">Sunday Yoga in Continental Park</div>
+                        <div class="category">Fitness and Sport</div>
+                        <div class="location"><i class="fa fa-map-marker"></i>&nbsp;Ocean Park, New York</div>
+                        <div class="shedule">Fri, Aug 11 | 10:00 - 12:00</div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for event in events %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 no-padding-right">
+                    <div class="events-block">
+                        <img src="{{ event.image.file_url }}">
+                        <div class="title">Sunday Yoga in Continental Park</div>
+                        <div class="category">Fitness and Sport</div>
+                        <div class="location"><i class="fa fa-map-marker"></i>&nbsp;Ocean Park, New York</div>
+                        <div class="shedule">Fri, Aug 11 | 10:00 - 12:00</div>
+                    </div>
+                </div>
+            {% endfor %}
+	</div>
+	<!--end Events list -->
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="row">
+        <!--Events search -->
+        <div class="events-search col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            <div class="input-group input-search">
+                <input type="text" class="form-control search-for-mobile" placeholder="{% helper lang.l('header_find_people', 'users') %}" autosave="saved-searches">
+                <button class="button-search">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="block-title">Category</div>
+            <div class="input-group input-search">
+                <input type="text" class="form-control search-for-mobile" placeholder="{% helper lang.l('header_find_people', 'users') %}" autosave="saved-searches">
+                <button class="button-search">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="block-title">Period</div>
+            <div class="input-group input-search">
+                <input type="text" class="form-control search-for-mobile" placeholder="{% helper lang.l('header_find_people', 'users') %}" autosave="saved-searches">
+                <button class="button-search">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <!--end Events search -->
+        <!--Events navigation -->
+        <div class="events-navigation col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            <div class="">
+                <a href="" class="active">Upcoming Events</a>
+            </div>
+            <div class="">
+                <a href="">Events Archive</a>
+            </div>
+            <div class="">
+                <a href="">My Events</a>
+            </div>
+            <div class="">
+                <a href="">I will go</a>
+            </div>
+            <div class="">
+                <a href="">Closed Events</a>
+            </div>
+        </div>
+        <!--end Events navigation -->
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

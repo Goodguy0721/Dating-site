@@ -1,0 +1,101 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+{% helper utils.jscript('', 'admin-multilevel-sorter.js') %}
+
+<div class="x_panel">
+
+    <div class="x_content">
+        <ul class="nav nav-tabs bar_tabs">
+            {% helper menu.get_admin_level1_menu('admin_spam_menu') %}
+        </ul>
+
+        <div class="actions">
+            <div class="btn-group">
+                <a class="btn btn-primary" href="{{ site_url }}admin/spam/reasons_edit">
+                    {% helper lang.l('btn_reasons_create', 'spam') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{ site_url }}admin/spam/reasons_edit">
+                            {% helper lang.l('btn_reasons_create', 'spam') %}
+                        </a>
+                    </li>
+                    <li>
+                        <a clas="btn btn-default" href="#" onclick="javascript: mlSorter.update_sorting(); return false;">
+                            {% helper lang.l('btn_reasons_resort', 'spam') %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn-group pull-right">
+            {% for lang_id, item in langs %}
+                <label onclick="location.href = '{{ site_url }}admin/spam/reasons/{{ lang_id }}'" class="btn btn-default{% if lang_id == current_lang_id %} active{% endif %}">
+                    {{ item.name }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="x_content">
+        <div class="x_panel"></div>
+        <div class="filter-form" id="ds_items">
+            <ul name="parent_0" class="to_do sort connected" id="clsr0ul">
+                {% for key, item in reference.option %}
+                    <li id="item_{{ key }}">
+                        <div class="editable" id="{{ key }}">
+                            {{ item|default('&nbsp;') }}
+                            <div class="nav navbar-right btn-group">
+                                <a href="{{ site_url }}admin/spam/reasons_edit/{{ current_lang_id }}/{{ key }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('btn_edit', 'start') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ site_url }}admin/spam/reasons_edit/{{ current_lang_id }}/{{ key }}">
+                                            {% helper lang.l('btn_edit', 'start') %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="if (confirm('{% helper lang.l('note_reasons_delete', 'spam', '', 'js') %}')) mlSorter.deleteItem('{{ key }}'); return false;"
+                                           title="{% helper lang.l('link_reasons_delete', 'spam', '', 'button') %}">
+                                            {% helper lang.l('btn_delete', 'start') %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var mlSorter;
+
+    $(function () {
+        mlSorter = new multilevelSorter({
+            siteUrl: '{{ site_root }}',
+            itemsBlockID: 'pages',
+            urlSaveSort: 'admin/spam/ajax_reasons_save_sorter/',
+            urlDeleteItem: 'admin/spam/ajax_reasons_delete/',
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

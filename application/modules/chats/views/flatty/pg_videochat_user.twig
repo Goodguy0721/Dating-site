@@ -1,0 +1,156 @@
+<div class="title-color tabs tab-size-15 noPrint">
+	<ul>
+		<li{% if folder == 'outbox' %} class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('chats', 'index') %}/outbox">
+                {% helper lang.l('pg_videochat_outbox', 'chats') %}
+            </a>
+        </li>
+		<li{% if folder == 'inbox' %} class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('chats', 'index') %}/inbox">
+                {% helper lang.l('pg_videochat_inbox', 'chats') %}
+            </a>
+        </li>
+	</ul>
+</div>
+{% if last_chats %}
+	<div class="sorter short-line" id="sorter_block">
+		<div class="fright">
+            {% set page_data = page_data|merge({'type': 'cute'}) %}
+            {% helper start.pagination(page_data) %}
+        </div>
+	</div>
+{% endif %}
+<div class="table-div wp100">
+		<dl>
+		{% if folder == 'inbox' %}
+			<dt class="w150">
+                <h2>{% helper lang.l('field_invite_user', 'chats') %}</h2>
+            </dt>
+		{% else %}
+			<dt class="w150">
+                <h2>{% helper lang.l('field_invited_user', 'chats') %}</h2>
+            </dt>
+		{% endif %}
+			<dt class="w150">
+                <h2>{% helper lang.l('field_status', 'chats') %}</h2>
+            </dt>
+			<dt class="w150">
+                <h2>{% helper lang.l('field_date_time', 'chats') %}</h2>
+            </dt>
+			<dt class="w200">
+                <h2>{% helper lang.l('field_duration', 'chats') %}</h2>
+            </dt>
+			<dt class="w150"></dt>
+		</dl>
+</div>
+<div id="chat_items">
+	{% for item in last_chats %}
+		<div class="table-div wp100 list" >
+			<dl>
+			{% if folder == 'inbox' %}
+				<dt class="w150  vtop">
+					<a href="{{ item.invite.link }}" alt="">
+						{{ item.invite.output_name }}
+					</a>
+				</dt>
+			{% else %}
+				<dt class="w150  vtop">
+					<a href="{{ item.invited.link }}" alt="">
+						{{ item.invited.output_name }}
+					</a>
+				</dt>
+			{% endif %}
+				<dt class="w150  vtop">
+					{{ item.status_str }}
+				</dt>
+				<dt class="w150  vtop">
+					{{ item.date_time }}
+				</dt>
+				<dt class="w200 vtop" style="line-height:1.5">
+					{% if item.status == 'completed' %}
+						{{ item.duration_lang }}
+                        {% if item.is_inviter and item.amount != '0' %}
+                            / {% helper start.currency_format_output({value: item.amount}) %}
+                        {% endif %}
+					{% elseif item.status == 'decline' or item.status == 'canceled' %}
+						{{ item.status_str }}
+					{% else %}
+						{% helper lang.l('chat_is_not_finished', 'chats') %}
+					{% endif %}
+					{% if item.status != 'completed' and item.status != 'decline' and item.status != 'canceled' and item.is_inviter %}
+						{% if item.no_money == '1' %}<br/><span style="font-weight:bold">{{ item.lang_add_money }}</span>{% endif %}
+						{% if item.available_time %}<br/>{% helper lang.l('pg_videochat_available', 'chats') %}: <span style="font-weight:bold">{{ item.available_time_lang }}</span>{% endif %}
+					{% endif %}
+				</dt>
+				<dt class="w150" style="line-height: 25px;">
+					{% if item.status == 'current' or item.status == 'paused' %}
+                        <a href="{{ site_url }}chats/complete/{{ item.id }}" title="{% helper lang.l('pg_videochat_link_complete', 'chats') %}"
+                            class="fleft mr10"><i class="fa fa-stop fa-2x"></i></a>&nbsp;
+					{% endif %}
+					{% if item.show_link == '1' %}
+                        <a href="{{ item.chat_link }}" alt="" class="a-button fleft mr10">
+                            {% helper lang.l('go_to_chat', 'chats') %}
+                        </a>
+                    {% endif %}
+					{% if item.status != 'completed' and item.status != 'current' and item.status != 'paused' %}
+						{% if ((item.is_invited and item.invited_user_id != item.last_change_date_time_user_id) or
+                               (item.is_inviter and item.invite_user_id != item.last_change_date_time_user_id)) and
+                               item.status != 'approve' and item.status != 'decline' and item.status != 'canceled' %}
+                            <a href="{{ site_url }}chats/accept/{{ item.id }}" title="{% helper lang.l('chat_accept', 'chats') %}" class="fleft">
+                                <i class="fa fa-check fa-2x"></i>
+                            </a>&nbsp;
+                        {% endif %}
+						{% if item.is_inviter %}
+                            <a href="{{ site_url }}chats/delete/{{ item.id }}" title="{% helper lang.l('chat_delete', 'chats') %}" class="fleft">
+                                <i class="fa fa-close fa-2x"></i>
+                            </a>
+                        {% endif %}
+						{% if item.is_invited and item.status != 'decline' and item.status != 'canceled' %}
+                            <a href="{{ site_url }}chats/decline/{{ item.id }}" title="{% helper lang.l('chat_decline', 'chats') %}" class="fleft">
+                                <i class="fa fa-close fa-2x"></i>
+                            </a>
+                        {% endif %}
+					{% endif %}
+					{% if item.show_link != '1' and item.status != 'completed' and item.status != 'canceled' and
+                          item.status != 'decline' and item.status != 'approve' and item.status != 'current' and
+                          item.status != 'paused' %}
+						<a href="javascript:void(0)" data-chat_id="{{ item.id }}" class="fright change_time_link" style="text-decoration: none; line-height: 25px;">
+                            <i class="fa fa-comment fa-lg hover"></i>
+                            {% helper lang.l('change_time', 'chats') %}
+                        </a>
+					{% endif %}
+				</dt>
+			</dl>
+		</div>
+	{% else %}
+		<div class="table-div wp100 list center">
+			<dl>
+                <dt>
+                    {% helper lang.l('no_last_chats', 'chats') %}
+                </dt>
+            </dl>
+		</div>
+	{% endfor %}
+</div>
+{% if last_chats %}
+    <div>
+        {% helper start.pagination(page_data, 'full') %}
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('.change_time_link').on('click', function(){
+                change_form_videochat = new loadingContent({
+                    loadBlockWidth: '400px',
+                    closeBtnClass: 'w'
+                });
+                $.ajax({
+                    url: site_url + 'chats/ajax_change_time_form/'+$(this).data('chat_id'),
+                    cache: false,
+                    success: function(data){
+                        change_form_videochat.show_load_block(data);
+                    }
+                });
+            });
+        });
+    </script>
+{% endif %}

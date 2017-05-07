@@ -1,0 +1,68 @@
+<div class="content-block">
+    <table class="list">
+        <tr>
+            <th class="first">
+                {% helper lang.l('admin_view_username', 'send_vip') %}
+            </th>
+            <th class="w150">
+                {% helper lang.l('admin_view_data', 'send_vip') %}
+            </th>
+            <th>
+                {% helper lang.l('send_vip_membership_name', 'send_vip') %}
+            </th>
+            <th>
+                {% helper lang.l('admin_view_transfer_fee', 'send_vip') %}
+            </th>
+            <th>
+                Payment type
+            </th>
+            <th>
+                {% helper lang.l('admin_view_status', 'send_vip') %}
+            </th>
+        </tr>
+
+        {% if transactions %}
+            {% for item in transactions %}
+                <tr>
+                    <td>
+                        {{ item.name }}
+                    </td>
+                    <td>
+                        {{ item.date_created }}
+                    </td>
+                    <td>
+                        <span dir="ltr">{{ item.membership_name }}</span>
+                    </td>
+                    <td>
+                        <span dir="ltr">{{ item.transfer_fee }} {{ currency.abbr }}</span>
+                    </td>
+                    <td>
+                        account
+                    </td>
+                    <td id="status_{{ item.rand }}">
+                        {% set status = item.status %}
+                        {% if status == 'waiting' %}
+                            <div>
+                                {% helper lang.l('send_vip_waiting', 'send_vip') %}
+                            </div>
+                        {% elseif status == 'approved' %}
+                            <div class="success">
+                                {% helper lang.l('send_vip_approved', 'send_vip') %}
+                            </div>
+                        {% else %}
+                            <div class="declined">
+                                {% helper lang.l('send_vip_declined', 'send_vip') %}
+                            </div>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="6">
+                    {% helper lang.l('admin_view_no_data', 'send_vip') %}
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+</div>

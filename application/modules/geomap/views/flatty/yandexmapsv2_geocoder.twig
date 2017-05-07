@@ -1,0 +1,28 @@
+<script>
+	var geocoder;
+	geocoder_loader = function(){
+		geocoder = new YandexMapsv2_Geocoder({});
+	}
+</script>
+
+{% if not geomap_js_loaded %}
+	<script>
+		$(function() {
+			loadScripts(
+				[
+					"{% helper utils.jscript('geomap', 'yandexmapsv2.js', 'path') %}",
+					"http://api-maps.yandex.ru/2.0/?load=package.full&mode=debug&lang=ru-RU"
+				],
+				function(){
+					ymaps.ready(geocoder_loader);
+				},
+				'geocoder',
+				{crossDomain: true}
+			);
+		});
+	</script>
+{% else %}
+	<script>
+        geocoder_loader();
+    </script>
+{% endif %}

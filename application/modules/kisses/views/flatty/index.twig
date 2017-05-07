@@ -1,0 +1,96 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <h1 data-title="{% helper lang.l('kisses', 'kisses') %}" data-id="kisses-title" id="kisses-title">
+        {% if kiss_section == 'inbox' %}
+            {% helper lang.l('inbox', 'kisses') %}
+        {% else %}
+            {% helper lang.l('outbox', 'kisses') %}
+        {% endif %}
+    </h1>
+</div>
+
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+
+<div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+    <div class="content-block kisses g-col">
+        <div id="kisses_content" class="search-type-page clearfix">
+            <div class="b-tabs">
+                <div class="b-tabs__item {% if kiss_section == 'inbox' %}active{% endif %}">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('kisses', 'inbox') %}">
+                        {% helper lang.l('inbox', 'kisses') %}
+                    </a>
+                </div>
+                <div class="b-tabs__item  {% if kiss_section == 'outbox' %}active{% endif %}">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('kisses', 'outbox') %}">
+                        {% helper lang.l('outbox', 'kisses') %}
+                    </a>
+                </div>
+            </div>
+
+            {% if kisses|length > 0 %}
+                <div class="sorter short-line" id="sorter_block">
+                    <div class="fright">
+                        {% set page_data = page_data|merge({'type': 'cute'}) %}
+                        {% helper start.pagination(page_data) %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="user-search">
+                {% for kiss in kisses %}
+                    <div class="{% if kiss_section == 'outbox' and kiss.mark == '0' %}bold{% endif %} user-list-item clearfix "
+                        data-id="{{ kiss.id }}">
+                        <div class="photo col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <a href="{% helper seo.seolink('users', 'view', {'id': kiss.user_id}) %}" target="_blank">
+                                <img src="{{ kiss.user_logo.small }}"
+                                     alt="{{ text_user_logo }}"
+                                     title="{{ text_user_logo }}" />
+                            </a>
+                        </div>
+                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <ins class="fa fa-arrow-{% if kiss_section == 'inbox' %}right{% else %}left{% endif %}"></ins>
+                        </div>
+                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <img src="{{ kiss.images.file_url }}" alt="{{ kiss.id }}">
+                        </div>
+                        <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            {{ kiss.message }}
+                        </div>
+                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            {{ kiss.date_created }}
+                        </div>
+                    </div>
+                {% else %}
+                    <h6 class="center">{% helper lang.l('no_kisses', 'kisses') %}</h6>
+                {% endfor %}
+            </div>
+
+            {% if kisses|length > 0 %}
+                <div>
+                    {% set page_data = page_data|merge({'type': 'full'}) %}
+                    {% helper start.pagination(page_data) %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+
+<div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+    <div id="active_users" class="clearfix mb10">
+        {% helper users.active_users_block({'count': '16'}) %}
+    </div>
+    <div id="recent_photo" class="clearfix mb10">
+        {% helper media.recent_media_block({'upload_gid': 'photo', 'count': '16'}) %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

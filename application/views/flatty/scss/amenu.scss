@@ -1,0 +1,26 @@
+@media (max-width: 767px) {
+	.add-menu{
+		position: relative;
+		width: 100%;
+ 		overflow-x: scroll;
+ 		padding: 0;	
+ 		background-color: #3a3f44;
+ 		height: 60px;
+ 		line-height: 40px;
+	}
+	.add-menu a{
+		color: #fff;
+		display: block;
+		padding: 0;
+		white-space: nowrap;
+		text-align: center;
+	}
+	.add-menu ul{
+		width:176%;
+	}
+	.add-menu li{
+ 		float: $left;
+ 		margin: 0 5px;
+		border-#{$right}: 1px #3E4555 solid; 	    
+	}
+}

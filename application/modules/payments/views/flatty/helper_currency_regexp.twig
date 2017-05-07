@@ -1,0 +1,3 @@
+function(value) {
+	return '{{ template }}'.replace({{ pattern_value|replace({'^]':'^\\]'}) }}g, {{ value }});
+}

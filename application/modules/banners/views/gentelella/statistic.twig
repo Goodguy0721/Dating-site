@@ -1,0 +1,404 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_banners_menu') %}
+            </ul>
+        </div>
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if stat_type == 'day' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/banners/statistic/{{ banner_data.id }}/day'">
+                        <input type="radio">
+                        {% helper lang.l('stat_day', 'banners') %}
+                    </label>
+                    <label class="btn btn-default{% if stat_type == 'week' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/banners/statistic/{{ banner_data.id }}/week'">
+                        <input type="radio">
+                        {% helper lang.l('stat_week', 'banners') %}
+                    </label>
+                    <label class="btn btn-default{% if stat_type == 'month' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/banners/statistic/{{ banner_data.id }}/month'">
+                        <input type="radio">
+                        {% helper lang.l('stat_month', 'banners') %}
+                    </label>
+                    <label class="btn btn-default{% if stat_type == 'year' %} active{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/banners/statistic/{{ banner_data.id }}/year'">
+                        <input type="radio">
+                        {% helper lang.l('stat_year', 'banners') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="row">
+                <label class="col-md-3 col-sm-3 col-xs-12">{% helper lang.l('stat_day', 'banners') %}:</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <a href="{{ navigation.prev }}">
+                        {% helper lang.l('nav_prev', 'start') %}</a> 
+                    <strong>{{ navigation.current }}</strong>
+                    <a href="{{ navigation.next }}">
+                        {% helper lang.l('nav_next', 'start') %}</a>
+                </div>
+            </div>
+            <div class="row" id="view_links">
+                <label class="col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('stat_view_type', 'banners') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <a href="#" class="active">
+                        {% helper lang.l('stat_by_hours', 'banners') %}
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('stat_overall_views', 'banners') %}:
+                </label>
+                <div class="col-md-9 col-sm-9 col-xs-12">{{ statistic.all.view }}</div>
+            </div>
+            <div class="row">
+                <label class="col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('stat_overall_clicks', 'banners') %}:</label>
+                <div class="col-md-9 col-sm-9 col-xs-12">{{ statistic.all.click }}</div>
+            </div>
+            
+            <link rel="stylesheet" type="text/css" href="{{ site_root }}application/modules/banners/js/jqplot/jquery.jqplot.min.css" />
+            <!--[if lt IE 9]{% helper utils.jscript('banners', 'jqplot/excanvas.min.js') %}<![endif]-->
+            {% helper utils.jscript('banners', 'jqplot/jquery.jqplot.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.canvasTextRenderer.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.highlighter.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.cursor.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.dateAxisRenderer.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js') %}
+            {% helper utils.jscript('banners', 'jqplot/plugins/jqplot.categoryAxisRenderer.min.js') %}
+
+            {% if stat_type == 'day' %}
+            <div class="filter-form">
+            </div>
+
+            <div id="view_blocks">
+                <div id="by_hours_div">
+                    <div id="jplot_div"></div><br>
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">{% helper lang.l('stat_hour', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_views', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_clicks', 'banners') %}</th>
+                        </tr>
+                        {% for hour, item in statistic.hour %}
+                        <tr class="stat">
+                            <td class="first hour">{{ hour }}</td>
+                            <td class="text-center views">{{ item.view }}</td>
+                            <td class="text-center clicks">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    var viewPoints = [];
+                    var clicksPoints = [];
+                    var ticks = [];
+                    $("#by_hours_div tr.stat").each(function(){
+                        var hour = parseInt($(this).find('td.hour').text());
+                        var views = parseInt($(this).find('td.views').text());
+                        var clicks = parseInt($(this).find('td.clicks').text());
+                        viewPoints.push([hour, views]);
+                        clicksPoints.push([hour, clicks]);
+                        ticks.push(hour);
+                    });
+
+                    var plot2 = $.jqplot ('jplot_div', [viewPoints, clicksPoints], {
+                        axesDefaults: { labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
+                        seriesDefaults:{ renderer:$.jqplot.BarRenderer, rendererOptions: {fillToZero: true} },
+                        legend: { show: true, placement: 'insideGrid' },
+                        series:[
+                            { lineWidth:5, markerOptions: { style: 'dimaond' }, label: "{% helper lang.l('stat_views', 'banners', '', 'js') %}" },
+                            { lineWidth:2, markerOptions: { style: "filledSquare", size:10 }, label: "{% helper lang.l('stat_clicks', 'banners', '', 'js') %}" }
+                        ],
+                        axes: { xaxis: { label: "{% helper lang.l('stat_hour', 'banners', '', 'js') %}", tickOptions: {formatString: '%d h'}, ticks: ticks } },
+                        highlighter: { show: true, sizeAdjust: 7.5 },
+                        cursor: { show: false }
+                    });
+                });
+                </script>
+            </div>
+            {% endif %}
+
+            {% if stat_type == 'week' %}
+            <div class="filter-form">
+                <div class="row">
+                    <label class="col-md-3">{% helper lang.l('stat_week', 'banners') %}:</label>
+                    <div class="col-md-9">
+                        <a href="{{ navigation.prev }}">
+                            {% helper lang.l('nav_prev', 'start') %}
+                        </a> <b>{{ navigation.current }}</b>
+                        <a href="{{ navigation.next }}">
+                            {% helper lang.l('nav_next', 'start') %}
+                        </a>
+                    </div>
+                </div>
+                <div class="row" id="view_links">
+                    <label class="col-md-3">{% helper lang.l('stat_view_type', 'banners') %}:</label>
+                    <div class="col-md-9">
+                        <a href="#" class="active">
+                            {% helper lang.l('stat_by_days', 'banners') %}
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">{% helper lang.l('stat_overall_views', 'banners') %}:</label>
+                    <div class="col-md-9">{{ statistic.all.view }}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">{% helper lang.l('stat_overall_clicks', 'banners') %}:</label>
+                    <div class="col-md-9">{{ statistic.all.click }}</div>
+                </div>
+            </div>
+
+            <div id="view_blocks">
+                <div id="by_days_div">
+                    <div id="jplot_div"></div>
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">{% helper lang.l('stat_week', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_views', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_clicks', 'banners') %}</th>
+                        </tr>
+                        {% for day, item in statistic.day %}
+                        <tr class="stat">
+                            <td class="first date">{{ item.date }}</td>
+                            <td class="text-center views">{{ item.view }}</td>
+                            <td class="text-center clicks">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    var viewPoints = [];
+                    var clicksPoints = [];
+                    $("#by_days_div tr.stat").each(function(){
+                        var date = $(this).find('td.date').text();
+                        var views = parseInt($(this).find('td.views').text());
+                        var clicks = parseInt($(this).find('td.clicks').text());
+                        viewPoints.push([date, views]);
+                        clicksPoints.push([date, clicks]);
+                    });
+
+                    var plot2 = $.jqplot ('jplot_div', [viewPoints, clicksPoints], {
+                        axesDefaults: { labelRenderer: $.jqplot.CanvasAxisTickRenderer },
+                        seriesDefaults:{ renderer:$.jqplot.BarRenderer, rendererOptions: {fillToZero: true} },
+                        legend: { show: true, placement: 'insideGrid' },
+                        series:[
+                            { lineWidth:5, markerOptions: { style:'dimaond' }, label: "{% helper lang.l('stat_views', 'banners', '', 'js') %}" },
+                            { lineWidth:2, markerOptions: { style:"filledSquare", size:10 }, label: "{% helper lang.l('stat_clicks', 'banners', '', 'js') %}" }
+                        ],
+                        axes: { xaxis: { label: "{% helper lang.l('stat_day', 'banners', '', 'js') %}", renderer: $.jqplot.CategoryAxisRenderer} },
+                        highlighter: { show: true, sizeAdjust: 7.5 },
+                        cursor: { show: false }
+                    });
+                });
+                </script>
+            </div>
+            {% endif %}
+
+            {% if stat_type == 'month' %}
+            <div class="filter-form">
+                <div class="row">
+                    <label class="col-md-3">{% helper lang.l('stat_month', 'banners') %}:</label>
+                    <div class="col-md-9">
+                        <a href="{{ navigation.prev }}">
+                            {% helper lang.l('nav_prev', 'start') %}
+                        </a> <b>{{ navigation.current }}</b>
+                        <a href="{{ navigation.next }}">{% helper lang.l('nav_next', 'start') %}</a>
+                    </div>
+                </div>
+                <div class="row" id="view_links">
+                    <label class="col-md-3">{% helper lang.l('stat_view_type', 'banners') %}:</label>
+                    <div class="col-md-9">
+                        <a href="#" class="active" id="by_weeks" onclick="switchView('by_weeks'); return false;">
+                            {% helper lang.l('stat_by_weeks', 'banners') %}
+                        </a>
+                        <a href="#" id="by_days" onclick="switchView('by_days'); return false;">
+                            {% helper lang.l('stat_by_days', 'banners') %}
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_overall_views', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        {{ statistic.all.view }}
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_overall_clicks', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        {{ statistic.all.click }}
+                    </div>
+                </div>
+            </div>
+
+            <div id="view_blocks">
+                <div id="by_weeks_div" >
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">
+                                {% helper lang.l('stat_week', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_views', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_clicks', 'banners') %}
+                            </th>
+                        </tr>
+                        {% for day, item in statistic.week %}
+                        <tr class="stat">
+                            <td class="first week">{{ item.start_day }} - {{ item.end_day }}</td>
+                            <td class="text-center views">{{ item.view }}</td>
+                            <td class="text-center clicks">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div id="by_days_div" style="display: none;">
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">
+                                {% helper lang.l('stat_week', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_views', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_clicks', 'banners') %}
+                            </th>
+                        </tr>
+                        {% for day, item in statistic.day %}
+                        <tr class="stat">
+                            <td class="first date">{{ item.date }}</td>
+                            <td class="text-center views">{{ item.view }}</td>
+                            <td class="text-center clicks">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if stat_type == 'year' %}
+            <div class="filter-form">
+                <div class="row">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_year', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        <a href="{{ navigation.prev }}">
+                            {% helper lang.l('nav_prev', 'start') %}
+                        </a> <b>{{ navigation.current }}</b>
+                        <a href="{{ navigation.next }}">
+                            {% helper lang.l('nav_next', 'start') %}
+                        </a>
+                    </div>
+                </div>
+                <div class="row" id="view_links">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_view_type', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        <a href="#" class="active" id="by_month" onclick="switchView('by_month'); return false;">
+                            {% helper lang.l('stat_by_month', 'banners') %}
+                        </a>
+                        <a href="#" id="by_weeks" onclick="switchView('by_weeks'); return false;">
+                            {% helper lang.l('stat_by_weeks', 'banners') %}
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_overall_views', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        {{ statistic.all.view }}
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-md-3">
+                        {% helper lang.l('stat_overall_clicks', 'banners') %}:
+                    </label>
+                    <div class="col-md-9">
+                        {{ statistic.all.click }}
+                    </div>
+                </div>
+            </div>
+
+            <div id="view_blocks">
+                <div id="by_month_div">
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">
+                                {% helper lang.l('stat_month', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_views', 'banners') %}
+                            </th>
+                            <th class="text-center">
+                                {% helper lang.l('stat_clicks', 'banners') %}
+                            </th>
+                        </tr>
+                        {% for day, item in statistic.month %}
+                        <tr>
+                                <td class="first">{{ item.month }}</td>
+                                <td class="text-center">{{ item.view }}</td>
+                                <td class="text-center">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div id="by_weeks_div" style="hide">
+                    <table cellspacing="0" cellpadding="0" class="table table-hover table-striped">
+                        <tr>
+                            <th class="first">{% helper lang.l('stat_week', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_views', 'banners') %}</th>
+                            <th class="text-center">{% helper lang.l('stat_clicks', 'banners') %}</th>
+                        </tr>
+                        {% for day, item in statistic.week %}
+                        <tr>
+                            <td class="first">{{ item.start_day }} - {{ item.end_day }}</td>
+                            <td class="text-center">{{ item.view }}</td>
+                            <td class="text-center">{{ item.click }}</td>
+                        </tr>
+                        {% endfor %}
+                        </table>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function switchView(id){
+        $("#view_links a").removeClass('active');
+        $("#view_blocks > div").hide();
+
+        $("#"+id).addClass('active');
+        $("#"+id+"_div").show();
+    }
+</script>
+
+{% include '@app/footer.twig' %}

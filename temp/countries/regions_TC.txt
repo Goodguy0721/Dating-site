@@ -1,0 +1,2 @@
+	3679	Cockburn Town	21.4612200	-71.1418800	TC	00	0	0	Cockburn Town	Cockburn Town	Cockburn Town	Cockburn Town	Cockburn Town	Cockburn Town
+	3679	Cockburn Harbour	21.4929300	-71.5330400	TC	00	0	0	Cockburn Harbour	Cockburn Harbour	Cockburn Harbour	Cockburn Harbour	Cockburn Harbour	Cockburn Harbour

@@ -1,0 +1,28 @@
+{% for key, edata in event.data %}
+	{% set id_dest_user=edata.id_dest_user %}
+    {% set favourite_user=attribute(users, id_dest_user) %}
+	{% if not attribute(users, id_dest_user) %}{% set id_dest_user=0 %}{% endif %}
+	<div>
+        {% helper date_format.tpl_date_format(edata.event_date, date_format) %}
+    </div>
+	<div>
+		<div class="user-content-inner clearfix">
+			<div class="image">
+                <a href="{% helper seo.seolink('users', 'view', favourite_user) %}">
+					<img src="{{ favourite_user.media.user_logo.thumbs.small }}" />
+				</a>
+			</div>
+			<div class="content">
+				{% helper lang.l('wall_events_and', 'favourites') %}&nbsp;
+				<a href="{% helper seo.seolink('users', 'view', favourite_user) %}">
+					{{ favourite_user.output_name }}
+				</a>&nbsp;
+				{% if event.event_type_gid == 'favourite_add' %}
+					{% helper lang.l('wall_now_favourites', 'favourites') %}
+				{% elseif event.event_type_gid == 'favourite_remove' %}
+					{% helper lang.l('wall_not_favourite', 'favourites') %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endfor %}

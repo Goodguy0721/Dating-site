@@ -1,0 +1,14 @@
+	600	Tonga	4.9666700	10.7000000	CM	08	0	0	Tonga	Tonga	Tonga	Tonga	Tonga	Tonga
+	600	Mbouda	5.6257800	10.2551700	CM	08	0	0	Mbouda	Mbouda	Mbouda	Mbouda	Mbouda	Mbouda
+	600	Foumbot	5.5078700	10.6356000	CM	08	0	0	Foumbot	Foumbot	Foumbot	Foumbot	Foumbot	Foumbot
+	600	Foumban	5.7291000	10.9001100	CM	08	0	0	Foumban	Foumban	Foumban	Foumban	Foumban	Foumban
+	600	Dschang	5.4439700	10.0533200	CM	08	0	0	Dschang	Dschang	Dschang	Dschang	Dschang	Dschang
+	600	Bazou	5.0600100	10.4675100	CM	08	0	0	Bazou	Bazou	Bazou	Bazou	Bazou	Bazou
+	600	Bansoa	5.4483600	10.3135500	CM	08	0	0	Bansoa	Bansoa	Bansoa	Bansoa	Bansoa	Bansoa
+	600	Ngou	5.1968500	10.3859500	CM	08	0	0	Ngou	Ngou	Ngou	Ngou	Ngou	Ngou
+	600	Bangangté	5.1407900	10.5253500	CM	08	0	0	Bangangté	Bangangté	Bangangté	Bangangté	Bangangté	Bangangté
+	600	Bandjoun	5.3756800	10.4132600	CM	08	0	0	Bandjoun	Bandjoun	Bandjoun	Bandjoun	Bandjoun	Bandjoun
+	600	Bana	5.1465500	10.2754500	CM	08	0	0	Bana	Bana	Bana	Bana	Bana	Bana
+	600	Bamendjou	5.3898800	10.3301400	CM	08	0	0	Bamendjou	Bamendjou	Bamendjou	Bamendjou	Bamendjou	Bamendjou
+	600	Bafoussam	5.4777500	10.4175900	CM	08	0	0	Bafoussam	Бафуссама	Bafoussam	Bafoussam	Bafoussam	Bafoussam
+	600	Bafang	5.1570500	10.1771000	CM	08	0	0	Bafang	Bafang	Bafang	Bafang	Bafang	Bafang

@@ -1,0 +1,65 @@
+.like-btn-block {
+	background: rgba(0, 0, 0, 0.05);
+    color: $link_color;
+    display: inline-block; 
+    border-radius: 3px; 
+    font-size: 12px; 
+    height: 21px;
+    line-height: 21px;
+    margin: 0 1px;
+    padding: 0 10px; 
+
+    &:hover {
+    	background: rgba(0, 0, 0, 0.1);
+    	text-decoration: none;
+    }
+    a {
+    	display: inline-block;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+.like_block{
+    position: relative;
+    &>*:nth-child(2) {
+        padding-left: 2px;
+    }
+}
+.like_users{
+    position: absolute; 
+    background-color: $html_bg; 
+    box-shadow: 0 0 2px 0 $delimiter_color;
+    border-radius: 5px;    
+    border: 1px solid $delimiter_color;
+    color: #FFFFFF; 
+    display: none; 
+    font-weight: bold; 
+    opacity: .9; 
+    padding: 5px; 
+    z-index: 1000; 
+    overflow-y: auto; 
+    max-height: 88px;
+    &>div{
+        max-width: 308px; 
+        min-width: 88px; 
+        min-height: 44px;
+        &.w-scroll{
+            max-width: 328px;
+        }
+    }
+    a{
+        color: #FFFFFF; 
+        margin: 2px; 
+        display: inline-block; 
+        width: 40px; 
+        height: 40px;
+    }
+    img{
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+        padding: 0;
+    }
+}

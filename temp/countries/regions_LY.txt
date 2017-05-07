@@ -1,0 +1,2 @@
+	1836	Tripoli	32.8751900	13.1874600	LY	77	0	0	Tripoli	Триполи	Tripoli	Tripoli	Tripoli	Tripoli
+	1836	Tagiura	32.8816700	13.3505600	LY	77	0	0	Tagiura	Tagiura	Tagiura	Tagiura	Tagiura	Tagiura

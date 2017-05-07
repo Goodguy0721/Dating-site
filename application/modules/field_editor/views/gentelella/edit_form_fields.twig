@@ -1,0 +1,74 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<ul class="nav nav-tabs bar_tabs">
+    {% helper menu.get_admin_level1_menu('admin_fields_menu') %}
+</ul>
+<div class="x_panel">
+    <div class="x_title h4">
+      {% helper lang.l('form_name', 'field_editor') %}: {{ data.name }}
+    </div>
+    <div id="actions form">
+      <div class="btn-group">
+        <a class="btn btn-primary" href="#" id="add_field_form" onclick="javascript: return false;">
+          {% helper lang.l('link_add_form_field', 'field_editor') %}</a>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#" onclick="javascript: $('#add_field_form').trigger('click'); return false;">
+                {% helper lang.l('link_add_form_field', 'field_editor') %}</a>
+          </li>
+          <li>
+            <a href="#" id="add_section_form" onclick="javascript: return false;">
+              {% helper lang.l('link_add_form_section', 'field_editor') %}</a>
+          </li>
+        {% if data.fields_data %}
+          <li>
+            <a href="#" id="sorting_form" onclick="javascript: return false;">
+              {% helper lang.l('link_save_sorting', 'field_editor') %}</a>
+          </li>
+        {% endif %}
+        </ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div id="menu_items">
+        <ul name="form_root" id="form_root" class="to_do"></ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="ln_solid"></div>
+
+    <div><a class="btn btn-default" href="{{ site_url }}admin/field_editor/forms/{{ data.editor_type_gid }}">
+      {% helper lang.l('btn_cancel', 'start') %}</a>
+    </div>
+
+</div>
+
+{% helper utils.jscript('field_editor', 'admin-form-fields-twig.js') %}
+
+<script type='text/javascript'>
+    var field_data = {% if data.field_data_json %}{{ data.field_data_json }}{% else %}[]{% endif %};
+    var field_names = {% if data.field_names_json %}{{ data.field_names_json }}{% else %}[]{% endif %};
+
+    $(function () {
+        new formFields({
+            siteUrl: '{{ site_url }}',
+            field_data: field_data,
+            field_names: field_names,
+            formId: '{{ data.id }}',
+            empty_fields: '{% helper lang.l("error_form_name_incorrect", "field_editor") %}',
+            textDelete: '{% helper lang.l("btn_delete", "start") %}',
+            textEdit: '{% helper lang.l("btn_edit", "start") %}',
+            textAdd: '{% helper lang.l("btn_add", "start") %}',
+        });
+    });
+</script>
+
+
+{% include '@app/footer.twig' %}

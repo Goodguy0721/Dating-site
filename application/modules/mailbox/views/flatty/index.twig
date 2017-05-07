@@ -1,0 +1,63 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+</div>
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper banners.show_banner_place('banner-320x250') %}
+        {% helper banners.show_banner_place('banner-320x75') %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+        {% helper banners.show_banner_place('banner-185x75') %}
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+	<div id="mailbox_content" class="mailbox_content">
+        {{ content }}
+    </div>
+    {% helper banners.show_banner_place('banner-980x90') %}
+</div>
+
+<div class="clr"></div>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('', 'available_view.js', 'path') %}",
+			function(){
+				read_message_available_view = new available_view({
+					siteUrl: site_url,
+					checkAvailableAjaxUrl: 'mailbox/ajax_available_read_message/',
+					buyAbilityAjaxUrl: 'mailbox/ajax_activate_read_message/',
+					buyAbilityFormId: 'ability_form',
+					buyAbilitySubmitId: 'ability_form_submit',
+					success_request: function(message){
+                        mb.read_message();
+                    },
+					fail_request: function(message){
+                        error_object.show_error_block(message, 'error');
+                    },
+				});
+			},
+			['read_message_available_view'],
+			{async: false}
+		);
+		loadScripts(
+			"{% helper utils.jscript('mailbox', 'mailbox.js', 'path') %}",
+			function(){
+				mb = new mailbox({
+					siteUrl: site_url,
+					folder: '{{ folder }}',
+					readAvailableView: read_message_available_view,
+				});
+			},
+			['mb'],
+			{async: false}
+		);
+	});
+</script>
+
+{% include '@app/footer.twig' %}

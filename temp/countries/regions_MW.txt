@@ -1,0 +1,15 @@
+	1971	Zomba	-15.3859600	35.3188000	MW	S	0	0	Zomba	Зомба	Zomba	Zomba	Zomba	Zomba
+	1971	Thyolo	-16.0677500	35.1404600	MW	S	0	0	Thyolo	Thyolo	Thyolo	Thyolo	Thyolo	Thyolo
+	1971	Phalombe	-15.8063500	35.6506700	MW	S	0	0	Phalombe	Phalombe	Phalombe	Phalombe	Phalombe	Phalombe
+	1971	Nsanje	-16.9199500	35.2619900	MW	S	0	0	Nsanje	Nsanje	Nsanje	Nsanje	Nsanje	Nsanje
+	1971	Mwanza	-15.6026200	34.5247900	MW	S	0	0	Mwanza	Mwanza	Mwanza	Mwanza	Mwanza	Mwanza
+	1971	Mulanje	-16.0316300	35.5000000	MW	S	0	0	Mulanje	Mulanje	Mulanje	Mulanje	Mulanje	Mulanje
+	1971	Monkey Bay	-14.0823900	34.9165200	MW	S	0	0	Monkey Bay	Monkey Bay	Monkey Bay	Monkey Bay	Monkey Bay	Monkey Bay
+	1971	Mangochi	-14.4781500	35.2644800	MW	S	0	0	Mangochi	Мангочи	Mangochi	Mangochi	Mangochi	Mangochi
+	1971	Machinga	-15.1684900	35.3000200	MW	S	0	0	Machinga	Machinga	Machinga	Machinga	Machinga	Machinga
+	1971	Luchenza	-16.0069300	35.3094800	MW	S	0	0	Luchenza	Luchenza	Luchenza	Luchenza	Luchenza	Luchenza
+	1971	Liwonde	-15.0666500	35.2254300	MW	S	0	0	Liwonde	Liwonde	Liwonde	Liwonde	Liwonde	Liwonde
+	1971	Chiradzulu	-15.6746100	35.1407100	MW	S	0	0	Chiradzulu	Chiradzulu	Chiradzulu	Chiradzulu	Chiradzulu	Chiradzulu
+	1971	Chikwawa	-16.0335200	34.8009100	MW	S	0	0	Chikwawa	Chikwawa	Chikwawa	Chikwawa	Chikwawa	Chikwawa
+	1971	Blantyre	-15.7849900	35.0085400	MW	S	0	0	Blantyre	Блантайр	Blantyre	Blantyre	Blantyre	Blantyre
+	1971	Balaka	-14.9792800	34.9557500	MW	S	0	0	Balaka	Балака	Balaka	Balaka	Balaka	Balaka

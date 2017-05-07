@@ -1,0 +1,190 @@
+{% include '@app/header.twig' %}
+
+<div class="menu-level2 hidden-xs">
+    <ul class="nav nav-tabs bar_tabs">
+        <li class="active"><a href="{{ site_url }}admin/themes/installed_themes">{% helper lang.l('header_installed_themes', 'themes') %}</a></li>
+        <li><a href="{{ site_url }}admin/themes/enable_themes">{% helper lang.l('header_enable_themes', 'themes') %}</a></li>
+    </ul>
+    &nbsp;
+</div>
+
+<div class="menu-level2 visible-xs">
+    <ul class="nav nav-tabs tabs-left">
+        <li class="active"><a href="{{ site_url }}admin/themes/installed_themes">{% helper lang.l('header_installed_themes', 'themes') %}</a></li>
+        <li><a href="{{ site_url }}admin/themes/enable_themes">{% helper lang.l('header_enable_themes', 'themes') %}</a></li>
+    </ul>
+    &nbsp;
+</div>
+
+<div class="x_panel">
+    <div class="menu-level3 hidden-xs">
+        <ul class="nav nav-tabs bar_tabs">
+            <li class="{% if type == 'user' %}active{% endif %}{% if not filter.user %} hide{% endif %}"><a href="{{ site_url }}admin/themes/installed_themes/user">{% helper lang.l('filter_user_themes', 'themes') %} ({{ filter.user }})</a></li>
+            <li class="{% if type == 'admin' %}active{% endif %}{%if not filter.admin %} hide{% endif %}"><a href="{{ site_url }}admin/themes/installed_themes/admin">{% helper lang.l('filter_admin_themes', 'themes') %} ({{ filter.admin }})</a></li>
+        </ul>
+        &nbsp;
+    </div>
+
+    <div class="menu-level3 visible-xs">
+        <ul class="nav nav-tabs tabs-left">
+            <li class="{% if type == 'user' %}active{% endif %}{% if not filter.user %} hide{% endif %}"><a href="{{ site_url }}admin/themes/installed_themes/user">{% helper lang.l('filter_user_themes', 'themes') %} ({{ filter.user }})</a></li>
+            <li class="{% if type == 'admin' %}active{% endif %}{%if not filter.admin %} hide{% endif %}"><a href="{{ site_url }}admin/themes/installed_themes/admin">{% helper lang.l('filter_admin_themes', 'themes') %} ({{ filter.admin }})</a></li>
+        </ul>
+        &nbsp;
+    </div>
+
+    <div id="actions" class="hide"></div>
+
+    <table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+        <thead>
+            <tr class="headings">
+                <th class="hidden-xs">&nbsp;</th>
+                <th>{% helper lang.l('field_theme', 'themes') %}</th>
+                <th class="hidden-xs">{% helper lang.l('field_description', 'themes') %}</th>
+                <th>{% helper lang.l('field_active', 'themes') %}</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for key, item in themes %}
+
+                <tr class="even pointer">
+                    <td class="hidden-xs">{% if item.img %}<img src="{{ item.img }}" class="img">{% endif %}</td>
+                    <td >
+                        {{ item.theme }}
+                        {% if item.default %}&nbsp;({% helper lang.l('field_default', 'themes') %}){% endif %}
+                    </td>
+                    <td class="hidden-xs"><b>{{ item.theme_name }}</b><br>{{ item.theme_description }}</td>
+                    <td>
+                        {% if item.active %}
+                            {% helper lang.l('btn_tableicon_is_active','start') %}
+                        {% else %}
+                            {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                        {% endif %}
+                    </td>
+                    <td class="icons">
+                        <div class="btn-group">
+                            {% if item.active %}
+                                {% if type == 'admin' %}
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.location.href = '{{ site_url }}admin/themes/view_installed/{{ item.id }}'">
+                                        {% helper lang.l('link_tableicon_view_theme', 'themes') %}
+                                    </button>                                    
+                                {% else %}
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.location.href = '{{ site_url }}admin/themes/preview/{{ item.theme }}'">
+                                        {% helper lang.l('link_preview_theme', 'themes') %}
+                                    </button>
+                                {% endif %}
+                            {% else %}
+                                <button type="button" class="btn btn-primary"
+                                        title="{% helper lang.l('link_activate_theme','themes') %}"
+                                        onclick="document.location.href = '{{ site_url }}admin/themes/activate/{{ item.id }}/1'">
+                                    {% helper lang.l('make_active','start') %}
+                                </button>
+                            {% endif %}
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% if not item.active %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/themes/activate/{{ item.id }}/1">
+                                            {% helper lang.l('make_active','start') %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                
+                                {% if type != 'admin' %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/themes/preview/{{ item.theme }}">
+                                            {% helper lang.l('link_preview_theme', 'themes') %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                
+                                <li>
+                                    <a href="{{ site_url }}admin/themes/view_installed/{{ item.id }}">
+                                        {% helper lang.l('link_tableicon_view_theme', 'themes') %}
+                                    </a>
+                                </li>
+                                {% if item.setable %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/themes/sets/{{ item.id }}">
+                                            {% helper lang.l('link_tableicon_sets_theme', 'themes') %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if not item.active and not item.default %}
+                                    <li>
+                                        {% helper note_uninstall = lang.l('note_uninstall_theme', 'themes', '' , js) %}
+                                        <a href="{{ site_url }}admin/themes/uninstall/{{ item.id }}"
+                                           onclick="javascript: if (!confirm('{{ note_uninstall }}'))
+                                                           return false;">
+                                            {% helper lang.l('link_uninstall_theme', 'themes') %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+                                                   var asInitVals = new Array();
+                                                   $(document).ready(function () {
+                                                       var oTable = $('#data').dataTable({
+                                                           "oLanguage": {
+                                                               "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                                                               "sEmptyTable": "{% helper lang.l('no_themes','themes') %}"
+                                                           },
+                                                           "aoColumnDefs": [
+                                                               {
+                                                                   'bSortable': false,
+                                                                   'aTargets': []
+                                                               } //disables sorting for column one
+                                                           ],
+                                                           'iDisplayLength': 10,
+                                                           "bPaginate": false,
+                                                           "bInfo": false,
+                                                           "bSort": false,
+                                                           "bFilter": false,
+                                                           "dom": 'T<"clear"><"actions">lfrtip',
+                                                       });
+                                                       $("tfoot input").keyup(function () {
+                                                           /* Filter on the column based on the index of this element's parent <th> */
+                                                           oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+                                                       });
+                                                       $("tfoot input").each(function (i) {
+                                                           asInitVals[i] = this.value;
+                                                       });
+                                                       $("tfoot input").focus(function () {
+                                                           if (this.className == "search_init") {
+                                                               this.className = "";
+                                                               this.value = "";
+                                                           }
+                                                       });
+                                                       $("tfoot input").blur(function (i) {
+                                                           if (this.value == "") {
+                                                               this.className = "search_init";
+                                                               this.value = asInitVals[$("tfoot input").index(this)];
+                                                           }
+                                                       });
+                                                       var actions = $("#actions");
+                                                       $('#data_wrapper').find('.actions').html(actions.html());
+                                                       actions.remove();
+                                                   });
+</script>
+
+{% include '@app/footer.twig' %}

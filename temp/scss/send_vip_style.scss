@@ -1,0 +1,65 @@
+.send-vip-form-wrapper {
+    padding: 20px;
+}
+.send-vip-form-wrapper > h1 {
+    margin-bottom: 20px;
+}
+.send-vip-select-user, .send-vip-amount-input > div {
+    padding-right: 0;
+}
+.send-vip-for-friends > label {
+    margin:24px 0;
+}
+.send-vip-for-friends input {
+    margin: 2px -20px 0;
+}
+@media (max-width: 991px){
+    .send-vip-for-friends > label {
+        margin-top: 0;
+    }
+}
+.send-vip-form #output {
+    display: inline;
+}
+.send-vip-btn {
+    margin-top: 17px;
+}
+.send-vip-fee {
+    margin-top: 10px;
+}
+.memberships-block div {
+    padding: 2px;
+}
+.memberships-block h3 {
+    text-align: center;
+    font-size: 15pt;
+}
+.memberships-block .info, .memberships-block .services_names,
+.memberships-block .membership_options {
+    border-bottom: 1px solid #dedede;
+}
+.memberships-block .memberships-table {
+    text-align: right;
+}
+.payment_table div {
+    padding: 3px;
+}
+.payment_table {
+    width: 40%;
+    border-radius: 4px;
+}
+.payment-table-values div {
+    text-align: center;
+}
+@media (max-width: 690px){
+    .payment_table {
+        width: 100%;
+        margin: 0;
+    }
+    .payment-table-values {
+        margin: 0;
+    }
+}
+.donate-payment-btns {
+    margin-top: 20px;
+}

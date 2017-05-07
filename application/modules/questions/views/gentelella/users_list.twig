@@ -1,0 +1,161 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_questions_menu') %}
+            </ul>
+        </div>
+    </div>
+    <div class="x_content">
+      <div id="actions" class="hide">
+        <div class="btn-group">
+          <a id="delete-all" type="button" class="btn btn-primary">
+              {% helper lang.l('delete_selected', 'questions') %}
+          </a>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a onclick="$('#delete-all').trigger('click'); return false;" type="button">
+                  {% helper lang.l('delete_selected', 'questions') %}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <form method="post" enctype="multipart/form-data" data-parsley-validate
+              class="form-horizontal form-label-left" name="deleteForm"
+              action="{{ site_url }}admin/questions/delete_user_question">
+            <table id="users" class="table table-striped responsive-utilities jambo_table tableflat bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('user_from', 'questions') %}</th>
+                        <th class="column-title">{% helper lang.l('user_to', 'questions') %}</th>
+                        <th class="column-title">{% helper lang.l('field_name', 'questions') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="6">
+                            {#}<a href="javascript: return false;" class="info-number" id='delete-all'
+                                style="position: absolute; top: 40px; color:#fff; font-weight:500;">
+                                {% helper lang.l('delete_selected', 'questions') %} ( <span class="action-cnt"> </span> )
+                            </a>#}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in questions %}
+                    <tr>
+                        <td class="">
+                            <input class="tableflat grouping" type="checkbox" name="delete_questions[{{ question.id }}]" data="table_records">
+                        </td>
+                        <td>{{ question.user_from }}</td>
+                        <td>{{ question.user_to }}</td>
+                        <td>{{ question.name }}</td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            <button onclick="javascript: if (!confirm('{% helper lang.l('admin_confirm_delete', 'questions') %}')) return false; else
+                                    document.location.href='{{ site_url }}admin/questions/delete_user_question/{{ question.id }}'"
+                                    class='btn btn-primary' type='button'>
+                                {% helper lang.l('btn_delete','start') %}
+                            </button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a onclick="javascript: if (!confirm('{% helper lang.l('admin_confirm_delete', 'questions') %}')) return false; else
+                                        document.location.href='{{ site_url }}admin/questions/delete_user_question/{{ question.id }}'">
+                                    {% helper lang.l('btn_delete','start') %}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+        </form>
+    </div>
+</div>
+
+<script type='text/javascript'>
+$(document).off('click', '#delete-all').on('click', '#delete-all', function () {
+    var data = new Array();
+    $('.grouping:checked').each(function(i){
+        data[i] = $(this).val();
+    });
+    if (data.length > 0) {
+        if (!confirm('{% helper lang.l('admin_mass_confirm_delete', 'questions') %}')) {
+            return false;
+        } else {
+            deleteForm.submit();
+        }
+    } else {
+        error_object.show_error_block('{% helper lang.l('no_questions_selected', 'questions') %}', 'error');
+    }
+});
+
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_questions','questions') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

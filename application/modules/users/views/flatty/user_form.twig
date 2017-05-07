@@ -1,0 +1,259 @@
+{% set user_form_block %}
+    <div class="view-user__edit">
+        <span class="user-profile-promo-text" style="text-shadow: none; font-family: inherit;">
+            {% helper lang.l('promo_text', 'users') %}
+        </span>
+        <form method="post" enctype="multipart/form-data">
+            {% if action == 'personal' %}
+                {% if not not_editable_fields.user_type %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_user_type', 'users') %}:
+                        </label>
+                        <div>
+                            <select name="user_type" class="form-control">
+                                {% for key, item in user_types.option %}
+                                    <option value="{{ key }}"
+                                            {% if key == data.user_type or (not data.user_type and key == 2) %}selected{% endif %}>
+                                        {{ item }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not not_editable_fields.looking_user_type %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_looking_user_type', 'users') %}:
+                        </label>
+                        <div>
+                            <select name="looking_user_type" class="form-control">
+                                {% for key, item in user_types.option %}
+                                    <option value="{{ key }}"
+                                            {% if key == data.looking_user_type or (not data.looking_user_type and key == 2) %}selected{% endif %}>
+                                        {{ item }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not not_editable_fields.age_min and not not_editable_fields.age_max %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_partner_age', 'users') %}:
+                        </label>
+                        <div>
+                            {% if not not_editable_fields.age_min %}
+                                <div class="fleft" style="width: 45%;">
+                                    <select name="age_min" class="short form-control">
+                                        {% for age in age_range %}
+                                            <option value="{{ age }}" {% if age == data.age_min %}selected{% endif %}>
+                                                {{ age }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            {% endif %}
+                            <div class="fleft" style="width:10%; text-align: center; line-height: 34px;">&mdash;</div>
+                            {% if not not_editable_fields.age_max %}
+                                <div class="fleft" style="width: 45%;">
+                                    <select name="age_max" class="short form-control">
+                                        {% for age in age_range %}
+                                            <option value="{{ age }}" {% if age == data.age_max %}selected{% endif %}>
+                                                {{ age }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not not_editable_fields.nickname %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_nickname', 'users') %}:
+                        </label>
+                        <div>
+                            <input type="text" name="nickname" value="{{ data.nickname|e }}" class="form-control">
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not not_editable_fields.fname %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_fname', 'users') %}:
+                        </label>
+                        <div>
+                            <input type="text" name="fname" value="{{ data.fname|e }}" class="form-control">
+                        </div>
+                    </div>
+                {% endif %}
+                {% if not not_editable_fields.sname %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('field_sname', 'users') %}:
+                        </label>
+                        <div>
+                            <input type="text" name="sname" value="{{ data.sname|e }}" class="form-control">
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="form-group clearfix">
+                    <label for="">
+                        {% helper lang.l('field_icon', 'users') %}:
+                    </label>
+                    <div>
+                        <span class="btn btn-primary btn-file">
+                            {% helper lang.l('upload_photo', 'users') %}<input type="file" name="user_icon" accept="image/*;capture=camera">
+                        </span>
+                        {% if data.user_logo or data.user_logo_moderation %}<br>
+                            <input type="checkbox" name="user_icon_delete" value="1" id="uichb">
+                            <label for="uichb">
+                                {% helper lang.l('field_icon_delete', 'users') %}
+                            </label><br>
+
+                            {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', data) %}
+                            {% if data.user_logo_moderation %}
+                                <img src="{{ data.media.user_logo_moderation.thumbs.middle }}"
+                                     alt="{{ text_user_logo }}" title="{{ text_user_logo }}">
+                            {% else %}
+                                <img src="{{ data.media.user_logo.thumbs.middle }}"
+                                     alt="{{ text_user_logo }}" title="{{ text_user_logo }}">
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% if not not_editable_fields.birth_date %}
+                    <div class="form-group clearfix">
+                        <label for="">
+                            {% helper lang.l('birth_date', 'users') %}:
+                        </label>
+                        <div>
+                            <input type="text" value="{{ data.birth_date|e }}" name="birth_date" id="datepicker" maxlength="10" class="form-control">
+                        </div>
+                    </div>
+                {% else %}
+                     <input type="hidden" value="{{ data.birth_date|e }}" name="birth_date">
+                {% endif %}
+
+                {# <custom_M> #}
+                <div class="form-group clearfix">
+                    <label for="">
+                        {% helper lang.l('field_living_with', 'users') %}:
+                    </label>
+                    <div>
+                        {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                        {#<select name="living_with" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in living_with.option %}
+                                <option value="{{key}}" {% if key == data.living_with %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>#}
+                        <select name="living_with[]" multiple class="form-control">
+                            {% for key, item in living_with.option %}
+                                <option value="{{ key }}" {% helper utils.inArray(key, data.living_with, 'selected') %}>
+                                    {{ item }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <span style="font-style: italic;">
+                            {% helper lang.l('text_living_with_tip', 'users') %}
+                        </span>
+                    </div>
+                </div>
+                {# </custom_M> #}
+
+                <div class="form-group clearfix">
+                    <label for="">
+                        {% helper lang.l('field_region', 'users') %}:
+                    </label>
+                    <div>
+                        {% helper countries.location_select({
+                                'module': 'countries',
+                                'select_type': 'city',
+                                'id_country': data.id_country,
+                                'id_region': data.id_region,
+                                'id_city': data.id_city,
+                                'var_country_name': 'id_country',
+                                'var_region_name': 'id_region',
+                                'var_city_name': 'id_city'
+                            }) %}
+                    </div>
+                    <input type="hidden" name="lat" value="{{ data.lat|e }}" id="lat">
+                    <input type="hidden" name="lon" value="{{ data.lon|e }}" id="lon">
+                </div>
+            {% else %}
+                {% include 'custom_form_fields.twig' %}
+            {% endif %}
+
+            <div class="form-group">
+                <div>
+                    {% if edit_mode %}
+                        <input type="submit" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" name="btn_register" class="btn btn-primary">
+                    {% else %}
+                        <input type="submit" value="{% helper lang.l('btn_register', 'start', '', 'button') %}" name="btn_register" class="btn btn-primary">
+                    {% endif %}
+                    {% helper profile_section_name = lang.l('filter_section_view', 'users') %}&nbsp;
+                    <a href="{% helper seo.seolink('users', 'profile', {'section-code': 'view', 'section-name': profile_section_name}) %}" class="btn btn-cancel">
+                        <i class="icon icon-arrow-left icon-big edge hover"></i>
+                        {% helper lang.l('btn_back', 'start') %}
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% helper is_module_installed = utils.depends('geomap') %}
+    {% if is_module_installed.geomap %}
+        {% helper geomap.geomap_load_geocoder() %}
+    {% endif %}
+
+    <script>
+        $(function () {
+            {% if not empty(age_max) and not empty(age_min) %}
+                var now = new Date();
+                        var yr = (new Date(now.getFullYear() - {{ age_max }}, 0, 1).getFullYear()) + ':' +
+                        (new Date(now.getFullYear() - {{ age_min }}, 0, 1).getFullYear());
+                        $("#datepicker").datepicker({
+                    dateFormat: 'yy-mm-dd',
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: yr
+                });
+            {% endif %}
+            $("input[name=user_icon]").change(function(){
+                $(this).parent().after('&nbsp;' + $(this).val());
+            });
+            loadScripts(
+                    ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                    function () {
+                        users_map = new usersMap({
+                            siteUrl: site_url,
+                        });
+                    },
+                    ['users_map'],
+                    {async: true}
+            );
+        });
+    </script>
+{% endset %}
+
+<div class="user-profile-view">
+    {% include 'my_profile_left_block.twig' with {is_owner: true} %}
+    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+        <div class="description">
+            {% set action='details' %}
+            {% include 'profile_menu.twig' %}
+            <div class="view-user clearfix">
+                {{ user_form_block }}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="attending">
+        </div>
+    </div>
+</div>

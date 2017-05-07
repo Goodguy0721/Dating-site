@@ -1,0 +1,118 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class='x_title'>
+            <h2>
+                {% helper lang.l('admin_header_template_edit', 'notifications') %}
+            </h2>
+            <div class='clearfix'></div>
+        </div>
+
+        <div class="x_content">
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_template_gid', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% if allow_edit %}
+                            <input type="text" value="{{ data.gid }}" name="gid" class="form-control">
+                        {% else %}
+                            <label class="data-label">
+                                {{ data.gid }}
+                            </label>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_notification_name', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input value="{% if validate_lang %}{% spaceless %}{{ validate_lang[cur_lang] }}
+                                      {% endspaceless %}{% else %}{% spaceless %}{% helper lang.l(data.name_i, 'notifications', cur_lang) %}
+                                      {% endspaceless %}{% endif %}"
+                               type="text" name="langs[{{ cur_lang }}]" class="form-control">
+                        {% if languages_count > 1 %}
+                            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel">
+                                    <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
+                                       data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                    </a>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            {% for lang_id, item in languages %}
+                                                {% if lang_id != cur_lang %}
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                        <div class="col-md-10 col-sm-10 col-xs-12">
+                                                            <input type="text" name="langs[{{ lang_id }}]" class="form-control"
+                                                                   value="{% if validate_lang %}{% spaceless %}{{ validate_lang[lang_id] }}
+                                                                          {% endspaceless %}{% else %}{% spaceless %}
+                                                                              {% helper lang.l(data.name_i, 'notifications', lang_id) %}
+                                                                          {% endspaceless %}{% endif %}">
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_send_type', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                            <select name="send_type" class="form-control">
+                                <option value="que" {% if data.send_type == 'que' %}selected{% endif %}>
+                                    {% helper lang.l('field_send_type_que', 'notifications') %}
+                                </option>
+                                <option value="simple" {% if data.send_type == 'simple' %}selected{% endif %}>
+                                    {% helper lang.l('field_send_type_simple', 'notifications') %}
+                                </option>
+                            </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_default_template', 'notifications') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="id_template_default" class="form-control">
+                            {% for item in templates %}
+                                <option {% if data.id_template_default == item.id %}selected{% endif %}
+                                        value="{{ item.id }}">
+                                    {{ item.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-sm-offset-3">
+                        <input value="{% helper lang.l('btn_save','start','','button') %}"
+                               type="submit" name="btn_save"  class="btn btn-success">
+                        <a class="btn btn-default cancel" href="{{site_url}}admin/notifications/index">
+                            {% helper lang.l('btn_cancel','start') %}
+                        </a>
+                    </div>
+                    <div class='clearfix'></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

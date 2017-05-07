@@ -1,0 +1,3 @@
+	2892	Kibuye	-2.0602800	29.3477800	RW	14	0	0	Kibuye	Кибуе	Kibuye	Kibuye	Kibuye	Kibuye
+	2892	Cyangugu	-2.4846000	28.9075000	RW	14	0	0	Cyangugu	Сиангугу	Cyangugu	Cyangugu	Cyangugu	Cyangugu
+	2892	Gisenyi	-1.7027800	29.2563900	RW	14	0	0	Gisenyi	Гисеньи	Gisenyi	Gisenyi	Gisenyi	Gisenyi

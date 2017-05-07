@@ -1,0 +1,24 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    <div class="view small">
+        <div class="col-xs-12 col-sm-2">
+            <div class="image">
+                <div class="mb20">
+                    {% set text_profile_deleted %}
+                        {% helper lang.l('profile_deleted', 'users', '', 'button') %}
+                    {% endset %}
+                    <img class="img-rounded img-responsive" src="{{ data.img }}" alt="{{ text_profile_deleted }}" title="{{ text_profile_deleted }}" />
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-10">
+            <h1>
+                {% helper lang.l('profile_deleted', 'users') %}
+            </h1>
+        </div>
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

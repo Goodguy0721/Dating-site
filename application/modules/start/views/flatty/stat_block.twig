@@ -1,0 +1,8 @@
+<div class="stat-block">
+	<div class="inside">
+		{% helper lang.l('today_on_site', 'start') %}:
+        {% for item in stat %}
+            {{ item.object_name }} {{ item.count }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+	</div>
+</div>

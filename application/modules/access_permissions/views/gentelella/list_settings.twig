@@ -1,0 +1,17 @@
+<div class="" role="tabpanel" data-example-id="togglable-tabs">
+    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+        {% for item in  subscription_type %} 
+            {% if item.data %}
+                {% if item.type == 'user_types' %}
+                    {% helper access_permissions.additionalMenu(role) %}
+                 {% endif %}
+                {% helper menu.get_admin_level1_menu('admin_access_' ~ item.type ~ '_menu') %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+<div class="x_content">
+    {% helper access_permissions.subscriptionType(role) %}
+    {% helper access_permissions.permissions(role) %}
+    {% helper access_permissions.validityPeriods(role) %}
+</div>

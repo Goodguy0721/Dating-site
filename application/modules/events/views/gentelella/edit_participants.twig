@@ -1,0 +1,232 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default" id="events_edit_main_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_main/{{ event_id }}'">
+                        {% helper lang.l('menu_edit_main_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default active" id="events_edit_participants_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_participants/{{ event_id }}'">
+                        {% helper lang.l('menu_edit_participants_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default" id="events_edit_album_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/media_list/{{ event_id }}'">
+                        {% helper lang.l('menu_edit_album_item', 'events') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+                    
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                
+                <li class="{% if filter == 'all' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/events/edit_participants/{{ event_id }}/all">
+                        {% helper lang.l('filter_all_events', 'events') %} ({{ filter_data.all }})
+                    </a>
+                </li>
+                
+                <li class="{% if filter == 'approved' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/events/edit_participants/{{ event_id }}/approved">
+                        {% helper lang.l('filter_approved_events', 'events') %} ({{ filter_data.approved }})
+                    </a>
+                </li>
+                
+                <li class="{% if filter == 'pending' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/events/edit_participants/{{ event_id }}/pending">
+                        {% helper lang.l('filter_pending_events', 'events') %} ({{ filter_data.pending }})
+                    </a>
+                </li>
+                
+                <li class="{% if filter == 'declined' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/events/edit_participants/{{ event_id }}/declined">
+                        {% helper lang.l('filter_declined_events', 'events') %} ({{ filter_data.declined }})
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+                    
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" id="participants_form">
+                
+                <div id="actions" class="hide">
+                    <div class="btn-group">
+                        <a href="{{ site_url }}admin/events/add_participants/{{ event_id }}" class="btn btn-primary">
+                            {% helper lang.l('link_invite_participant', 'events') %}
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ site_url }}admin/events/add_participants/{{ event_id }}">
+                                    {% helper lang.l('link_invite_participant', 'events') %}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ site_url }}admin/events/deleteParticipantSelect/" id="delete_selected">
+                                    {% helper lang.l('link_delete_selected', 'events') %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <table id="participants" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-title"><input type="checkbox" id="check-all" class="flat"></th>
+                            <th class="column-title">{% helper lang.l('field_name', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_status', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_date_response', 'events') %}</th>
+                            <th class="column-title">{% helper lang.l('field_actions', 'events') %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for participant in participants %}
+                        <tr>
+                            <td><input type="checkbox" class="tableflat grouping" data="table_records" value="{{ participant.id }}" name="ids[]"></td>
+                            <td><a href="{{ site_url }}admin/users/edit/personal/{{ participant.fk_user_id }}">{{ participant.user.nickname }}</a><br>{{ participant.user.fname }} {{ participant.user.sname }}</td>
+                            <td>{{ participant.status }}</td>
+                            <td>{{ participant.response_date }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    
+
+                                    <button type="button"
+                                        class="btn btn-primary" title="{% helper lang.l('btn_delete','start') %}"
+                                        onclick = "if(!confirm('{% helper lang.l('note_alert_delete_participant','events') %}')) { return false; } document.location.href='{{ site_url }}admin/events/deleteParticipant/{{ participant.id }}'">
+                                            {% helper lang.l('btn_delete','start') %}
+                                    </button>
+
+
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    
+                                    <ul class="dropdown-menu">
+                                        
+                                        
+                                        {% if participant.status == 'pending' %}
+                                            <li>
+                                                <a title="{% helper lang.l('link_accept_participant', 'events') %}" href="{{ site_url }}admin/events/participant_status/{{ event_id }}/{{ participant.user.id }}/approved">
+                                                    {% helper lang.l('link_accept_participant','events') %}
+                                                </a>
+                                            </li>                                            
+                                            <li>
+                                                <a title="{% helper lang.l('link_decline_participant', 'events') %}" href="{{ site_url }}admin/events/participant_status/{{ event_id }}/{{ participant.user.id }}/declined">
+                                                    {% helper lang.l('link_decline_participant','events') %}
+                                                </a>
+                                            </li>                                            
+                                        {% elseif participant.status == 'approved' %}
+                                            
+                                        {% endif %}
+
+                                        
+                                        <li>
+                                            <a title="{% helper lang.l('link_connect_participant', 'events') %}" href="{{ site_url }}admin/tickets/answer/{{ participant.user.id }}">
+                                                {% helper lang.l('link_connect_participant','events') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a title="{% helper lang.l('link_remind_participant', 'events') %}" href="{{ site_url }}admin/events/remindParticipant/{{ participant.user.id }}">
+                                                {% helper lang.l('link_remind_participant','events') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a title="{% helper lang.l('btn_delete', 'start') %}" href="{{ site_url }}admin/events/deleteParticipant/{{ participant.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#participants').dataTable({
+            "oLanguage": {
+                "sSearch": "Search all columns:"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+        
+        var actions = $("#actions").removeClass('hide');
+        $('#participants_wrapper .actions').html(actions);
+        
+        $('#delete_selected').off().on('click', function(){
+            if(!$('input[type=checkbox].grouping').is(':checked')) return false; 
+            if(!confirm('{% helper lang.l('note_alert_delete_participants_all', 'events', '', 'js') %}')) return false;
+            $('#participants_form').attr('action', $(this).attr('href')).submit();		
+            return false;
+	});
+        
+    });
+
+</script>
+
+{% include '@app/footer.twig' %}
+
+

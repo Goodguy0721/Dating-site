@@ -1,0 +1,1 @@
+DELETE FROM `[prefix]themes` WHERE id=3 AND theme='flatty';

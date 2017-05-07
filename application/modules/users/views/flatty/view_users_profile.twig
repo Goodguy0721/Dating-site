@@ -1,0 +1,364 @@
+{% set please_ask_me = 'Please ask me' %}
+{% set no_preference = 'No preference' %}
+
+{# Main section #}
+<div class="view-section profile-section">
+  <div class="form-group">
+    <label>Profile headline: </label>
+    <span id="headline-field-label">{% if data.headline %}{{ data.headline_str }}{% else %}{{ please_ask_me }}{% endif %}</span>
+  </div>
+
+  <div class="form-group">
+    <label>About me: </label>
+    <span id="about-me-field-label">{% if data.about_me %}{{ data.about_me_str }}{% else %}{{ please_ask_me }}{% endif %}</span>
+  </div>
+
+  <div class="form-group">
+    <label>About my match / friends: </label>
+    <span id="looking-about-field-label">{% if data.looking_about %}{{ data.looking_about_str }}{% else %}{{ no_preference }}{% endif %}</span>
+  </div>
+</div>
+
+{# Basic section #}
+<div class="view-section profile-section" id="basic">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Basic info</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Living with</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="living-with-field-label">{{ data.living_with_str }}</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-living-with-field-label">{{ data.looking_living_with_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Age</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="age-field-label">{{ data.age }}</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="age-min-age-max-field-label">{{ data.age_min_age_max_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Gender</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="user-type-field-label">{{ data.user_type_str }}</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-user-type-field-label">{{ data.looking_user_type_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Relationship status</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="relationship-satus-field-label">{{ data.relationship_status_str }}</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-relationship-satus-field-label">{{ data.looking_relationship_status_str }}</span>
+    </div>
+  </div>
+</div>
+
+{# Appearance section #}
+<div class="view-section profile-section" id="appearance">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Appearance</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Height</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="height-field-label">{{ data.height_str }}</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="height-min-height-max-field-label">{{ data.height_min_height_max_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Physical appearance</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="physical-appearance-field-label">{{ data.physical_appearance_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-physical-appearance-field-label">{{ data.looking_physical_appearance_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Eye color</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="eye-color-field-label">{{ data.eye_color_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-eye-color-field-label">{{ data.looking_eye_color_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Hair color</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="hair-color-field-label">{{ data.hair_color_str }}</span>
+      <input id="hair-color-field-value" type="hidden" value="{{ data.hair_color }}">
+      <div id="hair-color-field-edit" class="hide">
+        <select name="hair_color" class="form-control" id="hair-color-field-edit-val">
+          {% for option_gid, option_name in hair_color_options %}
+          <option value="{{ option_gid }}" {% if data.hair_color == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-hair-color-field-label">{{ data.looking_hair_color_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Body type</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="body-type-field-label">{{ data.body_type_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-body-type-field-label">{{ data.looking_body_type_str }}</span>
+    </div>
+  </div>
+</div>
+
+{# Background section #}
+<div class="view-section profile-section" id="background">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Background</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Ethnicity</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="ethnicity-field-label">{{ data.ethnicity_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-ethnicity-field-label">{{ data.looking_ethnicity_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Religion</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="religion-field-label">{{ data.religion_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-religion-field-label">{{ data.looking_religion_str }}</span>
+    </div>
+  </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Language</label>
+    </div>
+    <div class="col-xs-4">
+      <span id="language-field-label">English</span>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-language-field-label">English</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Education</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="education-field-label">{{ data.education_str }}</span>
+      <input id="education-field-value" type="hidden" value="{{ data.education }}">
+      <div id="education-field-edit" class="hide">
+        <select name="education" class="form-control" id="education-field-edit-val">
+          {% for option_gid, option_name in education_options %}
+          <option value="{{ option_gid }}" {% if data.education == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-education-field-label">{{ data.looking_education_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Political beliefs</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="political-beliefs-field-label">{{ data.political_beliefs_str }}</span>
+      <input id="political-beliefs-field-value" type="hidden" value="{{ data.political_beliefs }}">
+      <div id="political-beliefs-field-edit" class="hide">
+        <select name="political_beliefs" class="form-control" id="political-beliefs-field-edit-val">
+          {% for option_gid, option_name in political_beliefs_options %}
+          <option value="{{ option_gid }}" {% if data.political_beliefs == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-political-beliefs-field-label">{{ data.looking_political_beliefs_str }}</span>
+    </div>
+  </div>
+</div>
+
+{# Lifestyle section #}
+<div class="view-section profile-section" id="lifestyle">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Lifestyle</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Occupation</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="occupation-field-label">{{ data.occupation_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-occupation-field-label">{{ data.looking_occupation_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Annual income</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="annual-income-field-label">{{ data.annual_income_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-annual-income-field-label">{{ data.looking_annual_income_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Drinking</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="drinking-field-label">{{ data.drinking_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-drinking-field-label">{{ data.looking_drinking_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Smoking</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="smoking-field-label">{{ data.smoking_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-smoking-field-label">{{ data.looking_smoking_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Have children</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="have-children-field-label">{{ data.have_children_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-have-children-field-label">{{ data.looking_have_children_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Want children</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="want-children-field-label">{{ data.want_children_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-want-children-field-label">{{ data.looking_want_children_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Have pets</label>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="have-pets-field-label">{{ data.have_pets_str }}</span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-have-pets-field-label">{{ data.looking_have_pets_str }}</span>
+    </div>
+  </div>
+</div>
+
+{# Others section #}
+<div class="view-section profile-section" id="others">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-12">
+      Others</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Looking for</label>
+    </div>
+    <div class="col-xs-8">
+      <span id="looking-for-field-label">{{ data.looking_for_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Prefer my match / friend within</label>
+    </div>
+    <div class="col-xs-8">
+      <span id="looking-distance-field-label">{{ data.looking_distance_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>The music I enjoy listening to</label>
+    </div>
+    <div class="col-xs-8 no-information">
+      <span id="listening-music-field-label">{{ data.listening_music_str }}</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Astrological sign</label>
+    </div>
+    <div class="col-xs-8">
+      <span id="astrological-sign-field-label">{{ data.astrological_sign_str }}</span>
+    </div>
+  </div>
+</div>

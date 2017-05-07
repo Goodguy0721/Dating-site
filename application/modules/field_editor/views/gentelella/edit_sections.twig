@@ -1,0 +1,75 @@
+{% include '@app/header.twig' %}
+
+<form method="post" action="{{ data.action|escape }}" name="save_form" enctype="multipart/form-data" class="form-horizontal">
+    <div class="x_panel">
+        <div class="x_title h4">
+            {% if data.id %}
+                {% helper lang.l('admin_header_section_change', 'field_editor') %}
+            {% else %}
+                {% helper lang.l('admin_header_section_add', 'field_editor') %}
+            {% endif %}
+        </div>
+        <div class="x_content">
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_gid', 'field_editor') %}: </label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                {% if data.id %}
+                  <input type="hidden" value="{{ data.gid|escape }}" name="gid" class="form-control">{{ data.gid }}
+                {% else %}
+                  <input type="text" value="{{ data.gid|escape }}" name="gid" class="form-control">
+                {% endif %}
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_name', 'field_editor') %}: </label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" class="form-control" value="{% if validate_lang %}{{ validate_lang[cur_lang]|escape }}{% else %}{{ data.name|escape }}{% endif %}" name="langs[{{ cur_lang }}]">
+                </div>
+                    {% if languages_count > 1 %}<div class="clearfix"></div>
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3"
+                         id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">
+                                    {% helper lang.l('others_languages', 'field_editor') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                            {% for lang_id, item in languages %}
+                                {% if lang_id != cur_lang %}
+                                  <div class="form-group">
+                                      <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                      <div class="col-md-10 col-sm-10 col-xs-12">
+                                        <input type="text" class="form-control" value="{% if validate_lang.lang_id %}{{ validate_lang[lang_id]|escape }}{% else %}{{ data.name|escape }}{% endif %}" name="langs[{{ lang_id|escape }}]">
+                                      </div>
+                                  </div>
+                                {% endif %}
+                            {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-12col-md-offset-3 col-sm-offset-3">
+                    <button class="btn btn-success" type="submit" name="btn_save" value="1">
+                      {% helper lang.l('btn_save', 'start') %}</button>
+                    <a class="btn btn-default" href="{{ site_url }}admin/field_editor/sections">
+                      {% helper lang.l('btn_cancel', 'start') %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    function showLangs(divId) {
+        $('#' + divId).slideToggle();
+    }
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,48 @@
+<form class="poll_form" name="poll_form" action="" method="post">
+    <input name="poll_id" type="hidden" value="{{ poll_data.id }}" />
+    <div class="question_{{ poll_data.id }}">
+        {% for key, item in poll_data.answers_colors %}
+            <div class="poll-form-item">
+                {% if language %}
+                    {% set language_item = key ~ '_' ~ language %}
+                {% else %}
+                    {% set language_item = key ~ '_' ~ cur_lang %}
+                {% endif %}
+                {% if not poll_data.answers_languages[language_item] %}
+                    {% set language_item = key ~ '_default' %}
+                {% endif %}
+                <label for="a_{{ poll_data.id }}_{{ key }}">
+                    {{ poll_data.answers_languages[language_item] }}
+                </label>
+                {% if poll_data.answer_type %}
+                    <input id="a_{{ poll_data.id }}_{{ key }}"
+                           class="answer answer_{{ poll_data.id }}_{{ key }} fright"
+                           type="checkbox" value="{{ key }}" name="answer[{{ key }}]">
+                {% else %}
+                    <input id="a_{{ poll_data.id }}_{{ key }}"
+                           class="answer answer_{{ poll_data.id }}_{{ key }} fright"
+                           type="radio" value="{{ key }}" name="answer">
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% if poll_data.use_comments %}<br>
+            <div class="form-group">
+                <label>
+                    {% helper lang.l('add_comment', 'polls') %}
+                </label>
+                <input type="text" name="poll_comment" value="" class="form-control">
+            </div>
+        {% endif %}
+    </div>
+    <div class="poll_inputs text-right">
+        <input class="respond btn btn-primary-inverted" type="button" name="respond"
+               value="{% helper lang.l('respond', 'polls') %}">
+        {% if not one_poll_place and polls_count > 1 %}
+            <div class="poll_action">
+                <a class="poll_link next_poll" href="javascript:void(0);">
+                    {% helper lang.l('next_poll', 'polls') %}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</form>

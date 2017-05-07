@@ -1,0 +1,164 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <div class="row header">
+          <h2>
+            {% if data.id %}
+                {% helper lang.l('admin_header_template_change', 'services') %}
+            {% else %}
+                {% helper lang.l('admin_header_template_add', 'services') %}
+            {% endif %}
+          </h2>
+        </div>
+      </div>
+      <div class="x_content">
+        <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+              data-parsley-validate class="form-horizontal form-label-left">
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_gid', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.gid }}" name="gid" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_name', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" name="langs[{{ cur_lang }}]" class="form-control"
+                value="{% if validate_lang %}{{ attribute(validate_lang, cur_lang) }}{% else %}{{ data.name }}{% endif %}">
+            </div>
+            {% if languages_count > 1 %}
+                  <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3"
+                       id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel">
+                          <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"
+                             href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                              <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                          </a>
+                          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                  {% for lang_id, item in languages %}
+                                      {% if lang_id != cur_lang %}
+                                          {% if validate_lang %}
+                                            {% set name_value = attribute(validate_lang, lang_id) %}
+                                          {% else %}
+                                            {% set name_value = data.name %}
+                                          {% endif %}
+                                          <div class="form-group">
+                                              <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                              <div class="col-md-10 col-sm-10 col-xs-12">
+                                                  <input type="text" name="langs[{{ lang_id }}]" class="form-control"
+                                                         value="{{ name_value }}">
+                                              </div>
+                                          </div>
+                                      {% endif %}
+                                  {% endfor %}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_module', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.callback_module }}" name="callback_module" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_model', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.callback_model }}" name="callback_model" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_method_buy', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.callback_buy_method }}" name="callback_buy_method" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_method_activate', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.callback_activate_method }}" name="callback_activate_method" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_validate_method', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="text" value="{{ data.callback_validate_method }}" name="callback_validate_method" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_price_type', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <select name="price_type" class="form-control">
+              {% for key, item in price_type_lang.option %}
+                <option value="{{ key }}"{% if key == data.price_type %} selected{% endif %}>{{ item }}</option>
+              {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_moveable', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <input type="checkbox" value="1" name="moveable" {% if data.moveable %}checked{% endif %} class="flat">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_data_admin', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12"><textarea name="data_admin" cols="80" rows="10"
+              class="form-control">{{ data.data_admin }}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_data_user', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <textarea name="data_user" cols="80" rows="10"
+                class="form-control">{{ data.data_user }}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_lds', 'services') %}: </label>
+            <div class="col-sm-9 col-xs-12">
+              <textarea name="lds" class="form-control">{{ data.lds }}</textarea></div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                <a class="btn btn-default" href="{{ site_url }}admin/services/templates">
+                    {% helper lang.l('btn_cancel', 'start') %}</a>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $("div.row:odd").addClass("zebra");
+    });
+    function showLangs(divId){
+        $('#'+divId).slideToggle();
+    }
+</script>
+
+{% include '@app/footer.twig' %}

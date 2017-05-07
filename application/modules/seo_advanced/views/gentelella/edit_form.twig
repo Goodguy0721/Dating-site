@@ -1,0 +1,317 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+{% helper utils.jscript('', 'xss.js') %}
+
+<form class="x_panel form-horizontal accordion" method="post" action="{{ data.action }}" name="save_form">
+	<div class="x_content">
+		{#<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_default_link', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% spaceless %}
+				{{ site_url }}{{ module_gid }}/{{ method }}
+				{% for key, item in default_settings.url_vars %}/[{{ key }}]{% endfor %}
+				{% for key, item in default_settings.url_postfix %}/[{{ key }}]{% endfor %}
+				{% endspaceless %}
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('url_manager', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input type="hidden" name="url_template_data" id="url_data" value="">
+				<ul class="url-creator to_do" id="url_block" style="display: flex;"></ul>
+				<div id="url_text_edit" class="url-form hide">
+					<b>{% helper lang.l('action_edit_url_block', 'seo_advanced') %}:</b>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('field_url_block_type', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+							{% helper lang.l('field_url_block_type_text', 'seo_advanced') %}
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('field_url_block_value', 'seo_advanced') %}</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+							<input type="text" value="" id="text_block_value_edit">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input class="btn btn-success" type="button" id="text_block_save" name="add-block" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+							<input class="btn btn-default" type="button" id="text_block_delete" name="delete-block" value="{% helper lang.l('btn_delete', 'start', '', 'button') %}">
+						</div>
+					</div>
+				</div>
+
+				<div id="url_tpl_edit" class="url-form hide">
+					<b>{% helper lang.l('action_edit_url_block', 'seo_advanced') %}:</b>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('field_url_block_type', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+							{% helper lang.l('field_url_block_type_tpl', 'seo_advanced') %}
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('field_url_block_replacement', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 data-label" id="tpl_block_var_name">&nbsp;</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('field_url_block_default', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+							<input type="text" value="" id="tpl_block_var_default">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input class="btn btn-success" type="button" id="tpl_block_save" name="add-block" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+							<input class="btn btn-default" type="button" id="tpl_block_delete" name="delete-block" value="{% helper lang.l('btn_delete', 'start', '', 'button') %}">
+						</div>
+					</div>
+				</div>
+
+				<div class="url-form">
+					<div class="row form-group">
+						<label class="col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('link_add_url_block_text', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<div class="form-inline">
+								<div class="form-group">
+										<input type="text" id="text_block_value" class="form-control">
+								</div>
+								<div class="form-group">
+									<input class="btn btn-success" type="button" name="add-block" value="{% helper lang.l('btn_add', 'start', '',  'button') %}"  onclick="javascript: urlCreator.save_block('', 'text', $('#text_block_value').val(), '', '', '');">
+								</div>
+							</div>
+					</div>
+				</div>
+
+				{% if default_settings.optional %}
+				<div class="url-form">
+					<div class="row form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">
+							{% helper lang.l('link_add_url_block_opt', 'seo_advanced') %}:</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+						{% for key, item in default_settings.optional %}
+						    {% if optcounter > 0 %}<br><span class="or">{% helper lang.l('link_or', 'seo_advanced') %}</span><br>{% endif %}
+								<div class="form-inline">
+									<div class="form-group">
+                    [<select id="opt-{{ key }}" class="form-control">
+								{% for varname, type in item %}
+                    <option value="{{ type }}">{{ varname }}</option>
+                {% endfor %}
+                    </select>|<input type="text" class="form-control" id="optdef-{{ key|escape }}">]
+									</div>
+									<div class="form-group">
+                    <input type="button" class="btn btn-success" name="add-block" value="{% helper lang.l('btn_add', 'start', '', 'button') %}" onclick="javascript: addOptBlock('{{ key }}', '{{ optcounter }}');">
+									</div>
+								</div>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">&nbsp;</label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				{% helper lang.l('url_manager_text', 'seo_advanced') %}
+			</div>
+		</div>
+	</div>
+	<br>#}
+
+	<div class="x_content">
+		{% if default_settings.templates %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_templates', 'seo_advanced') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				{% for item in default_settings.templates %}
+                    <b>[{{ item }}<span class="hide_text">|{% helper lang.l('default_value', 'seo_advanced') %}</span>]</b>
+                {% endfor %}<br><br><i>{% helper lang.l('field_templates_text', 'seo_advanced') %}</i>
+			</div>
+		</div>
+		<br>
+		{% endif %}
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingOne" data-toggle="collapse" href="#collapseOne">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_title_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_title', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseOne">
+				{% for key, item in languages %}
+				{% set section_gid = 'meta_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}:</label>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+						<input type="text" value="{{ user_settings[section_gid].title|escape }}" name="title[{{ key }}]" class="form-control">
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingTwo" data-toggle="collapse" href="#collapseTwo">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_keyword_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_keyword', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseTwo">
+				{% for key, item in languages %}
+				{% set section_gid = 'meta_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}: </label>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+						<textarea class="form-control" name="keyword[{{ key|escape }}]" rows="5" cols="80">{{ user_settings[section_gid].keyword|escape }}</textarea>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingThree" data-toggle="collapse" href="#collapseThree">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_description_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_description', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseThree">
+				{% for key, item in languages %}
+				{% set section_gid = 'meta_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_description', 'seo_advanced') %}({{ item.name }}): </label>
+					<div class="col-md-9 col-sm-9 col-xs-12"><textarea class="form-control" name="description[{{ key }}]" rows="5" cols="80">{{ user_settings[section_gid].description|escape }}</textarea></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingFour" data-toggle="collapse" href="#collapseFour">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_header_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_header', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseFour">
+				{% for key, item in languages %}
+				{% set section_gid = 'meta_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}: </label>
+					<div class="col-md-9 col-sm-9 col-xs-12"><input type="text" name="header[{{ key }}]" value="{{ user_settings[section_gid].header|escape }}" class="form-control"></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_noindex_use', 'seo_advanced') %}</b>: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input type="checkbox" value="1" name="noindex" {% if user_settings.noindex %}checked{% endif %}
+				id="default_noindex" class="checked-tags flat" checked-param="noindex">
+			</div>
+		</div>
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('header_section_og', 'seo_advanced') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_og', 'seo_advanced') %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingFive" data-toggle="collapse" href="#collapseFive">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_og_title_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_og_title', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseFive">
+				{% for key, item in languages %}
+				{% set section_gid = 'og_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}: </label>
+					<div class="col-md-9 col-sm-9 col-xs-12"><input type="text" name="og_title[{{ key }}]" value="{{ user_settings[section_gid].og_title|escape }}" class="form-control"></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<div class="row form-group panel-heading collapsed" id="headingSix" data-toggle="collapse" href="#collapseSix">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_og_type_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_og_type', 'seo_advanced') %}</div>
+			</div>
+			<div class="panel-collapse collapse" id="collapseSix">
+				{% for key, item in languages %}
+				{% set section_gid = 'og_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}:</label>
+					<div class="col-md-9 col-sm-9 col-xs-12"><input type="text" name="og_type[{{ key }}]" value="{{ user_settings[section_gid].og_type|escape }}" class="form-control"></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+
+		<div class="panel">
+			<a class="row form-group panel-heading collapsed" id="headingSeven" data-toggle="collapse" href="#collapseSeven">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12"><b>{% helper lang.l('field_og_description_default', 'seo_advanced') %}</b></label>
+				<div class="col-md-9 col-sm-9 col-xs-12 data-label">{% helper lang.l('text_help_og_description', 'seo_advanced') %}</div>
+			</a>
+			<div class="panel-collapse collapse" id="collapseSeven">
+				{% for key, item in languages %}
+				{% set section_gid = 'og_' ~ key %}
+				<div class="row form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}:</label>
+					<div class="col-md-9 col-sm-9 col-xs-12"><textarea class="form-control" name="og_description[{{ key }}]" rows="5" cols="80">{{ user_settings[section_gid].og_description|escape }}</textarea></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="ln_solid"></div>
+		<div class="row form-group">
+			<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+				<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+				<a class="btn btn-default" href="{{ site_url }}admin/seo_advanced/listing/{{ module_gid }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+
+{#<script>
+
+	var urlCreator;
+	function addOptBlock(key, optcounter){
+		var value = $('#opt-'+key).val();
+		if(value){
+			urlCreator.save_block('', 'opt', $('#optdef-'+key).val(), optcounter, value, $('#opt-'+key+' > option:selected').text());
+		}else{
+			urlCreator.save_block('', 'text',  $('#optdef-'+key).val(), '', '', '');
+		}
+	}
+	$(function(){
+		urlCreator = new seoUrlCreator({
+			siteUrl: '{{ site_root }}',
+			data: {% helper json.json_encode(user_settings.url_template_data) %},
+			options: {% helper json.json_encode(user_settings.url_template_options) %},
+		});
+	});
+</script>#}
+
+{% include '@app/footer.twig' %}

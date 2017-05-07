@@ -1,0 +1,35 @@
+<div class="load_content_controller">
+	<div class="x_title h2">
+		{% helper lang.l('header_user_select', 'users') %}
+	</div>
+	<div>
+		{% if select_data.max_select != 1 %}
+            <b>{% helper lang.l('header_users_selected', 'users') %}:</b><br>
+            <ul id="user_selected_items" class="user-items-selected">
+                {% for item in select_data.selected %}
+                <li>
+                    <div class="user-block">
+                        <input type="checkbox" name="remove_users[]" value="{{ item.id }}" checked>
+                        {{ item.nickname }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="clearfix"></div>
+		{% endif %}
+
+		<b>{% helper lang.l('header_user_find', 'users') %}:</b><br>
+		<input type="text" id="user_search" class="form-control controller-search">
+
+        <ul class="controller-items" id="user_select_items"></ul>
+
+				<div class="controller-actions">
+					<div class="pull-left">
+		        <a href="#" id="user_close_link" class="hide">
+		          {% helper lang.l('btn_close', 'start') %}
+		        </a>
+					</div>
+					<div id="user_page" class="pages pull-right"></div>
+				</div>
+	</div>
+</div>

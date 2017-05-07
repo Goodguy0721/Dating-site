@@ -1,0 +1,80 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Module:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {{ module.module }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Description:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <b>{{ module.install_name }}</b><br>{{ install_descr }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Version:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {{ module.version }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Added:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {{ install_data.date_add }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Latest update:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% if install_data.date_update != '0000-00-00 00:00:00' %}
+                          {{ install_data.date_update }}
+                        {% else %}
+                          No updates
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Files:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% for item in module.files %}
+                        {{ item.2 }}<br>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Depends on:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% if module.dependencies %}
+                            {% for key, item in module.dependencies %}{{ key }}<br>{% endfor %}
+                        {% else %}No dependencies<br>{% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Dependent modules:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% if depend_modules %}
+                            {% for item in depend_modules %}<b>{{ item.module }}</b>&nbsp;({{ item.install_name }})<br>{% endfor %}
+                        {% else %}No dependencies<br>{% endif %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12"><b>Save module settings:</b></label>
+                    <div class="col-sm-9 col-xs-12">
+                        If default settings (e.g. languages) were changed, you can back up your changes.<br>
+                        <a href="{{ site_url }}admin/install/generate_install_module_settings/{{ module.module }}">Backup</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

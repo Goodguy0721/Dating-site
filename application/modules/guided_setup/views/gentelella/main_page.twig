@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="">
+        <div class="hidden-xs col-sm-3 left-block">
+            {% if navigation %}
+                {% if menu_gid == 'guided_pages' %}
+                    <div class="guided-indicator-block">
+                        <span id="progress_text">
+                            {{ progress_bar.text_setup_indicator }}
+                        </span>
+                        <div class="ui-progressbar ui-widget ui-widget-content ui-corner-all mt5">
+                            <div id="progress_value" style="width: {{ progress_bar.percent }}%;" class="ui-progressbar-value ui-widget-header ui-corner-left"></div>
+                        </div>
+                    </div>
+                {% endif %}
+                
+                <ul id="guided-navigation" class="guided-navigation">
+                    {% for key, item in navigation %}                       
+                        {% if item.link %}
+                            <li class="{% if item.page_id == current_page.page_id %}guided-current-page{% endif %}" 
+                                data-page_link="{{ item.link }}" data-page_id="{{ item.page_id }}" 
+                                data-page_configured="{{ item.is_configured }}">
+                                    <span class="page-configured mr10 {% if item.is_configured == false %}invisible{% endif %}">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </span>
+                                {{ item.name }}
+                                <div class="hide guided-description">
+                                    {{ item.description }}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %} 
+                </ul>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-9 right-block">
+            <div class="guided-popup-title">
+                <h4 class="p20 m0">                
+                    <button type="button" class="btn dropdown-toggle visible-xs-inline-block" data-toggle="dropdown" data-target="#mobile_guided_nav" aria-haspopup="true" aria-expanded="false">
+                      <a id="menu_toggle">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                    </button>
+                    {% helper lang.l('admin_btn_' ~ menu_gid, 'guided_setup') %}
+
+                    {% if current_page.description %}
+                        <span class="pl10 test-class">
+                            <i class="fa fa-question-circle" id="guided_popover" data-toggle="popover" data-placement="bottom"
+                               aria-hidden="true"></i>
+                        </span> 
+                    {% endif %}
+                    
+                    <div class="hide" id="guided_popover_template">
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <h3 class="popover-title"></h3>
+                            <div class="popover-content"></div> 
+                            <div class="popover-footer clearfix">
+                                <div class="pull-left text-left">
+                                    <button type="button" class="btn btn-success" id="guided_popover_configure">{% helper lang.l('admin_btn_configure_guided_pages', 'guided_setup') %}</button>
+                                </div>
+                                <div class="pull-right text-right">
+                                    <span class="a" id="hide_guided_popover">{% helper lang.l('admin_link_hide_prompt_guided_pages', 'guided_setup') %}</span>
+                                </div>
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                            
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            var template = $('#guided_popover_template');
+                            
+                            $('#guided_popover').popover({
+                                content: '{{ current_page.description }}',
+                                html: true,
+                                template: template.html(),
+                            });  
+                        
+                            template.remove();
+                        });
+                    </script>
+
+                </h4>
+                <div class="pl20 btn-group visible-xs-block" id="mobile_guided_nav">
+
+                    <ul class="ml20 dropdown-menu dropdown-menu-left guided-navigation">
+                        {% for key, item in navigation %}
+                            {% if item.link %}
+                                <li class="{% if item.page_id == current_page.page_id %}guided-current-page{% endif %}" 
+                                    data-page_link="{{ item.link }}" data-page_id="{{ item.page_id }}">
+                                    <a href="#">{{ item.name }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %} 
+                    </ul>
+                </div>
+            </div>
+            <div class="iframe-block">
+                <div id="guided_loading_block" class="hide"><div class="fa fa-spinner fa-spin"></div></div>
+                {% if content %}
+                    <div id="guided_content" class="pl20">{{ content }}</div>
+                {% else %}
+                    <iframe class="invisible" scrolling="no" id="guided_frame" src="{{ current_page.link }}" width="100%" height="100%" frameborder="no" name="{{ menu_gid }}"></iframe>
+                {% endif %}
+            </div>
+            <div class="nav-buttons text-center">
+                <div class="pb10">
+                    <a href="{{ current_page.link }}" target="_blank" id="guided_page_link">{% helper lang.l('admin_' ~ menu_gid ~ '_link', 'guided_setup') %}</a>
+                </div>
+                <a class="btn btn-default" id="guided_prev_page">{% helper lang.l('admin_btn_' ~ menu_gid ~ '_prev_step', 'guided_setup') %}</a>
+                <a class="btn btn-default" id="guided_next_page">{% helper lang.l('admin_btn_' ~ menu_gid ~ '_next_step', 'guided_setup') %}</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<script>
+	var banners;
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('banners', '../views/flatty/js/banners.js', 'path') %}",
+			function(){
+				banners = new Banners;
+			},
+			'banners'
+		);
+	});
+</script>

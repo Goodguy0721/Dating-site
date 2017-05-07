@@ -1,0 +1,13 @@
+	1342	Sumbawa Besar	-8.4931700	117.4202400	ID	17	0	0	Sumbawa Besar	Sumbawa Besar	Sumbawa Besar	Sumbawa Besar	Sumbawa Besar	Sumbawa Besar
+	1342	Praya	-8.7053600	116.2703600	ID	17	0	0	Praya	Прая	Praya	Praya	Praya	Praya
+	1342	Pemenang	-8.4040100	116.1025500	ID	17	0	0	Pemenang	Pemenang	Pemenang	Pemenang	Pemenang	Pemenang
+	1342	Pototano	-8.4126000	117.4811000	ID	17	0	0	Pototano	Pototano	Pototano	Pototano	Pototano	Pototano
+	1342	Mataram	-8.5833300	116.1166700	ID	17	0	0	Mataram	Матарам	Mataram	Mataram	Mataram	Mataram
+	1342	Labuan Lombok	-8.5000000	116.6666700	ID	17	0	0	Labuan Lombok	Labuan Lombok	Labuan Lombok	Labuan Lombok	Labuan Lombok	Labuan Lombok
+	1342	Lembar	-8.7264000	116.0744000	ID	17	0	0	Lembar	Lembar	Lembar	Lembar	Lembar	Lembar
+	1342	Dompu	-8.5365000	118.4634000	ID	17	0	0	Dompu	Dompu	Dompu	Dompu	Dompu	Dompu
+	1342	Bima	-8.4600600	118.7266700	ID	17	0	0	Bima	Бим	Bima	Bima	Bima	Bima
+	1342	Bangsal	-8.2607000	116.5098000	ID	17	0	0	Bangsal	Bangsal	Bangsal	Bangsal	Bangsal	Bangsal
+	1342	Gili Air	-8.3578300	116.0824000	ID	17	0	0	Gili Air	Гили Эйр	Gili Air	Gili Air	Gili Air	Gili Air
+	1342	Gili Meno	-8.3513800	116.0568200	ID	17	0	0	Gili Meno	Гили Мено	Gili Meno	Gili Meno	Gili Meno	Gili Meno
+	1342	Senggigi	-8.4919000	116.0424000	ID	17	0	0	Senggigi	Senggigi	Senggigi	Senggigi	Senggigi	Senggigi

@@ -1,0 +1,139 @@
+
+/*comments module style*/
+
+.b-media-wallpost .comment_block {
+    font-size: 12px;
+}
+.comments-form-wrapper .comment_block h3 {    
+    font-size: 14px;
+    margin-top: 0;
+}
+.media-popup-info {
+    padding-bottom: 20px;
+}
+.media-popup-info .comment_block .content {
+    margin-#{$left}: 55px;
+}
+.wall .comments_wrapper .content {
+    margin-#{$left}: 37px;
+}
+.comment_block .comment-date {
+    color: $contrast_color;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: normal;
+}
+.send-comment-btn-block {margin-top: 10px;}
+@media (max-width: 767px){
+    /*.comment_block .image img {
+        display:none;
+    }
+    .comment_block .content {
+        margin-#{$left}: 0;
+    }*/
+    .send-comment-btn-block {
+        clear: both;
+        margin-top: 5px;
+    }
+    .send-comment-btn-block .btn {
+        width: 100%;
+    }
+}
+.comments-form-wrapper .comment_block:last-child {
+    border: none;
+}
+
+.comment-entry {
+    line-height: 20px;
+    padding-top: 6px;
+}
+
+.comment_block .comment-content, 
+.comment-entry > span:first-child, 
+.comment-btns-line {
+    /* line-height: 15pt; */
+}
+
+.media-popup-info .comment_block img {
+    width: 45px;
+    border-radius: 3px;
+}
+.wall-comment-block-img {
+    width: 30px;
+}
+.wall-comments-input .wall-comment-block-img {
+    float: left;
+}
+.wall .cmn-input-h {
+    height: 30px;
+}
+.wall-comments-input textarea {
+    width: 80%;
+    padding: 7px;
+    resize: none;
+    border-radius: 3px;
+    border: none;
+}
+.wall-comments-input .text {
+    padding: 10px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.comments-display-block {
+    text-align: $right;
+    .title {
+        color: $font_color !important;
+    }
+}
+
+.comment-heading {
+    font-weight: bold;
+}
+.like-btn-block {
+    background: rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    border-radius: 3px; 
+    font-size: 12px; 
+    height: 21px;
+    margin: 0 1px;
+    padding: 0 10px; 
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+    a {
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+.show-comments-block {
+    font-size: 14px;
+}
+
+.show-comments-block .user-content {
+    border: 0px;
+    padding: 5px 0px;
+}
+
+.show-comments-block .comment-btns-line {
+    display: none;
+    line-height: 21px;
+}
+
+.show-comments-block .comment_block  .content{
+    /*margin-#{$left}: 40px;*/
+}
+
+
+@media (min-width: 768px) {
+    .comment_block .comment-date {
+        display: inline;
+    }
+}

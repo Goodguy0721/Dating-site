@@ -1,0 +1,5 @@
+	380	Sylhet	24.8990400	91.8719800	BD	86	0	0	Sylhet	Силхет	Sylhet	Sylhet	Sylhet	Sylhet
+	380	Maulavi Bāzār	24.4888800	91.7707500	BD	86	0	0	Maulavi Bāzār	Maulavi Bāzār	Maulavi Bāzār	Maulavi Bāzār	Maulavi Bāzār	Maulavi Bāzār
+	380	Habiganj	24.3804400	91.4130000	BD	86	0	0	Habiganj	Habiganj	Habiganj	Habiganj	Habiganj	Habiganj
+	380	Chhātak	25.0385200	91.6695800	BD	86	0	0	Chhātak	Chhātak	Chhātak	Chhātak	Chhātak	Chhātak
+	380	Baniachang	24.5186300	91.3578700	BD	86	0	0	Baniachang	Baniachang	Baniachang	Baniachang	Baniachang	Baniachang

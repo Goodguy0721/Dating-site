@@ -1,0 +1,57 @@
+<style type="text/css">
+    .club-prices__title {
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+    .user-profile-view .club-description {
+        color: #777;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="media pg-media g-col">
+    <span class="g-rounded g-pic-border" style="cursor:default;">
+        <img style="max-width:100%;" src="{{ club.mediafile.thumbs.great }}" title="{{ club.title }}" alt="{{ club.title }}" />
+    </span>
+    <div class="pg-media-body">
+        <h1 class="ptb10">{{ club.title }}</h1>
+        <div class="club-description mb10">
+            {% if club.location %}
+            <div>
+                <i class="fa fa-map-marker"></i>&nbsp;
+                {{ club.location }}
+            </div>
+            {% endif %}
+            <div class="mb10">
+                <span id="js-open-users_form" class="{% if club.is_joined %}border-b-dashed pointer{% endif %}">{{ club.users_count }} {% helper lang.l('users', 'clubs') %}</span>
+                {% if club.is_joined %}
+                    <script type="text/javascript">
+                        $(function(){
+                            loadScripts(
+                                "{% helper utils.jscript('clubs', 'clubs-users.js', 'path') %}",
+                                function(){
+                                    club_users = new clubsUsers({
+                                        siteUrl: site_url,
+                                        idGroup: {{ club.id }},
+                                        viewFormLinkId: 'js-open-users_form',
+                                    });
+                                },
+                                ['club_users'],
+                                {async: true}
+                            );
+                        });
+                    </script>
+                {% endif %}
+            </div>
+
+            {% if club.is_joined != 1 %}
+                <a class="btn btn-primary form-control mb20" href="{{ site_url }}clubs/join/{{ club.id }}">
+                    {% helper lang.l('btn_join_club', 'clubs') %}</a>
+            {% else %}
+                <a class="btn btn-primary form-control mb20" href="{{ site_url }}clubs/join/{{ club.id }}/leave">
+                    {% helper lang.l('btn_leave_club', 'clubs') %}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{% include '@app/header.twig' %}
+
+<p>{% helper lang.l('moderator_comment', 'admin_home_page') %}</p>
+<h2>{% helper lang.l('header_quick_start', 'admin_home_page') %}</h2>
+<div class="right-side">
+	{% helper payments.admin_home_payments_block() %}
+	{% helper polls.admin_home_polls_block() %}
+</div>
+
+<div class="left-side">
+	{% helper users.admin_home_users_block() %}
+	{% helper banners.admin_home_banners_block() %}
+	{% helper spam.admin_home_spam_block() %}
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,47 @@
+	3320	Yecla	38.6136500	-1.1146800	ES	31	0	0	Yecla	Екла	Yecla	Yecla	Yecla	Yecla
+	3320	Ulea	38.1404500	-1.3300700	ES	31	0	0	Ulea	Ulea	Ulea	Ulea	Ulea	Ulea
+	3320	Totana	37.7688000	-1.5022900	ES	31	0	0	Totana	Тотана	Totana	Totana	Totana	Totana
+	3320	Torre-Pacheco	37.7429300	-0.9539600	ES	31	0	0	Torre-Pacheco	Торре-Пачеко	Torre-Pacheco	Torre-Pacheco	Torre-Pacheco	Torre-Pacheco
+	3320	Santomera	38.0614700	-1.0487700	ES	31	0	0	Santomera	Santomera	Santomera	Santomera	Santomera	Santomera
+	3320	Santiago de la Ribera	37.7968100	-0.8054400	ES	31	0	0	Santiago de la Ribera	Santiago de la Ribera	Santiago de la Ribera	Santiago de la Ribera	Santiago de la Ribera	Santiago de la Ribera
+	3320	San Pedro del Pinatar	37.8356800	-0.7910200	ES	31	0	0	San Pedro del Pinatar	San Pedro del Pinatar	San Pedro del Pinatar	San Pedro del Pinatar	San Pedro del Pinatar	San Pedro del Pinatar
+	3320	San Javier	37.8062600	-0.8373600	ES	31	0	0	San Javier	San Javier	San Javier	San Javier	San Javier	San Javier
+	3320	Ricote	38.1533800	-1.3655700	ES	31	0	0	Ricote	Ricote	Ricote	Ricote	Ricote	Ricote
+	3320	Pliego	37.9894600	-1.5044400	ES	31	0	0	Pliego	Pliego	Pliego	Pliego	Pliego	Pliego
+	3320	Ojós	38.1470000	-1.3426100	ES	31	0	0	Ojós	Ojós	Ojós	Ojós	Ojós	Ojós
+	3320	Murcia	37.9870400	-1.1300400	ES	31	0	0	Murcia	Мурсия	Murcia	Murcia	Murcia	Murcia
+	3320	Mula	38.0409400	-1.4901400	ES	31	0	0	Mula	Mula	Mula	Mula	Mula	Mula
+	3320	Moratalla	38.1892800	-1.8918300	ES	31	0	0	Moratalla	Moratalla	Moratalla	Moratalla	Moratalla	Moratalla
+	3320	Molina de Segura	38.0545600	-1.2076300	ES	31	0	0	Molina de Segura	Молина-де-Сегура	Molina de Segura	Molina de Segura	Molina de Segura	Molina de Segura
+	3320	Mazarrón	37.5992000	-1.3149300	ES	31	0	0	Mazarrón	Масаррон	Mazarrón	Mazarrón	Mazarrón	Mazarrón
+	3320	Puerto Lumbreras	37.5632900	-1.8097400	ES	31	0	0	Puerto Lumbreras	Puerto Lumbreras	Puerto Lumbreras	Puerto Lumbreras	Puerto Lumbreras	Puerto Lumbreras
+	3320	Los Alcázares	37.7442500	-0.8504100	ES	31	0	0	Los Alcázares	Los Alcázares	Los Alcázares	Los Alcázares	Los Alcázares	Los Alcázares
+	3320	Lorquí	38.0826100	-1.2510300	ES	31	0	0	Lorquí	Lorquí	Lorquí	Lorquí	Lorquí	Lorquí
+	3320	Lorca	37.6711900	-1.7017000	ES	31	0	0	Lorca	Лорка	Lorca	Lorca	Lorca	Lorca
+	3320	Librilla	37.8864200	-1.3555700	ES	31	0	0	Librilla	Librilla	Librilla	Librilla	Librilla	Librilla
+	3320	La Unión	37.6191500	-0.8779900	ES	31	0	0	La Unión	La Unión	La Unión	La Unión	La Unión	La Unión
+	3320	Las Torres de Cotillas	38.0282200	-1.2418800	ES	31	0	0	Las Torres de Cotillas	Las Torres de Cotillas	Las Torres de Cotillas	Las Torres de Cotillas	Las Torres de Cotillas	Las Torres de Cotillas
+	3320	Jumilla	38.4791700	-1.3250000	ES	31	0	0	Jumilla	Хумилье	Jumilla	Jumilla	Jumilla	Jumilla
+	3320	Fuente-Álamo de Murcia	37.7000000	-1.1000000	ES	31	0	0	Fuente-Álamo de Murcia	Fuente-Álamo de Murcia	Fuente-Álamo de Murcia	Fuente-Álamo de Murcia	Fuente-Álamo de Murcia	Fuente-Álamo de Murcia
+	3320	Fortuna	38.1814000	-1.1259000	ES	31	0	0	Fortuna	Fortuna	Fortuna	Fortuna	Fortuna	Fortuna
+	3320	Cieza	38.2399800	-1.4198700	ES	31	0	0	Cieza	Сьеса	Cieza	Cieza	Cieza	Cieza
+	3320	Ceuti	38.0785900	-1.2746700	ES	31	0	0	Ceuti	Ceuti	Ceuti	Ceuti	Ceuti	Ceuti
+	3320	Cehegín	38.0924200	-1.7985000	ES	31	0	0	Cehegín	Cehegín	Cehegín	Cehegín	Cehegín	Cehegín
+	3320	Cartagena	37.6051200	-0.9862300	ES	31	0	0	Cartagena	Картахена	Cartagena	Cartagena	Cartagena	Cartagena
+	3320	Caravaca	38.1055800	-1.8634200	ES	31	0	0	Caravaca	Caravaca	Caravaca	Caravaca	Caravaca	Caravaca
+	3320	Campos del Río	38.0396600	-1.3530600	ES	31	0	0	Campos del Río	Campos del Río	Campos del Río	Campos del Río	Campos del Río	Campos del Río
+	3320	Calasparra	38.2299700	-1.6998600	ES	31	0	0	Calasparra	Calasparra	Calasparra	Calasparra	Calasparra	Calasparra
+	3320	Bullas	38.0466700	-1.6722700	ES	31	0	0	Bullas	Bullas	Bullas	Bullas	Bullas	Bullas
+	3320	Blanca	38.1791000	-1.3747300	ES	31	0	0	Blanca	Blanca	Blanca	Blanca	Blanca	Blanca
+	3320	Beniel	38.0463600	-1.0023300	ES	31	0	0	Beniel	Beniel	Beniel	Beniel	Beniel	Beniel
+	3320	Atamaría	37.5998900	-0.8068200	ES	31	0	0	Atamaría	Atamaría	Atamaría	Atamaría	Atamaría	Atamaría
+	3320	Archena	38.1163100	-1.3004300	ES	31	0	0	Archena	Archena	Archena	Archena	Archena	Archena
+	3320	Alhama de Murcia	37.8510300	-1.4250700	ES	31	0	0	Alhama de Murcia	Alhama de Murcia	Alhama de Murcia	Alhama de Murcia	Alhama de Murcia	Alhama de Murcia
+	3320	Alguazas	38.0535600	-1.2505100	ES	31	0	0	Alguazas	Alguazas	Alguazas	Alguazas	Alguazas	Alguazas
+	3320	Aledo	37.7934100	-1.5735600	ES	31	0	0	Aledo	Aledo	Aledo	Aledo	Aledo	Aledo
+	3320	Alcantarilla	37.9693900	-1.2171400	ES	31	0	0	Alcantarilla	Алькантарилья	Alcantarilla	Alcantarilla	Alcantarilla	Alcantarilla
+	3320	Albudeite	38.0289500	-1.3866400	ES	31	0	0	Albudeite	Albudeite	Albudeite	Albudeite	Albudeite	Albudeite
+	3320	Águilas	37.4063000	-1.5828900	ES	31	0	0	Águilas	Агилас	Águilas	Águilas	Águilas	Águilas
+	3320	Abarán	38.2055100	-1.3990700	ES	31	0	0	Abarán	Abarán	Abarán	Abarán	Abarán	Abarán
+	3320	Abanilla	38.2053800	-1.0415200	ES	31	0	0	Abanilla	Abanilla	Abanilla	Abanilla	Abanilla	Abanilla
+	3320	La Manga del Mar Menor	37.6412900	-0.7165100	ES	31	0	0	La Manga del Mar Menor	Ла-Манга-дель-Мар-Менор	La Manga del Mar Menor	La Manga del Mar Menor	La Manga del Mar Menor	La Manga del Mar Menor

@@ -1,0 +1,26 @@
+<div class="load_content_controller">
+    <div class="x_title h4">
+      {% helper lang.l('header_add_form_field', 'field_editor') %}
+    </div>
+    <div>
+        {% if form_type == 'sections' %}
+            <b>{% helper lang.l('text_add_form_select_section', 'field_editor') %}:</b>
+            <ul id="section_select" class="to_do">
+                {% for item in sections %}
+                    <li gid="{{ item.gid|escape }}">{{ item.name }}</li>
+                    {% endfor %}
+            </ul>
+        {% else %}
+            <b>{% helper lang.l('text_add_form_select_field', 'field_editor') %}</b>
+            {% helper lang.l('text_add_form_or', 'field_editor') %}
+            <a href="#" id="fields_back" onclick="javascript: return false;">
+                {% helper lang.l('text_add_form_select_another_s', 'field_editor') %}
+            </a><br>
+            <ul id="field_select" class="to_do">
+                {% for item in fields %}
+                    <li gid="{{ item.gid|escape }}">{{ item.name }}</li>
+                    {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>

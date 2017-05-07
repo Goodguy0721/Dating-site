@@ -1,0 +1,82 @@
+<div class="content-block load_content">
+	<h1>{% helper lang.l('change_time', 'chats') %}</h1>
+
+	<div class="inside logform">
+		<form action="{{ site_url }}chats/change/{{ chat_id }}" method="post" id="change_videochat_form" class="form-inline">
+			<div class="form-group">
+				<label>
+                    {% helper lang.l('field_date_time', 'chats') %}:
+                </label>
+				<input type="text" name="date" id="chat_date" value="{{ current_date|e }}"
+                        class="form-control" style="width:150px" />&nbsp;
+                <select name="time" class="form-control"  style="width:75px">
+                    {% for current in range(low=0, high=24, step=1) %}
+                        {% for current2 in range(low=0, high=59, step=15) %}
+                            {% if current < 10 %}
+                                {% if current2 < 10 %}
+                                    <option value="0{{ current }}:0{{ current2 }}" {% if current == current_hours and current2 == current_minutes %}selected{% endif %}>
+                                        0{{ current }}:0{{ current2 }}
+                                    </option>
+                                {% else %}
+                                    <option value="0{{ current }}:{{ current2 }}" {% if current == current_hours and current2 == current_minutes %}selected{% endif %}>
+                                        0{{ current }}:{{ current2 }}
+                                    </option>
+                                {% endif %}
+                            {% else %}
+                                {% if current2 < 10 %}
+                                    <option value="{{ current }}:0{{ current2 }}" {% if current == current_hours and current2 == current_minutes %}selected{% endif %}>
+                                        {{ current }}:0{{ current2 }}
+                                    </option>
+                                {% else %}
+                                    <option value="{{ current }}:{{ current2 }}" {% if current == current_hours and current2 == current_minutes %}selected{% endif %}>
+                                        {{ current }}:{{ current2 }}
+                                    </option>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor%}
+                    {% endfor %}
+                </select> {% if timezone_offset %}UTC+{{ timezone_offset }}{% endif %}
+                <script type="text/javascript">
+                    $(function() {
+                        $("#chat_date").datepicker({
+                            dateFormat: 'yy-mm-dd',
+                            changeYear: true,
+                            changeMonth: true,
+                            minDate: new Date('{{ minDate }}'),
+                        });
+                    });
+                </script>
+			</div>
+            <div class="mt20">
+                <button name="invite" id="change_time_button" class="btn btn-primary">
+                    {% helper lang.l('btn_save', 'start', '', 'button') %}
+                </button>
+            </div>
+		</form>
+
+	</div>
+	<div class="clr"></div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#change_time_button').unbind('click').bind('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: site_url + 'chats/ajax_check_change/{{ chat_id }}',
+                type: 'POST',
+                data: $('#change_videochat_form').serialize(),
+                dataType: 'json',
+                cache: false,
+                success: function(data) {
+                    if (typeof(data.error) != 'undefined' && data.error.length > 0) {
+                        error_object.show_error_block(data.error.join('<br>'), 'error');
+                    } else {
+                        change_form_videochat.hide_load_block();
+                        $('#change_videochat_form').trigger('submit');
+                    }
+                }
+            });
+        });
+    });
+</script>

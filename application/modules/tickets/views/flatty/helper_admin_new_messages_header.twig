@@ -1,0 +1,7 @@
+<div class="hide summand admin_new_message">{{ admin_messages_count }}</div>
+<div class="menu-alerts-more-items">
+    {% include 'admin_new_messages_header.twig' %}
+</div>
+<div class="menu-alerts-more-item menu-alerts-view-all clearfix tac{% if admin_messages_count <= messages_max_count %} hide{% endif %}">
+    <a href="{% helper seo.rewrite_link('tickets', 'index') %}">View all messages</a>
+</div>

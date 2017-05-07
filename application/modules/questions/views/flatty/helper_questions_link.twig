@@ -1,0 +1,29 @@
+<a id="btn-questions-{{ user_id }}" class="btn btn-secondary" href="javascript:void(0);"
+   title="{% helper lang.l('question', 'questions', '', 'button') %}">
+	<i class='fa fa-question {% if user_compared %}gray{% endif %}'></i>
+</a>
+
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('questions', 'questions_form.js', 'path') %}",
+			function(){
+				questions = new Questions({
+					siteUrl: site_url,
+					use_form: true,
+					btnForm: 'btn-questions-{{ user_id }}',
+					btnRefresh: 'btn-refresh',
+					urlGetForm: 'questions/ajax_get_questions/{{ user_id }}',
+					urlSendForm: 'questions/ajax_set_questions/{{ user_id }}',
+					urlGetData: 'questions/ajax_refresh_questions/{{ user_id }}',
+					dataType: '{% if is_user %}html{% else %}json{% endif %}',
+					compared: '{{ user_compared }}',
+					error_sent: '{% helper lang.l('error_sent', 'questions') %}'
+				});
+			},
+			['questions'],
+			{async: false}
+		);
+
+	});
+</script>

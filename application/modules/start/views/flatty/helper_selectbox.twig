@@ -1,0 +1,9 @@
+<select class="form-control" name="{{ sb_input }}" id="{{ sb_id }}">
+    {% if sb_default %}
+        <option value="0">{{ sb_default }}</option>
+    {% endif %}
+
+    {% for key, item in sb_value %}
+        <option value="{{ key }}" {% if sb_selected == key %}selected{% endif %}>{{ item }}</option>
+    {% endfor %}
+</select>

@@ -1,0 +1,116 @@
+{% include '@app/header.twig' %}
+
+{% helper is_module_installed = utils.depends('geomap') %}
+
+<div class="user-profile-view">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        {% include 'user_preview.twig' with {is_owner: false} %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+        {% helper virtual_gifts.user_gifts_block({'id_wall': data.id, 'is_mine': 'false'}) %}
+        {% helper virtual_gifts.send_gift({'user_id': data.id}) %}
+        {% helper banners.show_banner_place('banner-185x75') %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+    </div>
+
+    {% if profile_section == '' or profile_section == 'profile' %}
+        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+            <div class="description">
+                {% include 'view_profile_menu.twig' %}
+                <div class="view-user">
+                    <div class="view-user__descr">
+                        {% include 'view_users_profile.twig' %}
+                    </div>
+                </div>
+            </div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+            {% set online_users_widget %}
+              {% helper users.online({'count': 9}) %}
+            {% endset %}
+            {% if trim(online_users_widget) %}
+              {{ online_users_widget }}
+            {% else %}
+              {% helper users.last_registered({'count': 9}) %}
+            {% endif %}
+            <div class="mt10">
+                {% helper banners.show_banner_place('banner-320x250') %}
+                {% helper banners.show_banner_place('banner-320x75') %}
+            </div>
+        </div>
+    {% elseif profile_section == 'details' %}
+        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+            <div class="description">
+                {% include 'view_profile_menu.twig' %}
+                <div class="view-user">
+                    <div class="view-user__descr">
+                        {% include 'view_users_details.twig' %}
+                    </div>
+                </div>
+            </div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+            {% set online_users_widget %}
+              {% helper users.online({'count': 9}) %}
+            {% endset %}
+            {% if trim(online_users_widget) %}
+              {{ online_users_widget }}
+            {% else %}
+              {% helper users.last_registered({'count': 9}) %}
+            {% endif %}
+            <div class="mt10">
+                {% helper banners.show_banner_place('banner-320x250') %}
+                {% helper banners.show_banner_place('banner-320x75') %}
+            </div>
+        </div>
+    {% elseif profile_section == 'wall' %}
+        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+            <div class="description">
+                {% include 'view_profile_menu.twig' %}
+                <div class="view-user">
+                    <div class="view-user__wall">
+                        {% helper wall_events.wall_block({
+                            'place': 'viewprofile',
+                            'id_wall': user_id
+                        }) %}
+                    </div>
+                </div>
+            </div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-3 col-lg-3 pull-right">
+            {% helper users.online({'count': 9}) %}{% set online_users_widget %}
+              {% helper users.online({'count': 9}) %}
+            {% endset %}
+            {% if trim(online_users_widget) %}
+              {{ online_users_widget }}
+            {% else %}
+              {% helper users.last_registered({'count': 9}) %}
+            {% endif %}
+            <div class="mt10">
+                {% helper banners.show_banner_place('banner-320x250') %}
+                {% helper banners.show_banner_place('banner-320x75') %}
+            </div>
+        </div>
+    {% elseif profile_section == 'gallery' %}
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <div class="description">
+                {% include 'view_profile_menu.twig' %}
+                <div class="view-user">
+                    <div class="view-user__media">
+                        {% helper media.media_block({
+                            'param': subsection,
+                            'page': '1',
+                            'user_id': user_id,
+                            'location_base_url': location_base_url
+                        }) %}
+                    </div>
+                </div>
+            </div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+        </div>
+    {% endif %}
+</div>
+
+{% include '@app/footer.twig' %}

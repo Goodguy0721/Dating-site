@@ -1,0 +1,46 @@
+	3719	Zhytomyr	50.2648700	28.6766900	UA	27	0	0	Zhytomyr	Житомир	Zhytomyr	Zhytomyr	Zhytomyr	Zhytomyr
+	3719	Zhovtneve	49.9878400	29.5312900	UA	27	0	0	Zhovtneve	Жовтневе	Zhovtneve	Zhovtneve	Zhovtneve	Zhovtneve
+	3719	Zarudyntsi	49.6517500	29.1910800	UA	27	0	0	Zarudyntsi	Зарудинцы	Zarudyntsi	Zarudyntsi	Zarudyntsi	Zarudyntsi
+	3719	Topory	49.6518600	29.3174100	UA	27	0	0	Topory	Топоры	Topory	Topory	Topory	Topory
+	3719	Ruzhyn	49.7228000	29.2045500	UA	27	0	0	Ruzhyn	Ружин	Ruzhyn	Ruzhyn	Ruzhyn	Ruzhyn
+	3719	Rohachi	49.6441300	29.3607600	UA	27	0	0	Rohachi	Рогачи	Rohachi	Rohachi	Rohachi	Rohachi
+	3719	Zoryane	49.6500000	29.2500000	UA	27	0	0	Zoryane	Зоряное	Zoryane	Zoryane	Zoryane	Zoryane
+	3719	Radomyshl’	50.4961300	29.2291100	UA	27	0	0	Radomyshl’	Радомышль	Radomyshl’	Radomyshl’	Radomyshl’	Radomyshl’
+	3719	Popil'nya	49.9665200	29.4435300	UA	27	0	0	Popil'nya	Попельня	Popil'nya	Popil'nya	Popil'nya	Popil'nya
+	3719	Polyanka	50.2583600	27.6880900	UA	27	0	0	Polyanka	Полянка	Polyanka	Polyanka	Polyanka	Polyanka
+	3719	Pershotravneve	51.3928700	28.8683700	UA	27	0	0	Pershotravneve	Pershotravneve	Pershotravneve	Pershotravneve	Pershotravneve	Pershotravneve
+	3719	Ozerne	50.1781600	28.7338400	UA	27	0	0	Ozerne	Озерне	Ozerne	Ozerne	Ozerne	Ozerne
+	3719	Ovruch	51.3246000	28.8035100	UA	27	0	0	Ovruch	Овруч	Ovruch	Ovruch	Ovruch	Ovruch
+	3719	Novi Bilokorovychi	51.1154800	28.0546300	UA	27	0	0	Novi Bilokorovychi	Нові Білокоровичі	Novi Bilokorovychi	Novi Bilokorovychi	Novi Bilokorovychi	Novi Bilokorovychi
+	3719	Novohrad-Volyns’kyy	50.5941200	27.6165000	UA	27	0	0	Novohrad-Volyns’kyy	Новоград-Волынский	Novohrad-Volyns’kyy	Novohrad-Volyns’kyy	Novohrad-Volyns’kyy	Novohrad-Volyns’kyy
+	3719	Nova Borova	50.6929600	28.6344600	UA	27	0	0	Nova Borova	Нова Борова	Nova Borova	Nova Borova	Nova Borova	Nova Borova
+	3719	Narodychi	51.2028600	29.0822800	UA	27	0	0	Narodychi	Народичі	Narodychi	Narodychi	Narodychi	Narodychi
+	3719	Malyn	50.7723300	29.2383300	UA	27	0	0	Malyn	Малин	Malyn	Malyn	Malyn	Malyn
+	3719	Lyubar	49.9204500	27.7591800	UA	27	0	0	Lyubar	Любар	Lyubar	Lyubar	Lyubar	Lyubar
+	3719	Luhyny	51.0820200	28.4005700	UA	27	0	0	Luhyny	Лугини	Luhyny	Luhyny	Luhyny	Luhyny
+	3719	Korostyshiv	50.3172300	29.0563000	UA	27	0	0	Korostyshiv	Коростишів	Korostyshiv	Korostyshiv	Korostyshiv	Korostyshiv
+	3719	Korosten’	50.9593700	28.6385500	UA	27	0	0	Korosten’	Коростень	Korosten’	Korosten’	Korosten’	Korosten’
+	3719	Kornyn	50.0953000	29.5358100	UA	27	0	0	Kornyn	Корнин	Kornyn	Kornyn	Kornyn	Kornyn
+	3719	Hryshkivtsi	49.9352900	28.6038300	UA	27	0	0	Hryshkivtsi	Гришківці	Hryshkivtsi	Hryshkivtsi	Hryshkivtsi	Hryshkivtsi
+	3719	Horodnytsya	50.8069700	27.3167600	UA	27	0	0	Horodnytsya	Городниця	Horodnytsya	Horodnytsya	Horodnytsya	Horodnytsya
+	3719	Golubivka	49.6809800	29.1605900	UA	27	0	0	Golubivka	Голубовка	Golubivka	Golubivka	Golubivka	Golubivka
+	3719	Holovyne	50.4711800	28.8253000	UA	27	0	0	Holovyne	Головине	Holovyne	Holovyne	Holovyne	Holovyne
+	3719	Druzhba	51.1876800	27.9740300	UA	27	0	0	Druzhba	Druzhba	Druzhba	Druzhba	Druzhba	Druzhba
+	3719	Dovbysh	50.3733200	27.9874200	UA	27	0	0	Dovbysh	Довбиш	Dovbysh	Dovbysh	Dovbysh	Dovbysh
+	3719	Dibrova	51.1555600	27.9790000	UA	27	0	0	Dibrova	Діброва	Dibrova	Dibrova	Dibrova	Dibrova
+	3719	Chudniv	50.0520400	28.1174500	UA	27	0	0	Chudniv	Чуднів	Chudniv	Chudniv	Chudniv	Chudniv
+	3719	Chopovychi	50.8332500	28.9533400	UA	27	0	0	Chopovychi	Чоповичі	Chopovychi	Chopovychi	Chopovychi	Chopovychi
+	3719	Chervone	49.9497500	28.8687400	UA	27	0	0	Chervone	Червоне	Chervone	Chervone	Chervone	Chervone
+	3719	Chernyakhiv	50.4565200	28.6701800	UA	27	0	0	Chernyakhiv	Черняхів	Chernyakhiv	Chernyakhiv	Chernyakhiv	Chernyakhiv
+	3719	Chornorudka	49.8464000	29.0606200	UA	27	0	0	Chornorudka	Чернорудка	Chornorudka	Chornorudka	Chornorudka	Chornorudka
+	3719	Bystreyevka	49.8394200	29.2677500	UA	27	0	0	Bystreyevka	Быстреевка	Bystreyevka	Bystreyevka	Bystreyevka	Bystreyevka
+	3719	Bykivka	50.2928500	27.9831400	UA	27	0	0	Bykivka	Биківка	Bykivka	Bykivka	Bykivka	Bykivka
+	3719	Buchmany	51.0687900	28.0422100	UA	27	0	0	Buchmany	Бучмани	Buchmany	Buchmany	Buchmany	Buchmany
+	3719	Brusyliv	50.2844900	29.5262600	UA	27	0	0	Brusyliv	Брусилів	Brusyliv	Brusyliv	Brusyliv	Brusyliv
+	3719	Brovky Pershi	49.9323500	29.1981600	UA	27	0	0	Brovky Pershi	Бровки Первые	Brovky Pershi	Brovky Pershi	Brovky Pershi	Brovky Pershi
+	3719	Berdychiv	49.8992800	28.6023500	UA	27	0	0	Berdychiv	Бердичев	Berdychiv	Berdychiv	Berdychiv	Berdychiv
+	3719	Bila Krynytsya	50.6398200	29.4704100	UA	27	0	0	Bila Krynytsya	Біла Криниця	Bila Krynytsya	Bila Krynytsya	Bila Krynytsya	Bila Krynytsya
+	3719	Baranovka	50.2969100	27.6622000	UA	27	0	0	Baranovka	Барановка	Baranovka	Baranovka	Baranovka	Baranovka
+	3719	Zaritcha	49.7166700	29.2333300	UA	27	0	0	Zaritcha	Заречье	Zaritcha	Zaritcha	Zaritcha	Zaritcha
+	3719	Andrushivka	50.0228800	29.0202300	UA	27	0	0	Andrushivka	Андрушёвка	Andrushivka	Andrushivka	Andrushivka	Andrushivka
+	3719	Denyshi	50.2141500	28.4039500	UA	27	0	0	Denyshi	Деныши	Denyshi	Denyshi	Denyshi	Denyshi

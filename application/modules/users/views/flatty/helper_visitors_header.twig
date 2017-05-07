@@ -1,0 +1,8 @@
+<div class="menu-alerts-more-item clearfix {% if not visitors_count %}hide-always{% endif %}">
+    <a id="users_link_my_guests" href="{{ site_url }}users/my_guests">
+        {% helper lang.l('header_my_guests', 'users') %}:
+        <b class="summand visitors_count fright">
+            {{ visitors_count }}
+        </b>
+    </a>
+</div>

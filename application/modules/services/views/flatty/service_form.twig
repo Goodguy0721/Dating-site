@@ -1,0 +1,176 @@
+{% include '@app/header.twig' %}
+<form method="post" action="{{ site_url }}services/form/{{ data.gid }}">
+    <div class="service-payment-form col-xs-12">
+        <h1>{% helper lang.l('field_buy_service', 'services') %}&nbsp;&laquo;{% helper lang.l(data.name_lang_gid, 'services') %}&raquo;</h1>
+        {% helper lang.l('on_your_account_now', 'services') %}:
+        {% helper start.currency_format_output({'value': data.user_account}) %}
+
+
+        <div class="service-description clearfix">
+            <div class="service-title">
+                <div class="col-xs-10">{% helper lang.l(data.name_lang_gid, 'services') %}</div>
+                <div class="col-xs-2">
+                    <div class="pull-right">{% helper start.currency_format_output({'value': data.price}) %}</div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                {% for item in data.template.data_admin_array %}
+                    <div>{{ item.name }}:
+                        {% if item.type == 'string' or item.type == 'int' or item.type == 'text' %}
+                            {{ item.value }}
+                        {% elseif item.type == 'price' %}
+                            {% helper start.currency_format_output({'value': item.value}) %}
+                        {% elseif item.type == 'checkbox' %}
+                            {% if item.value == '1' %}
+                                {% helper lang.l('yes_checkbox_value', 'services') %}
+                            {% else %}
+                                {% helper lang.l('no_checkbox_value', 'services') %}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <table>
+                {% for item in data.template.data_user_array %}
+                    {% if item.type == 'hidden' %}
+                        <input type="hidden" name="data_user[{{ item.gid }}]" value="{{ item.value }}">
+                    {% else %}
+                        <tr>
+                            <td>
+                                {{ item.name }}:
+                            </td>
+                            {% if item.type == 'string' %}
+                                <td class="value">
+                                    <input type="text" value="{{ item.value }}"
+                                           name="data_user[{{ item.gid }}]">
+                                </td>
+                            {% elseif item.type == 'int' %}
+                                <td class="value">
+                                    <input type="text" value="{{ item.value }}"
+                                           name="data_user[{{ item.gid }}]" class="short">
+                                </td>
+                            {% elseif item.type == 'price' %}
+                                <td class="value">
+                                    <input type="text" value="{{ item.value }}"
+                                           name="data_user[{{ item.gid }}]" class="short">
+                                    {% helper start.currency_format_output() %}
+                                </td>
+                            {% elseif item.type == 'text' %}
+                                <td class="value"class="value">
+                                    <textarea name="data_user[{{ item.gid }}]">{{ item.value }}</textarea>
+                                </td>
+                            {% elseif item.type == 'checkbox' %}
+                                <td class="value">
+                                    <input type="checkbox" name="data_user[{{ item.gid }}]"
+                                        value="1" {% if item.value == '1' %}checked{% endif %}>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% if data.template.price_type == '2' %}
+                    <tr>
+                        <td>
+                            {% helper lang.l('field_your_price', 'services') %}:
+                        </td>
+                        <td class="value">
+                            <input type="text" value="{{ data.price }}" name="price" class="short">
+                            <b>{% helper start.currency_format_output() %}</b>
+                        </td>
+                    </tr>
+                {% elseif data.template.price_type == '3' %}
+                    <tr>
+                        <td>
+                            {% helper lang.l('field_price', 'services') %}:
+                        </td>
+                        <td class="value">
+                            <input type="hidden" value="{{ data.price }}" name="price" class="short">
+                            <b>{% helper start.currency_format_output({'value': data.price}) %}</b>
+                        </td>
+                    </tr>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+    <div class="service-payment-form col-xs-12">
+        
+        {% helper special_offers.getOfferNote('services', data.id) %}
+        
+        {% if data.free_activate %}
+            <div class="mtb20">
+                <input data-pjax="0" type="submit"  class="btn btn-primary"  name="btn_account" value="{% helper lang.l('btn_activate_free', 'services', '', 'button') %}">
+            </div>
+        {% else %}
+            <div class="pt10">
+                <input type="checkbox" value="1" name="activate_immediately" checked />
+                {% helper lang.l('field_activate_immediately', 'services') %}
+            </div>
+            {% if (data.pay_type == 1 or data.pay_type == 2) and is_module_installed %}
+                {% if data.disable_account_pay %}
+                    <p>{% helper lang.l('error_account_less_then_service_price', 'services') %}
+                        <a href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+                            {% helper lang.l('link_add_founds', 'services') %}
+                        </a>
+                    </p>
+                {% else %}
+                    <div class="mtb20">
+                        <input data-pjax="0" type="submit" name="btn_account" class="btn btn-primary" value="{% helper lang.l('btn_pay_account', 'services', '', 'button') %}">
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% if data.pay_type == 2 or data.pay_type == 3 %}
+                <span class="select-payment-method">
+                    {% helper lang.l('link_select_payment_method', 'services') %}
+                </span>
+                <div class="billing-systems-block row">
+                    {% if billing_systems %}
+                        <input type="hidden" id="system_gid" name="system_gid" value="">
+                        {% for item in billing_systems %}
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="billing-method" data-gid="{{ item.gid }}" onclick="system_gid_change('{{ item.gid }}')">
+                                    <img src="{{ item.logo_url }}" class="img-responsive" alt="{{ item.name }}" title="{{ item.name }}">
+                                </div>
+                            </div>
+                            <div id="system_{{ item.gid }}" class="hide" data-tarifs="{{ item.tarifs_type }}">
+                                <div id="details_{{ item.gid }}">{{ item.info_data }}</div>
+                            </div>
+                        {% endfor %}
+                        <div class="col-xs-12 hide" id="details">
+                            <label>
+                                {% helper lang.l('field_info_data', 'payments') %}:
+                            </label>
+                            <div id="details_block"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="submit" name="btn_system" value="1" class="btn btn-primary">
+                                {% helper lang.l('btn_pay_systems', 'services') %}
+                            </button>
+                        </div>
+                    {% elseif data.pay_type == 3 %}
+                        <p>{% helper lang.l('error_empty_billing_system_list', 'service') %}</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</form>
+<script>
+    function system_gid_change(value) {
+        $('#details').hide();
+        if(value){
+            var details = $('#details_' + value).html();
+            if(details.length) $('#details').show().find('#details_block').html(details);
+        }
+    }
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('services', 'services.js', 'path') %}"],
+            function(){
+                services = new Services();
+            },
+            ['services'],
+            {async: true}
+        );
+    });
+</script>
+{% include '@app/footer.twig' %}

@@ -1,0 +1,4 @@
+	1857	Vilnius	54.6891600	25.2798000	LT	65	0	0	Vilnius	Вильнюс	Vilnius	Vilnius	Vilnius	Vilnius
+	1857	Vievis	54.7666700	24.8000000	LT	65	0	0	Vievis	ВЕВИС	Vievis	Vievis	Vievis	Vievis
+	1857	Ukmerge	55.2500000	24.7500000	LT	65	0	0	Ukmerge	Укмерге	Ukmerge	Ukmerge	Ukmerge	Ukmerge
+	1857	Rūdiškės	54.5160900	24.8308400	LT	65	0	0	Rūdiškės	РУДИШКЕС	Rūdiškės	Rūdiškės	Rūdiškės	Rūdiškės

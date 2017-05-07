@@ -1,0 +1,124 @@
+{% include '@app/header.twig' %}
+
+<table id="users" class="table table-striped responsive-utilities jambo_table">
+    <thead>
+        <tr class="headings">
+            <th class="column-title text-center">
+                {% helper lang.l('field_number', 'comments') %}
+            </th>
+            <th class="column-title">
+                {% helper lang.l('field_name', 'comments') %}
+            </th>
+            <th class="column-title text-center">
+                {% helper lang.l('field_char_count', 'comments') %}
+            </th>
+            <th class="column-title text-center">
+                {% helper lang.l('field_guest_access', 'comments') %}
+            </th>
+            <th class="column-title text-center">
+                {% helper lang.l('field_use_likes', 'comments') %}
+            </th>
+            <th class="column-title">
+                {% helper lang.l('text_status', 'start') %}
+            </th>
+            <th class="column-title">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set counter = 0 %}
+        {% for comments_type in comments_types %}
+            <tr class="even pointer">
+                {% set counter = counter + 1 %}
+                <td class="text-center">{{ counter }}</td>
+                <td>{% helper lang.l('ctype_'~comments_type.gid, 'comments') %}</td>
+                <td class="text-center">{{ comments_type.settings.char_count }}</td>
+                <td class="text-center">
+                    {% if comments_type.gid!='user_avatar' %}
+                        {% if comments_type.settings.guest_access %}
+                            {% helper lang.l('btn_tableicon_yes','start') %}
+                        {% else %}
+                            {% helper lang.l('btn_tableicon_no','start') %}
+                        {% endif %}
+                    {% endif %}
+                </td>
+                <td class="text-center">
+                    {% if comments_type.settings.use_likes %}
+                        {% helper lang.l('btn_tableicon_yes','start') %}
+                    {% else %}
+                        {% helper lang.l('btn_tableicon_no','start') %}
+                    {% endif %}
+                </td>
+                <td class="text-center">
+                    <span class="{% if not comments_type.status %}hide{% endif %}">
+                        {% helper lang.l('btn_tableicon_is_active','start') %}</span>
+                    <span class="{% if comments_type.status %}hide{% endif %}">
+                        {% helper lang.l('btn_tableicon_is_not_active','start') %}</span>
+                </td>
+                <td class="icons">
+                    <div class="btn-group"> 
+                        <span class="btn btn-primary">
+                            <a href="javascript:void(0);" class="{% if not comments_type.status %}hide{% endif %}"
+                               onclick="activateCommentsType({{ comments_type.id }}, 0, this);"
+                               title="{% helper lang.l('link_deactivate_comments_type', 'comments') %}">
+                                {% helper lang.l('make_inactive','start') %}
+                            </a><a href="javascript:void(0);" class="{% if comments_type.status %}hide{% endif %}"
+                               onclick="activateCommentsType({{ comments_type.id }}, 1, this);"
+                               title="{% helper lang.l('link_activate_comments_type', 'comments') %}">
+                                    {% helper lang.l('make_active','start') %}
+                            </a>
+                        </span>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu"> 
+                            <li>
+                                <span>
+                                    <a href="javascript:void(0);" class="{% if not comments_type.status %}hide{% endif %}"
+                                       onclick="activateCommentsType({{ comments_type.id }}, 0, this);"
+                                       title="{% helper lang.l('link_deactivate_comments_type', 'comments') %}">
+                                        {% helper lang.l('make_inactive','start') %}
+                                    </a><a href="javascript:void(0);" class="{% if comments_type.status %}hide{% endif %}"
+                                       onclick="activateCommentsType({{ comments_type.id }}, 1, this);"
+                                       title="{% helper lang.l('link_activate_comments_type', 'comments') %}">
+                                            {% helper lang.l('make_active','start') %}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="{{ site_url }}admin/comments/edit_type/{{ comments_type.id }}">
+                                    {% helper lang.l('btn_edit', 'start') %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{# TABLES #}
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+
+<script type='text/javascript'>
+
+    function activateCommentsType(id, status, a_obj){
+        $.post(
+            site_url+'admin/comments/ajax_activate_type/',
+            {id: id, status: status},
+            function(resp){
+                if(resp.status){
+                    $(a_obj).parents('tr').first().find('.hide')
+                            .removeClass('hide').siblings().addClass('hide');
+                }
+            },
+            'json'
+        );
+    }
+
+</script>
+
+{% include '@app/footer.twig' %}

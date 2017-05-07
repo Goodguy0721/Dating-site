@@ -1,0 +1,70 @@
+{% include '@app/header.twig' %}
+<div class="x_panel">
+    <div class="x_content">
+        <ul class="nav nav-tabs bar_tabs">
+            {% helper menu.get_admin_level1_menu('admin_seo_menu') %}
+        </ul>
+
+        <table id="data" class="table table-striped jambo_table">
+            <thead>
+                <tr class="headings">
+                    <th class="column-title">{% helper lang.l('settings_name_field', 'seo') %}</th>
+                    <th class="column-title">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% helper lang.l('default_seo_admin_field', 'seo') %}</td>
+                    <td class="icons">
+                      <div class="btn-group">
+                        <a href="{{ site_url }}admin/seo/default_edit/admin" title="{% helper lang.l('link_edit_settings', 'seo') %}"
+                           class="btn btn-primary">
+                            {% helper lang.l('link_edit_settings', 'seo') %}
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                          <span class="caret"></span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="{{ site_url }}admin/seo/default_edit/admin"
+                               title="{% helper lang.l('link_edit_settings', 'seo') %}">
+                                {% helper lang.l('link_edit_settings', 'seo') %}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{% helper lang.l('default_seo_user_field', 'seo') %}</td>
+                    <td class="icons">
+                      <div class="btn-group">
+                        <a href="{{ site_url }}admin/seo/default_edit/user" title="{% helper lang.l('link_edit_settings', 'seo') %}"
+                           class="btn btn-primary">
+                            {% helper lang.l('link_edit_settings', 'seo') %}
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                          <span class="caret"></span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="{{ site_url }}admin/seo/default_edit/user"
+                               title="{% helper lang.l('link_edit_settings', 'seo') %}">
+                                {% helper lang.l('link_edit_settings', 'seo') %}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% include '@app/pagination.twig' %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

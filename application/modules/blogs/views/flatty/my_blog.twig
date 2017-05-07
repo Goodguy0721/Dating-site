@@ -1,0 +1,15 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+	<h1>{% if create_form == '1' %}{% helper lang.l('header_create_a_blog', 'blogs') %}{% else %}{% helper lang.l('header_my_blog', 'blogs') %}{% endif %}</h1>
+	{% include 'blog_menu.twig' %}
+	
+	{% if create_form == '1' %}
+		{% include 'add_blog_form.twig' %}
+	{% else %}
+		{% include 'block_posts_list.twig' with {is_user: 1} %}
+	{% endif %}
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

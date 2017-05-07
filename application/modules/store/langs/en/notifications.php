@@ -1,0 +1,29 @@
+<?php
+
+$install_lang["notification_store_confirmed_recipient"] = "Accepted by recipient; order not paid";
+$install_lang["notification_store_delivered_for"] = "Your gift has been delivered";
+$install_lang["notification_store_delivered_from"] = "Your gift has been delivered to the recipient";
+$install_lang["notification_store_during_delivery"] = "Your gift has been sent to the recipient";
+$install_lang["notification_store_paid"] = "Payment successfully processed";
+$install_lang["notification_store_pending_payment"] = "Pending payment";
+$install_lang["notification_store_rejected_admin"] = "Order has been rejected";
+$install_lang["notification_store_rejected_recipient"] = "Rejected by recipient; order not paid";
+$install_lang["notification_store_waits_user_consent"] = "Waiting for recipient's reply; order not paid";
+$install_lang["tpl_store_confirmed_recipient_content"] = "Hello [sender_nickname],\n\n[recipient_nickname] has accepted your gift offer, order #[code]. Please make the payment.";
+$install_lang["tpl_store_confirmed_recipient_subject"] = "Accepted by recipient; order not paid";
+$install_lang["tpl_store_delivered_for_content"] = "Hello [recipient_nickname],\n\nYour gift from [sender_nickname] has been delivered.";
+$install_lang["tpl_store_delivered_for_subject"] = "Your gift has been delivered";
+$install_lang["tpl_store_delivered_from_content"] = "Hello [sender_nickname],\n\nYour order #[code] has been delivered.";
+$install_lang["tpl_store_delivered_from_subject"] = "Your gift has been delivered";
+$install_lang["tpl_store_during_delivery_content"] = "Hello [sender_nickname],\n\nYour order #[code] has been sent to the recipient.";
+$install_lang["tpl_store_during_delivery_subject"] = "Your gift on its way to recipient";
+$install_lang["tpl_store_paid_content"] = "Hello [sender_nickname],\n\nPayment for the order #[code] has been successfully processed.";
+$install_lang["tpl_store_paid_subject"] = "Payment successfully processed";
+$install_lang["tpl_store_pending_payment_content"] = "Hello [sender_nickname],\n\nYour order #[code] status has changed to '[status]'";
+$install_lang["tpl_store_pending_payment_subject"] = "Pending payment";
+$install_lang["tpl_store_rejected_admin_content"] = "[comment]";
+$install_lang["tpl_store_rejected_admin_subject"] = "Order has been rejected";
+$install_lang["tpl_store_rejected_recipient_content"] = "Hello [sender_nickname],\n\n[recipient_nickname] has rejected your gift offer, order #[code].";
+$install_lang["tpl_store_rejected_recipient_subject"] = "Rejected by recipient; order not paid";
+$install_lang["tpl_store_waits_user_consent_content"] = "Hello [sender_nickname],\n\nYour order #[code] status has changed to '[status]'.\n\nAfter the recipient [recipient_nickname] accepts your gift offer, you will need to make the payment.";
+$install_lang["tpl_store_waits_user_consent_subject"] = "Waiting for recipient's reply; order not paid";

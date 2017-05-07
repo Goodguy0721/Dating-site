@@ -1,0 +1,11 @@
+{% for item in menu %}
+    {% if item.sub is not empty %}
+        <ul>
+        {% for subitem in item.sub %}
+            <li>
+                <a href="{{ subitem.link }}">{{ subitem.value }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}

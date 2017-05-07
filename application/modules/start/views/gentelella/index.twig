@@ -1,0 +1,111 @@
+{% include '@app/header.twig' with {load_type:'ui', hide_page_header: true} %}
+
+{% helper wall = dashboard.dashboard_wall() %}
+
+{% if wall|trim %}
+    {{ wall }}
+    {% set statistics_col_sm = 6 %}
+{% else %}
+    {% set statistics_col_sm = 3 %}
+{% endif %}
+
+<div class="dashboard__after">
+
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+          <div class="x_title">
+              <h2>{% helper lang.l('header_get_started', 'admin_home_page') %}</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                  <li>
+                      <a class="collapse-link"><i class="fa fa-chevron-up cursor-pointer"></i></a>
+                  </li>
+              </ul>
+              <div class="clearfix"></div>
+          </div>
+          {% helper is_installed = utils.depends('dynamic_blocks') %}
+          {% if ql_modules %}
+          <div class="quick-links x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {% helper guided_setup.guidePageBtn({menu_gid:'guided_pages'}) %}
+                <div class="row">
+                {% for ql_module in ql_modules %}
+                    {% if loop.index0 % 4 == 0 %}
+                        </div><div class="row">
+                    {% endif %}
+                    
+                    <div class="quick-link col-md-3 col-sm-6 col-xs-12">
+                        <div class="hp100"{% if DEMO_MODE %} data-analytics-gid="{{ ql_module.name }}" data-analytics-cat="dashboard"{% endif %}>
+                            {% helper utils.render(ql_module.name, 'link_settings', '', ql_module.options) %}
+                        </div>
+                    </div>        
+                    
+                {% endfor %}
+                </div>
+                
+            </div>
+          </div>
+          {% endif %}
+      </div>
+
+      {% if statistics %}
+      <div class="quick-stats x_content">
+        {% for gid, item in statistics %}
+        <div class="col-md-3 col-sm-{{ statistics_col_sm }} col-xs-6 tile_stats_count">
+            <span class="count_top text-overflow">{% helper lang.l('stat_' ~ gid, 'start') %}</span>
+            <div class="count">{{ item.week_1 }}</div>
+            <span class="count_bottom"><i class="
+              {% if item.week_percent > 0 %}green
+              {% elseif item.week_percent < 0 %}red{% endif %}">
+              {{ item.week_percent }}% </i> {% helper lang.l('from_last_week', 'start') %}</span>
+        </div>
+        {% endfor %}
+        {% if payment_total > 0 %}
+        <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
+            <span class="count_top text-overflow">{% helper lang.l('stat_payments_all', 'start') %}</span>
+            <div class="count">{{ payment_total }}</div>
+            <span class="count_bottom"><i></i> {% helper lang.l('total', 'start') %}</span>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <div class="x_panel">
+          <div class="x_title">
+              <h2>{% helper lang.l('header_quick_start', 'admin_home_page') %}</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                  <li>
+                      <a class="collapse-link"><i class="fa fa-chevron-up cursor-pointer"></i></a>
+                  </li>
+              </ul>
+              <div class="clearfix"></div>
+          </div>
+          <div class="x_content homepage-stats">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="accordion" id="accordion1" role="tablist" aria-multiselectable="true">
+                      <div class="panel">
+                          {% helper users.admin_home_users_block() %}
+                          {% helper spam.admin_home_spam_block() %}
+                          {% helper banners.admin_home_banners_block() %}
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel">
+                          {% helper payments.admin_home_payments_block() %}
+                          {% helper polls.admin_home_polls_block() %}
+                          {% helper bonuses.admin_home_bonuses_block() %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+<div class="clearfix"></div>
+
+{% helper start.ad() %}
+
+{% include '@app/footer.twig' %}

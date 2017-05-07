@@ -1,0 +1,13 @@
+{% for message in messages %}
+    <div class="menu-alerts-more-item clearfix">
+        <a href="{% helper seo.rewrite_link('tickets', 'index') %}">
+            <div class="message-image">
+                <img src="{{ message.output_logo.thumbs.small }}">
+            </div>
+            <div class="message-body">
+                <div class="name">{{ message.output_name }}</div>
+                <div class="text">{{ message.message }}</div>
+            </div>
+        </a>
+    </div>
+{% endfor %}

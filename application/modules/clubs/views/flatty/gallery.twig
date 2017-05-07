@@ -1,0 +1,69 @@
+{% include '@app/header.twig' %}
+
+{# <link rel="stylesheet" type="text/css" href="{{ site_url }}application/modules/clubs/views/flatty/css/style-{{ _LANG.rtl }}.css"> #}
+
+<div class="user-profile-view">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        {% include 'view_left_block.twig' %}
+
+        {% helper banners.show_banner_place('banner-185x75') %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+    </div>
+
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" style="margin-top:15px;">
+        <div class="description">
+            {% include 'view_club_menu.twig' %}
+            <div class="view-user">
+                <div class="view-user__media">
+                    <div class="content-block">
+                        <div class="b-album-filters">
+                            <div class="row">
+                                <div class="col-xs-12 {% if is_owner %}col-sm-8 col-md-9{% endif %}">
+                                    <ul class="b-tabs" id="filters">
+                                        {% for key, item in media_filters %}
+                                            <li data-param="{{ key }}" data-user-id="{{ id_user }}" data-history="{{ item.link }}" class="b-tabs__item {% if gallery_param == key %}active{% endif %}">
+                                                <span class="b-tabs__text">{{ item.name }}</span>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="gallery_content" class="row g-users-gallery">
+                            {% autoescape false %}
+                                {{ media_block.content }}
+                            {% endautoescape %}
+                        </div>
+
+                        <div class="media-button-content {% if not media_block.have_more %}hide{% endif %}">
+                            <input class="btn btn-secondary" id="media_button" type="button" value="{% helper lang.l('show_more', 'media', '', 'button') %}">
+                        </div>
+                    </div>
+                    <script>
+                        $(function(){
+                            loadScripts(
+                                "{% helper utils.jscript('clubs', 'clubs-media.js', 'path') %}",
+                                function(){
+                                    club_mediagallery = new clubsMedia({
+                                        siteUrl: site_url,
+                                        galleryContentPage: {{ page }},
+                                        galleryContentParam: '{{ gallery_param }}',
+                                        idGroup: {{ club.id }},
+                                        all_loaded: {% if media_block.have_more %}0{% else %}1{% endif %},
+                                    });
+                                },
+                                ['club_mediagallery'],
+                                {async: true}
+                            );
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
+        {% helper banners.show_banner_place('banner-980x90') %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

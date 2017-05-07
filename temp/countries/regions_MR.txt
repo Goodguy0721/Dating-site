@@ -1,0 +1,2 @@
+	2137	Tékane	16.5780600	-15.4597200	MR	06	0	0	Tékane	Tékane	Tékane	Tékane	Tékane	Tékane
+	2137	Rosso	16.5137800	-15.8050300	MR	06	0	0	Rosso	Rosso	Rosso	Rosso	Rosso	Rosso

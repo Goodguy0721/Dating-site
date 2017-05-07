@@ -1,0 +1,38 @@
+{% if dynamic_block_lang_select_data.count_active > 1 %}
+    <div id="lang_select_wrapper_{{ dynamic_block_lang_select_data.rand }}"
+         {% if dynamic_block_lang_select_data.params.right_align %}class="righted"{% endif %}>
+        <div class="ib vmiddle">
+            {% helper start.selectbox({
+                'input': 'language',
+                'id': 'lang_select_' ~ dynamic_block_lang_select_data.rand,
+                'value': dynamic_block_lang_select_data.languages,
+                'selected': dynamic_block_lang_select_data.lang_id,
+                'class': 'cute'
+            }) %}
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            loadScripts(
+                    "{% helper utils.jscript('start', 'selectbox.js', 'path') %}",
+                    function () {
+                        var data = {{ dynamic_block_lang_select_data|json_encode() }};
+                        lang_select{{ dynamic_block_lang_select_data.rand }} = new selectBox({
+                            elementsIDs: ['lang_select_' + data.rand],
+                            force: true,
+                            dropdownClass: 'dropdown cute',
+                            dropdownAutosize: true,
+                            dropdownRight: data.params.right_align ? true : false
+                        });
+                        $('#lang_select_wrapper_' + data.rand).off('change', 'input[name="language"]')
+                                .on('change', 'input[name="language"]', function () {
+                                    location.href = site_url + 'users/change_language/' + $(this).val();
+                                });
+                    },
+                    'lang_select{{ dynamic_block_lang_select_data.rand }}',
+                    {async: false}
+            );
+        });
+    </script>
+{% endif %}

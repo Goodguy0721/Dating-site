@@ -1,0 +1,39 @@
+<div>
+    <h1>{% helper lang.l('field_confirmation_purchase_group', 'access_permissions') %}</h1>
+    <div>{% helper lang.l('on_your_account_now', 'services') %}: {% helper start.currency_format_output({'value': payment_data.user_account}) %}</div>
+    {% if payment_data.pay_system.gid != 'account' %}
+    <form action="{{ site_url }}access_permissions/payment" method="post" name="payment_form" id="payment-form">
+            <input type="hidden" name="group_gid" value="{{ payment_data.group.gid }}">
+            <input type="hidden" name="period_id" value="{{ payment_data.period.id }}">
+            <input type="hidden" name="pay_system_gid" value="{{ payment_data.pay_system.gid }}">
+            <input type="hidden" name="send" value="1">
+        {% endif %}
+        <div class="content-value">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="b-memberships__list">
+                        <div class="b-memberships__item">
+                            <div class="b-member-plan">
+                                <div class="b-memberships__price fright">{% helper start.currency_format_output({'value':payment_data.period.price}) %}</div>
+                                <div class="b-memberships__title">{{ payment_data.group.current_name }}</div>
+                                <div class="b-memberships__period">{{ payment_data.period.period_str }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="mb10">{% helper lang.l('field_payment_type', 'payments') %}: {{ payment_data.pay_system.name }}</div>
+        <div>
+        <button class="btn btn-primary" 
+                data-action="payment" 
+                data-group="{{ payment_data.group.gid }}" 
+                data-period="{{ payment_data.period.id }}" 
+                data-pay_system="{{ payment_data.pay_system.gid }}">
+            {% helper lang.l('link_confirmation_purchase', 'access_permissions') %}
+        </button>
+        </div>
+    {% if payment_data.pay_system.gid != 'account' %}
+    </form>
+    {% endif %}
+</div>

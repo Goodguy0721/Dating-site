@@ -1,0 +1,292 @@
+	826	Zubří	49.4660300	18.0924900	CZ	90	0	0	Zubří	Zubří	Zubří	Zubří	Zubří	Zubří
+	826	Žlutava	49.1997600	17.4903700	CZ	90	0	0	Žlutava	Žlutava	Žlutava	Žlutava	Žlutava	Žlutava
+	826	Zlobice	49.3018200	17.3126100	CZ	90	0	0	Zlobice	Zlobice	Zlobice	Zlobice	Zlobice	Zlobice
+	826	Zlín	49.2264500	17.6706500	CZ	90	0	0	Zlín	Злин	Zlín	Zlín	Zlín	Zlín
+	826	Zlechov	49.0739600	17.3793800	CZ	90	0	0	Zlechov	Zlechov	Zlechov	Zlechov	Zlechov	Zlechov
+	826	Zlámanec	49.1298500	17.6282000	CZ	90	0	0	Zlámanec	Zlámanec	Zlámanec	Zlámanec	Zlámanec	Zlámanec
+	826	Žitková	48.9802500	17.8802300	CZ	90	0	0	Žitková	Žitková	Žitková	Žitková	Žitková	Žitková
+	826	Žeranovice	49.2914700	17.6044200	CZ	90	0	0	Žeranovice	Žeranovice	Žeranovice	Žeranovice	Žeranovice	Žeranovice
+	826	Zdounky	49.2277100	17.3189900	CZ	90	0	0	Zdounky	Zdounky	Zdounky	Zdounky	Zdounky	Zdounky
+	826	Zděchov	49.2609700	18.0778300	CZ	90	0	0	Zděchov	Zděchov	Zděchov	Zděchov	Zděchov	Zděchov
+	826	Zborovice	49.2488900	17.2846400	CZ	90	0	0	Zborovice	Zborovice	Zborovice	Zborovice	Zborovice	Zborovice
+	826	Zástřizly	49.1498400	17.2351000	CZ	90	0	0	Zástřizly	Zástřizly	Zástřizly	Zástřizly	Zástřizly	Zástřizly
+	826	Zašová	49.4741000	18.0443600	CZ	90	0	0	Zašová	Zašová	Zašová	Zašová	Zašová	Zašová
+	826	Záříčí	49.3826300	17.3528300	CZ	90	0	0	Záříčí	Záříčí	Záříčí	Záříčí	Záříčí	Záříčí
+	826	Žalkovice	49.3719100	17.4359300	CZ	90	0	0	Žalkovice	Žalkovice	Žalkovice	Žalkovice	Žalkovice	Žalkovice
+	826	Záhorovice	49.0226600	17.7792200	CZ	90	0	0	Záhorovice	Záhorovice	Záhorovice	Záhorovice	Záhorovice	Záhorovice
+	826	Zahnašovice	49.3045500	17.5600900	CZ	90	0	0	Zahnašovice	Zahnašovice	Zahnašovice	Zahnašovice	Zahnašovice	Zahnašovice
+	826	Vysoké Pole	49.1774200	17.9373300	CZ	90	0	0	Vysoké Pole	Vysoké Pole	Vysoké Pole	Vysoké Pole	Vysoké Pole	Vysoké Pole
+	826	Vysoká	49.5173800	17.9490500	CZ	90	0	0	Vysoká	Vysoká	Vysoká	Vysoká	Vysoká	Vysoká
+	826	Vyškovec	48.9404600	17.8524800	CZ	90	0	0	Vyškovec	Vyškovec	Vyškovec	Vyškovec	Vyškovec	Vyškovec
+	826	Vsetín	49.3387100	17.9961900	CZ	90	0	0	Vsetín	Всетин	Vsetín	Vsetín	Vsetín	Vsetín
+	826	Všemina	49.2810000	17.8768200	CZ	90	0	0	Všemina	Všemina	Všemina	Všemina	Všemina	Všemina
+	826	Vrbka	49.2282300	17.4131200	CZ	90	0	0	Vrbka	Vrbka	Vrbka	Vrbka	Vrbka	Vrbka
+	826	Vlčnov	49.0099000	17.5818300	CZ	90	0	0	Vlčnov	Vlčnov	Vlčnov	Vlčnov	Vlčnov	Vlčnov
+	826	Vlčková	49.3105200	17.7633200	CZ	90	0	0	Vlčková	Vlčková	Vlčková	Vlčková	Vlčková	Vlčková
+	826	Vlachovice	49.1237700	17.9400100	CZ	90	0	0	Vlachovice	Vlachovice	Vlachovice	Vlachovice	Vlachovice	Vlachovice
+	826	Vlachova Lhota	49.1498700	17.9534500	CZ	90	0	0	Vlachova Lhota	Vlachova Lhota	Vlachova Lhota	Vlachova Lhota	Vlachova Lhota	Vlachova Lhota
+	826	Vizovice	49.2228700	17.8545500	CZ	90	0	0	Vizovice	Vizovice	Vizovice	Vizovice	Vizovice	Vizovice
+	826	Vítonice	49.4471300	17.6929600	CZ	90	0	0	Vítonice	Vítonice	Vítonice	Vítonice	Vítonice	Vítonice
+	826	Vigantice	49.4437900	18.1840200	CZ	90	0	0	Vigantice	Vigantice	Vigantice	Vigantice	Vigantice	Vigantice
+	826	Vidče	49.4415100	18.0947300	CZ	90	0	0	Vidče	Vidče	Vidče	Vidče	Vidče	Vidče
+	826	Věžky	49.2850900	17.2814400	CZ	90	0	0	Věžky	Věžky	Věžky	Věžky	Věžky	Věžky
+	826	Veselá	49.2374900	17.7754500	CZ	90	0	0	Veselá	Veselá	Veselá	Veselá	Veselá	Veselá
+	826	Velký Ořechov	49.1093600	17.6684300	CZ	90	0	0	Velký Ořechov	Velký Ořechov	Velký Ořechov	Velký Ořechov	Velký Ořechov	Velký Ořechov
+	826	Velké Karlovice	49.3606400	18.2835500	CZ	90	0	0	Velké Karlovice	Velké Karlovice	Velké Karlovice	Velké Karlovice	Velké Karlovice	Velké Karlovice
+	826	Velká Lhota	49.4378000	18.0356100	CZ	90	0	0	Velká Lhota	Velká Lhota	Velká Lhota	Velká Lhota	Velká Lhota	Velká Lhota
+	826	Veletiny	49.0370000	17.5624200	CZ	90	0	0	Veletiny	Veletiny	Veletiny	Veletiny	Veletiny	Veletiny
+	826	Velehrad	49.1054300	17.3942600	CZ	90	0	0	Velehrad	Velehrad	Velehrad	Velehrad	Velehrad	Velehrad
+	826	Vážany	49.0344500	17.3119300	CZ	90	0	0	Vážany	Vážany	Vážany	Vážany	Vážany	Vážany
+	826	Vápenice	48.9678100	17.8412100	CZ	90	0	0	Vápenice	Vápenice	Vápenice	Vápenice	Vápenice	Vápenice
+	826	Valašské Příkazy	49.1658700	18.0537800	CZ	90	0	0	Valašské Příkazy	Valašské Příkazy	Valašské Příkazy	Valašské Příkazy	Valašské Příkazy	Valašské Příkazy
+	826	Valašské Meziříčí	49.4718100	17.9711300	CZ	90	0	0	Valašské Meziříčí	Мезиржичи	Valašské Meziříčí	Valašské Meziříčí	Valašské Meziříčí	Valašské Meziříčí
+	826	Valašské Klobouky	49.1406400	18.0076000	CZ	90	0	0	Valašské Klobouky	Valašské Klobouky	Valašské Klobouky	Valašské Klobouky	Valašské Klobouky	Valašské Klobouky
+	826	Valašská Senice	49.2252800	18.1169500	CZ	90	0	0	Valašská Senice	Valašská Senice	Valašská Senice	Valašská Senice	Valašská Senice	Valašská Senice
+	826	Valašská Polanka	49.2621500	17.9966700	CZ	90	0	0	Valašská Polanka	Valašská Polanka	Valašská Polanka	Valašská Polanka	Valašská Polanka	Valašská Polanka
+	826	Valašská Bystřice	49.4150700	18.1097700	CZ	90	0	0	Valašská Bystřice	Valašská Bystřice	Valašská Bystřice	Valašská Bystřice	Valašská Bystřice	Valašská Bystřice
+	826	Ústí	49.3082400	18.0031000	CZ	90	0	0	Ústí	Ústí	Ústí	Ústí	Ústí	Ústí
+	826	Újezdec	49.0380000	17.2690700	CZ	90	0	0	Újezdec	Újezdec	Újezdec	Újezdec	Újezdec	Újezdec
+	826	Újezd	49.1680900	17.9061000	CZ	90	0	0	Újezd	Újezd	Újezd	Újezd	Újezd	Újezd
+	826	Uhřice	49.2817400	17.2014300	CZ	90	0	0	Uhřice	Uhřice	Uhřice	Uhřice	Uhřice	Uhřice
+	826	Uherský Ostroh	48.9855600	17.3898400	CZ	90	0	0	Uherský Ostroh	Uherský Ostroh	Uherský Ostroh	Uherský Ostroh	Uherský Ostroh	Uherský Ostroh
+	826	Uherský Brod	49.0251300	17.6471500	CZ	90	0	0	Uherský Brod	Uherský Brod	Uherský Brod	Uherský Brod	Uherský Brod	Uherský Brod
+	826	Uherské Hradiště	49.0697500	17.4596900	CZ	90	0	0	Uherské Hradiště	Градиште	Uherské Hradiště	Uherské Hradiště	Uherské Hradiště	Uherské Hradiště
+	826	Ublo	49.2330600	17.9011200	CZ	90	0	0	Ublo	Ublo	Ublo	Ublo	Ublo	Ublo
+	826	Tupesy	49.0842700	17.3698300	CZ	90	0	0	Tupesy	Tupesy	Tupesy	Tupesy	Tupesy	Tupesy
+	826	Tučapy	49.0481100	17.3314200	CZ	90	0	0	Tučapy	Tučapy	Tučapy	Tučapy	Tučapy	Tučapy
+	826	Trnava	49.2960300	17.8419100	CZ	90	0	0	Trnava	Trnava	Trnava	Trnava	Trnava	Trnava
+	826	Třebětice	49.3193900	17.5192400	CZ	90	0	0	Třebětice	Třebětice	Třebětice	Třebětice	Třebětice	Třebětice
+	826	Traplice	49.1308800	17.4362200	CZ	90	0	0	Traplice	Traplice	Traplice	Traplice	Traplice	Traplice
+	826	Topolná	49.1218700	17.5443400	CZ	90	0	0	Topolná	Topolná	Topolná	Topolná	Topolná	Topolná
+	826	Tlumačov	49.2535100	17.4955900	CZ	90	0	0	Tlumačov	Tlumačov	Tlumačov	Tlumačov	Tlumačov	Tlumačov
+	826	Tichov	49.1773900	17.9826300	CZ	90	0	0	Tichov	Tichov	Tichov	Tichov	Tichov	Tichov
+	826	Tečovice	49.2210700	17.5873300	CZ	90	0	0	Tečovice	Tečovice	Tečovice	Tečovice	Tečovice	Tečovice
+	826	Svárov	49.1164400	17.6245300	CZ	90	0	0	Svárov	Svárov	Svárov	Svárov	Svárov	Svárov
+	826	Sušice	49.1222500	17.4522200	CZ	90	0	0	Sušice	Sušice	Sušice	Sušice	Sušice	Sušice
+	826	Šumice	49.0285800	17.7220500	CZ	90	0	0	Šumice	Šumice	Šumice	Šumice	Šumice	Šumice
+	826	Sulimov	49.2266800	17.4228700	CZ	90	0	0	Sulimov	Sulimov	Sulimov	Sulimov	Sulimov	Sulimov
+	826	Suchá Loz	48.9700100	17.7137900	CZ	90	0	0	Suchá Loz	Suchá Loz	Suchá Loz	Suchá Loz	Suchá Loz	Suchá Loz
+	826	Stupava	49.1171700	17.2486600	CZ	90	0	0	Stupava	Stupava	Stupava	Stupava	Stupava	Stupava
+	826	Študlov	49.1624300	18.0831700	CZ	90	0	0	Študlov	Študlov	Študlov	Študlov	Študlov	Študlov
+	826	Střížovice	49.2570800	17.4495900	CZ	90	0	0	Střížovice	Střížovice	Střížovice	Střížovice	Střížovice	Střížovice
+	826	Střílky	49.1399500	17.2151900	CZ	90	0	0	Střílky	Střílky	Střílky	Střílky	Střílky	Střílky
+	826	Stříbrnice	49.0566100	17.3074900	CZ	90	0	0	Stříbrnice	Stříbrnice	Stříbrnice	Stříbrnice	Stříbrnice	Stříbrnice
+	826	Střelná	49.1772000	18.0978100	CZ	90	0	0	Střelná	Střelná	Střelná	Střelná	Střelná	Střelná
+	826	Strání	48.9021600	17.7067100	CZ	90	0	0	Strání	Strání	Strání	Strání	Strání	Strání
+	826	Štítná nad Vláří	49.0688100	17.9827400	CZ	90	0	0	Štítná nad Vláří	Štítná nad Vláří	Štítná nad Vláří	Štítná nad Vláří	Štítná nad Vláří	Štítná nad Vláří
+	826	Starý Hrozenkov	48.9658700	17.8630100	CZ	90	0	0	Starý Hrozenkov	Starý Hrozenkov	Starý Hrozenkov	Starý Hrozenkov	Starý Hrozenkov	Starý Hrozenkov
+	826	Staré Město	49.0751500	17.4333800	CZ	90	0	0	Staré Město	Staré Město	Staré Město	Staré Město	Staré Město	Staré Město
+	826	Staré Hutě	49.1291100	17.2777300	CZ	90	0	0	Staré Hutě	Staré Hutě	Staré Hutě	Staré Hutě	Staré Hutě	Staré Hutě
+	826	Spytihněv	49.1411500	17.4980800	CZ	90	0	0	Spytihněv	Spytihněv	Spytihněv	Spytihněv	Spytihněv	Spytihněv
+	826	Soběsuky	49.2335900	17.3594800	CZ	90	0	0	Soběsuky	Soběsuky	Soběsuky	Soběsuky	Soběsuky	Soběsuky
+	826	Slušovice	49.2478200	17.8015000	CZ	90	0	0	Slušovice	Slušovice	Slušovice	Slušovice	Slušovice	Slušovice
+	826	Slopné	49.1569600	17.8471100	CZ	90	0	0	Slopné	Slopné	Slopné	Slopné	Slopné	Slopné
+	826	Slavkov pod Hostýnem	49.3771500	17.6703300	CZ	90	0	0	Slavkov pod Hostýnem	Slavkov pod Hostýnem	Slavkov pod Hostýnem	Slavkov pod Hostýnem	Slavkov pod Hostýnem	Slavkov pod Hostýnem
+	826	Slavkov	48.9469000	17.6115700	CZ	90	0	0	Slavkov	Slavkov	Slavkov	Slavkov	Slavkov	Slavkov
+	826	Slavičín	49.0879900	17.8734900	CZ	90	0	0	Slavičín	Slavičín	Slavičín	Slavičín	Slavičín	Slavičín
+	826	Skaštice	49.3323100	17.4173900	CZ	90	0	0	Skaštice	Skaštice	Skaštice	Skaštice	Skaštice	Skaštice
+	826	Seninka	49.2732100	17.9650500	CZ	90	0	0	Seninka	Seninka	Seninka	Seninka	Seninka	Seninka
+	826	Šelešovice	49.2547800	17.3600200	CZ	90	0	0	Šelešovice	Šelešovice	Šelešovice	Šelešovice	Šelešovice	Šelešovice
+	826	Sehradice	49.1442700	17.8241600	CZ	90	0	0	Sehradice	Sehradice	Sehradice	Sehradice	Sehradice	Sehradice
+	826	Sazovice	49.2409000	17.5686700	CZ	90	0	0	Sazovice	Sazovice	Sazovice	Sazovice	Sazovice	Sazovice
+	826	Šarovy	49.1485800	17.6068600	CZ	90	0	0	Šarovy	Šarovy	Šarovy	Šarovy	Šarovy	Šarovy
+	826	Šanov	49.0454600	17.8984000	CZ	90	0	0	Šanov	Šanov	Šanov	Šanov	Šanov	Šanov
+	826	Salaš	49.1405200	17.3427700	CZ	90	0	0	Salaš	Salaš	Salaš	Salaš	Salaš	Salaš
+	826	Rymice	49.3419100	17.5262100	CZ	90	0	0	Rymice	Rymice	Rymice	Rymice	Rymice	Rymice
+	826	Růžďka	49.3939500	17.9955900	CZ	90	0	0	Růžďka	Růžďka	Růžďka	Růžďka	Růžďka	Růžďka
+	826	Rusava	49.3484300	17.6890800	CZ	90	0	0	Rusava	Rusava	Rusava	Rusava	Rusava	Rusava
+	826	Rudimov	49.0797000	17.8281500	CZ	90	0	0	Rudimov	Rudimov	Rudimov	Rudimov	Rudimov	Rudimov
+	826	Rudice	49.0560500	17.7374700	CZ	90	0	0	Rudice	Rudice	Rudice	Rudice	Rudice	Rudice
+	826	Rožnov pod Radhoštěm	49.4585300	18.1430200	CZ	90	0	0	Rožnov pod Radhoštěm	Rožnov pod Radhoštěm	Rožnov pod Radhoštěm	Rožnov pod Radhoštěm	Rožnov pod Radhoštěm	Rožnov pod Radhoštěm
+	826	Roštín	49.1887900	17.2860500	CZ	90	0	0	Roštín	Roštín	Roštín	Roštín	Roštín	Roštín
+	826	Roštění	49.3669000	17.5384900	CZ	90	0	0	Roštění	Roštění	Roštění	Roštění	Roštění	Roštění
+	826	Rokytnice	49.0661400	17.9113600	CZ	90	0	0	Rokytnice	Rokytnice	Rokytnice	Rokytnice	Rokytnice	Rokytnice
+	826	Ratiboř	49.3676900	17.9149900	CZ	90	0	0	Ratiboř	Ratiboř	Ratiboř	Ratiboř	Ratiboř	Ratiboř
+	826	Rataje	49.2713000	17.3355500	CZ	90	0	0	Rataje	Rataje	Rataje	Rataje	Rataje	Rataje
+	826	Rajnochovice	49.4129900	17.8131600	CZ	90	0	0	Rajnochovice	Rajnochovice	Rajnochovice	Rajnochovice	Rajnochovice	Rajnochovice
+	826	Racková	49.2770700	17.6248800	CZ	90	0	0	Racková	Racková	Racková	Racková	Racková	Racková
+	826	Pržno	49.3874700	17.9428500	CZ	90	0	0	Pržno	Pržno	Pržno	Pržno	Pržno	Pržno
+	826	Prusinovice	49.3789800	17.5871000	CZ	90	0	0	Prusinovice	Prusinovice	Prusinovice	Prusinovice	Prusinovice	Prusinovice
+	826	Provodov	49.1602600	17.7367900	CZ	90	0	0	Provodov	Provodov	Provodov	Provodov	Provodov	Provodov
+	826	Prostřední Bečva	49.4360900	18.2520000	CZ	90	0	0	Prostřední Bečva	Prostřední Bečva	Prostřední Bečva	Prostřední Bečva	Prostřední Bečva	Prostřední Bečva
+	826	Prlov	49.2479000	17.9613400	CZ	90	0	0	Prlov	Prlov	Prlov	Prlov	Prlov	Prlov
+	826	Přílepy	49.3199800	17.6159100	CZ	90	0	0	Přílepy	Přílepy	Přílepy	Přílepy	Přílepy	Přílepy
+	826	Pravčice	49.3244900	17.4954800	CZ	90	0	0	Pravčice	Pravčice	Pravčice	Pravčice	Pravčice	Pravčice
+	826	Prasklice	49.2687000	17.1867100	CZ	90	0	0	Prasklice	Prasklice	Prasklice	Prasklice	Prasklice	Prasklice
+	826	Prakšice	49.0689000	17.6330300	CZ	90	0	0	Prakšice	Prakšice	Prakšice	Prakšice	Prakšice	Prakšice
+	826	Pozlovice	49.1292100	17.7692500	CZ	90	0	0	Pozlovice	Pozlovice	Pozlovice	Pozlovice	Pozlovice	Pozlovice
+	826	Pozděchov	49.2332300	17.9554300	CZ	90	0	0	Pozděchov	Pozděchov	Pozděchov	Pozděchov	Pozděchov	Pozděchov
+	826	Poteč	49.1543800	18.0354300	CZ	90	0	0	Poteč	Poteč	Poteč	Poteč	Poteč	Poteč
+	826	Popovice	49.0525500	17.5271200	CZ	90	0	0	Popovice	Popovice	Popovice	Popovice	Popovice	Popovice
+	826	Police	49.4567200	17.8675400	CZ	90	0	0	Police	Police	Police	Police	Police	Police
+	826	Polešovice	49.0339000	17.3406400	CZ	90	0	0	Polešovice	Polešovice	Polešovice	Polešovice	Polešovice	Polešovice
+	826	Pohořelice	49.1765700	17.5378500	CZ	90	0	0	Pohořelice	Pohořelice	Pohořelice	Pohořelice	Pohořelice	Pohořelice
+	826	Podolí	49.4302600	17.8571400	CZ	90	0	0	Podolí	Podolí	Podolí	Podolí	Podolí	Podolí
+	826	Podkopná Lhota	49.3057600	17.8314000	CZ	90	0	0	Podkopná Lhota	Podkopná Lhota	Podkopná Lhota	Podkopná Lhota	Podkopná Lhota	Podkopná Lhota
+	826	Podhradní Lhota	49.4207500	17.7950500	CZ	90	0	0	Podhradní Lhota	Podhradní Lhota	Podhradní Lhota	Podhradní Lhota	Podhradní Lhota	Podhradní Lhota
+	826	Podhradí	49.1399500	17.7739600	CZ	90	0	0	Podhradí	Podhradí	Podhradí	Podhradí	Podhradí	Podhradí
+	826	Pitín	49.0383000	17.8506700	CZ	90	0	0	Pitín	Pitín	Pitín	Pitín	Pitín	Pitín
+	826	Petrůvka	49.1049100	17.8099700	CZ	90	0	0	Petrůvka	Petrůvka	Petrůvka	Petrůvka	Petrůvka	Petrůvka
+	826	Pašovice	49.0795300	17.6443400	CZ	90	0	0	Pašovice	Pašovice	Pašovice	Pašovice	Pašovice	Pašovice
+	826	Pačlavice	49.2596700	17.1689000	CZ	90	0	0	Pačlavice	Pačlavice	Pačlavice	Pačlavice	Pačlavice	Pačlavice
+	826	Pacetluky	49.3794600	17.5657400	CZ	90	0	0	Pacetluky	Pacetluky	Pacetluky	Pacetluky	Pacetluky	Pacetluky
+	826	Oznice	49.4324700	17.9172900	CZ	90	0	0	Oznice	Oznice	Oznice	Oznice	Oznice	Oznice
+	826	Otrokovice	49.2166700	17.5166700	CZ	90	0	0	Otrokovice	Otrokovice	Otrokovice	Otrokovice	Otrokovice	Otrokovice
+	826	Otrokovice	49.2093400	17.5394400	CZ	90	0	0	Otrokovice	Otrokovice	Otrokovice	Otrokovice	Otrokovice	Otrokovice
+	826	Osvětimany	49.0557700	17.2496800	CZ	90	0	0	Osvětimany	Osvětimany	Osvětimany	Osvětimany	Osvětimany	Osvětimany
+	826	Ostrožská Nová Ves	49.0043400	17.4363200	CZ	90	0	0	Ostrožská Nová Ves	Ostrožská Nová Ves	Ostrožská Nová Ves	Ostrožská Nová Ves	Ostrožská Nová Ves	Ostrožská Nová Ves
+	826	Ostrožská Lhota	48.9755900	17.4675100	CZ	90	0	0	Ostrožská Lhota	Ostrožská Lhota	Ostrožská Lhota	Ostrožská Lhota	Ostrožská Lhota	Ostrožská Lhota
+	826	Ostrata	49.2709300	17.7668300	CZ	90	0	0	Ostrata	Ostrata	Ostrata	Ostrata	Ostrata	Ostrata
+	826	Osíčko	49.4309900	17.7515000	CZ	90	0	0	Osíčko	Osíčko	Osíčko	Osíčko	Osíčko	Osíčko
+	826	Ořechov	49.0305900	17.3008300	CZ	90	0	0	Ořechov	Ořechov	Ořechov	Ořechov	Ořechov	Ořechov
+	826	Oldřichovice	49.1817700	17.5613400	CZ	90	0	0	Oldřichovice	Oldřichovice	Oldřichovice	Oldřichovice	Oldřichovice	Oldřichovice
+	826	Nový Hrozenkov	49.3369700	18.1979300	CZ	90	0	0	Nový Hrozenkov	Nový Hrozenkov	Nový Hrozenkov	Nový Hrozenkov	Nový Hrozenkov	Nový Hrozenkov
+	826	Nová Dědina	49.2101100	17.4537100	CZ	90	0	0	Nová Dědina	Nová Dědina	Nová Dědina	Nová Dědina	Nová Dědina	Nová Dědina
+	826	Nivnice	48.9746500	17.6475700	CZ	90	0	0	Nivnice	Nivnice	Nivnice	Nivnice	Nivnice	Nivnice
+	826	Nítkovice	49.2036300	17.1659000	CZ	90	0	0	Nítkovice	Nítkovice	Nítkovice	Nítkovice	Nítkovice	Nítkovice
+	826	Nezdenice	49.0166800	17.7522000	CZ	90	0	0	Nezdenice	Nezdenice	Nezdenice	Nezdenice	Nezdenice	Nezdenice
+	826	Neubuz	49.2604200	17.8253400	CZ	90	0	0	Neubuz	Neubuz	Neubuz	Neubuz	Neubuz	Neubuz
+	826	Němčice	49.3646700	17.4977300	CZ	90	0	0	Němčice	Němčice	Němčice	Němčice	Němčice	Němčice
+	826	Nedašova Lhota	49.1213000	18.0796000	CZ	90	0	0	Nedašova Lhota	Nedašova Lhota	Nedašova Lhota	Nedašova Lhota	Nedašova Lhota	Nedašova Lhota
+	826	Nedašov	49.1077800	18.0703600	CZ	90	0	0	Nedašov	Nedašov	Nedašov	Nedašov	Nedašov	Nedašov
+	826	Nedakonice	49.0315900	17.3814100	CZ	90	0	0	Nedakonice	Nedakonice	Nedakonice	Nedakonice	Nedakonice	Nedakonice
+	826	Nedachlebice	49.0992900	17.5891200	CZ	90	0	0	Nedachlebice	Nedachlebice	Nedachlebice	Nedachlebice	Nedachlebice	Nedachlebice
+	826	Návojná	49.1083000	18.0529500	CZ	90	0	0	Návojná	Návojná	Návojná	Návojná	Návojná	Návojná
+	826	Napajedla	49.1715600	17.5119400	CZ	90	0	0	Napajedla	Napajedla	Napajedla	Napajedla	Napajedla	Napajedla
+	826	Mysločovice	49.2560000	17.5661400	CZ	90	0	0	Mysločovice	Mysločovice	Mysločovice	Mysločovice	Mysločovice	Mysločovice
+	826	Mrlínek	49.4284300	17.6782600	CZ	90	0	0	Mrlínek	Mrlínek	Mrlínek	Mrlínek	Mrlínek	Mrlínek
+	826	Modrá	49.1120200	17.4034000	CZ	90	0	0	Modrá	Modrá	Modrá	Modrá	Modrá	Modrá
+	826	Mistřice	49.0866800	17.5359700	CZ	90	0	0	Mistřice	Mistřice	Mistřice	Mistřice	Mistřice	Mistřice
+	826	Míškovice	49.2765700	17.5489900	CZ	90	0	0	Míškovice	Míškovice	Míškovice	Míškovice	Míškovice	Míškovice
+	826	Mikulůvka	49.4135100	17.9250600	CZ	90	0	0	Mikulůvka	Mikulůvka	Mikulůvka	Mikulůvka	Mikulůvka	Mikulůvka
+	826	Medlovice	49.0490300	17.2717500	CZ	90	0	0	Medlovice	Medlovice	Medlovice	Medlovice	Medlovice	Medlovice
+	826	Martinice	49.3103100	17.6010800	CZ	90	0	0	Martinice	Martinice	Martinice	Martinice	Martinice	Martinice
+	826	Malá Bystřice	49.4094000	18.0485200	CZ	90	0	0	Malá Bystřice	Malá Bystřice	Malá Bystřice	Malá Bystřice	Malá Bystřice	Malá Bystřice
+	826	Machová	49.2543000	17.5449400	CZ	90	0	0	Machová	Machová	Machová	Machová	Machová	Machová
+	826	Lužná	49.2397900	18.0196400	CZ	90	0	0	Lužná	Lužná	Lužná	Lužná	Lužná	Lužná
+	826	Lutopecny	49.3013800	17.3443800	CZ	90	0	0	Lutopecny	Lutopecny	Lutopecny	Lutopecny	Lutopecny	Lutopecny
+	826	Lutonina	49.2385400	17.8828100	CZ	90	0	0	Lutonina	Lutonina	Lutonina	Lutonina	Lutonina	Lutonina
+	826	Lukoveček	49.3034900	17.6687000	CZ	90	0	0	Lukoveček	Lukoveček	Lukoveček	Lukoveček	Lukoveček	Lukoveček
+	826	Lukov	49.2902700	17.7295900	CZ	90	0	0	Lukov	Lukov	Lukov	Lukov	Lukov	Lukov
+	826	Luhačovice	49.0998200	17.7574700	CZ	90	0	0	Luhačovice	Luhačovice	Luhačovice	Luhačovice	Luhačovice	Luhačovice
+	826	Ludslavice	49.2995200	17.5406700	CZ	90	0	0	Ludslavice	Ludslavice	Ludslavice	Ludslavice	Ludslavice	Ludslavice
+	826	Ludkovice	49.1147400	17.7266100	CZ	90	0	0	Ludkovice	Ludkovice	Ludkovice	Ludkovice	Ludkovice	Ludkovice
+	826	Lubná	49.2207500	17.3979500	CZ	90	0	0	Lubná	Lubná	Lubná	Lubná	Lubná	Lubná
+	826	Loukov	49.4217900	17.7210200	CZ	90	0	0	Loukov	Loukov	Loukov	Loukov	Loukov	Loukov
+	826	Loučka	49.4386900	17.8326600	CZ	90	0	0	Loučka	Loučka	Loučka	Loučka	Loučka	Loučka
+	826	Lopeník	48.9454300	17.7914100	CZ	90	0	0	Lopeník	Lopeník	Lopeník	Lopeník	Lopeník	Lopeník
+	826	Litenčice	49.2022000	17.2084200	CZ	90	0	0	Litenčice	Litenčice	Litenčice	Litenčice	Litenčice	Litenčice
+	826	Liptál	49.2905100	17.9217700	CZ	90	0	0	Liptál	Liptál	Liptál	Liptál	Liptál	Liptál
+	826	Lipová	49.1219000	17.8796100	CZ	90	0	0	Lipová	Lipová	Lipová	Lipová	Lipová	Lipová
+	826	Lípa	49.2152800	17.7687300	CZ	90	0	0	Lípa	Lípa	Lípa	Lípa	Lípa	Lípa
+	826	Lidečko	49.2030300	18.0513000	CZ	90	0	0	Lidečko	Lidečko	Lidečko	Lidečko	Lidečko	Lidečko
+	826	Lhotsko	49.2122000	17.8833700	CZ	90	0	0	Lhotsko	Lhotsko	Lhotsko	Lhotsko	Lhotsko	Lhotsko
+	826	Lhota u Vsetína	49.3045800	17.9579800	CZ	90	0	0	Lhota u Vsetína	Lhota u Vsetína	Lhota u Vsetína	Lhota u Vsetína	Lhota u Vsetína	Lhota u Vsetína
+	826	Lhota	49.1693400	17.6024200	CZ	90	0	0	Lhota	Lhota	Lhota	Lhota	Lhota	Lhota
+	826	Lešná	49.5205500	17.9300400	CZ	90	0	0	Lešná	Lešná	Lešná	Lešná	Lešná	Lešná
+	826	Leskovec	49.2842000	17.9987400	CZ	90	0	0	Leskovec	Leskovec	Leskovec	Leskovec	Leskovec	Leskovec
+	826	Lechotice	49.2736700	17.5878900	CZ	90	0	0	Lechotice	Lechotice	Lechotice	Lechotice	Lechotice	Lechotice
+	826	Lačnov	49.1787800	18.0165000	CZ	90	0	0	Lačnov	Lačnov	Lačnov	Lačnov	Lačnov	Lačnov
+	826	Kyselovice	49.3771500	17.4020600	CZ	90	0	0	Kyselovice	Kyselovice	Kyselovice	Kyselovice	Kyselovice	Kyselovice
+	826	Kvasice	49.2422300	17.4697400	CZ	90	0	0	Kvasice	Kvasice	Kvasice	Kvasice	Kvasice	Kvasice
+	826	Kurovice	49.2891400	17.5155600	CZ	90	0	0	Kurovice	Kurovice	Kurovice	Kurovice	Kurovice	Kurovice
+	826	Kunovice	49.4442400	17.8098800	CZ	90	0	0	Kunovice	Kunovice	Kunovice	Kunovice	Kunovice	Kunovice
+	826	Kunovice	49.0449900	17.4701100	CZ	90	0	0	Kunovice	Kunovice	Kunovice	Kunovice	Kunovice	Kunovice
+	826	Kunkovice	49.1827200	17.1742500	CZ	90	0	0	Kunkovice	Kunkovice	Kunkovice	Kunkovice	Kunkovice	Kunkovice
+	826	Kudlovice	49.1316700	17.4571700	CZ	90	0	0	Kudlovice	Kudlovice	Kudlovice	Kudlovice	Kudlovice	Kudlovice
+	826	Kroměříž	49.2978500	17.3931200	CZ	90	0	0	Kroměříž	Кромнержиж	Kroměříž	Kroměříž	Kroměříž	Kroměříž
+	826	Křekov	49.1295000	17.9677600	CZ	90	0	0	Křekov	Křekov	Křekov	Křekov	Křekov	Křekov
+	826	Kostelec u Holešova	49.3746900	17.5121300	CZ	90	0	0	Kostelec u Holešova	Kostelec u Holešova	Kostelec u Holešova	Kostelec u Holešova	Kostelec u Holešova	Kostelec u Holešova
+	826	Kostelany nad Moravou	49.0453800	17.4069300	CZ	90	0	0	Kostelany nad Moravou	Kostelany nad Moravou	Kostelany nad Moravou	Kostelany nad Moravou	Kostelany nad Moravou	Kostelany nad Moravou
+	826	Kostelany	49.2030700	17.3828500	CZ	90	0	0	Kostelany	Kostelany	Kostelany	Kostelany	Kostelany	Kostelany
+	826	Košíky	49.1575800	17.4161900	CZ	90	0	0	Košíky	Košíky	Košíky	Košíky	Košíky	Košíky
+	826	Korytná	48.9409700	17.6652000	CZ	90	0	0	Korytná	Korytná	Korytná	Korytná	Korytná	Korytná
+	826	Koryčany	49.1063900	17.1643300	CZ	90	0	0	Koryčany	Koryčany	Koryčany	Koryčany	Koryčany	Koryčany
+	826	Komňa	48.9938300	17.8008100	CZ	90	0	0	Komňa	Komňa	Komňa	Komňa	Komňa	Komňa
+	826	Komárov	49.1506900	17.5687500	CZ	90	0	0	Komárov	Komárov	Komárov	Komárov	Komárov	Komárov
+	826	Komárno	49.4345800	17.7803700	CZ	90	0	0	Komárno	Komárno	Komárno	Komárno	Komárno	Komárno
+	826	Kněžpole	49.0985500	17.5167100	CZ	90	0	0	Kněžpole	Kněžpole	Kněžpole	Kněžpole	Kněžpole	Kněžpole
+	826	Kladeruby	49.4927200	17.8651400	CZ	90	0	0	Kladeruby	Kladeruby	Kladeruby	Kladeruby	Kladeruby	Kladeruby
+	826	Kelníky	49.1108900	17.6446600	CZ	90	0	0	Kelníky	Kelníky	Kelníky	Kelníky	Kelníky	Kelníky
+	826	Kelč	49.4784400	17.8153300	CZ	90	0	0	Kelč	Kelč	Kelč	Kelč	Kelč	Kelč
+	826	Kateřinice	49.3820900	17.8857600	CZ	90	0	0	Kateřinice	Kateřinice	Kateřinice	Kateřinice	Kateřinice	Kateřinice
+	826	Kašava	49.2954100	17.7856600	CZ	90	0	0	Kašava	Kašava	Kašava	Kašava	Kašava	Kašava
+	826	Karolinka	49.3512800	18.2400600	CZ	90	0	0	Karolinka	Karolinka	Karolinka	Karolinka	Karolinka	Karolinka
+	826	Karolín	49.2305900	17.4345000	CZ	90	0	0	Karolín	Karolín	Karolín	Karolín	Karolín	Karolín
+	826	Karlovice	49.1764100	17.5858200	CZ	90	0	0	Karlovice	Karlovice	Karlovice	Karlovice	Karlovice	Karlovice
+	826	Kaňovice	49.1090500	17.6987500	CZ	90	0	0	Kaňovice	Kaňovice	Kaňovice	Kaňovice	Kaňovice	Kaňovice
+	826	Jestřabí	49.0680400	17.9558700	CZ	90	0	0	Jestřabí	Jestřabí	Jestřabí	Jestřabí	Jestřabí	Jestřabí
+	826	Jasenná	49.2533900	17.8941900	CZ	90	0	0	Jasenná	Jasenná	Jasenná	Jasenná	Jasenná	Jasenná
+	826	Jarohněvice	49.2670800	17.3775600	CZ	90	0	0	Jarohněvice	Jarohněvice	Jarohněvice	Jarohněvice	Jarohněvice	Jarohněvice
+	826	Jarcová	49.4445300	17.9658600	CZ	90	0	0	Jarcová	Jarcová	Jarcová	Jarcová	Jarcová	Jarcová
+	826	Janová	49.3120400	18.0200500	CZ	90	0	0	Janová	Janová	Janová	Janová	Janová	Janová
+	826	Jankovice	49.3561500	17.6216100	CZ	90	0	0	Jankovice	Jankovice	Jankovice	Jankovice	Jankovice	Jankovice
+	826	Jankovice	49.1541200	17.3884800	CZ	90	0	0	Jankovice	Jankovice	Jankovice	Jankovice	Jankovice	Jankovice
+	826	Jalubí	49.1162600	17.4278800	CZ	90	0	0	Jalubí	Jalubí	Jalubí	Jalubí	Jalubí	Jalubí
+	826	Jablůnka	49.3835500	17.9502100	CZ	90	0	0	Jablůnka	Jablůnka	Jablůnka	Jablůnka	Jablůnka	Jablůnka
+	826	Hvozdná	49.2484800	17.7516300	CZ	90	0	0	Hvozdná	Hvozdná	Hvozdná	Hvozdná	Hvozdná	Hvozdná
+	826	Huštěnovice	49.1081700	17.4644700	CZ	90	0	0	Huštěnovice	Huštěnovice	Huštěnovice	Huštěnovice	Huštěnovice	Huštěnovice
+	826	Hulín	49.3168900	17.4637400	CZ	90	0	0	Hulín	Hulín	Hulín	Hulín	Hulín	Hulín
+	826	Hrobice	49.2774000	17.7882200	CZ	90	0	0	Hrobice	Hrobice	Hrobice	Hrobice	Hrobice	Hrobice
+	826	Hřivínův Újezd	49.1242300	17.6919700	CZ	90	0	0	Hřivínův Újezd	Hřivínův Újezd	Hřivínův Újezd	Hřivínův Újezd	Hřivínův Újezd	Hřivínův Újezd
+	826	Hradčovice	49.0497700	17.5820900	CZ	90	0	0	Hradčovice	Hradčovice	Hradčovice	Hradčovice	Hradčovice	Hradčovice
+	826	Hovězí	49.3036500	18.0606200	CZ	90	0	0	Hovězí	Hovězí	Hovězí	Hovězí	Hovězí	Hovězí
+	826	Hostišová	49.2536800	17.5910400	CZ	90	0	0	Hostišová	Hostišová	Hostišová	Hostišová	Hostišová	Hostišová
+	826	Hoštice	49.2085500	17.2337800	CZ	90	0	0	Hoštice	Hoštice	Hoštice	Hoštice	Hoštice	Hoštice
+	826	Hostětín	49.0499200	17.8794000	CZ	90	0	0	Hostětín	Hostětín	Hostětín	Hostětín	Hostětín	Hostětín
+	826	Hostějov	49.0401700	17.2571600	CZ	90	0	0	Hostějov	Hostějov	Hostějov	Hostějov	Hostějov	Hostějov
+	826	Hošťálková	49.3546700	17.8694400	CZ	90	0	0	Hošťálková	Hošťálková	Hošťálková	Hošťálková	Hošťálková	Hošťálková
+	826	Horní Němčí	48.9331700	17.6241700	CZ	90	0	0	Horní Němčí	Horní Němčí	Horní Němčí	Horní Němčí	Horní Němčí	Horní Němčí
+	826	Horní Lideč	49.1812100	18.0609900	CZ	90	0	0	Horní Lideč	Horní Lideč	Horní Lideč	Horní Lideč	Horní Lideč	Horní Lideč
+	826	Horní Lhota	49.1543100	17.8044400	CZ	90	0	0	Horní Lhota	Horní Lhota	Horní Lhota	Horní Lhota	Horní Lhota	Horní Lhota
+	826	Horní Bečva	49.4321600	18.2885900	CZ	90	0	0	Horní Bečva	Horní Bečva	Horní Bečva	Horní Bečva	Horní Bečva	Horní Bečva
+	826	Honětice	49.2037100	17.2531100	CZ	90	0	0	Honětice	Honětice	Honětice	Honětice	Honětice	Honětice
+	826	Holešov	49.3333100	17.5783200	CZ	90	0	0	Holešov	Holešov	Holešov	Holešov	Holešov	Holešov
+	826	Hluk	48.9880500	17.5274400	CZ	90	0	0	Hluk	Hluk	Hluk	Hluk	Hluk	Hluk
+	826	Haluzice	49.1378700	17.8973000	CZ	90	0	0	Haluzice	Haluzice	Haluzice	Haluzice	Haluzice	Haluzice
+	826	Halenkovice	49.1710200	17.4715600	CZ	90	0	0	Halenkovice	Halenkovice	Halenkovice	Halenkovice	Halenkovice	Halenkovice
+	826	Halenkov	49.3174000	18.1474900	CZ	90	0	0	Halenkov	Halenkov	Halenkov	Halenkov	Halenkov	Halenkov
+	826	Fryšták	49.2852000	17.6834600	CZ	90	0	0	Fryšták	Fryšták	Fryšták	Fryšták	Fryšták	Fryšták
+	826	Francova Lhota	49.2017400	18.1117500	CZ	90	0	0	Francova Lhota	Francova Lhota	Francova Lhota	Francova Lhota	Francova Lhota	Francova Lhota
+	826	Držková	49.3191400	17.7855100	CZ	90	0	0	Držková	Držková	Držková	Držková	Držková	Držková
+	826	Drslavice	49.0470500	17.6000700	CZ	90	0	0	Drslavice	Drslavice	Drslavice	Drslavice	Drslavice	Drslavice
+	826	Drnovice	49.1788900	17.9573000	CZ	90	0	0	Drnovice	Drnovice	Drnovice	Drnovice	Drnovice	Drnovice
+	826	Dřínov	49.2928900	17.2333800	CZ	90	0	0	Dřínov	Dřínov	Dřínov	Dřínov	Dřínov	Dřínov
+	826	Doubravy	49.1424500	17.6681000	CZ	90	0	0	Doubravy	Doubravy	Doubravy	Doubravy	Doubravy	Doubravy
+	826	Dolní Němčí	48.9683700	17.5858500	CZ	90	0	0	Dolní Němčí	Dolní Němčí	Dolní Němčí	Dolní Němčí	Dolní Němčí	Dolní Němčí
+	826	Dolní Lhota	49.1371700	17.8123500	CZ	90	0	0	Dolní Lhota	Dolní Lhota	Dolní Lhota	Dolní Lhota	Dolní Lhota	Dolní Lhota
+	826	Dolní Bečva	49.4549800	18.1941900	CZ	90	0	0	Dolní Bečva	Dolní Bečva	Dolní Bečva	Dolní Bečva	Dolní Bečva	Dolní Bečva
+	826	Dobrkovice	49.0944600	17.6695100	CZ	90	0	0	Dobrkovice	Dobrkovice	Dobrkovice	Dobrkovice	Dobrkovice	Dobrkovice
+	826	Dešná	49.2666100	17.8459200	CZ	90	0	0	Dešná	Dešná	Dešná	Dešná	Dešná	Dešná
+	826	Chvalčov	49.3891800	17.7114900	CZ	90	0	0	Chvalčov	Chvalčov	Chvalčov	Chvalčov	Chvalčov	Chvalčov
+	826	Chropyně	49.3564400	17.3645100	CZ	90	0	0	Chropyně	Chropyně	Chropyně	Chropyně	Chropyně	Chropyně
+	826	Choryně	49.4957500	17.8986100	CZ	90	0	0	Choryně	Choryně	Choryně	Choryně	Choryně	Choryně
+	826	Chomýž	49.3623700	17.6454000	CZ	90	0	0	Chomýž	Chomýž	Chomýž	Chomýž	Chomýž	Chomýž
+	826	Cetechovice	49.1722900	17.2613800	CZ	90	0	0	Cetechovice	Cetechovice	Cetechovice	Cetechovice	Cetechovice	Cetechovice
+	826	Částkov	49.1044300	17.6198100	CZ	90	0	0	Částkov	Částkov	Částkov	Částkov	Částkov	Částkov
+	826	Bystřička	49.4153100	17.9739900	CZ	90	0	0	Bystřička	Bystřička	Bystřička	Bystřička	Bystřička	Bystřička
+	826	Bystřice pod Lopeníkem	48.9748200	17.7640500	CZ	90	0	0	Bystřice pod Lopeníkem	Bystřice pod Lopeníkem	Bystřice pod Lopeníkem	Bystřice pod Lopeníkem	Bystřice pod Lopeníkem	Bystřice pod Lopeníkem
+	826	Bystřice pod Hostýnem	49.3992400	17.6740100	CZ	90	0	0	Bystřice pod Hostýnem	Bystřice pod Hostýnem	Bystřice pod Hostýnem	Bystřice pod Hostýnem	Bystřice pod Hostýnem	Bystřice pod Hostýnem
+	826	Buchlovice	49.0862700	17.3385200	CZ	90	0	0	Buchlovice	Buchlovice	Buchlovice	Buchlovice	Buchlovice	Buchlovice
+	826	Brusné	49.3633400	17.6607000	CZ	90	0	0	Brusné	Brusné	Brusné	Brusné	Brusné	Brusné
+	826	Březůvky	49.1533300	17.6996200	CZ	90	0	0	Březůvky	Březůvky	Březůvky	Březůvky	Březůvky	Březůvky
+	826	Březová	49.2602700	17.7912400	CZ	90	0	0	Březová	Březová	Březová	Březová	Březová	Březová
+	826	Březová	48.9254300	17.7398600	CZ	90	0	0	Březová	Březová	Březová	Březová	Březová	Březová
+	826	Březolupy	49.1213800	17.5803400	CZ	90	0	0	Březolupy	Březolupy	Březolupy	Březolupy	Březolupy	Březolupy
+	826	Březnice	49.1864300	17.6627700	CZ	90	0	0	Březnice	Březnice	Březnice	Březnice	Březnice	Březnice
+	826	Břestek	49.0948900	17.3559200	CZ	90	0	0	Břestek	Břestek	Břestek	Břestek	Břestek	Břestek
+	826	Břest	49.3510700	17.4407200	CZ	90	0	0	Břest	Břest	Břest	Břest	Břest	Břest
+	826	Bratřejov	49.2224600	17.9133200	CZ	90	0	0	Bratřejov	Bratřejov	Bratřejov	Bratřejov	Bratřejov	Bratřejov
+	826	Branky	49.4609600	17.8929500	CZ	90	0	0	Branky	Branky	Branky	Branky	Branky	Branky
+	826	Boršice	49.0625400	17.3508400	CZ	90	0	0	Boršice	Boršice	Boršice	Boršice	Boršice	Boršice
+	826	Bořenovice	49.3615200	17.5643600	CZ	90	0	0	Bořenovice	Bořenovice	Bořenovice	Bořenovice	Bořenovice	Bořenovice
+	826	Bojkovice	49.0386400	17.8148700	CZ	90	0	0	Bojkovice	Bojkovice	Bojkovice	Bojkovice	Bojkovice	Bojkovice
+	826	Bojanovice	49.3103500	17.3126200	CZ	90	0	0	Bojanovice	Bojanovice	Bojanovice	Bojanovice	Bojanovice	Bojanovice
+	826	Blazice	49.4424700	17.6452900	CZ	90	0	0	Blazice	Blazice	Blazice	Blazice	Blazice	Blazice
+	826	Biskupice	49.0831100	17.7104200	CZ	90	0	0	Biskupice	Biskupice	Biskupice	Biskupice	Biskupice	Biskupice
+	826	Bílovice	49.0996500	17.5496100	CZ	90	0	0	Bílovice	Bílovice	Bílovice	Bílovice	Bílovice	Bílovice
+	826	Bezměrov	49.3298000	17.3347900	CZ	90	0	0	Bezměrov	Bezměrov	Bezměrov	Bezměrov	Bezměrov	Bezměrov
+	826	Bělov	49.2159900	17.4847700	CZ	90	0	0	Bělov	Bělov	Bělov	Bělov	Bělov	Bělov
+	826	Bánov	48.9880100	17.7175200	CZ	90	0	0	Bánov	Bánov	Bánov	Bánov	Bánov	Bánov
+	826	Babice	49.1216700	17.4807500	CZ	90	0	0	Babice	Babice	Babice	Babice	Babice	Babice
+	826	Soláň	49.3961700	18.2461500	CZ	90	0	0	Soláň	Солань	Soláň	Soláň	Soláň	Soláň

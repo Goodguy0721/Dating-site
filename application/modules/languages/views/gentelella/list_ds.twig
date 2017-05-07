@@ -1,0 +1,229 @@
+{% include '@app/header.twig' with {load_type: 'editable'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <!-- 1 level menu -->
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_languages_menu') %}
+            </ul>
+        </div>
+        <!-- 2 level menu -->
+        <div class="x_title">
+            <div id="menu" class="btn-group" data-toggle="buttons">
+                {% for lang_id, item in langs %}
+                    <label class="btn btn-default
+                           {% if lang_id == current_lang_id %}active{% endif %}"
+                           onclick="document.location.href = '{{site_url}}admin/languages/ds/{{lang_id}}/{{current_module_id}}'">
+                        <input type="radio" {% if lang_id == current_lang_id %}selected{% endif %}>
+                        {{item.name}}
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class='x_content'>
+            {% if not current_module.is_disabled_action_ds %}
+                <div id="actions" class="hide">
+                    <div class="btn-group">
+                        <a href="{{site_url}}admin/languages/ds_edit/{{current_lang_id}}/{{current_module_id}}" class="btn btn-primary">
+                            {% helper lang.l('link_add_ds', 'languages') %}
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{site_url}}admin/languages/ds_edit/{{current_lang_id}}/{{current_module_id}}">
+                                    {% helper lang.l('link_add_ds', 'languages') %}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{site_url}}admin/languages/ajax_ds_delete/{{current_lang_id}}/{{current_module_id}}"
+                                   onclick="javascript:  if (!confirm('{% helper lang.l('note_delete_pages', 'languages') %}'))
+                                               return false;
+                                           delete_strings(this.href);
+                                           return false;">
+                                    {% helper lang.l('link_delete_selected', 'languages') %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+            <div id="filters">
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <select name="module_id" onchange="javascript: reload_page(this.value);" class="form-control">
+                        {% for module_id, item in modules %}
+                            <option value="{{module_id}}"
+                                    {% if module_id == current_module_id %} selected{% endif %}>
+                                {{item.module_gid}} ({{item.module_name}})
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <table id="pages_table" class="table table-striped responsive-utilities jambo_table bulk-action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('field_gid', 'languages') %}</th>
+                        <th class="column-title">{% helper lang.l('field_ds_name', 'languages') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="5">
+                            {#<a href="{{site_url}}admin/languages/ajax_ds_delete/{{current_lang_id}}/{{current_module_id}}"
+                               onclick="javascript:  if (!confirm('{% helper lang.l('note_delete_pages', 'languages') %}')) return false;
+                                        delete_strings(this.href); return false;">
+                                {% helper lang.l('link_delete_selected', 'languages') %}
+                            </a>#}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, item in ds %}
+                        <tr id="{{key}}_tr" class="{% if not empty(item.net_is_incomer) %}net_incomer {% endif %}even pointer">
+                            <td class="text-center">
+                                <input type="checkbox" class="flat grouping del" value="{{ key }}" data="table_records">
+
+                            </td>
+                            <td>{{key}}</td>
+                            <td class="editable" id="{{key}}">{{item.header}}</td>
+                            <td class="icons">
+                                {% if not current_module.is_disabled_action_ds %}
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary"
+                                                onclick="document.location.href = '{{site_url}}admin/languages/ds_items/{{current_lang_id}}/{{current_module_id}}/{{key}}'">
+                                            {% helper lang.l('link_edit_ds_items', 'languages') %}
+                                        </button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{site_url}}admin/languages/ds_items/{{current_lang_id}}/{{current_module_id}}/{{key}}">
+                                                    {% helper lang.l('link_edit_ds_items', 'languages') %}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{site_url}}admin/languages/ds_edit/{{current_lang_id}}/{{current_module_id}}/{{key}}">
+                                                    {% helper lang.l('link_edit_ds', 'languages') %}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{site_url}}admin/languages/ds_delete/{{current_lang_id}}/{{current_module_id}}/{{key}}"
+                                                   onclick="javascript: if (!confirm('{% helper lang.l('note_delete_ds', 'languages','','js') %}'))
+                                                           return false;">
+                                                    {% helper lang.l('link_delete_ds', 'languages') %}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    var reload_url = "{{site_url}}admin/languages/ds/{{current_lang_id}}/";
+    var change_url = '{{site_url}}admin/languages/ajax_ds_save/{{current_lang_id}}/{{current_module_id}}';
+    function reload_page(module_id) {
+        location.href = reload_url + module_id;
+    }
+
+    function delete_strings(url) {
+        var gidArr = new Object;
+        $(".del:checked").each(function (i) {
+            gidArr[i] = $(this).val();
+        });
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: ({gids: gidArr}),
+            cache: false,
+            success: function (data) {
+                for (i in gidArr) {
+                    $('#' + gidArr[i] + '_tr').remove();
+                }
+                $('#pages_table tr').removeClass('zebra');
+                $("#pages_table tr:odd").addClass("zebra");
+            }
+        });
+    }
+
+    $(function () {
+        $('.editable').editable(change_url, {
+            tooltip: '{% helper lang.l("default_editable_text", "languages", '', "js") %}',
+            placeholder: '<font class="hide_text">{% helper lang.l("default_editable_text", "languages",'','js') %}</font>',
+            name: 'text',
+            submit: 'Save',
+            height: 'auto',
+            width: 300,
+            cssclass: 'jeditable-form',
+            callback: function (value, settings) {
+                $(this).html(settings.current);
+            }
+        });
+    });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#pages_table').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": ""
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0, 3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions"><"filters">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#pages_table_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+        var filters = $("#filters");
+        $('#pages_table_wrapper').find('.filters').html(filters.html());
+        filters.remove();
+    });
+</script>
+
+
+{% include '@app/footer.twig' %}

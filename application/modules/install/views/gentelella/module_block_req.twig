@@ -1,0 +1,37 @@
+<h4>Installing: {{ module.install_name }} V{{ module.version }}</h4>
+<div>{{ module.install_descr }}</div>
+<br>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" id="module_bar"
+         data-transitiongoal=""
+         style="width: {{ current_module_percent }}%;"
+         aria-valuenow="">{{ current_module_percent }}%</div>
+</div>
+<div class="x_content h4">Requirements</div>
+{% if requirements %}
+<div class="form-group">
+	{% for item in requirements %}
+	<div class="row {% if item.result %}green{% else %}red{% endif %}">
+		<label class="col-sm-4 col-xs-6">{{ item.value }}</label>
+		<div class="col-sm-8 col-xs-6">{{ item.name }}</div>
+		<div class="clearfix"></div>
+	</div>
+	{% endfor %}
+</div>
+<div class="ln_solid"></div>
+<div class="form-group">
+  <div class="col-xs-12">
+    <input type="button" onclick="javascript: product_install.request('requirements');"
+        name="refresh_module" value="Refresh" class="btn btn-primary">
+  </div>
+</div>
+<div class="clearfix"></div>
+{% else %}
+<script>
+$(function(){
+    product_install.update_module_progress({{ current_module_percent }});
+    product_install.delayed_request('{{ next_step }}');
+});
+</script>
+{% endif %}
+

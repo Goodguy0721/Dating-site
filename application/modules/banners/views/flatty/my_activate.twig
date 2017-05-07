@@ -1,0 +1,88 @@
+{% include '@app/header.twig' %}
+
+<div class="banners-content-block col-md-12">
+	<h1>
+        {% helper lang.l('header_my_banner_activate', 'banners') %}
+    </h1>
+
+    {% set form %}
+    <div class="content-value">
+        <div class="table-responsive contrasting-block">
+            <div class="my-banners-header-block clearfix">
+                <div class="col-sm-3 no-padding-left">{% helper lang.l('field_page', 'banners') %}</div>
+                <div class="col-sm-2">{% helper lang.l('field_free_places', 'banners') %}</div>
+                <div class="col-sm-2">{% helper lang.l('field_place_price', 'banners') %}</div>
+                <div class="col-sm-2">{% helper lang.l('field_period', 'banners') %}</div>
+                <div class="col-sm-3 no-padding-right">{% helper lang.l('field_place_numbers', 'banners') %}</div>
+            </div>
+            {% for item in groups %}
+                {% if item.status %}
+                    <div class="activate-banner clearfix" id="positions">
+                        <div class="col-xs-12 col-sm-3 no-padding-left">
+                            <div class="banner-name">{{ item.name }}</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <span class="item-description">{% helper lang.l('field_free_places', 'banners') %}:&nbsp;</span>
+                            <span id="free_pos_{{ item.id }}" int="{{ item.free_positions }}">
+                                {{ item.free_positions }}
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <span class="item-description">{% helper lang.l('field_place_price', 'banners') %}:&nbsp;</span>
+                            <span id="price_{{ item.id }}" float="{{ item.price }}">
+                                {% helper start.currency_format_output({'value': item.price, 'cur_gid': 'USD'}) %}
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <span class="item-description">{% helper lang.l('field_period', 'banners') %}:&nbsp;</span>
+                            {{ period }}
+                        </div>
+                        <div class="col-xs-12 col-sm-3 positions">
+                            <span class="item-description">{% helper lang.l('field_place_numbers', 'banners') %}:&nbsp;</span>
+                            <div class="col-xs-6 col-sm-6">
+                                <input type="number" class="form-control" value="{{ item.user_positions|e }}" id="used_pos_{{ item.id }}" name="used_position[{{ item.id }}]">
+                             </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="clearfix"></div>
+            <div class="banner-price">
+                {% helper lang.l('field_total_price', 'banners') %}:
+                <span id="final_price">0</span>
+                {% helper start.currency_format_output() %}
+            </div> &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+    {% endset %}
+    {% if service_data.status %}
+    <form method="post">
+        {{ form }}
+		<div class="button-activate-banner">
+			<input type="submit" class="btn btn-primary" name="btn_activate" value="{% helper lang.l('link_banner_activate', 'banners', '', 'button') %}">
+            <a href="{{ site_url }}users/account/banners" class="btn btn-cancel">
+                <i>{% helper lang.l('link_back_to_my_banners', 'banners') %}</i>
+            </a>
+		</div>
+    </form>
+    {% else %}
+        {{ form_content }}
+        <a href="{{ site_url }}users/account/banners" class="btn btn-cancel">
+            <i>{% helper lang.l('link_back_to_my_banners', 'banners') %}</i>
+        </a>
+	{% endif %}
+</div>
+<div class="clr"></div>
+
+<script>
+	var banActive;
+	loadScripts(
+		"{% helper utils.jscript('banners', 'banner-activate.js', 'path') %}",
+		function(){
+			banActive = new BannerActivate;
+		},
+		'banActive'
+	);
+</script>
+
+{% include '@app/footer.twig' %}

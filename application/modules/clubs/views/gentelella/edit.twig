@@ -1,0 +1,181 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    {% if club.id %}
+      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+          <li class="active">
+            <a href="{{ site_url }}admin/clubs/edit/{{ club.id }}">
+              {% helper lang.l('table_header_personal', 'clubs') %}
+            </a>
+          </li>
+          <li>
+            <a href="{{ site_url }}admin/clubs/media/{{ club.id }}">
+              {% helper lang.l('table_header_media', 'clubs') %}
+            </a>
+          </li>
+          <li>
+              <a href="{{ site_url }}admin/clubs/forum/{{ club.id }}">
+                  {% helper lang.l('table_header_forum', 'clubs') %}
+              </a>
+          </li>
+        </ul>
+        &nbsp;
+      </div>
+    {% endif %}
+
+    <div class="x_content">
+      <form method="post" enctype="multipart/form-data" data-parsley-validate
+            class="form-horizontal form-label-left" name="save_form"
+            action="{{ data.action }}">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_title', 'clubs') %}:</label>
+          <div class="col-sm-9">
+            <input type="text" name="title"
+                   value="{{ club.title }}"
+                   class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_category', 'clubs') %}:
+          </label>
+          <div class="col-sm-9">
+            {% helper clubs_categories = lang.ld('categories', 'clubs') %}
+            <select name="category_gid" class="form-control">
+              {% for key, item in clubs_categories.option %}
+                <option value="{{ key }}" 
+                        {% if key == club.category_gid %}selected{% endif %}>
+                  {{ item }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_image', 'clubs') %}:
+          </label>
+          <div class="col-sm-9">
+            <div>
+              <input type="file" name="image" class="form-control" />
+            </div>
+            {% if club.image %}
+              <br><input type="checkbox" name="club_icon_delete" value="1" id="uichb" class="flat">
+              <label for="uichb">{% helper lang.l('field_icon_delete', 'clubs') %}</label><br>
+              <div class="mt10">
+                <img class="clubs-edit__image" src="{{ club.mediafile.thumbs.big }}" alt="{{ club.title }}" title="{{ club.title }}" />
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_region', 'clubs') %}:
+          </label>
+          <div class="col-sm-9">
+            {% helper countries.location_select({
+                'module': 'countries',
+                'select_type': 'city',
+                'id_country': club.country_code,
+                'id_region': club.region_id,
+                'id_city': club.city_id,
+                'var_country_name': 'country_code',
+                'var_region_name': 'region_id',
+                'var_city_name': 'city_id'
+            }) %}
+          </div>
+          <input type="hidden" name="lat" value="{{ club.lat|e }}" id="clubs_lat" />
+          <input type="hidden" name="lon" value="{{ club.lon|e }}" id="clubs_lon" />
+
+          {% helper is_module_installed = utils.depends('geomap') %}
+          {% if is_module_installed.geomap %}
+              {% helper geomap.geomap_load_geocoder() %}
+          {% endif %}
+          <script type="text/javascript">
+              function updateCoordinates(country, region, city) {
+                if (typeof(geocoder) != 'undefined') {
+                  var location = geocoder.getLocationFromAddress(country, region, city);
+                  geocoder.geocodeLocation(location, function(latitude, longitude){
+                    setCoordinates(latitude, longitude);
+                  }); 
+                }
+              }
+              
+              function setCoordinates(latitude, longitude) {
+                $('#clubs_lat').val(latitude);
+                $('#clubs_lon').val(longitude);
+              }
+              $(function() {
+                  $('input[name=country_code]').on('change', function() {
+                      var country = $('input[name=country_code]').val();
+                      var region = $('input[name=region_id]').val();
+                      var city = $('input[name=city_id]').val();
+                      
+                      if (country == '') {
+                        setCoordinates(0, 0);
+                        return;
+                      }
+
+                      var country_name = '';
+                      var region_name = '';
+                      var city_name = '';
+                      var locations = $('input[name=region_name]').val().split(',');
+
+                      if (typeof(locations[0]) != 'undefined') {
+                        country_name = locations[0];
+                      }
+                      if (typeof(locations[1]) != 'undefined') {
+                        region_name = locations[1];
+                      }
+                      if (typeof(locations[2]) != 'undefined') {
+                        city_name = locations[2];
+                      }
+
+                      updateCoordinates(country_name, region_name, city_name);
+                  });
+              });
+          </script>
+
+        </div>
+
+        {# <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_address', 'clubs') %}:
+          </label>
+          <div class="col-sm-9">
+            <input type="text" name="address" class="form-control" value="{{ club.address|e }}" />
+          </div>
+        </div> #}
+
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_description', 'clubs') %}:
+          </label>
+          <div class="col-sm-9">
+            <textarea class="form-control clubs-edit__description" name="description" rows="10">{{ club.description }}</textarea>
+            {#{{ club_description_fck }}#}
+          </div>
+        </div>
+          
+        {% include 'custom_form_fields.twig' %}
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+            <button type="submit" name="btn_save" class="btn btn-success" value="1">
+              {% helper lang.l('btn_save', 'start') %}</button>
+            <a href="{{ site_url }}admin/clubs/index" class="btn btn-default">
+              {% helper lang.l('btn_cancel', 'start') %}</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

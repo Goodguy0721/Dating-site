@@ -1,0 +1,10 @@
+	{{ widget.content }}
+
+	<script>
+		$(function(){
+			setTimeout(function(){
+				var parent_url = decodeURIComponent(document.location.hash.replace(/^#/, ''));
+				$.postMessage({widget_{{ widget.gid }}_height: $('body').outerHeight(true)}, parent_url, parent);
+			}, 100);
+		});
+	</script>

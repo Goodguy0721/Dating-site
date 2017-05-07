@@ -1,0 +1,91 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+    <div class="x_content">
+        <ul class="nav nav-tabs bar_tabs">
+            {% helper menu.get_admin_level1_menu('admin_spam_menu') %}
+        </ul>
+    </div>
+
+    <div class="x_content">
+        <form id="types_form" action="" method="post">
+            <table id="data" class="table table-striped jambo_table">
+                <thead>
+                    <tr class="heading">
+                        <th class="column-title">{% helper lang.l('field_type_gid', 'spam') %}</th>
+                        <th class="column-title">{% helper lang.l('field_type_form_type', 'spam') %}</th>
+                        <th class="column-title">{% helper lang.l('field_type_send_mail', 'spam') %}</th>
+                        <th class="column-title">{% helper lang.l('field_type_status', 'spam') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if types %}
+                        {% for item in types %}
+                            <tr class="even pointer">
+                                {% set item_name = 'stat_header_spam_' ~ item.gid %}
+                                <td>{% helper lang.l(item_name, 'spam') %}</td>
+                                <td>{{ item.form }}</td>
+                                <td>
+                                    {% if item.send_mail %}
+                                        <a href="{{ site_url }}admin/spam/type_send_mail/{{ item.id }}/0"
+                                           title="{% helper lang.l('link_send_mail_off', 'spam', '', 'button') %}"
+                                           class="btn btn-primary">
+                                            {% helper lang.l('btn_tableicon_yes','start') %}
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/spam/type_send_mail/{{ item.id }}/1"
+                                           title="{% helper lang.l('link_send_mail_on', 'spam', '', 'button') %}"
+                                           class="btn btn-primary">
+                                            {% helper lang.l('btn_tableicon_no','start') %}
+                                        </a>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if item.status %}
+                                        <a href="{{ site_url }}admin/spam/type_activate/{{ item.id }}/0"
+                                           title="{% helper lang.l('link_type_deactivate', 'spam', '', 'button') %}"
+                                           class="btn btn-primary">
+                                            {% helper lang.l('btn_tableicon_yes','start') %}
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/spam/type_activate/{{ item.id }}/1"
+                                           title="{% helper lang.l('link_type_activate', 'spam', '', 'button') %}"
+                                           class="btn btn-primary">
+                                            {% helper lang.l('btn_tableicon_no','start') %}
+                                        </a>
+                                    {% endif %}
+                                </td>
+                                <td class="icons">
+                                  <div class="btn-group">
+                                    <a href="{{ site_url }}admin/spam/types_edit/{{ item.id }}"
+                                        class="btn btn-primary">
+                                        {% helper lang.l('link_types_edit', 'spam') %}
+                                    </a>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                        <a href="{{ site_url }}admin/spam/types_edit/{{ item.id }}">
+                                            {% helper lang.l('link_types_edit', 'spam') %}
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr><td colspan="6" class="text-center">{% helper lang.l('no_types', 'spam') %}</td></tr>
+                        {% endif %}
+                </tbody>
+            </table>
+        </form>
+        {% include '@app/pagination.twig' %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

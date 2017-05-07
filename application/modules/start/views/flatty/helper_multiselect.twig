@@ -1,0 +1,120 @@
+<div id="multiselect_{{ multiselect_helper_data.rand }}" class="multiselect">
+	{% set active=multiselect_helper_data.active_field %}
+	<div class="header">
+		{{ multiselect_helper_data.fields[active].header }}
+	</div>
+	<div class="selected">
+		<ul class="selected-items">
+			{% if multiselect_helper_data.selected[active] is not empty %}
+				{% if multiselect_helper_data.all_selected[active] is not empty %}
+					<input type="hidden" name="{{ active }}[]" value="{{ multiselect_helper_data.all_value|e }}">
+					{% for selectedKey, selectedItem in multiselect_helper_data.fields[active].option %}
+						<li class="item {{ active }}-selected-{{ selectedKey }}">
+                            {{ multiselect_helper_data.fields[active].option[selectedKey]|trim }}
+                        </li>
+					{% endfor %}
+				{% else %}
+					{% for selectedKey, selectedItem in multiselect_helper_data.selected[active] %}
+						<li class="item {{ active }}-selected-{{ selectedKey }}">
+                            <input type="hidden" name="{{ active }}[]" value="{{ selectedKey }}">
+                                {{ multiselect_helper_data.fields[active].option[selectedKey] }}
+                        </li>
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+		</ul>
+		<a class="options_open" href="javascript:void(0);">
+            {% helper lang.l('multiselect_change', 'start') %}
+        </a>
+	</div>
+	<div class="options hide">
+		<header>
+			<ul class="tabs">
+				{% for fieldKey, field in multiselect_helper_data.fields %}
+					<li data-tab="{{ fieldKey }}" class="tab_{{ fieldKey }} tab{% if fieldKey == active %}active{% endif %}">
+						<a href="javascript:void(0);">
+                            {{ field.header }}
+                        </a>
+					</li>
+				{% endfor %}
+			</ul>
+			<a class="pop-up-close close" href="javascript:void(0);">
+                <i class="fright fa fa-remove edge fa-lg hover w"></i>
+            </a>
+		</header>
+		{% for fieldKey, field in multiselect_helper_data.fields %}
+			<div class="options_{{ fieldKey }} tab-content {% if fieldKey != active %}hide{% endif %}">
+				<ul class="items">
+					{% for optionKey, item in multiselect_helper_data.fields[fieldKey].option %}
+						<li title="{{ item }}" data-value="{{ optionKey }}"
+							class="{{ fieldKey }}-option-{{ optionKey }} item {% if active == fieldKey and
+                            (multiselect_helper_data.all_selected[active] is not empty or
+                             multiselect_helper_data.selected_keys[fieldKey][optionKey] is not empty) %}selected{% endif %}">
+							{{ item }}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endfor %}
+		<footer>
+			<div class="limit {% if multiselect_helper_data.all_selected[active] is not empty %}hide{% endif %}">
+				<span class="selected_num">0</span>
+				{% helper lang.l('multiselect_of', 'start') %}
+
+            	<span class="max_num"></span><br>
+				{% helper lang.l('multiselect_selected', 'start') %}
+			</div>
+			<div class="options-selected">
+				<ul class="options-selected-items">
+					{% if multiselect_helper_data.selected[active] is not empty %}
+						{% if multiselect_helper_data.all_selected[active] is not empty %}
+							<li data-value="{{ multiselect_helper_data.all_value }}"
+                                class="item remove-selected item {{ active }}-selected-{{ multiselect_helper_data.all_value }}">
+								{{ multiselect_helper_data.all_text }}
+                                <i class="fa fa-times"></i>
+							</li>
+						{% else %}
+							{% for selectedKey, selectedItem in multiselect_helper_data.selected[active] %}
+								<li data-value="{{ selectedKey }}"
+                                    class="item remove-selected item {{ active }}-selected-{{ selectedKey }}">
+									{{ multiselect_helper_data.fields[active].option[selectedKey] }}
+                                    <i class="fa fa-times"></i>
+								</li>
+							{% endfor %}
+						{% endif %}
+					{% endif %}
+				</ul>
+			</div>
+			<div class="buttons">
+				<a class="btn_select_all" href="javascript:void(0);">
+                    {% helper lang.l('multiselect_select_all', 'start') %}
+                </a>
+				<div class="btn">
+					<div class="l">
+						<input class="btn_apply" type="button" name="btn_save" value="{% helper lang.l('btn_apply', 'start') %}">
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	{% helper utils.jscript('start', 'multiselect.js', '') %}
+	<script>
+		$(function () {
+			{% if multiselect_helper_data.var_js_name %}
+                var {{ multiselect_helper_data.var_js_name }} =
+            {% endif %}
+            new options({
+				fields: {{ multiselect_helper_data.fields|json_encode() }},
+				allSelected: {{ multiselect_helper_data.all_selected|json_encode() }},
+				allText: '{{ multiselect_helper_data.all_text }}',
+				allValue: '{{ multiselect_helper_data.all_value }}',
+				limits: {{ multiselect_helper_data.limits|json_encode() }},
+				rand: '{{ multiselect_helper_data.rand }}',
+				selectedField: '{{ multiselect_helper_data.active_field }}',
+				selectedItems: {{ multiselect_helper_data.selected|json_encode() }},
+				siteUrl: '{{ site_url }}',
+				alertCantSaveEmpty: '{% helper lang.l('multiselect_please_select', 'start') %}'
+			});
+		});
+	</script>
+</div>

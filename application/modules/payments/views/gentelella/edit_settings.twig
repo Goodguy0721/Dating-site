@@ -1,0 +1,117 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_title">
+            <h2>
+            {% if data.id %}
+                {% helper lang.l('admin_header_currency_change', 'payments') %}
+            {% else %}
+                {% helper lang.l('admin_header_currency_add', 'payments') %}
+            {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+                data-parsley-validate class="form-horizontal{# form-label-left #}">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_currency_gid', 'payments') %}:&nbsp;*</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="gid" name="gid" value="{{ data.gid|e }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_currency_name', 'payments') %}:&nbsp;*</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="name" name="name" value="{{ data.name|e }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_currency_abbr', 'payments') %}:&nbsp;*</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="abbr" name="abbr" value="{{ data.abbr|e }}" class="form-control">
+                    </div>
+                </div>
+            {% if data.id and data.gid != base_currency %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_per_base', 'payments') %} {{ base_currency }}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="per_base" name="per_base" value="{{ data.per_base|e }}" class="form-control">
+                    </div>
+                </div>
+            {% endif %}
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                            {% helper lang.l('field_decimal_separator', 'payments') %}:&nbsp;*</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                        {% for key, dec_sep in format.dec_sep %}
+                            <input class="flat" id="dec_sep_{{ key }}" value="{{ dec_sep|e }}" name="dec_sep" type="radio" {% if not format.used.dec_sep or format.used.dec_sep == dec_sep %}checked="checked"{% endif %} />
+                            <label for="dec_sep_{{ key }}">{% helper lang.l('field_decimal_separator_' ~ key, 'payments') %}</label>
+                            <br>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                            {% helper lang.l('field_groups_separator', 'payments') %}:&nbsp;*</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                        {% for key, gr_sep in format.gr_sep %}
+                            <input class="flat" id="gr_sep_{{ key }}" value="{{ gr_sep|e }}" name="gr_sep" type="radio" {% if not format.used.gr_sep or format.used.gr_sep == gr_sep %}checked="checked"{% endif %} />
+                            <label for="gr_sep_{{ key }}">{% helper lang.l('field_groups_separator_' ~ key, 'payments') %}</label>
+                            <br>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                            {% helper lang.l('field_decimal_part', 'payments') %}:&nbsp;*</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                        {% for key, dec_part in format.dec_part %}
+                            <input class="flat" id="dec_part_{{ key }}" value="{{ dec_part|e }}" name="dec_part" type="radio" {% if not format.used.dec_part or format.used.dec_part == dec_part %}checked="checked"{% endif %} />
+                            <label for="dec_part_{{ key }}">{% helper lang.l('field_decimal_part_' ~ key, 'payments') %}</label>
+                            <br>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_currency_format', 'payments') %}:&nbsp;*</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id="templates">
+                    {% for key, template_cur in format.template %}
+                        <input class="flat" id="template_{{ key }}" value="{{ template_cur|e }}" name="template" type="radio" {% if not format.used.template or format.used.template == template_cur %}checked="checked"{% endif %} />
+                        <label for="template_{{ key }}"></label>
+                        <br>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/payments/settings">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        new adminPayments();
+    });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+{% include '@app/footer.twig' %}

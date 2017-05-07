@@ -1,0 +1,22 @@
+	2489	Tomter	59.6591000	10.9948700	NO	13	0	0	Tomter	Tomter	Tomter	Tomter	Tomter	Tomter
+	2489	Spydeberg	59.6170900	11.0855900	NO	13	0	0	Spydeberg	Spydeberg	Spydeberg	Spydeberg	Spydeberg	Spydeberg
+	2489	Sponviken	59.0926600	11.2298100	NO	13	0	0	Sponviken	Sponviken	Sponviken	Sponviken	Sponviken	Sponviken
+	2489	Skjeberg	59.2114800	11.1902500	NO	13	0	0	Skjeberg	Skjeberg	Skjeberg	Skjeberg	Skjeberg	Skjeberg
+	2489	Skjærhalden	59.0252600	11.0368500	NO	13	0	0	Skjærhalden	Skjærhalden	Skjærhalden	Skjærhalden	Skjærhalden	Skjærhalden
+	2489	Sarpsborg	59.2839100	11.1096200	NO	13	0	0	Sarpsborg	Сарпсборг	Sarpsborg	Sarpsborg	Sarpsborg	Sarpsborg
+	2489	Rygge	59.3776200	10.7503400	NO	13	0	0	Rygge	Рюгге	Rygge	Rygge	Rygge	Rygge
+	2489	Rød	59.0749300	10.9389000	NO	13	0	0	Rød	Rød	Rød	Rød	Rød	Rød
+	2489	Rakkestad	59.4251300	11.3453500	NO	13	0	0	Rakkestad	Rakkestad	Rakkestad	Rakkestad	Rakkestad	Rakkestad
+	2489	Ørje	59.4802300	11.6601600	NO	13	0	0	Ørje	Ørje	Ørje	Ørje	Ørje	Ørje
+	2489	Mysen	59.5535400	11.3257800	NO	13	0	0	Mysen	Mysen	Mysen	Mysen	Mysen	Mysen
+	2489	Moss	59.4340300	10.6577100	NO	13	0	0	Moss	Мосс	Moss	Moss	Moss	Moss
+	2489	Larkollen	59.3319600	10.6668800	NO	13	0	0	Larkollen	Larkollen	Larkollen	Larkollen	Larkollen	Larkollen
+	2489	Knappstad	59.6242400	11.0327400	NO	13	0	0	Knappstad	Knappstad	Knappstad	Knappstad	Knappstad	Knappstad
+	2489	Karlshus	59.3519500	10.8722600	NO	13	0	0	Karlshus	Karlshus	Karlshus	Karlshus	Karlshus	Karlshus
+	2489	Hauge	59.1027300	10.8718800	NO	13	0	0	Hauge	Hauge	Hauge	Hauge	Hauge	Hauge
+	2489	Halden	59.1247800	11.3875400	NO	13	0	0	Halden	Халден	Halden	Halden	Halden	Halden
+	2489	Søndre Fuglevik	59.3834200	10.6522700	NO	13	0	0	Søndre Fuglevik	Søndre Fuglevik	Søndre Fuglevik	Søndre Fuglevik	Søndre Fuglevik	Søndre Fuglevik
+	2489	Fredrikstad	59.2181000	10.9298000	NO	13	0	0	Fredrikstad	Фредрикстад	Fredrikstad	Fredrikstad	Fredrikstad	Fredrikstad
+	2489	Fossby	59.2221800	11.6992800	NO	13	0	0	Fossby	Fossby	Fossby	Fossby	Fossby	Fossby
+	2489	Askim	59.5832600	11.1628600	NO	13	0	0	Askim	Askim	Askim	Askim	Askim	Askim
+	2489	Ryggebyen	59.3750000	10.7500000	NO	13	0	0	Ryggebyen	Ryggebyen	Ryggebyen	Ryggebyen	Ryggebyen	Ryggebyen

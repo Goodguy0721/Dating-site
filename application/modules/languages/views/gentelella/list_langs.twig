@@ -1,0 +1,164 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_languages_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+              <div class="btn-group">
+                <a href="{{site_url}}admin/languages/lang_edit" class="btn btn-primary">
+                    {% helper lang.l('link_add_lang', 'languages') %}
+                </a>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{site_url}}admin/languages/lang_edit">
+                            {% helper lang.l('link_add_lang', 'languages') %}
+                        </a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_language_name', 'languages') %}</th>
+                        <th class="column-title">{% helper lang.l('field_default', 'languages') %}</th>
+                        <th class="column-title">{% helper lang.l('field_active', 'languages') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in languages %}
+                        <tr class="even pointer">
+                            <td>{{item.name}}</td>
+                            <td>
+                                {% if item.is_default %}
+                                    {% helper lang.l('btn_tableicon_yes','start') %}
+                                {% else %}
+                                    {% helper lang.l('btn_tableicon_no','start') %}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if item.status %}
+                                    {% helper lang.l('btn_tableicon_is_active','start') %}
+                                {% else %}
+                                    {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                                {% endif %}
+                            </td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                  {% if not item.is_default %}
+                                    <button type="button" class="btn btn-primary"
+                                            title="{% helper lang.l('note_set_default', 'languages') %}"
+                                            onclick="document.location.href='{{site_url}}admin/languages/lang_default/{{item.id}}'">
+                                        {% helper lang.l('link_set_default','languages') %}
+                                    </button>
+                                  {% else %}
+                                    <a class="btn btn-primary" href="{{site_url}}admin/languages/lang_edit/{{item.id}}">
+                                          {% helper lang.l('link_edit_lang', 'languages') %}
+                                    </a>
+                                  {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        {% if not item.is_default %}
+                                        <li>
+                                            <a href="{{site_url}}admin/languages/lang_default/{{item.id}}">
+                                                {% helper lang.l('note_set_default','languages') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                        {% if item.status %}
+                                            <a href="{{site_url}}admin/languages/lang_active/{{item.id}}/0">
+                                                {% helper lang.l('make_inactive','start') %}
+                                            </a>
+                                        {% else %}
+                                            <a href="{{site_url}}admin/languages/lang_active/{{item.id}}/1">
+                                                {% helper lang.l('make_active','start') %}
+                                            </a>
+                                        {% endif %}
+                                        </li>
+                                        {% endif %}
+                                        <li>
+                                            <a href="{{site_url}}admin/languages/lang_edit/{{item.id}}">
+                                                {% helper lang.l('link_edit_lang', 'languages') %}
+                                            </a>
+                                        </li>
+                                        {% if user_session_data.lang_id != item.id and default_lang_id != item.id %}
+                                            <li>
+                                                <a href="{{site_url}}admin/languages/lang_delete/{{item.id}}"
+                                                   onclick="javascript: if (!confirm('{% helper lang.l('note_delete_lang', 'languages','','js') %}'))return false;">
+                                                    {% helper lang.l('link_delete_lang', 'languages') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

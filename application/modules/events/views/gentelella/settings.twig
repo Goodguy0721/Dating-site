@@ -1,0 +1,30 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_events_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3">{% helper lang.l('field_is_active', 'events') %}:</label>
+                    <div class="col-md-9">
+                        <input type="checkbox" name="is_active" value="1" {% if data.is_active %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

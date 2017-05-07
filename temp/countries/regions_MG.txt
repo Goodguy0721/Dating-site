@@ -1,0 +1,10 @@
+	1968	Vohimanitra	-21.7000000	47.7000000	MG	7670906	0	0	Vohimanitra	Vohimanitra	Vohimanitra	Vohimanitra	Vohimanitra	Vohimanitra
+	1968	Savana	-22.3833300	47.9000000	MG	7670906	0	0	Savana	Savana	Savana	Savana	Savana	Savana
+	1968	Sahavato	-20.6000000	48.3333300	MG	7670906	0	0	Sahavato	Sahavato	Sahavato	Sahavato	Sahavato	Sahavato
+	1968	Nosy Varika	-20.5833300	48.5333300	MG	7670906	0	0	Nosy Varika	Nosy Varika	Nosy Varika	Nosy Varika	Nosy Varika	Nosy Varika
+	1968	Mananjary	-21.2303400	48.3417300	MG	7670906	0	0	Mananjary	Mananjary	Mananjary	Mananjary	Mananjary	Mananjary
+	1968	Manakara	-22.1486200	48.0105500	MG	7670906	0	0	Manakara	Манакара	Manakara	Manakara	Manakara	Manakara
+	1968	Ikongo	-21.8833300	47.4333300	MG	7670906	0	0	Ikongo	Ikongo	Ikongo	Ikongo	Ikongo	Ikongo
+	1968	Ifatsy	-22.4000000	47.7500000	MG	7670906	0	0	Ifatsy	Ifatsy	Ifatsy	Ifatsy	Ifatsy	Ifatsy
+	1968	Ifanadiana	-21.3000000	47.6333300	MG	7670906	0	0	Ifanadiana	Ifanadiana	Ifanadiana	Ifanadiana	Ifanadiana	Ifanadiana
+	1968	Amboanjo	-22.0000000	47.8500000	MG	7670906	0	0	Amboanjo	Amboanjo	Amboanjo	Amboanjo	Amboanjo	Amboanjo

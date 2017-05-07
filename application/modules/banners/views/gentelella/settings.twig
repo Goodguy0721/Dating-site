@@ -1,0 +1,67 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_banners_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <form method="post" name="moder_sattings_save" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_period', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.period|e }}" name="period" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_moderation_send_mail', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="hidden" value="0"><!--name="moderation_send_mail"-->
+                        <div class="checkbox">
+                            <input type="checkbox" class="flat" name="moderation_send_mail" value="1" id="moderation_send_mail" {% if data.moderation_send_mail %}checked="checked"{% endif %}>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_admin_moderation_emails', 'banners') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.admin_moderation_emails|e }}"
+                               id="admin_moderation_emails" name="admin_moderation_emails"
+                               class="form-control" {% if not data.moderation_send_mail %}disabled{% endif %}>
+                    </div><!--name="admin_moderation_emails" -->
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/banners/groups_list">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#moderation_send_mail').on('ifChecked', function(){
+            $('#admin_moderation_emails').removeAttr('disabled');
+        });
+        $('#moderation_send_mail').on('ifUnchecked', function(){
+            $('#admin_moderation_emails').attr('disabled', 'disabled');
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

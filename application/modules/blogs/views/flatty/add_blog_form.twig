@@ -1,0 +1,58 @@
+<div style="margin-top:15px">
+	<form method="post" enctype="multipart/form-data">
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_title', 'blogs') %}: </label>
+			<input type='text' value='{{ data.title }}' name="title" class="form-control" />
+		</div>
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_category', 'blogs') %}:</label>
+			<select name="category" class="form-control">
+				{% for key,item in categories.option %}
+					<option value="{{ key }}"{% if key == data.category %}} selected{% endif %}>{{ item }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="form-group clearfix">
+			<input id="is_hidden" type='checkbox' value='1' name="is_hidden" {% if data.is_hidden %}checked {% endif %} />
+			<label for="is_hidden">{% helper lang.l('field_hidden_blog', 'blogs') %}</label>
+		</div>
+		
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_short_decription', 'blogs') %}: </label>
+			<textarea id="description" name="description" class="form-control" style="width: 300px; height: 200px;"></textarea>
+		</div>
+		
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_tags', 'blogs') %}: </label>
+			<input type='text' value='{{ data.tags_str }}' name="tags" class="form-control" />
+		</div>
+		
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" name="btn_save" value="1">
+				{% helper lang.l('btn_add', 'start', '', button) %}
+			</button>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+	var CKEDITOR_BASEPATH = '{{ site_url }}system/plugins/ckeditor/';
+	loadScripts(["{{ site_url }}system/plugins/ckeditor/ckeditor.js"],
+		function() {
+			CKEDITOR.replace('description', {customConfig:'{{ site_url }}system/plugins/ckeditor/config.js',language: '{{ _LANG.code }}', toolbar: 
+				[
+					{ name: 'document', items: [ 'Source' ] },
+					{ name: 'actions', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+					{ name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+					{ name: 'insert', items: [ 'Image', 'Flash', 'Table', 'SpecialChar' ] },
+					{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] },
+					{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+					{ name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+					{ name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+				]
+			});
+		},
+		'',
+		{async: false}
+	);
+</script>

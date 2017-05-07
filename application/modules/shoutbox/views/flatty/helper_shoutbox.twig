@@ -1,0 +1,61 @@
+<div class="bottom-btns__item" id="shoutbox-panel">
+    <button type="button" id="shoutbox_btn" class="btn btn-default btn-sm js-im-button-class">
+        {% helper lang.l('block_header', 'shoutbox') %} <i data-flash="0" class="fa fa-bullhorn"></i>
+    </button>
+    <div class="hide" id="shoutbox_block">
+        <div class="shoutbox-messages-list">
+            <div class="shoutbox-header">
+                <div class="shoutbox-header__title">
+                    {% helper lang.l('block_header', 'shoutbox') %}
+                    <span id="shoutbox_counter_nm"></span>
+                </div>
+                <i id="shoutbox-close" class="a fa fa-remove shoutbox__close"></i>
+            </div>
+            <div id="shoutbox" class="shoutbox-content-block pop-up-content">
+                <div class="shoutbox-content box-sizing" style="height:{{ shoutbox_data.height_block_messages }}px">
+                    <div class="shoutbox-scroller box-sizing shoutbox-scroll"></div>
+                    <div class="shoutbox-in-top">
+                        <i class="fa fa-chevron-up"></i>&nbsp;{% helper lang.l('link_new_messages', 'shoutbox') %}...
+                    </div>
+                </div>
+                <div class="shoutbox-bottom box-sizing shoutbox-msg-window__footer">
+                    <div class="shoutbox-msg-window__sendfield clearfix im_msg_btns">
+                        <textarea class="box-sizing shoutbox-msg-window__textarea"></textarea>
+                        <div id="shoutbox_msg_btns" class="table-div vmiddle wp100">
+                            <div>
+                                <input class="mt5 btn btn-primary-inverted" id="shoutbox_btn_send" type="button" name="sendbtn" value="{% helper lang.l('btn_send', 'shoutbox') %}" />
+                                <span class="fright" id="shoutbox_msg_count">
+                                    {{ shoutbox_data.msg_max_length }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	loadScripts(
+        [
+            "{% helper utils.jscript('', 'jquery-slimscroll.js', 'path') %}",
+            "{% helper utils.jscript('shoutbox', '../views/flatty/js/shoutbox.js', 'path') %}",
+        ],
+		function(){
+			var data = {{ shoutbox_json_data }};
+			shoutbox = new Shoutbox({
+				site_url: site_url,
+				new_msgs: data.new_msgs,
+				id_user: parseInt(data.id_user),
+				max_id: parseInt(data.max_id),
+				min_id: parseInt(data.min_id),
+				{% if _LANG.rtl == 'rtl' %}position: 'left',{% endif %}
+				msg_max_length: parseInt(data.msg_max_length),
+				user_name: data.user_name,
+				site_status: parseInt(typeof data.user_status !== 'undefined' ? data.user_status.site_status : 0),
+			});
+		},
+		'',
+		{async: false}
+	);
+</script>

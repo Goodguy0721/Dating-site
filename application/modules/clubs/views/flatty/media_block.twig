@@ -1,0 +1,23 @@
+{% set thumb_name = helper_mblock_data.recent_thumb.name %}
+<div class="pointer">
+    {% if helper_mblock_data.upload_gid == 'club-video' %}
+        <i class="fa fa-video-camera"></i>
+        <a href="{{ site_url }}clubs/media/{{ helper_mblock_data.club_id }}/video">{{ helper_mblock_data.all_count }}&nbsp;{% helper lang.l('header_club_videos', 'clubs') %}</a>
+    {% else %}
+        <i class="fa fa-camera"></i>
+        <a href="{{ site_url }}clubs/media/{{ helper_mblock_data.club_id }}/photo">{{ helper_mblock_data.all_count }}&nbsp;{% helper lang.l('header_club_photos', 'clubs') %}</a>
+    {% endif %}
+</div>
+<div class="media-items clearfix">
+    {% for item in helper_mblock_data.media_list %}
+        <span class="a fleft" data-click="view-media" data-club-id="{{ item.id_owner }}" data-id-media="{{ item.id }}">
+            {% if item.upload_gid == 'club-video' %}
+                {% helper text_media_video = lang.l('text_media_video', 'clubs', '', 'button', item) %}
+                <img class="middle img-responsive" src="{{ item.video_content.thumbs[thumb_name] }}" width="{{ helper_mblock_data.recent_thumb.width }}" alt="{{ text_media_video }}" title="{{ text_media_video }}" />
+            {% else %}
+                {% helper text_media_photo = lang.l('text_media_photo', 'clubs', '', 'button', item) %}
+                <img class="middle img-responsive" src="{{ item.media.thumbs[thumb_name] }}" width="{{ helper_mblock_data.recent_thumb.width }}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+            {% endif %}
+        </span>
+    {% endfor %} 
+</div>

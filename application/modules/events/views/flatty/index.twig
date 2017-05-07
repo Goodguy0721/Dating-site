@@ -1,0 +1,57 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <!-- Events list -->
+    <div class="left-row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="events-header row">
+                <div class="title col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                    <h1>
+                        {% helper lang.l('header_index', 'events') %}
+                    </h1>
+                </div>
+                <div class="menu col-xs-6 col-sm-6 col-md-4 col-lg-4 no-padding-right">
+                    {% helper events.events_nav_top_links({'action': action}) %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="events-list left-row clearfix">
+        {% include 'events_list_block.twig' %}
+    </div>
+    <!--end Events list -->
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="row">
+        <div class="events-search col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            {% helper events.events_search_form({'search_type': search_type, 'action': action}) %}
+        </div>
+        <div class="events-navigation col-xs-6 col-sm-6 col-md-12 col-lg-12">
+            {% helper events.events_nav_side_links({'search_type': search_type, 'action': action}) %}
+            <br>
+            {% if module_settings.is_active %}
+                <div>
+                    <a href="{% helper seo.seolink('events', 'edit') %}">
+                        {% helper lang.l('link_add', 'events') %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeViewType(type) {
+        var url = "{% helper seo.seolink('users', 'set_view_mode') %}/" + type;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            cache: false,
+            success: function (data) {
+                locationHref('{% helper seo.seolink('users', 'search') %}');
+            }
+        });
+    }
+</script>
+
+{% include '@app/footer.twig' %}

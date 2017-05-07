@@ -1,0 +1,91 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% helper utils.jscript('banners', 'admin_banner.js') %}
+<script type="text/javascript">
+	var admin_banners;
+	$(function() {
+		$("div.row:odd").addClass("zebra");
+		admin_banners =  new AdminBanners({
+			siteUrl: '{{ site_url }}',
+			banner_id: '{{ data.id }}',
+			init_banner_form: true
+		});
+	});
+</script>
+
+<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+	<div class="edit-form n150">
+		<div class="row header">
+            {% helper lang.l('admin_header_banner_view', 'banners') %}
+        </div>
+		<div class="row">
+			<div class="h">
+                {% helper lang.l('field_name', 'banners') %}:
+            </div>
+			<div class="v">
+                {{ data.name }}
+            </div>
+		</div>
+		<div class="row">
+			<div class="h">
+                {% helper lang.l('field_user', 'banners') %}:
+            </div>
+			<div class="v">
+                {{ data.user.output_name }}
+            </div>
+		</div>
+		<div class="row">
+			<div class="h">
+                {% helper lang.l('banner_place', 'banners') %}:
+            </div>
+			<div class="v">
+            {% if data.user_id == 0 %}
+				<select id="banner_place" name="banner_place_id">
+					<option value="" {% if data.banner_place_id %}selected{% endif %}>...</option>
+					{% for place in places %}
+					<option value="{{ place.id }}" {% if place.id == data.banner_place_id %}selected{% endif %}>
+                        {{ place.name }} ({{ place.width }}x{{ place.height }})
+                    </option>
+					{% endfor %}
+				</select>
+			{% else %}
+				<input type="hidden" name="banner_place_id" value="{{ data.banner_place_id|e }}">
+				{% if data.banner_place_id %}
+					{% for place in places %}
+						{% if place.id == data.banner_place_id %}
+							{{ place.name }} ({{ place.width }}x{{ place.height }})
+						{% endif %}
+					{% endfor %}
+				{% else %}
+                    ...
+				{% endif %}
+			{% endif %}
+			</div>
+		</div>
+
+		<div id="banner_groups">
+            {{ banner_place_block }}
+        </div>
+
+		<div class="row">
+			<div class="h">
+                {% helper lang.l('field_type', 'banners') %}:
+            </div>
+			<div class="v">
+				{% for key, item in banner_type_lang.option %}
+					{% if key == data.banner_type %}{{ item }}{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+		<div id="second_form">{{ banner_type_block }}</div>
+
+		<div id="result"></div>
+
+	</div>
+	<a class="cancel" href="{{ site_url }}admin/banners{% if data.user_id %}/index/user{% endif %}">
+        {% helper lang.l('btn_cancel', 'start') %}
+    </a>
+</form>
+
+{% include '@app/footer.twig' %}

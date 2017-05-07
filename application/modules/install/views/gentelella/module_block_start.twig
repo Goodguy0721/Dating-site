@@ -1,0 +1,24 @@
+<h4>Installing: {{ module.install_name }} V{{ module.version }}</h4>
+<div>{{ module.install_descr }}</div>
+<br>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" id="module_bar"
+         data-transitiongoal=""
+         style="width: {{ current_module_percent }}%;"
+         aria-valuenow="">{{ current_module_percent }}%</div>
+</div>
+
+<script>
+$(function(){
+    product_install.update_module_progress({{ current_module_percent }});
+    product_install.delayed_request('{{ next_step }}');
+});
+</script>
+
+<script>
+    $(function() {
+        if ($(".progress .progress-bar")[0]) {
+            $('.progress .progress-bar').progressbar(); // bootstrap 3
+        }
+    });    
+</script>

@@ -1,0 +1,6 @@
+	2327	Twante	16.7104700	95.9286600	MM	17	0	0	Twante	Twante	Twante	Twante	Twante	Twante
+	2327	Thongwa	16.7599800	96.5249800	MM	17	0	0	Thongwa	Thongwa	Thongwa	Thongwa	Thongwa	Thongwa
+	2327	Syriam	16.7688700	96.2450300	MM	17	0	0	Syriam	Syriam	Syriam	Syriam	Syriam	Syriam
+	2327	Yangon	16.8052800	96.1561100	MM	17	0	0	Yangon	Рангун	Yangon	Yangon	Yangon	Yangon
+	2327	Kayan	16.9080200	96.5603700	MM	17	0	0	Kayan	Kayan	Kayan	Kayan	Kayan	Kayan
+	2327	Kanbe	16.7072800	96.0016800	MM	17	0	0	Kanbe	Канбе	Kanbe	Kanbe	Kanbe	Kanbe

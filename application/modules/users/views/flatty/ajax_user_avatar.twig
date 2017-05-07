@@ -1,0 +1,398 @@
+<div class="media-gallery-content" id="image_content_avatar">
+<div class="media-gallery-editor">
+    <div class="media-gallery-editor__media-box">
+
+            {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', media) %}
+                <div class="media-gallery-editor__media-source-box container">
+                    <div class="photo-edit hide" data-area="recrop">
+                        <div class="source-box">
+                            <div id="photo_source_recrop_box" class="media-gallery-editor__media-source photo-source-box">
+                                {% if avatar_data.user.user_logo_moderation %}
+                                    <img id="photo_source_recrop" src="{{ avatar_data.user.media.user_logo_moderation.file_url }}?{{ date().timestamp }}"
+                                        alt="{{ text_user_logo|e }}" title="{{ text_user_logo|e }}" class="img-responsive">
+                                {% else %}
+                                    <img id="photo_source_recrop" src="{{ avatar_data.user.media.user_logo.file_url }}?{{ date().timestamp }}"
+                                        alt="{{ text_user_logo|e }}" title="{{ text_user_logo|e }}" class="img-responsive">
+                                {% endif %}
+                            </div>
+                            <div id="recrop_menu" class="media-gallery-editor__photo-menu">
+                                <ul class="media-gallery-editor__photo-sizes" id="photo_sizes"></ul>
+                                <ul class="media-gallery-editor__photo-view">
+                                    <li>
+                                        <span data-section="view">
+                                            {% helper lang.l('view', 'media') %}
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-area="view" class="inner-image">
+                        {% if avatar_data.user.user_logo_moderation %}
+                            <img id="photo_source_recrop" src="{{ avatar_data.user.media.user_logo_moderation.file_url }}?{{ date().timestamp }}"
+                                alt="{{ text_user_logo|e }}" title="{{ text_user_logo|e }}" class="img-responsive">
+                        {% else %}
+                            <img id="photo_source_recrop" src="{{ avatar_data.user.media.user_logo.file_url }}?{{ date().timestamp }}"
+                                alt="{{ text_user_logo|e }}" title="{{ text_user_logo|e }}" class="img-responsive">
+                        {% endif %}
+                    </div>
+            </div>
+        <div class="media-preloader hide" id="media_preloader"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb10">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="media-popup-info">
+                <div data-section="comments">
+                    {% helper comments.comments_form({
+                        'gid': 'user_avatar',
+                        'id_obj': avatar_data.user.id,
+                        'hidden': 0,
+                        'view': 'popup',
+                        'max_height': 500,
+                        'order_by': 'asc',
+                        'count': avatar_data.user.logo_comments_count
+                    }) %}
+                </div>
+                <div data-section="albums" class="hide"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            {% if avatar_data.is_owner %}
+            <div class="media-popup-options" id="media_menu">
+                <div class="clearfix mb10">
+                    <div class="popup-opt-title">
+                        {% helper lang.l('btn_edit', 'start') %}
+                    </div>
+                    <div class="popup-opt-block">
+                        <button type="button" class="btn btn-default" data-section="recrop">
+                            <i class="fa fa-crop"></i> {% helper lang.l('recrop', 'media') %}
+                        </button>
+                        {% if avatar_data.user.user_logo_moderation %}
+                          {% set aviary_photo_source = avatar_data.user.media.user_logo_moderation.file_url %}
+                        {% else %}
+                          {% set aviary_photo_source = avatar_data.user.media.user_logo.file_url %}
+                        {% endif %}
+                        {% set aviary_save_callback %}
+                            function(imageID, newURL, resp){
+                                var error_obj = new Errors();
+
+                                var img = document.getElementById(imageID);
+                                img.src = newURL;
+
+                                var photo_source = $('.photo_source_recrop_box #photo_source_recrop,.inner-image #photo_source_recrop');
+                                photo_source.prop({src: newURL+'?'+(new Date().getTime())});
+
+                                try {
+                                  var data = JSON.parse(resp);
+                            	    $('#user_photo img').prop({src:data.thumbs.big+'?'+(new Date().getTime())});
+                                  $("#users_link_profile img").prop({src:data.thumbs.small+'?'+(new Date().getTime())});
+                                } catch(e) {
+
+                                }
+                            }
+                        {% endset %}
+                        {% helper aviary.aviary_editor_button({
+                            'id': 'photo_source_recrop',
+                            'source': "'" ~ aviary_photo_source ~ "'",
+                            'module_gid': 'users',
+                            'post_url': '',
+                            'post_data': {user_id: avatar_data.user.id},
+                            'save_callback': aviary_save_callback
+                        }) %}
+                    </div>
+                </div>
+                <div class="clearfix mb10">
+                     <div class="popup-opt-block">
+                        <button type="button" name="btn_change_photo" id="btn_change_photo" class="btn btn-primary">
+                            {% helper lang.l('wc_btn_change_photo', 'users') %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="content-block load_content">
+{#    <h1>
+        {% helper lang.l('field_user_logo', 'users') %}
+    </h1>#}
+
+    <div class="media-photo-editor">
+            {% if avatar_data.is_owner %}
+                <link rel="stylesheet" type="text/css" href="{{ site_url }}{{ js_folder }}jquery.imgareaselect/css/imgareaselect-default.css"></link>
+                <div id="avatar_owner_content">
+                    <form id="upload_avatar" name="upload_video" method="post"
+                        enctype="multipart/form-data" role="form">
+                        <div id="load_avatar" class="hide">
+                            <div class="form-group">
+                                <div id="dnd_upload_avatar" class="drag">
+                                    <div id="dndfiles_avatar" class="drag-area">
+                                        <div class="drag">
+                                            {% helper lang.l('drag_photos', 'media') %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="upload-btn">
+                                        <span data-role="filebutton">
+                                            <s>{% helper lang.l('btn_choose_file', 'start') %}</s>
+                                            <input type="file" name="avatar" id="file_avatar" />
+                                        </span>
+                                        &nbsp;({% helper lang.l('max', 'start') %}
+                                        {% helper utils.bytesFormat(avatar_data.upload_config.max_size) %})
+                                    </div>
+
+                                    <span id="attach_error_avatar"></span>
+                                    <div id="attach_warning_avatar"></div>
+                                </div>
+                            </div>
+
+                            <button type="button" name="btn_upload" id="btn_upload_avatar" class="btn btn-primary">
+                                {% helper lang.l('btn_upload', 'start') %}
+                            </button>
+
+                            <button type="button" name="btn_use_webcamera" id="btn_use_webcamera" class="btn btn-default pull-right hide">
+                                {% helper lang.l('wc_btn_use_webcamera', 'users') %}
+                            </button>
+                        </div>
+                    </form>
+
+                    <form name="avatar" id="stuff" class="hide" action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group video_capture">
+                            <label id="allow">
+                                {% helper lang.l('wc_get_user_camera', 'users') %}
+                            </label>
+                            <video id="video" width="100%" height="240" autoplay="autoplay" class="img-responsive"></video>
+                            <canvas id="canvas" class="img-responsive" width="0" height="0"></canvas>
+                            <input type="file" name="avatar" id="web_avatar" class="hide" />
+                        </div>
+
+                        <button type="button" id="take_picture" class="btn btn-primary">
+                            {% helper lang.l('wc_take_picture', 'users') %}
+                        </button>
+
+                        <button type="button" id="repicture" class="btn btn-primary hide">
+                            {% helper lang.l('wc_repicture', 'users') %}
+                        </button>
+
+                        <button type="button" id="save_picture" class="btn btn-primary hide">
+                            {% helper lang.l('wc_save_picture', 'users') %}
+                        </button>
+
+                        <button type="button" class="btn btn-default pull-right hide" id="btn_cancel_webcamera">
+                            {% helper lang.l('btn_close', 'start') %}
+                        </button>
+                    </form>
+
+                <script type="text/javascript">
+                    $(function() {
+                        loadScripts(
+                            [
+                                "{% helper utils.jscript('', 'jquery.imgareaselect/jquery.imgareaselect.js', 'path') %}",
+                                "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+                                "{% helper utils.jscript('', 'canvas-to-blob.min.js', 'path') %}",
+                                "{% helper utils.jscript('', 'webcamera.js', 'path') %}"
+                            ],
+                            function() {
+                                var upload_config = {{ avatar_data.upload_config|json_encode() }};
+                                    json_encode_data = {{ avatar_data.selections|json_encode() }};
+                                    user_avatar_selections = json_encode_data;
+                                    avatar_width = json_encode_data.grand.width;
+                                    avatar_height = json_encode_data.grand.height;
+                                    user_avatar.uninit_imageareaselect();
+
+                                for (var i in user_avatar_selections) {
+                                    if (user_avatar_selections.hasOwnProperty(i)){
+                                        user_avatar.add_selection(i, 0, 0,
+                                            parseInt(user_avatar_selections[i].width),
+                                            parseInt(user_avatar_selections[i].height));
+                                    }
+                                }
+
+                                {% if avatar_data.have_avatar %}
+                                    user_avatar.init_imageareaselect();
+                                {% endif %}
+
+                                var lang_data = {
+                                    errors: {
+                                        file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                                    }
+                                };
+
+                                avatar_uploader = new uploader({
+                                    siteUrl: site_url,
+                                    Accept: 'application/json',
+                                    uploadUrl: 'users/upload_avatar',
+                                    zoneId: 'dndfiles_avatar',
+                                    fileId: 'file_avatar',
+                                    formId: 'upload_avatar',
+                                    filebarId: 'filebar_avatar',
+                                    sendType: 'file',
+                                    sendId: 'btn_upload_avatar',
+                                    multiFile: false,
+                                    messageId: 'attach_error_avatar',
+                                    warningId: 'attach_warning_avatar',
+                                    maxFileSize: upload_config.max_size,
+                                    mimeType: upload_config.allowed_mimes,
+                                    createThumb: true,
+                                    thumbWidth: 200,
+                                    thumbHeight: 200,
+                                    thumbCrop: true,
+                                    thumbJpeg: false,
+                                    thumbBg: 'transparent',
+                                    fileListInZone: true,
+                                    lang: lang_data,
+                                    cbOnUpload: function(name, data){
+                                        if(typeof(user_avatar) !== 'undefined') {
+                                            if (data.logo && !$.isEmptyObject(data.logo)) {
+                                                $('#image_content_avatar').find('.photo-edit').show();
+                                                $('#photo_source_recrop').attr('src', '');
+                                                user_avatar.uninit_imageareaselect();
+                                                for (var i in user_avatar_selections) {
+                                                    if (user_avatar_selections.hasOwnProperty(i)){
+                                                        user_avatar.add_selection(i, 0, 0,
+                                                            parseInt(user_avatar_selections[i].width),
+                                                            parseInt(user_avatar_selections[i].height));
+                                                    }
+                                                }
+                                                $('#photo_source_recrop').attr('src', data.logo.file_url + '?' + new Date().getTime());
+                                                $('#user_photo > img').attr('src', data.logo.thumbs.great + '?' + new Date().getTime());
+                                                $('img[id^=avatar_' + id_user + ']').attr('src', data.logo.thumbs.small + '?' + new Date().getTime());
+                                                user_avatar.init_imageareaselect();
+                                                var images = $('img');
+                                                if (data.old_logo && !$.isEmptyObject(data.old_logo)) {
+                                                    for (var i in data.old_logo.thumbs) {
+                                                        if (data.old_logo.thumbs.hasOwnProperty(i)) {
+                                                            images.filter('[src^="' + data.old_logo.thumbs[i] + '"]')
+                                                                .attr('src', data.logo.thumbs[i] + '?' + new Date().getTime());
+                                                        }
+                                                    }
+                                                }
+                                                if (data.old_logo_moderation && !$.isEmptyObject(data.old_logo_moderation)) {
+                                                    for (var i in data.old_logo_moderation.thumbs) {
+                                                        if (data.old_logo_moderation.thumbs.hasOwnProperty(i)) {
+                                                            images.filter('[src^="' + data.old_logo_moderation.thumbs[i] + '"]')
+                                                                  .attr('src', data.logo.thumbs[i] + '?' + new Date().getTime());
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    cbOnComplete: function(data){
+                                        if (data.errors.length) {
+                                            error_object.show_error_block(data.errors, 'error');
+                                        }
+                                        user_avatar.destroy_window();
+                                        {% if not avatar_data.have_avatar %}
+                                            locationHref('');
+                                        {% endif %}
+                                    },
+                                    ailedjqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+                                });
+                                avatar_web_uploader = new uploader({
+                                    siteUrl: site_url,
+                                    Accept: 'application/json',
+                                    uploadUrl: 'users/upload_avatar',
+                                    fileId: 'web_avatar',
+                                    formId: 'upload_avatar',
+                                    sendType: 'file',
+                                    sendId: 'save_picture',
+                                    multiFile: false,
+                                    messageId: 'attach_error_avatar',
+                                    warningId: 'attach_warning_avatar',
+                                    maxFileSize: upload_config.max_size,
+                                    mimeType: upload_config.allowed_mimes,
+                                    createThumb: true,
+                                    thumbWidth: 200,
+                                    thumbHeight: 200,
+                                    thumbCrop: true,
+                                    thumbJpeg: false,
+                                    thumbBg: 'transparent',
+                                    fileListInZone: false,
+                                    cbOnUpload: function(name, data){
+                                        if (data.logo && !$.isEmptyObject(data.logo)) {
+                                            $('#stuff, #btn_cancel_webcamera').hide(300);
+                                            $('#btn_change_photo').show();
+                                            $('#image_content_avatar').find('.photo-edit').show();
+                                            $('#photo_source_recrop').attr('src', '');
+                                            user_avatar.uninit_imageareaselect();
+                                            for (var i in user_avatar_selections) {
+                                                if (user_avatar_selections.hasOwnProperty(i)) {
+                                                    user_avatar.add_selection(i, 0, 0,
+                                                        parseInt(user_avatar_selections[i].width),
+                                                        parseInt(user_avatar_selections[i].height));
+                                                }
+                                            }
+                                            $('#photo_source_recrop').attr('src', data.logo.file_url + '?' + new Date().getTime());
+                                            $('#user_photo > img').attr('src', data.logo.thumbs.great + '?' + new Date().getTime());
+                                            $('img[id^=avatar_' + id_user + ']').attr('src', data.logo.thumbs.small + '?' + new Date().getTime());
+                                            user_avatar.init_imageareaselect();
+                                            var images = $('img');
+                                            if (data.old_logo && !$.isEmptyObject(data.old_logo)) {
+                                                for (var i in data.old_logo.thumbs) {
+                                                    if (data.old_logo.thumbs.hasOwnProperty(i)) {
+                                                        images.filter('[src^="' + data.old_logo.thumbs[i] + '"]')
+                                                            .attr('src', data.logo.thumbs[i] + '?' + new Date().getTime());
+                                                    }
+                                                }
+                                            }
+                                            if (data.old_logo_moderation && !$.isEmptyObject(data.old_logo_moderation)) {
+                                                for (var i in data.old_logo_moderation.thumbs) {
+                                                    if (data.old_logo_moderation.thumbs.hasOwnProperty(i)) {
+                                                        images.filter('[src^="' + data.old_logo_moderation.thumbs[i] + '"]')
+                                                                .attr('src', data.logo.thumbs[i] + '?' + new Date().getTime());
+                                                    }
+                                                }
+                                            }
+                                            user_avatar.destroy_window();
+                                            window.location = site_url + 'users/profile/personal';
+                                        }
+                                    },
+                                    cbOnComplete: function(data) {
+                                        if (data.errors.length) {
+                                            error_object.show_error_block(data.errors, 'error');
+                                        }
+
+                                        window.location = site_url + 'users/profile/personal';
+                                    },
+                                    jqueryFormPluginUrl: '{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}'
+                                });
+
+                                avatar_web_camera = new webcamera({
+                                    wc_width: avatar_width,
+                                    wc_height: avatar_height,
+                                    wc_alert: '{% helper lang.l('wc_alert', 'users') %}',
+                                    wc_load_avatar: 'load_avatar',
+                                    wc_user_avatar: user_avatar,
+                                    wc_photo_edit: 'image_content_avatar',
+                                });
+
+                                $('.media-photo-editor__recrop-sizes-toggle').dropdown();
+                            },
+                            ['user_avatar', 'avatar_uploader', 'avatar_web_uploader', 'avatar_web_camera'],
+                            {async: false}
+                        );
+                    });
+                </script>
+            </div>
+            {% if not avatar_data.have_avatar %}
+                <script>
+                    $(document).ready(function() {
+                        avatar_web_camera.properties.createNewWindow = true;
+                        avatar_web_camera.showLoadAvatar();
+                    });
+                </script>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

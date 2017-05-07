@@ -1,0 +1,147 @@
+<div class="content-block">
+	<div class="edit_block">
+        {% if billing_systems %}
+            <form action="{{ site_url }}users_payments/save_payment/" method="post"
+                  role="form" id="payment_form">
+                <div class="row">
+                    <input type="hidden" value="" name="system_gid" id="system_gid" />
+
+                    <div class="col-md-12">
+                        <h3>Choose payment system</h3>
+                        <div class="row b-billing-systems">
+                            {% for item in billing_systems %}
+                                {% if item.logo_url %}
+                                    <div class="col-xs-4 com-sm-4 col-md-2 col-lg-2 b-billing-systems__item">
+                                        <a class="b-billing-systems__link" href="#" data-gid="{{ item.gid }}" onclick="system_gid_change('{{ item.gid }}'); return false;">
+                                           <img class="img-responsive" src="{{ item.logo_url }}" title="{{ item.name }}" alt="{{ item.name }}">
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-lg-4">
+                        <div class="r form-group hide" id="operators">
+                            <h3>
+                                {% helper lang.l('field_operator', 'users_payments') %}:
+                            </h3>
+                            <div id="operators_block"></div>
+                        </div>
+
+                        <div class="form-group hide" id="amount">
+                            <h3>
+                                {% helper lang.l('field_enter_amount', 'users_payments') %}:
+                            </h3>
+                            <div id="amount_block" class="col-xs-12"></div>
+                        </div>
+
+                        <div class="r form-group hide" id="details">
+                            <label>
+                                {% helper lang.l('field_info_data', 'payments') %}:
+                            </label>
+                            <div id="details_block"></div>
+                        </div>
+
+                        <div class="r hide" id="errors">
+                            <i>{% helper lang.l('no_operators', 'users_payments') %}</i>
+                        </div>
+
+                        <button type="submit" name="btn_payment_save" class="btn btn-primary" value="1">
+                            {% helper lang.l('btn_send', 'start') %}
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            {% for item in billing_systems %}
+                <div id="system_{{ item.gid }}" class="hide" data-tarifs="{{ item.tarifs_type }}">
+                    <div id="operators_{{ item.gid }}">
+                        <select name="operator" class="form-control middle">
+                            {% for operator_key, operator_item in item.operators_data %}
+                                {% if item.tarifs_status[operator_key] %}
+                                    <option value="{{ item.gid }}_{{ operator_key }}">
+                                        {{ operator_item }}
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                            {% if item.tarifs_type == 2 %}
+                                <option value="{{ item.gid }}">
+                                    {% helper lang.l('text_tarif_custom', 'users_payments') %}
+                                </option>
+                            {% endif %}
+                        </select>
+                    </div>
+                    {% for operator_key, operator_item in item.operators_data %}
+                        <div id="amount_{{ item.gid }}_{{ operator_key }}">
+                            <select name="amount" class="form-control middle">
+                                {% for tarif_item in item.tarifs_data[operator_key] %}
+                                    <option value="{{ tarif_item }}">
+                                        {% helper start.currency_format_output({
+                                            'value': tarif_item,
+                                            'cur_gid': base_currency.gid
+                                        }) %}
+                                    </option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    {% endfor %}
+                    <div id="amount_{{ item.gid }}">
+                        <input type="text" name="amount" class="form-control middle" pattern="\d+(\.\d{2})?">&nbsp;
+                        {% helper start.currency_output({'cur_gid': base_currency.gid}) %}
+                    </div>
+                    <div id="details_{{ item.gid }}">{{ item.info_data }}</div>
+                </div>
+            {% endfor %}
+
+            <script>
+                function system_gid_change(value) {
+                    $('#amount, #operators, #tarifs, #details, #errors').hide();
+                    if(value){
+                        /* set active element */
+                        $("[data-gid]").each(function(index, value) {
+                            $(this).removeClass("active");
+                        });
+                        var selectelement = "[data-gid=" + value + "]";
+                        $(selectelement).addClass("active");
+                        /* end set active element */
+
+                        $('#system_gid').val(value);
+                        var tarifs_type =  $('#system_'+value).data('tarifs');
+                        if (tarifs_type > 0) {
+                            if($('#operators_'+value+' select').html()) {
+                                var operators = $('#operators_'+value).html();
+                                var operator = $('#operators').show()
+                                                              .find('#operators_block')
+                                                              .html(operators)
+                                                              .find('select')
+                                                              .trigger('change');
+                                $('#amount h3').html("{% helper lang.l('field_choose_amount', 'users_payments') %}");
+                            } else {
+                                $('#errors').show();
+                            }
+                        }else{
+                            var amount = $('#amount_'+value).html();
+                            $('#amount').show().find('#amount_block').html(amount);
+                        }
+                        var details = $('#details_' + value).html();
+                        //console.log('-'+details+'-'+details.length)
+                        if(details.length) $('#details').show().find('#details_block').html(details);
+                    }
+                }
+                $(function(){
+                    $('#operators').on('change', 'select', function(){
+                        var amount = $('#amount_'+this.value).html();
+                        $('#amount').show().find('#amount_block').html(amount);
+                    });
+                });
+            </script>
+        {% else %}
+            <div class="r">
+                <i>{% helper lang.l('error_empty_billing_system_list', 'users_payments') %}</i>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,103 @@
+{% if product_media.photo %}
+	<script>
+		$(function(){
+			loadScripts(
+				[
+                    "{% helper utils.jscript('', 'jquery.jcarousel.min.js', 'path') %}",
+                    "{% helper utils.jscript('', 'init_carousel_controls.js', 'path') %}"
+                ],
+				function(){
+					var data = {{ product_media.carousel|json_encode() }};
+					$('#product_media_'+data.rand).removeClass('hide');
+
+					carousel{{ product_media.rand }} = $('#product_media_'+data.rand).find('.jcarousel').jcarousel({
+						animation: 250
+					});
+
+					carousel_controls{{ product_media.rand }} = new init_carousel_controls({
+						carousel: carousel{{ product_media.rand }},
+						carousel_images_count: data.visible,
+						carousel_total_images: data.media_count,
+						btnNext: '#directionright_'+data.rand,
+						btnPrev: '#directionleft_'+data.rand,
+						scroll: data.scroll
+					});
+				},
+				['carousel_controls{{ product_media.rand }}', 'carousel{{ product_media.rand }}']
+			);
+		});
+	</script>
+
+	{% set product_media_thumb_name = product_media.carousel.thumb_name %}
+
+	<div class="product-others-media">
+		<div id="product_media_{{ product_media.rand }}"
+             class="user-gallery carousel-wrapper hide{% if product_media.carousel.class %} {{ product_media.carousel.class }}{% endif %}">
+			<div id="directionleft_{{ product_media.rand }}"
+                 class="op direction left hover-icon">
+				<div class="fa fa-chevron-left hover"></div>
+			</div>
+			<div class="dimp100 box-sizing plr20" id="product_content_media">
+				<div class="jcarousel" dir="{{ _LANG.rtl }}">
+					<ul>
+						{% for item in product_media.photo %}
+							<li id="media_{{ item.info.media_id }}" class="pointer"
+                                data-click="view-media-photo"
+                                data-id-media="{{ item.info.media_id }}">
+								<div class="photo">
+									<img src="{{ item.media.thumbs[product_media_thumb_name] }} "/>
+								</div>
+							</li>
+						{% endfor %}
+						{% for item in product_media.video %}
+							{% if item.video_content.thumbs %}
+                                <li class="product_media_item" data-click="view-media-video"
+                                    data-id-media="{{ item.info.media_id }}">
+                                    <img class="image small pointer fltl ml5"
+                                         data-click="view-media-video"
+                                         src="{{ item.video_content.thumbs[product_media_thumb_name] }}" />
+                                    <div class="wrapper">
+                                        <div class="text-overflow">
+                                            <i class="fa fa-play-sign w opacity60 fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div id="directionright_{{ product_media.rand }}"
+                 class="op direction right hover-icon">
+				<div class="fa fa-chevron-right hover"></div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('store', 'store_media.js', 'path') %}",
+			function(){
+				product_media = new store_media({
+					siteUrl: site_url,
+					viewMediaUrl: 'store/ajax_view_product_media',
+					galleryContentUrl: 'store/ajax_get_product_photos',
+					gallery_name: 'product_media',
+					galleryContentPage: 1,
+					idProduct: "{{ product.id }}",
+					all_loaded: 1,
+					lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+					galleryContentDiv: 'product_content_media',
+					post_data: {filter_duplicate: 1},
+					load_on_scroll: false,
+					sorterId: '',
+					direction: 'asc',
+					count_photo: "{{ product_media.photo|length }}",
+				});
+			},
+			'product_media',
+			{async: false}
+		);
+	});
+</script>

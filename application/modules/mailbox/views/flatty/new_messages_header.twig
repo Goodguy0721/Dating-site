@@ -1,0 +1,13 @@
+{% for message in messages %}
+    <div class="menu-alerts-more-item clearfix">
+        <a href="{% helper seo.rewrite_link('mailbox', 'view', message.id) %}">
+            <div class="message-image">
+                <img src="{{ message.sender.media.user_logo.thumbs.small }}">
+            </div>
+            <div class="message-body">
+                <div class="name">{{ message.sender.output_name }}</div>
+                <div class="text">{{ message.subject }}</div>
+            </div>
+        </a>
+    </div>
+{% endfor %}

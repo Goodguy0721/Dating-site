@@ -1,0 +1,50 @@
+<div class="load_content_controller">
+	<h1>
+        {% if type == 'country' %}
+            {% helper lang.l('header_country_select', 'countries') %}
+        {% elseif type == 'region' %}
+            {% helper lang.l('header_region_select', 'countries') %}
+        {% elseif type == 'city' %}
+            {% helper lang.l('header_city_select', 'countries') %}
+        {% endif %}
+    </h1>
+	<div class="inside">
+        {% if type == 'region' %}
+            <div class="crumb">
+                {{ data.country.name }}
+            </div>
+        {% elseif type == 'city' %}
+            <div class="crumb">
+                {{ data.country.name }} > {{ data.region.name }}
+            </div>
+        {% endif %}
+
+        {% if type == 'city' %}
+            <input type="text" id="city_search" class="controller-search">
+        {% endif %}
+
+        <ul class="controller-items" id="country_select_items"></ul>
+        <div class="controller-actions">
+            <div id="city_page" class="fright"></div>
+            <div>
+                {% if type == 'region' %}
+                    <a href="javascript:;" id="country_select_back" class="btn-link">
+                        <i class="fa fa-arrow-left fa-lg edge"></i>
+                        <i>{% helper lang.l('link_select_another_country', 'countries') %}</i>
+                    </a>
+                {% elseif type == 'city' %}
+                    <a href="javascript:;" id="country_select_back" class="btn-link">
+                        <i class="fa fa-arrow-left fa-lg edge"></i>
+                        <i>{% helper lang.l('link_select_another_region', 'countries') %}</i>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="fright">
+                <a href="javascript:;" id="country_select_close" class="btn-link">
+                    <i class="fa fa-arrow-left fa-lg edge"></i>
+                    <i>{% helper lang.l('link_close', 'countries') %}</i>
+                </a>
+            </div>
+        </div>
+	</div>
+</div>

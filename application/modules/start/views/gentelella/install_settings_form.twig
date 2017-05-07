@@ -1,0 +1,16 @@
+<div>
+    {% for item in settings_errors %}
+        <font class="label label-danger">{{ item }}</font><br>
+    {% endfor %}
+</div>
+<div class="form">
+    <div class="form-group">
+        <label class="control-label col-sm-3 col-xs-12">
+            {% helper lang.l('field_order_key', 'start') %}:
+        </label>
+        <div class="col-sm-9 col-xs-12">
+            <input type="text" value="{{ settings_data.product_order_key|e }}" 
+                name="product_order_key" class="form-control">
+        </div>
+    </div>
+</div>

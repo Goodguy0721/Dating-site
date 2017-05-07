@@ -1,0 +1,23 @@
+<div class="content-block load_content" id="friendlist_links_request_{{ id_dest_user }}">
+	<h1>
+        {% helper lang.l('header_request', 'friendlist') %}
+    </h1>
+	<div class="popup-form">
+        <div class="form-group">
+            <div class="row">
+                <div class="text col-xs-12">
+                    <div class="text-with-chats-counter input-group">
+                        <textarea name="comment" class="form-control" maxcount="{{ request_max_chars }}"
+                            placeholder="{% helper lang.l('message', 'friendlist') %}" ></textarea>
+                        <span class="input-group-addon char-counter">
+                            {{ request_max_chars }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary js-send">
+            {% helper lang.l('btn_send', 'start', '', 'button') %}
+        </button>
+	</div>
+</div>

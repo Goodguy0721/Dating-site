@@ -1,0 +1,109 @@
+                        </div>
+                    </div>
+                </div>
+                {% helper im.imMobileBlock() %}
+                {% helper shoutbox.shoutboxMobileBlock() %}
+                <div class="logo-mobile-version"></div>
+            </div>
+        </div>
+
+        {% if current_page != 'like_me' %}
+        <div class="b-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 b-footer__menu">
+                        <div class="col-md-4">{% helper menu.get_menu('footer_cust_col1', 'footer_cust_col') %}</div>
+                        <div class="col-md-4">{% helper menu.get_menu('footer_cust_col2', 'footer_cust_col') %}</div>
+                        <div class="col-md-4">{% helper menu.get_menu('footer_cust_col3', 'footer_cust_col') %}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="b-footer__social">
+                            <li><a title="Facebook" href="https://www.facebook.com/meetpositives/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a title="Twitter" href="https://twitter.com/meetpositives" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a title="Google+" href="https://plus.google.com/+Meetpositives" target="_blank"><i id="google" class="fa fa-google-plus"></i></a></li>
+                            <li><a title="Pinterest" href="https://www.pinterest.com/meetpositives/" target="_blank"><i id="pinterest" class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="b-footer__copy text-center">{% helper lang.l('footer_copy', 'start') %}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="b-footer__flags">
+                            {% helper users.users_lang_select({type: 'menu', template: 'flag'}) %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="b-footer__developed text-center">
+                            Developed by Chicago Website Design SEO Company
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-footer -->
+
+        {#<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="footer-languages">
+                            {% helper languages.lang_row_select() %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <ul class="footer-banners">
+                            {% helper banners.show_banner_place('bottom-banner') %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-menu">
+                <div class="container">
+                    <div class="row">
+                        {% helper menu.get_menu('user_footer_menu') %}
+                        <div class="col-sm-12 col-md-4">
+                            {% helper mobile.mobile_app_links() %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        {% helper mobile.mobileVersion() %}
+                        <div class="col-sm-6 col-md-6">
+                            <div class="copyright">
+                                Chicago Website Design SEO Company
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>#}
+        {% endif %}
+
+        <script>
+            $('body').removeClass('index-page site-page')
+                     .addClass('{% if header_type == 'index' %}index-page{% else %}site-page{% endif %}');
+        </script>
+
+        {% helper cookie_policy.cookie_policy_block() %}
+        {% helper seo_advanced.seo_traker('footer') %}
+
+{% if not is_pjax %}
+    </div>
+	</body>
+</html>
+{% endif %}

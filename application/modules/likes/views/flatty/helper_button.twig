@@ -1,0 +1,15 @@
+{% if template == 'popup' %}
+    <span class="like_block{{ likes_helper_block_class }}"
+          title="[{{ likes_helper_gid }}_title]" data-gid="{{ likes_helper_gid }}"
+          data-action="[{{ likes_helper_gid }}_action]">
+            <span id="like_btn_{{ likes_helper_gid }}" href="javascript:void(0)" class="like_btn fa [{{ likes_helper_gid }}_class] {{ likes_helper_btn_class }} fa-lg"></span>
+            <span class="like_num{{ likes_helper_num_class }}">[{{ likes_helper_gid }}]</span>
+    </span>
+{% else %}
+    <span class="like-btn-block like_block{{ likes_helper_block_class }}"
+          title="[{{ likes_helper_gid }}_title]" data-gid="{{ likes_helper_gid }}"
+          data-action="[{{ likes_helper_gid }}_action]">
+            <span id="like_btn_{{ likes_helper_gid }}" href="javascript:void(0)" class="like_btn fa [{{ likes_helper_gid }}_class] {{ likes_helper_btn_class }}"></span>
+            <span class="like_num{{ likes_helper_num_class }}">[{{ likes_helper_gid }}]</span>
+    </span>
+{% endif %}

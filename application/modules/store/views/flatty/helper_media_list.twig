@@ -1,0 +1,54 @@
+{% set product_media_thumb_name = product_media.carousel.thumb_name %}
+<div id="product_content_media">
+	{% for item in product_media.photo %}
+		{% if item.media %}
+			<div class="image small pointer fltl {% if loop.index > 1 and loop.index is not divisibleby(5) %}ml5 mb5{% endif %} pointer"
+                 id="media_{{ item.info.media_id }}"
+                 data-click="view-media-photo"
+                 data-id-media="{{ item.info.media_id }}">
+				<img src="{{ item.media.thumbs[product_media_thumb_name] }}">
+			</div>
+		{% endif %}
+	{% endfor %}
+	{% for item in product_media.video %}
+		{% if item.video_content %}
+			<div class="product_media_item">
+				<img class="image small pointer fltl ml5"
+                     data-click="view-media-video"
+                     data-id-media="{{ item.info.media_id }}"
+                     src="{{ item.video_content.thumbs[product_media_thumb_name] }}" />
+				<div class="wrapper">
+					<div class="text-overflow">
+						<i class="fa fa-play-sign w opacity60 fa-2x"></i>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('store', 'store_media.js', 'path') %}",
+			function(){
+				product_media = new store_media({
+					siteUrl: site_url,
+					viewMediaUrl: 'store/ajax_view_product_media',
+					galleryContentUrl: 'store/ajax_get_product_photos',
+					gallery_name: 'product_media',
+					galleryContentPage: 1,
+					idProduct: "{{ product.id }}",
+					all_loaded: 1,
+					galleryContentDiv: 'product_content_media',
+					post_data: {filter_duplicate: 1},
+					load_on_scroll: false,
+					sorterId: '',
+					direction: 'asc',
+                    count_photo: "{{ product_media.photo | length }}",
+				});
+			},
+			'product_media',
+			{async: false}
+		);
+	});
+</script>

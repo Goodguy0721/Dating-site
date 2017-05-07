@@ -1,0 +1,6 @@
+	1208	Thiote	18.2414700	-71.8407700	HT	13	0	0	Thiote	Thiote	Thiote	Thiote	Thiote	Thiote
+	1208	Marigot	18.2323100	-72.3142800	HT	13	0	0	Marigot	Marigot	Marigot	Marigot	Marigot	Marigot
+	1208	Jacmel	18.2341700	-72.5347200	HT	13	0	0	Jacmel	Жакмеле	Jacmel	Jacmel	Jacmel	Jacmel
+	1208	Cayes Jacmel	18.2307300	-72.3941700	HT	13	0	0	Cayes Jacmel	Cayes Jacmel	Cayes Jacmel	Cayes Jacmel	Cayes Jacmel	Cayes Jacmel
+	1208	Belle-Anse	18.2380100	-72.0620000	HT	13	0	0	Belle-Anse	Belle-Anse	Belle-Anse	Belle-Anse	Belle-Anse	Belle-Anse
+	1208	Anse-à-Pitre	18.0500000	-71.7500000	HT	13	0	0	Anse-à-Pitre	Anse-à-Pitre	Anse-à-Pitre	Anse-à-Pitre	Anse-à-Pitre	Anse-à-Pitre

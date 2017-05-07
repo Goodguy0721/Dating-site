@@ -1,0 +1,13 @@
+	2578	Villarrica	-25.7494600	-56.4351800	PY	10	0	0	Villarrica	Вильяррика	Villarrica	Villarrica	Villarrica	Villarrica
+	2578	Ñumí	-25.9500000	-56.3166700	PY	10	0	0	Ñumí	Ñumí	Ñumí	Ñumí	Ñumí	Ñumí
+	2578	Natalicio Talavera	-25.6333300	-56.3000000	PY	10	0	0	Natalicio Talavera	Natalicio Talavera	Natalicio Talavera	Natalicio Talavera	Natalicio Talavera	Natalicio Talavera
+	2578	Mbocayaty	-25.7193800	-56.4217900	PY	10	0	0	Mbocayaty	Mbocayaty	Mbocayaty	Mbocayaty	Mbocayaty	Mbocayaty
+	2578	Iturbe	-26.0500000	-56.4833300	PY	10	0	0	Iturbe	Iturbe	Iturbe	Iturbe	Iturbe	Iturbe
+	2578	Itapé	-25.8500000	-56.6166700	PY	10	0	0	Itapé	Itapé	Itapé	Itapé	Itapé	Itapé
+	2578	Independencia	-25.6910000	-56.2678100	PY	10	0	0	Independencia	Independencia	Independencia	Independencia	Independencia	Independencia
+	2578	Félix Pérez Cardozo	-25.7419900	-56.5227800	PY	10	0	0	Félix Pérez Cardozo	Félix Pérez Cardozo	Félix Pérez Cardozo	Félix Pérez Cardozo	Félix Pérez Cardozo	Félix Pérez Cardozo
+	2578	Fassardi	-25.9500000	-56.1000000	PY	10	0	0	Fassardi	Fassardi	Fassardi	Fassardi	Fassardi	Fassardi
+	2578	Doctor Botrell	-25.5833300	-56.3166700	PY	10	0	0	Doctor Botrell	Doctor Botrell	Doctor Botrell	Doctor Botrell	Doctor Botrell	Doctor Botrell
+	2578	Coronel Martínez	-25.7500000	-56.6166700	PY	10	0	0	Coronel Martínez	Coronel Martínez	Coronel Martínez	Coronel Martínez	Coronel Martínez	Coronel Martínez
+	2578	Colonia Mauricio José Troche	-25.5666700	-56.2833300	PY	10	0	0	Colonia Mauricio José Troche	Colonia Mauricio José Troche	Colonia Mauricio José Troche	Colonia Mauricio José Troche	Colonia Mauricio José Troche	Colonia Mauricio José Troche
+	2578	Borja	-25.9527200	-56.4980100	PY	10	0	0	Borja	Borja	Borja	Borja	Borja	Borja

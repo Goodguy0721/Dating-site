@@ -1,0 +1,68 @@
+{% for item in list %}
+    {% set id=item.id %}
+    <li id="item_{{ id }}" class="x_panel">
+      <div class="js-page">
+        {% if item.sub|length %}
+            <a class="collapse-link">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        {% endif %}
+        <div class="icons pull-right">
+            <div class="btn-group">
+                <span class="btn btn-primary">
+                  <a href="#" onclick="javascript: activatePage({{ item.id }}, 0, this);return false;" id="active_{{ id }}"
+                     class="{% if item.status != 1 %}hide{% endif %}" title="{% helper lang.l('make_inactive', 'start') %}">
+                    {% helper lang.l('make_inactive','start') %}
+                  </a><a href="#" onclick="javascript: activatePage({{ item.id }}, 1, this); return false;" id="deactive_{{ id }}"
+                     class="{% if item.status == 1 %}hide{% endif %}"
+                     title="{% helper lang.l('make_active', 'start') %}">
+                    {% helper lang.l('make_active','start') %}
+                  </a>
+               </span>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" onclick="javascript: activatePage({{ item.id }}, 0, this);return false;" id="active_{{ id }}"
+                         class="{% if item.status != 1 %}hide{% endif %}" title="{% helper lang.l('make_inactive', 'start') %}">
+                        {% helper lang.l('btn_tableicon_is_active','start') %}
+                      </a><a href="#" onclick="javascript: activatePage({{ item.id }}, 1, this); return false;" id="deactive_{{ id }}"
+                         class="{% if item.status == 1 %}hide{% endif %}"
+                         title="{% helper lang.l('make_active', 'start') %}">
+                        {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ site_url }}admin/content/edit/{{ item.lang_id }}/{{ item.id }}">
+                             {% helper lang.l('link_create_subitem', 'content') %}</a>
+                    </li>
+                    <li>
+                      <a href="{{ site_url }}admin/content/edit/{{ item.lang_id }}/{{ item.parent_id }}/{{ item.id }}">
+                          {% helper lang.l('btn_edit', 'start') %}</a>
+                    </li>
+                    <li>
+                        <a href='#' onclick="if (confirm('{% helper lang.l('note_delete_page', 'content', '', 'js') %}'))
+                           mlSorter.deleteItem({{ item.id }}); return false;">
+                            {% helper lang.l('btn_delete', 'start') %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{ item.title }}
+        <div>
+          <span class="{% if item.status != 1 %}hide{% endif %}">
+            {% helper lang.l('btn_tableicon_is_active','start') %}
+          </span><span class="{% if item.status == 1 %}hide{% endif %}">
+            {% helper lang.l('btn_tableicon_is_not_active','start') %}
+          </span>
+        </div>
+      </div>
+      <ul id="clsr{{ id }}ul" class="to_do sort connected x_content hide" name="parent_{{ id }}">
+        {% include 'tree_level.twig' with {list: item.sub} %}
+      </ul>
+    </li>
+{% endfor %}

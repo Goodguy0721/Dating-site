@@ -1,0 +1,2 @@
+	2604	Pucallpa	-8.3791500	-74.5538700	PE	25	0	0	Pucallpa	Пукальпа	Pucallpa	Pucallpa	Pucallpa	Pucallpa
+	2604	Campoverde	-8.4753300	-74.8070800	PE	25	0	0	Campoverde	Campoverde	Campoverde	Campoverde	Campoverde	Campoverde

@@ -1,0 +1,115 @@
+	502	Viamão	-30.0811100	-51.0233300	BR	23	0	0	Viamão	Viamão	Viamão	Viamão	Viamão	Viamão
+	502	Veranópolis	-28.9361100	-51.5494400	BR	23	0	0	Veranópolis	Veranópolis	Veranópolis	Veranópolis	Veranópolis	Veranópolis
+	502	Venâncio Aires	-29.6063900	-52.1919400	BR	23	0	0	Venâncio Aires	Venâncio Aires	Venâncio Aires	Venâncio Aires	Venâncio Aires	Venâncio Aires
+	502	Vacaria	-28.5122200	-50.9338900	BR	23	0	0	Vacaria	Вакария	Vacaria	Vacaria	Vacaria	Vacaria
+	502	Uruguaiana	-29.7547200	-57.0883300	BR	23	0	0	Uruguaiana	Uruguaiana	Uruguaiana	Uruguaiana	Uruguaiana	Uruguaiana
+	502	Tupanciretã	-29.0805600	-53.8358300	BR	23	0	0	Tupanciretã	Tupanciretã	Tupanciretã	Tupanciretã	Tupanciretã	Tupanciretã
+	502	Triunfo	-29.9433300	-51.7180600	BR	23	0	0	Triunfo	Triunfo	Triunfo	Triunfo	Triunfo	Triunfo
+	502	Três Passos	-27.4555600	-53.9319400	BR	23	0	0	Três Passos	Três Passos	Três Passos	Três Passos	Três Passos	Três Passos
+	502	Três de Maio	-27.7733300	-54.2400000	BR	23	0	0	Três de Maio	Três de Maio	Três de Maio	Três de Maio	Três de Maio	Três de Maio
+	502	Três Coroas	-29.5169400	-50.7777800	BR	23	0	0	Três Coroas	Três Coroas	Três Coroas	Três Coroas	Três Coroas	Três Coroas
+	502	Tramandaí	-29.9847200	-50.1336100	BR	23	0	0	Tramandaí	Tramandaí	Tramandaí	Tramandaí	Tramandaí	Tramandaí
+	502	Torres	-29.3352800	-49.7269400	BR	23	0	0	Torres	Торрес	Torres	Torres	Torres	Torres
+	502	Teutônia	-29.4480600	-51.8063900	BR	23	0	0	Teutônia	Teutônia	Teutônia	Teutônia	Teutônia	Teutônia
+	502	Taquari	-29.7997200	-51.8644400	BR	23	0	0	Taquari	Такуари	Taquari	Taquari	Taquari	Taquari
+	502	Taquara	-29.6505600	-50.7805600	BR	23	0	0	Taquara	Taquara	Taquara	Taquara	Taquara	Taquara
+	502	Tapes	-30.6733300	-51.3958300	BR	23	0	0	Tapes	Tapes	Tapes	Tapes	Tapes	Tapes
+	502	Tapejara	-28.0680600	-52.0138900	BR	23	0	0	Tapejara	Tapejara	Tapejara	Tapejara	Tapejara	Tapejara
+	502	Soledade	-28.8183300	-52.5102800	BR	23	0	0	Soledade	Soledade	Soledade	Soledade	Soledade	Soledade
+	502	Sarandi	-27.9438900	-52.9230600	BR	23	0	0	Sarandi	Саранди	Sarandi	Sarandi	Sarandi	Sarandi
+	502	Sapucaia	-29.8333300	-51.1500000	BR	23	0	0	Sapucaia	Сапукая	Sapucaia	Sapucaia	Sapucaia	Sapucaia
+	502	Sapiranga	-29.6380600	-51.0069400	BR	23	0	0	Sapiranga	Sapiranga	Sapiranga	Sapiranga	Sapiranga	Sapiranga
+	502	São Sepé	-30.1605600	-53.5652800	BR	23	0	0	São Sepé	São Sepé	São Sepé	São Sepé	São Sepé	São Sepé
+	502	São Sebastião do Caí	-29.5866700	-51.3755600	BR	23	0	0	São Sebastião do Caí	São Sebastião do Caí	São Sebastião do Caí	São Sebastião do Caí	São Sebastião do Caí	São Sebastião do Caí
+	502	São Pedro do Sul	-29.6205600	-54.1788900	BR	23	0	0	São Pedro do Sul	São Pedro do Sul	São Pedro do Sul	São Pedro do Sul	São Pedro do Sul	São Pedro do Sul
+	502	São Marcos	-28.9711100	-51.0680600	BR	23	0	0	São Marcos	São Marcos	São Marcos	São Marcos	São Marcos	São Marcos
+	502	São Luiz Gonzaga	-28.4083300	-54.9608300	BR	23	0	0	São Luiz Gonzaga	São Luiz Gonzaga	São Luiz Gonzaga	São Luiz Gonzaga	São Luiz Gonzaga	São Luiz Gonzaga
+	502	São Lourenço do Sul	-31.3652800	-51.9783300	BR	23	0	0	São Lourenço do Sul	Сан-Лоренсу-ду-Сул	São Lourenço do Sul	São Lourenço do Sul	São Lourenço do Sul	São Lourenço do Sul
+	502	São Leopoldo	-29.7602800	-51.1472200	BR	23	0	0	São Leopoldo	São Leopoldo	São Leopoldo	São Leopoldo	São Leopoldo	São Leopoldo
+	502	São Jerônimo	-29.9591700	-51.7222200	BR	23	0	0	São Jerônimo	São Jerônimo	São Jerônimo	São Jerônimo	São Jerônimo	São Jerônimo
+	502	São Gabriel	-30.3363900	-54.3200000	BR	23	0	0	São Gabriel	São Gabriel	São Gabriel	São Gabriel	São Gabriel	São Gabriel
+	502	São Francisco de Paula	-29.4480600	-50.5836100	BR	23	0	0	São Francisco de Paula	São Francisco de Paula	São Francisco de Paula	São Francisco de Paula	São Francisco de Paula	São Francisco de Paula
+	502	São Francisco de Assis	-29.5502800	-55.1311100	BR	23	0	0	São Francisco de Assis	São Francisco de Assis	São Francisco de Assis	São Francisco de Assis	São Francisco de Assis	São Francisco de Assis
+	502	São Borja	-28.6605600	-56.0044400	BR	23	0	0	São Borja	Сан-Борха	São Borja	São Borja	São Borja	São Borja
+	502	Santo Augusto	-27.8508300	-53.7772200	BR	23	0	0	Santo Augusto	Santo Augusto	Santo Augusto	Santo Augusto	Santo Augusto	Santo Augusto
+	502	Santo Ângelo	-28.2991700	-54.2630600	BR	23	0	0	Santo Ângelo	Санту-Анджело	Santo Ângelo	Santo Ângelo	Santo Ângelo	Santo Ângelo
+	502	Santiago	-29.1916700	-54.8672200	BR	23	0	0	Santiago	Сантьяго	Santiago	Santiago	Santiago	Santiago
+	502	Santa Vitória do Palmar	-33.5188900	-53.3680600	BR	23	0	0	Santa Vitória do Palmar	Santa Vitória do Palmar	Santa Vitória do Palmar	Santa Vitória do Palmar	Santa Vitória do Palmar	Santa Vitória do Palmar
+	502	Santa Rosa	-27.8708300	-54.4813900	BR	23	0	0	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa
+	502	Santana do Livramento	-30.8908300	-55.5327800	BR	23	0	0	Santana do Livramento	Сантана-ду-Ливраменту	Santana do Livramento	Santana do Livramento	Santana do Livramento	Santana do Livramento
+	502	Santa Maria	-29.6841700	-53.8069400	BR	23	0	0	Santa Maria	Санта-Мария	Santa Maria	Santa Maria	Santa Maria	Santa Maria
+	502	Santa Cruz do Sul	-29.7175000	-52.4258300	BR	23	0	0	Santa Cruz do Sul	Санта-Крус-ду-Сул	Santa Cruz do Sul	Santa Cruz do Sul	Santa Cruz do Sul	Santa Cruz do Sul
+	502	Sananduva	-27.9497200	-51.8066700	BR	23	0	0	Sananduva	Sananduva	Sananduva	Sananduva	Sananduva	Sananduva
+	502	Rosário do Sul	-30.2583300	-54.9141700	BR	23	0	0	Rosário do Sul	Росарио-ду-Сул	Rosário do Sul	Rosário do Sul	Rosário do Sul	Rosário do Sul
+	502	Rolante	-29.6505600	-50.5758300	BR	23	0	0	Rolante	Rolante	Rolante	Rolante	Rolante	Rolante
+	502	Rio Pardo	-29.9897200	-52.3780600	BR	23	0	0	Rio Pardo	Рио-Пардо	Rio Pardo	Rio Pardo	Rio Pardo	Rio Pardo
+	502	Rio Grande	-32.0350000	-52.0986100	BR	23	0	0	Rio Grande	Рио-Гранде	Rio Grande	Rio Grande	Rio Grande	Rio Grande
+	502	Quaraí	-30.3875000	-56.4513900	BR	23	0	0	Quaraí	Куараи	Quaraí	Quaraí	Quaraí	Quaraí
+	502	Porto Alegre	-30.0330600	-51.2300000	BR	23	0	0	Porto Alegre	Порту-Алегри	Porto Alegre	Porto Alegre	Porto Alegre	Porto Alegre
+	502	Portão	-29.7016700	-51.2419400	BR	23	0	0	Portão	Portão	Portão	Portão	Portão	Portão
+	502	Pinheiros	-29.7833300	-52.7333300	BR	23	0	0	Pinheiros	Pinheiros	Pinheiros	Pinheiros	Pinheiros	Pinheiros
+	502	Pinheiro Machado	-31.5783300	-53.3811100	BR	23	0	0	Pinheiro Machado	Pinheiro Machado	Pinheiro Machado	Pinheiro Machado	Pinheiro Machado	Pinheiro Machado
+	502	Pelotas	-31.7719400	-52.3425000	BR	23	0	0	Pelotas	Пелотас	Pelotas	Pelotas	Pelotas	Pelotas
+	502	Passo Fundo	-28.2627800	-52.4066700	BR	23	0	0	Passo Fundo	Passo Fundo	Passo Fundo	Passo Fundo	Passo Fundo	Passo Fundo
+	502	Parobé	-29.6286100	-50.8347200	BR	23	0	0	Parobé	Parobé	Parobé	Parobé	Parobé	Parobé
+	502	Panambi	-28.2925000	-53.5016700	BR	23	0	0	Panambi	Panambi	Panambi	Panambi	Panambi	Panambi
+	502	Palmeira das Missões	-27.8994400	-53.3136100	BR	23	0	0	Palmeira das Missões	Palmeira das Missões	Palmeira das Missões	Palmeira das Missões	Palmeira das Missões	Palmeira das Missões
+	502	Palmares do Sul	-30.2577800	-50.5097200	BR	23	0	0	Palmares do Sul	Palmares do Sul	Palmares do Sul	Palmares do Sul	Palmares do Sul	Palmares do Sul
+	502	Osório	-29.8866700	-50.2697200	BR	23	0	0	Osório	Осорио	Osório	Osório	Osório	Osório
+	502	Novo Hamburgo	-29.6783300	-51.1305600	BR	23	0	0	Novo Hamburgo	Novo Hamburgo	Novo Hamburgo	Novo Hamburgo	Novo Hamburgo	Novo Hamburgo
+	502	Nova Prata	-28.7838900	-51.6100000	BR	23	0	0	Nova Prata	Nova Prata	Nova Prata	Nova Prata	Nova Prata	Nova Prata
+	502	Nova Petrópolis	-29.3763900	-51.1144400	BR	23	0	0	Nova Petrópolis	Nova Petrópolis	Nova Petrópolis	Nova Petrópolis	Nova Petrópolis	Nova Petrópolis
+	502	Não Me Toque	-28.4591700	-52.8208300	BR	23	0	0	Não Me Toque	Não Me Toque	Não Me Toque	Não Me Toque	Não Me Toque	Não Me Toque
+	502	Montenegro	-29.6886100	-51.4611100	BR	23	0	0	Montenegro	Черногория	Montenegro	Montenegro	Montenegro	Montenegro
+	502	Marau	-28.4491700	-52.2000000	BR	23	0	0	Marau	Marau	Marau	Marau	Marau	Marau
+	502	Lajeado	-29.4669400	-51.9613900	BR	23	0	0	Lajeado	Lajeado	Lajeado	Lajeado	Lajeado	Lajeado
+	502	Lagoa Vermelha	-28.2086100	-51.5258300	BR	23	0	0	Lagoa Vermelha	Lagoa Vermelha	Lagoa Vermelha	Lagoa Vermelha	Lagoa Vermelha	Lagoa Vermelha
+	502	Júlio de Castilhos	-29.2269400	-53.6816700	BR	23	0	0	Júlio de Castilhos	Júlio de Castilhos	Júlio de Castilhos	Júlio de Castilhos	Júlio de Castilhos	Júlio de Castilhos
+	502	Jaguarão	-32.5661100	-53.3758300	BR	23	0	0	Jaguarão	Jaguarão	Jaguarão	Jaguarão	Jaguarão	Jaguarão
+	502	Ivoti	-29.5911100	-51.1605600	BR	23	0	0	Ivoti	Ivoti	Ivoti	Ivoti	Ivoti	Ivoti
+	502	Itaqui	-29.1252800	-56.5530600	BR	23	0	0	Itaqui	Итака	Itaqui	Itaqui	Itaqui	Itaqui
+	502	Ijuí	-28.3877800	-53.9147200	BR	23	0	0	Ijuí	Ijuí	Ijuí	Ijuí	Ijuí	Ijuí
+	502	Igrejinha	-29.5744400	-50.7902800	BR	23	0	0	Igrejinha	Игрежинья	Igrejinha	Igrejinha	Igrejinha	Igrejinha
+	502	Ibirubá	-28.6275000	-53.0897200	BR	23	0	0	Ibirubá	Ibirubá	Ibirubá	Ibirubá	Ibirubá	Ibirubá
+	502	Horizontina	-27.6258300	-54.3077800	BR	23	0	0	Horizontina	Horizontina	Horizontina	Horizontina	Horizontina	Horizontina
+	502	Herval	-32.0236100	-53.3955600	BR	23	0	0	Herval	Herval	Herval	Herval	Herval	Herval
+	502	Guaporé	-28.8455600	-51.8902800	BR	23	0	0	Guaporé	Guaporé	Guaporé	Guaporé	Guaporé	Guaporé
+	502	Gravataí	-29.9421800	-50.9927800	BR	23	0	0	Gravataí	Gravataí	Gravataí	Gravataí	Gravataí	Gravataí
+	502	Giruá	-28.0283300	-54.3497200	BR	23	0	0	Giruá	Giruá	Giruá	Giruá	Giruá	Giruá
+	502	Garibaldi	-29.2561100	-51.5336100	BR	23	0	0	Garibaldi	Garibaldi	Garibaldi	Garibaldi	Garibaldi	Garibaldi
+	502	Frederico Westphalen	-27.3591700	-53.3944400	BR	23	0	0	Frederico Westphalen	Frederico Westphalen	Frederico Westphalen	Frederico Westphalen	Frederico Westphalen	Frederico Westphalen
+	502	Flores da Cunha	-29.0288900	-51.1816700	BR	23	0	0	Flores da Cunha	Flores da Cunha	Flores da Cunha	Flores da Cunha	Flores da Cunha	Flores da Cunha
+	502	Farroupilha	-29.2250000	-51.3477800	BR	23	0	0	Farroupilha	Farroupilha	Farroupilha	Farroupilha	Farroupilha	Farroupilha
+	502	Esteio	-29.8613900	-51.1791700	BR	23	0	0	Esteio	Esteio	Esteio	Esteio	Esteio	Esteio
+	502	Estância Velha	-29.6483300	-51.1738900	BR	23	0	0	Estância Velha	Estância Velha	Estância Velha	Estância Velha	Estância Velha	Estância Velha
+	502	Espumoso	-28.7247200	-52.8497200	BR	23	0	0	Espumoso	Espumoso	Espumoso	Espumoso	Espumoso	Espumoso
+	502	Erechim	-27.6346100	-52.2754000	BR	23	0	0	Erechim	Erechim	Erechim	Erechim	Erechim	Erechim
+	502	Encruzilhada do Sul	-30.5438900	-52.5219400	BR	23	0	0	Encruzilhada do Sul	Encruzilhada do Sul	Encruzilhada do Sul	Encruzilhada do Sul	Encruzilhada do Sul	Encruzilhada do Sul
+	502	Encantado	-29.2361100	-51.8697200	BR	23	0	0	Encantado	Encantado	Encantado	Encantado	Encantado	Encantado
+	502	Dom Pedrito	-30.9827800	-54.6730600	BR	23	0	0	Dom Pedrito	Dom Pedrito	Dom Pedrito	Dom Pedrito	Dom Pedrito	Dom Pedrito
+	502	Cruz Alta	-28.6386100	-53.6063900	BR	23	0	0	Cruz Alta	Cruz Alta	Cruz Alta	Cruz Alta	Cruz Alta	Cruz Alta
+	502	Cidreira	-30.1811100	-50.2055600	BR	23	0	0	Cidreira	Cidreira	Cidreira	Cidreira	Cidreira	Cidreira
+	502	Chuí	-33.6911100	-53.4566700	BR	23	0	0	Chuí	Chuí	Chuí	Chuí	Chuí	Chuí
+	502	Charqueadas	-29.9547200	-51.6252800	BR	23	0	0	Charqueadas	Charqueadas	Charqueadas	Charqueadas	Charqueadas	Charqueadas
+	502	Cerro Largo	-28.1486100	-54.7380600	BR	23	0	0	Cerro Largo	Cerro Largo	Cerro Largo	Cerro Largo	Cerro Largo	Cerro Largo
+	502	Caxias do Sul	-29.1680600	-51.1794400	BR	23	0	0	Caxias do Sul	Кашиас-ду-Сул	Caxias do Sul	Caxias do Sul	Caxias do Sul	Caxias do Sul
+	502	Carlos Barbosa	-29.2975000	-51.5036100	BR	23	0	0	Carlos Barbosa	Carlos Barbosa	Carlos Barbosa	Carlos Barbosa	Carlos Barbosa	Carlos Barbosa
+	502	Carazinho	-28.2838900	-52.7863900	BR	23	0	0	Carazinho	Каразинью	Carazinho	Carazinho	Carazinho	Carazinho
+	502	Capão da Canoa	-29.7455600	-50.0097200	BR	23	0	0	Capão da Canoa	Capão da Canoa	Capão da Canoa	Capão da Canoa	Capão da Canoa	Capão da Canoa
+	502	Canoas	-29.9177800	-51.1836100	BR	23	0	0	Canoas	Canoas	Canoas	Canoas	Canoas	Canoas
+	502	Canguçu	-31.3950000	-52.6755600	BR	23	0	0	Canguçu	Canguçu	Canguçu	Canguçu	Canguçu	Canguçu
+	502	Canela	-29.3562200	-50.8135700	BR	23	0	0	Canela	Канела	Canela	Canela	Canela	Canela
+	502	Candelária	-29.6691700	-52.7888900	BR	23	0	0	Candelária	Candelária	Candelária	Candelária	Candelária	Candelária
+	502	Camaquã	-30.8511100	-51.8122200	BR	23	0	0	Camaquã	Camaquã	Camaquã	Camaquã	Camaquã	Camaquã
+	502	Cachoeirinha	-29.9511100	-51.0938900	BR	23	0	0	Cachoeirinha	Cachoeirinha	Cachoeirinha	Cachoeirinha	Cachoeirinha	Cachoeirinha
+	502	Cachoeira do Sul	-30.0391700	-52.8938900	BR	23	0	0	Cachoeira do Sul	Кашуэйра-ду-Сул	Cachoeira do Sul	Cachoeira do Sul	Cachoeira do Sul	Cachoeira do Sul
+	502	Cacequi	-29.8836100	-54.8250000	BR	23	0	0	Cacequi	Cacequi	Cacequi	Cacequi	Cacequi	Cacequi
+	502	Caçapava do Sul	-30.5143600	-53.4849600	BR	23	0	0	Caçapava do Sul	Caçapava do Sul	Caçapava do Sul	Caçapava do Sul	Caçapava do Sul	Caçapava do Sul
+	502	Butiá	-30.1197200	-51.9622200	BR	23	0	0	Butiá	Butiá	Butiá	Butiá	Butiá	Butiá
+	502	Bento Gonçalves	-29.1713900	-51.5191700	BR	23	0	0	Bento Gonçalves	Bento Gonçalves	Bento Gonçalves	Bento Gonçalves	Bento Gonçalves	Bento Gonçalves
+	502	Bagé	-31.3313900	-54.1069400	BR	23	0	0	Bagé	Баг	Bagé	Bagé	Bagé	Bagé
+	502	Arroio Grande	-32.2375000	-53.0869400	BR	23	0	0	Arroio Grande	Arroio Grande	Arroio Grande	Arroio Grande	Arroio Grande	Arroio Grande
+	502	Arroio dos Ratos	-30.0772200	-51.7291700	BR	23	0	0	Arroio dos Ratos	Arroio dos Ratos	Arroio dos Ratos	Arroio dos Ratos	Arroio dos Ratos	Arroio dos Ratos
+	502	Arroio do Meio	-29.4011100	-51.9450000	BR	23	0	0	Arroio do Meio	Arroio do Meio	Arroio do Meio	Arroio do Meio	Arroio do Meio	Arroio do Meio
+	502	Alegrete	-29.7830600	-55.7919400	BR	23	0	0	Alegrete	Алегрети	Alegrete	Alegrete	Alegrete	Alegrete
+	502	Guaíba	-30.1138900	-51.3250000	BR	23	0	0	Guaíba	Guaíba	Guaíba	Guaíba	Guaíba	Guaíba

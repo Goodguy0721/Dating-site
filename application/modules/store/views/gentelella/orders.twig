@@ -1,0 +1,283 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        {% if filter_data.active or filter_data.opened or filter_data.closed or filter_data.archive %}
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                
+                 <div id="move_block" class="btn-group">
+                    <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% helper lang.l('button_change_status', 'store') %}
+                    </button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">                        
+                        {% for item in statuses %}
+                            {% if item != 'status_rejected_administrator' %}
+                                <li data-status="{{ item }}"><a  href="javascript:void(0)">{% helper lang.l(item, 'store') %}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" id="move2archive">
+                        {% helper lang.l('button_move2archive', 'store') %}
+                    </button>
+                </div>
+                <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                        <li class="{% if filter == 'active' %}active{% endif %}{% if not filter_data.active %}  disabled{% endif %}">
+                            <a href="{% if  filter_data.active %}{{ site_url }}admin/store/orders/active{% else %}javascript:;{% endif %}">{% helper lang.l('filter_active', 'store') %}({{ filter_data.active }})</a>
+                        </li>
+                        <li class="{% if filter == 'opened' %}active{% endif %}{% if not filter_data.opened %}  disabled{% endif %}">
+                            <a href="{% if  filter_data.opened %}{{ site_url }}admin/store/orders/opened{% else %}javascript:;{% endif %}">{% helper lang.l('filter_opened', 'store') %} ({{ filter_data.opened }})</a>
+                        </li>		
+                        <li class="{% if filter == 'closed' %}active{% endif %}{% if not filter_data.closed %}  disabled{% endif %}">
+                            <a href="{% if  filter_data.closed %}{{ site_url }}admin/store/orders/closed{% else %}javascript:;{% endif %}">{% helper lang.l('filter_closed', 'store') %} ({{ filter_data.closed }})</a>
+                        </li>		
+                        <li class="{% if filter == 'archive' %}active{% endif %}{% if not filter_data.archive %}  disabled{% endif %}">
+                            <a href="{% if  filter_data.archive %}{{ site_url }}admin/store/orders/archive{% else %}javascript:;{% endif %}">{% helper lang.l('filter_archive', 'store') %} ({{ filter_data.archive }})</a>
+                        </li>
+                    </ul>
+                </div>
+               {# <div id="menu" class="btn-group" data-toggle="buttons">
+                    {% helper moderators.count_ausers() %}
+                    <label class="btn btn-default{% if filter == 'active' %} active{% endif %}{% if not filter_data.active %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/store/orders/active'">
+                        <input type="radio"{% if filter == 'active' %} selected{% endif %}>
+                        {% helper lang.l('filter_active', 'store') %} ({{ filter_data.active }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'opened' %} active{% endif %}{% if not filter_data.opened %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/store/orders/opened'">
+                        <input type="radio"{% if filter == 'opened' %} selected{% endif %}>
+                        {% helper lang.l('filter_opened', 'store') %} ({{ filter_data.opened }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'closed' %} active{% endif %}{% if not filter_data.closed %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/store/orders/closed'">
+                        <input type="radio"{% if filter == 'closed' %} selected{% endif %}>
+                        {% helper lang.l('filter_closed', 'store') %} ({{ filter_data.closed }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'archive' %} active{% endif %}{% if not filter_data.archive %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/store/orders/archive'">
+                        <input type="radio"{% if filter == 'archive' %} selected{% endif %}>
+                        {% helper lang.l('filter_archive', 'store') %} ({{ filter_data.archive }})
+                    </label>
+                </div>#}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        {% endif %}
+        <div class="x_content">
+            <div id="statuses" class="absolute statuses-block" style="display: none;">
+                {% for item in statuses %}
+                    {% if item != 'status_rejected_administrator' %}
+                        <div class="btn btn-primary" data-status="{{ item }}">{% helper lang.l(item, 'store') %}</div>
+                    {% endif %}
+                {% endfor %}
+                <div class="ln_solid"></div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{% helper lang.l('header_filters', 'users') %}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content hide">
+                    <br>
+                    <form method="post" enctype="multipart/form-data" data-parsley-validate
+                          class="form-horizontal form-label-left" name="save_form"
+                          action="{{ data.action }}">
+                        <input type="hidden" name="filter" value="{{ filter }}">
+                        <input type="hidden" name="order" value="{{ order }}">
+                        <input type="hidden" name="order_direction" value="{{ order_direction }}">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper utils.l('search_by', 'store') %}:</label>
+                            <div class="col-sm-9">
+                                <select name="status" class="form-control">
+                                    <option value="" {% if not search_param.status %} selected{% endif %}>{% helper lang.l('filter_all', 'store') %}</option>
+                                    {% for item in statuses %}
+                                    <option value="{{ item }}" {% if search_param.status==item %} selected{% endif %}>{% helper lang.l(item, 'store') %}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <input class="btn btn-success" type="submit" value="{% helper lang.l('button_products_find', 'store') %}" name="btn_search">
+                                <input class="btn btn-default" type="submit" value="{% helper lang.l('button_reset', 'store') %}" name="btn_reset">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="text-center"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title text-center">{% helper lang.l('field_order_number', 'store') %}</th>
+                        <th class="column-title text-center">
+                            <a href="{{ sort_links.customer_name }}" class="alone
+                               {% if order=='customer_name' %} {{ order_direction|lower }}{% endif %}">
+                                {% helper lang.l('field_user', 'store') %}
+                            </a>
+                        </th>
+                        <th class="column-title text-center">{% helper lang.l('field_price', 'store') %}</th>
+                        <th class="column-title text-center">{% helper lang.l('field_status', 'store') %}</th>
+                        <th class="column-title text-center sm-hide">{% helper lang.l('field_date', 'store') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="7">
+                            <a href="javascript:;" class="dropdown-toggle info-number alone" data-toggle="dropdown" aria-expanded="false"
+                                style="font-weight:500;">
+                                Actions ( <span class="action-cnt"> </span> )
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu"
+                                style="position: absolute; top: 280px; left: 6px;">
+                                <li class="dropdown">
+                                    <ul>
+                                        <li>
+                                            <a id="change_status" href="javascript:void(0)">
+                                                {% helper lang.l('button_change_status', 'store') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="move2archive" href="javascript:void(0)">
+                                                {% helper lang.l('button_move2archive', 'store') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in orders %}
+                    <tr>
+                        <td class="text-center"><input type="checkbox" class="flat js_grouping" value="{{ item.id }}" id="prod_{{ item.id }}" data="table_records"></td>
+                        <td class="text-center">#{{ item.code }}</td>
+                        <td class="text-center"><a href="{{ site_url }}admin/users/edit/personal/{{ item.id_customer }}">{{ item.customer_name }}</a></td>
+                        <td class="text-center">{% helper start.currency_format_output({'value': item.total}) %}</td>
+                        <td class="text-center"><span id="status_{{ item.id }}">{{ item.status_text }}</span></td>
+                        <td class="text-center sm-hide">{% helper date_format.tpl_date_format(item.date_updated, page_data.date_format) %}</td>
+                        <td class="icons">
+                            <div id="move_block" class="btn-group">
+                                <button type="button" class="btn btn-primary"
+                                        onclick = "document.location.href='{{ site_url }}admin/store/order/{{ item.id }}'">
+                                    {% helper lang.l('link_edit_order', 'store') %}
+                                </button>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ site_url }}admin/store/order/{{ item.id }}">{% helper lang.l('link_edit_order', 'store') %}</a>
+                                    </li>
+                                    {% if item.is_archive %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/store/orders/archive">{% helper lang.l('status_delivered', 'store') %}</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                <tr><td colspan="7" class="text-center">{% helper lang.l('no_orders', 'store') %}</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{%helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href='{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css' rel='stylesheet' type='text/css' media='screen' />
+<script type="text/javascript">
+
+var reload_link = "{{ site_url }}admin/store/orders/";
+var filter = '{{ filter }}';
+var order = '{{ order }}';
+var loading_content;
+var order_direction = '{{ order_direction }}';
+var textbox = false;
+
+$('#change_status').off('click').click(function() {
+    $('#statuses').toggle();
+    $('#statuses div').click(function() {
+        var order_data = new Array();
+        $('.js_grouping:checked').each(function(i) {
+            order_data[i] = $(this).val();
+        });
+        if (order_data.length > 0) {
+            var obj = $(this);
+            var status = obj.data('status');
+            if (status) {
+                $.ajax({
+                    url: site_url + 'admin/store/ajax_change_status_orders/',
+                    data: { order_ids: order_data, status: status },
+                    type: "POST",
+                    dataType : 'json',
+                    cache: false,
+                    success: function(data) {
+                        $('#statuses').hide();
+                        if (data.status) {
+                            error_object.show_error_block(data.success, 'success');
+                            for (var key in order_data) {
+                                $('#status_' + order_data[key]).html(obj.text());
+                                delete order_data[key];
+                            }
+                            location.reload();
+                        } else {
+                            error_object.show_error_block(data.errors, 'errors');
+                        }
+                    }
+                });
+            }
+        } else {
+            error_object.show_error_block('{% helper lang.l("error_no_orders_to_change_group", "store", "", "js") %}', 'error');
+        }
+    });
+});
+$('#move2archive').off('click').click(function() {
+    var data = new Array();
+    $('.js_grouping:checked').each(function(i) {
+        data[i] = $(this).val();
+    });
+    if (data.length > 0) {
+        $.ajax({
+            url: site_url + 'admin/store/ajax_move2archive/',
+            data: { order_ids: data },
+            type: 'POST',
+            dataType : 'json',
+            cache: false,
+            success: function(data) {
+                error_object.show_error_block(data.success, 'success');
+                location.reload();
+            }
+        });
+    } else {
+        error_object.show_error_block('{% helper lang.l("error_no_orders_to_change_group", "store", "", "js") %}', 'error');
+    }
+});
+</script>
+
+{% include '@app/footer.twig' %}

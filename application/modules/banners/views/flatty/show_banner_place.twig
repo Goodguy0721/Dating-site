@@ -1,0 +1,61 @@
+<div class="{{ place.keyword|e }}-place">
+    {% if place.rotate_time %}
+        <script>
+            var place_data{{ place.id }} = {
+            id:{{ place.id }},
+                    width:{{ place.width }},
+                    height:{{ place.height }},
+                    rotate_time:{{ place.rotate_time }},
+                    keyword: '{{ place.keyword }}',
+                    div_id: 'banner-place-{{ place.keyword }}'
+            }
+
+            var banner_data{{ place.id }} = new Array();
+            {% for  key, banner in banners %}
+                {% if banner.banner_type == 1 %}
+                    {% set banner_content %}
+                        <a href="{{ site_url }}banners/go/{{ banner.id }}" title="{{ banner.alt_text|e }}" {% if banner.new_window == 1 or banner.user_id %}target = "_blank"{% endif %} ><img alt="{{ banner.alt_text|e }}" src="{{ banner.media.banner_image.file_url|e }}" class="banner"></a>
+                    {% endset %}
+                                banner_data{{ place.id }}[{{ key }}] = {
+                        id:{{ banner.id }},
+                                banner_type: 'image',
+                                banner_src: '{{ banner.media.banner_image.file_url|e }}',
+                                html: '{% spaceless %}{{ banner_content }}{% endspaceless %}'
+                        };
+                {% else %}
+                    banner_data{{ place.id }}[{{ key }}] = {
+                    id:{{ banner.id }},
+                            banner_type: 'html',
+                            html: '{{ banner.html }}'
+                    };
+                {% endif %}
+            {% endfor %}
+
+                (function() {
+                var banners_trys = 0;
+                load_banners();
+                function load_banners() {
+                if (window.banners) {
+                banners.create_banner_area(place_data{{ place.id }}, banner_data{{ place.id }});
+                } else if (banners_trys++ < 20) {
+                setTimeout(load_banners, 500);
+                }
+                };
+                })();
+        </script>
+        <div id="banner-place-{{ place.keyword|e }}"></div>
+    {% elseif banners != empty %}
+        {% for banner in banners %}            
+            <div id="banner-place-{{ place.keyword|e }}">
+                {% if banner.banner_type == 1 %}
+                    <a href="{{ site_url }}banners/go/{{ banner.id }}" title="{{ banner.alt_text|e }}"
+                       {% if banner.new_window == 1 or banner.user_id %}target="_blank"{% endif %}>
+                        <img alt="{{ banner.alt_text|e }}" src="{{ banner.media.banner_image.file_url|e }}" class="banner" />
+                    </a>
+                {% else %}
+                    {{ banner.html }}
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

@@ -1,0 +1,67 @@
+<h2>{% helper lang.l('field_permissions', 'access_permissions') %}</h2>
+<div id="permissions-list" class="permissions-lists">
+    <table class="table table-striped responsive-utilities jambo_table bulk_action">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">
+                    <div>{% helper lang.l('field_page_section', 'access_permissions') %}</div>
+                </th>
+                {% for group in groups %}
+                    <th class="column-title" data-group_actions="{{ group.gid }}">
+                        <div data-toggle="tooltip" data-placement="top" title="{{ group.current_name }}">{{ group.current_name }}</div>
+                    </th>
+                {% else %}
+                    <th class="column-title" >
+                        <div>{% helper lang.l('field_users_guest', 'access_permissions') %}</div>
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for section in access_sections %}
+                <tr class="cursor-pointer"
+                                    data-user_type="{{ user_type }}"
+                                    data-action="change_permissions"
+                                    data-module_gid="{{ section.module_gid }}"
+                                    data-method="{{ section.method }}"
+                                    data-access="{{ section.access }}">
+                    <td>{{ section.name }}</td>
+                    {% for group in groups %}
+                        <td class="icons" data-group_actions="{{ group.gid }}">
+                                <div class="permissions-list">
+                                    <i class="fa fa-circle{% if section.status_access[group.gid].status != 'full' %}-o{% endif %}">
+                                        {% if section.status_access[group.gid].status == 'incomplete' %}<span class="incomplete"></span>{% endif %}
+                                    </i>
+                                </div>
+                        </td>
+                    {% else %}
+                        <td class="icons">
+                                <div class="permissions-list">
+                                    <i class="fa fa-circle{% if section.status_access['guest'].status != 'full' %}-o{% endif %}">
+                                        {% if section.status_access['guest'].status == 'incomplete' %}<span class="incomplete"></span>{% endif %}
+                                    </i>
+                                </div>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="{{ 2 + groups|length }}" class="text-center">
+                    <div class="permissions-list">
+                        <span class="ml20">
+                            <i class="fa fa-circle"></i> {% helper lang.l('field_access_leve_full', 'access_permissions') %}
+                        </span>
+                        <span class="ml20">
+                            <i class="fa fa-circle-o">
+                                <span class="incomplete"></span>
+                            </i> {% helper lang.l('field_access_leve_incomplete', 'access_permissions') %}
+                        </span>
+                        <span class="ml20">
+                            <i class="fa fa-circle-o"></i> {% helper lang.l('field_access_leve_null', 'access_permissions') %}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

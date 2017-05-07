@@ -1,0 +1,24 @@
+<button data-im="{{ im_data.id_contact }}" data-pjax="0"
+   onclick="event.preventDefault(); addImContact_{{ im_data.id_contact }}();"
+    class="btn btn-primary chat-im form-control">
+    {% helper lang.l('im_chat', 'im') %}
+</button>
+<script>
+	function addImContact_{{ im_data.id_contact }}(waiting_im_sec) {
+		waiting_im_sec = waiting_im_sec || 0;
+		if (!window.im && waiting_im_sec < 30) {
+			setTimeout(function() {
+                addImContact_{{ im_data.id_contact }}(waiting_im_sec);
+            }, 100);
+		}
+		var data = {{ im_json_data }};
+		im.openContact(data.contact_list);
+        im.scrollToIm();
+	}
+	$('.chat-im').on('click', function(){
+		var contact_id = $(this).data('im');
+		if (contact_id) {
+			im.setActiveContact(contact_id);
+		}
+	});
+</script>

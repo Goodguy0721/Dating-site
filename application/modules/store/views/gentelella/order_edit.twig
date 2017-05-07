@@ -1,0 +1,241 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ form_settings.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_order_number', 'store') %}:</label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        #{{ order.code }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_sender', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        <a href ="{{ site_url }}admin/users/edit/personal/{{ order.id_customer }}">
+                            {{ order.customer_name }}
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_recipient', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        <a href ="{{ site_url }}admin/users/edit/personal/{{ order.id_user }}">
+                            {{ order.user }}
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_street_address', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.shipping_location }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_zip', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.shipping_zip }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_phone', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.contact_phone }}
+                    </div>
+                </div>
+            {% if order.comment %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_comment', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.comment }}
+                    </div>
+                </div>
+            {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_sel_shipping_method', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.shipping_name }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_order_amount', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {% helper start.currency_format_output({'value': order.total}) %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_items_in_order', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.products_count }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_date_order', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {% helper date_format.tpl_date_format(order.date_created, page_data.date_format) %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_current_status', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        {{ order.status_text }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_new_status', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        <select name="status" class="form-control">
+                            <option value="" {% if not search_param.status %} selected{% endif %}>{% helper lang.l('filter_all', 'store') %}</option>
+                            {% for item in statuses %}
+                            <option value="{{ item }}" {% if item==order.status %}selected{% endif %}>{% helper lang.l(item, 'store') %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_history_changes', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                    {% for item in order_log %}
+                        {% if item.status %}
+                            <div class="block_cat w500">
+                                <div>
+                                    <span>{{ item.date }}:&nbsp{{ item.status }}</span>
+                                </div>
+                                {% if item.comment %}<div>({{ item.comment }})</div>{% endif %}
+                            </div>
+                            <div class="clearfix"></div>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                        {% helper lang.l('field_add_comment', 'store') %}
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_comment', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12 data-label">
+                        <textarea name="comment_log" cols="80" rows="10" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', "", 'button') %}">
+                        <input class="btn btn-primary" type="submit" name="btn_save_history" value="{% helper lang.l('button_move2archive', 'store', "", 'button') %}">
+                        <input class="btn btn-default" type="submit" name="btn_cancel" value="{% helper lang.l('btn_cancel', 'start', "", 'button') %}">
+                    </div>
+                </div>
+            </form>
+            <div class="col-xs-12" id="view_photo">
+                <table id="users" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-title">#</th>
+                            <th class="column-title">{% helper lang.l('field_product_photo', 'store') %}</th>
+                            <th class="column-title">{% helper lang.l('field_product_name', 'store') %}</th>
+                            <th class="column-title">{% helper lang.l('field_count', 'store') %}</th>
+                            <th class="column-title">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in order.items %}
+                        <tr>
+                            <td>{{ item.id_product }}</td>
+                            <td>
+                                {% if item.product.media.mediafile.thumbs.middle %}
+                                <div id="product_photo">
+                                    <img src="{{ item.product.media.mediafile.thumbs.middle }}" alt="{{ item.name }}" title="{{ item.name }}">
+                                </div>
+                                {% else %}
+                                    <div class="default-middle-image">
+                                        <i class="fa fa-gift fa-5x"></i>
+                                    </div>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if item.product.id %}
+                                    <a target="_blank" href="{{ site_url }}admin/store/product/description/{{ item.id_product }}">
+                                {% endif %}
+                                {{ item.name }}
+                                {% if item.product.id %}
+                                    </a>
+                                {% else %}
+                                    &nbsp;({% helper lang.l('no_product', 'store') %})
+                                {% endif %}
+                                {% for opt in item.product.options %}
+                                    {% set option_id = opt.id %}
+                                    <div class="field">
+                                        {% helper store.store_options_values({'header': opt.name, 'type': opt.type, 'id': opt.id, 'options': item.options[option_id], 'action': 'view'}) %}
+                                    </div>
+                                {% endfor %}
+                            </td>
+                            <td class="text-center">{{ item.product.photo_count }}</td>
+                            <td class="icons">
+                              <div class="btn-group">
+                                <a class="btn btn-primary" href="javascript:void(0)" data-click="view-media-photo" data-id-product="{{ item.id_product }}" data-id-media="0">
+                                    {% helper lang.l('field_product_photo', 'store') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                      <a href="javascript:void(0)" data-click="view-media-photo" data-id-product="{{ item.id_product }}" data-id-media="0">
+                                          {% helper lang.l('field_product_photo', 'store') %}
+                                      </a>
+                                    </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<script type='text/javascript'>
+
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('store', 'store_media.js', 'path') %}"],
+            function(){
+                store_photo = new store_media({
+                    siteUrl: site_url,
+                    galleryContentDiv: 'view_photo',
+                    windowObjTitle: '{% helper lang.l('view_media', 'media') %} <span id="media_position"></span>'
+                });
+            },
+            ['store_photo'],
+            {async: false}
+        );
+    });
+
+</script>
+
+{% include '@app/footer.twig' %}

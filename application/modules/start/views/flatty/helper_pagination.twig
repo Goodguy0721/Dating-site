@@ -1,0 +1,18 @@
+{% if page_type == 'cute' %}
+	<div class="pages">
+		<div class="inside">
+			<ins class="current">
+                {% helper lang.l('text_pages', 'start') %} {{ page_data.cur_page }}
+                {% helper lang.l('text_of', 'start') %} {{ page_data.total_pages }}
+            </ins>
+            &nbsp;
+            <a href="{{ page_data.base_url }}{{ page_data.prev_page }}" class="{% if page_data.prev_page == page_data.cur_page %}gray{% endif %}"><i class="fa fa-caret-left"></i></a>
+            &nbsp;
+            <a href="{{ page_data.base_url }}{{ page_data.next_page }}" class="{% if page_data.next_page == page_data.cur_page %}gray{% endif %}"><i class="fa fa-caret-right"></i></a>
+		</div>
+	</div>
+{% elseif page_type == 'full' and page_data.nav %}
+    <ul class="pagination">
+        {{ page_data.nav }}
+    </ul>
+{% endif %}

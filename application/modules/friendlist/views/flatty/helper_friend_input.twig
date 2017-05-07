@@ -1,0 +1,26 @@
+<button class="btn" id="user_open_{{ friend_helper_data.rand }}" data-role="btn">
+    <i class="fa fa-list fa-lg icon_list"></i><span>
+    {% helper lang.l('link_select_friend', 'friendlist') %}
+    </span>
+</button>
+<script>
+    {% if country_helper_data.var_js_name %}
+        var {{ country_helper_data.var_js_name }};
+    {% endif %}
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('friendlist', 'friends-input.js', 'path') %}",
+            function(){
+                friend_{{ friend_helper_data.rand }} = new friendsInput({
+                    siteUrl: '{{ site_url }}',
+                    rand: '{{ friend_helper_data.rand }}',
+                    id_user: '{{ friend_helper_data.user.id }}',
+                    {% if friend_helper_data.values_callback %}
+                    values_callback: {{ friend_helper_data.values_callback }}
+                    {% endif %}
+                });
+            },
+            'friend_{{ friend_helper_data.rand }}'
+        );
+    });
+</script>

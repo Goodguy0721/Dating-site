@@ -1,0 +1,78 @@
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_server_type', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<label>
+			<input name="settings[server_settings][by_user][server_type]" type="radio" value="flashchat"
+				   {% if chat.settings.server_settings.by_user.server_type == 'flashchat' %}
+				   checked="checked"{% endif %} class="flat" />
+			{% helper lang.l('flashchat_server_type_flashchat', 'chats') %}
+		</label>
+		<label>
+			<input name="settings[server_settings][by_user][server_type]" type="radio" value="ppvsoftware"
+				   {% if chat.settings.server_settings.by_user.server_type == 'ppvsoftware' %}
+				   checked="checked"{% endif %} class="flat" />
+			{% helper lang.l('flashchat_server_type_ppvsoftware', 'chats') %}
+		</label>
+	</div>
+</div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_init_host', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<input name="settings[server_settings][by_user][init_host]" type="text"
+			   value="{{ chat.settings.server_settings.by_user.init_host|e }}" class="form-control">
+	</div>
+</div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_init_port', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<input name="settings[server_settings][by_user][init_port]" type="text" id="init_port"
+			   value="{{ chat.settings.server_settings.by_user.init_port|e }}" class="form-control">
+	</div>
+</div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_init_port_h', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<input name="settings[server_settings][by_user][init_port_h]" type="text" id="init_port_h"
+			   value="{{ chat.settings.server_settings.by_user.init_port_h|e }}" class="form-control">
+	</div>
+</div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_client_location', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<input name="settings[server_settings][by_user][client_location]" type="text" id="client_location"
+			   value="{{ chat.settings.server_settings.by_user.client_location|e }}" class="long">
+	</div>
+</div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_integration_url', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		{% helper lang.l('flashchat_integration_url_note', 'chats') %}:
+		<p class="text-overflow" title="{{ login_url }}">
+			<mark>{{ login_url }}</mark></p>
+	</div>
+</div>
+{% if chat.settings.server_settings.by_user.server_type == 'flashchat' %}
+<div class="form-group" id="client_type">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12">
+		{% helper lang.l('flashchat_client_type', 'chats') %}:</label>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<label>
+			<input name="settings[server_settings][by_user][client_type]" type="radio" value="htmlchat"
+				   {% if chat.settings.server_settings.by_user.client_type == 'htmlchat' %}
+				   checked="checked"{% endif %} class="flat">
+			{% helper lang.l('flashchat_client_type_htmlchat', 'chats') %}</label>
+		<label>
+			<input name="settings[server_settings][by_user][client_type]" type="radio" value="flashchat"
+				   {% if chat.settings.server_settings.by_user.client_type == 'flashchat' %}
+				   checked="checked"{% endif %} class="flat">
+			{% helper lang.l('flashchat_client_type_flashchat', 'chats') %}
+		</label>
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,330 @@
+	790	Zvonik	45.9000000	16.6500000	HR	20	0	0	Zvonik	Zvonik	Zvonik	Zvonik	Zvonik	Zvonik
+	790	Zvekovac	45.8227800	16.5102800	HR	20	0	0	Zvekovac	Zvekovac	Zvekovac	Zvekovac	Zvekovac	Zvekovac
+	790	Žunci	45.9500000	16.4333300	HR	20	0	0	Žunci	Žunci	Žunci	Žunci	Žunci	Žunci
+	790	Zrinšćina	46.0083300	16.3425000	HR	20	0	0	Zrinšćina	Zrinšćina	Zrinšćina	Zrinšćina	Zrinšćina	Zrinšćina
+	790	Zgurić Brdo	45.5166700	15.9833300	HR	20	0	0	Zgurić Brdo	Zgurić Brdo	Zgurić Brdo	Zgurić Brdo	Zgurić Brdo	Zgurić Brdo
+	790	Zetkan	45.8224600	16.5410300	HR	20	0	0	Zetkan	Zetkan	Zetkan	Zetkan	Zetkan	Zetkan
+	790	Zdihovo	45.6833300	15.6500000	HR	20	0	0	Zdihovo	Zdihovo	Zdihovo	Zdihovo	Zdihovo	Zdihovo
+	790	Zdenci Brdovečki	45.8666700	15.7500000	HR	20	0	0	Zdenci Brdovečki	Zdenci Brdovečki	Zdenci Brdovečki	Zdenci Brdovečki	Zdenci Brdovečki	Zdenci Brdovečki
+	790	Zaprešić	45.8563900	15.8077800	HR	20	0	0	Zaprešić	Запрешич	Zaprešić	Zaprešić	Zaprešić	Zaprešić
+	790	Zaklepica	45.7000000	16.3500000	HR	20	0	0	Zaklepica	Zaklepica	Zaklepica	Zaklepica	Zaklepica	Zaklepica
+	790	Zadrkovec	46.0000000	16.2500000	HR	20	0	0	Zadrkovec	Zadrkovec	Zadrkovec	Zadrkovec	Zadrkovec	Zadrkovec
+	790	Zabrđe	45.8833300	16.5000000	HR	20	0	0	Zabrđe	Zabrđe	Zabrđe	Zabrđe	Zabrđe	Zabrđe
+	790	Žabnjak	45.9780600	16.4086800	HR	20	0	0	Žabnjak	Žabnjak	Žabnjak	Žabnjak	Žabnjak	Žabnjak
+	790	Vukšin Šipak	45.6000000	15.5666700	HR	20	0	0	Vukšin Šipak	Vukšin Šipak	Vukšin Šipak	Vukšin Šipak	Vukšin Šipak	Vukšin Šipak
+	790	Vukovo Brdo	45.7166700	15.4833300	HR	20	0	0	Vukovo Brdo	Vukovo Brdo	Vukovo Brdo	Vukovo Brdo	Vukovo Brdo	Vukovo Brdo
+	790	Vukovina	45.6833300	16.1166700	HR	20	0	0	Vukovina	Vukovina	Vukovina	Vukovina	Vukovina	Vukovina
+	790	Vukomerić	45.6166700	15.9500000	HR	20	0	0	Vukomerić	Vukomerić	Vukomerić	Vukomerić	Vukomerić	Vukomerić
+	790	Vrhovčak	45.8000000	15.7000000	HR	20	0	0	Vrhovčak	Vrhovčak	Vrhovčak	Vrhovčak	Vrhovčak	Vrhovčak
+	790	Vrbovec	45.8833300	16.4216700	HR	20	0	0	Vrbovec	Vrbovec	Vrbovec	Vrbovec	Vrbovec	Vrbovec
+	790	Vranov Dol	45.7247200	15.6319400	HR	20	0	0	Vranov Dol	Vranov Dol	Vranov Dol	Vranov Dol	Vranov Dol	Vranov Dol
+	790	Volavje	45.6555600	15.6108300	HR	20	0	0	Volavje	Volavje	Volavje	Volavje	Volavje	Volavje
+	790	Višći Vrh	45.7666700	15.4833300	HR	20	0	0	Višći Vrh	Višći Vrh	Višći Vrh	Višći Vrh	Višći Vrh	Višći Vrh
+	790	Veliki Lipovec	45.7666700	15.6333300	HR	20	0	0	Veliki Lipovec	Veliki Lipovec	Veliki Lipovec	Veliki Lipovec	Veliki Lipovec	Veliki Lipovec
+	790	Velika Rakovica	45.7666700	15.7166700	HR	20	0	0	Velika Rakovica	Velika Rakovica	Velika Rakovica	Velika Rakovica	Velika Rakovica	Velika Rakovica
+	790	Velika Ostrna	45.7833300	16.3000000	HR	20	0	0	Velika Ostrna	Velika Ostrna	Velika Ostrna	Velika Ostrna	Velika Ostrna	Velika Ostrna
+	790	Velika Mlaka	45.7363900	16.0311100	HR	20	0	0	Velika Mlaka	Velika Mlaka	Velika Mlaka	Velika Mlaka	Velika Mlaka	Velika Mlaka
+	790	Velika Jamnička	45.6050000	15.8466700	HR	20	0	0	Velika Jamnička	Velika Jamnička	Velika Jamnička	Velika Jamnička	Velika Jamnička	Velika Jamnička
+	790	Velika Hrastilnica	45.6500000	16.4833300	HR	20	0	0	Velika Hrastilnica	Velika Hrastilnica	Velika Hrastilnica	Velika Hrastilnica	Velika Hrastilnica	Velika Hrastilnica
+	790	Velika Gorica	45.7125000	16.0755600	HR	20	0	0	Velika Gorica	Велика-Горица	Velika Gorica	Velika Gorica	Velika Gorica	Velika Gorica
+	790	Velika Buna	45.6333300	16.0666700	HR	20	0	0	Velika Buna	Velika Buna	Velika Buna	Velika Buna	Velika Buna	Velika Buna
+	790	Veleševec	45.6500000	16.2666700	HR	20	0	0	Veleševec	Veleševec	Veleševec	Veleševec	Veleševec	Veleševec
+	790	Valetić	45.9666700	16.3333300	HR	20	0	0	Valetić	Valetić	Valetić	Valetić	Valetić	Valetić
+	790	Turopolje	45.6494400	16.1436100	HR	20	0	0	Turopolje	Turopolje	Turopolje	Turopolje	Turopolje	Turopolje
+	790	Tupčina	45.7147200	15.4386100	HR	20	0	0	Tupčina	Tupčina	Tupčina	Tupčina	Tupčina	Tupčina
+	790	Trebovec	45.7166700	16.3166700	HR	20	0	0	Trebovec	Trebovec	Trebovec	Trebovec	Trebovec	Trebovec
+	790	Topolje	45.6508300	16.3502800	HR	20	0	0	Topolje	Topolje	Topolje	Topolje	Topolje	Topolje
+	790	Tomaševci	45.7666700	15.4333300	HR	20	0	0	Tomaševci	Tomaševci	Tomaševci	Tomaševci	Tomaševci	Tomaševci
+	790	Tihočaj	45.7500000	15.5500000	HR	20	0	0	Tihočaj	Tihočaj	Tihočaj	Tihočaj	Tihočaj	Tihočaj
+	790	Tedrovec	45.7500000	16.3666700	HR	20	0	0	Tedrovec	Tedrovec	Tedrovec	Tedrovec	Tedrovec	Tedrovec
+	790	Tarno	45.7333300	16.3666700	HR	20	0	0	Tarno	Tarno	Tarno	Tarno	Tarno	Tarno
+	790	Sveta Nedjelja	45.7983300	15.7805600	HR	20	0	0	Sveta Nedjelja	Sveta Nedjelja	Sveta Nedjelja	Sveta Nedjelja	Sveta Nedjelja	Sveta Nedjelja
+	790	Sveta Helena	45.8166700	15.7166700	HR	20	0	0	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena
+	790	Šušnjari	45.6930200	16.5326600	HR	20	0	0	Šušnjari	Šušnjari	Šušnjari	Šušnjari	Šušnjari	Šušnjari
+	790	Suša	45.6333300	16.2833300	HR	20	0	0	Suša	Suša	Suša	Suša	Suša	Suša
+	790	Šumećani	45.7088900	16.4883300	HR	20	0	0	Šumećani	Šumećani	Šumećani	Šumećani	Šumećani	Šumećani
+	790	Šulinec	45.9666700	16.2500000	HR	20	0	0	Šulinec	Šulinec	Šulinec	Šulinec	Šulinec	Šulinec
+	790	Strmec Bukevski	45.7500000	16.1666700	HR	20	0	0	Strmec Bukevski	Strmec Bukevski	Strmec Bukevski	Strmec Bukevski	Strmec Bukevski	Strmec Bukevski
+	790	Strmec Samoborski	45.8166700	15.8000000	HR	20	0	0	Strmec Samoborski	Strmec Samoborski	Strmec Samoborski	Strmec Samoborski	Strmec Samoborski	Strmec Samoborski
+	790	Stojdraga	45.8500000	15.5833300	HR	20	0	0	Stojdraga	Stojdraga	Stojdraga	Stojdraga	Stojdraga	Stojdraga
+	790	Staro Čiče	45.7000000	16.1166700	HR	20	0	0	Staro Čiče	Staro Čiče	Staro Čiče	Staro Čiče	Staro Čiče	Staro Čiče
+	790	Stari Glog	45.9000000	16.5500000	HR	20	0	0	Stari Glog	Stari Glog	Stari Glog	Stari Glog	Stari Glog	Stari Glog
+	790	Stara Marča	45.7833300	16.5000000	HR	20	0	0	Stara Marča	Stara Marča	Stara Marča	Stara Marča	Stara Marča	Stara Marča
+	790	Stara Kapela	45.9000000	16.6166700	HR	20	0	0	Stara Kapela	Stara Kapela	Stara Kapela	Stara Kapela	Stara Kapela	Stara Kapela
+	790	Stankovo	45.7166700	15.7000000	HR	20	0	0	Stankovo	Stankovo	Stankovo	Stankovo	Stankovo	Stankovo
+	790	Stančić	45.8500000	16.2833300	HR	20	0	0	Stančić	Stančić	Stančić	Stančić	Stančić	Stančić
+	790	Štakorovec	45.8666700	16.2833300	HR	20	0	0	Štakorovec	Štakorovec	Štakorovec	Štakorovec	Štakorovec	Štakorovec
+	790	Nova Kapela	45.8844400	16.5797200	HR	20	0	0	Nova Kapela	Nova Kapela	Nova Kapela	Nova Kapela	Nova Kapela	Nova Kapela
+	790	Srednja Velika	46.0000000	16.4166700	HR	20	0	0	Srednja Velika	Srednja Velika	Srednja Velika	Srednja Velika	Srednja Velika	Srednja Velika
+	790	Sošice	45.7500000	15.3833300	HR	20	0	0	Sošice	Sošice	Sošice	Sošice	Sošice	Sošice
+	790	Sop	45.7333300	16.2166700	HR	20	0	0	Sop	Sop	Sop	Sop	Sop	Sop
+	790	Sobočani	45.7322200	16.4547200	HR	20	0	0	Sobočani	Sobočani	Sobočani	Sobočani	Sobočani	Sobočani
+	790	Slavetić	45.7000000	15.5500000	HR	20	0	0	Slavetić	Slavetić	Slavetić	Slavetić	Slavetić	Slavetić
+	790	Slapnica	45.7666700	15.6166700	HR	20	0	0	Slapnica	Slapnica	Slapnica	Slapnica	Slapnica	Slapnica
+	790	Slani Dol	45.7833300	15.6333300	HR	20	0	0	Slani Dol	Slani Dol	Slani Dol	Slani Dol	Slani Dol	Slani Dol
+	790	Širinec	45.6783300	16.4994400	HR	20	0	0	Širinec	Širinec	Širinec	Širinec	Širinec	Širinec
+	790	Šimraki	45.7833300	15.5333300	HR	20	0	0	Šimraki	Šimraki	Šimraki	Šimraki	Šimraki	Šimraki
+	790	Šiljakovina	45.6333300	16.0166700	HR	20	0	0	Šiljakovina	Šiljakovina	Šiljakovina	Šiljakovina	Šiljakovina	Šiljakovina
+	790	Šestak Brdo	45.5333300	15.9833300	HR	20	0	0	Šestak Brdo	Šestak Brdo	Šestak Brdo	Šestak Brdo	Šestak Brdo	Šestak Brdo
+	790	Selsko Brdo	45.5500000	15.9000000	HR	20	0	0	Selsko Brdo	Selsko Brdo	Selsko Brdo	Selsko Brdo	Selsko Brdo	Selsko Brdo
+	790	Selnica Šćitarjevska	45.7500000	16.1000000	HR	20	0	0	Selnica Šćitarjevska	Selnica Šćitarjevska	Selnica Šćitarjevska	Selnica Šćitarjevska	Selnica Šćitarjevska	Selnica Šćitarjevska
+	790	Šćitarjevo	45.7644400	16.1183300	HR	20	0	0	Šćitarjevo	Šćitarjevo	Šćitarjevo	Šćitarjevo	Šćitarjevo	Šćitarjevo
+	790	Šćapovec	45.7500000	16.4166700	HR	20	0	0	Šćapovec	Šćapovec	Šćapovec	Šćapovec	Šćapovec	Šćapovec
+	790	Savski Marof	45.8641700	15.7219400	HR	20	0	0	Savski Marof	Savski Marof	Savski Marof	Savski Marof	Savski Marof	Savski Marof
+	790	Samoborec	45.8941700	16.3166700	HR	20	0	0	Samoborec	Samoborec	Samoborec	Samoborec	Samoborec	Samoborec
+	790	Samobor	45.8030600	15.7180600	HR	20	0	0	Samobor	Samobor	Samobor	Samobor	Samobor	Samobor
+	790	Salnik	45.9833300	16.3333300	HR	20	0	0	Salnik	Salnik	Salnik	Salnik	Salnik	Salnik
+	790	Rude	45.7666700	15.6666700	HR	20	0	0	Rude	Rude	Rude	Rude	Rude	Rude
+	790	Ruča	45.6411100	16.2833300	HR	20	0	0	Ruča	Ruča	Ruča	Ruča	Ruča	Ruča
+	790	Roženica	45.5333300	16.0000000	HR	20	0	0	Roženica	Roženica	Roženica	Roženica	Roženica	Roženica
+	790	Ribnica	45.7166700	16.1333300	HR	20	0	0	Ribnica	Ribnica	Ribnica	Ribnica	Ribnica	Ribnica
+	790	Reštovo Žumberačko	45.7400000	15.3891700	HR	20	0	0	Reštovo Žumberačko	Reštovo Žumberačko	Reštovo Žumberačko	Reštovo Žumberačko	Reštovo Žumberačko	Reštovo Žumberačko
+	790	Rečica Kriška	45.6616700	16.5808300	HR	20	0	0	Rečica Kriška	Rečica Kriška	Rečica Kriška	Rečica Kriška	Rečica Kriška	Rečica Kriška
+	790	Rakov Potok	45.7380600	15.7972200	HR	20	0	0	Rakov Potok	Rakov Potok	Rakov Potok	Rakov Potok	Rakov Potok	Rakov Potok
+	790	Rakitovec	45.6666700	16.1500000	HR	20	0	0	Rakitovec	Rakitovec	Rakitovec	Rakitovec	Rakitovec	Rakitovec
+	790	Rakitje	45.7938900	15.8222200	HR	20	0	0	Rakitje	Rakitje	Rakitje	Rakitje	Rakitje	Rakitje
+	790	Radoišće	46.0186100	16.3305600	HR	20	0	0	Radoišće	Radoišće	Radoišće	Radoišće	Radoišće	Radoišće
+	790	Puhovo	45.7909600	16.2508400	HR	20	0	0	Puhovo	Puhovo	Puhovo	Puhovo	Puhovo	Puhovo
+	790	Prilesje	45.8500000	16.4166700	HR	20	0	0	Prilesje	Prilesje	Prilesje	Prilesje	Prilesje	Prilesje
+	790	Prikraj	45.8333300	16.3333300	HR	20	0	0	Prikraj	Prikraj	Prikraj	Prikraj	Prikraj	Prikraj
+	790	Prigorje Brdovečko	45.8794400	15.7380600	HR	20	0	0	Prigorje Brdovečko	Prigorje Brdovečko	Prigorje Brdovečko	Prigorje Brdovečko	Prigorje Brdovečko	Prigorje Brdovečko
+	790	Pribić	45.6666700	15.5333300	HR	20	0	0	Pribić	Pribić	Pribić	Pribić	Pribić	Pribić
+	790	Prevlaka	45.6750000	16.2769400	HR	20	0	0	Prevlaka	Prevlaka	Prevlaka	Prevlaka	Prevlaka	Prevlaka
+	790	Prerovec	45.6447200	16.3033300	HR	20	0	0	Prerovec	Prerovec	Prerovec	Prerovec	Prerovec	Prerovec
+	790	Predavec	45.7500000	16.4333300	HR	20	0	0	Predavec	Predavec	Predavec	Predavec	Predavec	Predavec
+	790	Prečno	45.6650000	16.2961100	HR	20	0	0	Prečno	Prečno	Prečno	Prečno	Prečno	Prečno
+	790	Prečec	45.7666700	16.3666700	HR	20	0	0	Prečec	Prečec	Prečec	Prečec	Prečec	Prečec
+	790	Praščevac	45.9166700	16.6500000	HR	20	0	0	Praščevac	Praščevac	Praščevac	Praščevac	Praščevac	Praščevac
+	790	Potočec	45.8833300	16.4666700	HR	20	0	0	Potočec	Potočec	Potočec	Potočec	Potočec	Potočec
+	790	Poljanski Lug	45.8333300	16.4166700	HR	20	0	0	Poljanski Lug	Poljanski Lug	Poljanski Lug	Poljanski Lug	Poljanski Lug	Poljanski Lug
+	790	Pojatno	45.9050000	15.8005600	HR	20	0	0	Pojatno	Pojatno	Pojatno	Pojatno	Pojatno	Pojatno
+	790	Pogančec	45.9500000	16.3833300	HR	20	0	0	Pogančec	Pogančec	Pogančec	Pogančec	Pogančec	Pogančec
+	790	Podvornica	45.6096200	16.0699500	HR	20	0	0	Podvornica	Podvornica	Podvornica	Podvornica	Podvornica	Podvornica
+	790	Podlužan	45.8265300	16.5618000	HR	20	0	0	Podlužan	Podlužan	Podlužan	Podlužan	Podlužan	Podlužan
+	790	Podjales	45.9333300	16.5000000	HR	20	0	0	Podjales	Podjales	Podjales	Podjales	Podjales	Podjales
+	790	Podgorje Jamničko	45.6000000	15.8666700	HR	20	0	0	Podgorje Jamničko	Podgorje Jamničko	Podgorje Jamničko	Podgorje Jamničko	Podgorje Jamničko	Podgorje Jamničko
+	790	Plešivica	45.7333300	15.6666700	HR	20	0	0	Plešivica	Plešivica	Plešivica	Plešivica	Plešivica	Plešivica
+	790	Petrovina Turopoljska	45.7000000	16.0333300	HR	20	0	0	Petrovina Turopoljska	Petrovina Turopoljska	Petrovina Turopoljska	Petrovina Turopoljska	Petrovina Turopoljska	Petrovina Turopoljska
+	790	Petrovina	45.6833300	15.5833300	HR	20	0	0	Petrovina	Petrovina	Petrovina	Petrovina	Petrovina	Petrovina
+	790	Petina	45.7500000	16.0833300	HR	20	0	0	Petina	Petina	Petina	Petina	Petina	Petina
+	790	Peskovec	45.8730600	16.3236100	HR	20	0	0	Peskovec	Peskovec	Peskovec	Peskovec	Peskovec	Peskovec
+	790	Pećno	45.7500000	15.5166700	HR	20	0	0	Pećno	Pećno	Pećno	Pećno	Pećno	Pećno
+	790	Pavučnjak	45.7166700	15.7666700	HR	20	0	0	Pavučnjak	Pavučnjak	Pavučnjak	Pavučnjak	Pavučnjak	Pavučnjak
+	790	Pavlovec Gradečki	45.9000000	16.4833300	HR	20	0	0	Pavlovec Gradečki	Pavlovec Gradečki	Pavlovec Gradečki	Pavlovec Gradečki	Pavlovec Gradečki	Pavlovec Gradečki
+	790	Paukovec	45.8897200	16.2177800	HR	20	0	0	Paukovec	Paukovec	Paukovec	Paukovec	Paukovec	Paukovec
+	790	Paljugi	45.7166700	15.5666700	HR	20	0	0	Paljugi	Paljugi	Paljugi	Paljugi	Paljugi	Paljugi
+	790	Otruševec	45.8166700	15.6833300	HR	20	0	0	Otruševec	Otruševec	Otruševec	Otruševec	Otruševec	Otruševec
+	790	Orešje	45.8166700	15.8000000	HR	20	0	0	Orešje	Orešje	Orešje	Orešje	Orešje	Orešje
+	790	Opatinec	45.7166700	16.3833300	HR	20	0	0	Opatinec	Opatinec	Opatinec	Opatinec	Opatinec	Opatinec
+	790	Opatija	45.5666700	16.0000000	HR	20	0	0	Opatija	Opatija	Opatija	Opatija	Opatija	Opatija
+	790	Okešinec	45.6347200	16.5338900	HR	20	0	0	Okešinec	Okešinec	Okešinec	Okešinec	Okešinec	Okešinec
+	790	Ogulinec	45.6241700	16.1286100	HR	20	0	0	Ogulinec	Ogulinec	Ogulinec	Ogulinec	Ogulinec	Ogulinec
+	790	Obrezina	45.7666700	16.1000000	HR	20	0	0	Obrezina	Obrezina	Obrezina	Obrezina	Obrezina	Obrezina
+	790	Oborovo	45.6827800	16.2569400	HR	20	0	0	Oborovo	Oborovo	Oborovo	Oborovo	Oborovo	Oborovo
+	790	Obedišće Ježevsko	45.7500000	16.3000000	HR	20	0	0	Obedišće Ježevsko	Obedišće Ježevsko	Obedišće Ježevsko	Obedišće Ježevsko	Obedišće Ježevsko	Obedišće Ježevsko
+	790	Obedišće	45.6330600	16.5552800	HR	20	0	0	Obedišće	Obedišće	Obedišće	Obedišće	Obedišće	Obedišće
+	790	Novoselec	45.6525000	16.5363900	HR	20	0	0	Novoselec	Novoselec	Novoselec	Novoselec	Novoselec	Novoselec
+	790	Novo Mjesto	45.9500000	16.2833300	HR	20	0	0	Novo Mjesto	Novo Mjesto	Novo Mjesto	Novo Mjesto	Novo Mjesto	Novo Mjesto
+	790	Novo Čiče	45.7000000	16.1166700	HR	20	0	0	Novo Čiče	Novo Čiče	Novo Čiče	Novo Čiče	Novo Čiče	Novo Čiče
+	790	Novaki Šćitarjevski	45.7833300	16.1000000	HR	20	0	0	Novaki Šćitarjevski	Novaki Šćitarjevski	Novaki Šćitarjevski	Novaki Šćitarjevski	Novaki Šćitarjevski	Novaki Šćitarjevski
+	790	Novaki Oborovski	45.7166700	16.2166700	HR	20	0	0	Novaki Oborovski	Novaki Oborovski	Novaki Oborovski	Novaki Oborovski	Novaki Oborovski	Novaki Oborovski
+	790	Novaki Bistranski	45.8833300	15.8666700	HR	20	0	0	Novaki Bistranski	Novaki Bistranski	Novaki Bistranski	Novaki Bistranski	Novaki Bistranski	Novaki Bistranski
+	790	Nespeš	45.9500000	16.2000000	HR	20	0	0	Nespeš	Nespeš	Nespeš	Nespeš	Nespeš	Nespeš
+	790	Negovec	45.8833300	16.3166700	HR	20	0	0	Negovec	Negovec	Negovec	Negovec	Negovec	Negovec
+	790	Nart Savski	45.7562700	16.1984400	HR	20	0	0	Nart Savski	Nart Savski	Nart Savski	Nart Savski	Nart Savski	Nart Savski
+	790	Mrzlo Polje Žumberačko	45.7833300	15.4833300	HR	20	0	0	Mrzlo Polje Žumberačko	Mrzlo Polje Žumberačko	Mrzlo Polje Žumberačko	Mrzlo Polje Žumberačko	Mrzlo Polje Žumberačko	Mrzlo Polje Žumberačko
+	790	Mraclin	45.6666700	16.0955600	HR	20	0	0	Mraclin	Mraclin	Mraclin	Mraclin	Mraclin	Mraclin
+	790	Mostari	45.7830600	16.5036100	HR	20	0	0	Mostari	Mostari	Mostari	Mostari	Mostari	Mostari
+	790	Molvice	45.7666700	15.7500000	HR	20	0	0	Molvice	Molvice	Molvice	Molvice	Molvice	Molvice
+	790	Miladini	45.7000000	15.6000000	HR	20	0	0	Miladini	Miladini	Miladini	Miladini	Miladini	Miladini
+	790	Mičevec	45.7500000	16.0666700	HR	20	0	0	Mičevec	Mičevec	Mičevec	Mičevec	Mičevec	Mičevec
+	790	Medsave	45.8333300	15.7666700	HR	20	0	0	Medsave	Medsave	Medsave	Medsave	Medsave	Medsave
+	790	Malunje	45.7000000	15.6166700	HR	20	0	0	Malunje	Malunje	Malunje	Malunje	Malunje	Malunje
+	790	Mali Lipovec	45.7500000	15.6166700	HR	20	0	0	Mali Lipovec	Mali Lipovec	Mali Lipovec	Mali Lipovec	Mali Lipovec	Mali Lipovec
+	790	Mala Rakovica	45.7833300	15.7166700	HR	20	0	0	Mala Rakovica	Mala Rakovica	Mala Rakovica	Mala Rakovica	Mala Rakovica	Mala Rakovica
+	790	Mala Ostrna	45.7833300	16.3000000	HR	20	0	0	Mala Ostrna	Mala Ostrna	Mala Ostrna	Mala Ostrna	Mala Ostrna	Mala Ostrna
+	790	Mala Hrastilnica	45.6500000	16.5000000	HR	20	0	0	Mala Hrastilnica	Mala Hrastilnica	Mala Hrastilnica	Mala Hrastilnica	Mala Hrastilnica	Mala Hrastilnica
+	790	Mala Buna	45.6435100	16.0553200	HR	20	0	0	Mala Buna	Mala Buna	Mala Buna	Mala Buna	Mala Buna	Mala Buna
+	790	Majkovec	45.8833300	16.2833300	HR	20	0	0	Majkovec	Majkovec	Majkovec	Majkovec	Majkovec	Majkovec
+	790	Lupoglav	45.7963900	16.3463900	HR	20	0	0	Lupoglav	Лупоглав	Lupoglav	Lupoglav	Lupoglav	Lupoglav
+	790	Lukinić Brdo	45.5666700	15.9333300	HR	20	0	0	Lukinić Brdo	Lukinić Brdo	Lukinić Brdo	Lukinić Brdo	Lukinić Brdo	Lukinić Brdo
+	790	Lukavec Sutlanski	45.9666700	15.7333300	HR	20	0	0	Lukavec Sutlanski	Lukavec Sutlanski	Lukavec Sutlanski	Lukavec Sutlanski	Lukavec Sutlanski	Lukavec Sutlanski
+	790	Lukavec	45.7044400	15.9900000	HR	20	0	0	Lukavec	Lukavec	Lukavec	Lukavec	Lukavec	Lukavec
+	790	Luka	45.9666700	15.8166700	HR	20	0	0	Luka	Luka	Luka	Luka	Luka	Luka
+	790	Lučelnica	45.5833300	15.9166700	HR	20	0	0	Lučelnica	Lučelnica	Lučelnica	Lučelnica	Lučelnica	Lučelnica
+	790	Lonjica	45.8550000	16.3300000	HR	20	0	0	Lonjica	Lonjica	Lonjica	Lonjica	Lonjica	Lonjica
+	790	Lokošin Dol	45.7000000	15.6500000	HR	20	0	0	Lokošin Dol	Lokošin Dol	Lokošin Dol	Lokošin Dol	Lokošin Dol	Lokošin Dol
+	790	Lijevo Sredičko	45.5333300	15.8833300	HR	20	0	0	Lijevo Sredičko	Lijevo Sredičko	Lijevo Sredičko	Lijevo Sredičko	Lijevo Sredičko	Lijevo Sredičko
+	790	Lijevi Štefanki	45.5166700	15.9333300	HR	20	0	0	Lijevi Štefanki	Lijevi Štefanki	Lijevi Štefanki	Lijevi Štefanki	Lijevi Štefanki	Lijevi Štefanki
+	790	Lijevi Degoj	45.4833300	15.9500000	HR	20	0	0	Lijevi Degoj	Lijevi Degoj	Lijevi Degoj	Lijevi Degoj	Lijevi Degoj	Lijevi Degoj
+	790	Leprovica	45.7746800	16.2786500	HR	20	0	0	Leprovica	Leprovica	Leprovica	Leprovica	Leprovica	Leprovica
+	790	Lekneno	45.7500000	16.1500000	HR	20	0	0	Lekneno	Lekneno	Lekneno	Lekneno	Lekneno	Lekneno
+	790	Ledina	46.0000000	16.3833300	HR	20	0	0	Ledina	Ledina	Ledina	Ledina	Ledina	Ledina
+	790	Laktec	45.8600000	16.2319400	HR	20	0	0	Laktec	Laktec	Laktec	Laktec	Laktec	Laktec
+	790	Ladina	45.8518200	16.5205200	HR	20	0	0	Ladina	Ladina	Ladina	Ladina	Ladina	Ladina
+	790	Kusanovec	45.8166700	16.3500000	HR	20	0	0	Kusanovec	Kusanovec	Kusanovec	Kusanovec	Kusanovec	Kusanovec
+	790	Kupljenovo	45.9333300	15.8166700	HR	20	0	0	Kupljenovo	Kupljenovo	Kupljenovo	Kupljenovo	Kupljenovo	Kupljenovo
+	790	Kupinec	45.6586100	15.7869400	HR	20	0	0	Kupinec	Kupinec	Kupinec	Kupinec	Kupinec	Kupinec
+	790	Kuče	45.6769400	16.1450000	HR	20	0	0	Kuče	Kuče	Kuče	Kuče	Kuče	Kuče
+	790	Krušljevec	45.9777900	16.3774000	HR	20	0	0	Krušljevec	Krušljevec	Krušljevec	Krušljevec	Krušljevec	Krušljevec
+	790	Krkač	45.9166700	16.3333300	HR	20	0	0	Krkač	Krkač	Krkač	Krkač	Krkač	Krkač
+	790	Križevčec	45.8833300	16.2500000	HR	20	0	0	Križevčec	Križevčec	Križevčec	Križevčec	Križevčec	Križevčec
+	790	Križ	45.6650000	16.5233300	HR	20	0	0	Križ	Križ	Križ	Križ	Križ	Križ
+	790	Krišci	45.7666700	16.4333300	HR	20	0	0	Krišci	Krišci	Krišci	Krišci	Krišci	Krišci
+	790	Krečaves	45.9427800	16.2791700	HR	20	0	0	Krečaves	Krečaves	Krečaves	Krečaves	Krečaves	Krečaves
+	790	Kravljak	45.8166700	15.5500000	HR	20	0	0	Kravljak	Kravljak	Kravljak	Kravljak	Kravljak	Kravljak
+	790	Krajska Ves	45.9666700	15.8000000	HR	20	0	0	Krajska Ves	Krajska Ves	Krajska Ves	Krajska Ves	Krajska Ves	Krajska Ves
+	790	Kozjača	45.6070100	16.0055800	HR	20	0	0	Kozjača	Kozjača	Kozjača	Kozjača	Kozjača	Kozjača
+	790	Kostanjevec Podvrški	45.8333300	15.6000000	HR	20	0	0	Kostanjevec Podvrški	Kostanjevec Podvrški	Kostanjevec Podvrški	Kostanjevec Podvrški	Kostanjevec Podvrški	Kostanjevec Podvrški
+	790	Kostanjevac	45.7000000	15.4666700	HR	20	0	0	Kostanjevac	Kostanjevac	Kostanjevac	Kostanjevac	Kostanjevac	Kostanjevac
+	790	Konšćani	45.6666700	16.5500000	HR	20	0	0	Konšćani	Konšćani	Konšćani	Konšćani	Konšćani	Konšćani
+	790	Komin	46.0036100	16.2797200	HR	20	0	0	Komin	Komin	Komin	Komin	Komin	Komin
+	790	Kobilić	45.7333300	16.1000000	HR	20	0	0	Kobilić	Kobilić	Kobilić	Kobilić	Kobilić	Kobilić
+	790	Ključić Brdo	45.6206400	16.0424400	HR	20	0	0	Ključić Brdo	Ključić Brdo	Ključić Brdo	Ključić Brdo	Ključić Brdo	Ključić Brdo
+	790	Ključ Brdovečki	45.8666700	15.7000000	HR	20	0	0	Ključ Brdovečki	Ključ Brdovečki	Ključ Brdovečki	Ključ Brdovečki	Ključ Brdovečki	Ključ Brdovečki
+	790	Klake	45.7500000	15.7333300	HR	20	0	0	Klake	Klake	Klake	Klake	Klake	Klake
+	790	Kerestinec	45.7666700	15.8000000	HR	20	0	0	Kerestinec	Kerestinec	Kerestinec	Kerestinec	Kerestinec	Kerestinec
+	790	Keleminovec	45.9833300	16.2833300	HR	20	0	0	Keleminovec	Keleminovec	Keleminovec	Keleminovec	Keleminovec	Keleminovec
+	790	Kalje	45.7666700	15.4833300	HR	20	0	0	Kalje	Kalje	Kalje	Kalje	Kalje	Kalje
+	790	Kalinovica	45.7666700	15.7833300	HR	20	0	0	Kalinovica	Kalinovica	Kalinovica	Kalinovica	Kalinovica	Kalinovica
+	790	Kabal	45.8594400	16.6405600	HR	20	0	0	Kabal	Kabal	Kabal	Kabal	Kabal	Kabal
+	790	Ježevo	45.7333300	16.3000000	HR	20	0	0	Ježevo	Ježevo	Ježevo	Ježevo	Ježevo	Ježevo
+	790	Jezerine	45.6666700	15.4666700	HR	20	0	0	Jezerine	Jezerine	Jezerine	Jezerine	Jezerine	Jezerine
+	790	Javorje	45.8666700	15.7666700	HR	20	0	0	Javorje	Javorje	Javorje	Javorje	Javorje	Javorje
+	790	Javorek	45.8333300	15.6166700	HR	20	0	0	Javorek	Javorek	Javorek	Javorek	Javorek	Javorek
+	790	Jastrebarsko	45.6683300	15.6486100	HR	20	0	0	Jastrebarsko	Ястребарско	Jastrebarsko	Jastrebarsko	Jastrebarsko	Jastrebarsko
+	790	Jarušje	45.7666700	15.5833300	HR	20	0	0	Jarušje	Jarušje	Jarušje	Jarušje	Jarušje	Jarušje
+	790	Jamnica Pisarovinska	45.5975000	15.8794400	HR	20	0	0	Jamnica Pisarovinska	Jamnica Pisarovinska	Jamnica Pisarovinska	Jamnica Pisarovinska	Jamnica Pisarovinska	Jamnica Pisarovinska
+	790	Jagodno	45.7000000	16.1500000	HR	20	0	0	Jagodno	Jagodno	Jagodno	Jagodno	Jagodno	Jagodno
+	790	Jablanovec	45.8758300	15.8536100	HR	20	0	0	Jablanovec	Jablanovec	Jablanovec	Jablanovec	Jablanovec	Jablanovec
+	790	Izimje	45.6333300	15.6166700	HR	20	0	0	Izimje	Izimje	Izimje	Izimje	Izimje	Izimje
+	790	Ivanec Bistranski	45.8469400	15.8313900	HR	20	0	0	Ivanec Bistranski	Ivanec Bistranski	Ivanec Bistranski	Ivanec Bistranski	Ivanec Bistranski	Ivanec Bistranski
+	790	Ivančići	45.7166700	15.6000000	HR	20	0	0	Ivančići	Ivančići	Ivančići	Ivančići	Ivančići	Ivančići
+	790	Ivančani	45.8666700	16.6166700	HR	20	0	0	Ivančani	Ivančani	Ivančani	Ivančani	Ivančani	Ivančani
+	790	Igrišće	45.9666700	15.8666700	HR	20	0	0	Igrišće	Igrišće	Igrišće	Igrišće	Igrišće	Igrišće
+	790	Hudovo	45.9333300	16.3500000	HR	20	0	0	Hudovo	Hudovo	Hudovo	Hudovo	Hudovo	Hudovo
+	790	Hrženik	45.6500000	15.5000000	HR	20	0	0	Hrženik	Hrženik	Hrženik	Hrženik	Hrženik	Hrženik
+	790	Hruškovica	45.9333300	16.4166700	HR	20	0	0	Hruškovica	Hruškovica	Hruškovica	Hruškovica	Hruškovica	Hruškovica
+	790	Hruškovec	45.9333300	16.3333300	HR	20	0	0	Hruškovec	Hruškovec	Hruškovec	Hruškovec	Hruškovec	Hruškovec
+	790	Hrušćica	45.7833300	16.1500000	HR	20	0	0	Hrušćica	Hrušćica	Hrušćica	Hrušćica	Hrušćica	Hrušćica
+	790	Hrnjanec	45.9166700	16.2000000	HR	20	0	0	Hrnjanec	Hrnjanec	Hrnjanec	Hrnjanec	Hrnjanec	Hrnjanec
+	790	Hrastje	45.9772200	16.2744400	HR	20	0	0	Hrastje	Hrastje	Hrastje	Hrastje	Hrastje	Hrastje
+	790	Hotnja	45.5061100	16.0500000	HR	20	0	0	Hotnja	Hotnja	Hotnja	Hotnja	Hotnja	Hotnja
+	790	Sveta Helena	45.9025000	16.2663900	HR	20	0	0	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena	Sveta Helena
+	790	Hartje	45.7500000	15.4500000	HR	20	0	0	Hartje	Hartje	Hartje	Hartje	Hartje	Hartje
+	790	Harmica	45.8833300	15.7000000	HR	20	0	0	Harmica	Harmica	Harmica	Harmica	Harmica	Harmica
+	790	Haganj	45.9100000	16.5819400	HR	20	0	0	Haganj	Haganj	Haganj	Haganj	Haganj	Haganj
+	790	Habjanovac	45.8666700	16.5500000	HR	20	0	0	Habjanovac	Habjanovac	Habjanovac	Habjanovac	Habjanovac	Habjanovac
+	790	Gustelnica	45.6030600	15.9736100	HR	20	0	0	Gustelnica	Gustelnica	Gustelnica	Gustelnica	Gustelnica	Gustelnica
+	790	Gudci	45.6569400	15.9886100	HR	20	0	0	Gudci	Gudci	Gudci	Gudci	Gudci	Gudci
+	790	Gregurić Breg	45.7833300	15.6500000	HR	20	0	0	Gregurić Breg	Gregurić Breg	Gregurić Breg	Gregurić Breg	Gregurić Breg	Gregurić Breg
+	790	Gradići	45.7000000	16.0500000	HR	20	0	0	Gradići	Gradići	Gradići	Gradići	Gradići	Gradići
+	790	Gradec	45.9111100	16.4827800	HR	20	0	0	Gradec	Gradec	Gradec	Gradec	Gradec	Gradec
+	790	Gračec	45.8333300	16.3166700	HR	20	0	0	Gračec	Gračec	Gračec	Gračec	Gračec	Gračec
+	790	Gračac Slavetićki	45.7333300	15.5166700	HR	20	0	0	Gračac Slavetićki	Gračac Slavetićki	Gračac Slavetićki	Gračac Slavetićki	Gračac Slavetićki	Gračac Slavetićki
+	790	Gornji Vukšinac	45.8438100	16.5904700	HR	20	0	0	Gornji Vukšinac	Gornji Vukšinac	Gornji Vukšinac	Gornji Vukšinac	Gornji Vukšinac	Gornji Vukšinac
+	790	Gornji Tkalec	45.9709600	16.4494100	HR	20	0	0	Gornji Tkalec	Gornji Tkalec	Gornji Tkalec	Gornji Tkalec	Gornji Tkalec	Gornji Tkalec
+	790	Gornji Prnjarovec	45.6833300	16.5333300	HR	20	0	0	Gornji Prnjarovec	Gornji Prnjarovec	Gornji Prnjarovec	Gornji Prnjarovec	Gornji Prnjarovec	Gornji Prnjarovec
+	790	Gornji Oštrc	45.7000000	15.4333300	HR	20	0	0	Gornji Oštrc	Gornji Oštrc	Gornji Oštrc	Gornji Oštrc	Gornji Oštrc	Gornji Oštrc
+	790	Gornji Marinkovac	45.8000000	16.5000000	HR	20	0	0	Gornji Marinkovac	Gornji Marinkovac	Gornji Marinkovac	Gornji Marinkovac	Gornji Marinkovac	Gornji Marinkovac
+	790	Gornji Laduč	45.8833300	15.7333300	HR	20	0	0	Gornji Laduč	Gornji Laduč	Gornji Laduč	Gornji Laduč	Gornji Laduč	Gornji Laduč
+	790	Gornji Hruševec	45.5666700	16.0166700	HR	20	0	0	Gornji Hruševec	Gornji Hruševec	Gornji Hruševec	Gornji Hruševec	Gornji Hruševec	Gornji Hruševec
+	790	Gornji Desinec	45.7000000	15.7000000	HR	20	0	0	Gornji Desinec	Gornji Desinec	Gornji Desinec	Gornji Desinec	Gornji Desinec	Gornji Desinec
+	790	Gornje Psarjevo	45.9500000	16.2333300	HR	20	0	0	Gornje Psarjevo	Gornje Psarjevo	Gornje Psarjevo	Gornje Psarjevo	Gornje Psarjevo	Gornje Psarjevo
+	790	Gornje Prekrižje	45.6833300	15.4833300	HR	20	0	0	Gornje Prekrižje	Gornje Prekrižje	Gornje Prekrižje	Gornje Prekrižje	Gornje Prekrižje	Gornje Prekrižje
+	790	Gornje Podotočje	45.6833300	16.1333300	HR	20	0	0	Gornje Podotočje	Gornje Podotočje	Gornje Podotočje	Gornje Podotočje	Gornje Podotočje	Gornje Podotočje
+	790	Gornja Zdenčina	45.6833300	15.7833300	HR	20	0	0	Gornja Zdenčina	Gornja Zdenčina	Gornja Zdenčina	Gornja Zdenčina	Gornja Zdenčina	Gornja Zdenčina
+	790	Gornja Velika	46.0000000	16.4166700	HR	20	0	0	Gornja Velika	Gornja Velika	Gornja Velika	Gornja Velika	Gornja Velika	Gornja Velika
+	790	Gornja Topličica	45.9833300	16.2333300	HR	20	0	0	Gornja Topličica	Gornja Topličica	Gornja Topličica	Gornja Topličica	Gornja Topličica	Gornja Topličica
+	790	Gornja Pušća	45.9333300	15.7833300	HR	20	0	0	Gornja Pušća	Gornja Pušća	Gornja Pušća	Gornja Pušća	Gornja Pušća	Gornja Pušća
+	790	Gornja Obreška	45.7833300	16.4500000	HR	20	0	0	Gornja Obreška	Gornja Obreška	Gornja Obreška	Gornja Obreška	Gornja Obreška	Gornja Obreška
+	790	Gornja Lomnica	45.7166700	16.0000000	HR	20	0	0	Gornja Lomnica	Gornja Lomnica	Gornja Lomnica	Gornja Lomnica	Gornja Lomnica	Gornja Lomnica
+	790	Gornja Kupčina	45.6166700	15.5666700	HR	20	0	0	Gornja Kupčina	Gornja Kupčina	Gornja Kupčina	Gornja Kupčina	Gornja Kupčina	Gornja Kupčina
+	790	Gornja Greda	45.8166700	16.3333300	HR	20	0	0	Gornja Greda	Gornja Greda	Gornja Greda	Gornja Greda	Gornja Greda	Gornja Greda
+	790	Gornja Bistra	45.9166700	15.9000000	HR	20	0	0	Gornja Bistra	Gornja Bistra	Gornja Bistra	Gornja Bistra	Gornja Bistra	Gornja Bistra
+	790	Gorica Svetojanska	45.7188900	15.5961100	HR	20	0	0	Gorica Svetojanska	Gorica Svetojanska	Gorica Svetojanska	Gorica Svetojanska	Gorica Svetojanska	Gorica Svetojanska
+	790	Gorica Jamnička	45.6333300	15.8833300	HR	20	0	0	Gorica Jamnička	Gorica Jamnička	Gorica Jamnička	Gorica Jamnička	Gorica Jamnička	Gorica Jamnička
+	790	Gladovec Pokupski	45.5000000	16.0000000	HR	20	0	0	Gladovec Pokupski	Gladovec Pokupski	Gladovec Pokupski	Gladovec Pokupski	Gladovec Pokupski	Gladovec Pokupski
+	790	Gladovec Kravarski	45.5666700	16.0500000	HR	20	0	0	Gladovec Kravarski	Gladovec Kravarski	Gladovec Kravarski	Gladovec Kravarski	Gladovec Kravarski	Gladovec Kravarski
+	790	Galgovo	45.7333300	15.7500000	HR	20	0	0	Galgovo	Galgovo	Galgovo	Galgovo	Galgovo	Galgovo
+	790	Fuka	45.8833300	16.5333300	HR	20	0	0	Fuka	Fuka	Fuka	Fuka	Fuka	Fuka
+	790	Festinec	45.9500000	16.5166700	HR	20	0	0	Festinec	Festinec	Festinec	Festinec	Festinec	Festinec
+	790	Dvoranci	45.5666700	15.8833300	HR	20	0	0	Dvoranci	Dvoranci	Dvoranci	Dvoranci	Dvoranci	Dvoranci
+	790	Dubranec	45.6166700	15.9666700	HR	20	0	0	Dubranec	Dubranec	Dubranec	Dubranec	Dubranec	Dubranec
+	790	Drašći Vrh	45.7500000	15.4833300	HR	20	0	0	Drašći Vrh	Drašći Vrh	Drašći Vrh	Drašći Vrh	Drašći Vrh	Drašći Vrh
+	790	Dragošička	45.7602500	16.2210100	HR	20	0	0	Dragošička	Dragošička	Dragošička	Dragošička	Dragošička	Dragošička
+	790	Donji Vukšinac	45.8488300	16.6093500	HR	20	0	0	Donji Vukšinac	Donji Vukšinac	Donji Vukšinac	Donji Vukšinac	Donji Vukšinac	Donji Vukšinac
+	790	Donji Tkalec	45.9500000	16.4500000	HR	20	0	0	Donji Tkalec	Donji Tkalec	Donji Tkalec	Donji Tkalec	Donji Tkalec	Donji Tkalec
+	790	Donji Prnjarovec	45.6833300	16.5500000	HR	20	0	0	Donji Prnjarovec	Donji Prnjarovec	Donji Prnjarovec	Donji Prnjarovec	Donji Prnjarovec	Donji Prnjarovec
+	790	Donji Oštrc	45.7000000	15.4333300	HR	20	0	0	Donji Oštrc	Donji Oštrc	Donji Oštrc	Donji Oštrc	Donji Oštrc	Donji Oštrc
+	790	Donji Markovac	45.8500000	16.6666700	HR	20	0	0	Donji Markovac	Donji Markovac	Donji Markovac	Donji Markovac	Donji Markovac	Donji Markovac
+	790	Donji Marinkovac	45.7833300	16.5000000	HR	20	0	0	Donji Marinkovac	Donji Marinkovac	Donji Marinkovac	Donji Marinkovac	Donji Marinkovac	Donji Marinkovac
+	790	Donji Laduč	45.8833300	15.7333300	HR	20	0	0	Donji Laduč	Donji Laduč	Donji Laduč	Donji Laduč	Donji Laduč	Donji Laduč
+	790	Donji Hruševec	45.5333300	16.0666700	HR	20	0	0	Donji Hruševec	Donji Hruševec	Donji Hruševec	Donji Hruševec	Donji Hruševec	Donji Hruševec
+	790	Donji Desinec	45.6822200	15.7088900	HR	20	0	0	Donji Desinec	Donji Desinec	Donji Desinec	Donji Desinec	Donji Desinec	Donji Desinec
+	790	Donje Psarjevo	45.9500000	16.2333300	HR	20	0	0	Donje Psarjevo	Donje Psarjevo	Donje Psarjevo	Donje Psarjevo	Donje Psarjevo	Donje Psarjevo
+	790	Donje Prekrižje	45.6833300	15.4833300	HR	20	0	0	Donje Prekrižje	Donje Prekrižje	Donje Prekrižje	Donje Prekrižje	Donje Prekrižje	Donje Prekrižje
+	790	Donje Podotočje	45.7000000	16.1333300	HR	20	0	0	Donje Podotočje	Donje Podotočje	Donje Podotočje	Donje Podotočje	Donje Podotočje	Donje Podotočje
+	790	Donje Orešje	46.0000000	16.2500000	HR	20	0	0	Donje Orešje	Donje Orešje	Donje Orešje	Donje Orešje	Donje Orešje	Donje Orešje
+	790	Donja Zelina	45.9208300	16.2450000	HR	20	0	0	Donja Zelina	Donja Zelina	Donja Zelina	Donja Zelina	Donja Zelina	Donja Zelina
+	790	Donja Zdenčina	45.6666700	15.7666700	HR	20	0	0	Donja Zdenčina	Donja Zdenčina	Donja Zdenčina	Donja Zdenčina	Donja Zdenčina	Donja Zdenčina
+	790	Donja Velika	45.9833300	16.4166700	HR	20	0	0	Donja Velika	Donja Velika	Donja Velika	Donja Velika	Donja Velika	Donja Velika
+	790	Donja Topličica	45.9666700	16.2500000	HR	20	0	0	Donja Topličica	Donja Topličica	Donja Topličica	Donja Topličica	Donja Topličica	Donja Topličica
+	790	Donja Obreška	45.7833300	16.4500000	HR	20	0	0	Donja Obreška	Donja Obreška	Donja Obreška	Donja Obreška	Donja Obreška	Donja Obreška
+	790	Donja Lomnica	45.7119400	16.0269400	HR	20	0	0	Donja Lomnica	Donja Lomnica	Donja Lomnica	Donja Lomnica	Donja Lomnica	Donja Lomnica
+	790	Donja Kupčina	45.5505600	15.8122200	HR	20	0	0	Donja Kupčina	Donja Kupčina	Donja Kupčina	Donja Kupčina	Donja Kupčina	Donja Kupčina
+	790	Donja Greda	45.7500000	16.2833300	HR	20	0	0	Donja Greda	Donja Greda	Donja Greda	Donja Greda	Donja Greda	Donja Greda
+	790	Donja Bistra	45.9077800	15.8544400	HR	20	0	0	Donja Bistra	Donja Bistra	Donja Bistra	Donja Bistra	Donja Bistra	Donja Bistra
+	790	Domaslovec	45.8000000	15.7500000	HR	20	0	0	Domaslovec	Domaslovec	Domaslovec	Domaslovec	Domaslovec	Domaslovec
+	790	Domagović	45.6316700	15.6402800	HR	20	0	0	Domagović	Domagović	Domagović	Domagović	Domagović	Domagović
+	790	Dol	45.6833300	15.5166700	HR	20	0	0	Dol	Dol	Dol	Dol	Dol	Dol
+	790	Dijaneš	45.9000000	16.3500000	HR	20	0	0	Dijaneš	Dijaneš	Dijaneš	Dijaneš	Dijaneš	Dijaneš
+	790	Derežani	45.7000000	16.4666700	HR	20	0	0	Derežani	Derežani	Derežani	Derežani	Derežani	Derežani
+	790	Deanovec	45.6952800	16.4819400	HR	20	0	0	Deanovec	Deanovec	Deanovec	Deanovec	Deanovec	Deanovec
+	790	Cvetković	45.6513900	15.6522200	HR	20	0	0	Cvetković	Cvetković	Cvetković	Cvetković	Cvetković	Cvetković
+	790	Cugovec	45.9116700	16.5188900	HR	20	0	0	Cugovec	Cugovec	Cugovec	Cugovec	Cugovec	Cugovec
+	790	Črnkovec	45.7500000	16.1166700	HR	20	0	0	Črnkovec	Črnkovec	Črnkovec	Črnkovec	Črnkovec	Črnkovec
+	790	Črnec Rugvički	45.7623100	16.2653900	HR	20	0	0	Črnec Rugvički	Črnec Rugvički	Črnec Rugvički	Črnec Rugvički	Črnec Rugvički	Črnec Rugvički
+	790	Cerovski Vrh	45.5833300	15.9500000	HR	20	0	0	Cerovski Vrh	Cerovski Vrh	Cerovski Vrh	Cerovski Vrh	Cerovski Vrh	Cerovski Vrh
+	790	Cerje	45.7666700	15.7000000	HR	20	0	0	Cerje	Cerje	Cerje	Cerje	Cerje	Cerje
+	790	Čemernica Lonjska	45.7666700	16.4166700	HR	20	0	0	Čemernica Lonjska	Čemernica Lonjska	Čemernica Lonjska	Čemernica Lonjska	Čemernica Lonjska	Čemernica Lonjska
+	790	Čeglje	45.6166700	15.6000000	HR	20	0	0	Čeglje	Čeglje	Čeglje	Čeglje	Čeglje	Čeglje
+	790	Čabdin	45.6500000	15.6666700	HR	20	0	0	Čabdin	Čabdin	Čabdin	Čabdin	Čabdin	Čabdin
+	790	Buševec	45.6344400	16.1197200	HR	20	0	0	Buševec	Buševec	Buševec	Buševec	Buševec	Buševec
+	790	Bunjani	45.7000000	16.5000000	HR	20	0	0	Bunjani	Bunjani	Bunjani	Bunjani	Bunjani	Bunjani
+	790	Bukovje Bistransko	45.8833300	15.8500000	HR	20	0	0	Bukovje Bistransko	Bukovje Bistransko	Bukovje Bistransko	Bukovje Bistransko	Bukovje Bistransko	Bukovje Bistransko
+	790	Bukovec Zelinski	45.9000000	16.2166700	HR	20	0	0	Bukovec Zelinski	Bukovec Zelinski	Bukovec Zelinski	Bukovec Zelinski	Bukovec Zelinski	Bukovec Zelinski
+	790	Budinjak	45.7891700	15.4908300	HR	20	0	0	Budinjak	Budinjak	Budinjak	Budinjak	Budinjak	Budinjak
+	790	Brlenić	45.6333300	15.5408300	HR	20	0	0	Brlenić	Brlenić	Brlenić	Brlenić	Brlenić	Brlenić
+	790	Brezani	45.9166700	16.3333300	HR	20	0	0	Brezani	Brezani	Brezani	Brezani	Brezani	Brezani
+	790	Bregana	45.8401300	15.6879200	HR	20	0	0	Bregana	Bregana	Bregana	Bregana	Bregana	Bregana
+	790	Brebrovac	45.6833300	15.5500000	HR	20	0	0	Brebrovac	Brebrovac	Brebrovac	Brebrovac	Brebrovac	Brebrovac
+	790	Brdovec	45.8666600	15.7710200	HR	20	0	0	Brdovec	Brdovec	Brdovec	Brdovec	Brdovec	Brdovec
+	790	Brckovljani	45.8333300	16.3000000	HR	20	0	0	Brckovljani	Brckovljani	Brckovljani	Brckovljani	Brckovljani	Brckovljani
+	790	Brčevec	45.8666700	16.4166700	HR	20	0	0	Brčevec	Brčevec	Brčevec	Brčevec	Brčevec	Brčevec
+	790	Bratina	45.6213900	15.8272200	HR	20	0	0	Bratina	Bratina	Bratina	Bratina	Bratina	Bratina
+	790	Braslovje	45.7500000	15.6666700	HR	20	0	0	Braslovje	Braslovje	Braslovje	Braslovje	Braslovje	Braslovje
+	790	Božjakovina	45.8166700	16.3166700	HR	20	0	0	Božjakovina	Božjakovina	Božjakovina	Božjakovina	Božjakovina	Božjakovina
+	790	Bosna	46.0400000	16.2391700	HR	20	0	0	Bosna	Bosna	Bosna	Bosna	Bosna	Bosna
+	790	Bolč	45.8872200	16.6788900	HR	20	0	0	Bolč	Bolč	Bolč	Bolč	Bolč	Bolč
+	790	Bobovica	45.8333300	15.7333300	HR	20	0	0	Bobovica	Bobovica	Bobovica	Bobovica	Bobovica	Bobovica
+	790	Blaževdol	45.9333300	16.2333300	HR	20	0	0	Blaževdol	Blaževdol	Blaževdol	Blaževdol	Blaževdol	Blaževdol
+	790	Biškupec Zelinski	45.9619400	16.2425000	HR	20	0	0	Biškupec Zelinski	Biškupec Zelinski	Biškupec Zelinski	Biškupec Zelinski	Biškupec Zelinski	Biškupec Zelinski
+	790	Beter	45.7333300	15.7166700	HR	20	0	0	Beter	Beter	Beter	Beter	Beter	Beter
+	790	Bešlinec	45.7630600	16.4505600	HR	20	0	0	Bešlinec	Bešlinec	Bešlinec	Bešlinec	Bešlinec	Bešlinec
+	790	Beder	45.8166700	15.6166700	HR	20	0	0	Beder	Beder	Beder	Beder	Beder	Beder
+	790	Barbarići Kravarski	45.6024500	16.0826100	HR	20	0	0	Barbarići Kravarski	Barbarići Kravarski	Barbarići Kravarski	Barbarići Kravarski	Barbarići Kravarski	Barbarići Kravarski
+	790	Bađinec	45.8126500	16.5607700	HR	20	0	0	Bađinec	Bađinec	Bađinec	Bađinec	Bađinec	Bađinec
+	790	Andrilovec	45.8000000	16.3000000	HR	20	0	0	Andrilovec	Andrilovec	Andrilovec	Andrilovec	Andrilovec	Andrilovec
+	790	Sveti Martin pod Okićem	45.7500000	15.7500000	HR	20	0	0	Sveti Martin pod Okićem	Sveti Martin pod Okićem	Sveti Martin pod Okićem	Sveti Martin pod Okićem	Sveti Martin pod Okićem	Sveti Martin pod Okićem
+	790	Mala Gorica	45.7666700	15.7833300	HR	20	0	0	Mala Gorica	Mala Gorica	Mala Gorica	Mala Gorica	Mala Gorica	Mala Gorica
+	790	Stupnički Obrež	45.7666700	15.8333300	HR	20	0	0	Stupnički Obrež	Stupnički Obrež	Stupnički Obrež	Stupnički Obrež	Stupnički Obrež	Stupnički Obrež
+	790	Kladje	45.7833300	15.7333300	HR	20	0	0	Kladje	Kladje	Kladje	Kladje	Kladje	Kladje
+	790	Bestovje	45.8083300	15.8166700	HR	20	0	0	Bestovje	Bestovje	Bestovje	Bestovje	Bestovje	Bestovje
+	790	Gornje Orešje	46.0158300	16.2236100	HR	20	0	0	Gornje Orešje	Gornje Orešje	Gornje Orešje	Gornje Orešje	Gornje Orešje	Gornje Orešje
+	790	Okuje	45.6769400	16.0716700	HR	20	0	0	Okuje	Okuje	Okuje	Okuje	Okuje	Okuje
+	790	Koritna	45.8641700	16.5019400	HR	20	0	0	Koritna	Koritna	Koritna	Koritna	Koritna	Koritna
+	790	Novo Brdo	45.5822200	15.9950000	HR	20	0	0	Novo Brdo	Novo Brdo	Novo Brdo	Novo Brdo	Novo Brdo	Novo Brdo
+	790	Petravec	45.5916700	15.9172200	HR	20	0	0	Petravec	Petravec	Petravec	Petravec	Petravec	Petravec
+	790	Goljak	45.7036100	15.5433300	HR	20	0	0	Goljak	Goljak	Goljak	Goljak	Goljak	Goljak
+	790	Posavski Bregi	45.6797200	16.3536100	HR	20	0	0	Posavski Bregi	Posavski Bregi	Posavski Bregi	Posavski Bregi	Posavski Bregi	Posavski Bregi

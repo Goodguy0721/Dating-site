@@ -1,0 +1,10 @@
+<div class="left-menu-services">
+    <strong>{% helper lang.l('header_services_menu', 'services') %}</strong><br />
+    {% for user_service in user_services %}
+        <a id="users_payments_link_service_{{ user_service.gid }}"
+            href="{{ site_url }}services/form/{{ user_service.gid }}">
+            {{ user_service.name }}{% if user_service.days_left %}:
+                {{ user_service.days_left }} {% helper lang.l('days_left', 'users_payments') %}{% endif %}
+        </a><br />
+    {% endfor %}
+</div>

@@ -1,0 +1,127 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_matches_per_page', 'like_me') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.matches_per_page }}" name="matches_per_page" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_play_local_used', 'like_me') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="checkbox">
+                          <input id="play_local_used" type="checkbox" value="1" name="play_local_used" {% if data.play_local_used %}checked{% endif %} class="flat">
+                        </div>
+                    </div>
+                </div>
+                <div id="play_local_area" class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_play_local_area', 'like_me') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="checkbox">
+                            <input type="radio" value="id_country" name="play_local_area" {% if data.play_local_area == 'id_country' %}checked{% endif %} class="flat">
+                            {% helper lang.l('field_play_local_country', 'like_me') %}
+                        </div>
+                        <div class="checkbox">
+                            <input type="radio" value="id_region" name="play_local_area" {% if data.play_local_area == 'id_region' %}checked{% endif %} class="flat">
+                            {% helper lang.l('field_play_local_region', 'like_me') %}
+                        </div>
+                        <div class="checkbox">
+                            <input type="radio" value="id_city" name="play_local_area" {% if data.play_local_area == 'id_city' %}checked{% endif %} class="flat">
+                            {% helper lang.l('field_play_local_city', 'like_me') %}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_play_more', 'like_me') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="checkbox">
+                            <input type="checkbox" value="1" name="play_more[watch_again]" {% if data.play_more.watch_again %}checked{% endif %} class="flat">
+                            {% helper lang.l('field_play_more_watch_again', 'like_me') %}
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="1" name="play_more[search]" {% if data.play_more.search %}checked{% endif %} class="flat">
+                          {% helper lang.l('field_play_more_search', 'like_me') %}
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="1" name="play_more[perfect]" {% if data.play_more.perfect %}checked{% endif %} class="flat">
+                            {% helper lang.l('field_play_more_perfect', 'like_me') %}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                        {% helper lang.l('field_chat_more', 'like_me') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="chat_more" class="form-control">
+                            {% for key, item in data.chat_more %}
+                                <option value="{{ key }}" {% if item.selected %}selected{% endif %}>{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_chat_message', 'like_me') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <textarea name="chat_message[{{ current_lang_id }}]" rows="4" class="form-control" lang-editor="value" lang-editor-type="data-chat_message" lang-editor-lid="{{ current_lang_id }}">{{ data.chat_message[current_lang_id]|escape }}</textarea>
+                    </div>
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in data.chat_message %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                                {{ langs[lang_id].name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <textarea name="chat_message[{{ lang_id }}]" rows="2" class="form-control" lang-editor="value" lang-editor-type="data-chat_message" lang-editor-lid="{{ lang_id }}">{{ lang_item|escape }}</textarea>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+                        <a href="{{ site_url}}admin/start/menu/add_ons_items" class="btn btn-default">
+                          {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+$(function(){
+    var status = $('#play_local_used').prop('checked');
+    if (status) {
+        $('#play_local_area').show();
+    } else {
+        $('#play_local_area').hide();
+    }
+    $('#play_local_used').click(function(){
+        $('#play_local_area').toggle();
+    });
+});
+</script>
+
+{% include '@app/footer.twig' %}

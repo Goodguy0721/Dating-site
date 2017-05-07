@@ -1,0 +1,11 @@
+{% if count_active > 1 %}
+    <select onchange="locationHref('{{site_url}}languages/change_lang/' + this.value);">
+        {% for item in languages %}
+            {% if item.status == '1' %}
+                <option value="{{ item.id }}" {% if item.id == current_lang %}selected{% endif %}>
+                    {{ item.name }}
+                </option>
+            {% endif %}
+        {% endfor %}
+    </select>
+{% endif %}

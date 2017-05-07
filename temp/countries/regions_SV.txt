@@ -1,0 +1,11 @@
+	2944	Usulután	13.3500000	-88.4500000	SV	14	0	0	Usulután	Усулутане	Usulután	Usulután	Usulután	Usulután
+	2944	Santiago de María	13.4833300	-88.4666700	SV	14	0	0	Santiago de María	Santiago de María	Santiago de María	Santiago de María	Santiago de María	Santiago de María
+	2944	Santa Elena	13.3833300	-88.4166700	SV	14	0	0	Santa Elena	Santa Elena	Santa Elena	Santa Elena	Santa Elena	Santa Elena
+	2944	San Agustín	13.4333300	-88.6000000	SV	14	0	0	San Agustín	San Agustín	San Agustín	San Agustín	San Agustín	San Agustín
+	2944	Puerto El Triunfo	13.2833300	-88.5500000	SV	14	0	0	Puerto El Triunfo	Puerto El Triunfo	Puerto El Triunfo	Puerto El Triunfo	Puerto El Triunfo	Puerto El Triunfo
+	2944	Ozatlán	13.3833300	-88.5000000	SV	14	0	0	Ozatlán	Ozatlán	Ozatlán	Ozatlán	Ozatlán	Ozatlán
+	2944	Jucuarán	13.2538900	-88.2477800	SV	14	0	0	Jucuarán	Jucuarán	Jucuarán	Jucuarán	Jucuarán	Jucuarán
+	2944	Jucuapa	13.5166700	-88.3833300	SV	14	0	0	Jucuapa	Jucuapa	Jucuapa	Jucuapa	Jucuapa	Jucuapa
+	2944	Jiquilisco	13.3166700	-88.5833300	SV	14	0	0	Jiquilisco	Jiquilisco	Jiquilisco	Jiquilisco	Jiquilisco	Jiquilisco
+	2944	Concepción Batres	13.3500000	-88.3666700	SV	14	0	0	Concepción Batres	Concepción Batres	Concepción Batres	Concepción Batres	Concepción Batres	Concepción Batres
+	2944	Berlín	13.5000000	-88.5333300	SV	14	0	0	Berlín	Berlín	Berlín	Berlín	Berlín	Berlín

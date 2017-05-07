@@ -1,0 +1,369 @@
+<div class="content-block load_content">
+    <p class="register-headline header-comment user-profile-promo-text">
+        It's <span class="register-headline-free">FREE</span> to look… Register now to see who's in your area!
+    </p>
+    <div class="inside logform">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="register-social-cont">
+            <button class="btn btn-primary">Log in with Facebook</button><br>
+            <span>We'll <strong>NEVER</strong> post anything. Ever.</span>
+            <div class="register-social-or">OR</div>
+          </div>
+        </div>
+        <div class="col-sm-7">
+          <form action="{{ site_url }}users/registration" method="post" class="form-horizontal" id="registration-form">
+            {#<div class="form-group">
+              <div class="col-xs-11">
+                <input type="text" name="postal_code" value="{{ data.postal_code|e }}" class="form-control"
+                  placeholder="Postal code">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="email" name="email" value="{{ data.email|e }}" class="form-control"
+                  placeholder="Email address">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="password" name="password" value="{{ data.email|e }}" class="form-control"
+                  placeholder="Choose password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <ul class="list-inline">
+                  <li>
+                    <label>Birthday</label>
+                  </li>
+                  <li>
+                    <select name="birth_date_month" class="form-control" placeholder="Month">
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </li>
+                  <li>
+                    <select name="birth_date_day" class="form-control" placeholder="Day">
+                      {% for i in 1..31 %}
+                      <option>{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                  </li>
+                  <li>
+                    <select name="birth_date_year" class="form-control" placeholder="Year">
+                      {% for i in 1998..1950 %}
+                      <option>{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                  </li>
+                </ul>
+              </div>
+            </div>#}
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="text" name="fname" value="{{ data.fname|e }}" class="form-control"
+                  placeholder="First name">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="text" name="nickname" value="{{ data.nickname|e }}" class="form-control"
+                  placeholder="Username">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="password" name="password" value="{{ data.password }}"  class="form-control"
+                  placeholder="{% helper lang.l('field_password', 'users') %}">
+              </div>
+            </div>
+          {% if use_repassword %}
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="password" name="repassword" class="form-control"
+                  placeholder="{% helper lang.l('field_repassword', 'users') %}">
+              </div>
+            </div>
+          {% endif %}
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="email" name="email" value="{{ data.email|e }}" class="form-control"
+                  placeholder="{% helper lang.l('field_email', 'users') %}">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <ul class="list-inline">
+                  <li>
+                    <label>Birthday</label>
+                  </li>
+                  <li>
+                    <select name="birth_date_month" class="form-control" placeholder="Month">
+                      <option value="1">Jan</option>
+                      <option value="2">Feb</option>
+                      <option value="3">Mar</option>
+                      <option value="4">Apr</option>
+                      <option value="5">May</option>
+                      <option value="6">Jun</option>
+                      <option value="7">Jul</option>
+                      <option value="8">Aug</option>
+                      <option value="9">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                    </select>
+                  </li>
+                  <li>
+                    <select name="birth_date_day" class="form-control" placeholder="Day">
+                      {% for i in 1..31 %}
+                      <option>{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                  </li>
+                  <li>
+                    <select name="birth_date_year" class="form-control" placeholder="Year">
+                      {% for i in 1998..1950 %}
+                      <option>{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {# <custom_M> #}
+            <div class="form-group">
+              <label class="col-xs-11">
+                {% helper lang.l('field_living_with', 'users') %}</label>
+              <div class="col-xs-11">
+                {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                <select name="living_with[]" multiple class="form-control" style="height: 76px;"
+                  placeholder="">
+                {% for key, item in living_with.option %}
+                  <option value="{{ key }}" {% helper utils.inArray(key, data.living_with, 'selected') %}>
+                    {{ item }}</option>
+                {% endfor %}
+                </select>
+                <span style="font-size:75%">(Hold down the Ctrl button (for Windows) or the Command button (for Mac) to select multiple items)</span>
+              </div>
+            </div>
+            {# </custom_M> #}
+            <div class="form-group">
+              <label class="col-xs-11">
+                Ethnicity</label>
+              <div class="col-xs-11">
+                <select name="ethnicity" class="form-control" placeholder="">
+                  <option value="">Please, select</option>
+                {% for option_gid, option_name in ethnicity_options %}
+                  <option value="{{ option_gid }}" {% if option_gid == data.ethnicity %}selected{% endif %}>
+                    {{ option_name }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-11">
+                Relationship status</label>
+              <div class="col-xs-11">
+                <select name="relationship_status" class="form-control" placeholder="">
+                  <option value="">Please, select</option>
+                {% for option_gid, option_name in relationship_status_options %}
+                  <option value="{{ option_gid }}" {% if option_gid == data.relationship_status %}selected{% endif %}>
+                    {{ option_name }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-11">
+                Height</label>
+              <div class="col-xs-11">
+                <select name="height" class="form-control">
+                  <option value="" style="display: none;">Please, select</option>
+                {% for option_gid, option_name in height_options %}
+                  <option value="{{ option_gid }}" {% if option_gid == data.height %}selected{% endif %}>
+                    {{ option_name }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-11 col-sm-3">
+                {% helper lang.l('field_user_type', 'users') %} &nbsp;
+              </label>
+              <div class="col-xs-11  col-sm-8 checkbox">
+              {% for key, item in user_types.option %}
+                <input type="radio" name="user_type" value="{{ key }}" {% if key == data.user_type %}checked{% endif %}>
+                    {{ item }} &nbsp;
+                {% endfor %}
+               </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-11 col-sm-3">
+                {% helper lang.l('field_looking_user_type', 'users') %} &nbsp;
+              </label>
+              <div class="col-xs-11 col-sm-8 checkbox">
+              {% for key, item in user_types.option %}
+                <input type="radio" name="looking_user_type" value="{{ key }}" {% if key == data.looking_user_type %}checked{% endif %}>
+                {{ item }} &nbsp;
+              {% endfor %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-11">
+                {% helper lang.l('field_location', 'users') %}</label>
+              <div class="col-xs-11">
+                {% helper countries.location_select({
+                   'module': 'countries',
+                   'select_type': 'city',
+                   'id_country': data.id_country ,
+                   'id_region': data.id_region,
+                   'id_city': data.id_city,
+                   'var_country_name': 'id_country',
+                   'var_region_name': 'id_region',
+                   'var_city_name': 'id_city',
+                   'auto_detect': 1
+                }) %}
+              </div>
+              <input type="hidden" name="lat" value="{{ data.lat|e }}" id="lat">
+              <input type="hidden" name="lon" value="{{ data.lon|e }}" id="lon">
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input type="text" name="postal_code" value="{{ data.postal_code|e }}" class="form-control"
+                  placeholder="Resident Postal / Zip Code">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-11">
+                <input id="confirmation" type="hidden" value="1" name="confirmation" checked>
+                By continuing, I agree to receive account notifications, billing and promotinal emails.
+                I understand that I am free to remove consent at anytime.
+                <span class="pginfo msg confirmation"></span>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" name="btn_register" value="1" class="btn btn-primary">
+                Start Looking!</button>
+            </div>
+            {#<input type="hidden" name="is_short_form" value="1">#}
+          </form>
+          <p class="col-xs-11 text-center">
+            By using our site, you agree to the meetpositives.com <a href="#">Terms of Use</a>.<br><br>
+            <span style="font-size: 110%">Already a member? <a href="{{ site_url }}users/login_form">Sign in here</a>
+          </p>
+
+          {% if is_module_installed.geomap %}
+              {% helper geomap.geomap_load_geocoder() %}
+          {% endif %}
+
+          <script>
+              $(function () {
+                  loadScripts(
+                          ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                          function () {
+                              users_map = new usersMap({
+                                  siteUrl: site_url,
+                              });
+                          },
+                          ['users_map'],
+                          {async: true}
+                  );
+              });
+          </script>
+
+          <script>
+              $(function () {
+                  $('#registration-form').find('input, select').off('change').on('change', function() {
+                      var input_object = $(this);
+                          field_name = $(this).prop('name'),
+                          field_value = $(this).val();
+
+                      if (input_object.attr('id') == 'confirmation') {
+                          return;
+                      }
+
+                      if (input_object.prop('type') == 'checkbox' && input_object.prop('checked') == false) {
+                          field_value = 0;
+                      }
+
+                      input_object.parent().find('.field-error-icon, .field-success-icon, .msg').remove();
+
+                      $.ajax({
+                          type: 'POST',
+                          dataType: 'json',
+                          url: site_url + 'users/ajaxRegValidation',
+                          data: {
+                              field_name: field_name,
+                              field_value: field_value,
+                          },
+                          success: function (response) {
+                              input_object.parentsUntil('form').find('.field-error-icon, .field-success-icon').remove();
+
+                              if (response) {
+                                  if ('error' in response && field_name in response['error']) {
+                                      input_object.removeClass('success');
+                                      input_object.addClass('pginfo field error');
+
+                                      input_object.parents('div').first().after('<i class="fa fa-close fa-2x field-error-icon" aria-hidden="true"></i>');
+                                      input_object.after('<span class="pginfo msg error">' + response['error'][field_name] + '</span>');
+                                  } else {
+                                      input_object.removeClass('error');
+                                      input_object.addClass('pginfo field success');
+
+                                      input_object.parents('div').first().after('<i class="fa fa-check fa-2x field-success-icon" aria-hidden="true"></i>');
+                                      input_object.parentsUntil('form').find('.pginfo.msg.error').remove();
+                                  }
+                              }
+                          },
+                          error: function (jqXHR, textStatus, errorThrown) {
+                              if (typeof (console) !== 'undefined') {
+                                  console.error(errorThrown);
+                              }
+                          }
+                      });
+                  });
+
+                  var date_now = new Date();
+                          var date_min = new Date(date_now.getFullYear() - {{ age_max }}, 0, 1);
+                          var date_max = new Date(date_now.getFullYear() - {{ age_min }}, 0, 1);
+                          var yr = (date_min.getFullYear()) + ':' + (date_max.getFullYear());
+                  $("#datepicker").datepicker({
+                      dateFormat: 'yy-mm-dd',
+                      changeYear: true,
+                      changeMonth: true,
+                      yearRange: yr,
+                      defaultDate: date_max
+                  });
+
+                  loadScripts(
+                          ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                          function () {
+                              users_map = new usersMap({
+                                  siteUrl: site_url,
+                                  country_old_id: '{{ data.id_country }}',
+                                  region_old_id: '{{ data.id_region }}',
+                                  city_old_id: '{{ data.id_city }}'
+                              });
+                          },
+                          ['users_map'],
+                          {async: true}
+                  );
+              });
+          </script>
+
+          {% helper incomplete_signup.incomplete_signup_script() %}
+        </div>
+      </div>
+    </div>
+</div>

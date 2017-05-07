@@ -1,0 +1,36 @@
+{% for field in fields_data %}
+    <div class="field-block clearfix">
+        <div class="field-name col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            {{ field.name }}:
+        </div>
+        <div class="field-info col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            {% if field.field_type == 'select' %}
+                {% if field.value is not empty %}
+                    {{ field.value|nl2br }}
+                {% endif %}
+            {% elseif field.field_type == 'textarea' %}
+                {% if field.value is not empty %}
+                    <div class="field-info_normal">{{ field.value|nl2br }}</div>
+                {% endif %}
+            {% elseif field.field_type == 'text' %}
+                {% if field.value is not empty %}
+                    {{ field.value|nl2br }}
+                {% endif %}
+            {% elseif field.field_type == 'range' %}
+                {% if field.value is not empty %}
+                    {{ field.value }}
+                {% endif %}
+            {% elseif field.field_type == 'multiselect' %}
+                {% if field.value is not empty %}
+                    {{ field.value_str }}
+                {% endif %}
+            {% elseif field.field_type == 'checkbox' %}
+                {% if field.value is not empty %}
+                    {% helper lang.l('option_checkbox_yes', 'start') %}
+                {% else %}
+                    {% helper lang.l('option_checkbox_no', 'start') %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

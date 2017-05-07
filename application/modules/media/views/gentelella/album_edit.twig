@@ -1,0 +1,77 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" name="save_form" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'media') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        {% if validate_lang %}
+                            {% set name_value = attribute(validate_lang, cur_lang) %}
+                        {% else %}
+                            {% set name_value = data.name %}
+                        {% endif %}
+                        <input type="hidden" value="{{ data.name }}" name="name">
+                        <input type="text" name="langs[{{ cur_lang }}]" class="form-control" value="{{ name_value }}">
+                    </div>
+                </div>
+            {% if languages_count > 1 %}
+                <div class="form-group">
+                    <div class="accordion col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion"
+                         role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                {% for lang_id, item in languages %}
+                                    {% if lang_id != cur_lang %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                                {{ item.name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                {% if validate_lang %}
+                                                    {% set name_value = attribute(validate_lang, lang_id) %}
+                                                {% else %}
+                                                    {% set name_value = data.name %}
+                                                {% endif %}
+                                                <input type="text" name="langs[{{ lang_id }}]"
+                                                       value="{{ name_value }}" class="form-control">
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_description', 'media') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea name="description" class="resizable_textarea form-control">{{ data.description }}</textarea>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                        <a href="{{ site_url }}admin/media/common_albums/" class="btn btn-default">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,311 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div id="mailbox_content" class="mailbox_content">
+    <div class="clearfix"></div>
+
+        <div class="panel panel-default">
+
+        	{% set folder = message.folder %}
+
+            <div class="panel-heading pos-rel">
+                    {% include 'mailbox_menu.twig' %}
+            </div>
+
+                <div id="" class="mailbox_top_menu tab-submenu top_panel">
+        			<div class="">
+        				<ul>
+        					{% if folder == 'inbox' %}
+        						{% if message.sender.id > 0 %}
+        							<li>
+                                        <div id="reply_message" class="valign_middle">
+                                            <div class="btn btn-default input-sx b0">
+                                                <i class="fa fa-reply fa-1x"
+                                                title="{% helper lang.l('link_message_reply', 'mailbox', '', 'button') %}"></i>
+                                                <span>{% helper lang.l('link_message_reply', 'mailbox', '', 'button') %}</span>
+                                            </div>
+                                        </div>
+                                    </li>
+        						{% endif %}
+        						<li>
+                                    <div id="message_mark_spam" class="valign_middle">
+                                        <div class="btn btn-default input-sx b0">
+                                            <i class="fa fa-exclamation-circle fa-1x"
+                                            title="{% helper lang.l('link_message_mark_spam', 'mailbox', '', 'button') %}"></i>
+                                            <span>{% helper lang.l('link_message_mark_spam', 'mailbox', '', 'button') %}</span>
+                                        </div>
+                                    </div>
+                                </li>
+        						{% if message.sender.id > 0 %}
+        							{% helper blacklist.add_blacklist_button({'id_user': message.id_from_user}) %}
+        						{% endif %}
+        					{% endif %}
+        					{% if folder == 'drafts' %}
+                                <li>
+                                    <div id="edit_message" class="valign_middle">
+                                        <div class="btn btn-default input-sx b0" role="btn">
+                                            <i class="fa fa-envelope fa-1x"
+                                            title="{% helper lang.l('link_message_edit', 'mailbox', '', 'button') %}"></i>
+                                            <span>{% helper lang.l('link_message_edit', 'mailbox', '', 'button') %}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+        					{% if folder == 'spam' %}
+                                <li>
+                                    <div id="message_unmark_spam" class="valign_middle">
+                                        <div class="btn btn-default input-sx b0" role="btn">
+                                            <i class="fa fa-exclamation-circle fa-1x"
+                                            title="{% helper lang.l('link_message_unmark_spam', 'mailbox', '', 'button') %}"></i>
+                                            <span>{% helper lang.l('link_message_unmark_spam', 'mailbox', '', 'button') %}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+        					{% if folder == 'trash' %}
+                                <li>
+                                    <div id="message_untrash" class="valign_middle">
+                                        <div class="btn btn-default input-sx b0" role="btn">
+                                            <i class="fa fa-trash fa-1x"
+                                            title="{% helper lang.l('link_message_untrash', 'mailbox', '', 'button') %}"></i>
+                                            <span>{% helper lang.l('link_message_untrash', 'mailbox', '', 'button') %}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+        					{% if folder != 'trash' %}
+                                <li>
+                                    <div id="message_delete" class="valign_middle">
+                                        <div class="btn btn-default input-sx b0">
+                                            <i class="fa fa-trash fa-1x"
+                                            title="{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}"></i>
+                                            <span>{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+        				</ul>
+        			</div>
+        		</div>
+
+                    <div class="fright m10 hide">
+                        {% if message.id_thread and message.folder != 'trash' %}
+                            <a href="javascipt:void(0);" id="delete_thread">
+                                {% helper lang.l('link_delete_thread', 'mailbox') %}
+                            </a>
+                        {% endif %}
+                    </div>
+        		{% if thread_top_count %}
+                    {% set thread_top_block %}
+                        {% for item in thread_top %}
+                            {%set thread_top_count = thread_top_count - 1 %}
+                            <li>
+                                <a id="btn_toggle_message_{{ item.id }}" class="btn-toggle-message hide">
+                                    <i class="fa fa-caret-square-o-right fa-1x"></i>
+                                </a>
+                                <div class="addressbar">
+
+                                    <div class="mr10 fleft">
+                                        <img src="{{ item.sender.media.user_logo.thumbs.small }}" class="img-rounded">
+                                    </div>
+
+                                    <a class="link" href="{% helper seo.seolink('users', 'view', item.sender) %}">
+                                        {{ item.sender.output_name }}
+                                    </a>
+                                    <div class="gray fright mr15">
+                                        {% helper date_format.tpl_date_format(item.date_add, page_data.date_time_format) %}
+                                    </div>
+
+                                    <div class="message pt5 ml15 mr10">
+                                        {% if item.is_new and read_disabled %}
+                                            {% helper lang.l('error_not_access', 'mailbox') %}
+                                        {% else %}
+                                            {{ item.message }}
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                                <div class="clr"></div>
+                            </li>
+                        {% endfor %}
+                    {% endset %}
+
+                    <ul class="thread">
+                        {% if thread_top_count %}
+                            {% helper link_next_messages = lang.l('link_next_messages', 'mailbox') %}
+                            <li class="center">
+                                <a href="javascript:void(0);" class="btn_thread"
+                                    data-id="{{ message.id }}" data-dir="next" data-page="1">
+                                    {{ link_next_messages|replace({'[messages]':thread_top_count}) }}
+                                </a>
+                            </li>
+                        {% endif %}
+                        {{ thread_top_block }}
+                    </ul>
+        		{% endif %}
+
+                <div class="mailbox_view mlr5 pl5">
+        		<input type="checkbox" name="select_message[{{ message.id }}]"
+                       value="{{ message.id }}" data-id-msg="{{ message.id }}"
+                       data-role="msg-checkbox" class="hide" checked>
+
+        		<div class="main_subject">{% if message.subject %}{{ message.subject }}{% else %}{% helper lang.l('text_default_subject', 'mailbox') %}{% endif %}</div>
+                    <div class="addressbar">
+
+                        {% set nicklogo %}
+                            {% if message.id_from_user == user_session_data.user_id %}
+                                <img src="{{ message.recipient.media.user_logo.thumbs.small }}" class="img-rounded">
+                            {% else %}
+                                <img src="{{ message.sender.media.user_logo.thumbs.small }}" class="img-rounded">
+                            {% endif %}
+                        {% endset %}
+
+                        {% set nicklink %}
+                            {% if message.id_from_user == user_session_data.user_id %}
+                                <a href="{% helper seo.seolink('users', 'view', message.recipient) %}">
+                                    {{ message.recipient.nickname }}
+                                </a>
+                            {% else %}
+                                <a href="{% helper seo.seolink('users', 'view', message.sender) %}">
+                                    {{ message.sender.nickname }}
+                                </a>
+                            {% endif %}
+                        {% endset %}
+
+                        <div class="mr10 fleft">
+                            {{ nicklogo }}
+                        </div>
+                        {{ nicklink }}
+
+                        <div class="fright gray mr10">
+                            {% helper date_format.tpl_date_format(message.date_add, page_data.date_time_format) %}
+                        </div>
+                    </div>
+        			<div class="clr"></div>
+        		</div>
+
+        		{% if message.attaches_count %}
+        			<div class="attachbox mlr10 mb10">
+        				<i class="ib w30 fleft fa fa-paperclip g fa-2x"></i>
+        				<ul>
+        					{% for item in message.attaches %}
+                                <li>
+                                    <a href="{{ item.link }}" target="_blank">
+                                        {{ item.filename }}
+                                    </a>&nbsp;<span class="gray">{{ item.size }}</span>
+                                </li>
+        					{% endfor %}
+        				</ul>
+        				<div class="clr"></div>
+        			</div>
+        		{% endif %}
+
+        		<div class="view plr10">
+                    {{ message.message }}
+                </div>
+
+        		{% if thread_bottom_count %}
+                    {% set thread_bottom_block %}
+                        {% for item in thread_bottom %}
+                            {%set thread_bottom_count = thread_bottom_count - 1 %}
+                            <li>
+                                <div class="addressbar">
+
+                                    <div class="mr10 fleft">
+                                        <img src="{{ item.sender.media.user_logo.thumbs.small }}" class="img-rounded">
+                                    </div>
+
+                                    <a class="link" href="{% helper seo.seolink('users', 'view', item.sender) %}">
+                                        {{ item.sender.output_name }}
+                                    </a>
+                                    <div class="gray fright mr5">
+                                        {% helper date_format.tpl_date_format(item.date_add, page_data.date_time_format) %}
+                                    </div>
+
+                                    <div class="pt5 ml15 mr10 btn-toggle-message message" id="btn_toggle_message_{{ item.id }}">
+                                        {% if item.is_new and read_disabled %}
+                                            {% helper lang.l('error_not_access', 'mailbox') %}
+                                        {% else %}
+                                            {{ item.message }}
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                                <div class="clr"></div>
+                            </li>
+                        {% endfor %}
+                    {% endset %}
+
+                    <ul class="thread">
+                        {{ thread_bottom_block }}
+                        {% if thread_bottom_count %}
+                            {% helper link_prev_messages = lang.l('link_prev_messages', 'mailbox') %}
+                            <li class="center">
+                                <a href="javascript:void(0);" class="btn_thread"
+                                    data-id="{{ message.id }}" data-dir="prev" data-page="1">
+                                    {{ link_prev_messages|replace({'[messages]':thread_bottom_count}) }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+
+        		{% if folder == 'inbox' and message.sender.id > 0 %}
+                    <div id="reply_form" class="p10">
+                        {% include 'write_form.twig' with {'is_reply': '1', 'type': 'short', 'message': reply} %}
+                    </div>
+                {% endif %}
+        	</div>
+        </div>
+        <div class="clr"></div>
+        <script>
+            $(function(){
+                loadScripts(
+                    "{% helper utils.jscript('', 'available_view.js', 'path') %}",
+                    function(){
+                        send_message_available_view = new available_view({
+                            siteUrl: site_url,
+                            checkAvailableAjaxUrl: 'mailbox/ajax_available_send_message/',
+                            buyAbilityAjaxUrl: 'mailbox/ajax_activate_send_message/',
+                            buyAbilityFormId: 'ability_form',
+                            buyAbilitySubmitId: 'ability_form_submit',
+                            success_request: function(message) {
+                                mb.save_reply(function() {
+                                    mb.reply_message()
+                                }, true)
+                            },
+                            fail_request: function(message) {
+                                error_object.show_error_block(message, 'error');
+                            },
+                        });
+                    },
+                    ['send_message_available_view'],
+                    {async: false}
+                );
+                loadScripts(
+                    "{% helper utils.jscript('mailbox', 'mailbox-flatty.js', 'path') %}",
+                    function(){
+                        mb = new mailbox({
+                            siteUrl: site_url,
+                            folder: '{{ folder }}',
+                            messageId: {{ message.id }},
+                            sendAvailableView: send_message_available_view,
+                        });
+                    },
+                    ['mb'],
+                    {async: false}
+                );
+            });
+        </script>
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

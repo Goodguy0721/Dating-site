@@ -1,0 +1,59 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <div class="content-block">
+        <h1>{% helper lang.l('polls_results', 'polls') %}</h1>
+
+        <div class="row">
+        {% for key, item in polls %}
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="poll-question-item">
+                    <div id="poll_{{ key }}" class="poll_question_link">
+                            <div class="poll-question-title">
+                                    {% if language %}
+                                            {% if item.question[language] %}
+                                                    {{ item.question[language] }}
+                                            {% else %}
+                                                    {{ item.question.default }}
+                                            {% endif %}
+                                    {% else %}
+                                            {% if item.question[cur_lang] %}
+                                                    {{ item.question[cur_lang] }}
+                                            {% else %}
+                                                    {{ item.question.default }}
+                                            {% endif %}
+                                    {% endif %}
+                                    <div class="fright">
+                                            <a data-role="expander" class="fa fa-chevron down fa-lg edge hover zoom20"></a>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="poll_results_content"></div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        loadScripts(
+            "{% helper utils.jscript('polls', 'polls.js', 'path') %}",
+            function() {
+                if ('undefined' != typeof(PollsList)) {
+                    poll_list = new PollsList({
+                        siteUrl: '{{ site_root }}'
+                    });
+                }
+
+                $('.poll_question_link').each(function(){
+                    poll_list.show_poll($(this));
+                });
+            }
+        );
+    });
+</script>
+
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

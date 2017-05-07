@@ -1,0 +1,288 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+	data-parsley-validate class="form-horizontal form-label-left">
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title h4">
+	{% if data.id %}
+			{% helper lang.l('admin_header_watermark_change', 'uploads') %}
+	{% else %}
+			{% helper lang.l('admin_header_watermark_add', 'uploads') %}
+	{% endif %}
+		</div>
+		<div class="x_content">
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-xs-12">
+					{% helper lang.l('field_name', 'uploads') %}: </label>
+				<div class="col-sm-9 col-xs-12">
+					<input type="text" value="{{ data.name }}" name="name" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-xs-12">
+					{% helper lang.l('field_gid', 'uploads') %}: </label>
+				<div class="col-sm-9 col-xs-12">
+					<input type="text" value="{{ data.gid }}" name="gid" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-xs-12">
+					{% helper lang.l('field_position', 'uploads') %}: </label>
+				<div class="col-sm-9 col-xs-12">
+					<select name="position_hor" id="wm_position_hor" class="form-control">
+					{% for key, item in lang_positions_hor.option %}
+						<option value="{{ key }}" {% if key == data.position_hor %}selected{% endif %}>{{ item }}</option>
+					{% endfor %}
+					</select>
+					<select name="position_ver" id="wm_position_ver" class="form-control">
+					{% for key, item in lang_positions_ver.option %}
+						<option value="{{ key }}" {% if key == data.position_ver %}selected{% endif %}>{{ item }}</option>
+					{% endfor %}
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-xs-12">
+					{% helper lang.l('field_wm_type', 'uploads') %}: </label>
+				<div class="col-sm-9 col-xs-12">
+					<select name="wm_type" id="wm_type" class="form-control" onchange="javascript: change_block(this.value);">
+						{% for key, item in lang_wm_type.option %}
+						<option value="{{ key }}" {% if key == data.wm_type %}selected{% endif %}>{{ item }}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+
+			<div id="wm_img_block" {% if data.wm_type != 'img' %}style="display: none"{% endif %}>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_alpha', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="hidden" name="alpha" value="{{ data.alpha }}" id="wm_alpha_value">
+						<div id='wm_alpha_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all slider-block'><a href='#' class='ui-slider-handle ui-state-default ui-corner-all'></a><div class='ui-slider-range ui-slider-range-min ui-widget-header'></div></div>
+						<div id="wm_alpha_slider_val">{{ data.alpha }}%</div>
+						<script>
+							$(document).ready(function(){
+								$("#wm_alpha_slider").slider({
+									range: "min",
+									value: {{ data.alpha }},
+									min: 1,
+									max: 100,
+									slide: function(event, ui) {
+										$("#wm_alpha_value").val(ui.value);
+										$("#wm_alpha_slider_val").html(ui.value+"%");
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_img', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="file" value="" name="img" class="file" id="wm_img">
+						{% if data.img %}<br><img src="{{ data.img_url }}">{% endif %}
+					</div>
+				</div>
+			</div>
+
+			<div id="wm_text_block" {% if data.wm_type != 'text' %}style="display: none"{% endif %}>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_font_text', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" id="wm_font_text" value="{{ data.font_text }}" name="font_text" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_font_family', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<select name="font_face" id="wm_font_face" class="form-control">
+							{% for key, item in lang_font_face.option %}
+							<option value="{{ key }}" {% if key == data.font_face %}selected{% endif %}>{{ item }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_font_size', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="hidden" name="font_size" value="{{ data.font_size }}" id="wm_font_size_value">
+						<div id='wm_font_size_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all slider-block'><a href='#' class='ui-slider-handle ui-state-default ui-corner-all' ></a><div class='ui-slider-range ui-slider-range-min ui-widget-header'></div></div>
+						<div id="wm_font_size_slider_val">{% if data.font_size %}{{ data.font_size }}{% else %}{{ wm_text_limits.min_font_size }}{% endif %}</div>
+						<script>
+							$(document).ready(function(){
+								$("#wm_font_size_slider").slider({
+									range: "min",
+									value: {% if data.font_size %}{{ data.font_size }}{% else %}{{ wm_text_limits.min_font_size }}{% endif %},
+									min: {{ wm_text_limits.min_font_size }},
+									max: {{ wm_text_limits.max_font_size }},
+									slide: function(event, ui) {
+										$("#wm_font_size_value").val(ui.value);
+										$("#wm_font_size_slider_val").html(ui.value);
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_shadow_distance', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="hidden" name="shadow_distance" value="{{ data.shadow_distance }}" id="wm_shadow_distance_value">
+						<div id='wm_shadow_distance_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all slider-block'><a href='#' class='ui-slider-handle ui-state-default ui-corner-all' ></a><div class='ui-slider-range ui-slider-range-min ui-widget-header'></div></div>
+						<div id="wm_shadow_distance_slider_val">{% if data.shadow_distance %}{{ data.shadow_distance }}{% else %}{{ wm_text_limits.min_shadow_distance }}{% endif %}</div>
+						<script>
+							$(document).ready(function(){
+								$("#wm_shadow_distance_slider").slider({
+									range: "min",
+									value: {% if data.shadow_distance %}{{ data.shadow_distance }}{% else %}{{ wm_text_limits.min_shadow_distance }}{% endif %},
+									min: {{ wm_text_limits.min_shadow_distance }},
+									max: {{ wm_text_limits.max_shadow_distance }},
+									slide: function(event, ui) {
+										$("#wm_shadow_distance_value").val(ui.value);
+										$("#wm_shadow_distance_slider_val").html(ui.value);
+									}
+								});
+							});
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_font_color', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="hidden" name="font_color" id="wm_font_color" value="{{ data.font_color }}">
+						<input class="form-control color-pick" id="font_color_block" readonly> <span class="color-pick-data" id="font_color_data">#{{ data.font_color }}</span>
+						<script>
+						$(function(){
+							if($('#wm_font_color').val() != '') $('#font_color_block').css('background-color', '#'+$('#wm_font_color').val());
+							$('#font_color_block').ColorPicker({
+								onSubmit: function(hsb, hex, rgb, el) {
+									$('#wm_font_color').val(hex);
+									$('#font_color_data').html('#' + hex);
+									$('#font_color_block').css('background-color', '#' + hex);
+									$(el).ColorPickerHide();
+								},
+								onBeforeShow: function () {
+									$(this).ColorPickerSetColor($('#wm_font_color').val());
+								}
+							});
+						});
+						</script>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3 col-xs-12">
+						{% helper lang.l('field_shadow_color', 'uploads') %}: </label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="hidden" name="shadow_color" id="wm_shadow_color" value="{{ data.shadow_color }}">
+						<input class="form-control color-pick" id="shadow_color_block" readonly> <span class="color-pick-data" id="shadow_color_data">#{{ data.shadow_color }}</span>
+						<script>
+						$(function(){
+							if($('#wm_shadow_color').val() != '') $('#shadow_color_block').css('background-color', '#'+$('#wm_shadow_color').val());
+							$('#shadow_color_block').ColorPicker({
+								onSubmit: function(hsb, hex, rgb, el) {
+									$('#wm_shadow_color').val(hex);
+									$('#shadow_color_data').html('#' + hex);
+									$('#shadow_color_block').css('background-color', '#' + hex);
+									$(el).ColorPickerHide();
+								},
+								onBeforeShow: function () {
+									$(this).ColorPickerSetColor($('#wm_shadow_color').val());
+								}
+							});
+						});
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+					<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+					<input class="btn btn-primary" type="button" name="btn_preview" value="{% helper lang.l('btn_preview', 'start', '', 'button') %}" onclick="javascript: wm_preview();">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title h4">{% helper lang.l('admin_header_preview', 'uploads') %}</div>
+		<div class="x_content">
+		{% if data.id %}<img class="img-responsive" src="{{ site_root }}admin/uploads/wm_preview/{{ data.id }}" id="wm_preview_img">{% else %}<img class="img-responsive" src="{{ watermark_test }}" id="wm_preview_img">{% endif %}
+		</div>
+	</div>
+</div>
+</form>
+
+<link type="text/css" rel="stylesheet" href="{{ site_root }}application/modules/uploads/js/colorpicker/colorpicker.css"/>
+{% helper utils.jscript('uploads', 'colorpicker.min.js') %}
+{% helper utils.jscript('', 'jquery.form.min.js') %}
+<script>
+var preview_post_link = '{{ site_url }}admin/uploads/wm_save_preview_data/data/wm_preview';
+var preview_file_link = '{{ site_url }}admin/uploads/wm_save_preview_data/file/wm_preview';
+var wm_img_preview_link = '{{ site_url }}admin/uploads/wm_preview/{{ data.id }}/wm_preview';
+var wm_id = '{{ data.id }}';
+
+
+function wm_preview(){
+	if($('#wm_img').val()){
+		load_file_params();
+	}else{
+		if(!wm_id)
+			return false;
+		load_post_params();
+	}
+}
+
+function load_post_params(){
+	var data = new Object();
+	data.position_hor = $('#wm_position_hor').val();
+	data.position_ver = $('#wm_position_ver').val();
+	data.wm_type = $('#wm_type').val();
+	data.font_text = $('#wm_font_text').val();
+	data.font_size = $('#wm_font_size_value').val();
+	data.font_color = $('#wm_font_color').val();
+	data.font_face = $('#wm_font_face').val();
+	data.shadow_color = $('#wm_shadow_color').val();
+	data.shadow_distance = $('#wm_shadow_distance_value').val();
+	data.alpha = $('#wm_alpha_value').val();
+
+	$.ajax({
+		url: preview_post_link,
+		type: 'POST',
+		cache: false,
+		data: data,
+		success: function(data){
+			$('#wm_preview_img').attr('src', wm_img_preview_link+'?t='+(1000*Math.random()));
+		}
+	});
+}
+
+function load_file_params(){
+	var options = {
+		url: preview_file_link,
+		success: function() {
+			load_post_params();
+		}
+	};
+	$("form").ajaxSubmit(options);
+}
+
+function change_block(type){
+	$('#wm_text_block').hide();
+	$('#wm_img_block').hide();
+	$('#wm_'+type+'_block').show();
+}
+
+</script>
+{% include '@app/footer.twig' %}

@@ -1,0 +1,33 @@
+<div class="b-winks__search" id="mailbox_top_menu">
+	<div class="winks-search-form">
+		<ul>
+			<li>
+				<input type="text" name="name_to_user" id="user_text" autocomplete="off" class="form-control" placeholder="{% helper lang.l('search_ph', 'winks') %}">&nbsp;
+				<script>
+					$(function(){
+						loadScripts(
+							"{% helper utils.jscript('', 'autocomplete_input.js', 'path') %}",
+							function(){
+								user_autocomplete = new autocompleteInput({
+									siteUrl: '{{ site_url }}',
+									dataUrl: 'winks/ajax_get_users_data',
+									id_text: 'user_text',
+									id_hidden: 'user_hidden',
+									rand: '{{ rand }}',
+									format_callback: function(data){
+										return data.output_name;
+									},
+									select_callback: function(data) {
+										winksObj.addUserToList(data);
+										$('#user_text').val('');
+									}
+								});
+							},
+							'user_autocomplete'
+						);
+					});
+				</script>
+			</li>
+		</ul>
+	</div>
+</div>

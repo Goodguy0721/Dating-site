@@ -1,0 +1,12 @@
+	1273	Stykkishólmur	65.0753700	-22.7297700	IS	45	0	0	Stykkishólmur	Stykkishólmur	Stykkishólmur	Stykkishólmur	Stykkishólmur	Stykkishólmur
+	1273	Rif	64.9224500	-23.8180200	IS	45	0	0	Rif	Rif	Rif	Rif	Rif	Rif
+	1273	Reykholt	64.6643700	-21.2915000	IS	45	0	0	Reykholt	Reykholt	Reykholt	Reykholt	Reykholt	Reykholt
+	1273	Ólafsvík	64.8942900	-23.7091800	IS	45	0	0	Ólafsvík	Ólafsvík	Ólafsvík	Ólafsvík	Ólafsvík	Ólafsvík
+	1273	Hvanneyri	64.5640400	-21.7589000	IS	45	0	0	Hvanneyri	Hvanneyri	Hvanneyri	Hvanneyri	Hvanneyri	Hvanneyri
+	1273	Hellnar	64.7505500	-23.6474700	IS	45	0	0	Hellnar	Hellnar	Hellnar	Hellnar	Hellnar	Hellnar
+	1273	Hellissandur	64.9175700	-23.8855700	IS	45	0	0	Hellissandur	Hellissandur	Hellissandur	Hellissandur	Hellissandur	Hellissandur
+	1273	Grundarfjörður	64.9242700	-23.2631300	IS	45	0	0	Grundarfjörður	Grundarfjörður	Grundarfjörður	Grundarfjörður	Grundarfjörður	Grundarfjörður
+	1273	Búðardalur	65.1094400	-21.7639200	IS	45	0	0	Búðardalur	Búðardalur	Búðardalur	Búðardalur	Búðardalur	Búðardalur
+	1273	Borgarnes	64.5383400	-21.9206400	IS	45	0	0	Borgarnes	Borgarnes	Borgarnes	Borgarnes	Borgarnes	Borgarnes
+	1273	Arnarstapi	64.7693600	-23.6225800	IS	45	0	0	Arnarstapi	Arnarstapi	Arnarstapi	Arnarstapi	Arnarstapi	Arnarstapi
+	1273	Akranes	64.3217900	-22.0749000	IS	45	0	0	Akranes	Akranes	Akranes	Akranes	Akranes	Akranes

@@ -1,0 +1,34 @@
+<div class="load_content_controller">
+    <div class="inside">
+        <form id="delete_user" class="" action="{{ data.action }}" method="post" enctype="multipart/form-data">
+            <label class="col-xs-12">
+              {% helper lang.l('success_text_delete', 'media') %}</label>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).off('click', '#lie_delete').on('click', '#lie_delete', function() {
+          $('#delete_user').submit();
+        });
+        $('#delete_user').unbind('submit').on('submit', function (e) {
+            e.preventDefault();
+            var data = new Array();
+            $('.grouping:checked').each(function (i) {
+                data[i] = $(this).val();
+            });
+            if (data.length > 0) {
+                $.ajax({
+                    url: site_url + 'admin/media/ajax_delete_media/',
+                    data: {file_ids: data},
+                    type: "POST",
+                    cache: false,
+                    success: function (data) {
+                        reload_this_page('index/' + param);
+                    }
+                });
+            }
+        });
+    });
+</script>

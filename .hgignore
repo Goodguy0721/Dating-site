@@ -1,0 +1,11 @@
+application/libraries/dompdf/lib/fonts/fireflysung.ttf
+cgi-bin/
+chat/
+temp/
+uploads/
+vendor/
+adminer.php
+error_log
+config.php
+sitemap.xml
+\.zip

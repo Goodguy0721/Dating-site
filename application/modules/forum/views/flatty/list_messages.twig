@@ -1,0 +1,46 @@
+{% include '@app/header.twig' %}
+
+<h1>{{ subcategory.subcategory }}</h1>
+<a class="fright mr5" href="{{ site_url }}forum/edit_message/{{ subcategory.id }}" ><i class="fa fa-plus fa-lg" title="{% helper lang.l('link_add_message', 'forum') %}"></i></a>
+
+<div class="table-div wp100">
+	<dl>
+		<dt class="w150"><h2>{% helper lang.l('field_author', 'forum') %}</h2></dt>
+		<dt><h2>{% helper lang.l('field_message', 'forum') %}</h2></dt>
+		<dt class="w100 center"></dt>
+	</dl>
+</div>
+
+{% if messages is not empty %}
+	{% for key, item in messages %}
+		<div class="table-div wp100">
+			<dl>
+				<dt class="w150" style="vertical-align:top">
+					{% if item.is_admin == 1 %}
+						{% helper lang.l('admin_name', 'forum') %}
+					{% else %}
+						<a href="{{ site_url }}users/view/{{ item.user.id }}">{{ item.user.output_name }}</a>
+					{% endif %}
+					<br/>{% helper date_format.tpl_date_format(item.date_created, page_data.date_format) %}
+				</dt>
+				<dt class="wysiwyg">{{ item.subject }}<br/>{{ item.message }}</dt>
+				<dt class="w100 center">
+					<a class="mr5" href="{{ site_url }}forum/edit_message/{{ subcategory.id }}/0/{{ item.id }}" ><i class="fa fa-quote-right" title="{% helper lang.l('link_quote', 'forum') %}"></i></a>
+					{% if item.user.id == user_session_data.user_id %}
+						<a class="mr5" href="{{ site_url }}forum/edit_message/{{ subcategory.id }}/{{ item.id }}" ><i class="fa fa-pencil" title="{% helper lang.l('link_edit_message', 'forum') %}"></i></a>
+						<a class="mr5" href="javascript:void(0)" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_message', 'forum', '', 'js') %}')) {return false;}else{document.location='{{ site_url }}forum/delete_message/{{ item.id }}'}"><i class="fa fa-trash" title="{% helper lang.l('link_delete_message', 'forum') %}"></i></a>
+					{% endif %}
+				</dt>
+			</dl>
+		</div>
+	{% endfor %}
+
+	<div id="pages_block_2">
+		{% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+	</div>
+{% else %}
+	<div class="center">{% helper lang.l('no_messages', 'forum') %}</div>
+{% endif %}
+
+{% include '@app/footer.twig' %}

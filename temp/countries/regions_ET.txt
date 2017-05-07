@@ -1,0 +1,9 @@
+	993	Mek'ele	13.4966700	39.4752800	ET	53	0	0	Mek'ele	Mek'ele	Mek'ele	Mek'ele	Mek'ele	Mek'ele
+	993	Maych’ew	12.7875000	39.5422200	ET	53	0	0	Maych’ew	Maych’ew	Maych’ew	Maych’ew	Maych’ew	Maych’ew
+	993	Korem	12.5058300	39.5227800	ET	53	0	0	Korem	Korem	Korem	Korem	Korem	Korem
+	993	Inda Silasē	14.1030700	38.2828900	ET	53	0	0	Inda Silasē	Inda Silasē	Inda Silasē	Inda Silasē	Inda Silasē	Inda Silasē
+	993	Axum	14.1210900	38.7233700	ET	53	0	0	Axum	Axum	Axum	Axum	Axum	Axum
+	993	Ādīgrat	14.2770000	39.4620000	ET	53	0	0	Ādīgrat	Ādīgrat	Ādīgrat	Ādīgrat	Ādīgrat	Ādīgrat
+	993	Arepok	13.8420000	40.0080000	ET	53	0	0	Arepok	Arepok	Arepok	Arepok	Arepok	Arepok
+	993	Awdah	13.7570000	39.9840000	ET	53	0	0	Awdah	Awdah	Awdah	Awdah	Awdah	Awdah
+	993	Shaguby	13.6880000	39.8860000	ET	53	0	0	Shaguby	Shaguby	Shaguby	Shaguby	Shaguby	Shaguby

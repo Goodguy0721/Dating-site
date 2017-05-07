@@ -1,0 +1,3 @@
+	1049	Oyem	1.5995000	11.5793300	GA	09	0	0	Oyem	Oyem	Oyem	Oyem	Oyem	Oyem
+	1049	Mitzic	0.7820600	11.5490400	GA	09	0	0	Mitzic	Mitzic	Mitzic	Mitzic	Mitzic	Mitzic
+	1049	Bitam	2.0759700	11.5006500	GA	09	0	0	Bitam	Bitam	Bitam	Bitam	Bitam	Bitam

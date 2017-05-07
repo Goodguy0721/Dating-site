@@ -1,0 +1,11 @@
+{% include '@app/header.twig' %}
+
+<div class="container">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+
+    {{ chat_block }}
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,104 @@
+<div class="row row-content">
+    <div class="content-block load_content" id="product_{{ quick_view_data.id }}">
+        <form id="view_product">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="panel panel-default pg-panel-default">
+                    <div class="media pg-media clearfix">
+                        {% if quick_view_data.media.mediafile.thumbs.big is not empty %}
+                            <div class="product-main-media pg-thumbnail">
+                                <img class="img-rounded img-responsive" src="{{ quick_view_data.media.mediafile.thumbs.big }}" alt="{{ quick_view_data.name }}" title="{{ quick_view_data.name }}">
+                            </div>
+                        {% else %}
+                            <div class="default-big-image">
+                                <i class="fa fa-gift fa-5x"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="media-body">
+                    <h4 class="media-heading">{{ quick_view_data.name }}</h4>
+                    <div class="store-product-description">
+                        {% if quick_view_data.description %}
+                            <div class="mb10">
+                                {{ quick_view_data.description|nl2br }}
+                            </div>
+                        {% endif %}
+                        <div class="mb20">
+                            <ul>
+                                {% for opt in quick_view_data.options %}
+                                    {% set option_id = 'option_' ~ opt.id %}
+                                    <li class="ib fltl maxw200">
+                                        <div class="pr10">
+                                            {% helper store.store_options_values({
+                                                    'header': opt.name,
+                                                    'type': opt.type,
+                                                    'id': opt.id,
+                                                    'options': quick_view_data[option_id],
+                                                    'action': 'buy',
+                                                    'source': 'user'
+                                                }) %}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="clr"></div>
+                        </div>
+                        <div class="mb20">
+                            {% if quick_view_data.price > quick_view_data.price_reduced %}
+                                <div>
+                                    <span class="price-reduced price-old">
+                                        {% helper start.currency_format_output({
+                                                'value': quick_view_data.price
+                                            }) %}
+                                    </span>
+                                </div>
+                                <div class="bold view-price">
+                                    {% helper start.currency_format_output({
+                                            'value': quick_view_data.price_reduced
+                                        }) %}
+
+                                </div>
+                            {% else %}
+                                <div class="bold view-price">
+                                    {% helper start.currency_format_output({
+                                            'value': quick_view_data.price
+                                        }) %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="mb20">
+                            {% helper store.store_button_block({
+                                    'product': quick_view_data,
+                                    'method': 'view',
+                                    'class': 'btn btn-primary'
+                                }) %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="clr"></div>
+    </div>
+</div>
+
+<script>
+    loadScripts(
+            [
+                "{% helper utils.jscript('store', 'store_cart.js', 'path') %}",
+                "{% helper utils.jscript('', 'easyTooltip.min.js', 'path') %}"
+            ],
+            function () {
+                cart = new storeCart({
+                    siteUrl: site_url,
+                    langs: {
+                        add_cart_lang: '{% helper lang.l('button_in_cart', 'store') %}'
+                    }
+                });
+                $("[data-toggle=tooltip]").tooltip();
+            },
+            ['cart'],
+            {async: true}
+    );
+</script>

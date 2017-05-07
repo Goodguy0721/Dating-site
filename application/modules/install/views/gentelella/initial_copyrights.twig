@@ -1,0 +1,23 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+			<div class="x_title">
+					<h4>License Agreement</h4>
+			</div>
+			<div class="x_content">
+				<div class="form-group">
+					<textarea readonly cols="85" rows="40" class="form-control">{{ license }}</textarea>
+				</div>
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<a class="btn btn-success" href="{{ site_url }}admin/install/install_admin">I Agree</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,122 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+          <div id="actions" class="hide">
+            <div class="btn-group">
+              <a href="{{ site_url }}admin/store/options_edit/" class="btn btn-primary">
+                  {% helper lang.l('link_add_option', 'store') %}
+              </a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ site_url }}admin/store/options_edit/">
+                      {% helper lang.l('link_add_option', 'store') %}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title text-center">{% helper lang.l('field_category_name', 'store') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in options %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td class="icons">
+                            <div id="move_block">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.location.href = '{{ site_url }}admin/store/options_edit/{{ item.id }}'">
+                                        {% helper lang.l('btn_edit','start') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/store/options_edit/{{ item.id }}">
+                                                {% helper lang.l('btn_edit','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/store/option_fields/{{ item.id }}">{% spaceless %}
+                                                {% helper lang.l('link_edit_ds', 'store') %}
+                                            {% endspaceless %}</a>
+                                        </li>
+                                        <li>
+                                            <a onclick="javascript: if(!confirm('{% helper lang.l('note_delete_option', 'store', '', 'js') %}')) return false;"
+                                               href="{{ site_url }}admin/store/delete_option/{{ item.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+        </div>
+    </div>
+</div>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_options','store') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

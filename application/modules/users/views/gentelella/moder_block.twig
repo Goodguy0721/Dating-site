@@ -1,0 +1,32 @@
+<div class="view-user">
+    {% if data.dashboard_status == 'added' or data.dashboard_status  is not defined %}
+        <div class="form-group">
+            {% if data.user_logo_moderation %}
+                {% set source = data.media.user_logo_moderation.thumbs.big %}
+                {% set file_url = data.media.user_logo_moderation.file_url %}
+            {% else %}
+                {% set source = data.media.user_logo.thumbs.big %}
+                {% set file_url = data.media.user_logo.file_url %}
+            {% endif %}
+            <a href="{{ file_url }}" target="_blank">
+                <img src="{{ source }}" class="img-responsive">
+            </a>
+        </div>
+    {% endif %}
+    <div class="logo-cont form-group">
+        {% if data.fname or  data.sname %}
+            <label>{% helper lang.l('field_name', 'users') %}:</label>
+            <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank">
+                {{ data.fname }} {{ data.sname }}
+            </a>
+            <br/>
+        {% endif %}
+        {% if data.nickname %}
+            <label>{% helper lang.l('field_nickname', 'users') %}:</label>
+            <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank">
+                {{ data.nickname }}
+            </a>
+            <br/>
+        {% endif %}
+    </div>
+</div>

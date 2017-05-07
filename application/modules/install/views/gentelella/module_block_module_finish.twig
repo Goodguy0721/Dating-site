@@ -1,0 +1,18 @@
+    <h4>The module is successfully installed! </h4>
+    <div>
+    {% for item in messages %}
+    <b>{{ item }}</b><br><br>
+    {% endfor %}
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+      <div class-"col-xs-12">
+        <a href="{{ site_url }}admin/install/enable_modules"
+          name="finish_install" class="btn btn-success">Finish</a>
+      </div>
+    </div>
+<script>
+$(function(){
+    product_install.update_overall_progress({{ current_overall_percent }});
+});
+</script>

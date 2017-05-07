@@ -1,0 +1,8 @@
+	1502	Uenohara	35.6166700	139.1166700	JP	46	0	0	Uenohara	Uenohara	Uenohara	Uenohara	Uenohara	Uenohara
+	1502	Ryūō	35.6500000	138.5000000	JP	46	0	0	Ryūō	Ryūō	Ryūō	Ryūō	Ryūō	Ryūō
+	1502	Ōtsuki	35.6000000	138.9333300	JP	46	0	0	Ōtsuki	Оцуки	Ōtsuki	Ōtsuki	Ōtsuki	Ōtsuki
+	1502	Nirasaki	35.7000000	138.4500000	JP	46	0	0	Nirasaki	Nirasaki	Nirasaki	Nirasaki	Nirasaki	Nirasaki
+	1502	Kōfu	35.6666700	138.5666700	JP	46	0	0	Kōfu	Кофе	Kōfu	Kōfu	Kōfu	Kōfu
+	1502	Isawa	35.6500000	138.6333300	JP	46	0	0	Isawa	Isawa	Isawa	Isawa	Isawa	Isawa
+	1502	Enzan	35.7000000	138.7333300	JP	46	0	0	Enzan	Enzan	Enzan	Enzan	Enzan	Enzan
+	1502	Fujikawaguchiko	35.4893300	138.6883200	JP	46	0	0	Fujikawaguchiko	Фудзикавагутико	Fujikawaguchiko	Fujikawaguchiko	Fujikawaguchiko	Fujikawaguchiko

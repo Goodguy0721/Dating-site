@@ -1,0 +1,156 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% if max_results %}
+    <div class="filter-form">{% helper lang.l('error_no_editing', 'polls') %}</div>
+{% endif %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_language', 'polls') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="language" id="poll_language" class="form-control">
+                            <option value="0" {% if poll_data.language == 0 %}selected="selected"{% endif %}>
+                                {% helper lang.l('all_languages', 'polls') %}
+                            </option>
+                            {% if languages_count > 1 %}
+                                {% for lang_id, item in languages %}
+                                    <option value="{{ lang_id }}" {% if poll_data.language == lang_id %}selected="selected"{% endif %}>
+                                        {{ item.name }}
+                                    </option>
+                                {% endfor %}
+                            {% endif %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_question', 'polls') %}:</label>
+                </div>
+            {% if languages_count > 0 %}
+                {% for lang_id, item in languages %}
+                <div id="question_{{ lang_id }}" class="question p-top2 {% if poll_data.language > 0 and poll_data.language != lang_id %}hide{% endif %}">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">
+                          {{ item.name }}:</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="text" {% if max_results %}disabled="disabled"{% endif %} class="question_input form-control" id="question_input_{{ lang_id }}" name="question[{{ lang_id }}]"
+                                   value="{% if attribute(poll_data.question, lang_id) %}{{ attribute(poll_data.question, lang_id) }}{% else %}{{ poll_data.question.default }}{% endif %}">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_poll_type', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="poll_type" class="form-control">
+                            <option value="0" {% if poll_data.poll_type == 0 %}selected="selected"{% endif %}>
+                                {% helper lang.l('poll_type_0', 'polls') %}
+                            </option>
+                            {% for key, item in user_types.option %}
+                                <option value="{{ key }}"{% if poll_data.poll_type == key %} selected{% endif %}>
+                                    {{ item }}
+                                </option>
+                            {% endfor %}
+                            <option value="-1" {% if poll_data.poll_type == -1 %}selected="selected"{% endif %}>
+                                {% helper lang.l('poll_type_1', 'polls') %}
+                            </option>
+                            <option value="-2" {% if poll_data.poll_type == -2 %}selected="selected"{% endif %}>
+                                {% helper lang.l('poll_type_2', 'polls') %}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_answer_type', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="answer_type" class="form-control" {% if max_results %}disabled="disabled"{% endif %}>
+                            <option value="0" {% if poll_data.answer_type == 0 %}selected="selected"{% endif %}>
+                                {% helper lang.l('answer_type_0', 'polls') %}
+                            </option>
+                            <option value="1" {% if poll_data.answer_type == 1 %}selected="selected"{% endif %}>
+                                {% helper lang.l('answer_type_1', 'polls') %}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_sorter', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select name="sorter" class="form-control">
+                            <option value="0" {% if poll_data.sorter == 0 %}selected="selected"{% endif %}>
+                                {% helper lang.l('sorter_0', 'polls') %}
+                            </option>
+                            <option value="1" {% if poll_data.sorter == 1 %}selected="selected"{% endif %}>
+                                {% helper lang.l('sorter_1', 'polls') %}
+                            </option>
+                            <option value="2" {% if poll_data.sorter == 2 %}selected="selected"{% endif %}>
+                                {% helper lang.l('sorter_2', 'polls') %}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_show_results', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="checkbox" name="show_results" {% if poll_data.show_results %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('use_comments', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="checkbox" name="use_comments" {% if poll_data.use_comments %}checked{% endif %} class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_date_start', 'polls') %}: </label>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        {% helper start.getCalendarInput('date_start', '', {id: 'date_start', tstamp: poll_data.date_start_tstamp}) %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_date_end', 'polls') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input id="use_expiration" type="checkbox" name="use_expiration" value="1" {% if poll_data.use_expiration %}checked{% endif %} class='flat'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        {% helper start.getCalendarInput('date_end', '', {id: 'date_end', tstamp: poll_data.date_end_tstamp, disabled: not poll_data.use_expiration}) %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                  <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                    <input type="submit" class='btn btn-success' name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                    <a class="btn btn-default" href="{{ site_url }}admin/polls">{% helper lang.l('btn_cancel', 'start') %}</a>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var polls;
+    $(function () {
+        polls = new adminPolls({
+            siteUrl: '{{ site_url }}'
+        });
+        polls.bind_events();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

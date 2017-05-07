@@ -1,0 +1,96 @@
+.service{
+    padding-bottom: 15px;
+}
+.service .service-title{
+}
+.service .service-name{
+    font-weight: bold;
+    line-height: 22px;
+    padding-right: 15px;
+    float:left;
+}
+.service .service-control{
+    float:left;
+}
+.service .service-control .btn{
+    padding: 0px 12px;
+}
+.service .service-description{
+    line-height: 22px;
+}
+@media (min-width: 992px){
+    .services .service:nth-child(3n+4){
+        clear:both;
+    }
+}
+@media (max-width: 991px) {
+    .services .service:nth-child(2n+3){
+        clear:both;
+    }
+}
+
+.services-payment-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.service-payment-form  {
+    
+    .billing-systems-block {
+        margin-top: 20px;
+        display: none;
+    }    
+    .billing-method {
+        border: 2px solid $delimiter_color;
+        background-color: $content_bg;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        &:hover {
+            border: 2px solid $link_color;
+        }
+        &.selected {
+            border: 2px solid $link_color;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+    .main-title{
+        font-size: 25px;
+        font-weight: bold;
+        padding-bottom: 25px;
+    }
+    .select-payment-method {
+        border-bottom: 1px dashed $link_color;
+        cursor: pointer;
+        color: $link_color;
+
+         &:hover {
+            border-bottom: 0;
+            text-decoration: none;
+        }
+    }
+    .service-description{
+        border: 2px $delimiter_color solid;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 5px;
+        background:$content_bg;
+        line-height: 32px;
+        
+        .service-title {
+            color: $header_color;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .write-off{
+        padding: 15px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 768px) {
+
+}

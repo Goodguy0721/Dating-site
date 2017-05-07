@@ -1,0 +1,168 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_notifications_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if filter == 'all' %} active {% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/notifications/templates/all'">
+                        <input type="radio">
+                        {% helper lang.l('filter_all_templates', 'notifications') %} ({{ filter_data.all }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'text' %} active {% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/notifications/templates/text'">
+                        <input type="radio">
+                        {% helper lang.l('filter_text_templates', 'notifications') %} ({{ filter_data.text }})
+                    </label>
+                    <label class="btn btn-default{% if filter == 'html' %} active {% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/notifications/templates/html'">
+                        <input type="radio">
+                        {% helper lang.l('filter_html_templates', 'notifications') %} ({{ filter_data.html }})
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+          <div id="actions" class="hide">
+          {% if allow_edit %}
+              <div class="btn-group">
+                  <a href="{{ site_url }}admin/notifications/template_edit" class="btn btn-primary">
+                      {% helper lang.l('link_add_template', 'notifications') %}
+                  </a>
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{ site_url }}admin/notifications/template_edit">
+                          {% helper lang.l('link_add_template', 'notifications') %}
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+          {% endif %}
+          </div>
+            <table id="table" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">
+                            <a href="{{ sort_links.name }}"{% if order == 'name' %} class="{{ order_direction|lower }}"{% endif %}>{% helper lang.l('field_template_name', 'notifications') %}</a></th>
+                        <th class="column-title">{% helper lang.l('field_content_type', 'notifications') %}</th>
+                        <th class="column-title"><a href="{{ sort_links.date_add }}"{% if order == 'date_add' %} class="{{ order_direction|lower }}"{% endif %}>{% helper lang.l('field_date_add', 'notifications') %}</a></th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in templates %}
+                        <tr class="even pointer">
+                            <td>{{ item.name }}</td>
+                            <td class="center">
+                                {% helper lang.l('field_content_type_' ~ item.content_type, 'notifications') %}
+                            </td>
+                            <td class="center">
+                                {% helper date_format.tpl_date_format(item.date_add,page_data.date_format) %}
+                            </td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.location.href='{{ site_url }}admin/notifications/template_edit/{{ item.id }}'">
+                                        {% helper lang.l('link_edit_template', 'notifications') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/notifications/template_edit/{{ item.id }}">
+                                                {% helper lang.l('link_edit_template', 'notifications') %}
+                                            </a>
+                                        </li>
+                                        {% if allow_edit %}
+                                            <li>
+                                                <a href="{{ site_url }}admin/notifications/template_delete/{{ item.id }}"
+                                                   onclick="javascript: if(!confirm('{% helper lang.l('note_delete_template', 'notifications', '', 'js') %}'))
+                                                   return false;">
+                                                    {% helper lang.l('link_delete_template', 'notifications') %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#table').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_templates','notifications') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [3]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#table_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,95 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+      <div class="x_content">
+
+    <form method="post" enctype="multipart/form-data" data-parsley-validate
+          class="form-horizontal form-label-left" name="save_form"
+          action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Permissions for config file:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        {% if data.config_writeable %}
+                        <font class="success">file <b>'{{ data.config_file }}'</b> <br>is writeable</font>
+                        {% else %}
+                        <font class="error">Please change file permissions to 777 <br><b>'{{ data.config_file }}'</b></font>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Login:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.config_login }}" name="install_login" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">Password:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.config_password }}" name="install_password" class="form-control">
+                    </div>
+                </div>
+
+    {% if data.ftp %}
+
+                <div class="x_title">
+                    <h4>FTP access info</h4><i>(necessary to update modules)</i>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">FTP host:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.ftp_host }}" name="ftp_host" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">FTP path to site subfolder:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.ftp_path }}" name="ftp_path" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">FTP user:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.ftp_user }}" name="ftp_user" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">FTP password:</label>
+                    <div class="col-sm-9 col-xs-12`">
+                        <input type="text" value="{{ data.ftp_password }}" name="ftp_password" class="form-control">
+                    </div>
+                </div>
+
+    {% endif %}
+
+                <div class="x_title">
+                    <h4>Limit access to installation by IP address</h4>
+                </div>
+
+                  <div class="form-group">
+                      <label class="control-label col-sm-3 col-xs-12">Enable IP limit:</label>
+                      <div class="col-sm-9 col-xs-12">
+                          <input type="checkbox" value="1" name="installer_ip_protect" {% if data.installer_ip_protect %}checked{% endif %} class="flat">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label col-sm-3 col-xs-12">IP address&nbsp;<i>(delimiter ','):</i></label>
+                      <div class="col-sm-9 col-xs-12">
+                          <textarea name="installer_ip" class="form-control">{{ data.installer_ip }}</textarea>
+                      </div>
+                  </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input type="button" class="btn btn-success" name="save_install_login" value="Save data"
+                          {% if not data.config_writeable %}disabled{% endif %}>
+                        <a class="btn btn-primary" href="{{ site_url }}admin/install/installer_settings">Refresh</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% include '@app/footer.twig' %}

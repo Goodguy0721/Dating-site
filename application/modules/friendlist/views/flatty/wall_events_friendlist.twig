@@ -1,0 +1,60 @@
+{% for key, edata in event.data %}
+	{% set id_dest_user=edata.id_dest_user %}
+    {% if attribute(users, id_dest_user) %}
+        {% set dest_user=attribute(users, id_dest_user) %}
+    {% else %}
+        {% set id_dest_user = '0' %}
+        {% set dest_user=attribute(users, id_dest_user) %}
+    {% endif %}
+
+	<span class="b-media-wallpost__heading">
+		{% helper lang.l('wall_events_and', 'friendlist') %}
+	    {% if id_dest_user != 0 %}
+			<a href="{% helper seo.seolink('users', 'view', dest_user) %}">
+				{{ dest_user.output_name }}
+			</a>
+	    {% else %}
+	        <a href="{% helper seo.seolink('users', 'untitled') %}">
+	            {{ dest_user.output_name }}
+	        </a>
+	    {% endif %}
+
+        {% if event.event_type_gid == 'friend_add' %}
+			{% helper lang.l('wall_now_friends', 'friendlist') %}
+		{% elseif event.event_type_gid == 'friend_del' %}
+			{% helper lang.l('wall_not_friends', 'friendlist') %}
+		{% endif %}
+	</span>
+
+    <div class="wall-post-date">
+        {% helper date.tpl_date_format(edata.event_date, date_format) %}
+    </div>
+
+	<div class="media b-media-wallpost__content">
+        <div class="media-left">
+			{% if id_dest_user != 0 %}
+                <a class="g-pic-border g-rounded-small" href="{% helper seo.seolink('users', 'view', dest_user) %}">
+                    {% helper users.formatAvatar({'user': dest_user, 'size': 'small' }) %}
+				</a>
+            {% else %}
+                <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'untitled') %}">
+					<img class="media-object" src="{{ dest_user.media.user_logo.thumbs.small }}" width="30" />
+				</a>
+            {% endif %}
+        </div>
+
+        <div class="media-body">
+            <span class="b-media-wallpost__heading">
+                {% if id_dest_user != 0 %}
+					<a href="{% helper seo.seolink('users', 'view', dest_user) %}">
+						{{ dest_user.output_name }}
+					</a>
+                {% else %}
+                    <a href="{% helper seo.seolink('users', 'untitled') %}">
+                        {{ dest_user.output_name }}
+                    </a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+{% endfor %}

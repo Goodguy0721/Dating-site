@@ -1,0 +1,6 @@
+{% if options_values.show %}
+	{{ options_values.header }}:
+	{% for id_key, val in options_values.option %}
+		{% if val.sel %}&nbsp;{{ val.name }}<input type="hidden" name="options[{{ item_id }}][{{ options_values.id }}]" value="{{ id_key }}">{% endif %}
+	{% endfor %}
+{% endif %}

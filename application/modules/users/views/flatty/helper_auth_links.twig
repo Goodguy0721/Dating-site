@@ -1,0 +1,34 @@
+{% if auth_type == 'user' %}
+    <div class="user_quick_menu">
+        <a id="users_link_profile" href="#" class="user-link-profile fright"
+           data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button"
+           aria-expanded="false">
+            <img src="{{ user_session_data.logo }}" class="img-rounded" width="30" height="30">
+        </a>
+        <div class="dropdown-menu" role="menu" aria-labelledby="users_link_profile">
+            <div class="menu-more-triangle"></div>
+            {% helper menu.get_menu('settings_menu', 'settings_menu') %}
+        </div>
+    </div>
+{% else %}
+    <a href="javascript:void(0);" id="ajax_login_link" class="top-menu-item">
+        {% helper lang.l('header_login', 'users') %}
+    </a>
+    <a href="javascript:void(0);" id="ajax_register_link" class="top-menu-item hide">
+        Register
+    </a>
+    <script>
+        $(function () {
+            loadScripts(
+                    ["{% helper utils.jscript('users', 'users-auth.js', 'path') %}"],
+                    function () {
+                        usersAuth = new UsersAuth({
+                            siteUrl: site_url,
+                        });
+                    },
+                    ['usersAuth'],
+                    {async: true}
+            );
+        });
+    </script>
+{% endif %}

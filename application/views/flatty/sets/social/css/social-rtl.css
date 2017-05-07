@@ -1,0 +1,277 @@
+html, body, .index-page .main, .index-page .main > .content {
+    height: 100% !important;
+    min-height: 100%;
+}
+
+.header {
+    background: #FFFFFF;
+}
+
+#header-menu > li,
+#header-menu > li:first-child {
+    border: none;
+}
+
+#header-menu > li:hover,
+#header-menu > li:first-child:hover {
+    background: #3498DB;
+}
+
+.footer.footer-index {
+    background: #FFFFFF;
+    margin-top: -50px;
+}
+
+.footer ul > li {
+    text-transform: none;
+    width: auto;
+    margin-right: 40px;
+}
+
+.footer > .content > ul > li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer .copyright {
+    margin: 0 auto;
+    width: 980px;
+    background: none;
+}
+
+.logo_header,
+.index-menu {
+    line-height: 70px;
+    overflow: hidden;
+}
+
+.index-page::before {
+    margin: 0;
+    background-position: center 70px;
+}
+
+.footer .copyright {
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 12px;
+}
+
+.promo-text {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+
+    color: #0C1820;
+
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.social_logo {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.index-social {
+    position: relative;
+    height: 100%;
+}
+
+.language-selector {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    z-index: 2;
+}
+
+.auth-links {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.auth-links a:hover {
+    text-decoration: none;
+}
+
+.auth-links li {
+    display: inline;
+}
+
+.auth-links li a {
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: normal;
+    text-transform: none;
+    background: #3498DB;
+}
+
+#ajax_login_link {
+    background: none;
+    color: #3498DB;
+}
+
+.mobile_apps {
+    margin: 15px auto;
+}
+
+.android_app, .ios_app {
+    display: inline-block;
+    width: 170px;
+    height: 52px;
+}
+
+.android_app {
+    background: url(../../../img/google-play-logo.png) 10px 0 no-repeat;
+}
+
+.ios_app {
+    background: url(../../../img/app-store-logo.png) 10px 0 no-repeat;
+}
+
+.pjaxcontainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.pjaxcontainer_inner {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    min-height: 0;
+}
+
+.footer {
+    position: relative;
+}
+
+.memberships-table {
+    margin: 10px 0px;
+}
+.memberships-table .package-info{
+    float: right;
+}
+.memberships-table .package-actions{
+    margin-right: 100px;
+}
+.memberships-table table tbody tr td {
+    vertical-align:bottom;
+}
+.membership-block {
+    text-align: center;
+}
+.membership-block .name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.membership-block .price {
+    font-size: 24px;
+}
+.membership-block .btn {
+    width: 120px;
+    padding: 3px 12px;
+    margin-bottom: 15px;
+}
+
+.memberships-table .services {
+    min-width: 180px;
+    font-size: 13px;
+}
+@media (max-width: 768px) {
+    .memberships-table .services {
+        display: none !important;
+    }
+    .membership-block {
+        display: block !important;
+        padding: 20px 0 0 !important;
+    }
+}
+@media (min-width: 768px) {
+    .membership-block {
+        border-top: 0 !important;
+    }
+    .memberships-table .services {
+        border-top: 0 !important;
+    }
+}
+
+
+/* memberships' list horizontal */
+.b-memberships__list {
+    margin-bottom: 15px;
+}
+.b-memberships__item {
+    margin-bottom: 5px;
+}
+.b-memberships__item :last-child {
+    margin-bottom: 0;
+}
+.b-member-plan {
+    background: #fff;
+    border: 2px #ddd solid;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+.b-member-plan__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 4px;
+}
+.b-member-plan__advert {
+    font-size: 11px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.b-member-plan__offers {
+    font-size: 12px;
+}
+.b-member-plan__offers li {
+    padding: 4px 0 3px 0;
+}
+.b-member-plan__price {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.b-member-plan__price div {
+    display: block;
+}
+.b-member-plan__price_bought {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .b-member-plan {
+        text-align: right;
+    }
+    .b-member-plan__offers {
+        max-width: 300px;
+    }
+    .b-member-plan__price {
+        padding: 0;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .b-member-plan__price div {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,91 @@
+.video-chat {
+    background: url("../../../img/bg-video.jpg") no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    
+    .video-chat header {
+        background-color: rgba(0,0,0,.6);
+        color: #fff;
+        height: 50px;
+        #{$left}: 0;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        transition: height .5s;
+        width: 100%;
+    }
+    
+    .video-chat__right-link {
+        float: $right;
+    }
+
+    .video-chat__right-link li {
+        cursor: pointer;
+        float: $left;
+        font-size: 16px;
+        padding: 15px;
+        
+        &:hover {
+            background-color: rgba(255,255,255,.24);
+        }
+        
+        i {
+            color: #fff;
+            font-size: 20px;
+            padding: 0 5px;
+        }
+        
+        .fa-sign-in {
+            opacity: 0.8;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .video-chat__info-block-1 {
+        font-size: 20px;
+        padding: 10px; 
+    }
+    
+    .video-chat__info-block-2 {
+        padding: 10px; 
+    }
+    
+    .col-chat-item video {
+        height: 80%; 
+        width: 100%;
+    }
+    
+    @media (max-width: 480px) {
+        .col-chat-item {
+            height: auto;
+            margin: 0;
+            
+            &:first-child {
+                bottom: 10px;
+                height: auto;
+                position: absolute;
+                #{$right}: 10px;
+                width: 150px;
+                z-index: 2;
+            } 
+            
+            & + .col-chat-item {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
+        .block-user {
+            top: 10px;
+            #{$right}: 10px;
+        }
+    }
+}    
+
+

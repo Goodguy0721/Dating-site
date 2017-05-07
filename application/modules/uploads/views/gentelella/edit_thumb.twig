@@ -1,0 +1,107 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+<link type="text/css" rel="stylesheet" href="{{ site_root }}application/modules/uploads/js/colorpicker/colorpicker.css"/>
+{% helper utils.jscript('uploads', 'colorpicker.min.js') %}
+
+<div class="x_panel">
+    <div class="x_title h4">
+        {% if data.id %}
+            {% helper lang.l('admin_header_thumb_change', 'uploads') %}
+        {% else %}
+            {% helper lang.l('admin_header_thumb_add', 'uploads') %}
+        {% endif %}
+    </div>
+
+    <form method="post" action="{{ data.action }}" class="form-horizontal" name="save_form" enctype="multipart/form-data">
+	<div class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_prefix', 'uploads') %}: </label>
+		<div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" value="{{ data.prefix }}" name="prefix" class="form-control">
+        </div>
+	</div>
+	<div class="row form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_sizes', 'uploads') %}: </label>
+		<div class="col-md-9 col-sm-9 col-xs-12">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-5">
+                    <input type="text" value="{{ data.width }}" name="width" class="form-control"></div>
+                <div class="col-md-1 col-sm-1 col-xs-1 center">X</div>
+                <div class="col-md-4 col-sm-4 col-xs-5">
+                    <input type="text" value="{{ data.height }}" name="height" class="form-control"></div>
+            </div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_resize_type', 'uploads') %}: </label>
+		<div class="col-md-9 col-sm-9 col-xs-12">
+        {% for key, item in lang_thumb_crop_param.option %}
+			<input class="flat" type="radio" name="crop_param"
+                {% if data.crop_param == key %} checked{% endif %} value="{{ key }}"
+                id="cp_{{ key }}">&nbsp;<label for="cp_{{ key }}">{{ item }}</label>
+			{% if key == 'color' %}
+				&nbsp;&nbsp;{% helper lang.l('field_resize_bg_color', 'uploads') %}:
+				<input type="hidden" name="crop_color" id="crop_color" value="{{ data.crop_color }}">
+				<input style="width: 50px;" class="color-pick" id="crop_color_block" readonly>
+                    <span class="color-pick-data" id="crop_color_data">#{{ data.crop_color }}</span>
+				<script>
+				$(function(){
+					if($('#crop_color').val() != '') $('#crop_color_block').css('background-color', '#'+$('#crop_color').val());
+					$('#crop_color_block').ColorPicker({
+						onSubmit: function(hsb, hex, rgb, el) {
+							$('#crop_color').val(hex);
+							$('#crop_color_data').html('#' + hex);
+							$('#crop_color_block').css('background-color', '#' + hex);
+							$(el).ColorPickerHide();
+						},
+						onChange: function(hsb, hex, rgb, el) {
+							$('#crop_color').val(hex);
+							$('#crop_color_data').html('#' + hex);
+							$('#crop_color_block').css('background-color', '#' + hex);
+						},
+						onBeforeShow: function () {
+							$(this).ColorPickerSetColor($('#crop_color').val());
+						}
+					});
+				});
+				</script>
+			{% endif %}
+			<br>
+        {% endfor %}
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_thumb_watermark', 'uploads') %}: </label>
+		<div class="col-md-9 col-sm-9 col-xs-12">
+			<select name="watermark_id" class="form-control">
+                <option value="0">...</option>
+            {% for key, item in watermarks %}
+                <option value="{{ item.id }}" {% if item.id == data.watermark_id %}selected{% endif %}>
+                    {{ item.name }} ({{ item.gid }})</option>
+            {% endfor %}
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_effects', 'uploads') %}: </label>
+		<div class="col-md-9 col-sm-9 col-xs-12">
+			<select name="effect" class="form-control">
+            {% for key, item in lang_thumb_effect.option %}
+                <option value="{{ key }}" {% if key == data.effect %}selected{% endif %}>{{ item }}</option>
+            {% endfor %}
+            </select>
+		</div>
+	</div>
+	<div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+            <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+            <a class="btn btn-default" href="{{ site_url }}admin/uploads/config_thumbs/{{ config_id }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+        </div>
+    </div>
+</form>
+</div>
+{% include '@app/footer.twig' %}

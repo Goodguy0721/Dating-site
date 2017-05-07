@@ -1,0 +1,103 @@
+{% include '@app/header.twig' %}
+
+{# <link rel="stylesheet" type="text/css" href="{{ site_url }}application/modules/clubs/views/flatty/css/style-{{ _LANG.rtl }}.css"> #}
+
+<style type="text/css">
+    .view-group__forum-posts {}
+    .forum-posts__item { padding: 10px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
+    .forum-posts__item:last-of-type { border-bottom: none; }
+    .add-post-form { margin-top:10px; }
+    .forum-posts__user-location { font-size:0.9em; color:#777; }
+    .forum-post__header { color: #777; font-size: 0.85em; margin-bottom: 5px; }
+</style>
+
+<div class="user-profile-view">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        {% include 'view_left_block.twig' %}
+
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-image'}) %}
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-video'}) %}
+
+        {% helper banners.show_banner_place('banner-185x75') %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+    </div>
+
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" style="margin-top:15px;">
+        <div class="description">
+            {% include 'view_club_menu.twig' %}
+            <div class="view-user">
+                {% if club.is_joined %}
+                <div class="add-post-form">
+                    <form method="POST" action="{{ site_url }}clubs/topic/{{ topic.id }}">
+                        <div class="b-timeline-addpost">
+                            <div class="form-group clearfix">
+                                <div>
+                                    <textarea required="" placeholder="{% helper lang.l('placeholder_add_message', 'clubs', '', 'button') %}" name="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-sm-8 col-md-8"></div>
+                                    <div class="col-sm-4 col-md-4 text-right">
+                                        <button type="submit" class="btn btn-primary" value="1" name="btn_add_post">
+                                            {% helper lang.l('btn_send', 'start') %}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% endif %}
+
+                <div class="view-group__forum-posts">
+                    {% for post in posts %}
+                        <div class="forum-posts__item clearfix">
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <a href="{% helper seo.seolink('users', 'view', post.user) %}">
+                                    <img src="{{ post.user.media.user_logo.thumbs.small}}" class="g-rounded g-pic-border" />
+                                </a>
+                                <div>
+                                    <a href="{% helper seo.seolink('users', 'view', post.user) %}">
+                                        {{ post.user.output_name }}, {{ post.user.age }}
+                                    </a>
+                                </div>
+                                {% if post.user.location %}
+                                    <div class="forum-posts__user-location">{{ post.user.location }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <div class="forum-post__header">
+                                    <div class="forum-post__header__date">
+                                        {% helper date_format.tpl_date_format(post.date_added, date_format) %}
+
+                                        {% if post.user_id == user_id %}
+                                            <a class="pull-right" href="{{ site_url }}clubs/deletePost/{{ post.id }}">{% helper lang.l('link_delete', 'clubs') %}</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="forum-post__message">
+                                    {{ post.message }}
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="forum-posts__item no-posts clearfix">
+                            {% helper lang.l('no_forum_posts', 'clubs') %}
+                        </div>
+                    {% endfor %}
+                    <div class="clr"></div>
+                    {% if posts %}
+                        <div class="line top">
+                            {% set page_data = page_data|merge({'type': 'full'}) %}
+                            {% helper start.pagination(page_data) %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% helper banners.show_banner_place('banner-980x90') %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

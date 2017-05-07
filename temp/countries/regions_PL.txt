@@ -1,0 +1,293 @@
+	2638	Złota	51.7717700	20.1579400	PL	74	0	0	Złota	Złota	Złota	Złota	Złota	Złota
+	2638	Żelechlinek	51.7121400	20.0346000	PL	74	0	0	Żelechlinek	Żelechlinek	Żelechlinek	Żelechlinek	Żelechlinek	Żelechlinek
+	2638	Żarnów	51.2460700	20.1747600	PL	74	0	0	Żarnów	Żarnów	Żarnów	Żarnów	Żarnów	Żarnów
+	2638	Żabia Wola	52.0316900	20.6911200	PL	74	0	0	Żabia Wola	Żabia Wola	Żabia Wola	Żabia Wola	Żabia Wola	Żabia Wola
+	2638	Wola Załężna	51.3927800	20.3178400	PL	74	0	0	Wola Załężna	Wola Załężna	Wola Załężna	Wola Załężna	Wola Załężna	Wola Załężna
+	2638	Wola Wysoka	51.8646700	20.1205200	PL	74	0	0	Wola Wysoka	Wola Wysoka	Wola Wysoka	Wola Wysoka	Wola Wysoka	Wola Wysoka
+	2638	Tomaszów Mazowiecki	51.5313100	20.0085500	PL	74	0	0	Tomaszów Mazowiecki	Томашув-Мазовецкий	Tomaszów Mazowiecki	Tomaszów Mazowiecki	Tomaszów Mazowiecki	Tomaszów Mazowiecki
+	2638	Sławno	51.3927300	20.1404300	PL	74	0	0	Sławno	Sławno	Sławno	Sławno	Sławno	Sławno
+	2638	Skierniewice	51.9548500	20.1583700	PL	74	0	0	Skierniewice	Скерневице	Skierniewice	Skierniewice	Skierniewice	Skierniewice
+	2638	Sadkowice	51.7251700	20.5146500	PL	74	0	0	Sadkowice	Sadkowice	Sadkowice	Sadkowice	Sadkowice	Sadkowice
+	2638	Rzeczyca	51.5982400	20.2948400	PL	74	0	0	Rzeczyca	Rzeczyca	Rzeczyca	Rzeczyca	Rzeczyca	Rzeczyca
+	2638	Regnów	51.7485000	20.3871100	PL	74	0	0	Regnów	Regnów	Regnów	Regnów	Regnów	Regnów
+	2638	Rawa Mazowiecka	51.7643700	20.2549300	PL	74	0	0	Rawa Mazowiecka	Рава-Мазовецкая	Rawa Mazowiecka	Rawa Mazowiecka	Rawa Mazowiecka	Rawa Mazowiecka
+	2638	Psary	51.8771300	20.3111500	PL	74	0	0	Psary	Psary	Psary	Psary	Psary	Psary
+	2638	Psary	51.3488400	20.1483200	PL	74	0	0	Psary	Psary	Psary	Psary	Psary	Psary
+	2638	Przyłęk	51.2701300	20.0692700	PL	74	0	0	Przyłęk	Przyłęk	Przyłęk	Przyłęk	Przyłęk	Przyłęk
+	2638	Poświętne	51.5320300	20.3645300	PL	74	0	0	Poświętne	Poświętne	Poświętne	Poświętne	Poświętne	Poświętne
+	2638	Paradyż	51.3060400	20.1137400	PL	74	0	0	Paradyż	Paradyż	Paradyż	Paradyż	Paradyż	Paradyż
+	2638	Paprotnia	51.7128800	20.5600500	PL	74	0	0	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia
+	2638	Opoczno	51.3756900	20.2782700	PL	74	0	0	Opoczno	Опочно	Opoczno	Opoczno	Opoczno	Opoczno
+	2638	Nieborów	52.0777100	20.0690200	PL	74	0	0	Nieborów	Nieborów	Nieborów	Nieborów	Nieborów	Nieborów
+	2638	Mniszków	51.3701700	20.0391500	PL	74	0	0	Mniszków	Mniszków	Mniszków	Mniszków	Mniszków	Mniszków
+	2638	Maków	51.9469600	20.0521100	PL	74	0	0	Maków	Maków	Maków	Maków	Maków	Maków
+	2638	Lubochnia	51.6079400	20.0539100	PL	74	0	0	Lubochnia	Lubochnia	Lubochnia	Lubochnia	Lubochnia	Lubochnia
+	2638	Łochów	51.7387800	20.1046400	PL	74	0	0	Łochów	Łochów	Łochów	Łochów	Łochów	Łochów
+	2638	Kunice	51.4009200	20.1857500	PL	74	0	0	Kunice	Kunice	Kunice	Kunice	Kunice	Kunice
+	2638	Kraszków	51.3722100	20.4088200	PL	74	0	0	Kraszków	Kraszków	Kraszków	Kraszków	Kraszków	Kraszków
+	2638	Kowiesy	51.8894200	20.4192900	PL	74	0	0	Kowiesy	Kowiesy	Kowiesy	Kowiesy	Kowiesy	Kowiesy
+	2638	Konopnica	51.7866400	20.2922600	PL	74	0	0	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica
+	2638	Kocierzew Północny	52.2323700	20.0240400	PL	74	0	0	Kocierzew Północny	Kocierzew Północny	Kocierzew Północny	Kocierzew Północny	Kocierzew Północny	Kocierzew Północny
+	2638	Kawęczyn Nowy	51.8859700	20.2470300	PL	74	0	0	Kawęczyn Nowy	Kawęczyn Nowy	Kawęczyn Nowy	Kawęczyn Nowy	Kawęczyn Nowy	Kawęczyn Nowy
+	2638	Inowłódz	51.5271700	20.2230000	PL	74	0	0	Inowłódz	Inowłódz	Inowłódz	Inowłódz	Inowłódz	Inowłódz
+	2638	Idzikowice	51.4489800	20.3387800	PL	74	0	0	Idzikowice	Idzikowice	Idzikowice	Idzikowice	Idzikowice	Idzikowice
+	2638	Godzianów	51.8969400	20.0358900	PL	74	0	0	Godzianów	Godzianów	Godzianów	Godzianów	Godzianów	Godzianów
+	2638	Głuchów	51.7794700	20.0766600	PL	74	0	0	Głuchów	Głuchów	Głuchów	Głuchów	Głuchów	Głuchów
+	2638	Drzewica	51.4508500	20.4770100	PL	74	0	0	Drzewica	Drzewica	Drzewica	Drzewica	Drzewica	Drzewica
+	2638	Dąbrowa	51.4773200	20.1504700	PL	74	0	0	Dąbrowa	Dąbrowa	Dąbrowa	Dąbrowa	Dąbrowa	Dąbrowa
+	2638	Czerwonka	51.7005400	20.1118500	PL	74	0	0	Czerwonka	Czerwonka	Czerwonka	Czerwonka	Czerwonka	Czerwonka
+	2638	Czerniewice	51.6541900	20.1555300	PL	74	0	0	Czerniewice	Czerniewice	Czerniewice	Czerniewice	Czerniewice	Czerniewice
+	2638	Cielądz	51.7157600	20.3442800	PL	74	0	0	Cielądz	Cielądz	Cielądz	Cielądz	Cielądz	Cielądz
+	2638	Bukowiec Opoczyński	51.4168200	20.2658300	PL	74	0	0	Bukowiec Opoczyński	Bukowiec Opoczyński	Bukowiec Opoczyński	Bukowiec Opoczyński	Bukowiec Opoczyński	Bukowiec Opoczyński
+	2638	Buczek	51.4604200	20.2993900	PL	74	0	0	Buczek	Buczek	Buczek	Buczek	Buczek	Buczek
+	2638	Bolimów	52.0767100	20.1635200	PL	74	0	0	Bolimów	Болимув	Bolimów	Bolimów	Bolimów	Bolimów
+	2638	Bobrowniki	52.0644200	20.0194900	PL	74	0	0	Bobrowniki	Бобровники	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki
+	2638	Biała Rawska	51.8077900	20.4725900	PL	74	0	0	Biała Rawska	Бяла-Равска	Biała Rawska	Biała Rawska	Biała Rawska	Biała Rawska
+	2638	Białaczów	51.2981500	20.2972400	PL	74	0	0	Białaczów	Białaczów	Białaczów	Białaczów	Białaczów	Białaczów
+	2638	Baranów	52.1198900	20.4728500	PL	74	0	0	Baranów	Baranów	Baranów	Baranów	Baranów	Baranów
+	2638	Adamów	51.9166900	20.2375000	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.3591900	20.4003200	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.1959700	20.1376000	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Żytno	50.9272200	19.6277600	PL	74	0	0	Żytno	Żytno	Żytno	Żytno	Żytno	Żytno
+	2638	Żychlin	52.2440400	19.6261300	PL	74	0	0	Żychlin	ЖИХЛИН	Żychlin	Żychlin	Żychlin	Żychlin
+	2638	Złoczew	51.4171900	18.6036300	PL	74	0	0	Złoczew	Злочев	Złoczew	Złoczew	Złoczew	Złoczew
+	2638	Zgierz	51.8556100	19.4062300	PL	74	0	0	Zgierz	Згеж	Zgierz	Zgierz	Zgierz	Zgierz
+	2638	Zelów	51.4645200	19.2197200	PL	74	0	0	Zelów	Зелюв	Zelów	Zelów	Zelów	Zelów
+	2638	Nowe Zduny	52.1442300	19.8083500	PL	74	0	0	Nowe Zduny	Nowe Zduny	Nowe Zduny	Nowe Zduny	Nowe Zduny	Nowe Zduny
+	2638	Zduny	52.1560300	19.8164200	PL	74	0	0	Zduny	Zduny	Zduny	Zduny	Zduny	Zduny
+	2638	Zduny	52.0310600	19.1188700	PL	74	0	0	Zduny	Zduny	Zduny	Zduny	Zduny	Zduny
+	2638	Zduńska Wola	51.5991500	18.9397400	PL	74	0	0	Zduńska Wola	Здуньская-Воля	Zduńska Wola	Zduńska Wola	Zduńska Wola	Zduńska Wola
+	2638	Zapolice	51.5431900	18.8833500	PL	74	0	0	Zapolice	Zapolice	Zapolice	Zapolice	Zapolice	Zapolice
+	2638	Zakrzówek Szlachecki	51.0551000	19.2214400	PL	74	0	0	Zakrzówek Szlachecki	Zakrzówek Szlachecki	Zakrzówek Szlachecki	Zakrzówek Szlachecki	Zakrzówek Szlachecki	Zakrzówek Szlachecki
+	2638	Zadzim	51.7766600	18.8492800	PL	74	0	0	Zadzim	Zadzim	Zadzim	Zadzim	Zadzim	Zadzim
+	2638	Zabrodzie	50.9229500	19.5074300	PL	74	0	0	Zabrodzie	Zabrodzie	Zabrodzie	Zabrodzie	Zabrodzie	Zabrodzie
+	2638	Wysoka Wielka	52.1930900	19.2196400	PL	74	0	0	Wysoka Wielka	Wysoka Wielka	Wysoka Wielka	Wysoka Wielka	Wysoka Wielka	Wysoka Wielka
+	2638	Wymysłów	52.2117100	19.1558600	PL	74	0	0	Wymysłów	Wymysłów	Wymysłów	Wymysłów	Wymysłów	Wymysłów
+	2638	Wymysłów	51.0464100	19.8992400	PL	74	0	0	Wymysłów	Wymysłów	Wymysłów	Wymysłów	Wymysłów	Wymysłów
+	2638	Wróblew	51.6121500	18.6148700	PL	74	0	0	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew
+	2638	Wróblew	51.1454300	18.4057000	PL	74	0	0	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew
+	2638	Wolbórz	51.5019600	19.8304900	PL	74	0	0	Wolbórz	Wolbórz	Wolbórz	Wolbórz	Wolbórz	Wolbórz
+	2638	Wola Rakowa	51.6730300	19.6113700	PL	74	0	0	Wola Rakowa	Wola Rakowa	Wola Rakowa	Wola Rakowa	Wola Rakowa	Wola Rakowa
+	2638	Wola Krzysztoporska	51.3441800	19.5809000	PL	74	0	0	Wola Krzysztoporska	Wola Krzysztoporska	Wola Krzysztoporska	Wola Krzysztoporska	Wola Krzysztoporska	Wola Krzysztoporska
+	2638	Wola Drzewiecka	51.9146300	19.9844700	PL	74	0	0	Wola Drzewiecka	Wola Drzewiecka	Wola Drzewiecka	Wola Drzewiecka	Wola Drzewiecka	Wola Drzewiecka
+	2638	Wojsławice	51.6525400	18.9233500	PL	74	0	0	Wojsławice	Wojsławice	Wojsławice	Wojsławice	Wojsławice	Wojsławice
+	2638	Wodzierady	51.7182600	19.1512300	PL	74	0	0	Wodzierady	Wodzierady	Wodzierady	Wodzierady	Wodzierady	Wodzierady
+	2638	Witonia	52.1465500	19.3004900	PL	74	0	0	Witonia	Витоня	Witonia	Witonia	Witonia	Witonia
+	2638	Wierzchlas	51.2045700	18.6654300	PL	74	0	0	Wierzchlas	Wierzchlas	Wierzchlas	Wierzchlas	Wierzchlas	Wierzchlas
+	2638	Wieruszów	51.2948800	18.1554700	PL	74	0	0	Wieruszów	Wieruszów	Wieruszów	Wieruszów	Wieruszów	Wieruszów
+	2638	Wieluń	51.2209700	18.5696400	PL	74	0	0	Wieluń	Велунь	Wieluń	Wieluń	Wieluń	Wieluń
+	2638	Wielka Wieś	51.6832500	18.9527900	PL	74	0	0	Wielka Wieś	Wielka Wieś	Wielka Wieś	Wielka Wieś	Wielka Wieś	Wielka Wieś
+	2638	Wielgomłyny	51.0129400	19.7640600	PL	74	0	0	Wielgomłyny	Wielgomłyny	Wielgomłyny	Wielgomłyny	Wielgomłyny	Wielgomłyny
+	2638	Wielgie	51.3368900	18.7138400	PL	74	0	0	Wielgie	Wielgie	Wielgie	Wielgie	Wielgie	Wielgie
+	2638	Widawa	51.4385500	18.9442100	PL	74	0	0	Widawa	Widawa	Widawa	Widawa	Widawa	Widawa
+	2638	Wartkowice	51.9762600	19.0018000	PL	74	0	0	Wartkowice	Wartkowice	Wartkowice	Wartkowice	Wartkowice	Wartkowice
+	2638	Warta	51.7104900	18.6248300	PL	74	0	0	Warta	Warta	Warta	Warta	Warta	Warta
+	2638	Walichnowy	51.2957900	18.3807300	PL	74	0	0	Walichnowy	Walichnowy	Walichnowy	Walichnowy	Walichnowy	Walichnowy
+	2638	Urbanice	51.2420900	18.6119600	PL	74	0	0	Urbanice	Urbanice	Urbanice	Urbanice	Urbanice	Urbanice
+	2638	Uniejów	51.9742800	18.7930800	PL	74	0	0	Uniejów	Uniejów	Uniejów	Uniejów	Uniejów	Uniejów
+	2638	Ujazd	51.5978100	19.9222500	PL	74	0	0	Ujazd	Ujazd	Ujazd	Ujazd	Ujazd	Ujazd
+	2638	Tyczyn	51.5101800	18.8520200	PL	74	0	0	Tyczyn	Tyczyn	Tyczyn	Tyczyn	Tyczyn	Tyczyn
+	2638	Tuszyn	51.6094900	19.5300900	PL	74	0	0	Tuszyn	Tuszyn	Tuszyn	Tuszyn	Tuszyn	Tuszyn
+	2638	Szydłów	51.7898200	19.1225600	PL	74	0	0	Szydłów	Szydłów	Szydłów	Szydłów	Szydłów	Szydłów
+	2638	Szydłów	51.4463000	19.5906800	PL	74	0	0	Szydłów	Szydłów	Szydłów	Szydłów	Szydłów	Szydłów
+	2638	Szczerców	51.3331900	19.1097700	PL	74	0	0	Szczerców	Szczerców	Szczerców	Szczerców	Szczerców	Szczerców
+	2638	Szczawin	51.9003300	19.4882900	PL	74	0	0	Szczawin	Szczawin	Szczawin	Szczawin	Szczawin	Szczawin
+	2638	Szadek	51.6917400	18.9754900	PL	74	0	0	Szadek	Szadek	Szadek	Szadek	Szadek	Szadek
+	2638	Świnice Warckie	52.0407200	18.9178600	PL	74	0	0	Świnice Warckie	Свинице-Варцке	Świnice Warckie	Świnice Warckie	Świnice Warckie	Świnice Warckie
+	2638	Świerczów	51.4520300	18.9155400	PL	74	0	0	Świerczów	Świerczów	Świerczów	Świerczów	Świerczów	Świerczów
+	2638	Sulmierzyce	51.1845600	19.1959500	PL	74	0	0	Sulmierzyce	Sulmierzyce	Sulmierzyce	Sulmierzyce	Sulmierzyce	Sulmierzyce
+	2638	Sulejów	51.3543600	19.8853800	PL	74	0	0	Sulejów	Sulejów	Sulejów	Sulejów	Sulejów	Sulejów
+	2638	Strzyżewice	51.4108200	19.2457300	PL	74	0	0	Strzyżewice	Strzyżewice	Strzyżewice	Strzyżewice	Strzyżewice	Strzyżewice
+	2638	Strzelce Wielkie	51.1394000	19.1453900	PL	74	0	0	Strzelce Wielkie	Strzelce Wielkie	Strzelce Wielkie	Strzelce Wielkie	Strzelce Wielkie	Strzelce Wielkie
+	2638	Strzelce	52.3147800	19.4070100	PL	74	0	0	Strzelce	Strzelce	Strzelce	Strzelce	Strzelce	Strzelce
+	2638	Stryków	51.9022400	19.6053600	PL	74	0	0	Stryków	Стрыкув	Stryków	Stryków	Stryków	Stryków
+	2638	Starowa Góra	51.6913400	19.4837400	PL	74	0	0	Starowa Góra	Starowa Góra	Starowa Góra	Starowa Góra	Starowa Góra	Starowa Góra
+	2638	Stanisławów Pierwszy	51.2971900	19.1293400	PL	74	0	0	Stanisławów Pierwszy	Stanisławów Pierwszy	Stanisławów Pierwszy	Stanisławów Pierwszy	Stanisławów Pierwszy	Stanisławów Pierwszy
+	2638	Stanisławów Drugi	51.2894600	19.1264200	PL	74	0	0	Stanisławów Drugi	Stanisławów Drugi	Stanisławów Drugi	Stanisławów Drugi	Stanisławów Drugi	Stanisławów Drugi
+	2638	Stanisławów	52.2681000	19.4972100	PL	74	0	0	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów
+	2638	Stanisławów	51.4918000	19.8934900	PL	74	0	0	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów
+	2638	Stanisławów	51.4588700	18.5796000	PL	74	0	0	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów
+	2638	Stanisławów	51.2046800	19.2077900	PL	74	0	0	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów	Stanisławów
+	2638	Spóle	51.4119500	18.2256300	PL	74	0	0	Spóle	Spóle	Spóle	Spóle	Spóle	Spóle
+	2638	Sokolniki	51.9669000	19.3652900	PL	74	0	0	Sokolniki	Sokolniki	Sokolniki	Sokolniki	Sokolniki	Sokolniki
+	2638	Sokolniki	51.3073800	18.3327500	PL	74	0	0	Sokolniki	Sokolniki	Sokolniki	Sokolniki	Sokolniki	Sokolniki
+	2638	Słupia	51.8551800	19.9699700	PL	74	0	0	Słupia	Słupia	Słupia	Słupia	Słupia	Słupia
+	2638	Skomlin	51.1708900	18.3869900	PL	74	0	0	Skomlin	Skomlin	Skomlin	Skomlin	Skomlin	Skomlin
+	2638	Sieradz	51.5958400	18.7302300	PL	74	0	0	Sieradz	Серадз	Sieradz	Sieradz	Sieradz	Sieradz
+	2638	Siemkowice	51.2019400	18.8988000	PL	74	0	0	Siemkowice	Siemkowice	Siemkowice	Siemkowice	Siemkowice	Siemkowice
+	2638	Siedlce	51.4582900	19.0223100	PL	74	0	0	Siedlce	Siedlce	Siedlce	Siedlce	Siedlce	Siedlce
+	2638	Sędziejowice	51.5067700	19.0276300	PL	74	0	0	Sędziejowice	Sędziejowice	Sędziejowice	Sędziejowice	Sędziejowice	Sędziejowice
+	2638	Rząśnia	51.2204900	19.0438600	PL	74	0	0	Rząśnia	Rząśnia	Rząśnia	Rząśnia	Rząśnia	Rząśnia
+	2638	Rybnik	51.4752900	18.5829400	PL	74	0	0	Rybnik	Rybnik	Rybnik	Rybnik	Rybnik	Rybnik
+	2638	Rusiec	51.3244400	18.9850600	PL	74	0	0	Rusiec	Rusiec	Rusiec	Rusiec	Rusiec	Rusiec
+	2638	Rozprza	51.3026600	19.6457000	PL	74	0	0	Rozprza	Rozprza	Rozprza	Rozprza	Rozprza	Rozprza
+	2638	Rokiciny	51.6507800	19.8019100	PL	74	0	0	Rokiciny	Rokiciny	Rokiciny	Rokiciny	Rokiciny	Rokiciny
+	2638	Rogoźno	51.9757900	19.4556700	PL	74	0	0	Rogoźno	Rogoźno	Rogoźno	Rogoźno	Rogoźno	Rogoźno
+	2638	Rogóźno	51.4359800	18.9737300	PL	74	0	0	Rogóźno	Rogóźno	Rogóźno	Rogóźno	Rogóźno	Rogóźno
+	2638	Rogoźno	52.0406700	19.8127300	PL	74	0	0	Rogoźno	Рогузьно	Rogoźno	Rogoźno	Rogoźno	Rogoźno
+	2638	Rogów	51.8175800	19.8865400	PL	74	0	0	Rogów	Rogów	Rogów	Rogów	Rogów	Rogów
+	2638	Ręczno	51.1902600	19.8537500	PL	74	0	0	Ręczno	Ręczno	Ręczno	Ręczno	Ręczno	Ręczno
+	2638	Raków	51.4476400	19.7158200	PL	74	0	0	Raków	Raków	Raków	Raków	Raków	Raków
+	2638	Radziechowice Pierwsze	51.0686400	19.3256400	PL	74	0	0	Radziechowice Pierwsze	Radziechowice Pierwsze	Radziechowice Pierwsze	Radziechowice Pierwsze	Radziechowice Pierwsze	Radziechowice Pierwsze
+	2638	Radomsko	51.0671300	19.4447700	PL	74	0	0	Radomsko	Радомско	Radomsko	Radomsko	Radomsko	Radomsko
+	2638	Psary	52.0326900	19.6558300	PL	74	0	0	Psary	Psary	Psary	Psary	Psary	Psary
+	2638	Psary	51.9297100	19.1092600	PL	74	0	0	Psary	Psary	Psary	Psary	Psary	Psary
+	2638	Psary-Lechawa	51.4849100	19.7698100	PL	74	0	0	Psary-Lechawa	Psary-Lechawa	Psary-Lechawa	Psary-Lechawa	Psary-Lechawa	Psary-Lechawa
+	2638	Przedbórz	51.0878900	19.8738400	PL	74	0	0	Przedbórz	Пшедбуж	Przedbórz	Przedbórz	Przedbórz	Przedbórz
+	2638	Poraj	51.2832100	19.5334300	PL	74	0	0	Poraj	Poraj	Poraj	Poraj	Poraj	Poraj
+	2638	Pokrzywnica	52.0591900	19.4587600	PL	74	0	0	Pokrzywnica	Pokrzywnica	Pokrzywnica	Pokrzywnica	Pokrzywnica	Pokrzywnica
+	2638	Poddębice	51.8934400	18.9573000	PL	74	0	0	Poddębice	Poddębice	Poddębice	Poddębice	Poddębice	Poddębice
+	2638	Pławno	50.9777200	19.4552400	PL	74	0	0	Pławno	Pławno	Pławno	Pławno	Pławno	Pławno
+	2638	Piotrków Trybunalski	51.4054700	19.7032100	PL	74	0	0	Piotrków Trybunalski	Пётркув-Трыбунальский	Piotrków Trybunalski	Piotrków Trybunalski	Piotrków Trybunalski	Piotrków Trybunalski
+	2638	Piątek	52.0689000	19.4797000	PL	74	0	0	Piątek	Piątek	Piątek	Piątek	Piątek	Piątek
+	2638	Pęczniew	51.8038400	18.7231100	PL	74	0	0	Pęczniew	Pęczniew	Pęczniew	Pęczniew	Pęczniew	Pęczniew
+	2638	Pątnów	51.1440300	18.6165900	PL	74	0	0	Pątnów	Pątnów	Pątnów	Pątnów	Pątnów	Pątnów
+	2638	Parzęczew	51.9485500	19.2060800	PL	74	0	0	Parzęczew	Parzęczew	Parzęczew	Parzęczew	Parzęczew	Parzęczew
+	2638	Paprotnia	51.8038400	19.7050100	PL	74	0	0	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia
+	2638	Paprotnia	51.5711000	18.9334800	PL	74	0	0	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia	Paprotnia
+	2638	Pajęczno	51.1444900	18.9961200	PL	74	0	0	Pajęczno	Паенчно	Pajęczno	Pajęczno	Pajęczno	Pajęczno
+	2638	Pabianice	51.6644600	19.3547300	PL	74	0	0	Pabianice	Пабянице	Pabianice	Pabianice	Pabianice	Pabianice
+	2638	Ozorków	51.9633600	19.2913900	PL	74	0	0	Ozorków	Озоркув	Ozorków	Ozorków	Ozorków	Ozorków
+	2638	Ożarów	51.1448900	18.5111000	PL	74	0	0	Ożarów	Ożarów	Ożarów	Ożarów	Ożarów	Ożarów
+	2638	Ostrowy	52.3044400	19.1656500	PL	74	0	0	Ostrowy	Ostrowy	Ostrowy	Ostrowy	Ostrowy	Ostrowy
+	2638	Ostrówek	52.1611400	18.9857900	PL	74	0	0	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek
+	2638	Ostrówek	51.3726900	18.3088000	PL	74	0	0	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek
+	2638	Ostrówek	51.3361900	18.6235400	PL	74	0	0	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek	Ostrówek
+	2638	Osjaków	51.2894600	18.7915100	PL	74	0	0	Osjaków	Osjaków	Osjaków	Osjaków	Osjaków	Osjaków
+	2638	Osina	51.3526500	19.1835000	PL	74	0	0	Osina	Osina	Osina	Osina	Osina	Osina
+	2638	Osiek	52.2511400	19.9685100	PL	74	0	0	Osiek	Osiek	Osiek	Osiek	Osiek	Osiek
+	2638	Osiek	51.3676000	18.1991100	PL	74	0	0	Osiek	Osiek	Osiek	Osiek	Osiek	Osiek
+	2638	Oporów	52.2644800	19.5641600	PL	74	0	0	Oporów	Oporów	Oporów	Oporów	Oporów	Oporów
+	2638	Ojrzeń	50.9874500	19.5138600	PL	74	0	0	Ojrzeń	Ojrzeń	Ojrzeń	Ojrzeń	Ojrzeń	Ojrzeń
+	2638	Niedźwiada	52.1460300	19.8923800	PL	74	0	0	Niedźwiada	Niedźwiada	Niedźwiada	Niedźwiada	Niedźwiada	Niedźwiada
+	2638	Moszczenica	51.5029700	19.7198600	PL	74	0	0	Moszczenica	Moszczenica	Moszczenica	Moszczenica	Moszczenica	Moszczenica
+	2638	Mokrsko	51.1789700	18.4887900	PL	74	0	0	Mokrsko	Mokrsko	Mokrsko	Mokrsko	Mokrsko	Mokrsko
+	2638	Mieleszyn	51.2418200	18.2045200	PL	74	0	0	Mieleszyn	Mieleszyn	Mieleszyn	Mieleszyn	Mieleszyn	Mieleszyn
+	2638	Michałów	51.6351200	19.7477500	PL	74	0	0	Michałów	Michałów	Michałów	Michałów	Michałów	Michałów
+	2638	Masłowice	51.2570300	18.6379600	PL	74	0	0	Masłowice	Masłowice	Masłowice	Masłowice	Masłowice	Masłowice
+	2638	Masłowice	51.1056200	19.7883500	PL	74	0	0	Masłowice	Masłowice	Masłowice	Masłowice	Masłowice	Masłowice
+	2638	Magdalenka	51.3096400	19.6209800	PL	74	0	0	Magdalenka	Magdalenka	Magdalenka	Magdalenka	Magdalenka	Magdalenka
+	2638	Łyszkowice	51.9855100	19.9065400	PL	74	0	0	Łyszkowice	Łyszkowice	Łyszkowice	Łyszkowice	Łyszkowice	Łyszkowice
+	2638	Lututów	51.3703300	18.4348000	PL	74	0	0	Lututów	Lututów	Lututów	Lututów	Lututów	Lututów
+	2638	Lutomiersk	51.7537600	19.2109700	PL	74	0	0	Lutomiersk	Lutomiersk	Lutomiersk	Lutomiersk	Lutomiersk	Lutomiersk
+	2638	Łubnice	51.1640600	18.2906900	PL	74	0	0	Łubnice	Łubnice	Łubnice	Łubnice	Łubnice	Łubnice
+	2638	Lubień	52.0202300	19.2083100	PL	74	0	0	Lubień	Lubień	Lubień	Lubień	Lubień	Lubień
+	2638	Łowicz	52.1071400	19.9452500	PL	74	0	0	Łowicz	Лович	Łowicz	Łowicz	Łowicz	Łowicz
+	2638	Łódź	51.7500000	19.4666700	PL	74	0	0	Łódź	Лодзь	Łódź	Łódź	Łódź	Łódź
+	2638	Lipno	51.4442200	18.6961600	PL	74	0	0	Lipno	Lipno	Lipno	Lipno	Lipno	Lipno
+	2638	Lipnik	51.2338700	18.8685000	PL	74	0	0	Lipnik	Lipnik	Lipnik	Lipnik	Lipnik	Lipnik
+	2638	Lipnica	51.9210300	18.8446400	PL	74	0	0	Lipnica	Lipnica	Lipnica	Lipnica	Lipnica	Lipnica
+	2638	Lipce Reymontowskie	51.8986300	19.9417300	PL	74	0	0	Lipce Reymontowskie	Lipce Reymontowskie	Lipce Reymontowskie	Lipce Reymontowskie	Lipce Reymontowskie	Lipce Reymontowskie
+	2638	Lgota Wielka	51.1490400	19.3273500	PL	74	0	0	Lgota Wielka	Lgota Wielka	Lgota Wielka	Lgota Wielka	Lgota Wielka	Lgota Wielka
+	2638	Łęki Szlacheckie	51.1877400	19.7979600	PL	74	0	0	Łęki Szlacheckie	Łęki Szlacheckie	Łęki Szlacheckie	Łęki Szlacheckie	Łęki Szlacheckie	Łęki Szlacheckie
+	2638	Łękińsko	51.2174200	19.3467500	PL	74	0	0	Łękińsko	Łękińsko	Łękińsko	Łękińsko	Łękińsko	Łękińsko
+	2638	Łęczyca	52.0595900	19.1997200	PL	74	0	0	Łęczyca	Ленчица	Łęczyca	Łęczyca	Łęczyca	Łęczyca
+	2638	Łask	51.5905600	19.1327800	PL	74	0	0	Łask	Ласк	Łask	Łask	Łask	Łask
+	2638	Łanięta	52.3620300	19.2803200	PL	74	0	0	Łanięta	Ланента	Łanięta	Łanięta	Łanięta	Łanięta
+	2638	Łagów	51.9931800	19.9413000	PL	74	0	0	Łagów	Łagów	Łagów	Łagów	Łagów	Łagów
+	2638	Łagiewniki	51.0843300	19.5810700	PL	74	0	0	Łagiewniki	Łagiewniki	Łagiewniki	Łagiewniki	Łagiewniki	Łagiewniki
+	2638	Ładzice	51.0812000	19.3580800	PL	74	0	0	Ładzice	Ładzice	Ładzice	Ładzice	Ładzice	Ładzice
+	2638	Kutno	52.2306400	19.3640900	PL	74	0	0	Kutno	Кутно	Kutno	Kutno	Kutno	Kutno
+	2638	Ksawerów	51.6828800	19.4028000	PL	74	0	0	Ksawerów	Ksawerów	Ksawerów	Ksawerów	Ksawerów	Ksawerów
+	2638	Krzyżanów	52.1840900	19.4561900	PL	74	0	0	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów
+	2638	Krzyżanów	51.3509900	19.6390900	PL	74	0	0	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów	Krzyżanów
+	2638	Krośniewice	52.2559200	19.1703700	PL	74	0	0	Krośniewice	КРОСНЕВИЦЕ	Krośniewice	Krośniewice	Krośniewice	Krośniewice
+	2638	Kraszewice	51.0686400	19.7856900	PL	74	0	0	Kraszewice	Kraszewice	Kraszewice	Kraszewice	Kraszewice	Kraszewice
+	2638	Korytnica	51.3902100	19.7953000	PL	74	0	0	Korytnica	Korytnica	Korytnica	Korytnica	Korytnica	Korytnica
+	2638	Korczew	51.6393300	18.9154500	PL	74	0	0	Korczew	Korczew	Korczew	Korczew	Korczew	Korczew
+	2638	Korczew	51.3566100	19.4512100	PL	74	0	0	Korczew	Korczew	Korczew	Korczew	Korczew	Korczew
+	2638	Konstantynów Łódzki	51.7477600	19.3256400	PL	74	0	0	Konstantynów Łódzki	Konstantynów Łódzki	Konstantynów Łódzki	Konstantynów Łódzki	Konstantynów Łódzki	Konstantynów Łódzki
+	2638	Konopnica	51.9743600	18.9174300	PL	74	0	0	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica
+	2638	Konopnica	51.3538300	18.8236100	PL	74	0	0	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica	Konopnica
+	2638	Koluszki	51.7387200	19.8199400	PL	74	0	0	Koluszki	Колюшки	Koluszki	Koluszki	Koluszki	Koluszki
+	2638	Kodrąb	51.0997500	19.6286200	PL	74	0	0	Kodrąb	Kodrąb	Kodrąb	Kodrąb	Kodrąb	Kodrąb
+	2638	Kobiele Wielkie	51.0382100	19.6231300	PL	74	0	0	Kobiele Wielkie	Kobiele Wielkie	Kobiele Wielkie	Kobiele Wielkie	Kobiele Wielkie	Kobiele Wielkie
+	2638	Kluki	51.3418700	19.2393800	PL	74	0	0	Kluki	Kluki	Kluki	Kluki	Kluki	Kluki
+	2638	Klonowa	51.4192800	18.4181500	PL	74	0	0	Klonowa	Klonowa	Klonowa	Klonowa	Klonowa	Klonowa
+	2638	Kleszczów	51.2235500	19.3041800	PL	74	0	0	Kleszczów	Kleszczów	Kleszczów	Kleszczów	Kleszczów	Kleszczów
+	2638	Kije	51.5603700	18.4017600	PL	74	0	0	Kije	Kije	Kije	Kije	Kije	Kije
+	2638	Kiernozia	52.2685800	19.8709200	PL	74	0	0	Kiernozia	Кернозя	Kiernozia	Kiernozia	Kiernozia	Kiernozia
+	2638	Kiełczygłów	51.2388100	18.9828300	PL	74	0	0	Kiełczygłów	Kiełczygłów	Kiełczygłów	Kiełczygłów	Kiełczygłów	Kiełczygłów
+	2638	Kazimierz	51.7681100	19.2065000	PL	74	0	0	Kazimierz	Kazimierz	Kazimierz	Kazimierz	Kazimierz	Kazimierz
+	2638	Karnice	51.9395000	18.9327900	PL	74	0	0	Karnice	Karnice	Karnice	Karnice	Karnice	Karnice
+	2638	Kamieńsk	51.2024200	19.4966100	PL	74	0	0	Kamieńsk	Kamieńsk	Kamieńsk	Kamieńsk	Kamieńsk	Kamieńsk
+	2638	Józefów	51.4358200	19.0309000	PL	74	0	0	Józefów	Józefów	Józefów	Józefów	Józefów	Józefów
+	2638	Jordanów	51.7584400	19.6757400	PL	74	0	0	Jordanów	Jordanów	Jordanów	Jordanów	Jordanów	Jordanów
+	2638	Jeżów	51.8137600	19.9687700	PL	74	0	0	Jeżów	Jeżów	Jeżów	Jeżów	Jeżów	Jeżów
+	2638	Jeżów	51.3180600	19.5950600	PL	74	0	0	Jeżów	Jeżów	Jeżów	Jeżów	Jeżów	Jeżów
+	2638	Imielno	52.3242700	19.2233300	PL	74	0	0	Imielno	Imielno	Imielno	Imielno	Imielno	Imielno
+	2638	Gręboszów	51.4650200	19.4092400	PL	74	0	0	Gręboszów	Gręboszów	Gręboszów	Gręboszów	Gręboszów	Gręboszów
+	2638	Grabów	52.1271700	19.0025700	PL	74	0	0	Grabów	Грабув	Grabów	Grabów	Grabów	Grabów
+	2638	Grabica	51.4798900	19.5313700	PL	74	0	0	Grabica	Grabica	Grabica	Grabica	Grabica	Grabica
+	2638	Grabica	51.4773200	18.9923600	PL	74	0	0	Grabica	Grabica	Grabica	Grabica	Grabica	Grabica
+	2638	Goszczanów	51.7916300	18.5057000	PL	74	0	0	Goszczanów	Goszczanów	Goszczanów	Goszczanów	Goszczanów	Goszczanów
+	2638	Gorzkowice	51.2153300	19.5962600	PL	74	0	0	Gorzkowice	Gorzkowice	Gorzkowice	Gorzkowice	Gorzkowice	Gorzkowice
+	2638	Górki Małe	51.5802200	19.5070000	PL	74	0	0	Górki Małe	Górki Małe	Górki Małe	Górki Małe	Górki Małe	Górki Małe
+	2638	Góra Świętej Małgorzaty	52.0571300	19.3199700	PL	74	0	0	Góra Świętej Małgorzaty	Góra Świętej Małgorzaty	Góra Świętej Małgorzaty	Góra Świętej Małgorzaty	Góra Świętej Małgorzaty	Góra Świętej Małgorzaty
+	2638	Gomunice	51.1689000	19.4933500	PL	74	0	0	Gomunice	Gomunice	Gomunice	Gomunice	Gomunice	Gomunice
+	2638	Głowno	51.9646300	19.7156500	PL	74	0	0	Głowno	Гловно	Głowno	Głowno	Głowno	Głowno
+	2638	Gidle	50.9619900	19.4718100	PL	74	0	0	Gidle	Gidle	Gidle	Gidle	Gidle	Gidle
+	2638	Garbów	52.1573500	19.5903400	PL	74	0	0	Garbów	Garbów	Garbów	Garbów	Garbów	Garbów
+	2638	Garbów	51.5709300	19.5483700	PL	74	0	0	Garbów	Garbów	Garbów	Garbów	Garbów	Garbów
+	2638	Gałków Mały	51.7255400	19.7135900	PL	74	0	0	Gałków Mały	Gałków Mały	Gałków Mały	Gałków Mały	Gałków Mały	Gałków Mały
+	2638	Gałków Duży	51.7360700	19.7247500	PL	74	0	0	Gałków Duży	Gałków Duży	Gałków Duży	Gałków Duży	Gałków Duży	Gałków Duży
+	2638	Galewice	51.3447100	18.2575600	PL	74	0	0	Galewice	Galewice	Galewice	Galewice	Galewice	Galewice
+	2638	Dzietrzkowice	51.1580300	18.3253700	PL	74	0	0	Dzietrzkowice	Dzietrzkowice	Dzietrzkowice	Dzietrzkowice	Dzietrzkowice	Dzietrzkowice
+	2638	Działoszyn	51.1169900	18.8652400	PL	74	0	0	Działoszyn	Działoszyn	Działoszyn	Działoszyn	Działoszyn	Działoszyn
+	2638	Drużbice	51.4636900	19.3940400	PL	74	0	0	Drużbice	Drużbice	Drużbice	Drużbice	Drużbice	Drużbice
+	2638	Domaniewice	52.0062300	19.8029400	PL	74	0	0	Domaniewice	Domaniewice	Domaniewice	Domaniewice	Domaniewice	Domaniewice
+	2638	Dobroszyce	51.1445700	19.4113800	PL	74	0	0	Dobroszyce	Dobroszyce	Dobroszyce	Dobroszyce	Dobroszyce	Dobroszyce
+	2638	Dobroń	51.6388500	19.2453900	PL	74	0	0	Dobroń	Dobroń	Dobroń	Dobroń	Dobroń	Dobroń
+	2638	Dobra	51.8699200	19.5617600	PL	74	0	0	Dobra	Dobra	Dobra	Dobra	Dobra	Dobra
+	2638	Dobra	51.5237000	19.0587000	PL	74	0	0	Dobra	Dobra	Dobra	Dobra	Dobra	Dobra
+	2638	Dmosin	51.9243700	19.7593400	PL	74	0	0	Dmosin	Dmosin	Dmosin	Dmosin	Dmosin	Dmosin
+	2638	Dłutów	51.5593600	19.3919800	PL	74	0	0	Dłutów	Dłutów	Dłutów	Dłutów	Dłutów	Dłutów
+	2638	Daszyna	52.1550300	19.1815300	PL	74	0	0	Daszyna	Daszyna	Daszyna	Daszyna	Daszyna	Daszyna
+	2638	Dalików	51.8847600	19.1190400	PL	74	0	0	Dalików	Dalików	Dalików	Dalików	Dalików	Dalików
+	2638	Dąbrowice	52.3114200	19.0843700	PL	74	0	0	Dąbrowice	Домбровице	Dąbrowice	Dąbrowice	Dąbrowice	Dąbrowice
+	2638	Czastary	51.2586900	18.3195300	PL	74	0	0	Czastary	Czastary	Czastary	Czastary	Czastary	Czastary
+	2638	Czarnożyły	51.2853300	18.5610600	PL	74	0	0	Czarnożyły	Czarnożyły	Czarnożyły	Czarnożyły	Czarnożyły	Czarnożyły
+	2638	Czarnocin	51.5914200	19.6815800	PL	74	0	0	Czarnocin	Czarnocin	Czarnocin	Czarnocin	Czarnocin	Czarnocin
+	2638	Czaplinek	51.8880400	19.5033100	PL	74	0	0	Czaplinek	Czaplinek	Czaplinek	Czaplinek	Czaplinek	Czaplinek
+	2638	Chąśno	52.1953500	19.9425900	PL	74	0	0	Chąśno	Chąśno	Chąśno	Chąśno	Chąśno	Chąśno
+	2638	Burzenin	51.4607700	18.8323300	PL	74	0	0	Burzenin	Burzenin	Burzenin	Burzenin	Burzenin	Burzenin
+	2638	Budzów	50.9041700	19.7462100	PL	74	0	0	Budzów	Budzów	Budzów	Budzów	Budzów	Budzów
+	2638	Budziszewice	51.6673900	19.9358100	PL	74	0	0	Budziszewice	Budziszewice	Budziszewice	Budziszewice	Budziszewice	Budziszewice
+	2638	Buczek	51.5022800	19.1641900	PL	74	0	0	Buczek	Buczek	Buczek	Buczek	Buczek	Buczek
+	2638	Brzeźnio	51.4940000	18.6223400	PL	74	0	0	Brzeźnio	Brzeźnio	Brzeźnio	Brzeźnio	Brzeźnio	Brzeźnio
+	2638	Brzeźnica	51.4244200	18.7019900	PL	74	0	0	Brzeźnica	Brzeźnica	Brzeźnica	Brzeźnica	Brzeźnica	Brzeźnica
+	2638	Brzeziny	51.8002300	19.7514400	PL	74	0	0	Brzeziny	Бжезины	Brzeziny	Brzeziny	Brzeziny	Brzeziny
+	2638	Brójce	51.6643600	19.6480200	PL	74	0	0	Brójce	Brójce	Brójce	Brójce	Brójce	Brójce
+	2638	Brąszewice	51.4990200	18.4498200	PL	74	0	0	Brąszewice	Brąszewice	Brąszewice	Brąszewice	Brąszewice	Brąszewice
+	2638	Borysławice	51.6527500	18.4269000	PL	74	0	0	Borysławice	Borysławice	Borysławice	Borysławice	Borysławice	Borysławice
+	2638	Bolków	51.3186500	18.6280100	PL	74	0	0	Bolków	Bolków	Bolków	Bolków	Bolków	Bolków
+	2638	Bolesławiec	51.1986600	18.1914700	PL	74	0	0	Bolesławiec	Bolesławiec	Bolesławiec	Bolesławiec	Bolesławiec	Bolesławiec
+	2638	Bojanów	51.1511400	18.3880200	PL	74	0	0	Bojanów	Bojanów	Bojanów	Bojanów	Bojanów	Bojanów
+	2638	Bobrowniki	51.5272800	18.8413000	PL	74	0	0	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki
+	2638	Bobrowniki	51.1032500	18.7790700	PL	74	0	0	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki	Bobrowniki
+	2638	Błonie	52.0766600	19.1362100	PL	74	0	0	Błonie	Блоне	Błonie	Błonie	Błonie	Błonie
+	2638	Błonie	50.9485300	19.8231100	PL	74	0	0	Błonie	Błonie	Błonie	Błonie	Błonie	Błonie
+	2638	Błaszki	51.6516300	18.4347200	PL	74	0	0	Błaszki	Błaszki	Błaszki	Błaszki	Błaszki	Błaszki
+	2638	Bielawy	52.0753900	19.6555700	PL	74	0	0	Bielawy	Bielawy	Bielawy	Bielawy	Bielawy	Bielawy
+	2638	Bełchatów	51.3688300	19.3567100	PL	74	0	0	Bełchatów	Белхатув	Bełchatów	Bełchatów	Bełchatów	Bełchatów
+	2638	Bedoń Wieś	51.7444100	19.6443300	PL	74	0	0	Bedoń Wieś	Bedoń Wieś	Bedoń Wieś	Bedoń Wieś	Bedoń Wieś	Bedoń Wieś
+	2638	Bedlno	52.2082900	19.5759200	PL	74	0	0	Bedlno	Бедльно	Bedlno	Bedlno	Bedlno	Bedlno
+	2638	Będków	51.5876300	19.7495600	PL	74	0	0	Będków	Będków	Będków	Będków	Będków	Będków
+	2638	Będków	51.4710700	18.7514300	PL	74	0	0	Będków	Będków	Będków	Będków	Będków	Będków
+	2638	Andrzejów	51.7407400	19.6106000	PL	74	0	0	Andrzejów	Andrzejów	Andrzejów	Andrzejów	Andrzejów	Andrzejów
+	2638	Andrespol	51.7278300	19.6417500	PL	74	0	0	Andrespol	Andrespol	Andrespol	Andrespol	Andrespol	Andrespol
+	2638	Aleksandrów Łódzki	51.8196500	19.3038400	PL	74	0	0	Aleksandrów Łódzki	Александрув-Лодзинский	Aleksandrów Łódzki	Aleksandrów Łódzki	Aleksandrów Łódzki	Aleksandrów Łódzki
+	2638	Aleksandrów	51.2712600	19.9900500	PL	74	0	0	Aleksandrów	Aleksandrów	Aleksandrów	Aleksandrów	Aleksandrów	Aleksandrów
+	2638	Adamów	51.8711400	19.0058300	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.7721400	19.6909300	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.6657400	19.9721100	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.4082000	19.3107900	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.1669100	19.7475000	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Adamów	51.1019600	19.2867600	PL	74	0	0	Adamów	Adamów	Adamów	Adamów	Adamów	Adamów
+	2638	Rzgów	51.6634500	19.4918100	PL	74	0	0	Rzgów	Rzgów	Rzgów	Rzgów	Rzgów	Rzgów
+	2638	Kowale	51.6586100	18.6597200	PL	74	0	0	Kowale	Kowale	Kowale	Kowale	Kowale	Kowale
+	2638	Rokiciny-Kolonia	51.6646800	19.7831200	PL	74	0	0	Rokiciny-Kolonia	Rokiciny-Kolonia	Rokiciny-Kolonia	Rokiciny-Kolonia	Rokiciny-Kolonia	Rokiciny-Kolonia
+	2638	Nowe Ostrowy	52.3031800	19.1921700	PL	74	0	0	Nowe Ostrowy	Nowe Ostrowy	Nowe Ostrowy	Nowe Ostrowy	Nowe Ostrowy	Nowe Ostrowy
+	2638	Wróblew	51.9861100	19.2502800	PL	74	0	0	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew	Wróblew
+	2638	Kocierzew Południowy	52.2172800	20.0181200	PL	74	0	0	Kocierzew Południowy	Kocierzew Południowy	Kocierzew Południowy	Kocierzew Południowy	Kocierzew Południowy	Kocierzew Południowy
+	2638	Mroczków Gościnny	51.3802500	20.3909700	PL	74	0	0	Mroczków Gościnny	Mroczków Gościnny	Mroczków Gościnny	Mroczków Gościnny	Mroczków Gościnny	Mroczków Gościnny

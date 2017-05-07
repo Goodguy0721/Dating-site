@@ -1,0 +1,12 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    {% if action == 'view' or action == 'wall' or action == 'gallery' or action == 'details' %}
+        {% include 'user_profile.twig' %}
+    {% else %}
+        {% include 'user_form.twig' %}
+    {% endif %}
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

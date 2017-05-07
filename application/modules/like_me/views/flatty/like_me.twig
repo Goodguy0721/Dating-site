@@ -1,0 +1,97 @@
+    {% include '@app/header.twig' with {current_page: 'like_me'} %}
+
+    <div class="col-md-12 b-likeme_h100">
+        <h1 class="b-title-menu b-title-menu_likeme">
+            <a class="b-likeme__backlink" href="{{ site_url }}"><i class="fa fa-chevron-left"></i></a>
+            {% helper seo.seo_tags('header_text') %}
+            <a class="b-title-menu__btn b-title-menu__btn_header" href="javascript:void(0);" data-mobile-pop="#likenav">
+                <i class="fa fa-bars"></i>
+            </a>
+        </h1>
+        <div class="row b-likeme_h100" id="like_me-block">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="b-mobile-pop" id="likenav">
+                    <div class="b-mobile-pop__header container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="javascript:void(0);" data-mobile-pop-close="#likenav"><i class="fa fa-times fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="b-mobile-pop__content">
+                		<div class="tabs tab-size-15 noPrint">
+                			<ul class="list-group">
+                				{% if data.play_local_used %}
+                                    <li class="list-group-item {% if action == 'play_global' %}active{% endif %}">
+                                        <a data-pjax-no-scroll="1" href="{% helper seo.seolink('like_me', 'index', {'action': 'play_global'}) %}" class="menu-link">
+                                            {% helper lang.l('header_play_global', 'like_me') %}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item {% if action == 'play_local' %}active{% endif %}">
+                                        <a data-pjax-no-scroll="1" href="{% helper seo.seolink('like_me', 'index', {'action': 'play_local'}) %}" class="menu-link">
+                                            {% helper lang.l('header_play_local', 'like_me') %}
+                                        </a>
+                                    </li>
+                				{% else %}
+                                    <li class="list-group-item {% if action == 'play_global' %}active{% endif %}">
+                                        <a data-pjax-no-scroll="1" href="{% helper seo.seolink('like_me', 'index', {'action': 'play_global'}) %}"  class="menu-link">
+                                            {% helper lang.l('header_play', 'like_me') %}
+                                        </a>
+                                    </li>
+                				{% endif %}
+                				<li class="list-group-item {% if action == 'matches' %}active{% endif %}">
+                                    <a data-pjax-no-scroll="1" href="{% helper seo.seolink('like_me', 'index', {'action': 'matches'}) %}" class="menu-link">
+                                        {% helper lang.l('header_matches', 'like_me') %}
+                                    </a>
+                                </li>
+                			</ul>
+                		</div>
+                    </div>
+                </div>
+            </div>
+    		<div id="action-block" class="col-xs-12 col-sm-9 col-md-9 col-lg-9 b-likeme_h100"></div>
+        </div>
+    </div>
+
+
+    <script>
+        {% if user_data.have_more is not empty %}
+            var all_loaded = {% if user_data.have_more %}0{% else %}1{% endif %};
+        {% else %}
+            var all_loaded = 0;
+        {% endif %}
+
+        $(function(){
+            loadScripts(
+                [
+                    "{% helper utils.jscript('like_me', '../views/flatty/js/like_me.js', 'path') %}",
+                    "{% helper utils.jscript('like_me', 'match_me.js', 'path') %}"
+                ],
+                function(){
+                    var action_id = '{{ action }}';
+                    like_me = new LikeMe({
+                        siteUrl: site_url,
+                        action_id: action_id,
+                    });
+                    match_me = new MatchMe({
+                        siteUrl: site_url,
+                        all_loaded: all_loaded,
+                        show_more_lang: "{% helper lang.l('button_show_more', 'like_me') %}",
+                    });
+                },
+                ['like_me', 'match_me'],
+                {async: true}
+            );
+
+            $("[data-mobile-pop]").on( "click", function() {
+                var mob_pop = $(this).attr("data-mobile-pop");
+                $(mob_pop).addClass("b-mobile-pop_show");
+            });
+            $("[data-mobile-pop-close]").on( "click", function() {
+                $(this).parents('.b-mobile-pop').removeClass('b-mobile-pop_show');
+            });
+        });
+    </script>
+
+    {% include '@app/footer.twig' with {current_page: 'like_me'} %}

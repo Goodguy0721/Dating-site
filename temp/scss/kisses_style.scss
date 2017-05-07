@@ -1,0 +1,25 @@
+.kisses {
+    
+}
+.scroll_f_kiss {
+    background-color: $html_bg;
+    height: 100px;
+    padding: 0px 5px;
+    li {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+            background-color: $content_bg;
+        }
+    }
+    .selected {
+        background-color: $content_bg;
+    }
+     input {
+        display: none;
+    }
+}
+.message-kiss {
+    margin-top: 15px;
+}

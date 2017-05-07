@@ -1,0 +1,19 @@
+<div class="content-block load_content">
+    <div class="form-group clearfix">
+        <label for="" class="col-xs-12 tali">
+            {% helper lang.l('field_region', 'users') %}:
+        </label>
+        <div class="col-xs-12" id="change-location-block">
+        {% helper countries.location_select({
+            'module': 'countries',
+            'select_type': 'city',
+            'id_country': user.id_country,
+            'id_region': user.id_region,
+            'id_city': user.id_city
+        }) %}
+        </div>
+        <div class="col-xs-12 mt10">
+            <button id="save-location-block" class="btn btn-primary">{% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+        </div>
+    </div>
+</div>

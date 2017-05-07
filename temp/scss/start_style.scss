@@ -1,0 +1,163 @@
+.index-page {
+    position: relative;
+    height: auto; 
+}
+
+.index-page:before {
+/*    position: absolute; 
+    background:  url('../img/#{$index_bg_image}?ver=3') no-repeat scroll center center $content_bg; */
+    background-size: auto; 
+    content: ""; 
+    width: 100%;
+    height: 100%; 
+    transform: none; 
+    z-index: -1;
+}
+
+.fhf-content{
+}
+.fhf-title{
+    font-size: 36px;
+    line-height: 72px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: -2px;
+}
+.fhf-content .fhf-text{
+    font-size: 18px;
+    line-height: 24px;
+}
+.fhf-content .fhf-link{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.fhf-content .fhf-link a{
+    color: #000;
+}  
+
+/* homepage */
+
+.homepage-user-block{
+    background: $content_bg;
+    border: 1px solid $delimiter_color;
+    border-radius: 5px;
+}
+.homepage-user-info{
+    min-height: 90px;
+    padding: 15px;
+}
+.homepage-user-info img{
+    float: left;
+}
+.homepage-user-info .info-block{
+    margin-left: 70px;
+}
+.homepage-user-info .info-block .info1{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.homepage-user-info .info-block .info2{
+    font-size: 12px;
+    line-height: 16px;
+}
+.homepage-user-info .info-block .info3{
+    font-size: 12px;
+    line-height: 20px;
+}
+.homepage-user-info .info-block .info3 a{
+    color: #333;
+}
+
+.homepage-user-controls ul {
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+.homepage-user-controls ul li {
+    list-style-type: none;
+    margin: 0px 0;
+}
+.homepage-user-controls ul li a, .homepage-user-controls ul li a:visited {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 10px 15px 10px 15px;
+}
+.homepage-user-controls ul li:hover {
+    background: $html_bg;
+}
+.homepage-user-controls .indicator, .my-rating .indicator {
+    float: right;
+    display: block;
+    background-color: $indicator_color;
+}
+
+.homepage-wall{
+    background: $content_bg;
+    border: 1px solid $delimiter_color;
+    border-radius: 5px;    
+    padding: 10px;
+}
+.select-block {
+    width: 100%;
+}
+.select-block button {
+    padding: 0;
+}
+.select-block .select-data {
+    overflow: hidden;
+    padding: 5px 24px 4px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: $left;
+}
+.select-block i {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 8px;
+    width: 24px;
+}
+.donate.decline {
+    color: red;
+} 
+.donate.approve {
+    color: $indicator_color;
+} 
+.donate-link-menu {
+    text-align: right;
+    margin-bottom: 0;
+}
+.donate-link-menu li {
+    display: inline;
+}
+
+.checkBox {    
+    .box {
+        background-color: $content_bg;
+        color: #555;
+        &:before {
+            content: "\f096";
+        }
+    }
+    .box.hovered {
+        color: $font_color;
+        &:before {
+            content: "\f046";
+        }
+    }
+    .box.checked {
+        background-color: $content_bg;
+        color: $font_color;
+        &:before {
+            content: "\f046";
+        }
+    }
+    .label {
+        color: #555;
+    }
+}

@@ -1,0 +1,68 @@
+{% include '@app/header.twig' %}
+
+<div class="search-header">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="title">
+            {% if search_text %}
+                {% helper lang.l('search_results', 'users') %}:
+                '{{ search_text }}'
+            {% else %}
+                {% helper seo.seo_tags('header_text') %}
+            {% endif %}
+        </h1>
+        <div class="menu">
+            <a href="javascript:void(0);" {% if page_data.view_type == 'list' %}class="active"{% endif %} onclick="changeViewType('list');" title="{% helper lang.l('btn_list_view', 'users', '', 'button') %}"><i class="fa fa-list"></i>&nbsp;{% helper lang.l('btn_list_view', 'users', '', 'button') %}</a>
+            <a href="javascript:void(0);" {% if page_data.view_type == 'gallery' %}class="active"{% endif %} onclick="changeViewType('gallery');" title="{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}"><i class="fa fa-globe"></i>&nbsp;{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}</a>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="content-block">
+    <div class="user-search mb10">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="hide-in-mobile">
+              {% helper users.get_preview() %}
+              {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="g-flatty-block" id="main_users_results">
+                {{ block }}
+            </div>
+            <script>
+                $(function(){
+                    loadScripts(
+                        "{% helper utils.jscript('users', 'users-list.js', 'path') %}",
+                        function() {
+                            users_list = new usersList({
+                                siteUrl: "{{ site_url }}",
+                                viewUrl: "{% helper seo.seolink('perfect_match', '') %}",
+                                viewAjaxUrl: "{{ site_url }}perfect_match/ajaxSearch/",
+                                listBlockId: 'main_users_results',
+                                tIds: ['pages_block_1', 'pages_block_2', 'sorter_block']
+                            });
+                        },
+                        'users_list'
+                    );
+                });
+
+                function changeViewType(type) {
+                    var url = '{% helper seo.seolink('perfect_match', 'set_view_mode') %}/' + type;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        cache: false,
+                        success: function(data) {
+                            locationHref('{% helper seo.seolink('perfect_match', 'search') %}');
+                        }
+                    });
+                }
+
+                $('.search-param-button').click(function(){
+                    $('.user-search .search-form').toggle();
+                });
+            </script>
+        </div>
+    </div>
+</div>
+{% include '@app/footer.twig' %}

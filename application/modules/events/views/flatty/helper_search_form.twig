@@ -1,0 +1,83 @@
+{% helper default_select_lang = lang.l('select_default', 'users') %}
+{% helper all_select_lang = lang.l('filter_all', 'users') %}
+{% helper location_lang = lang.l('field_search_country', 'users') %}
+
+<form action="{{ form_settings.action }}" method="POST" id="main_search_form_{{ form_settings.form_id }}">
+    <div class="search-form {{ form_settings.type }}">
+        <div class="inside">
+            <div class="fields-block aligned-fields">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" value="{{ search_text }}" name="search" placeholder="{% helper lang.l('text_placeholder_search', 'events') %}" autosave="saved-searches">
+                    <button class="button-search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="input-group" id="short-search-form_{{ form_settings.form_id }}">
+                    <div class="f-title"> {% helper lang.l('text_category', 'events') %} </div>
+                    <div class="search-field">
+                        {% helper start.selectbox({
+                        'input': 'category',
+                        'id': 'category',
+                        'value': category_options.option,
+                        'selected': data.category,
+                    }) %}
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="f-title"> {% helper lang.l('text_period', 'events') %} </div>
+                    <div class="row clearfix">
+                        <div class="col-xs-5">
+                            <input type='text' value='{{ data.date_started_from }}' name="date_started_from" id="datepicker_date_started" maxlength="10" class="middle form-control">
+                        </div>
+                        <script>
+                            $(function () {
+                                now = new Date();
+                                $("#datepicker_date_started").datepicker({
+                                    dateFormat: 'yy-mm-dd',
+                                    changeYear: true,
+                                    changeMonth: true
+                                });
+                            });
+                        </script>
+                        <div class="col-xs-2 lh30">&nbsp;-&nbsp;</div>
+                        <div class="col-xs-5">
+                            <input type='text' value='{{ data.date_started_to }}' name="date_started_to" id="datepicker_date_ended" maxlength="10" class="middle form-control">
+                        </div>
+                        <script>
+                            $(function () {
+                                now = new Date();
+                                $("#datepicker_date_ended").datepicker({
+                                    dateFormat: 'yy-mm-dd',
+                                    changeYear: true,
+                                    changeMonth: true
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="button" onclick="searchEvents();" name="search" id="main_search_button_{{ form_settings.form_id }}" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}">
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    function searchEvents() {
+        var url = "{% helper seo.seolink('events', 'ajaxSearchEvents', search_type) %}";
+        $.ajax({
+            type: 'POST',
+            data: $("#main_search_form_{{ form_settings.form_id }}").serialize(),
+            dataType: 'json',
+            url: url,
+            success: function (data) {
+                $('.events-list').html(data.content);
+            }
+        });
+    }
+</script>

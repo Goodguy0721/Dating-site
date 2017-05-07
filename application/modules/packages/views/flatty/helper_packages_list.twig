@@ -1,0 +1,36 @@
+<div class="row packages-block">
+    {% for block_package in block_packages %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 package-block">
+            <div class="contrasting-block {% if loop.index % 3 != 0 %}clearfix{% endif %}">
+                <div class="package-name">
+                    <span>{{ block_package.name }}</span>
+                </div>
+                <div class="package-services">
+                    <div class="package-services__info">
+                        <h3>{% helper lang.l('field_available_days', 'packages') %}:&nbsp;{{ block_package.available_days }}</h3>
+                        {% for service in block_package.services_list %}
+                            <div>
+                                {{ service.name }}&nbsp;({{ service.service_count }})
+                                {% for setting_gid, setting_options in service.template.data_admin_array %}
+                                    <div class="service-description">
+                                        {{ setting_options.name }}:&nbsp;
+                                        {{ service.data_admin[setting_gid] }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="price">{% helper start.currency_format_output({'value': block_package.price}) %}</div>
+                    {% if not hide_btn %}
+                        <div class="center mb10">
+                            <input type="button" value="{% helper lang.l('btn_buy_now', 'services') %}" class="btn btn-primary" onclick="locationHref('{% helper seo.seolink('packages', 'package', {'gid': block_package.gid}) %}')" />
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if loop.index % 3 == 0 %}
+            <div class="clearfix"></div>
+        {% endif %}
+    {% endfor %}
+</div>

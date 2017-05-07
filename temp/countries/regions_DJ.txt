@@ -1,0 +1,2 @@
+	848	Tadjoura	11.7852800	42.8844400	DJ	05	0	0	Tadjoura	Таджура	Tadjoura	Tadjoura	Tadjoura	Tadjoura
+	848	Dorra	12.1502800	42.4762400	DJ	05	0	0	Dorra	Dorra	Dorra	Dorra	Dorra	Dorra

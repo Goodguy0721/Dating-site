@@ -1,0 +1,71 @@
+{% if helper_featured_users_data.buy_ability %}
+<div class="users-be-featured with-overlay-add" id="featured_add_{{ helper_featured_users_data.rand }}">
+    <div class="user">
+        <div class="photo">
+            <a href="{% helper seo.seolink('users', 'view', user) %}">
+                <img src="{{ user.media.user_logo.thumbs.small }}"/>
+            </a>
+            <i>
+                <i class="fa fa-plus edge icon-big w"></i>
+            </i>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% set carousel_attrs= {
+    'users': helper_featured_users_data.users,
+    'scroll': 'auto',
+    'class': 'small',
+    'thumb_name': 'small'
+} %}
+<div class="user-carousel-line {% if helper_featured_users_data.buy_ability %}unshift-icon{% endif %}">
+    {% helper users.users_carousel(carousel_attrs) %}
+</div>
+{% if helper_featured_users_data.buy_ability %}
+    <script>
+        $(function () {
+            loadScripts(
+                    [
+                        "{% helper utils.jscript('', 'available_view.js', 'path') %}",
+                        "{% helper utils.jscript('users', '../views/flatty/js/users-avatar.js', 'path') %}"
+                    ],
+                    function () {
+                        users_featured_available_view = new available_view({
+                            siteUrl: site_url,
+                            checkAvailableAjaxUrl: 'users/ajax_available_users_featured/',
+                            buyAbilityAjaxUrl: 'users/ajax_activate_users_featured/',
+                            buyAbilityFormId: 'ability_form',
+                            buyAbilitySubmitId: 'ability_form_submit',
+                            formType: 'list',
+                            success_request: function (message) {
+                                error_object.show_error_block(message, 'success');
+                                locationHref('');
+                            },
+                            fail_request: function (message) {
+                                error_object.show_error_block(message, 'error');
+                            },
+                        });
+                        var rand = '{{ helper_featured_users_data.rand }}';
+                        var user_logo = '{{ helper_featured_users_data.users.0.user_logo }}';
+                        /*featured_user_avatar = new avatar({
+                            site_url: site_url,
+                            id_user:{{ user.id }},
+                            photo_id: 'featured_add_' + rand,
+                        });*/
+                        $('#featured_add_' + rand).off('click').on('click', function (e) {
+                            if (user_logo == '') {
+                                /*featured_user_avatar.load_avatar();*/
+                            } else {
+                                users_featured_available_view.check_available();
+                            }
+                            return false;
+                        });
+                    },
+                    ['users_featured_available_view'],
+                    ['featured_user_avatar'],
+                    {async: false}
+            );
+        });
+    </script>
+{% endif %}

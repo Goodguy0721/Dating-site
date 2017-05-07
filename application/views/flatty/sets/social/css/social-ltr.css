@@ -1,0 +1,330 @@
+html, body, .index-page .main, .index-page .main > .content {
+    height: 100% !important;
+    min-height: 100%;
+}
+
+.no-notifications .menu-messages-more {
+    color: rgba(255, 255, 255, 0.25) !important
+}
+
+header,
+.header-color,
+.link-open-menu {
+    background-color: #181818;
+}
+
+.index-page #header-menu > li,
+.index-page #header-menu > li:first-child {
+    border: none;
+}
+
+.index-page #header-menu > li:hover,
+.index-page #header-menu > li:first-child:hover {
+    background: #3498DB;
+}
+
+.index-page .logo_header,
+.index-page .index-menu {
+    line-height: 70px;
+    overflow: hidden;
+}
+/*
+.index-page::before {
+    background:  url('../img/index_bg_image.jpg?ver=3') no-repeat scroll center 0 #081d4d;
+    background-size: cover auto;
+    content: "";
+    height: 100%;
+    transform: none;
+    width: 100%;
+    background-position: center 70px;
+    margin-top: -70px !important;
+}*/
+.index-page .main-inner-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.index-page #main_page {
+    background:  url('../img/index_bg_image.jpg?ver=3') no-repeat scroll center  #081d4d;
+    position: relative;
+    content: "";
+    height: 100%;
+    transform: none;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.index-page .footer-menu {
+    padding-bottom: 20px !important;
+}
+.index-page .footer-menu li{
+    float: left;
+    width: auto;
+    margin-right: 40px;
+    text-transform: none;
+    font-size: 14px;
+}
+
+.index-page .copyright-link {
+    padding-left: 0px;
+    text-align: left;
+
+}
+.index-page .starter-link {
+    padding-right: 0px;
+    float: right;
+}
+.index-page .creted-link {
+    padding-right: 0px;
+    float: right;
+}
+
+.index-page  footer .container {
+    max-width: 980px !important;
+}
+
+.index-page .promo-text-block {
+
+}
+
+.index-page .promo-text {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    left: 50%;
+    line-height: 48px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .index-page .promo-text {
+        font-size: 20px;
+        line-height: 35px;
+        width: 90%;
+        /*top: 200px;*/
+    }
+}
+
+.index-page .promo-text .download  {
+    /*margin: 15px 35px 0 65px;;*/
+}
+
+.index-page .promo-text .download span {
+    display: none;
+}
+
+.index-page .social_logo {
+/*    position: absolute;
+    top: 10px;
+    left: 0;*/
+}
+
+.index-page .index-social {
+    margin: 10px auto 0;
+    max-width: 980px;
+    height: 100%;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.index-page .language-selector {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    z-index: 2;
+}
+
+.index-page .auth-links {
+/*    position: absolute;
+    top: 10px;
+    right: 0;*/
+}
+
+.index-page .auth-links a:hover {
+    text-decoration: none;
+}
+
+.index-page .auth-links li {
+    display: inline;
+}
+
+.index-page .auth-links li a {
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: normal;
+    text-transform: none;
+    background: #3498DB;
+}
+
+.index-page #ajax_login_link {
+    background: #fff;
+    color: #081d4d;
+}
+
+.reg-btn {
+    color: #fff;
+    background: #f04043;
+    border: none;
+    padding: 10px 50px;
+    margin-top: 33px
+}
+
+.index-page .android_app, .ios_app {
+    display: inline-block;
+    width: 170px;
+    height: 52px;
+}
+
+.index-page .pjaxcontainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.index-page .pjaxcontainer_inner {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+.index-page .main {
+    min-height: 0;
+}
+
+.index-page footer {
+    background: #ffffff none repeat scroll 0 0 !important;
+    bottom: 0;
+    height: auto;
+    position: absolute;
+    width: 100%;
+}
+.fa-spin {
+  color: #333;
+}
+
+.memberships-table {
+    margin: 10px 0px;
+}
+.memberships-table .package-info{
+    float: left;
+}
+.memberships-table .package-actions{
+    margin-left: 100px;
+}
+.memberships-table table tbody tr td {
+    vertical-align:bottom;
+}
+.membership-block {
+    text-align: center;
+}
+.membership-block .name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.membership-block .price {
+    font-size: 24px;
+}
+.membership-block .btn {
+    width: 120px;
+    padding: 3px 12px;
+    margin-bottom: 15px;
+}
+.membership-services div {
+    /*line-height: 40px;*/
+}
+.memberships-table .services {
+    min-width: 180px;
+    font-size: 13px;
+}
+@media (max-width: 768px) {
+    .memberships-table .services {
+        display: none !important;
+    }
+    .membership-block {
+        display: block !important;
+        padding: 20px 0 0 !important;
+    }
+}
+@media (min-width: 768px) {
+    .membership-block {
+        border-top: 0 !important;
+    }
+    .memberships-table .services {
+        border-top: 0 !important;
+    }
+}
+
+
+/* memberships' list horizontal */
+.b-memberships__list {
+    margin-bottom: 15px;
+}
+.b-memberships__item {
+    margin-bottom: 5px;
+}
+.b-memberships__item :last-child {
+    margin-bottom: 0;
+}
+.b-member-plan {
+    background: #fff;
+    border: 2px #ddd solid;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+.b-member-plan__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 4px;
+}
+.b-member-plan__advert {
+    font-size: 11px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.b-member-plan__offers {
+    font-size: 12px;
+}
+.b-member-plan__offers li {
+    padding: 4px 0 3px 0;
+}
+.b-member-plan__price {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.b-member-plan__price div {
+    display: block;
+}
+.b-member-plan__price_bought {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .b-member-plan {
+        text-align: left;
+    }
+    .b-member-plan__offers {
+        max-width: 300px;
+    }
+    .b-member-plan__price {
+        padding: 0;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .b-member-plan__price div {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}

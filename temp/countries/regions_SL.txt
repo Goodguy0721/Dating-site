@@ -1,0 +1,4 @@
+	3024	Waterloo	8.3389000	-13.0709100	SL	04	0	0	Waterloo	Waterloo	Waterloo	Waterloo	Waterloo	Waterloo
+	3024	Hastings	8.3799400	-13.1369300	SL	04	0	0	Hastings	Hastings	Hastings	Hastings	Hastings	Hastings
+	3024	Freetown	8.4319400	-13.2897200	SL	04	0	0	Freetown	Фритаун	Freetown	Freetown	Freetown	Freetown
+	3024	Freetown	8.4840000	-13.2299400	SL	04	0	0	Freetown	Фритаун	Freetown	Freetown	Freetown	Freetown

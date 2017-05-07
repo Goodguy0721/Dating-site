@@ -1,0 +1,531 @@
+/*---------------------
+    media content
+---------------------*/
+.b-album-filters__bottom {
+    margin-top: 15px;
+}
+.b-album-filters__addfile {
+    margin-bottom: 5px;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .b-album-filters__addfile {
+        margin-bottom: 0;
+        text-align: $right;
+    }
+}
+
+
+
+.user-gallery {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.view-user .user-gallery .item{
+    padding: 5px;
+}
+.view-user .user-gallery .item img{
+    width: 100%;
+}
+.view-user .user-gallery .user .photo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .delete-media {
+            display: block;
+        }
+    }
+}
+.view-user .user-gallery .delete-media {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    display: none;
+    right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 10;
+    position: absolute;
+    top: 5px;
+    color: #fff;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.view-user .user-gallery .info {
+  display: none;
+  bottom: 0;
+  left: 0;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.5);
+}
+.view-user .user-gallery .info>div {
+  padding: 0 5px;
+  line-height: 1.5;
+}
+.view-user .user-gallery .info-icons{
+    color: #fff;
+  line-height: 26px;
+}
+.view-user .user-gallery .info-icons>div {
+  line-height: 26px;
+}
+
+.recent-photos{
+    @include g-panel;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.recent-photos h1{
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.recent-photos h1 i{
+    color: #eee;
+    cursor: pointer;
+}
+
+.media-popup-outer {
+    margin: 0 -50px;
+}
+
+.media-popup-outer .inner-image img{
+    margin: 0 auto;
+}
+
+.media-popup-info .title{
+    font-size: 18px;
+    color: #111;
+    font-weight: bold;    
+}
+.media-popup-options .title{
+    font-size: 18px;
+    color: #111;
+    font-weight: bold;    
+}
+.popup-opt-title{
+    font-size: 14px;
+    color: #111;
+    padding: 0px 0px 5px 0px;
+}
+.popup-opt-block{
+    padding: 0px 0px 10px 0px;
+}
+
+.albums-list{
+    border: 1px solid rgba(92, 103, 132, 0.25);
+    padding: 10px;
+}
+
+.media-popup-outer .edit-media-content {
+  position: relative;
+  line-height: 0;
+}
+.media-popup-outer .photo-edit {
+  position: relative;
+  margin: 0;
+}
+.media-popup-outer .photo-edit .source-box {
+  vertical-align: top;
+  text-align: center;
+  line-height: 0;
+}
+.media-popup-outer .photo-edit .photo-source-box {
+  clear: both;
+  position: relative;
+  text-align: center;
+}
+.media-popup-outer .photo-edit .source-box img {
+  border: none;
+  padding: 0;
+}
+.media-popup-outer .edit-media-content img {
+  border: 0;
+  padding: 0;
+  max-width: 100%;
+}
+.load_content_left:after {
+  content: "\f104";
+  left: 5px;
+}
+.load_content_right:after {
+  content: "\f105";
+  right: 5px;
+}
+.load_content_left:after, .load_content_right:after {
+  top: 50%;
+  font-size: 40px;
+  position: absolute;
+  font-family: FontAwesome;
+  width: 1em;
+  height: 30px;
+  margin-top: -15px;
+  text-align: center;
+  text-shadow: 1px 0 1px #FFF, -1px 0 1px #FFF, 0 1px 1px #FFF, 0 -1px 1px #FFF;
+  filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2, offY=2, color=#FFFFFF)progid:DXImageTransform.Microsoft.DropShadow(offX=-2, offY=-2, color=#FFFFFF);
+}
+.load_content_left, .load_content_right {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.load_content_right {
+  right: 0;
+}
+.load_content_left {
+  left: 0;
+}
+
+/* wall photos */
+.b-media-gallery {
+  margin: 0 -2px;
+
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+.b-media-gallery__item {
+    float: left;
+    padding: 2px;
+}
+.b-media-gallery__item-audio {
+    padding: 2px;
+}
+.b-media-gallery__photo {
+  line-height: 0;
+  position: relative;
+
+  &:hover {
+    .b-media-gallery__photoinfo {
+      display: block;
+    }
+  }
+}
+.b-media-gallery__photoinfo {
+  background-color: rgba(0,0,0,.5);
+  bottom: 0;
+  color: #fff;
+  display: none;
+  left: 0;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+
+  .color-link_color {
+    color: inherit;
+  }
+}
+.b-media-gallery__info-icons {
+
+}
+
+.media-popup-info .contenteditable {
+    /*border: 1px solid #ddd;
+    border-radius: 3px;*/
+    min-width: 50px;
+    min-height: 1em;
+    line-height: 1em;
+    width: auto;
+    padding: 5px;
+}
+
+.media-label-editable {
+    margin: 10px 0;
+}
+
+/* end media content */
+
+.gallery {
+    text-align: center;
+    min-height: 64px;
+    padding: 15px 0;
+    .block {
+        line-height: 0;
+    }
+    img {
+        padding: 0; 
+        border: none;
+    }
+    .wrapper-cont {
+        padding: 13px;
+    }
+    .wrapper {
+        margin: 0 auto;
+    }
+    .block-item {
+        overflow: hidden; 
+        position: relative;
+        img {
+            cursor: pointer;
+            width: 100%; 
+            height: 100%;
+        }
+    }
+    .block-item.middle {
+        height: 95px;
+        width: 95px;
+        img {
+            margin: -2.5px;
+        }
+    }
+    .block-item.big {
+        height: 200px; 
+        width: 200px;
+    }
+    .block-item.great {
+        height: 305px; 
+        width: 305px;
+    }
+    .block-item.vgreat {
+        height: 305px; 
+        width: 200px;
+    }
+    .block-item.hgreat {
+        height: 200px; 
+        width: 305px;
+    }
+    .button-cont {
+        padding: 10px 0; 
+        text-align: center;
+        input {
+            width: 300px;
+        }
+    }
+    .block-item-info {
+        line-height: 1.5;
+    }
+    .block-item-info>div {
+        overflow-x: hidden; 
+        -o-text-overflow: ellipsis; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+        padding: 0 20px 0 5px;
+    }
+    .block-item-top-info { 
+        left: auto !important; 
+        right: 0; 
+        top: 0; 
+        width: auto !important; 
+        height: 30px; 
+        div { 
+            padding:0 10px; 
+         }
+    }
+    .zoom-icon {
+        position: absolute; 
+        top: 7px; 
+        right: 3px;
+    }
+}
+.gallery.medium {
+    .item {
+        margin-right: 13px; 
+        margin-left: 13px;
+    }
+}
+.user-gallery.w-descr {
+    .user {
+        float: left;
+    }
+    .descr {
+        display: block;
+    }
+}
+.user-gallery {
+    line-height: 0;
+    .item {
+        display: inline-block; 
+        border: none; 
+        padding: 0; 
+        line-height: 1.5;
+        vertical-align: top;
+        img {
+            border: none; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    .descr {
+        width: 190px;
+    }
+    .user {
+        position: relative; 
+    }
+    .info {
+        display: none; 
+        bottom: 0; 
+        left: 0; 
+        padding: 5px; 
+        position: absolute; 
+        width: 100%; 
+        z-index: 3; 
+        background-color: rgba(0,0,0,.5);
+        color: #fff;        
+    }
+    .info *, 
+    .user {
+        .actions *, 
+        .subtext * {
+            color: #fff;
+        }
+        .actions,
+        .subtext {
+            bottom: 0; 
+            left: 0; 
+            padding: 10px; 
+            position: absolute; 
+            width: 100%; 
+            z-index: 100; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,.5); 
+            height: 50px; 
+            -moz-box-sizing: border-box; 
+            -webkit-box-sizing: border-box; 
+            box-sizing: border-box;
+        }
+        .subtext {
+            padding: 0 5px; 
+            height: 30px; 
+            line-height: 30px;
+        }
+        .actions {
+            .btns{
+                position: absolute;
+            }
+            .text {
+                display: table; 
+                height: 100%; 
+                width: 125px;
+                span {
+                    display: table-cell; 
+                    line-height: 15px; 
+                    vertical-align: middle; 
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .info-icons>div {
+        line-height: 26px;
+    }
+    .info-icons>p {
+        margin: 5px 0;
+    }
+    .info-icons {
+        .nums {
+            margin-right: 10px;
+        }
+        .like_block {
+            float:none;
+        }
+    }
+    .info>div {
+        padding: 0 5px; 
+        line-height: 1.5;
+    }
+    .info {
+        s {
+            line-height: 11px; 
+            font-size: 11px; 
+            max-height: 33px; 
+            max-width: 160px; 
+            overflow: hidden; 
+            display: block; 
+            float: left;
+        }
+        s.wp100 {
+            max-width: 100%;
+        }
+    }
+    .subinfo {
+        line-height: normal;
+    }
+    
+}
+.user-gallery.big {
+    margin: -8px -7px;
+    .fixmargin {
+        margin: 8px 7px;
+    }
+    .item 
+    {margin: 8px;
+    }
+    .user {
+        width: 305px; 
+        height: 305px;
+    }
+    .subinfo {
+        width: 315px;
+    }
+    .descr {
+        margin-left: 325px;
+    }
+}
+.user-gallery.medium {
+    margin: 0 -22px;
+    .fixmargin {
+        margin-right: 22px; 
+        margin-left: 22px;
+    }
+    .item {
+        margin: 0 23px 30px;
+    }
+    .user {
+        width: 200px; 
+        height: 200px;
+    }
+    .subinfo {
+        width: 210px;
+    }
+    .descr {
+        margin-left: 220px;
+    }
+}
+
+.user-gallery.w-actions {
+    .info {
+        bottom: 50px; 
+        padding-bottom: 0;
+        .comment {
+            max-height: 165px; 
+            line-height: 1.2;
+        }
+
+    }
+}
+.user-gallery.w-subtext {
+    .info {
+        bottom: 30px; 
+        padding-bottom: 0;
+    }
+}
+
+.media-gallery-popup {
+    .b-audiocell {
+        width: 200px; 
+        height: 200px; 
+        display: inline-block;
+        background-color: #fff;
+    }
+    .b-audiocell__txt {
+        bottom: 5px;
+        left: 10px;
+    }
+}

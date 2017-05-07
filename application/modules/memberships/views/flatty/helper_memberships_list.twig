@@ -1,0 +1,244 @@
+{% if block_memberships %}
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <p class="register-headline">Take the first step, and never have "the talk" again!</p>
+
+            <div class="text-center" id="plans">
+              <button class="btn btn-default btn-tab active" data-gid="positive_plus">Positives Plus</button>
+              <button class="btn btn-default btn-tab" data-gid="gold">Basic Plus</button>
+            </div>
+
+            <div class="mp-memberships__list" id="plan-periods">
+
+              <div id="plan-positive-plus" class="plan-periods">
+
+                <p class="text-center">Get the ultimate experience with Positive Plus – plus Video chat, Private Call & Text, and More Dates.  <a href="#">Learn more.</a></p>
+
+                {#<div class="mp-memberships__item mp-memberships__special">
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>11<sup>95 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">{{ block_memberships[3].name }} for</div>
+                    <div class="h2">1 month</div>
+                  </div>
+                  {% if not (block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[3].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                  <div class="mp-memberships__special_offer">
+                    <div>Special Offer! Great Deal</span></div>
+                  </div>
+                  <div class="mp-memberships__save">
+                    <div>Save<br><span>80%</span></div>
+                  </div>
+                </div>#}
+
+                {#<div class="mp-memberships__item">
+                  <div class="mp-memberships__item-select">
+                    <input type="radio" name="" value="1" onclick="return false;" {% if block_memberships[1].is_mine is not empty and block_memberships[1].expired|date('U') > 'now'|date('U') %}checked{% endif %}>
+                  </div>
+                  <div class="mp-memberships__item-price">
+                    <span></span>Free<sup></sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">{{ block_memberships[1].name }} for</div>
+                    <div class="h2">{{ block_memberships[1].period_count }} {{ block_memberships[1].period_type_output|lower }}</div>
+                  </div>
+                  {% if not (block_memberships[1].is_mine is not empty and block_memberships[1].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[1].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                </div>#}
+
+                <div class="mp-memberships__item">
+                  <div class="mp-memberships__item-select">
+                    <input type="radio" name="" value="3" onclick="return false;" {% if block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U') %}checked{% endif %}>
+                  </div>
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>47<sup>00 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">{{ block_memberships[3].name }} for</div>
+                    <div class="h2">1 month</div>
+                  </div>
+                  {% if not (block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[3].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                </div>
+              </div>
+
+              <div id="plan-gold" class="plan-periods hide">
+
+                <p class="text-center">Basic plan allows you to communicate, see who viewed you and search local without all the other bells and whisties.  <a href="#">Learn more.</a></p>
+
+                <div class="mp-memberships__item mp-memberships__special">
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>11<sup>95 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">Premium membership for</div>
+                    <div class="h2">12 months</div>
+                  </div>
+                  {% if not (block_memberships[2].is_mine is not empty and block_memberships[2].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[2].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                  <div class="mp-memberships__special_offer">
+                    <div>Special Offer! Great Deal</span></div>
+                  </div>
+                  <div class="mp-memberships__save">
+                    <div>Save<br><span>80%</span></div>
+                  </div>
+                </div>
+
+                <div class="mp-memberships__item">
+                  <div class="mp-memberships__item-select">
+                    <input type="radio" name="" value="3" onclick="return false;" {% if block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U') %}checked{% endif %}>
+                  </div>
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>14<sup>95 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">Great Savings</div>
+                    <div class="h2">6 months</div>
+                  </div>
+                  {% if not (block_memberships[2].is_mine is not empty and block_memberships[2].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[2].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                </div>
+
+                <div class="mp-memberships__item">
+                  <div class="mp-memberships__item-select">
+                    <input type="radio" name="" value="3" onclick="return false;" {% if block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U') %}checked{% endif %}>
+                  </div>
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>19<sup>95 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">Popular Choice</div>
+                    <div class="h2">3 months</div>
+                  </div>
+                  {% if not (block_memberships[2].is_mine is not empty and block_memberships[2].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[2].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                </div>
+
+                <div class="mp-memberships__item">
+                  <div class="mp-memberships__item-select">
+                    <input type="radio" name="" value="3" onclick="return false;" {% if block_memberships[3].is_mine is not empty and block_memberships[3].expired|date('U') > 'now'|date('U') %}checked{% endif %}>
+                  </div>
+                  <div class="mp-memberships__item-price">
+                    <span>$</span>29<sup>95 /month</sup>
+                  </div>
+                  <div class="mp-memberships__item-desc">
+                    <div class="h4">Starter Plan</div>
+                    <div class="h2">1 month</div>
+                  </div>
+                  {% if not (block_memberships[2].is_mine is not empty and block_memberships[2].expired|date('U') > 'now'|date('U')) and hide_buy_btn is empty %}
+                  <a href="{% helper seo.seolink('memberships', 'form', {'gid': block_memberships[2].gid}) %}"
+                    class="btn btn-primary btn-select-plan">Select Plan</a>
+                  {% endif  %}
+                </div>
+              </div>
+
+            </div>
+
+            <script>
+              $(function() {
+                $('#plans').find('button').bind('click', function() {
+                  $('#plans').find('button').removeClass('active');
+                  $('#plan-periods').find('.plan-periods').hide();
+                  $(this).addClass('active');
+                  $('#plan-' + $(this).data('gid').replace('_', '-')).show();
+                });
+              });
+            </script>
+
+            {# <div class="b-memberships__list">
+                {% for mkey, membership in block_memberships %}
+                    <div class="b-memberships__item">
+                        <div class="b-member-plan">
+                            {% if membership.is_mine is not empty and membership.expired|date('U') > 'now'|date('U') %}
+                                <div class="b-member-plan__advert">
+                                    {% helper lang.l('text_expires', 'memberships') %}
+                                    {% helper date_format.tpl_date_format(membership.expired, block_memberships_date_format) %}
+                                </div>
+                            {% else %}
+                                {% if membership.period_count %}
+                                    <div class="b-member-plan__advert">
+                                        {{ membership.period_count }} {{ membership.period_type_output }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            <div class="b-member-plan__title">{{ membership.name }}</div>
+font-size: 16px;                                {% for tpl_gid, service in all_services %}
+                                    {% set mId = membership.id %}
+
+                                    {% if service.membership_templates[mId] %}
+                                        <li>{{ service.name }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <div class="b-member-plan__price">
+                                {% if membership.is_mine is not empty and membership.expired|date('U') > 'now'|date('U') %}
+                                    <button class="btn btn-primary btn-sm btn-service-active">{% helper lang.l('activated', 'services') %}</button>
+                                {% elseif hide_buy_btn is empty %}
+                                    <div>{% helper start.currency_format_output({'value': membership.price}) %}</div>
+                                    <div><input type="button" class="btn btn-primary btn-sm" onclick="locationHref('{% helper seo.seolink('memberships', 'form', {'gid': membership.gid}) %}');" value="{% helper lang.l('btn_buy_now', 'memberships') %}"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>#}
+        </div>
+    </div>
+{% else %}
+    {% helper lang.l('no_memberships', 'memberships') %}
+{% endif %}
+
+<script>
+    $('.memberships-table .table').css('max-width', $('.membership-block').length*215 + 180);
+    $(window).resize(function(){
+        resizeServices();
+    });
+
+    function resizeServices() {
+        if (!$(".services:visible").length) {
+            $('.services div').each(function(s_index,s_elem){
+                $('.membership-services').each(function(ms_index,ms_elem) {
+                    $(ms_elem).children('div').each(function(div_index,div_elem) {
+                        if(div_index == s_index) {
+                            if($(div_elem).text().trim() == '+') {
+                                $(div_elem).text($(s_elem).text());
+                            } else if ($(div_elem).text().trim() == '-') {
+                                $(div_elem).empty();
+                                $(div_elem).removeClass();
+                            }
+                        }
+                    });
+                });
+            });
+        } else {
+            $('.services div').each(function(s_index,s_elem){
+                $('.membership-services').each(function(ms_index,ms_elem) {
+                    $(ms_elem).children('div').each(function(div_index,div_elem) {
+                        if(div_index == s_index) {
+                            if($(div_elem).text() == $(s_elem).text()) {
+                                $(div_elem).text('+');
+                            } else if(!$(div_elem).text()) {
+                                $(div_elem).text('-');
+                                $(div_elem).addClass('pb20');
+                            }
+                        }
+                    });
+                });
+            });
+        }
+    }
+    resizeServices();
+</script>

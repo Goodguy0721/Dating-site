@@ -1,0 +1,156 @@
+{% include '@app/header.twig' %}
+{% include 'search_block.twig' %}
+<div class="container">
+    <div class="row row-content">
+        <div class="store-content">
+
+            <div id="form-load-block" class="pos-rel">
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 no-padding-left">
+                    <div id="cat-load-block"></div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 no-padding-right">
+                    <div id="load_cart" class="hide load_cart"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row row-content">
+                    <div class="store-main-block">
+                        <form id="view_product">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <div class="panel panel-default pg-panel-default">
+                                    <div class="media pg-media clearfix">
+                                        {% if product.media.mediafile.thumbs.great is not empty %}
+                                            <div class="product-main-media pg-thumbnail">
+                                                <img class="img-rounded img-responsive" src="{{ product.media.mediafile.thumbs.great }}" alt="{{ product.name|e }}" title="{{ product.name|e }}">
+                                            </div>
+                                        {% else %}
+                                            <div class="default-great-image pg-thumbnail">
+                                                <i class="fa fa-gift fa-5x"></i>
+                                            </div>
+                                        {% endif %}
+                                        <div class="product-other-media">
+                                            {% helper store.store_product_media({
+                                                'block_type': 'list',
+                                                'product_id': product.id,
+                                                'thumb_name': 'small'
+                                            }) %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="search-header">
+                                    <div class="title">
+                                        {% if search_text %}
+                                           {% helper lang.l('search_results', 'users') %}:
+                                            '{{ search_text }}'
+                                        {% else %}
+                                           {% helper seo.seo_tags('header_text') %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="store-product-description">
+                                    {% if product.description %}
+                                        {{ product.description|nl2br }}
+                                    {% endif %}
+                                    {% for opt in product.options %}
+                                        {% set option_id = 'option_' ~ opt.id %}
+                                        {% helper store.store_options_values({
+                                            'header': opt.name,
+                                            'type': opt.type,
+                                            'id': opt.id,
+                                            'options': product[option_id],
+                                            'action': 'buy',
+                                            'page_type': 'full',
+                                            'source': 'user'
+                                        }) %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <div class="add-cart mb10">
+                                    <div class="cart-calc">
+                                        <div class="fleft mr10">{% helper lang.l('field_count', 'store') %}</div>
+                                        <div class="fleft">
+                                            <div class="fleft pointer" id="count_down" data-cartitem="{{ product.id }}">-</div>
+                                            <input id="count_{{ product.id }}" type="number" value="1" name="count" class="fleft form-control">
+                                            <div class="pointer" id="count_up" data-cartitem="{{ product.id }}">+</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt20">
+                                        {% if product.price > product.price_reduced %}
+                                            <div>
+                                                <span class="price-reduced fs13">
+                                                    {% helper start.currency_format_output({'value': product.price}) %}
+                                                </span>
+                                                <div class="bold view-price fs18">
+                                                    {% helper start.currency_format_output({'value': product.price_reduced}) %}
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div class="bold view-price">
+                                                {% helper start.currency_format_output({'value': product.price}) %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mt20">
+                                        {% helper store.store_button_block({
+                                            'product': product,
+                                            'method': 'view',
+                                            'class': 'btn btn-primary wp100'
+                                        }) %}
+                                    </div>
+                                </div>
+                                {% helper banners.show_banner_place('banner-185x155') %}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 no-padding-left no-padding-right">
+                        <div class="col-xs-12 col-sm-9">
+                            {% helper banners.show_banner_place('banner-980x90') %}
+                            <div class="store-block-list-products mb10">
+                                {% helper store.store_similar_block({'product_id': product.id}) %}
+                                {% helper store.store_order_together({'product_id': product.id}) %}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            {% helper banners.show_banner_place('banner-185x75') %}
+                            {% helper banners.show_banner_place('banner-320x250') %}
+                            {% helper banners.show_banner_place('banner-320x75') %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% helper social_networking.show_social_networks_like() %}
+{% helper social_networking.show_social_networks_share() %}
+{% helper social_networking.show_social_networks_comments() %}
+<div class="clr"></div>
+
+<script>
+    $(function(){
+        loadScripts(
+            [
+                "{% helper utils.jscript('store', 'store_cart.js', 'path') %}",
+                "{% helper utils.jscript('store', 'store_list.js', 'path') %}",
+                "{% helper utils.jscript('', 'easyTooltip.min.js', 'path') %}"
+            ],
+            function(){
+                $("[data-toggle=tooltip]").tooltip();
+                cart = new storeCart({
+                    siteUrl: site_url,
+                    langs: {add_cart_lang: "{% helper lang.l('button_in_cart', 'store', '', 'js') %}"}
+                });
+                list = new storeList({
+                    siteUrl: site_url,
+                    category_id: "store/category/{{ category.id }}",
+                });
+            },
+            ['cart', 'list'],
+            {async: true}
+        );
+    });
+</script>
+{% include '@app/footer.twig' %}

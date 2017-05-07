@@ -1,0 +1,10 @@
+	2239	Tiraspolul	46.8427400	29.6290900	MD	58	0	0	Tiraspolul	Тирасполь	Tiraspolul	Tiraspolul	Tiraspolul	Tiraspolul
+	2239	Slobozia	46.7292700	29.7044600	MD	58	0	0	Slobozia	Slobozia	Slobozia	Slobozia	Slobozia	Slobozia
+	2239	Rîbniţa	47.7681700	29.0100000	MD	58	0	0	Rîbniţa	Рыбница	Rîbniţa	Rîbniţa	Rîbniţa	Rîbniţa
+	2239	Pervomaisc	46.7325300	29.9617000	MD	58	0	0	Pervomaisc	Pervomaisc	Pervomaisc	Pervomaisc	Pervomaisc	Pervomaisc
+	2239	Maiac	47.2372700	29.3849800	MD	58	0	0	Maiac	Maiac	Maiac	Maiac	Maiac	Maiac
+	2239	Crasnoe	46.6484400	29.8040300	MD	58	0	0	Crasnoe	Crasnoe	Crasnoe	Crasnoe	Crasnoe	Crasnoe
+	2239	Grigoriopol	47.1541300	29.3000800	MD	58	0	0	Grigoriopol	Григориополь	Grigoriopol	Grigoriopol	Grigoriopol	Grigoriopol
+	2239	Dubăsari	47.2656200	29.1666700	MD	58	0	0	Dubăsari	Дубоссары	Dubăsari	Dubăsari	Dubăsari	Dubăsari
+	2239	Dnestrovsc	46.6164000	29.9192600	MD	58	0	0	Dnestrovsc	Dnestrovsc	Dnestrovsc	Dnestrovsc	Dnestrovsc	Dnestrovsc
+	2239	Camenca	48.0323300	28.6989900	MD	58	0	0	Camenca	Camenca	Camenca	Camenca	Camenca	Camenca

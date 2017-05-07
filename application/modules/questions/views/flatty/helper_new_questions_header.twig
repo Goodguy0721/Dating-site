@@ -1,0 +1,8 @@
+<div class="menu-alerts-more-item clearfix {% if not new_questions %}hide-always{% endif %}">
+    <a id="new_questions_header" href="{{ site_url }}questions/index">
+        {% helper lang.l('header_main_sections', 'questions') %}: 
+        <b class="summand new_questions fright">
+            {{ new_questions }}
+        </b>
+    </a>
+</div>

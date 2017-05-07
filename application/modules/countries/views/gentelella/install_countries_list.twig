@@ -1,0 +1,76 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_countries_menu') %}
+            </ul>
+        </div>
+        <div class = "x_title">
+            {{ countries_list_length }}
+            <h4>{% helper lang.l('countries_install_progress', 'countries') %}</h4>
+            <div class="progress" id="regions_bar">
+                <div class="bar progress-bar progress-bar-success" style="width:0%"
+                    id="overall_bar" aria-valuenow="0">
+                    0%
+                </div>
+            </div>
+            <div class="progress" id="overall_bar">
+                <div class="bar progress-bar progress-bar-warning" style="width:0%"
+                     id="overall_bar" aria-valuenow="0">
+                    0%
+                </div>
+            </div>
+        </div>
+        <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12" id="region_reload">
+                {% set counter_country = 1 %}
+                {% for c_key, c_item in countries_list %}
+                    <div class="col-md-12 col-sm-12 col-xs-12 country-block">
+                        <h4><span id="country_{{ counter_country }}">
+                            {{ c_item.name }}
+                        </span></h4>
+                        {% set counter_country = counter_country + 1 %}
+                        {% set code = c_key %}
+                        {% set regions_counter = 1 %}
+                        {% for key, item in regions_list[code] %}
+                            <div class="col-md-4 col-sm-4 col-xs-12 region-block">
+                                <span id="region_{{ item.country_code }}_{{ regions_counter }}">
+                                    {{ item.name }}
+                                </span><br>
+                                {% set regions_counter = regions_counter + 1 %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="ln_solid"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12" id="back_btn" class="hide">
+                <a href="{{ back_link }}" class="btn btn-default">
+                    {% helper lang.l('btn_back', 'start') %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/progressbar/bootstrap-progressbar.min.js"></script>
+
+<script>
+
+var country_install;
+$(function(){
+    country_install=new adminCountriesSelected({
+        siteUrl: '{{ site_url }}',
+        countries: '{{ countries_list_json }}',
+        regions_list: '{{ full_list }}',
+    });
+    country_install.start_country_install();
+});
+
+</script>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

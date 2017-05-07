@@ -1,0 +1,3 @@
+<input class="{{ cart_button.class }}" type="button"
+    value="{{ cart_button.value }}" data-pjax="0"
+    {% for keyp, itemp in cart_button.hidden %}data-{{ keyp }}="{{ itemp }}"{% endfor %}>

@@ -1,0 +1,8 @@
+	459	Trinidad	-14.8333300	-64.9000000	BO	03	0	0	Trinidad	Тринидад	Trinidad	Trinidad	Trinidad	Trinidad
+	459	Santa Rosa	-14.1666700	-66.8833300	BO	03	0	0	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa	Santa Rosa
+	459	San Ramón	-13.2833300	-64.7166700	BO	03	0	0	San Ramón	San Ramón	San Ramón	San Ramón	San Ramón	San Ramón
+	459	San Borja	-14.8166700	-66.8500000	BO	03	0	0	San Borja	San Borja	San Borja	San Borja	San Borja	San Borja
+	459	Rurrenabaque	-14.4412500	-67.5278100	BO	03	0	0	Rurrenabaque	Rurrenabaque	Rurrenabaque	Rurrenabaque	Rurrenabaque	Rurrenabaque
+	459	Riberalta	-11.0065400	-66.0631200	BO	03	0	0	Riberalta	Riberalta	Riberalta	Riberalta	Riberalta	Riberalta
+	459	Reyes	-14.2952000	-67.3362400	BO	03	0	0	Reyes	Reyes	Reyes	Reyes	Reyes	Reyes
+	459	Guayaramerín	-10.8367600	-65.3613600	BO	03	0	0	Guayaramerín	Guayaramerín	Guayaramerín	Guayaramerín	Guayaramerín	Guayaramerín

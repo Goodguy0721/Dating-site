@@ -1,0 +1,23 @@
+<div class="content-block event-view horizontal">
+    <div class="user-search">
+        <div class="search-param-button mb10"><a>{% helper lang.l('search_params_button', 'users') %}</a></div>
+        <div class="search-form">
+            {% helper utils.startSearchForm({'type': 'advanced', 'show_data': '0', 'object': 'user'}) %}
+        </div>
+        <div class="search-result" id="main_users_results">
+            {{ users_block }}
+        </div>
+    </div>
+</div>
+<input id="checked_users" type="hidden" value="" name="invited">
+<button type="button" id="invite_users" class="btn btn-primary btn-block" disabled>
+    {% helper lang.l('button_invite', 'events') %}
+</button>
+<script>
+
+    useradvanced.properties.userSearchUrl = 'events/ajaxSearchUsers/';
+    
+    $('.search-param-button').click(function () {
+        $('.user-search .search-form').toggle();
+    });
+</script>

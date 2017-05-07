@@ -1,0 +1,13 @@
+<div class="col-xs-12 col-lg-12 order-logs clearfix">
+	<div class="title-block">{% helper lang.l('link_order_log', 'store') %}</div>
+	{% for log in order_log %}
+		<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 no-padding-left">
+            {% helper date_format.tpl_date_format(log.date, page_data.date_format) %}
+        </div>
+		<div class="col-xs-8 col-sm-10 col-md-10 col-lg-10">
+            {{ log.status }}
+            {% if log.comment %}&nbsp;({{ log.comment }}){% endif %}
+        </div>
+        <div class="clr"></div>
+	{% endfor %}
+</div>

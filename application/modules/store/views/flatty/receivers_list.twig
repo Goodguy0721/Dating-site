@@ -1,0 +1,48 @@
+<div class="title-block">{{ user_list.title }}</div>
+<div class="select-receiver">
+    <div class="col-xs-12 no-padding-left">
+        {% for item in user_list.items %}
+            <div class="g-users-gallery__item col-xs-5 col-sm-5 col-md-6 col-lg-4">
+                <div class="g-users-gallery__content">
+                    <div class="g-users-gallery__photo photo">
+                        <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item.user) %}">
+                            {% helper users.formatAvatar({'user': item.user, 'size': 'great'}) %}
+                        </a>
+                        <div class="info">
+                                <div class="add-user" data-userid="{{ item.user.id }}">
+                                   <i class="fa fa-check-circle-o"></i>
+                               </div>
+                        </div>
+                    </div>
+                    <div class="g-users-gallery__info">
+                        <div class="text-overflow">
+                            <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'view', item.user) %}">{{ item.user.output_name }}</a>, {{ item.user.age }}
+                        </div>
+                        {% if item.user.location %}
+                            <div class="text-overflow">
+                                {{ item.user.location }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="empty">
+                {% helper lang.l('empty_result', 'friendlist') %}
+            </div>
+        {% endfor %}
+    </div>
+    {% if user_list.items|length == 5 %}
+        <div class="fltr pr10 pb20">
+            <span class="a" id="friends_load">
+                {% helper lang.l('link_view_all', 'store') %}
+            </span>
+        </div>
+    {% endif %}
+    {% if list %}
+        <div id="pages_block_2">
+            {% set page_data = page_data|merge({'type': 'full'}) %}
+            {% helper start.pagination(page_data) %}
+        </div>
+    {% endif %}
+</div>

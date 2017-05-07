@@ -1,0 +1,197 @@
+{% if not is_pjax %}
+<!DOCTYPE html>
+<html dir="{{ _LANG.rtl }}" lang="ru">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="revisit-after" content="3 days">
+        <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/bootstrap-{{ _LANG.rtl }}.css">
+        {% helper seo.seo_tags('robots') %}
+
+        <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+        <!-- For iPhone 4 Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+        <!-- For iPad: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+        <!-- For iPhone: -->
+        <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+        <link href="{{ site_root }}application/views/flatty/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <!-- link href="{{ site_root }}application/views/flatty/css/swiper.min.css" rel="stylesheet" type="text/css" -->
+{% endif %}
+
+        {% helper seo.seo_tags("title") %}
+        {% helper seo.seo_tags("description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description") %}
+
+        <script>
+            var site_rtl_settings = '{{ _LANG.rtl }}';
+            var is_pjax = parseInt('{{ is_pjax }}');
+            var js_events = {{ js_events|json_encode() }};
+            var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+        </script>
+
+{% if not is_pjax %}
+        {% helper theme.include_css('print', 'print') %}
+        {% helper theme.include_css('style', 'screen') %}
+        {% helper theme.css(load_type) %}
+
+        <script>
+            var site_url = '{{ site_url}}';
+            var site_root = '{{ site_root }}';
+            var theme = '{{ theme }}';
+            var img_folder = '{{ img_folder}}';
+            var site_error_position = 'center';
+            var use_pjax = parseInt('{{ use_pjax }}');
+            var pjax_container = '#pjaxcontainer';
+        </script>
+
+        {% helper utils.jscript('', 'jquery.js') %}
+        {% helper utils.jscript('', 'jquery.pjax.js') %}
+        {% helper theme.js(load_type) %}
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        {% helper utils.jscript('', 'twig.js/twig.js') %}
+        <script src="{{ site_root }}application/views/flatty/js/loading_content.js"></script>
+
+        <script type="text/javascript">
+            var jQueryShow = $.fn.show;
+            $.fn.show = function() {
+                jQueryShow.apply(this);
+                this.removeClass('hide');
+                return this;
+            };
+        </script>
+        {% helper seo_advanced.seo_traker('top') %}
+    </head>
+
+    <body class="mod-likeme">
+        {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+        {% helper chats.chats_block() %}
+        {% helper likes.likes() %}
+        {% helper audio_uploads.audio_bottom_controls() %}
+        {% if auth_type == 'user' %}
+        <div class="bottom-btns" id="bottom-btns">
+            {% helper im.im_chat_button() %}
+            {% helper shoutbox.shoutbox_button() %}
+        </div>
+        {% endif %}
+
+        <div id="pjaxcontainer" class="pjaxcontainer">
+{% endif %}
+            <div class="pjaxcontainer-inner">
+                <script type="text/javascript">
+                    /* likeme $.pjax.defaults.version = 'default'; */
+                    var messages = {% if _PREDEFINED %}{{ _PREDEFINED|json_encode(constant('JSON_FORCE_OBJECT')) }}{% else %}{}{% endif %};
+                    var alerts;
+                    var notifications;
+                    new pginfo({'messages': messages});
+                    $(function () {
+                        alerts = new Alerts();
+                        notifications = new Notifications();
+                    });
+                </script>
+
+                <div id="error_block">{% for item in _PREDEFINED.error %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                <div id="info_block">{% for item in _PREDEFINED.info %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                <div id="success_block">{% for item in _PREDEFINED.success %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+
+            <div class="header-container-outer" id="slidemenu-outer">
+                <div class="left-menu-header header-color">
+                    <span class="fa fa-times close_left_menu" id="slidemenu-close"></span>
+                </div>
+
+                <div class="header-container">
+                    <div class="left-menu" id="slidemenu">
+                        {% helper users.quickSearch() %}
+
+                        <div class="left-menu__user">
+                            {% helper users.shortInformation() %}
+                            {#<div class="left-menu__account">{% helper users.onUserAccount() %}</div>#}
+                        </div>
+                        
+                        
+                        <div class="main-menu">
+                            {% if auth_type == 'user' %}
+                                {% helper menu.get_menu('user_top_menu', 'user_top_menu') %}
+                            {% else %}
+                                {% helper menu.get_menu('guest_main_menu', 'guest_main_menu') %}
+                            {% endif %}
+                            {% helper services.services_get_menu() %}
+                            {% helper logout = users.get_logout_link() %}
+                            {% if logout %}
+                            <ul>
+                                <li class="menu-group">
+                                    <a href="{{ logout.link }}">
+                                        {% if logout.icon %}
+                                            <i class="fa fa-{{ logout.icon }}"></i>
+                                        {% endif %}
+                                        {{ logout.label }}
+                                    </a>
+                                </li>
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            {% if header_type is empty or header_type != 'index' %}
+                <header>
+                    <div>
+                        <div data-role="header">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5">
+                                    {% helper users.top_menu() %}
+                                </div>
+                                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="logo-mobile-version top-menu-item">
+                                        <a href="{{ site_url }}">
+                                            <img src="{{ site_root }}{{ mini_logo_settings.path }}"
+                                                 border="0"
+                                                 alt="{% helper seo.seo_tags_default(header_text) %}"
+                                                 width="{{ mini_logo_settings.width }}"
+                                                 height="{{ mini_logo_settings.height }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5 fltr-important rt-menu-outer">
+                                    <div class="menu-top-right-block">
+                                        {% helper users.auth_links() %}
+                                    </div>
+                                    <div class="menu-top-right-block">
+                                        <div class="input-group search-top-input">
+                                            <form action="{{ site_url}}users/search" method="POST" id="main_search_form_user_line">
+                                                <button type="submit" id="main_search_button_user_line" class="btn btn-primary-inverted"><i class="fa fa-search"></i>&nbsp;{% helper lang.l('header_find_people', 'users') %}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="menu-top-right-mobile">
+                                        <a href="{{ site_url }}users/search">
+                                            <i class="fa fa-search fa-lg item"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            {% endif %}
+
+                <div class="main-inner-content">
+                    <div class="container">
+
+                    </div>
+                    <div data-role="page" id="main_page" class="b-likeme-page">
+
+                        <div class="container b-likeme_h100">
+                            <div class="row">
+                                {% helper users.availableActivation() %}
+                            </div>
+                            <div class="row row-content b-likeme_h100">
+                                <div class="b-likeme__alert" id="static-alert-block"></div>

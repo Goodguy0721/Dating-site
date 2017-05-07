@@ -1,0 +1,93 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div class="g-flatty-block">
+        <div class="b-tabs b-tabs_wrapper">
+            <div class="b-tabs__item {% if tab == 'my_favs' %}active{% endif %}">
+                <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('favourites', 'my_favs') %}">
+                    {% helper lang.l('my_fav', 'favourites') %}
+                </a>
+            </div>
+            <div class="b-tabs__item {% if tab != 'my_favs' %}active{% endif %}" id="inbox">
+                <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('favourites', 'i_am_their_fav') %}">
+                    {% helper lang.l('fav_me', 'favourites') %}
+                </a>
+            </div>
+        </div>
+        {% if count %}
+            <div class="g-flatty-block__control">
+                <form method="post" action="" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" placeholder="{% helper lang.l('search', 'favourites') %}" name="search" value="{{ search|e }}" class="form-control" />
+                    </div>
+                    <input type="submit" value="{% helper lang.l('btn_search', 'start') %}" class="btn btn-primary" />
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="row g-users-gallery {% if tab == 'my_favs' %}w-actions{% endif %}">
+            {% for item in list %}
+                <div id="fav_{{ item.user.id }}" class="g-users-gallery__item col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                    <div class="g-users-gallery__content">
+                        <div class="g-users-gallery__photo">
+                            <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                {% helper users.formatAvatar({'user': item.user, 'size': 'great'}) %}
+                            </a>
+                            <div class="g-users-gallery__actions">
+                                <div class="g-photo-actions text-overflow">
+                                    {% if tab == 'my_favs' %}
+                                        {% if item.user.id %}
+                                            <a id="favourites_remove_{{ item.user.id }}" data-pjax="0"
+                                               href="{{ site_url }}favourites/remove/{{ item.user.id }}"
+                                               data-userid="{{ item.user.id }}"
+                                               title="{% helper lang.l('action_remove', 'favourites', '', 'button') %}">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-users-gallery__info">
+                            <div class="text-overflow">
+                                <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'view', item.user) %}">{{ item.user.output_name }}</a>, {{ item.user.age }}
+                            </div>
+                            {% if item.user.location %}
+                                <div class="text-overflow">
+                                    {{ item.user.location }}
+                                </div>
+                            {% endif %}
+                            <div class="text-overflow">
+                                {% helper date_format.tpl_date_format(item.date_update, page_data.date_time_format) %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="empty text-center p10 pt20">
+                    {% helper lang.l('empty_result', 'favourites') %}
+                </div>
+            {% endfor %}
+        </div>
+        {% if list %}
+            <div id="pages_block_2" class="tac">
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data, 'full') %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

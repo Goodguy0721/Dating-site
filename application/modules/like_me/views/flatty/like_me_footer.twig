@@ -1,0 +1,23 @@
+                        </div>
+                    </div>
+                </div>
+                {% helper im.imMobileBlock() %}
+                {% helper cookie_policy.cookie_policy_block() %}
+                <div class="logo-mobile-version"></div>
+            </div>
+        </div>
+
+        <script>
+            $('body').removeClass('index-page site-page')
+                     .addClass('{% if header_type == 'index' %}index-page{% else %}site-page{% endif %}');
+        </script>
+
+{% if empty(is_pjax) %}
+        </div>
+
+        {% helper languages.lang_editor() %}
+        {% helper seo_advanced.seo_traker('footer') %}
+        {% helper start.demo_panel({type: 'user', place: 'bottom'}) %}
+    </body>
+</html>
+{% endif %}

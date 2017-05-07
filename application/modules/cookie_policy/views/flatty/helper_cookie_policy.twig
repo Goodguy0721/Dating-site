@@ -1,0 +1,28 @@
+{% if policy_page_gid %}
+	{% set cookie_policy_link %}
+		{% helper content.get_page_link(policy_page_gid) %}
+	{% endset %}
+{% endif %}
+<div class="mod-cookie-policy" id="cookie_policy_block">
+    <div class="container">
+       <div class="row">
+            <p>{% helper lang.l('text_cookie_policy', 'cookie_policy', '', 'text', {link: cookie_policy_link}) %}</p>
+            <i id="cookie_policy_close" class="fa fa-times"></i>
+        </div>
+    </div>
+</div>
+<script>
+	$(function(){
+		loadScripts(
+            "{% helper utils.jscript('cookie_policy', 'cookie_policy.js', 'path') %}",
+            function(){
+                cookie_poilicy = new cookiePolicy({
+                    siteUrl: '{{ site_root }}',
+                    domain: '{{ cookie_site_server }}',
+                    path: '{{ cookie_site_server }}',
+                });
+            },
+            'cookie_poilicy'
+        );
+	});
+</script>

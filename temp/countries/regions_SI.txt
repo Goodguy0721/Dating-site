@@ -1,0 +1,24 @@
+	3247	Zagorje ob Savi	46.1317900	14.9969400	SI	E7	0	0	Zagorje ob Savi	Zagorje ob Savi	Zagorje ob Savi	Zagorje ob Savi	Zagorje ob Savi	Zagorje ob Savi
+	3247	Tirna	46.1000000	14.9000000	SI	E7	0	0	Tirna	Tirna	Tirna	Tirna	Tirna	Tirna
+	3247	Šentlambert	46.1166700	14.9333300	SI	E7	0	0	Šentlambert	Šentlambert	Šentlambert	Šentlambert	Šentlambert	Šentlambert
+	3247	Šentgotard	46.1895400	14.9060100	SI	E7	0	0	Šentgotard	Šentgotard	Šentgotard	Šentgotard	Šentgotard	Šentgotard
+	3247	Šemnik	46.1447200	14.9358300	SI	E7	0	0	Šemnik	Šemnik	Šemnik	Šemnik	Šemnik	Šemnik
+	3247	Rove	46.1601700	14.9829800	SI	E7	0	0	Rove	Rove	Rove	Rove	Rove	Rove
+	3247	Podkum	46.0713900	15.0286100	SI	E7	0	0	Podkum	Podkum	Podkum	Podkum	Podkum	Podkum
+	3247	Padež	46.0666700	15.0166700	SI	E7	0	0	Padež	Padež	Padež	Padež	Padež	Padež
+	3247	Medija	46.1600600	14.8540200	SI	E7	0	0	Medija	Medija	Medija	Medija	Medija	Medija
+	3247	Loke pri Zagorju	46.1443700	14.9624500	SI	E7	0	0	Loke pri Zagorju	Loke pri Zagorju	Loke pri Zagorju	Loke pri Zagorju	Loke pri Zagorju	Loke pri Zagorju
+	3247	Kotredež	46.1580400	14.9964100	SI	E7	0	0	Kotredež	Kotredež	Kotredež	Kotredež	Kotredež	Kotredež
+	3247	Kolovrat	46.1705600	14.8741700	SI	E7	0	0	Kolovrat	Kolovrat	Kolovrat	Kolovrat	Kolovrat	Kolovrat
+	3247	Jelševica	46.2006700	14.9050500	SI	E7	0	0	Jelševica	Jelševica	Jelševica	Jelševica	Jelševica	Jelševica
+	3247	Jarše	46.1060500	14.9365400	SI	E7	0	0	Jarše	Jarše	Jarše	Jarše	Jarše	Jarše
+	3247	Jablana	46.1236100	14.9522200	SI	E7	0	0	Jablana	Jablana	Jablana	Jablana	Jablana	Jablana
+	3247	Izlake	46.1500000	14.9500000	SI	E7	0	0	Izlake	Izlake	Izlake	Izlake	Izlake	Izlake
+	3247	Hrastnik pri Trojanah	46.1821500	14.9040700	SI	E7	0	0	Hrastnik pri Trojanah	Hrastnik pri Trojanah	Hrastnik pri Trojanah	Hrastnik pri Trojanah	Hrastnik pri Trojanah	Hrastnik pri Trojanah
+	3247	Gorenja Vas	46.0833300	15.0666700	SI	E7	0	0	Gorenja Vas	Gorenja Vas	Gorenja Vas	Gorenja Vas	Gorenja Vas	Gorenja Vas
+	3247	Čolnišče	46.1166700	14.9666700	SI	E7	0	0	Čolnišče	Čolnišče	Čolnišče	Čolnišče	Čolnišče	Čolnišče
+	3247	Čemšenik	46.1791700	14.9444400	SI	E7	0	0	Čemšenik	Čemšenik	Čemšenik	Čemšenik	Čemšenik	Čemšenik
+	3247	Borje pri Mlinšah	46.1666700	14.8166700	SI	E7	0	0	Borje pri Mlinšah	Borje pri Mlinšah	Borje pri Mlinšah	Borje pri Mlinšah	Borje pri Mlinšah	Borje pri Mlinšah
+	3247	Golče	46.1244400	14.9197200	SI	E7	0	0	Golče	Golče	Golče	Golče	Golče	Golče
+	3247	Ržiše	46.1677800	14.9611100	SI	E7	0	0	Ržiše	Ržiše	Ržiše	Ržiše	Ržiše	Ržiše
+	3247	Vrh pri Mlinšah	46.1508300	14.8455600	SI	E7	0	0	Vrh pri Mlinšah	Vrh pri Mlinšah	Vrh pri Mlinšah	Vrh pri Mlinšah	Vrh pri Mlinšah	Vrh pri Mlinšah

@@ -1,0 +1,37 @@
+<ul>
+	{% for key, item in menu %}
+        <li class="menu-group {% if item.active is not empty or item.in_chain is not empty %}active{% endif %}">
+            {% if item.sub is not empty %}
+                <span id="user_{{ item.gid }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}
+                </span>
+            {% else %}
+                <a id="user_{{ item.gid }}" href="{{ item.link }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}
+                </a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+<script type="text/javascript">
+    $(function(){
+		loadScripts(
+			[
+				"{% helper utils.jscript('menu', 'main-menu.js', 'path') %}",
+			],
+			function(){
+				main_menu = new mainMenu({
+					siteUrl: site_url,
+				});
+			},
+			'main_menu',
+			{async: false}
+		);
+	});
+</script>

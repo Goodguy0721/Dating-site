@@ -1,0 +1,37 @@
+<div class="load_content_controller">
+	<div class="inside">
+
+		<form id="mark_adult" class="edit-form n100" action="{{ data.action }}" method="post" enctype="multipart/form-data">
+			<label class="col-xs-12">
+				{% helper lang.l('btn_mark_adult', 'media') %}?</label>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+{# {% helper confirm_text = lang.l('btn_confirm', 'media', '', 'button') %}
+<input type="submit" id="lie_mark_adult" name="btn_confirm" value="{{ confirm_text }}" >#}
+
+<script type="text/javascript">
+	$(function(){
+        $('#mark_adult').unbind('submit').on('submit', function(e){
+            e.preventDefault();
+            var data = new Array();
+            $('.grouping:checked').each(function(i){
+                data[i] = $(this).val();
+            });
+            if(data.length > 0){
+                $.ajax({
+                    url: site_url + 'admin/media/ajax_mark_adult_media/',
+                    data: {file_ids: data},
+                    type: "POST",
+                    cache: false,
+                    success: function(data){
+                        reload_this_page('index/');
+                    }
+                });
+            }
+        });
+    });
+</script>

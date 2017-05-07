@@ -1,0 +1,3 @@
+	3568	Tunapuna	10.6333300	-61.3833300	TT	TUP	0	0	Tunapuna	Tunapuna	Tunapuna	Tunapuna	Tunapuna	Tunapuna
+	3568	Paradise	10.6529800	-61.3629800	TT	TUP	0	0	Paradise	Paradise	Paradise	Paradise	Paradise	Paradise
+	3568	Arouca	10.6287700	-61.3348700	TT	TUP	0	0	Arouca	Arouca	Arouca	Arouca	Arouca	Arouca

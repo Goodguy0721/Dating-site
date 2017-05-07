@@ -1,0 +1,12 @@
+	2453	Talata Mafara	12.5684100	6.0622500	NG	57	0	0	Talata Mafara	Talata Mafara	Talata Mafara	Talata Mafara	Talata Mafara	Talata Mafara
+	2453	Shinkafi	13.0729600	6.5057400	NG	57	0	0	Shinkafi	Shinkafi	Shinkafi	Shinkafi	Shinkafi	Shinkafi
+	2453	Sauri	11.7265500	6.7837400	NG	57	0	0	Sauri	Sauri	Sauri	Sauri	Sauri	Sauri
+	2453	Moriki	12.8740500	6.4875400	NG	57	0	0	Moriki	Moriki	Moriki	Moriki	Moriki	Moriki
+	2453	Maru	12.3336000	6.4037200	NG	57	0	0	Maru	Maru	Maru	Maru	Maru	Maru
+	2453	Kwatarkwashi	12.1408200	6.8219600	NG	57	0	0	Kwatarkwashi	Kwatarkwashi	Kwatarkwashi	Kwatarkwashi	Kwatarkwashi	Kwatarkwashi
+	2453	Kaura Namoda	12.5937100	6.5864800	NG	57	0	0	Kaura Namoda	Kaura Namoda	Kaura Namoda	Kaura Namoda	Kaura Namoda	Kaura Namoda
+	2453	Gusau	12.1702400	6.6641200	NG	57	0	0	Gusau	Гусау	Gusau	Gusau	Gusau	Gusau
+	2453	Gummi	12.1448400	5.1177600	NG	57	0	0	Gummi	Кунми	Gummi	Gummi	Gummi	Gummi
+	2453	Dan Sadau	11.2962100	6.4952000	NG	57	0	0	Dan Sadau	Dan Sadau	Dan Sadau	Dan Sadau	Dan Sadau	Dan Sadau
+	2453	Tsafe	11.9577500	6.9208300	NG	57	0	0	Tsafe	Tsafe	Tsafe	Tsafe	Tsafe	Tsafe
+	2453	Anka	12.1134700	5.9268100	NG	57	0	0	Anka	Anka	Anka	Anka	Anka	Anka

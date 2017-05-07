@@ -1,0 +1,106 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li>
+                    <a href="{{ site_url }}admin/clubs/edit/{{ club.id }}">
+                        {% helper lang.l('table_header_personal', 'clubs') %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ site_url }}admin/clubs/media/{{ club.id }}">
+                        {% helper lang.l('table_header_media', 'clubs') %}
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="{{ site_url }}admin/clubs/forum/{{ club.id }}">
+                        {% helper lang.l('table_header_forum', 'clubs') %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="x_content">
+            <table id="clubs_forum_table" class="table table-striped responsive-utilities jambo_table">
+            <thead>
+                <tr class="headings">
+                    <th class="column-title"></th>
+                    <th class="column-title">{% helper lang.l('field_posts_message', 'clubs') %}</th>
+                    <th class="column-title">{% helper lang.l('field_user', 'clubs') %}</th>
+                    <th class="column-title">{% helper lang.l('field_date_added', 'clubs') %}</th>
+                    <th class="column-title"></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.message }}</td>
+                    <td>
+                        <a href="{{ site_url }}admin/users/edit/personal/{{ post.user_id }}">{{ post.user.output_name }}</a>
+                    </td>
+                    <td>{% helper date_format.tpl_date_format(post.date_added, date_format) %}</td>
+                    <td class="icons">
+                    <a class="btn btn-primary" onclick = "if(!confirm('{% helper lang.l('note_alert_delete_forum_post','clubs') %}')) { return false; }" href="{{ site_url }}admin/clubs/deleteForumPost/{{ post.id }}">
+                          {% helper lang.l('btn_delete', 'start') %}
+                    </a>
+              </tr>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#clubs_forum_table').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_forum_posts','clubs') %}"
+            }, 
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [4]
+                } //disables sorting for column one
+            ],
+            "aaSorting": [[3, "desc"]], 
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#clubs_forum_table_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

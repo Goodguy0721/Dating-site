@@ -1,0 +1,58 @@
+<a class="panel-heading" role="tab" id="headingPayments" data-toggle="collapse"
+    data-parent="#accordionPayments" href="#collapsePayments" aria-expanded="true" aria-controls="collapsePayments">
+    <h4 class="panel-title">
+        {% helper lang.l('stat_header_payments', 'payments') %}
+    </h4>
+</a>
+<div id="collapsePayments" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPayments">
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <td>
+                    <a id="payments_link_all" href="{{ site_url }}admin/payments/index/">
+                        {% helper lang.l('stat_header_all', 'payments') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="payments_link_all_num" href="{{ site_url }}admin/payments/index/">
+                        {{ stat_payments.all }}
+                    </a>
+                </td>
+            </tr>
+                <td>
+                    <a id="payments_link_approve" href="{{ site_url }}admin/payments/index/approve">
+                        {% helper lang.l('stat_header_approved', 'payments') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="payments_link_approve_num" href="{{ site_url }}admin/payments/index/approve">
+                        {{ stat_payments.approve }}
+                    </a>
+                </td>
+            <tr>
+                <td>
+                    <a id="payments_link_decline" href="{{ site_url }}admin/payments/index/decline">
+                        {% helper lang.l('stat_header_declined', 'payments') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="payments_link_decline_num" href="{{ site_url }}admin/payments/index/decline">
+                        {{ stat_payments.decline }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a id="payments_link_wait" href="{{ site_url }}admin/payments/index/wait">
+                        {% helper lang.l('stat_header_awaiting', 'payments') %}
+                    </a>
+                </td>
+                <td>
+                    <a id="payments_link_wait_num" href="{{ site_url }}admin/payments/index/wait">
+                        {{ stat_payments.wait }}
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

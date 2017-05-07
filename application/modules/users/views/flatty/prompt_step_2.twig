@@ -1,0 +1,19 @@
+<div class="hide">
+{% helper aviary.aviary_editor_image({
+  id: 'user_logo',
+  source: "function(){return '" ~ user.media.user_logo.file_url ~ "';}()",
+  module_gid: 'users',
+  post_url: '',
+  post_data: {user_id: user.id},
+  save_callback: 'function(resp) {try{var data=JSON.parse(resp);$("#users_link_profile img").prop({src:data.thumbs.small+'?'+(new Date().getTime())});}catch(e){}}'
+}) %}
+
+<img src="{{ user.media.user_logo.thumbs.big }}"
+  id="user_logo" class="img-responsive">
+
+
+<button type="buttom" class="btn btn-primary">
+  Change</button>
+<a type="{{ site_url }}users/profile/view" class="btn btn-primary">
+  Продолжить</a>
+</div>

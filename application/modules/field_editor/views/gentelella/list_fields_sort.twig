@@ -1,0 +1,30 @@
+<div id="menu_items">
+    <ul name="parent_0" class="sort connected" id="clsr0ul">
+    {% for item in fields %}
+        <li id="item_{{ item.id }}">{{ item.name }}</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="ln_solid"></div>
+
+<div class="form-group">
+  <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+    <a class="btn btn-success" href="#" onclick="javascript: mlSorter.update_sorting();
+        return false">{% helper lang.l('link_save_sorting', 'field_editor') %}</a>
+    <a class="btn btn-default" href="{{ site_url }}admin/field_editor/fields/{{ type }}/{{ section }}/">
+        {% helper lang.l('link_view_mode', 'field_editor') %}</a>
+  </div>
+</div>
+
+{% helper utils.jscript('', 'admin-multilevel-sorter.js') %}
+<script>
+    var mlSorter;
+    $(function () {
+        mlSorter = new multilevelSorter({
+            siteUrl: '{{ site_url }}',
+            onActionUpdate: false,
+            urlSaveSort: 'admin/field_editor/ajax_field_sort'
+        });
+    });
+</script>

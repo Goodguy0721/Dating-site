@@ -1,0 +1,15 @@
+.dropdown{max-width: 600px;}
+.tickets_lists .view{font-weight: normal;}
+.contact-us-form {
+	.btn {
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.contact-us-form {
+		.btn {
+			width: auto;
+		}
+	}
+}

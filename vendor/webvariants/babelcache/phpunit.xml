@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" strict="true" bootstrap="tests/lib/bootstrap.php">
+	<testsuites>
+		<testsuite name="tests">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+
+	<logging>
+		<log type="coverage-text" target="php://stdout" showUncoveredFiles="false" />
+		<log type="coverage-html" target="test-coverage" showUncoveredFiles="false" />
+	</logging>
+
+	<filter>
+		<whitelist>
+			<directory>src</directory>
+			<exclude>
+				<file>src/wv/BabelCache/Adapter/XCache.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

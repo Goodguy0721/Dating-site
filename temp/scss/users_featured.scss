@@ -1,0 +1,191 @@
+.users-be-featured {
+    float: $left;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-#{$right}: 1px;
+    margin-#{$left}: 15px;
+}
+
+.users-be-featured.with-overlay-add .photo {
+    cursor: pointer;
+}
+
+.users-be-featured.with-overlay-add .photo:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.users-be-featured.with-overlay-add .photo > i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    margin: 0;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.users-be-featured .photo {
+    position: relative;
+    margin-#{$right}: 1px;
+    line-height: 0;
+}
+
+.user-carousel-line {
+    margin: 5px 15px 0px;
+    &.unshift-icon {
+        margin-top: 5px;
+        margin-bottom: 0;
+        margin-#{$right}: 15px;
+        margin-#{$left}: 82px;
+    }
+}
+
+.user-carousel-line button {
+    display: none;
+}
+
+.g-users-gallery {
+    .highlight {
+        border: 1px solid $status_color !important;
+        border-radius: 5px;
+    }
+}
+
+.user-list {
+    .highlight {
+        border: 1px solid $status_color !important;;
+        border-radius: 0;
+        .btn-secondary {
+            background: $content_bg !important;
+        }
+    }
+}
+
+.memberships-table {
+    margin: 10px 0px;
+}
+.memberships-table .package-info{
+    float: left;
+}
+.memberships-table .package-actions{
+    margin-left: 100px;
+}
+.memberships-table table tbody tr td {
+    vertical-align:bottom;
+}
+.membership-block {
+    text-align: center;
+}
+.membership-block .name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.membership-block .price {
+    font-size: 24px;
+}
+.membership-block .btn {
+    width: 120px;
+    padding: 3px 12px;
+    margin-bottom: 15px;
+}
+.membership-services div {
+    /*line-height: 40px;*/
+}
+.memberships-table .services {
+    min-width: 180px;
+    font-size: 13px;
+}
+@media (max-width: 768px) {
+    .memberships-table .services {
+        display: none !important;
+    }
+    .membership-block {
+        display: block !important;
+        padding: 20px 0 0 !important;
+    }
+}
+@media (min-width: 768px) {
+    .membership-block {
+        border-top: 0 !important;
+    }
+    .memberships-table .services {
+        border-top: 0 !important;
+    }
+}
+
+
+/* memberships' list horizontal */
+.b-memberships__list {
+    margin-bottom: 15px;
+}
+.b-memberships__item {
+    margin-bottom: 5px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.b-member-plan {
+    @include info-block;
+    position: relative;
+    text-align: center;
+}
+.b-member-plan__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 4px;
+}
+.b-member-plan__advert {
+    font-size: 11px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.b-member-plan__offers {
+    font-size: 12px;
+
+    li {
+        padding: 4px 0 3px 0;
+    }
+}
+.b-member-plan__price {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 0;
+
+    div {
+        display: block;
+    }
+}
+.b-member-plan__price_bought {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .b-member-plan {
+        text-align: $left;
+    }
+    .b-member-plan__offers {
+        max-width: 300px;
+    }
+    .b-member-plan__price {
+        padding: 0;
+        position: absolute;
+        #{$right}: 10px;
+        top: 10px;
+
+        div {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}

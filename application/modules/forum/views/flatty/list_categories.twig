@@ -1,0 +1,33 @@
+{% include '@app/header.twig' %}
+
+<h1>{% helper lang.l('title_public', 'forum') %}</h1>
+
+<div class="table-div wp100">
+	<dl>
+		<dt class="w100"><h2>{% helper lang.l('field_categories', 'forum') %}</h2></dt>
+		<dt class="w300"><h2>{% helper lang.l('field_category_description', 'forum') %}</h2></dt>
+		<dt class="w50 center"><h2>{% helper lang.l('link_subcategory_count', 'forum') %}</h2></dt>
+		<dt class="w50 center"><h2>{% helper lang.l('link_messages_count', 'forum') %}</h2></dt>
+	</dl>
+</div>
+{% if categories is not empty %}
+	{% for key, item in categories %}
+		<div class="table-div wp100">
+			<dl>
+				<dt class="w100"><a href="{{ site_url }}forum/topics/{{ item.id }}">{{ item.category }}</a></dt>
+				<dt class="w300">{{ item.description }}</dt>
+				<dt class="w50 center">{{ item.subcategory_count }}</dt>
+				<dt class="w50 center">{{ item.messages_count }}</dt>
+			</dl>
+		</div>
+	{% endfor %}
+
+	<div id="pages_block_2">
+		{% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+	</div>
+{% else %}
+	<div class="center">{% helper lang.l('no_categories', 'forum') %}</div>
+{% endif %}
+
+{% include '@app/footer.twig' %}

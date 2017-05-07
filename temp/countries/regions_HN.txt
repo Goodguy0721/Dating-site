@@ -1,0 +1,48 @@
+	1227	Yoro	15.1375000	-87.1277800	HN	18	0	0	Yoro	Yoro	Yoro	Yoro	Yoro	Yoro
+	1227	Yorito	15.0666700	-87.2833300	HN	18	0	0	Yorito	Yorito	Yorito	Yorito	Yorito	Yorito
+	1227	Victoria	15.5038100	-87.8262500	HN	18	0	0	Victoria	Victoria	Victoria	Victoria	Victoria	Victoria
+	1227	Trojas	15.3500000	-86.7000000	HN	18	0	0	Trojas	Trojas	Trojas	Trojas	Trojas	Trojas
+	1227	Toyós	15.5500000	-87.6500000	HN	18	0	0	Toyós	Toyós	Toyós	Toyós	Toyós	Toyós
+	1227	Tepusteca	15.4166700	-86.3166700	HN	18	0	0	Tepusteca	Tepusteca	Tepusteca	Tepusteca	Tepusteca	Tepusteca
+	1227	Teguajinal	15.3666700	-86.6000000	HN	18	0	0	Teguajinal	Teguajinal	Teguajinal	Teguajinal	Teguajinal	Teguajinal
+	1227	Sulaco	14.9166700	-87.2666700	HN	18	0	0	Sulaco	Sulaco	Sulaco	Sulaco	Sulaco	Sulaco
+	1227	Subirana	15.2000000	-87.4500000	HN	18	0	0	Subirana	Subirana	Subirana	Subirana	Subirana	Subirana
+	1227	Santa Rita	15.1666700	-87.2833300	HN	18	0	0	Santa Rita	Santa Rita	Santa Rita	Santa Rita	Santa Rita	Santa Rita
+	1227	San José	15.3166700	-87.1666700	HN	18	0	0	San José	San José	San José	San José	San José	San José
+	1227	San Antonio	15.3333300	-87.1500000	HN	18	0	0	San Antonio	San Antonio	San Antonio	San Antonio	San Antonio	San Antonio
+	1227	Quebrada de Yoro	15.4333300	-87.7833300	HN	18	0	0	Quebrada de Yoro	Quebrada de Yoro	Quebrada de Yoro	Quebrada de Yoro	Quebrada de Yoro	Quebrada de Yoro
+	1227	Punta Ocote	15.2000000	-87.2833300	HN	18	0	0	Punta Ocote	Punta Ocote	Punta Ocote	Punta Ocote	Punta Ocote	Punta Ocote
+	1227	Paujiles	15.1000000	-87.3500000	HN	18	0	0	Paujiles	Paujiles	Paujiles	Paujiles	Paujiles	Paujiles
+	1227	Olanchito	15.4813100	-86.5741500	HN	18	0	0	Olanchito	Оланчито	Olanchito	Olanchito	Olanchito	Olanchito
+	1227	Ocote Paulino	15.4166700	-87.6000000	HN	18	0	0	Ocote Paulino	Ocote Paulino	Ocote Paulino	Ocote Paulino	Ocote Paulino	Ocote Paulino
+	1227	Nueva Florida	15.4666700	-87.5000000	HN	18	0	0	Nueva Florida	Nueva Florida	Nueva Florida	Nueva Florida	Nueva Florida	Nueva Florida
+	1227	Nueva Esperanza	15.2666700	-87.6000000	HN	18	0	0	Nueva Esperanza	Nueva Esperanza	Nueva Esperanza	Nueva Esperanza	Nueva Esperanza	Nueva Esperanza
+	1227	Nombre de Jesús	15.3500000	-86.6833300	HN	18	0	0	Nombre de Jesús	Nombre de Jesús	Nombre de Jesús	Nombre de Jesús	Nombre de Jesús	Nombre de Jesús
+	1227	Morazán	15.3166700	-87.6000000	HN	18	0	0	Morazán	Франсиско Морасан	Morazán	Morazán	Morazán	Morazán
+	1227	Mojimán	15.2666700	-87.6000000	HN	18	0	0	Mojimán	Mojimán	Mojimán	Mojimán	Mojimán	Mojimán
+	1227	Lomitas	15.1000000	-87.2166700	HN	18	0	0	Lomitas	Lomitas	Lomitas	Lomitas	Lomitas	Lomitas
+	1227	La Trinidad	15.1000000	-87.2000000	HN	18	0	0	La Trinidad	La Trinidad	La Trinidad	La Trinidad	La Trinidad	La Trinidad
+	1227	Las Vegas	15.0166700	-87.4500000	HN	18	0	0	Las Vegas	Las Vegas	Las Vegas	Las Vegas	Las Vegas	Las Vegas
+	1227	La Sarrosa	15.2333300	-87.8333300	HN	18	0	0	La Sarrosa	La Sarrosa	La Sarrosa	La Sarrosa	La Sarrosa	La Sarrosa
+	1227	La Rosa	15.3500000	-87.0666700	HN	18	0	0	La Rosa	La Rosa	La Rosa	La Rosa	La Rosa	La Rosa
+	1227	La Mina	15.3166700	-87.8333300	HN	18	0	0	La Mina	La Mina	La Mina	La Mina	La Mina	La Mina
+	1227	La Guacamaya	15.2500000	-87.8000000	HN	18	0	0	La Guacamaya	La Guacamaya	La Guacamaya	La Guacamaya	La Guacamaya	La Guacamaya
+	1227	La Estancia	15.2833300	-87.5500000	HN	18	0	0	La Estancia	La Estancia	La Estancia	La Estancia	La Estancia	La Estancia
+	1227	Jocón	15.2833300	-86.9666700	HN	18	0	0	Jocón	Jocón	Jocón	Jocón	Jocón	Jocón
+	1227	Guaimitas	15.5000000	-87.7166700	HN	18	0	0	Guaimitas	Guaimitas	Guaimitas	Guaimitas	Guaimitas	Guaimitas
+	1227	El Progreso	15.4000000	-87.8000000	HN	18	0	0	El Progreso	Эль-Прогресо	El Progreso	El Progreso	El Progreso	El Progreso
+	1227	El Portillo de González	15.2833300	-87.6000000	HN	18	0	0	El Portillo de González	El Portillo de González	El Portillo de González	El Portillo de González	El Portillo de González	El Portillo de González
+	1227	El Ocote	15.4166700	-86.5666700	HN	18	0	0	El Ocote	El Ocote	El Ocote	El Ocote	El Ocote	El Ocote
+	1227	El Negrito	15.3166700	-87.7000000	HN	18	0	0	El Negrito	El Negrito	El Negrito	El Negrito	El Negrito	El Negrito
+	1227	El Juncal	15.4500000	-86.4333300	HN	18	0	0	El Juncal	El Juncal	El Juncal	El Juncal	El Juncal	El Juncal
+	1227	El Bálsamo	15.0666700	-87.4666700	HN	18	0	0	El Bálsamo	El Bálsamo	El Bálsamo	El Bálsamo	El Bálsamo	El Bálsamo
+	1227	Coyoles Central	15.4000000	-86.6666700	HN	18	0	0	Coyoles Central	Coyoles Central	Coyoles Central	Coyoles Central	Coyoles Central	Coyoles Central
+	1227	Coyoles	15.4666700	-86.6833300	HN	18	0	0	Coyoles	Coyoles	Coyoles	Coyoles	Coyoles	Coyoles
+	1227	Chirinos	15.4000000	-86.5833300	HN	18	0	0	Chirinos	Chirinos	Chirinos	Chirinos	Chirinos	Chirinos
+	1227	Carbajales	15.5166700	-86.3500000	HN	18	0	0	Carbajales	Carbajales	Carbajales	Carbajales	Carbajales	Carbajales
+	1227	Buenos Aires	15.4666700	-86.4000000	HN	18	0	0	Buenos Aires	Buenos Aires	Buenos Aires	Buenos Aires	Buenos Aires	Buenos Aires
+	1227	Bálsamo Oriental	15.4833300	-86.3333300	HN	18	0	0	Bálsamo Oriental	Bálsamo Oriental	Bálsamo Oriental	Bálsamo Oriental	Bálsamo Oriental	Bálsamo Oriental
+	1227	Ayapa	15.1117400	-87.1755700	HN	18	0	0	Ayapa	Ayapa	Ayapa	Ayapa	Ayapa	Ayapa
+	1227	Armenia	15.4666700	-86.3666700	HN	18	0	0	Armenia	Armenia	Armenia	Armenia	Armenia	Armenia
+	1227	Arenal	15.3500000	-86.8333300	HN	18	0	0	Arenal	Arenal	Arenal	Arenal	Arenal	Arenal
+	1227	Agua Blanca Sur	15.2500000	-87.8833300	HN	18	0	0	Agua Blanca Sur	Agua Blanca Sur	Agua Blanca Sur	Agua Blanca Sur	Agua Blanca Sur	Agua Blanca Sur

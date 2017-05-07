@@ -1,0 +1,23 @@
+<div id="lang-block">
+    <div class="lang-block-header" data-bind="langheader">
+        {% helper lang.l('text_language', 'users') %}
+    </div>
+    <ul>
+        {% for item in languages %}
+            <li {% if item.id == current_lang %}class="lbi-selected"{% endif %} role="presentation" data-code="{{ item.code }}"
+                data-id="{{ item.id }}">{{ item.name }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<script>
+    $(function() {
+        $('#lang-block li').on('click touchstart', function(event){
+            event.stopPropagation();
+            event.preventDefault();
+
+            var lang_id = $(this).data('id')
+            location.href = site_url + 'users/change_language/' + lang_id;
+        });
+    });
+</script>

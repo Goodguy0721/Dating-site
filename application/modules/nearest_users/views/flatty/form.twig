@@ -1,0 +1,137 @@
+{% include '@app/header.twig' %}
+
+<div class="search-header clearfix">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="title">
+            {% helper seo.seo_tags('header_text') %}
+        </h1>
+        <div class="menu clearfix">
+            <a id="show_map_link" class="fright show_map_link {% if not hide_map %}hide{% endif %}">
+                {% helper lang.l('link_show_map', 'nearest_users') %}
+            </a>
+            <a id="hide_map_link" class="fright show_map_link {% if hide_map %}hide{% endif %}">
+                {% helper lang.l('link_hide_map', 'nearest_users') %}
+            </a>
+        </div>
+        <div>
+            <form id="nearest_users_map_form" class="nearest_users_map_form" method="post" action="">
+                    {{ map }}
+                    <input type="hidden" name="circle_center_lat" id="circle_center_lat"
+            value="{{ data.center_lat|e }}">
+                    <input type="hidden" name="circle_center_lon" id="circle_center_lon"
+            value="{{ data.center_lon|e }}">
+                    <input type="hidden" name="circle_radius" id="circle_radius"
+            value="{{ data.search_radius|e }}">
+
+            <div class="panel panel-default text-center pt20 pl20 pr20">
+                <div id="circle_radius_slider_bottom"></div>
+                <label id="circle_radius_span_bottom" for="circle_radius_slider_bottom"></label>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="content-block">
+    <div class="search-header nearest-users-search-header">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="menu">
+                <a href="javascript:void(0);" {% if page_data.view_type == 'list' %}class="active"{% endif %} onclick="changeViewType('list');" title="{% helper lang.l('btn_list_view', 'users', '', 'button') %}"><i class="fa fa-list"></i>&nbsp;{% helper lang.l('btn_list_view', 'users', '', 'button') %}</a>
+                <a href="javascript:void(0);" {% if page_data.view_type == 'gallery' %}class="active"{% endif %} onclick="changeViewType('gallery');" title="{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}"><i class="fa fa-globe"></i>&nbsp;{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="user-search">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="search-result" id="main_users_results">
+                {{ block }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        function format_radius(distance) {
+            var radius = 0;
+            if('{{ data.search_radius_unit }}' == 'km') {
+                radius = distance / 1000;
+            } else {
+                radius = distance / 1609.344;
+            }
+
+            return radius.toFixed() + ' {{ data.search_radius_unit }}';
+        }
+
+        function radiusListener(radius) {
+                $("#circle_radius_slider_bottom").slider("option", "value", radius);
+                $("#circle_radius_span_bottom").html(format_radius(radius));
+                searchNearestUsers();
+        }
+
+        function positionListener() {
+                searchNearestUsers();
+        }
+
+        function searchNearestUsers() {
+
+            var data = {
+                'circle_center_lat': $('#circle_center_lat').val(),
+                'circle_center_lon': $('#circle_center_lon').val(),
+                'circle_radius': $('#circle_radius').val(),
+            };
+
+            $.ajax({
+                    url: site_url + 'nearest_users/ajaxSearch',
+                    type: 'POST',
+                    dataType : 'json',
+                    data: data,
+                    cache: false,
+                    success: function(data){
+                        $('#main_users_results').html(data.content);
+                    }
+            });
+        }
+
+	$(function(){
+
+                $("#circle_radius_slider_bottom").slider({
+                    value: {{ data.search_radius|e }},
+                    min: 0,
+                    max: {{ data.default_search_radius|e }},
+                    slide: function( event, ui ) {
+                        var radius = format_radius(ui.value);
+                        $("#circle_radius_span_bottom").html(radius);
+                        $("#circle_radius_slider").slider("option", "value", ui.value);
+                        searchNearestUsers();
+                    }
+                });
+
+                $("#circle_radius_span_bottom").html(format_radius({{ data.search_radius|e }}));
+
+		loadScripts(
+			["{% helper utils.jscript('nearest_users', 'nearest_users.js', 'path') %}"],
+			function(){
+				var hide_map = '{{ hide_map }}';
+				nearest_users = new NearestUsers({
+					siteUrl: site_url,
+					hide_map: hide_map,
+				});
+			},
+			['nearest_users'],
+			{async: true}
+		);
+	});
+
+        function changeViewType(type) {
+            var url = '{% helper seo.seolink('nearest_users', 'set_view_mode') %}/' + type;
+            $.ajax({
+                url: url,
+                type: 'GET',
+                cache: false,
+                success: function(data) {
+                    locationHref('{% helper seo.seolink('nearest_users', 'index') %}');
+                }
+            });
+        }
+</script>
+
+{% include '@app/footer.twig' %}

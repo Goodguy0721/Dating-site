@@ -1,0 +1,237 @@
+{% if media.upload_gid == 'gallery_video' %}
+	{% if media.media_video_data.status == 'start' %}
+		<div class="pos-rel">
+			<div class="center lh0 pos-rel">
+				<img data-image-src="{{ media.video_content.thumbs.great }}"
+                     src="{{ media.video_content.thumbs.great }}">
+				<div id="next_media" class="load_content_right media_view_scroller_right"></div>
+				<div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+			</div>
+			<div class="subinfo box-sizing">
+				<p>
+                    {% helper lang.l('video_wait_converting', 'media') %}
+                </p>
+				{% if media.id_parent or not is_user_media_owner %}
+					{% if media.id_parent %}
+						{% if media.permissions == 0 %}
+                            <p>
+                                {% helper lang.l('permissions_restrict', 'media') %}
+                            </p>
+                        {% endif %}
+						{% if media.video_content and not media.media_video %}
+                            <p>
+                                {% helper lang.l('media_deleted_by_owner', 'media') %}
+                            </p>
+                        {% endif %}
+					{% endif %}
+					<span>
+						{% helper lang.l('media_owner', 'media') %}:&nbsp;
+						{% if media.owner_info.id %}
+							<a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                                {{ media.owner_info.output_name }}
+                            </a>
+						{% else %}
+							<span>{{ media.owner_info.output_name }}</span>
+						{% endif %}
+					</span>
+				{% endif %}
+			</div>
+		</div>
+	{% else %}
+		<div class="plr50 pos-rel">
+			<div style="width: {{ media.video_content.width }}px;" class="center-block">
+				{{ media.video_content.embed }}
+			</div>
+			<div id="next_media" class="load_content_right media_view_scroller_right"></div>
+			<div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+		</div>
+		{% if not is_user_media_owner %}
+			<div>
+				{% helper lang.l('media_owner', 'media') %}:&nbsp;
+				{% if media.owner_info.id %}
+					<a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                        {{ media.owner_info.output_name }}
+                    </a>
+				{% else %}
+					<span>
+                        {{ media.owner_info.output_name }}
+                    </span>
+				{% endif %}
+			</div>
+		{% endif %}
+	{% endif %}
+{% elseif media.upload_gid == 'gallery_image' %}
+	<div class="pos-rel">
+		<div class="center lh0">
+			<div class="photo-edit hide" data-area="recrop">
+				<div class="source-box">
+					<div id="photo_source_recrop_box" class="photo-source-box">
+						<img src="{{ media.media.mediafile.file_url }}" id="photo_source_recrop">
+					</div>
+					<div class="ptb5 oh tab-submenu" id="recrop_menu">
+						<ul class="fleft" id="photo_sizes"></ul>
+						<ul class="fright">
+							<li>
+                                <span data-section="view">
+                                    {% helper lang.l('view', 'media') %}
+                                </span>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div data-area="view">
+				<img data-image-src="{{ media.media.mediafile.thumbs.grand }}"
+                     src="{{ media.media.mediafile.thumbs.grand }}">
+				<div id="next_media" class="load_content_right"></div>
+				<div id="prev_media" class="load_content_left"></div>
+			</div>
+		</div>
+
+		{% if media.id_parent or not is_user_media_owner %}
+			<div class="subinfo box-sizing">
+				{% if media.id_parent %}
+					{% if media.permissions == 0 %}
+                        <p>
+                            {% helper lang.l('permissions_restrict', 'media') %}
+                        </p>
+                    {% endif %}
+					{% if media.media and not media.mediafile %}
+                        <p>
+                            {% helper lang.l('media_deleted_by_owner', 'media') %}
+                        </p>
+                    {% endif %}
+				{% endif %}
+				<span>
+					{% helper lang.l('media_owner', 'media') %}:&nbsp;
+					{% if media.owner_info.id %}
+						<a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                            {{ media.owner_info.output_name }}
+                        </a>
+					{% else %}
+						<span>
+                            {{ media.owner_info.output_name }}
+                        </span>
+					{% endif %}
+				</span>
+			</div>
+		{% endif %}
+	</div>
+{% endif %}
+
+<div class="media-preloader hide" id="media_preloader"></div>
+
+<div>
+	<div class="ptb5 oh tab-submenu" data-area="view">
+		<div class="fleft">
+			{% helper date_format.tpl_date_format(media.date_add, date_formats.date_time_format) %}
+			<span class="ml20">
+				{% helper likes.like_block({'gid': 'media' ~ media.id, 'type': 'button'}) %}
+			</span>
+			{% if not is_user_media_owner %}
+				<span class="ml20">
+					<span title="{% helper lang.l('favorites', 'media') %}" data-id="{{ default_album.id }}"
+                          class="to_favorites pointer{% if in_favorites %} active{% endif %}">
+						<i class="fa {% if in_favorites %}fa-star{% else %}fa-star-empty{% endif %} pr5 status-icon"></i>
+					</span>
+				</span>
+				<span class="ml20">
+					{% helper spam.mark_as_spam_block({
+                        'object_id': media.id,
+                        'type_gid': 'media_object',
+                        'template': 'minibutton'
+                    }) %}
+				</span>
+			{% endif %}
+		</div>
+		<div class="fright">
+			<ul id="media_menu">
+				<li class="active">
+                    <span data-section="comments">
+                        {% helper lang.l('comments', 'media') %}
+                    </span>
+                </li>
+				{% if is_user_media_owner %}
+                    <li>
+                        <span data-section="access">
+                            {% helper lang.l('access', 'media') %}
+                        </span>
+                    </li>
+                {% endif %}
+				<li>
+                    <span data-section="albums">
+                        {% helper lang.l('albums', 'media') %}
+                    </span>
+                </li>
+				{% if is_user_media_owner and media.upload_gid == 'gallery_image' %}
+                    <li>
+                        <span data-section="recrop">
+                            {% helper lang.l('recrop', 'media') %}
+                        </span>
+                    </li>
+                {% endif %}
+			</ul>
+		</div>
+	</div>
+	{% if is_user_media_owner %}
+		<div class="contenteditable mt5" title="{% helper lang.l('edit_description', 'media', '', 'button') %}">
+			<span contenteditable>
+				{% if media.description %}
+                    {{ media.description|nl2br }}
+                {% endif %}
+			</span>
+			<i class="edge hover active"></i>
+		</div>
+	{% else %}
+		{% if media.description %}
+			<div>
+                {{ media.description|nl2br }}
+            </div>
+		{% endif %}
+	{% endif %}
+</div>
+
+
+<div id="media_sections" class="pt10">
+	<div data-section="comments">
+		{% helper comments.comments_form({
+            'gid': 'media',
+            'id_obj': media.id,
+            'hidden': 0,
+            'max_height': 500
+        }) %}
+	</div>
+
+	{% if is_user_media_owner %}
+		<div data-section="access" class="hide">
+			<div class="h2">
+                {% helper lang.l('field_permitted_for', 'media') %}
+            </div>
+			{% if not is_user_media_owner %}
+				<div class="h3 error-text">
+                    {% helper lang.l('only_owner_access', 'media') %}
+                </div>
+			{% endif %}
+			<div class="perm">
+				{% helper ld_permissions = lang.ld('permissions', 'media') %}
+				<ul>
+					{% for key, item in ld_permissions.option %}
+						<li>
+                            <input type="radio"{% if not is_user_media_owner %} disabled{% endif %}
+                                       name="permissions" id="permissions" value="{{ key|e }}"
+                                       {% if media.permissions == key %} checked{% endif %}>
+                            <label>{{ item }}</label>
+                        </li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% if is_user_media_owner %}
+				<input type="button" class="btn" name="save_permissions" id="save_permissions"
+                    value="{% helper lang.l('btn_apply', 'start', '', 'button') %}">
+			{% endif %}
+		</div>
+	{% endif %}
+
+	<div data-section="albums" class="hide"></div>
+</div>

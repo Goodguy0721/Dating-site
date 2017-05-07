@@ -1,0 +1,106 @@
+<div class="contact-us-block clearfix">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <h1>{% helper lang.l('header_contact_us_form', 'contact_us') %}</h1>
+            <div class="contact-us-form mb20">
+                <p class="mb10">
+                    {% helper lang.l('text_contact_form_edit', 'contact_us') %}
+                </p>
+                <div class="row">
+                    <form action="{{ site_url }}contact_us/index" method="post" id="contact_us_form">
+                        {% if reasons %}
+                            <div class="form-group">
+                                <label for="email"  class="col-xs-12 tali">
+                                    {% helper lang.l('field_reason', 'contact_us') %}:
+                                </label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <select name="id_reason" class="form-control">
+                                        {% for item in reasons %}
+                                            <option value="{{ item.id }}" {% if data.id_reason == item.id %}selected{% endif %}>
+                                                {{ item.name }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <span class="pginfo msg reason"></span>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="form-group">
+                            <label for="email"  class="col-xs-12 tali">
+                                {% helper lang.l('field_user_name', 'contact_us') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                <input type="text" name="user_name" value="{{ data.user_name|e }}" class="form-control">
+                                <span class="pginfo msg user_name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"  class="col-xs-12 tali">
+                                {% helper lang.l('field_user_email', 'contact_us') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                <input type="text" name="user_email" value="{{ data.user_email|e }}" class="form-control">
+                                <span class="pginfo msg user_email"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"  class="col-xs-12 tali">
+                                {% helper lang.l('field_subject', 'contact_us') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                <input type="text" name="subject" value="{{ data.subject|e }}" class="form-control">
+                                <span class="pginfo msg subject"></span>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="email"  class="col-xs-12 tali">
+                                {% helper lang.l('field_message', 'contact_us') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                <textarea name="message" class="form-control">{{ data.message }}</textarea>
+                                <span class="pginfo msg message"></span>
+                            </div>
+                        </div>
+                        <div class="form-group captcha clearfix">
+                            <label for="captcha" class="col-xs-12 tali">
+                                {% helper lang.l('field_security_code', 'contact_us') %}:
+                            </label>
+                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 captcha-img contact_us-captcha">
+                                {{ data.captcha|raw }}<br>
+                                <input type="text" name="captcha_code" value="" class="form-control">
+                                <span class="pginfo msg captcha_code"></span>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-xs-12 col-sm-12">
+                                <input type="button" class="btn btn-primary contact_us-btn" id="send_message" name="btn_save" value="{% helper lang.l('btn_send', 'start', '', 'button') %}">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                $(function(){
+                    $('#send_message').off().on('click', function(){
+                        $.ajax({
+                                url: site_url + 'contact_us/ajaxSendMessage',
+                                type: 'POST',
+                                data: $('#contact_us_form').serialize(),
+                                dataType : 'json',
+                                cache: false,
+                                success: function(resp){
+                                        if(resp.success) {
+                                                events.properties.mailboxObj.hide_load_block();
+                                                error_object.show_error_block(resp.success, 'success');
+                                        } else if(resp.errors){
+                                                error_object.show_error_block(resp.errors, 'error');
+                                        }
+                                }
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>

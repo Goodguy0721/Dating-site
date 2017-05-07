@@ -1,0 +1,125 @@
+{% include '@app/header.twig' %}
+<ul class="nav nav-tabs bar_tabs">
+    {% helper menu.get_admin_level1_menu('admin_fields_menu') %}
+</ul>
+
+<div class="x_panel">
+    <div id="filter" class="hide">
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="form-group row">
+          <select id="section" class="form-control">
+        {% for item in types %}
+            <option value="{{ item.gid }}" {% if type == item.gid %}checked{% endif %}>{{ item.name }}</options>
+        {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table">
+        <thead>
+            <tr>
+                <th class="column-title">{% helper lang.l('form_name', 'field_editor') %}</th>
+                <th class="column-title">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for item in forms %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            <a href="{{ site_url }}admin/field_editor/form_fields/{{ item.id }}"
+                               class="btn btn-primary">{% spaceless %}
+                                {% helper lang.l('link_tableicon_edit_form_fields', 'field_editor', '', 'button') %}
+                            {% endspaceless %}</a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="{{ site_url }}admin/field_editor/form_fields/{{ item.id }}">
+                                    {% helper lang.l('link_tableicon_edit_form_fields', 'field_editor', '', 'button') %}
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{{ site_url }}admin/field_editor/form_edit/{{ type }}/{{ item.id }}">
+                                    {% helper lang.l('btn_edit','start') %}
+                                </a>
+                              </li>
+                            {% if not item.is_system %}
+                              <li>
+                                <a href="{{ site_url }}admin/field_editor/form_delete/{{ type }}/{{ item.id }}"
+                                   onclick="javascript: if (!confirm('{% helper lang.l('note_delete_form', 'field_editor', '', 'js') %}')) return false;">
+                                      {% helper lang.l('btn_delete','start') %}
+                                </a>
+                              </li>
+                            {% endif %}
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    {% include '@app/pagination.twig' %}
+</div>
+
+<script>
+  $(function() {
+    $(document).off('change', '#section').on('change', '#section', function(e) {
+      location.href = '{{ site_url }}admin/field_editor/forms/' + $(this).val();
+    });
+  });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_forms', 'field_editor') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"filter">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var filter = $("#filter");
+        $('#data_wrapper').find('.filter').html(filter.html());
+        filter.remove();
+    });
+</script>
+
+
+{% include '@app/footer.twig' %}

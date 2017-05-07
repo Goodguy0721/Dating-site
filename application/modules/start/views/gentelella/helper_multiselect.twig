@@ -1,0 +1,109 @@
+<div id="multiselect_{{ multiselect_helper_data.rand }}" class="multiselect">
+    {% set active = multiselect_helper_data.active_field %}
+    <label class="header control-label col-sm-3 col-xs-12">
+        {{ multiselect_helper_data.fields[active].header }}</label>
+    <div class="col-sm-9 col-xs-12">
+      <a class="pull-right options_open btn btn-default" href="javascript:void(0);">
+        {% helper lang.l('multiselect_change', 'start') %}</a>
+      <div class="selected">
+          <ul class="selected-items list-inline">
+      {% if multiselect_helper_data.selected[active] %}
+          {% if multiselect_helper_data.all_selected[active] %}
+              <input type="hidden" name="{{ active }}[]" value="{{ multiselect_helper_data.all_value }}">
+              {% for selectedKey, selectedItem in multiselect_helper_data.fields[active].option %}
+              <li class="item {{ active }}-selected-{{ selectedKey }}">
+                {{ multiselect_helper_data.fields[active].option[selectedKey]|trim }}
+              </li>
+              {% endfor %}
+          {% else %}
+              {% for selectedKey, selectedItem in multiselect_helper_data.selected[active] %}
+              <li class="item {{ active }}-selected-{{ selectedKey }}">
+                <input type="hidden" name="{{ active }}[]" value="{{ selectedKey }}">
+                {{ multiselect_helper_data.fields[active].option[selectedKey] }}
+              </li>
+              {% endfor %}
+          {% endif %}
+      {% endif %}
+          </ul>
+      </div>
+      <div class="options modal fade in">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <header class="modal-header">
+                      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                          <ul id="myTab" class="nav nav-tabs bar_tabs tabs" role="tablist">
+                              {% for fieldKey, field in multiselect_helper_data.fields %}
+                              <li data-tab="{{ fieldKey }}" class="tab_{{ fieldKey }} tab{% if fieldKey == active %} active{% endif %}">
+                                  <a href="javascript:void(0);">{{ field.header }}</a>
+                              </li>
+                              {% endfor %}
+                          </ul>
+                      </div>
+                  </header>
+                  {% for fieldKey, field in multiselect_helper_data.fields %}
+                  <div class="modal-body options_{{ fieldKey }} tab-content"{% if fieldKey != active %} style='display: none;'{% endif %}>
+                      <ul class="items">
+                          {% for optionKey, item in multiselect_helper_data.fields[fieldKey].option %}
+                          <li title="{{ item }}" data-value="{{ optionKey }}"
+                              class="{{ fieldKey }}-option-{{ optionKey }} item
+                              {% if active == fieldKey and (multiselect_helper_data.all_selected[active] or multiselect_helper_data.selected_keys[fieldKey][optionKey]) %} selected{% endif %}"
+                              >
+                              {{ item }}
+                          </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+                  {% endfor %}
+                  <footer class="modal-footer">
+                      <div class="limit col-md-1 text-center"{% if multiselect_helper_data.all_selected[active] %} style='display: none;'{% endif %}>
+                          <span class="selected_num">0</span>
+                          {% helper lang.l('multiselect_of', 'start') %}
+                          <span class="max_num"></span><br>
+                          {% helper lang.l('multiselect_selected', 'start') %}
+                      </div>
+                      <div class="options-selected col-md-11 text-left">
+                          <ul class="options-selected-items">
+                      {% if multiselect_helper_data.selected[active] %}
+                          {% if multiselect_helper_data.all_selected[active] %}
+                              <li data-value="{{ multiselect_helper_data.all_value }}" class="item remove-selected item {{ active }}-selected-{{ multiselect_helper_data.all_value }}">
+                                  {{ multiselect_helper_data.all_text }}<i class="fa fa-times"></i>
+                              </li>
+                          {% else %}
+                              {% for selectedKey, selectedItem in multiselect_helper_data.selected[active] %}
+                              <li data-value="{{ selectedKey }}" class="item remove-selected item {{ active }}-selected-{{ selectedKey }}">
+                                  {{ multiselect_helper_data.fields[active].option[selectedKey] }}<i class="fa fa-times"></i>
+                              </li>
+                              {% endfor %}
+                          {% endif %}
+                      {% endif %}
+                          </ul>
+                      </div>
+                      <div class="buttons col-md-12">
+                          <a class="btn btn-primary" href="javascript:void(0);">{% helper lang.l('multiselect_select_all', 'start') %}</a>
+                          <input class="btn btn-success" type="button" name="btn_save" value="{% helper lang.l('btn_apply', 'start') %}">
+                          <a class="pop-up-close btn btn-default" href="javascript:void(0);">{% helper lang.l('btn_close', 'start') %}</a>
+                      </div>
+                  </footer>
+              </div>
+            </div>
+      </div>
+    </div>
+    {% helper utils.jscript('start', 'multiselect.js') %}
+    <script type='text/javascript'>
+      $(function () {
+          {% if multiselect_helper_data.var_js_name %}var {{ multiselect_helper_data.var_js_name }} = {% endif %}new options({
+              fields: {% helper utils.json_encode(multiselect_helper_data.fields) %},
+              allSelected: {% helper utils.json_encode(multiselect_helper_data.all_selected) %},
+              allText: '{{ multiselect_helper_data.all_text }}',
+              allValue: '{{ multiselect_helper_data.all_value }}',
+              limits: {% helper utils.json_encode(multiselect_helper_data.limits) %},
+              rand: '{{ multiselect_helper_data.rand }}',
+              selectedField: '{{ multiselect_helper_data.active_field }}',
+              selectedItems: {% helper utils.json_encode(multiselect_helper_data.selected) %},
+              siteUrl: '{{ site_url }}',
+              alertCantSaveEmpty: '{% helper lang.l('multiselect_please_select', 'start') %}',
+              btnCloseSelector: '.pop-up-close'
+          });
+      });
+    </script>
+</div>

@@ -1,0 +1,91 @@
+<div class="content-block load_content">
+	<h1>{% helper lang.l('invite_to_chat', 'chats') %}</h1>
+
+	<div class="inside logform">
+		{% if settings.fee_type == 'payed' %}
+			<p class="mb10">
+                {% helper lang.l('pg_videochat_fee_amount', 'chats') %}
+                <strong>
+	                {% helper start.currency_format_output({
+	                	'value': settings.amount
+	                }) %}
+                </strong>
+            </p>
+		{% endif %}
+		{% if not_money == '1' %}
+			{{ lang_add_money }}
+		{% else %}
+			<div class="mb20">
+                {% helper lang.l('pg_videochat_text_invite', 'chats') %}
+            </div>
+			<form action="{{ site_url }}chats/invite/{{ user_id }}" method="post" id="invite_to_videochat_form" class="form-inline">
+				<div class="form-group">
+					<label">
+                        {% helper lang.l('field_date_time', 'chats') %}:
+                    </label>
+					<input type="text" name="date" id="chat_date" class="form-control" value="{{ proposedDate|e }}" style="width:150px"/>&nbsp;
+                    {{ current_hours }} - {{ current_minutes }}
+                    <select name="time" class="form-control" style="width:75px">
+							{% for current in range(low=0, high=24, step=1) %}
+							{% for current2 in range(low=0, high=59, step=15) %}
+								{% if current < 10 %}
+									{% if current2 < 10 %}
+										<option value="0{{ current }}:0{{ current2 }}" {% if current == proposedHours and current2 == proposedMinutes %}selected{% endif %}>0{{ current }}:0{{ current2 }}</option>
+									{% else %}
+										<option value="0{{ current }}:{{ current2 }}" {% if current == proposedHours and current2 == proposedMinutes %}selected{% endif %}>0{{ current }}:{{ current2 }}</option>
+									{% endif %}
+								{% else %}
+									{% if current2 < 10 %}
+										<option value="{{ current }}:0{{ current2 }}" {% if current == proposedHours and current2 == proposedMinutes %}selected{% endif %}>{{ current }}:0{{ current2 }}</option>
+									{% else %}
+										<option value="{{ current }}:{{ current2 }}" {% if current == proposedHours and current2 == proposedMinutes %}selected{% endif %}>{{ current }}:{{ current2 }}</option>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+							{% endfor %}
+						</select> {% if timezone_offset %}UTC+{{ timezone_offset }}{% endif %}
+						<script type="text/javascript">
+							$(function() {
+								$( "#chat_date" ).datepicker({
+									dateFormat :'yy-mm-dd',
+									changeYear: true,
+									changeMonth: true,
+									minDate: new Date('{{ minDate }}'),
+								});
+							});
+						</script>
+				</div>
+                <div class="mt20">
+                    <button class="btn btn-primary" name="invite" id="invite_button">
+                        {% helper lang.l('btn_invite', 'chats', '', 'button') %}
+                    </button>
+                </div>
+			</form>
+		{% endif %}
+	</div>
+	<div class="clr"></div>
+</div>
+
+<script type="text/javascript">
+    $('#invite_button').unbind('click').bind('click', function(e) {
+    e.preventDefault();
+
+    {% if not_money != '1' %}
+		$.ajax({
+			url: site_url + 'chats/ajax_check_invite/{{ user_id }}',
+			type: 'POST',
+			data:  $('#invite_to_videochat_form').serialize(),
+			dataType: 'json',
+			cache: false,
+			success: function(data){
+				if (typeof(data.error) != 'undefined' && data.error != '') {
+					error_object.show_error_block(data.error, 'error');
+				} else {
+					invite_form_to_videochat.hide_load_block();
+					$('#invite_to_videochat_form').trigger('submit');
+				}
+			}
+		});
+        {% endif %}
+	});
+</script>

@@ -1,0 +1,20 @@
+<div class="content-block load_content mailbox_friendlist">
+	<h1>
+        {% helper lang.l('header_user_select', 'users') %}
+    </h1>
+	<div class="m20 oh">
+		<strong>{% helper lang.l('header_user_find', 'users') %}:</strong><br />
+		<input type="text" id="user_search" class="controller-search form-control">
+
+        <ul class="controller-items pt10" id="user_select_items"></ul>
+
+        <div class="controller-actions pt10">
+			<div id="user_page" class="pages fright"></div>
+			<div>
+                <button class="btn btn-cancel" id="user_close_link">
+                    {% helper lang.l('btn_close', 'start') %}
+                </button>
+            </div>
+		</div>
+	</div>
+</div>

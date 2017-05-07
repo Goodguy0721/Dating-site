@@ -1,0 +1,84 @@
+<div class="view-fields" ng-show="view_profile">
+    <div class="media">
+        <a class="pull-left" href="javascript:void(0);">
+            <div class="text-center btn-file">
+                <img ng-src="{{user.media.user_logo.thumbs.small}}" 
+					 alt="{{user.output_name}}"
+					 class="media-object">
+                <input ng-if="canEdit && !android.isObj()" 
+					   ng-file-select="onFileSelect($files)" 
+					   class="form-control btn-file-input"
+					   type="file" accept="image/*;capture=camera" >
+				<div ng-if="canEdit && android.isObj()" 
+					 ng-click="selectFile()"
+					 class="btn-file-input"></div>
+            </div>
+        </a>
+        <div>
+            <b ng-bind="user.output_name"></b>, 
+			<span class="text-muted" ng-bind="user.age"></span><br/>
+            <span class="text-muted" ng-bind="user.statuses.online_status_lang"></span><br/>
+            <span ng-show="user.location" ng-bind="user.location"></span>
+        </div>
+    </div>
+    <div ng-if="bigBtns" class="pg-btn-container row">
+        <div ng-hide="$eval(btn.ngHide)" 
+			 class="col-xs-{{btn.size|| 6}}"  
+			 ng-repeat="btn in bigBtns">
+            <button ng-click="btn.click()" 
+					type="button" 
+					class="btn btn-link btn-block">
+                <i class="fa {{btn.icon}} h1"></i><br/>
+                <span class="h4" ng-bind="btn.text"></span>
+            </button>
+        </div>
+    </div>
+    <h3><span ng-bind="l('section_basics')"></span> 
+		<a ng-if="canEdit" 
+		   ng-click="go('profile/edit/personal', true)" 
+		   class="fa fa-pencil pull-right" 
+		   title="{{l('btn_edit')}}" 
+		   href="javascript:void(0);"></a></h3>
+    <div class="col-xs-12">
+        <dl class="row">
+            <dt class="text-muted"><span ng-bind="l('field_im')"></span>:</dt>
+            <dd ng-bind="user.user_type_str"></dd>
+        </dl>
+        <dl class="row" ng-if="apd.not_editable_fields.indexOf('looking_user_type') === - 1">
+            <dt class="text-muted"><span ng-bind="l('field_looking_for')"></span>:</dt>
+            <dd><span ng-bind="user.looking_user_type_str"></span>, 
+				<span ng-bind="user.age_min"></span>–<span ng-bind="user.age_max"></span></dd>
+        </dl>
+        <dl class="row">
+            <dt class="text-muted"><span ng-bind="l('field_nickname')"></span>:</dt>
+            <dd ng-bind="user.nickname"></dd>
+        </dl>
+        <div ng-if="canEdit" class="row">
+            <button class="btn btn-primary" 
+					ng-click="go('profile/edit/personal', true)" 
+					ng-bind="l('btn_edit')"></button>
+        </div>
+    </div>
+    <div ng-repeat="section in sections">
+        <h3><span ng-bind="section.name"></span> 
+			<a ng-if="canEdit" 
+			   ng-click="go('profile/edit/' + section.gid, true)" 
+			   class="fa fa-pencil pull-right" 
+			   title="{{l('btn_edit')}}" 
+			   href="javascript:void(0);"></a></h3>
+        <div class="col-xs-12">
+            <dl ng-repeat="field in section.fields" 
+				ng-switch on="field.field_type"
+				ng-if="field.value" 
+				class="row">
+                <dt class="text-muted"><span ng-bind="field.name"></span>:</dt>
+                <dd ng-switch-when="multiselect" ng-bind="field.value_str"></dd>
+                <dd ng-switch-default ng-bind="field.value"></dd>
+            </dl>
+            <div ng-if="canEdit" class="row">
+                <button ng-click="go('profile/edit/' + section.gid, true)"
+						ng-bind="l('btn_edit')" class="btn btn-primary"></button>
+            </div>
+        </div>
+    </div>
+</div>

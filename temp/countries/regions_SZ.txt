@@ -1,0 +1,3 @@
+	3362	Kubuta	-26.8833300	31.4833300	SZ	04	0	0	Kubuta	Kubuta	Kubuta	Kubuta	Kubuta	Kubuta
+	3362	Hluti	-27.2166700	31.6166700	SZ	04	0	0	Hluti	Hluti	Hluti	Hluti	Hluti	Hluti
+	3362	Hlatikulu	-26.9666700	31.3166700	SZ	04	0	0	Hlatikulu	Hlatikulu	Hlatikulu	Hlatikulu	Hlatikulu	Hlatikulu

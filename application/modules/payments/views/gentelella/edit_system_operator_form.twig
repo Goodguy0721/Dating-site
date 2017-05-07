@@ -1,0 +1,19 @@
+<div class="load_content_controller">
+
+	<h2>{{ edit_operator_headline }}</h2>
+	<div class="inside">
+		<form method="post" action="" name="save_form">
+			<div id='operator_edit_block'>
+				{% for key, item in lang_data %}
+				<div class="from-group">
+					<label class="control-label col-xs-12">
+              {{ item.name }}:&nbsp;*</label>
+					<div class="col-sm-9 col-xs-12">
+            <input type="text" name="name_{{ key|e }}" value="{{ item.value|e }}" class="form-control">
+          </div>
+				</div>
+				{% endfor %}
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+    <div class="x_title h4">
+        {% helper lang.l('admin_header_alerts_show', 'spam') %}
+    </div>
+    <div class="form-horizontal x_content">
+        <div class="row form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_alert_content', 'spam') %}: </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 data-label spam_content">{{ data.content.content.view }}</div>
+        </div>
+        <div class="row form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_alert_user', 'spam') %}: </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 data-label">{{ data.content.user_content }}</div>
+        </div>
+        {% if data.subpost.body %}
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_spam_subpost', 'spam') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 data-label spam_subcontent">{{ data.subpost.body }}</div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_spam_subpost_author', 'spam') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 data-label">{{ data.subpost.author }}</div>
+            </div>
+        {% endif %}
+        {% if data.type.form_type == 'select_text' %}
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_spam_reason', 'spam') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 data-label">{{ data.reason }}</div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_spam_message', 'spam') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 data-label">{{ data.message }}</div>
+            </div>
+        {% endif %}
+        <div class="row form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_alert_poster', 'spam') %}: </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 data-label">{{ data.poster.output_name }}</div>
+        </div>
+        <div class="row form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_alert_date_add', 'spam') %}: </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 data-label">{% helper date_format.tpl_date_format(data.date_add, date_format) %}</div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="row form-group"><div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+                <a class="btn btn-primary" href="{{ site_url }}admin/spam/alerts_delete/without_object/{{ data.id }}">
+                    {% helper lang.l('link_alerts_delete', 'spam') %}
+                </a>
+                {% if data.link %}
+                    <a class="btn btn-primary" href="{{ data.link }}">
+                        {% helper lang.l('btn_content_edit', 'spam') %}
+                    </a>
+                {% endif %}
+                {% if data.delete_link and data.content.user_content != '' %}
+                    <a class="btn btn-primary" href="{{ data.delete_link }}{{ data.id }}">
+                        {% helper lang.l('btn_content_delete', 'spam') %}
+                    </a>
+                {% endif %}
+                <a class="btn btn-default" href="{{ site_url }}admin/spam/index">{% helper lang.l('btn_cancel', 'start') %}</a>
+            </div></div>
+
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        var div_spam_content = $(".spam_content");
+        var iframe = div_spam_content.find('iframe');
+        if (iframe.length) {
+            iframe.css('width', '100%');
+        }
+        var a_href = div_spam_content.find('a');
+        if (a_href.length) {
+            a_href.css('width', '100%');
+        }
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,112 @@
+{% include '@app/header.twig' %}
+<div class="search-header">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="title">
+            {% helper lang.l('header_index', 'clubs') %}
+        </h1>
+        {# <div class="menu">
+            <a href="javascript:void(0);" {% if page_data.view_type == 'list' %}class="active"{% endif %} onclick="changeViewType('list');" title="{% helper lang.l('btn_list_view', 'users', '', 'button') %}"><i class="fa fa-list"></i>&nbsp;{% helper lang.l('btn_list_view', 'users', '', 'button') %}</a>
+            <a href="javascript:void(0);" {% if page_data.view_type == 'gallery' %}class="active"{% endif %} onclick="changeViewType('gallery');" title="{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}"><i class="fa fa-globe"></i>&nbsp;{% helper lang.l('btn_gallery_view', 'users', '', 'button') %}</a>
+        </div> #}
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="content-block">
+    <div class="user-search">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="search-param-button mb10"><a>{% helper lang.l('search_params_button', 'users') %}</a></div>
+            <div class="search-form">
+                <form method="POST" action="{{ site_url }}clubs">
+                    <div class="search-block clearfix">
+                        <div class="f-title">{% filter upper %}{% helper lang.l('field_category', 'clubs') %}{% endfilter %}</div>
+                        <div class="f-block">
+                            {% helper clubs_categories = lang.ld('categories', 'clubs') %}
+                            <select multiple class="form-control" name="category_gid[]">
+                                {# <option value="">{% helper lang.l('filter_all', 'clubs') %}</option> #}
+                                {% for key, item in clubs_categories.option %}
+                                    <option value="{{ key }}" 
+                                            {% helper utils.inArray(key, search_filters.category_gid, 'selected') %}>
+                                      {{ item }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-block clearfix">
+                        <div class="f-title">{% filter upper %}{% helper lang.l('field_users_count', 'clubs') %}{% endfilter %}</div>
+                        <div class="f-block clearfix">
+                            <div class="col-xs-5 no-padding-left">
+                                <input type="number" name="users_count[min]" value="{{ search_filters.users_count.min }}" class="form-control" />
+                            </div>
+                            <div class="col-xs-2 lh30 center">&mdash;</div>
+                            <div class="col-xs-5 no-padding-right">
+                                <input type="number" name="users_count[max]" value="{{ search_filters.users_count.max }}" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-block clearfix">
+                        <div class="f-title">
+                            {% filter upper %}{% helper lang.l('field_location', 'users') %}{% endfilter %}
+                        </div>
+                        <div class="f-block">
+                            <div>
+                                {% helper location_lang = lang.l('field_search_country', 'users') %}
+                                {% helper countries.location_select({
+                                    'select_type': 'city',
+                                    'placeholder': location_lang,
+                                    'id_country': search_filters.country_code,
+                                    'id_region': search_filters.region_id,
+                                    'id_city': search_filters.city_id,
+                                    'var_country_name': 'country_code',
+                                    'var_region_name': 'region_id',
+                                    'var_city_name': 'city_id',
+                                }) %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-block clearfix">
+                        <div class="f-title">{% filter upper %}{% helper lang.l('field_search_keyword', 'clubs') %}{% endfilter %}</div>
+                        <div class="f-block clearfix">
+                            <input type="text" name="keyword" value="{{ search_filters.keyword }}" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="search-block clearfix">
+                        <button type="submit" class="btn btn-primary" value="1">
+                            {% helper lang.l('btn_search', 'clubs') %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            {% helper banners.show_banner_place('banner-185x155') %}
+            {% helper banners.show_banner_place('banner-185x75') %}
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="search-result" id="main_users_results">
+                {{ block }}
+            </div>
+            <script type="text/javascript">
+                function changeViewType(type) {
+                    var url = "{% helper seo.seolink('clubs', 'setViewMode') %}/" + type;
+
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        cache: false,
+                        success: function (data) {
+                            locationHref('{% helper seo.seolink('clubs', 'index') %}');
+                        }
+                    });
+                }
+
+                $('.search-param-button').click(function () {
+                    $('.user-search .search-form').toggle();
+                });
+            </script>
+        </div>
+    </div>
+</div>
+{% include '@app/footer.twig' %}

@@ -1,0 +1,10 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+	<h1>{% helper lang.l('header_blog', 'blogs') %}</h1>
+	{% include 'blog_menu.twig' %}
+	{% include 'block_posts_list.twig' with {show_photo: 1} %}
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

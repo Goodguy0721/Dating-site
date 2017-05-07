@@ -1,0 +1,158 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div id="actions" class="hide">
+            </div>
+            <table id="data" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">Source</th>
+                        <th class="column-title">User</th>
+                        <th class="column-title">Date created</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="8"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for source in sources %}
+                    <tr class="even pointer">
+                        <td class="text-center">
+                            <input type="checkbox" class="tableflat grouping" value="{{ source.id }}" data="table_records">
+                        </td>
+                        <td>
+                          <a href="{{ source.media.source.file_url }}" target="_blank">
+                            <img src="{{ source.media.source.file_url }}" height="50">
+                          </a>
+                        </td>
+                        <td>
+                            {{ source.user.output_name }}
+                        </td>
+                        <td class="sm-hide">
+                            {% helper date_format.tpl_date_format(source.date_created, page_data.date_format) %}
+                        </td>
+                        <td>
+                            {{ ucfirst(source.status) }}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                                {% if source.status == 'pending' %}
+                                <button type="button" class="btn btn-primary" title="Approve"
+                                    onclick = "document.location.href='{{ site_url }}admin/users/verification_approve/{{ source.id }}'">
+                                        Approve
+                                </button>
+                                {% else %}
+                                <button type="button" class="btn btn-primary" title="Delete"
+                                    onclick = "document.location.href='{{ site_url }}admin/users/verification_delete/{{ source.id }}'">
+                                        Delete
+                                </button>
+                                {% endif %}
+
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    {% if source.status == 'pending' %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/users/verification_approve/{{ source.id }}">
+                                            Approve
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ site_url }}admin/users/verification_decline/{{ source.id }}">
+                                            Decline
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/users/verification_delete/{{ source.id }}">
+                                            Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    var reload_link = '{{ site_url }}admin/users/verifications/';
+    var filter = '{{ filter|e('js') }}';
+    var order = '{{ order|e('js') }}';
+    var order_direction = '{{ order_direction|e('js') }}';
+
+    function reload_this_page(value){
+        var link = reload_link + filter + '/' + value + '/' + order + '/' + order_direction;
+        location.href=link;
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+    });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "No sources"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,2,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

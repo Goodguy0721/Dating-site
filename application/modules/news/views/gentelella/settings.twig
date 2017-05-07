@@ -1,0 +1,87 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_news_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_userside_items', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.userside_items_per_page }}" name="userside_items_per_page" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_userhelper_items', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.userhelper_items_per_page }}" name="userhelper_items_per_page" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_news_max_count', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.rss_news_max_count }}" name="rss_news_max_count" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_use_feeds_news', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.rss_use_feeds_news }}" name="rss_use_feeds_news" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_channel_title', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.rss_feed_channel_title }}" name="rss_feed_channel_title" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_channel_description', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.rss_channel_description }}" name="rss_feed_channel_description" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_image_title', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.rss_feed_image_title }}" name="rss_feed_image_title" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_settings_rss_image_url', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="rss_logo" class="form-control">
+                    {% if data.rss_feed_image_url %}
+                        <br><img src="{{ data.rss_feed_image_media.thumbs.rss }}"  hspace="2" vspace="2" />
+                        <br><input type="checkbox" name="rss_logo_delete" value="1" id="uichb" class="flat">
+                        <label for="uichb">{% helper lang.l('field_icon_delete', 'news') %}</label>
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', "", 'button') %}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/content_items">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

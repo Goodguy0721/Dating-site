@@ -1,0 +1,204 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_associations_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <a href="{{ site_url }}admin/associations/edit/" class="btn btn-primary">
+                        {% helper lang.l('link_add', 'associations') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ site_url }}admin/associations/edit/">
+                                {% helper lang.l('link_add', 'associations') %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ site_url }}admin/associations/deleteSelect" id="delete_selected">
+                                {% helper lang.l('link_delete_selected', 'associations') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}" id="associations_form">
+                <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-group">
+                                <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">&nbsp;</th>
+                            <th class="column-title">
+                                {% helper lang.l('field_name', 'associations') %}
+                            </th>
+                            <th class="column-title">
+                                {% helper lang.l('text_status', 'start') %}
+                            </th>
+                            <th class="column-title">&nbsp;</th>
+                        {% if associations %}
+                            <th class="bulk-actions" colspan="4">
+                                <a href="{{ site_url }}admin/associations/deleteSelect/"
+                                    id="delete_selected" aria-expanded="false" class="alone">
+                                    {% helper lang.l('link_delete_selected', 'associations') %}
+                                </a>
+                            </th>
+                        {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for association in associations %}
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" class="grouping flat"
+                                       value="{{ association.id }}" name="ids[]"
+                                       data="table_records">
+                            </td>
+                            <td class="text-center">
+                                <div>
+                                    <image src="{{ association.image.thumbs.big }}" title="{{ association.name|e }}"
+                                        alt="{{ association.name }}">
+                                </div>
+                            </td>
+                            <td>
+                                {{ association.name|e }}
+                            </td>
+                            <td class="text-center">
+                            {% if association.is_active %}
+                                {% helper lang.l('btn_tableicon_is_active','start') %}
+                            {% else %}
+                                {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                            {% endif %}
+                            </td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                {% if association.is_active %}
+                                    <button type="button" class="btn btn-primary" title="{% helper lang.l('make_inactive','start') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/associations/activate/{{ association.id }}/0'">
+                                        {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                                    </button>
+                                {% else %}
+                                    <button type="button" class="btn btn-primary" title="{% helper lang.l('make_active','start') %}"
+                                            onclick="document.location.href='{{ site_url }}admin/associations/activate/{{ association.id }}/1'">
+                                        {% helper lang.l('btn_tableicon_is_active','start') %}
+                                    </button>
+                                {% endif %}
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        {% if association.is_active %}
+                                            <a href="{{ site_url }}admin/associations/activate/{{ association.id }}/0">
+                                                {% helper lang.l('btn_tableicon_is_active','start') %}
+                                            </a>
+                                        {% else %}
+                                            <a href="{{ site_url }}admin/associations/activate/{{ association.id }}/1">
+                                                {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                                            </a>
+                                        {% endif %}
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/associations/edit/{{ association.id }}">
+                                                {% helper lang.l('btn_edit','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/associations/delete/{{ association.id }}">
+                                                {% helper lang.l('btn_delete','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% include "@app/pagination.twig" %}
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#grouping_all').bind('click', function () {
+            var checked = $(this).is(':checked');
+            if (checked) {
+                $('input.grouping').prop('checked', true);
+            } else {
+                $('input.grouping').prop('checked', false);
+            }
+        });
+        $('#delete_selected').bind('click', function () {
+            if (!$('input[type=checkbox].grouping').is(':checked')) {
+                return false;
+            }
+            if (!confirm('{% helper lang.l('note_alerts_delete_all', 'associations', '', 'js') %}')) {
+                return false;
+            }
+            $('#associations_form').attr('action', $(this).attr('href')).submit();
+            return false;
+        });
+    });
+</script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_associations','associations') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        $('#users_wrapper').find('.actions').html($("#actions").html());
+    });
+</script>
+
+{% include '@app/footer.twig' %}

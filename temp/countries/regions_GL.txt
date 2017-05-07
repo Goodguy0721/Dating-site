@@ -1,0 +1,20 @@
+	1112	Tiniteqilaaq	65.8887300	-37.7787000	GL	07	0	0	Tiniteqilaaq	Tiniteqilaaq	Tiniteqilaaq	Tiniteqilaaq	Tiniteqilaaq	Tiniteqilaaq
+	1112	Sermiligaaq	65.9073400	-36.3798000	GL	07	0	0	Sermiligaaq	Sermiligaaq	Sermiligaaq	Sermiligaaq	Sermiligaaq	Sermiligaaq
+	1112	Qoornoq	64.5333300	-51.1000000	GL	07	0	0	Qoornoq	Qoornoq	Qoornoq	Qoornoq	Qoornoq	Qoornoq
+	1112	Qooqqut	64.2666700	-50.9000000	GL	07	0	0	Qooqqut	Qooqqut	Qooqqut	Qooqqut	Qooqqut	Qooqqut
+	1112	Qernertuarssuit	65.7166700	-37.3000000	GL	07	0	0	Qernertuarssuit	Qernertuarssuit	Qernertuarssuit	Qernertuarssuit	Qernertuarssuit	Qernertuarssuit
+	1112	Qeqertarsuaq	62.1166700	-49.7833300	GL	07	0	0	Qeqertarsuaq	Qeqertarsuaq	Qeqertarsuaq	Qeqertarsuaq	Qeqertarsuaq	Qeqertarsuaq
+	1112	Paamiut	61.9940200	-49.6677600	GL	07	0	0	Paamiut	Paamiut	Paamiut	Paamiut	Paamiut	Paamiut
+	1112	Nuuk	64.1834700	-51.7215700	GL	07	0	0	Nuuk	Нуук	Nuuk	Nuuk	Nuuk	Nuuk
+	1112	Neriunaq	64.4666700	-50.3166700	GL	07	0	0	Neriunaq	Neriunaq	Neriunaq	Neriunaq	Neriunaq	Neriunaq
+	1112	Kuummiit	65.8646900	-37.0047900	GL	07	0	0	Kuummiit	Kuummiit	Kuummiit	Kuummiit	Kuummiit	Kuummiit
+	1112	Kulusuk	65.5752900	-37.1860600	GL	07	0	0	Kulusuk	Кулусук	Kulusuk	Kulusuk	Kulusuk	Kulusuk
+	1112	Kapisillit	64.4333300	-50.2666700	GL	07	0	0	Kapisillit	Kapisillit	Kapisillit	Kapisillit	Kapisillit	Kapisillit
+	1112	Kangerluarsoruseq	63.7000000	-51.5500000	GL	07	0	0	Kangerluarsoruseq	Kangerluarsoruseq	Kangerluarsoruseq	Kangerluarsoruseq	Kangerluarsoruseq	Kangerluarsoruseq
+	1112	Ivittuut	61.2000000	-48.1666700	GL	07	0	0	Ivittuut	Ivittuut	Ivittuut	Ivittuut	Ivittuut	Ivittuut
+	1112	Kap Hope	70.4588000	-22.3297500	GL	07	0	0	Kap Hope	Kap Hope	Kap Hope	Kap Hope	Kap Hope	Kap Hope
+	1112	Isortoq	65.5484700	-38.9755900	GL	07	0	0	Isortoq	Isortoq	Isortoq	Isortoq	Isortoq	Isortoq
+	1112	Kangilinnguit	61.2323800	-48.0960000	GL	07	0	0	Kangilinnguit	Kangilinnguit	Kangilinnguit	Kangilinnguit	Kangilinnguit	Kangilinnguit
+	1112	Qeqertarsuatsiaat	63.0881500	-50.6776700	GL	07	0	0	Qeqertarsuatsiaat	Qeqertarsuatsiaat	Qeqertarsuatsiaat	Qeqertarsuatsiaat	Qeqertarsuatsiaat	Qeqertarsuatsiaat
+	1112	Arsuk	61.1745600	-48.4511700	GL	07	0	0	Arsuk	Arsuk	Arsuk	Arsuk	Arsuk	Arsuk
+	1112	Tasiilaq	65.6145100	-37.6367600	GL	07	0	0	Tasiilaq	Tasiilaq	Tasiilaq	Tasiilaq	Tasiilaq	Tasiilaq

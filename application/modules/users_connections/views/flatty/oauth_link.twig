@@ -1,0 +1,52 @@
+{% if applications|length > 0 %}
+    <div class="col-xs-12">
+        <div class="oauth-links mb10">
+            <div class="mr5 mb10">
+                {% helper lang.l('you_can_link', 'users_connections') %}
+            </div>
+            <ins>
+            {% for item in applications %}
+                <a href="{{ site_url }}users_connections/oauth_link/{{ item.id }}">
+                    {% if item.gid == 'facebook' %}
+                        <i class="fa fa-facebook-official"></i>
+                    {% elseif item.gid == 'vkontakte' %}
+                        <i class="fa fa-vk"></i>
+                    {% elseif item.gid == 'google' %}
+                        <i class="fa fa-google"></i>
+                    {% elseif item.gid == 'linkedin' %}
+                        <i class="fa fa-linkedin"></i>
+                    {% elseif item.gid == 'twitter' %}
+                        <i class="fa fa-twitter"></i>
+                    {% endif %}
+                </a>
+            {% endfor %}
+            </ins>
+        </div>
+    </div>
+{% endif %}
+{% if un_applications|length > 0 %}
+    <div class="col-xs-12">
+        <div class="oauth-links mb10">
+            <div class="mr5 mb10">
+                {% helper lang.l('you_can_unlink', 'users_connections') %}
+            </div>
+            <ins>
+            {% for item in un_applications %}
+                <a href="{{ site_url }}users_connections/oauth_unlink/{{ item.id }}">
+                    {% if item.gid == 'facebook' %}
+                        <i class="fa fa-facebook-official"></i>
+                    {% elseif item.gid == 'vkontakte' %}
+                        <i class="fa fa-vk"></i>
+                    {% elseif item.gid == 'google' %}
+                        <i class="fa fa-google"></i>
+                    {% elseif item.gid == 'linkedin' %}
+                        <i class="fa fa-linkedin"></i>
+                    {% elseif item.gid == 'twitter' %}
+                        <i class="fa fa-twitter"></i>
+                    {% endif %}
+                </a>
+            {% endfor %}
+            </ins>
+        </div>
+    </div>
+{% endif %}

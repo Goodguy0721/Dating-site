@@ -1,0 +1,5 @@
+	3678	Yolöten	37.2988600	62.3597500	TM	05	0	0	Yolöten	Иолотань	Yolöten	Yolöten	Yolöten	Yolöten
+	3678	Seydi	39.4816000	62.9137400	TM	05	0	0	Seydi	Сейди	Seydi	Seydi	Seydi	Seydi
+	3678	Mary	37.5937800	61.8303100	TM	05	0	0	Mary	Мары	Mary	Mary	Mary	Mary
+	3678	Serhetabat	35.2799200	62.3438200	TM	05	0	0	Serhetabat	Серхетабат	Serhetabat	Serhetabat	Serhetabat	Serhetabat
+	3678	Bayramaly	37.6185200	62.1671500	TM	05	0	0	Bayramaly	Байрамалийского	Bayramaly	Bayramaly	Bayramaly	Bayramaly

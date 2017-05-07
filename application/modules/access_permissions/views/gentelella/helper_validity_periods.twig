@@ -1,0 +1,68 @@
+<h2>{% helper lang.l('field_validity_periods', 'access_permissions') %}</h2>
+<div id="actions">
+    <div class="btn-group">
+        <a id="add-period" onclick="{% helper start.setAnalytics('access_permissions', 'btn_add_period') %}" data-action="add-period" class="btn btn-primary" data-id="0" {% if role_data.type %}data-user_type="{{ role_data.type }}"{% endif %}>
+            {% helper lang.l('link_add', 'access_permissions') %}
+        </a>
+    </div>
+</div>
+<div id="periods-list">
+    <table class="table table-striped responsive-utilities jambo_table bulk_action">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">
+                    <div>{% helper lang.l('field_period', 'access_permissions') %}</div>
+                </th>
+                {% for group in groups %}
+                    <th class="column-title" data-group_actions="{{ group.gid }}">
+                        <div data-toggle="tooltip" data-placement="top" title="{{ group.current_name }}">
+                            {{ group.current_name }}({% helper start.currency_format_output() %})
+                        </div>
+                    </th>
+                {% endfor %}
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for period in periods %}
+                <tr class="cursor-pointer">
+                    <td data-action="add-period" data-id="{{ period.id }}" {% if role_data.type %} data-user_type="{{ role_data.type }}"{% endif %}>{{ period.period_str }}</td>
+                    {% for group in groups %}
+                        <td data-action="add-period" data-id="{{ period.id }}" {% if role_data.type %} data-user_type="{{ role_data.type }}"{% endif %} data-group_actions="{{ group.gid }}">
+                            {% if period[group.gid~'_group'] %}
+                                {% helper start.currency_format_output() %}
+                                {{ period[group.gid~'_group'] }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                    <td class="icons">                   
+                        <div class="btn-group">
+                            <a data-action="add-period" class="btn btn-primary"  data-id="{{ period.id }}" {% if role_data.type %} data-user_type="{{ role_data.type }}"{% endif %}>
+                                {% helper lang.l('link_edit', 'access_permissions') %}
+                            </a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-action="add-period" class="cursor-pointer"  data-id="{{ period.id }}" {% if role_data.type %} data-user_type="{{ role_data.type }}"{% endif %}>
+                                        {% helper lang.l('link_edit', 'access_permissions') %}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cursor-pointer"  href="{{ site_url }}admin/access_permissions/periodDelete/{{ period.id }}">
+                                        {% helper lang.l('link_delete', 'access_permissions') %}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

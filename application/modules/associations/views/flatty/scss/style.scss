@@ -1,0 +1,109 @@
+.association-popup {
+    text-align: center;
+    .next-button {
+        display: block;
+        color: $link_color;
+        cursor: pointer;
+        float: $right;
+        &:before {
+            content: "\f054";
+        }
+    }
+    .last-button {
+        display: block;
+        color: $link_color;
+        cursor: pointer;
+        float: $left;
+        &:before {
+            content: "\f053";
+        }
+    }
+}
+.b-associations__section {
+    border-bottom: 1px $delimiter_color solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+.b-associations__item {
+    margin-top: 15px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+.b-associations__item_right {
+    .b-associations__photo {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+    .b-associations__msg-content {
+        float: right;
+    }
+}
+.b-associations__date {
+    color: $descr_color;
+    font-size: 0.8571em;
+    text-align: center;
+}
+.b-associations__photo {
+    display: table-cell;
+    padding-right: 5px;
+    vertical-align: top;
+    img {
+        max-width: 100px;
+    }
+}
+.b-associations__msg {
+    display: table-cell;
+    vertical-align: top;
+    width: 10000px;
+}
+.b-associations__msg-content {
+    @include g-panel;
+    float: left;
+    min-width: 50%;
+    padding: 10px 15px;
+}
+.b-associations__name {
+    margin-bottom: 5px;
+
+    a {
+        font-weight: bold;
+    }
+}
+.b-associations__actions {
+    margin-top: 10px;
+}
+.b-associations__actionlink {
+    display: inline-block;
+    vertical-align: top;
+    
+    .btn {
+        background: none;
+        box-shadow: none;
+        color: $link_color;
+        width: auto;
+
+        &:hover {
+            background: rgba($link_color, 0.1);
+        }
+    }
+}
+.b-associations__null {
+    @include g-panel;
+    padding: 10px 15px;
+}
+.b-associations__comment {
+    color: $descr_color;
+    display: inline-block;
+    font-size: 12px;
+    padding: 8px 10px;
+    vertical-align: top;
+}
+.association-action {
+    vertical-align: top;
+}

@@ -1,0 +1,66 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 col-sm-6">
+    <div class="content-block">
+        <h1>
+            {% helper lang.l('header_banner_form', 'banners') %}
+        </h1>
+        <div class="content-value">
+            <form method="post" action="{{ site_url }}banners/edit" name="save_form" enctype="multipart/form-data">
+                <div class="edit_block">
+                    <div class="form-group">
+                        <label>
+                            {% helper lang.l('field_name', 'banners') %}:
+                        </label>
+                        <input type="text" value="{{ data.name|e }}" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            {% helper lang.l('banner_place', 'banners') %}:
+                        </label>
+                        <select id="banner_place" name="banner_place_id" class="form-control">
+                            {% for place in places %}
+                            <option value="{{ place.id }}" {% if place.id == data.banner_place_id %}selected{% endif %}>
+                                {{ place.name }} ({{ place.width }}x{{ place.height }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            {% helper lang.l('field_link', 'banners') %}:
+                        </label>
+                        <input type="text" value="{{ data.link|e }}" name="link" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            {% helper lang.l('field_alt_text', 'banners') %}:
+                        </label>
+                        <input type="text" value="{{ data.alt_text|e }}" name="alt_text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <span class="btn btn-primary-inverted btn-file">
+                            {% helper lang.l('field_image', 'banners') %}<input type="file" value="" name="banner_image_file">
+                        </span>
+                        <span id="upload-name"></span>
+                    </div>
+                </div>
+                <div class="b">
+                    <input type="submit" class="btn btn-primary" name="btn_save" value="{% helper lang.l('btn_send', 'start', '', 'button') %}">
+
+                    <a href="{{ site_url }}users/account/banners" class="btn btn-cancel">
+                        {% helper lang.l('link_back_to_my_banners', 'banners') %}
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clr"></div>
+<script>
+    $(function () {
+        $("input[name=banner_image_file]").change(function(){
+            $("#upload-name").html('&nbsp;' + $(this).val());
+        });
+    });
+</script>
+{% include '@app/footer.twig' %}

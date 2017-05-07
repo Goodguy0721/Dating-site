@@ -1,0 +1,56 @@
+{% if template == 'link' %}
+    {% if not is_send %}
+        <div class="user-menu-item" id="mark-as-spam-{{ rand }}">
+            <a href="javascript:void(0);" data-id="{{ object_id }}"
+               data-type="{{ type.gid }}" id="mark-as-span-{{ rand }}"
+               class="link-r-margin">
+                {% helper lang.l('btn_mark_as_spam', 'spam') %}
+            </a>
+        </div>
+    {% endif %}
+{% elseif template == 'minibutton' %}
+    <a {% if not is_send %}href="javascript:void(0);"{% endif %}
+       data-id="{{ object_id }}" data-type="{{ type.gid }}"
+       id="mark-as-span-{{ rand }}" class="link-r-margin"
+       title="{% helper lang.l('btn_mark_as_spam', 'spam', '', 'button') %}">
+       <ins class="fa fa-flag-o pr5 {% if is_send %}g{% endif %}"></ins>
+    </a>
+{% elseif template == 'whitebutton' %}
+    <a {% if not is_send %}href="javascript:void(0);"{% endif %}
+       data-id="{{ object_id }}" data-type="{{ type.gid }}"
+       id="mark-as-span-{{ rand }}" class="link-r-margin"
+       title="{% helper lang.l('btn_mark_as_spam', 'spam', '', 'button') %}">
+       <ins class="fa fa-flag-o  edge w {% if is_send %}g{% endif %}"
+        id="{{ type.gid }}_{{ object_id }}"></ins>
+    </a>
+{% else %}
+    <a {% if not is_send %}href="javascript:void(0);"{% endif %}
+        data-id="{{ object_id }}" data-type="{{ type.gid }}"
+        id="mark-as-span-{{ rand }}" class="fright link-r-margin"
+        title="{% helper lang.l('btn_mark_as_spam', 'spam', '', 'button') %}">
+            <ins class="fa fa-flag-o fa-lg edge hover {% if is_send %}g{% endif %}"></ins>
+    </a>
+{% endif %}
+<script>
+    loadScripts(
+        "{% helper utils.jscript('spam', 'spam.js', 'path') %}",
+        function(){
+            spam = new Spam({
+                siteUrl: '{{ site_root }}',
+                use_form: {% if type.form_type != 'checkbox' %}true{% else %}false{% endif %},
+                {% if is_spam_owner is not empty %}isOwner: true,{% endif %}
+                is_send: '{{ is_send }}',
+                error_is_send: '{% spaceless %}
+                    {% if is_guest %}
+                        ajax_login_link
+                    {% else %}
+                        {% helper lang.l('error_is_send_' ~ type.gid, 'spam', '', 'js') %}
+                    {% endif %}
+                {% endspaceless %}',
+                mark_as_spam_btn: 'mark-as-span-{{ rand }}',
+                mark_as_spam_link: 'mark-as-spam-{{ rand }}',
+            });
+        },
+        ''
+    );
+</script>

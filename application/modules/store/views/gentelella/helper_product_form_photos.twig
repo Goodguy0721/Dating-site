@@ -1,0 +1,61 @@
+<form method="post" enctype="multipart/form-data" data-parsley-validate
+      class="form-horizontal form-label-left" name="save_form"
+      action="{{ data.action }}">
+    <div class="x_title">
+        {% helper lang.l('admin_header_photos', 'store') %}
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                {% if product.photo %}{% helper lang.l('field_product_photo', 'store') %}:{% endif %}</label>
+            <div class="col-sm-9">
+                <div id="store_photo">
+                    {% helper store.store_media({
+                        'id_product' : product.id,
+                        'size' : 'middle',
+                        'amount' : 'all',
+                        'type' : 'photo'
+                    }) %}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                {% helper lang.l('field_upload_photos', 'store') %}: </label>
+            <div class="col-sm-9">
+                <div>{% helper lang.l('field_max_count_photos', 'store') %}: {{ photo_config.max_count }}</div>
+                <div>{% helper lang.l('field_max_photo_size', 'store') %}: {% if photo_config.max_size %}{% helper lang.l('max', 'start') %}{% helper utils.bytes_format(photo_config.max_size) %}{% endif %}</div>
+                <div>{% helper lang.l('field_max_width_height_photo', 'store') %}: {{ photo_config.max_width }}x{{ photo_config.max_height }}</div>
+                <div>{% helper lang.l('field_photo_file_types', 'store') %}: {{ photo_config.file_formats_str }}</div>
+                <div>{% helper lang.l('field_product_photo_upload_descr', 'store') %}</div>
+                <div>
+                    <div id="dnd_upload" class="drag">
+                        <div id="dndfiles" class="drag-area">
+                            <div class="drag">
+                                <p>{% helper lang.l('drag_photos', 'media') %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="upload-btn">
+                            <span data-role="filebutton">
+                                <span>{% helper lang.l('btn_choose_file', 'start') %}</span>
+                                <input type="file" name="multiUpload" id="multiUpload" multiple class="form-control" />
+                            </span>
+                        </div>
+                        &nbsp;<span id="attach-input-error"></span>
+                        <div id="attach-input-warning"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <input type="button" value="{% helper lang.l('btn_add', 'start', '', 'button') %}" name="btn_save" id="btn_mupload" class="btn btn-success">
+                <a class="btn btn-default" href="{{ back_url }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+            </div>
+        </div>
+    </div>
+</form>

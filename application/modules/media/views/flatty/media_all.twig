@@ -1,0 +1,51 @@
+{% for block in media %}
+        {% for key, item in block.items %}
+            <div class="g-users-gallery__item col-xs-6 col-sm-4 col-md-3 col-lg-2 {{ icons[key] }}">
+                <div class="g-users-gallery__content">
+                    {% if item.upload_gid == 'gallery_audio' %}
+                        {% include 'view_audio_item.twig' %}
+                    {% else %}
+                        <div class="g-users-gallery__photo">
+                            <a class="g-pic-border g-rounded g-users-gallery__photo-img" href="javascript:void(0);" data-click="view-media" data-place="site_gallery" data-id-media="{{ item.id }}">
+                                {% if item.video_content %}
+                                    <div class="g-users-gallery__overlay-icon pointer">
+                                        <i class="fa fa-play w fa-4x opacity60"></i>
+                                    </div>
+                                {% endif %}
+
+                                <img src="{% spaceless %}
+                                     {% if item.media %}
+                                         {{ item.media.mediafile.thumbs[icons[key]] }}
+                                     {% elseif item.video_content %}
+                                         {{ item.video_content.thumbs[icons[key]] }}
+                                     {% endif %}
+                                     {% endspaceless %}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+                            </a>
+                            <div class="g-users-gallery__overlayinfo">
+                                <div class="g-photo-statuses">
+                                    <div class="g-photo-statuses__item">
+                                        {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', item) %}
+                                    </div>
+
+                                    <div class="g-photo-statuses__item">
+                                        {% helper likes.like_block({
+                                            'gid': 'media' ~ item.id,
+                                            'type': 'button',
+                                            'btn_class': 'edge w'
+                                        }) %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="g-users-gallery__info">
+                        <div class="text-overflow">
+                            <a class="g-users-gallery__name" title="{{ item.user_info.output_name }}, {{ item.user_info.age }}" target="_blank" href="{{ item.user_info.link }}">{{ item.user_info.output_name }}</a>, {{ item.user_info.age }}
+                        </div>
+                        {#<a class="zoom-icon fright" data-id-media="{{ item.id }}" data-id-user="{{ item.id_owner }}" data-click="view-media" data-id-album="0" data-place="site_gallery"><i class="fa fa-search-plus"></i></a>#}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+{% endfor %}

@@ -1,0 +1,23 @@
+{% if settings.event_settings.join %}
+    <input type="button" data-status="approve" data-click="change-status" class="btn btn-primary btn-block" value="{% helper lang.l('button_join', 'events') %}">
+    {#<a href="{% helper seo.seolink('events', 'changeParcipianStatus') %}/{{ event.id }}/{{ user_id }}/approve" class="btn btn-primary btn-block">{% helper lang.l('button_join', 'events') %}</a>#}
+{% endif %}
+{% if settings.event_settings.decline %}
+        <input type="button" data-status="decline" data-click="change-status" class="btn btn-secondary btn-block" value="{% helper lang.l('button_decline', 'events') %}">
+{% endif %}
+{% if settings.event_settings.leave %}
+    <dl class="dl-horizontal pg-dl-icons menu-actions">
+        <dt>
+            <a data-pjax="0" data-status="decline" data-click="change-status" class="link-r-margin a" title="Contact user">
+                <i data-flash="0" class="fa fa-sign-out"></i>
+            </a>
+        </dt>
+        <dd>
+            <a data-status="decline" data-click="change-status" class="link-r-margin a">
+                {% helper lang.l('button_leave', 'events') %}
+            </a>
+        </dd>
+    </dl>
+    {#<a href="{% helper seo.seolink('events', 'changeParcipianStatus') %}/{{ event.id }}/{{ user_id }}/decline" class="btn btn-primary btn-block">{% helper lang.l('button_leave', 'events') %}</a>#}
+{% endif %}
+

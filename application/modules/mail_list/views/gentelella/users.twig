@@ -1,0 +1,189 @@
+{% include "@app/header.twig" %}
+{% helper utils.jscript_by_theme('mail_list', 'admin-mail-list.js', 'dai_script', 'gentelella') %}
+<div class="col-md-12 col-sm-12 col-xs-12" id="mail_list">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_mail_list_menu') %}
+            </ul>
+        </div>
+        
+        {% include 'users_form.twig' %}   
+        
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                {% if data.filter!='subscribed' %}
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="$('#subscribe_all').trigger('click'); return false;">
+                        {% helper lang.l('link_subscribe_all', 'mail_list') %}
+                    </a>
+                {% else %}
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="$('#unsubscribe_all').trigger('click'); return false;">
+                        {% helper lang.l('link_unsubscribe_all', 'mail_list') %}
+                    </a>
+                {% endif %}    
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                {% if data.filter!='subscribed' %}
+                        <li><a href="javascript:void(0);" class="subscribe" id="subscribe_all">
+                                {% helper lang.l('link_subscribe_all', 'mail_list') %}</a></li>
+                        <li><a href="javascript:void(0);" class="subscribe" id="subscribe_selected">
+                            {% helper lang.l('link_subscribe_selected', 'mail_list') %}</a></li>
+                {% else %}     
+                        <li><a href="javascript:void(0);" class="subscribe {% if data.filter!='not_subscribed' %}disabled{% endif %}" id="unsubscribe_all">
+                            {% helper lang.l('link_unsubscribe_all', 'mail_list') %}</a></li>
+                        <li><a href="javascript:void(0);" class="subscribe {% if data.filter!='not_subscribed' %}disabled{% endif %}" id="unsubscribe_selected">
+                            {% helper lang.l('link_unsubscribe_selected', 'mail_list') %}</a></li>
+                {% endif %} 
+                    </ul>
+                </div>
+            </div>
+            <div id="menu-box" class="hide">
+                <div id="menu" class="btn-group pull-right" data-toggle="buttons">
+                    <label class="btn btn-default{% if data.filter == 'all' %} active{% endif %}{% if not users_count.all %} hide{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/mail_list/users/all'">
+                        <input type="radio" {% if data.filter == 'all' %} selected{% endif %}>
+                        {% helper lang.l('filter_all', 'mail_list') %} (<span id="count_all">{{ users_count.all }}</span>)
+                    </label>
+                    <label id="check_link" class="btn btn-default{% if data.filter == 'not_subscribed' %} active{% endif %}{% if not users_count.not_subscribed %} disabled{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           {% if users_count.not_subscribed %}onclick="document.location.href='{{ site_url }}admin/mail_list/users/not_subscribed'"{% endif %}>
+                        <input type="radio" {% if data.filter == 'not_subscribed' %} selected{% endif %} {% if not users_count.subscribed %}class="disabled"{% endif %}>
+                        {% helper lang.l('filter_not_subscribed', 'mail_list') %} (<span id="count_not_subscribed">{{ users_count.not_subscribed }}</span>)
+                    </label>
+                    <label id="check_link" class="btn btn-default{% if data.filter == 'subscribed' %} active{% endif %}{% if not users_count.subscribed %} disabled{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           {% if users_count.subscribed %}onclick="document.location.href='{{ site_url }}admin/mail_list/users/subscribed'"{% endif %}>
+                        <input type="radio" {% if data.filter == 'subscribed' %} selected{% endif %} {% if not users_count.subscribed %}class="disabled"{% endif %}">
+                        {% helper lang.l('filter_subscribed', 'mail_list') %} (<span id="count_subscribed">{{ users_count.subscribed }}</span>)
+                    </label>
+                </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="text-center"><input type="checkbox" id="grouping_all" class="flat"></th>
+                        <th>{% helper lang.l('field_nickname', 'mail_list') %}</th>
+                        <th class="column-title text-center xxs-hide">{% helper lang.l('field_email', 'mail_list') %}</th>
+                        <th class="column-title text-center xs-hide">{% helper lang.l('field_registration_date', 'mail_list') %}</th>
+                        <th class="column-title text-center xxs-hide">{% helper lang.l('field_user_type', 'mail_list') %}</th>
+                        <th class="column-title sm-hide">{% helper lang.l('field_location', 'mail_list') %}</th>
+                        <th class="column-title text-center">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr id="user{{ user.id }}">
+                        <td class="text-center"><input id="cb_user_{{ user.id }}" type="checkbox" class="flat grouping" value="{{ user.id }}" data='table_records'></td>
+                        <td><label for="cb_user_{{ user.id }}"><b>{{ user.nickname }}</b><br>{{ user.fname }} {{ user.sname }}</label></td>
+                        <td class="xxs-hide">{{ user.email }}</td>
+                        <td class="text-center xs-hide">{% helper date_format.tpl_date_format(user.date_created, date_format) %}</td>
+                        <td class="text-center xxs-hide">{{ user.user_type_str }}</td>
+                        <td class="sm-hide">{{ user.location }}</td>
+                        <td class="icons">
+                            {% if user.id_subscription==data.id_subscription %}
+                                <button class="unsubscribe_one mark btn btn-primary btn-no-active">
+                                    {% helper lang.l('link_tableicon_unsubscribe_user', 'mail_list') %}
+                                </button>
+                            {% else %}
+                                <button class="subscribe_one btn btn-primary btn-outline btn-no-active">
+                                    {% helper lang.l('link_tableicon_subscribe_user', 'mail_list') %}
+                                </button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include "@app/pagination.twig" %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var mail_list;
+    $(function(){
+        mail_list = new adminMailList({
+            siteUrl: '{{ site_url }}',
+            imgsUrl: '{{ site_url }}{{ img_folder }}',
+            subscribe_lang: '{% helper lang.l('link_tableicon_subscribe_user', 'mail_list') %}',
+            unsubscribe_lang: '{% helper lang.l('link_tableicon_unsubscribe_user', 'mail_list') %}',
+            "sEmptyTable": "{% helper lang.l('no_users','mail_list') %}"
+        });
+        mail_list.bind_users_events();
+    });
+    $(document).ready(function () {
+        $('#grouping_all').on('ifChecked', function () {
+            $("input[data='table_records']").iCheck('check');
+        });
+
+        $('#grouping_all').on('ifUnchecked', function () {
+            $("input[data='table_records']").iCheck('uncheck');
+        });
+    });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,2,3,4,5,6]
+                } //disables sorting for column one
+            ],
+            'bFilter': false,
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions"><"menu-list">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+        
+        var menu = $("#menu-box");
+        $('#users_wrapper').find('.menu-list').addClass('pull-right').html(menu.html());
+        menu.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

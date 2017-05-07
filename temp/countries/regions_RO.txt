@@ -1,0 +1,298 @@
+	2802	Vulcăneasa	45.7738800	26.9098100	RO	40	0	0	Vulcăneasa	Vulcăneasa	Vulcăneasa	Vulcăneasa	Vulcăneasa	Vulcăneasa
+	2802	Vrâncioaia	45.8500000	26.7333300	RO	40	0	0	Vrâncioaia	Vrâncioaia	Vrâncioaia	Vrâncioaia	Vrâncioaia	Vrâncioaia
+	2802	Voloșcani	45.9248900	26.9229100	RO	40	0	0	Voloșcani	Voloșcani	Voloșcani	Voloșcani	Voloșcani	Voloșcani
+	2802	Voetin	45.4437000	27.1458700	RO	40	0	0	Voetin	Voetin	Voetin	Voetin	Voetin	Voetin
+	2802	Vladnicu de Sus	46.1146600	27.3555500	RO	40	0	0	Vladnicu de Sus	Vladnicu de Sus	Vladnicu de Sus	Vladnicu de Sus	Vladnicu de Sus	Vladnicu de Sus
+	2802	Vladnicu de Jos	46.0968700	27.3632900	RO	40	0	0	Vladnicu de Jos	Vladnicu de Jos	Vladnicu de Jos	Vladnicu de Jos	Vladnicu de Jos	Vladnicu de Jos
+	2802	Vizantea Răzășească	45.9699700	26.8140500	RO	40	0	0	Vizantea Răzășească	Vizantea Răzășească	Vizantea Răzășească	Vizantea Răzășească	Vizantea Răzășească	Vizantea Răzășească
+	2802	Vităneștii de Sub Măgură	45.8741400	27.0267900	RO	40	0	0	Vităneștii de Sub Măgură	Vităneștii de Sub Măgură	Vităneștii de Sub Măgură	Vităneștii de Sub Măgură	Vităneștii de Sub Măgură	Vităneștii de Sub Măgură
+	2802	Vitănești	45.8837700	27.0389700	RO	40	0	0	Vitănești	Vitănești	Vitănești	Vitănești	Vitănești	Vitănești
+	2802	Vânători	45.7333300	27.2500000	RO	40	0	0	Vânători	Vânători	Vânători	Vânători	Vânători	Vânători
+	2802	Vâlcelele	46.1617700	27.3362300	RO	40	0	0	Vâlcelele	Vâlcelele	Vâlcelele	Vâlcelele	Vâlcelele	Vâlcelele
+	2802	Vâlcele	45.7013100	27.1478900	RO	40	0	0	Vâlcele	Vâlcele	Vâlcele	Vâlcele	Vâlcele	Vâlcele
+	2802	Viișoara	46.0516000	27.0959300	RO	40	0	0	Viișoara	Viișoara	Viișoara	Viișoara	Viișoara	Viișoara
+	2802	Viișoara	45.9208500	26.8235400	RO	40	0	0	Viișoara	Viișoara	Viișoara	Viișoara	Viișoara	Viișoara
+	2802	Vidra	45.9166700	26.9000000	RO	40	0	0	Vidra	Vidra	Vidra	Vidra	Vidra	Vidra
+	2802	Vetrești-Herăstrău	45.8094000	26.6623000	RO	40	0	0	Vetrești-Herăstrău	Vetrești-Herăstrău	Vetrești-Herăstrău	Vetrești-Herăstrău	Vetrești-Herăstrău	Vetrești-Herăstrău
+	2802	Verdea	46.0121100	26.8938200	RO	40	0	0	Verdea	Verdea	Verdea	Verdea	Verdea	Verdea
+	2802	Vărsătura	45.7887400	27.0445000	RO	40	0	0	Vărsătura	Vărsătura	Vărsătura	Vărsătura	Vărsătura	Vărsătura
+	2802	Varnița	45.9712600	26.9635700	RO	40	0	0	Varnița	Varnița	Varnița	Varnița	Varnița	Varnița
+	2802	Văleni	46.0714500	27.1577700	RO	40	0	0	Văleni	Văleni	Văleni	Văleni	Văleni	Văleni
+	2802	Văleni	45.9565700	27.0944700	RO	40	0	0	Văleni	Văleni	Văleni	Văleni	Văleni	Văleni
+	2802	Valea Sării	45.8768600	26.7987300	RO	40	0	0	Valea Sării	Valea Sării	Valea Sării	Valea Sării	Valea Sării	Valea Sării
+	2802	Valea Neagră	45.8131200	26.6364300	RO	40	0	0	Valea Neagră	Valea Neagră	Valea Neagră	Valea Neagră	Valea Neagră	Valea Neagră
+	2802	Valea Milcovului	45.7834700	26.8551900	RO	40	0	0	Valea Milcovului	Valea Milcovului	Valea Milcovului	Valea Milcovului	Valea Milcovului	Valea Milcovului
+	2802	Valea Mică	45.6006800	26.9201400	RO	40	0	0	Valea Mică	Valea Mică	Valea Mică	Valea Mică	Valea Mică	Valea Mică
+	2802	Valea Cotești	45.6344600	27.0758100	RO	40	0	0	Valea Cotești	Valea Cotești	Valea Cotești	Valea Cotești	Valea Cotești	Valea Cotești
+	2802	Valea Beciului	45.4906100	27.0424700	RO	40	0	0	Valea Beciului	Valea Beciului	Valea Beciului	Valea Beciului	Valea Beciului	Valea Beciului
+	2802	Vadu Roșca	45.6386400	27.4571600	RO	40	0	0	Vadu Roșca	Vadu Roșca	Vadu Roșca	Vadu Roșca	Vadu Roșca	Vadu Roșca
+	2802	Ursoaia	45.7768100	26.7998400	RO	40	0	0	Ursoaia	Ursoaia	Ursoaia	Ursoaia	Ursoaia	Ursoaia
+	2802	Urecheşti	45.6000000	27.0666700	RO	40	0	0	Urecheşti	Urecheşti	Urecheşti	Urecheşti	Urecheşti	Urecheşti
+	2802	Unirea	45.7402000	27.1074100	RO	40	0	0	Unirea	Unirea	Unirea	Unirea	Unirea	Unirea
+	2802	Ungureni	45.8134700	26.6742200	RO	40	0	0	Ungureni	Ungureni	Ungureni	Ungureni	Ungureni	Ungureni
+	2802	Tulnici	45.9166700	26.6666700	RO	40	0	0	Tulnici	Tulnici	Tulnici	Tulnici	Tulnici	Tulnici
+	2802	Tulburea	45.5651100	26.8439700	RO	40	0	0	Tulburea	Tulburea	Tulburea	Tulburea	Tulburea	Tulburea
+	2802	Trotușanu	45.9817500	27.0949600	RO	40	0	0	Trotușanu	Trotușanu	Trotușanu	Trotușanu	Trotușanu	Trotușanu
+	2802	Trestieni	45.5155500	27.0227100	RO	40	0	0	Trestieni	Trestieni	Trestieni	Trestieni	Trestieni	Trestieni
+	2802	Trestia	45.6108700	26.8581500	RO	40	0	0	Trestia	Trestia	Trestia	Trestia	Trestia	Trestia
+	2802	Topești	45.9057900	26.7526000	RO	40	0	0	Topești	Topești	Topești	Topești	Topești	Topești
+	2802	Titila	45.7247800	26.8375400	RO	40	0	0	Titila	Titila	Titila	Titila	Titila	Titila
+	2802	Târâtu	45.7044900	26.8922700	RO	40	0	0	Târâtu	Târâtu	Târâtu	Târâtu	Târâtu	Târâtu
+	2802	Țipău	45.7551000	26.7258200	RO	40	0	0	Țipău	Țipău	Țipău	Țipău	Țipău	Țipău
+	2802	Tinoasa	45.6139600	26.8780300	RO	40	0	0	Tinoasa	Tinoasa	Tinoasa	Tinoasa	Tinoasa	Tinoasa
+	2802	Ţifeşti	45.8500000	27.1000000	RO	40	0	0	Ţifeşti	Ţifeşti	Ţifeşti	Ţifeşti	Ţifeşti	Ţifeşti
+	2802	Tichiriș	45.9007600	26.8784900	RO	40	0	0	Tichiriș	Tichiriș	Tichiriș	Tichiriș	Tichiriș	Tichiriș
+	2802	Terchești	45.5843300	27.0520500	RO	40	0	0	Terchești	Terchești	Terchești	Terchești	Terchești	Terchești
+	2802	Țepa	45.7798600	26.6889500	RO	40	0	0	Țepa	Țepa	Țepa	Țepa	Țepa	Țepa
+	2802	Tătaru	45.5013300	27.4724700	RO	40	0	0	Tătaru	Tătaru	Tătaru	Tătaru	Tătaru	Tătaru
+	2802	Tătăranu	45.5166700	27.3166700	RO	40	0	0	Tătăranu	Tătăranu	Tătăranu	Tătăranu	Tătăranu	Tătăranu
+	2802	Tănăsoaia	46.1000000	27.3666700	RO	40	0	0	Tănăsoaia	Tănăsoaia	Tănăsoaia	Tănăsoaia	Tănăsoaia	Tănăsoaia
+	2802	Tăbucești	46.1708400	27.4415200	RO	40	0	0	Tăbucești	Tăbucești	Tăbucești	Tăbucești	Tăbucești	Tăbucești
+	2802	Suraia	45.6833300	27.4000000	RO	40	0	0	Suraia	Suraia	Suraia	Suraia	Suraia	Suraia
+	2802	Stupina	45.4608800	27.4407200	RO	40	0	0	Stupina	Stupina	Stupina	Stupina	Stupina	Stupina
+	2802	Străoane	45.9333300	27.0500000	RO	40	0	0	Străoane	Străoane	Străoane	Străoane	Străoane	Străoane
+	2802	Străjescu	45.8177700	27.2877900	RO	40	0	0	Străjescu	Străjescu	Străjescu	Străjescu	Străjescu	Străjescu
+	2802	Spulber	45.7518600	26.7608000	RO	40	0	0	Spulber	Spulber	Spulber	Spulber	Spulber	Spulber
+	2802	Spinești	45.8922900	26.7056100	RO	40	0	0	Spinești	Spinești	Spinești	Spinești	Spinești	Spinești
+	2802	Spătăreasa	45.4267900	27.2962200	RO	40	0	0	Spătăreasa	Spătăreasa	Spătăreasa	Spătăreasa	Spătăreasa	Spătăreasa
+	2802	Slobozia-Ciorăşti	45.6166700	27.2000000	RO	40	0	0	Slobozia-Ciorăşti	Slobozia-Ciorăşti	Slobozia-Ciorăşti	Slobozia-Ciorăşti	Slobozia-Ciorăşti	Slobozia-Ciorăşti
+	2802	Slobozia Bradului	45.5000000	27.0500000	RO	40	0	0	Slobozia Bradului	Slobozia Bradului	Slobozia Bradului	Slobozia Bradului	Slobozia Bradului	Slobozia Bradului
+	2802	Slobozia Botești	45.5184500	27.4244300	RO	40	0	0	Slobozia Botești	Slobozia Botești	Slobozia Botești	Slobozia Botești	Slobozia Botești	Slobozia Botești
+	2802	Slimnic	45.5081100	27.0513300	RO	40	0	0	Slimnic	Slimnic	Slimnic	Slimnic	Slimnic	Slimnic
+	2802	Șișcani	46.1523000	27.1703900	RO	40	0	0	Șișcani	Șișcani	Șișcani	Șișcani	Șișcani	Șișcani
+	2802	Sârbi	45.8696800	27.0652700	RO	40	0	0	Sârbi	Sârbi	Sârbi	Sârbi	Sârbi	Sârbi
+	2802	Șindrilari	45.7908300	26.8794700	RO	40	0	0	Șindrilari	Șindrilari	Șindrilari	Șindrilari	Șindrilari	Șindrilari
+	2802	Siminoc	45.5988100	26.8660200	RO	40	0	0	Siminoc	Siminoc	Siminoc	Siminoc	Siminoc	Siminoc
+	2802	Sihlea	45.5000000	27.1166700	RO	40	0	0	Sihlea	Sihlea	Sihlea	Sihlea	Sihlea	Sihlea
+	2802	Șerbești	45.9226100	26.9707000	RO	40	0	0	Șerbești	Șerbești	Șerbești	Șerbești	Șerbești	Șerbești
+	2802	Șerbănești	46.1658800	27.2989600	RO	40	0	0	Șerbănești	Șerbănești	Șerbănești	Șerbănești	Șerbănești	Șerbănești
+	2802	Seciu	45.5367100	26.8353400	RO	40	0	0	Seciu	Seciu	Seciu	Seciu	Seciu	Seciu
+	2802	Scânteia	45.8227200	27.0261200	RO	40	0	0	Scânteia	Scânteia	Scânteia	Scânteia	Scânteia	Scânteia
+	2802	Scafari	45.9048400	26.8885300	RO	40	0	0	Scafari	Scafari	Scafari	Scafari	Scafari	Scafari
+	2802	Satu Nou	45.4294300	27.3295400	RO	40	0	0	Satu Nou	Satu Nou	Satu Nou	Satu Nou	Satu Nou	Satu Nou
+	2802	Salcia Veche	45.4573400	27.3077300	RO	40	0	0	Salcia Veche	Salcia Veche	Salcia Veche	Salcia Veche	Salcia Veche	Salcia Veche
+	2802	Salcia Nouă	45.4568400	27.3407500	RO	40	0	0	Salcia Nouă	Salcia Nouă	Salcia Nouă	Salcia Nouă	Salcia Nouă	Salcia Nouă
+	2802	Sahastru	45.7272100	26.6871400	RO	40	0	0	Sahastru	Sahastru	Sahastru	Sahastru	Sahastru	Sahastru
+	2802	Rugineşti	46.0666700	27.1166700	RO	40	0	0	Rugineşti	Rugineşti	Rugineşti	Rugineşti	Rugineşti	Rugineşti
+	2802	Ruget	45.9008900	26.8613900	RO	40	0	0	Ruget	Ruget	Ruget	Ruget	Ruget	Ruget
+	2802	Rucăreni	45.9943800	26.6549600	RO	40	0	0	Rucăreni	Rucăreni	Rucăreni	Rucăreni	Rucăreni	Rucăreni
+	2802	Rotileștii Mari	46.0348000	26.7402300	RO	40	0	0	Rotileștii Mari	Rotileștii Mari	Rotileștii Mari	Rotileștii Mari	Rotileștii Mari	Rotileștii Mari
+	2802	Roșcari	45.5722700	26.9137200	RO	40	0	0	Roșcari	Roșcari	Roșcari	Roșcari	Roșcari	Roșcari
+	2802	Râmniceni	45.5132200	27.4484300	RO	40	0	0	Râmniceni	Râmniceni	Râmniceni	Râmniceni	Râmniceni	Râmniceni
+	2802	Râmniceanca	45.7291300	27.0600600	RO	40	0	0	Râmniceanca	Râmniceanca	Râmniceanca	Râmniceanca	Râmniceanca	Râmniceanca
+	2802	Repedea	45.9214400	27.0340700	RO	40	0	0	Repedea	Repedea	Repedea	Repedea	Repedea	Repedea
+	2802	Reghiu	45.7833300	26.8333300	RO	40	0	0	Reghiu	Reghiu	Reghiu	Reghiu	Reghiu	Reghiu
+	2802	Rebegari	45.8244700	26.7440600	RO	40	0	0	Rebegari	Rebegari	Rebegari	Rebegari	Rebegari	Rebegari
+	2802	Răstoaca	45.6608300	27.2872300	RO	40	0	0	Răstoaca	Răstoaca	Răstoaca	Răstoaca	Răstoaca	Răstoaca
+	2802	Răiuți	45.8197500	26.8418700	RO	40	0	0	Răiuți	Răiuți	Răiuți	Răiuți	Răiuți	Răiuți
+	2802	Rădulești	45.7431400	27.3134600	RO	40	0	0	Rădulești	Rădulești	Rădulești	Rădulești	Rădulești	Rădulești
+	2802	Rădăcinești	46.1862300	27.2983600	RO	40	0	0	Rădăcinești	Rădăcinești	Rădăcinești	Rădăcinești	Rădăcinești	Rădăcinești
+	2802	Răcoasa	46.0000000	26.8833300	RO	40	0	0	Răcoasa	Răcoasa	Răcoasa	Răcoasa	Răcoasa	Răcoasa
+	2802	Răchitosu	45.7900600	27.2622500	RO	40	0	0	Răchitosu	Răchitosu	Răchitosu	Răchitosu	Răchitosu	Răchitosu
+	2802	Răchitașu	45.7312900	26.8102500	RO	40	0	0	Răchitașu	Răchitașu	Răchitașu	Răchitașu	Răchitașu	Răchitașu
+	2802	Putna	45.8263600	27.0993400	RO	40	0	0	Putna	Putna	Putna	Putna	Putna	Putna
+	2802	Pufeşti	46.0000000	27.2000000	RO	40	0	0	Pufeşti	Pufeşti	Pufeşti	Pufeşti	Pufeşti	Pufeşti
+	2802	Prisecani	46.1807300	27.4254800	RO	40	0	0	Prisecani	Prisecani	Prisecani	Prisecani	Prisecani	Prisecani
+	2802	Prisaca	45.8636000	26.7825600	RO	40	0	0	Prisaca	Prisaca	Prisaca	Prisaca	Prisaca	Prisaca
+	2802	Prahuda	45.7852300	26.7574100	RO	40	0	0	Prahuda	Prahuda	Prahuda	Prahuda	Prahuda	Prahuda
+	2802	Popești	45.5953300	27.0791600	RO	40	0	0	Popești	Popești	Popești	Popești	Popești	Popești
+	2802	Poiana Cristei	45.6500000	26.9833300	RO	40	0	0	Poiana Cristei	Poiana Cristei	Poiana Cristei	Poiana Cristei	Poiana Cristei	Poiana Cristei
+	2802	Poiana	45.8756300	26.7592300	RO	40	0	0	Poiana	Poiana	Poiana	Poiana	Poiana	Poiana
+	2802	Poienița	45.5849800	26.9139200	RO	40	0	0	Poienița	Poienița	Poienița	Poienița	Poienița	Poienița
+	2802	Poenile	45.6234100	26.9865700	RO	40	0	0	Poenile	Poenile	Poenile	Poenile	Poenile	Poenile
+	2802	Podu Stoica	45.8219600	26.7875300	RO	40	0	0	Podu Stoica	Podu Stoica	Podu Stoica	Podu Stoica	Podu Stoica	Podu Stoica
+	2802	Podu Șchiopului	45.8121000	26.6595400	RO	40	0	0	Podu Șchiopului	Podu Șchiopului	Podu Șchiopului	Podu Șchiopului	Podu Șchiopului	Podu Șchiopului
+	2802	Podurile	45.5569300	26.8628300	RO	40	0	0	Podurile	Podurile	Podurile	Podurile	Podurile	Podurile
+	2802	Poduri	45.8813200	26.8226300	RO	40	0	0	Poduri	Poduri	Poduri	Poduri	Poduri	Poduri
+	2802	Podu Nărujei	45.8192700	26.7546000	RO	40	0	0	Podu Nărujei	Podu Nărujei	Podu Nărujei	Podu Nărujei	Podu Nărujei	Podu Nărujei
+	2802	Podu Lacului	45.6434400	26.9897700	RO	40	0	0	Podu Lacului	Podu Lacului	Podu Lacului	Podu Lacului	Podu Lacului	Podu Lacului
+	2802	Ploscuțeni	46.0785900	27.2703200	RO	40	0	0	Ploscuțeni	Ploscuțeni	Ploscuțeni	Ploscuțeni	Ploscuțeni	Ploscuțeni
+	2802	Plopu	45.6264300	26.9616000	RO	40	0	0	Plopu	Plopu	Plopu	Plopu	Plopu	Plopu
+	2802	Pleșești	46.1550900	27.4519300	RO	40	0	0	Pleșești	Pleșești	Pleșești	Pleșești	Pleșești	Pleșești
+	2802	Plăcințeni	46.1470000	27.3757300	RO	40	0	0	Plăcințeni	Plăcințeni	Plăcințeni	Plăcințeni	Plăcințeni	Plăcințeni
+	2802	Pitulușa	45.7675700	27.0142400	RO	40	0	0	Pitulușa	Pitulușa	Pitulușa	Pitulușa	Pitulușa	Pitulușa
+	2802	Piscu Reghiului	45.7939500	26.8088800	RO	40	0	0	Piscu Reghiului	Piscu Reghiului	Piscu Reghiului	Piscu Reghiului	Piscu Reghiului	Piscu Reghiului
+	2802	Piscu Radului	45.9621200	26.8071300	RO	40	0	0	Piscu Radului	Piscu Radului	Piscu Radului	Piscu Radului	Piscu Radului	Piscu Radului
+	2802	Pietroasa	45.7121700	27.1195100	RO	40	0	0	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa
+	2802	Pietroasa	45.5264500	27.0388600	RO	40	0	0	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa
+	2802	Pietroasa	45.8648700	27.0410000	RO	40	0	0	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa
+	2802	Pietroasa	45.7003700	27.0441100	RO	40	0	0	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa	Pietroasa
+	2802	Petrești	45.7309800	27.2268800	RO	40	0	0	Petrești	Petrești	Petrești	Petrești	Petrești	Petrești
+	2802	Petreanu	45.6894200	26.9390600	RO	40	0	0	Petreanu	Petreanu	Petreanu	Petreanu	Petreanu	Petreanu
+	2802	Păvălari	45.7382600	26.6829200	RO	40	0	0	Păvălari	Păvălari	Păvălari	Păvălari	Păvălari	Păvălari
+	2802	Păuneşti	46.0333300	27.1000000	RO	40	0	0	Păuneşti	Păuneşti	Păuneşti	Păuneşti	Păuneşti	Păuneşti
+	2802	Păulești	45.8915400	26.6891400	RO	40	0	0	Păulești	Păulești	Păulești	Păulești	Păulești	Păulești
+	2802	Pătrășcani	45.8263100	27.1788500	RO	40	0	0	Pătrășcani	Pătrășcani	Pătrășcani	Pătrășcani	Pătrășcani	Pătrășcani
+	2802	Panciu	45.9000000	27.0833300	RO	40	0	0	Panciu	Panciu	Panciu	Panciu	Panciu	Panciu
+	2802	Paltin	45.7833300	26.7166700	RO	40	0	0	Paltin	Paltin	Paltin	Paltin	Paltin	Paltin
+	2802	Pădureni	45.9372900	27.2315200	RO	40	0	0	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni
+	2802	Pădureni	45.7933900	27.0355100	RO	40	0	0	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni
+	2802	Pădureni	45.5245900	27.0605800	RO	40	0	0	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni	Pădureni
+	2802	Oreavu	45.5895300	27.1506800	RO	40	0	0	Oreavu	Oreavu	Oreavu	Oreavu	Oreavu	Oreavu
+	2802	Olteni	45.7336900	27.0983800	RO	40	0	0	Olteni	Olteni	Olteni	Olteni	Olteni	Olteni
+	2802	Oleșești	45.8478100	27.1009700	RO	40	0	0	Oleșești	Oleșești	Oleșești	Oleșești	Oleșești	Oleșești
+	2802	Olăreni	45.4850900	27.0070200	RO	40	0	0	Olăreni	Olăreni	Olăreni	Olăreni	Olăreni	Olăreni
+	2802	Odobeşti	45.7666700	27.0500000	RO	40	0	0	Odobeşti	Odobeşti	Odobeşti	Odobeşti	Odobeşti	Odobeşti
+	2802	Odobasca	45.6570200	26.9808300	RO	40	0	0	Odobasca	Odobasca	Odobasca	Odobasca	Odobasca	Odobasca
+	2802	Ocheșești	46.1472000	27.3237700	RO	40	0	0	Ocheșești	Ocheșești	Ocheșești	Ocheșești	Ocheșești	Ocheșești
+	2802	Obrejița	45.5010200	27.0897400	RO	40	0	0	Obrejița	Obrejița	Obrejița	Obrejița	Obrejița	Obrejița
+	2802	Nistoreşti	45.8333300	26.7333300	RO	40	0	0	Nistoreşti	Nistoreşti	Nistoreşti	Nistoreşti	Nistoreşti	Nistoreşti
+	2802	Nereju Mic	45.7061800	26.6964100	RO	40	0	0	Nereju Mic	Nereju Mic	Nereju Mic	Nereju Mic	Nereju Mic	Nereju Mic
+	2802	Nereju	45.7166700	26.7166700	RO	40	0	0	Nereju	Nereju	Nereju	Nereju	Nereju	Nereju
+	2802	Negrilești	45.9369700	26.7063500	RO	40	0	0	Negrilești	Negrilești	Negrilești	Negrilești	Negrilești	Negrilești
+	2802	Neculele	45.6271700	26.7139500	RO	40	0	0	Neculele	Neculele	Neculele	Neculele	Neculele	Neculele
+	2802	Năruja	45.8333300	26.7833300	RO	40	0	0	Năruja	Năruja	Năruja	Năruja	Năruja	Năruja
+	2802	Nănești	46.0991900	27.3753600	RO	40	0	0	Nănești	Nănești	Nănești	Nănești	Nănești	Nănești
+	2802	Năneşti	45.5500000	27.5000000	RO	40	0	0	Năneşti	Năneşti	Năneşti	Năneşti	Năneşti	Năneşti
+	2802	Muncelu	45.9520800	27.0310700	RO	40	0	0	Muncelu	Muncelu	Muncelu	Muncelu	Muncelu	Muncelu
+	2802	Moviliţa	45.9500000	27.1000000	RO	40	0	0	Moviliţa	Moviliţa	Moviliţa	Moviliţa	Moviliţa	Moviliţa
+	2802	Motnău	45.5799200	26.8833600	RO	40	0	0	Motnău	Motnău	Motnău	Motnău	Motnău	Motnău
+	2802	Morărești	45.7396100	26.7577300	RO	40	0	0	Morărești	Morărești	Morărești	Morărești	Morărești	Morărești
+	2802	Modruzeni	45.9056800	27.2331900	RO	40	0	0	Modruzeni	Modruzeni	Modruzeni	Modruzeni	Modruzeni	Modruzeni
+	2802	Mirceștii Vechi	45.7446600	27.2853300	RO	40	0	0	Mirceștii Vechi	Mirceștii Vechi	Mirceștii Vechi	Mirceștii Vechi	Mirceștii Vechi	Mirceștii Vechi
+	2802	Mirceștii Noi	45.7507200	27.2726000	RO	40	0	0	Mirceștii Noi	Mirceștii Noi	Mirceștii Noi	Mirceștii Noi	Mirceștii Noi	Mirceștii Noi
+	2802	Milcovul	45.6500000	27.2500000	RO	40	0	0	Milcovul	Milcovul	Milcovul	Milcovul	Milcovul	Milcovul
+	2802	Milcovel	45.7886300	26.9226000	RO	40	0	0	Milcovel	Milcovel	Milcovel	Milcovel	Milcovel	Milcovel
+	2802	Mihălceni	45.4449300	27.3046600	RO	40	0	0	Mihălceni	Mihălceni	Mihălceni	Mihălceni	Mihălceni	Mihălceni
+	2802	Mesteacănu	45.9379400	26.8325900	RO	40	0	0	Mesteacănu	Mesteacănu	Mesteacănu	Mesteacănu	Mesteacănu	Mesteacănu
+	2802	Mera	45.7666700	26.9500000	RO	40	0	0	Mera	Mera	Mera	Mera	Mera	Mera
+	2802	Mărtinești	45.5034700	27.3053100	RO	40	0	0	Mărtinești	Mărtinești	Mărtinești	Mărtinești	Mărtinești	Mărtinești
+	2802	Mărăști	46.0131700	26.8451100	RO	40	0	0	Mărăști	Mărăști	Mărăști	Mărăști	Mărăști	Mărăști
+	2802	Maluri	45.5613800	27.4403300	RO	40	0	0	Maluri	Maluri	Maluri	Maluri	Maluri	Maluri
+	2802	Măicăneşti	45.5000000	27.5000000	RO	40	0	0	Măicăneşti	Măicăneşti	Măicăneşti	Măicăneşti	Măicăneşti	Măicăneşti
+	2802	Mahriu	45.6710200	26.9670200	RO	40	0	0	Mahriu	Mahriu	Mahriu	Mahriu	Mahriu	Mahriu
+	2802	Măgura	45.6016600	26.7436700	RO	40	0	0	Măgura	Măgura	Măgura	Măgura	Măgura	Măgura
+	2802	Lupoaia	45.5428100	26.9111500	RO	40	0	0	Lupoaia	Lupoaia	Lupoaia	Lupoaia	Lupoaia	Lupoaia
+	2802	Luncile	45.5603700	26.8142100	RO	40	0	0	Luncile	Luncile	Luncile	Luncile	Luncile	Luncile
+	2802	Lojnița	45.5856100	26.8368900	RO	40	0	0	Lojnița	Lojnița	Lojnița	Lojnița	Lojnița	Lojnița
+	2802	Livezile	45.9546000	26.8368000	RO	40	0	0	Livezile	Livezile	Livezile	Livezile	Livezile	Livezile
+	2802	Livada	45.7744900	26.9222300	RO	40	0	0	Livada	Livada	Livada	Livada	Livada	Livada
+	2802	Liești	45.4992400	27.0510400	RO	40	0	0	Liești	Liești	Liești	Liești	Liești	Liești
+	2802	Lespezi	46.1602700	27.2406500	RO	40	0	0	Lespezi	Lespezi	Lespezi	Lespezi	Lespezi	Lespezi
+	2802	Lepșa	45.9517600	26.5754900	RO	40	0	0	Lepșa	Lepșa	Lepșa	Lepșa	Lepșa	Lepșa
+	2802	Lăstuni	45.6013200	26.8890900	RO	40	0	0	Lăstuni	Lăstuni	Lăstuni	Lăstuni	Lăstuni	Lăstuni
+	2802	Lărgășeni	46.1943000	27.2955300	RO	40	0	0	Lărgășeni	Lărgășeni	Lărgășeni	Lărgășeni	Lărgășeni	Lărgășeni
+	2802	Lămotești	45.6585100	27.2511300	RO	40	0	0	Lămotești	Lămotești	Lămotești	Lămotești	Lămotești	Lămotești
+	2802	Lacu lui Baban	45.6034400	26.9752700	RO	40	0	0	Lacu lui Baban	Lacu lui Baban	Lacu lui Baban	Lacu lui Baban	Lacu lui Baban	Lacu lui Baban
+	2802	Jorăști	45.7147700	27.2633500	RO	40	0	0	Jorăști	Jorăști	Jorăști	Jorăști	Jorăști	Jorăști
+	2802	Jitia de Jos	45.5681500	26.7827200	RO	40	0	0	Jitia de Jos	Jitia de Jos	Jitia de Jos	Jitia de Jos	Jitia de Jos	Jitia de Jos
+	2802	Jitia	45.5833300	26.7166700	RO	40	0	0	Jitia	Jitia	Jitia	Jitia	Jitia	Jitia
+	2802	Jiliște	45.6009400	27.2415600	RO	40	0	0	Jiliște	Jiliște	Jiliște	Jiliște	Jiliște	Jiliște
+	2802	Jgheaburi	45.8123800	26.8161500	RO	40	0	0	Jgheaburi	Jgheaburi	Jgheaburi	Jgheaburi	Jgheaburi	Jgheaburi
+	2802	Jariştea	45.7833300	27.0666700	RO	40	0	0	Jariştea	Jariştea	Jariştea	Jariştea	Jariştea	Jariştea
+	2802	Izvoarele	46.1558000	27.3438900	RO	40	0	0	Izvoarele	Izvoarele	Izvoarele	Izvoarele	Izvoarele	Izvoarele
+	2802	Ivăncești	45.8079900	27.1396300	RO	40	0	0	Ivăncești	Ivăncești	Ivăncești	Ivăncești	Ivăncești	Ivăncești
+	2802	Iugani	46.1497500	27.4344600	RO	40	0	0	Iugani	Iugani	Iugani	Iugani	Iugani	Iugani
+	2802	Irești	45.9299300	26.9439300	RO	40	0	0	Irești	Irești	Irești	Irești	Irești	Irești
+	2802	Igești	45.8204300	27.1825300	RO	40	0	0	Igești	Igești	Igești	Igești	Igești	Igești
+	2802	Hotaru	45.7259000	26.8552800	RO	40	0	0	Hotaru	Hotaru	Hotaru	Hotaru	Hotaru	Hotaru
+	2802	Homocea	46.1333300	27.2333300	RO	40	0	0	Homocea	Homocea	Homocea	Homocea	Homocea	Homocea
+	2802	Holbănești	45.9689000	27.0667400	RO	40	0	0	Holbănești	Holbănești	Holbănești	Holbănești	Holbănești	Holbănești
+	2802	Hăulișca	45.8827000	26.6849300	RO	40	0	0	Hăulișca	Hăulișca	Hăulișca	Hăulișca	Hăulișca	Hăulișca
+	2802	Haret	45.9192300	27.2098600	RO	40	0	0	Haret	Haret	Haret	Haret	Haret	Haret
+	2802	Gura Văii	46.0531900	26.7403400	RO	40	0	0	Gura Văii	Gura Văii	Gura Văii	Gura Văii	Gura Văii	Gura Văii
+	2802	Gura Caliţei	45.5833300	27.0166700	RO	40	0	0	Gura Caliţei	Gura Caliţei	Gura Caliţei	Gura Caliţei	Gura Caliţei	Gura Caliţei
+	2802	Gugeşti	45.5666700	27.1333300	RO	40	0	0	Gugeşti	Gugeşti	Gugeşti	Gugeşti	Gugeşti	Gugeşti
+	2802	Groapa Tufei	45.6030700	27.0023300	RO	40	0	0	Groapa Tufei	Groapa Tufei	Groapa Tufei	Groapa Tufei	Groapa Tufei	Groapa Tufei
+	2802	Gologanu	45.6097900	27.2709100	RO	40	0	0	Gologanu	Gologanu	Gologanu	Gologanu	Gologanu	Gologanu
+	2802	Goleștii de Sus	45.6411600	27.1034300	RO	40	0	0	Goleștii de Sus	Goleștii de Sus	Goleștii de Sus	Goleștii de Sus	Goleștii de Sus	Goleștii de Sus
+	2802	Goleşti	45.6666700	27.1333300	RO	40	0	0	Goleşti	Goleşti	Goleşti	Goleşti	Goleşti	Goleşti
+	2802	Gogoiu	45.9993000	26.8416200	RO	40	0	0	Gogoiu	Gogoiu	Gogoiu	Gogoiu	Gogoiu	Gogoiu
+	2802	Ghimicești	45.9669600	27.0776900	RO	40	0	0	Ghimicești	Ghimicești	Ghimicești	Ghimicești	Ghimicești	Ghimicești
+	2802	Ghebari	45.7800500	26.7870600	RO	40	0	0	Ghebari	Ghebari	Ghebari	Ghebari	Ghebari	Ghebari
+	2802	Garoafa	45.7833300	27.2000000	RO	40	0	0	Garoafa	Garoafa	Garoafa	Garoafa	Garoafa	Garoafa
+	2802	Găloiești	45.5519000	26.9563200	RO	40	0	0	Găloiești	Găloiești	Găloiești	Găloiești	Găloiești	Găloiești
+	2802	Galbeni	46.1089300	27.3766600	RO	40	0	0	Galbeni	Galbeni	Galbeni	Galbeni	Galbeni	Galbeni
+	2802	Găgești	45.8559800	27.0554000	RO	40	0	0	Găgești	Găgești	Găgești	Găgești	Găgești	Găgești
+	2802	Frecăței	45.9632200	27.0897200	RO	40	0	0	Frecăței	Frecăței	Frecăței	Frecăței	Frecăței	Frecăței
+	2802	Focșani	45.7000000	27.1833300	RO	40	0	0	Focșani	Focșani	Focșani	Focșani	Focșani	Focșani
+	2802	Fitioneşti	45.9833300	27.0500000	RO	40	0	0	Fitioneşti	Fitioneşti	Fitioneşti	Fitioneşti	Fitioneşti	Fitioneşti
+	2802	Fetig	45.7393100	26.7840700	RO	40	0	0	Fetig	Fetig	Fetig	Fetig	Fetig	Fetig
+	2802	Fetești	46.0402300	26.7563100	RO	40	0	0	Fetești	Fetești	Fetești	Fetești	Fetești	Fetești
+	2802	Feldioara	46.0987400	27.3509300	RO	40	0	0	Feldioara	Feldioara	Feldioara	Feldioara	Feldioara	Feldioara
+	2802	Farcaș	45.8032800	26.8291800	RO	40	0	0	Farcaș	Farcaș	Farcaș	Farcaș	Farcaș	Farcaș
+	2802	Faraoanele	45.7136400	27.0482900	RO	40	0	0	Faraoanele	Faraoanele	Faraoanele	Faraoanele	Faraoanele	Faraoanele
+	2802	Făgetu	45.8200600	26.7000000	RO	40	0	0	Făgetu	Făgetu	Făgetu	Făgetu	Făgetu	Făgetu
+	2802	După Măgura	45.6282600	26.7380100	RO	40	0	0	După Măgura	După Măgura	După Măgura	După Măgura	După Măgura	După Măgura
+	2802	Dumitreștii de Sus	45.5601100	26.8932200	RO	40	0	0	Dumitreștii de Sus	Dumitreștii de Sus	Dumitreștii de Sus	Dumitreștii de Sus	Dumitreștii de Sus	Dumitreștii de Sus
+	2802	Dumitrești	45.5524300	26.9272700	RO	40	0	0	Dumitrești	Dumitrești	Dumitrești	Dumitrești	Dumitrești	Dumitrești
+	2802	Dumbrăveni	45.5333300	27.1166700	RO	40	0	0	Dumbrăveni	Dumbrăveni	Dumbrăveni	Dumbrăveni	Dumbrăveni	Dumbrăveni
+	2802	Dumbrava	45.6579000	27.0077000	RO	40	0	0	Dumbrava	Dumbrava	Dumbrava	Dumbrava	Dumbrava	Dumbrava
+	2802	Dragosloveni	45.5616300	27.0777600	RO	40	0	0	Dragosloveni	Dragosloveni	Dragosloveni	Dragosloveni	Dragosloveni	Dragosloveni
+	2802	Domnești-Sat	46.0274700	27.2164400	RO	40	0	0	Domnești-Sat	Domnești-Sat	Domnești-Sat	Domnești-Sat	Domnești-Sat	Domnești-Sat
+	2802	Doaga	45.8302500	27.2932000	RO	40	0	0	Doaga	Doaga	Doaga	Doaga	Doaga	Doaga
+	2802	Diocheți-Rediu	45.9305800	27.1390700	RO	40	0	0	Diocheți-Rediu	Diocheți-Rediu	Diocheți-Rediu	Diocheți-Rediu	Diocheți-Rediu	Diocheți-Rediu
+	2802	Dealu Sării	45.5723700	26.7583200	RO	40	0	0	Dealu Sării	Dealu Sării	Dealu Sării	Dealu Sării	Dealu Sării	Dealu Sării
+	2802	Dealu Lung	45.6214000	26.9480800	RO	40	0	0	Dealu Lung	Dealu Lung	Dealu Lung	Dealu Lung	Dealu Lung	Dealu Lung
+	2802	Dealu Cucului	45.6722300	26.9935100	RO	40	0	0	Dealu Cucului	Dealu Cucului	Dealu Cucului	Dealu Cucului	Dealu Cucului	Dealu Cucului
+	2802	Dălhăuți	45.6924700	27.0488700	RO	40	0	0	Dălhăuți	Dălhăuți	Dălhăuți	Dălhăuți	Dălhăuți	Dălhăuți
+	2802	Coza	45.9080300	26.6691100	RO	40	0	0	Coza	Coza	Coza	Coza	Coza	Coza
+	2802	Covrag	46.0849500	27.3348100	RO	40	0	0	Covrag	Covrag	Covrag	Covrag	Covrag	Covrag
+	2802	Coteşti	45.6500000	27.0500000	RO	40	0	0	Coteşti	Coteşti	Coteşti	Coteşti	Coteşti	Coteşti
+	2802	Costișa de Sus	46.1003500	27.4142700	RO	40	0	0	Costișa de Sus	Costișa de Sus	Costișa de Sus	Costișa de Sus	Costișa de Sus	Costișa de Sus
+	2802	Costișa	46.1777200	27.2108600	RO	40	0	0	Costișa	Costișa	Costișa	Costișa	Costișa	Costișa
+	2802	Costișa	46.0946800	27.4262500	RO	40	0	0	Costișa	Costișa	Costișa	Costișa	Costișa	Costișa
+	2802	Cornetu	45.5045600	27.0530500	RO	40	0	0	Cornetu	Cornetu	Cornetu	Cornetu	Cornetu	Cornetu
+	2802	Corbiţa	46.1500000	27.3000000	RO	40	0	0	Corbiţa	Corbiţa	Corbiţa	Corbiţa	Corbiţa	Corbiţa
+	2802	Copăcești	46.0908800	27.1203500	RO	40	0	0	Copăcești	Copăcești	Copăcești	Copăcești	Copăcești	Copăcești
+	2802	Colacu	45.8897300	26.8290800	RO	40	0	0	Colacu	Colacu	Colacu	Colacu	Colacu	Colacu
+	2802	Codrești	45.4218000	27.2724800	RO	40	0	0	Codrești	Codrești	Codrești	Codrești	Codrești	Codrești
+	2802	Cocoșari	45.6142800	26.9603900	RO	40	0	0	Cocoșari	Cocoșari	Cocoșari	Cocoșari	Cocoșari	Cocoșari
+	2802	Clipicești	45.8927000	27.0258800	RO	40	0	0	Clipicești	Clipicești	Clipicești	Clipicești	Clipicești	Clipicești
+	2802	Ciușlea	45.7876100	27.3064400	RO	40	0	0	Ciușlea	Ciușlea	Ciușlea	Ciușlea	Ciușlea	Ciușlea
+	2802	Cârligele	45.6833300	27.1000000	RO	40	0	0	Cârligele	Cârligele	Cârligele	Cârligele	Cârligele	Cârligele
+	2802	Ciorăşti	45.4333300	27.3000000	RO	40	0	0	Ciorăşti	Ciorăşti	Ciorăşti	Ciorăşti	Ciorăşti	Ciorăşti
+	2802	Ciorani	45.9882400	27.2161400	RO	40	0	0	Ciorani	Ciorani	Ciorani	Ciorani	Ciorani	Ciorani
+	2802	Ciolănești	45.9577800	27.0613500	RO	40	0	0	Ciolănești	Ciolănești	Ciolănești	Ciolănești	Ciolănești	Ciolănești
+	2802	Câmpuri	46.0153500	26.7880200	RO	40	0	0	Câmpuri	Câmpuri	Câmpuri	Câmpuri	Câmpuri	Câmpuri
+	2802	Câmpineanca	45.7116600	27.1283200	RO	40	0	0	Câmpineanca	Câmpineanca	Câmpineanca	Câmpineanca	Câmpineanca	Câmpineanca
+	2802	Chițcani	46.1417800	27.4148300	RO	40	0	0	Chițcani	Chițcani	Chițcani	Chițcani	Chițcani	Chițcani
+	2802	Chiojdeni	45.5500000	26.8666700	RO	40	0	0	Chiojdeni	Chiojdeni	Chiojdeni	Chiojdeni	Chiojdeni	Chiojdeni
+	2802	Ceardac	45.6696700	27.1661100	RO	40	0	0	Ceardac	Ceardac	Ceardac	Ceardac	Ceardac	Ceardac
+	2802	Cerbu	45.5949000	26.7143900	RO	40	0	0	Cerbu	Cerbu	Cerbu	Cerbu	Cerbu	Cerbu
+	2802	Cătăuți	45.5404400	26.8465800	RO	40	0	0	Cătăuți	Cătăuți	Cătăuți	Cătăuți	Cătăuți	Cătăuți
+	2802	Carșochești-Corăbița	45.7313300	26.7567800	RO	40	0	0	Carșochești-Corăbița	Carșochești-Corăbița	Carșochești-Corăbița	Carșochești-Corăbița	Carșochești-Corăbița	Carșochești-Corăbița
+	2802	Coroteni	45.4819000	27.0281700	RO	40	0	0	Coroteni	Coroteni	Coroteni	Coroteni	Coroteni	Coroteni
+	2802	Călimănești	45.9620700	27.2180800	RO	40	0	0	Călimănești	Călimănești	Călimănești	Călimănești	Călimănești	Călimănești
+	2802	Călimăneasa	46.1136800	27.4103100	RO	40	0	0	Călimăneasa	Călimăneasa	Călimăneasa	Călimăneasa	Călimăneasa	Călimăneasa
+	2802	Călienii Vechi	45.5999000	27.5093600	RO	40	0	0	Călienii Vechi	Călienii Vechi	Călienii Vechi	Călienii Vechi	Călienii Vechi	Călienii Vechi
+	2802	Călienii Noi	45.5904500	27.4905200	RO	40	0	0	Călienii Noi	Călienii Noi	Călienii Noi	Călienii Noi	Călienii Noi	Călienii Noi
+	2802	Căiata	45.5256500	27.1534100	RO	40	0	0	Căiata	Căiata	Căiata	Căiata	Căiata	Căiata
+	2802	Burca	45.9122400	26.9490500	RO	40	0	0	Burca	Burca	Burca	Burca	Burca	Burca
+	2802	Budești	45.6277900	27.0566900	RO	40	0	0	Budești	Budești	Budești	Budești	Budești	Budești
+	2802	Buda	46.1317900	27.3027900	RO	40	0	0	Buda	Buda	Buda	Buda	Buda	Buda
+	2802	Broşteni	45.7500000	27.0333300	RO	40	0	0	Broşteni	Broşteni	Broşteni	Broşteni	Broşteni	Broşteni
+	2802	Brădetu	45.8019300	26.6238500	RO	40	0	0	Brădetu	Brădetu	Brădetu	Brădetu	Brădetu	Brădetu
+	2802	Brădăcești	45.7029500	26.6794600	RO	40	0	0	Brădăcești	Brădăcești	Brădăcești	Brădăcești	Brădăcești	Brădăcești
+	2802	Bordeștii de Jos	45.5391000	27.0387000	RO	40	0	0	Bordeștii de Jos	Bordeștii de Jos	Bordeștii de Jos	Bordeștii de Jos	Bordeștii de Jos	Bordeștii de Jos
+	2802	Bordeşti	45.5500000	27.0500000	RO	40	0	0	Bordeşti	Bordeşti	Bordeşti	Bordeşti	Bordeşti	Bordeşti
+	2802	Bordeasca Veche	45.5444700	27.3173000	RO	40	0	0	Bordeasca Veche	Bordeasca Veche	Bordeasca Veche	Bordeasca Veche	Bordeasca Veche	Bordeasca Veche
+	2802	Bordeasca Nouă	45.5395200	27.2915100	RO	40	0	0	Bordeasca Nouă	Bordeasca Nouă	Bordeasca Nouă	Bordeasca Nouă	Bordeasca Nouă	Bordeasca Nouă
+	2802	Bonțești	45.6790900	27.0537200	RO	40	0	0	Bonțești	Bonțești	Bonțești	Bonțești	Bonțești	Bonțești
+	2802	Boloteşti	45.8333300	27.0666700	RO	40	0	0	Boloteşti	Boloteşti	Boloteşti	Boloteşti	Boloteşti	Boloteşti
+	2802	Bogza	45.5079800	27.1977300	RO	40	0	0	Bogza	Bogza	Bogza	Bogza	Bogza	Bogza
+	2802	Bogheștii de Sus	46.1697000	27.4043700	RO	40	0	0	Bogheștii de Sus	Bogheștii de Sus	Bogheștii de Sus	Bogheștii de Sus	Bogheștii de Sus	Bogheștii de Sus
+	2802	Bogheşti	46.1666700	27.4000000	RO	40	0	0	Bogheşti	Bogheşti	Bogheşti	Bogheşti	Bogheşti	Bogheşti
+	2802	Bodești	45.8913500	26.7248700	RO	40	0	0	Bodești	Bodești	Bodești	Bodești	Bodești	Bodești
+	2802	Blidari	45.6625500	27.0576400	RO	40	0	0	Blidari	Blidari	Blidari	Blidari	Blidari	Blidari
+	2802	Blidari	45.5645600	26.9141400	RO	40	0	0	Blidari	Blidari	Blidari	Blidari	Blidari	Blidari
+	2802	Bizighești	45.8187200	27.2228000	RO	40	0	0	Bizighești	Bizighești	Bizighești	Bizighești	Bizighești	Bizighești
+	2802	Bâtcari	45.8271100	26.7166900	RO	40	0	0	Bâtcari	Bâtcari	Bâtcari	Bâtcari	Bâtcari	Bâtcari
+	2802	Biliești	45.7210600	27.3487900	RO	40	0	0	Biliești	Biliești	Biliești	Biliești	Biliești	Biliești
+	2802	Bichești	46.1852100	27.4105000	RO	40	0	0	Bichești	Bichești	Bichești	Bichești	Bichești	Bichești
+	2802	Biceștii de Sus	45.5559600	26.9367000	RO	40	0	0	Biceștii de Sus	Biceștii de Sus	Biceștii de Sus	Biceștii de Sus	Biceștii de Sus	Biceștii de Sus
+	2802	Belciugele	45.5083700	27.4866500	RO	40	0	0	Belciugele	Belciugele	Belciugele	Belciugele	Belciugele	Belciugele
+	2802	Beciu	45.7388900	27.0515800	RO	40	0	0	Beciu	Beciu	Beciu	Beciu	Beciu	Beciu
+	2802	Bătinești	45.8296000	27.1554900	RO	40	0	0	Bătinești	Bătinești	Bătinești	Bătinești	Bătinești	Bătinești
+	2802	Balta Raței	45.7619600	27.2703300	RO	40	0	0	Balta Raței	Balta Raței	Balta Raței	Balta Raței	Balta Raței	Balta Raței
+	2802	Băleşti	45.4333300	27.2333300	RO	40	0	0	Băleşti	Băleşti	Băleşti	Băleşti	Băleşti	Băleşti
+	2802	Bălănești	45.6089100	26.9644000	RO	40	0	0	Bălănești	Bălănești	Bălănești	Bălănești	Bălănești	Bălănești
+	2802	Bahnele	45.6403000	26.7217800	RO	40	0	0	Bahnele	Bahnele	Bahnele	Bahnele	Bahnele	Bahnele
+	2802	Arșița	45.7382400	26.8324800	RO	40	0	0	Arșița	Arșița	Arșița	Arșița	Arșița	Arșița
+	2802	Armeni	45.6007200	27.1945800	RO	40	0	0	Armeni	Armeni	Armeni	Armeni	Armeni	Armeni
+	2802	Argea	46.0434700	27.2615800	RO	40	0	0	Argea	Argea	Argea	Argea	Argea	Argea
+	2802	Anghelești	46.0787500	27.0645900	RO	40	0	0	Anghelești	Anghelești	Anghelești	Anghelești	Anghelești	Anghelești
+	2802	Andreiaşu de Jos	45.7500000	26.8333300	RO	40	0	0	Andreiaşu de Jos	Andreiaşu de Jos	Andreiaşu de Jos	Andreiaşu de Jos	Andreiaşu de Jos	Andreiaşu de Jos
+	2802	Alexandru Vlahuță	45.5660400	27.0993600	RO	40	0	0	Alexandru Vlahuță	Alexandru Vlahuță	Alexandru Vlahuță	Alexandru Vlahuță	Alexandru Vlahuță	Alexandru Vlahuță
+	2802	Adjudu Vechi	46.1348500	27.1889100	RO	40	0	0	Adjudu Vechi	Adjudu Vechi	Adjudu Vechi	Adjudu Vechi	Adjudu Vechi	Adjudu Vechi
+	2802	Adjud	46.1000000	27.1666700	RO	40	0	0	Adjud	Adjud	Adjud	Adjud	Adjud	Adjud

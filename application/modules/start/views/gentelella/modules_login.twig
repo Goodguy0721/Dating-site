@@ -1,0 +1,38 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-xs-12">
+   <font>{% helper lang.l('mod_installer_admin_login_text', 'start') %}</font>
+</div>
+
+<div class="clearfix"></div>
+
+<br><br>
+
+<form method="post" action="{{ data.action }}" class="form-horizontal form-label-left">
+    <div class="x_content">
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_login', 'start') %}: </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" value="{{ data.login }}" name="login" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('field_password', 'start') %}: </label>
+            <div class="col-sm-6 col-xs-12">
+              <input type="password" value="" name="password" class="form-control">
+            </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-xs-12 col-sm-offset-3">
+                <input type="submit" name="btn_login" class="btn btn-success"
+                  value="{% helper lang.l('btn_login', 'start', '', 'button') %}">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

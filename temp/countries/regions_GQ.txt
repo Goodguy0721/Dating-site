@@ -1,0 +1,5 @@
+	961	Nsok	1.1298500	11.2660300	GQ	09	0	0	Nsok	Nsok	Nsok	Nsok	Nsok	Nsok
+	961	Mongomo	1.6274200	11.3134600	GQ	09	0	0	Mongomo	Mongomo	Mongomo	Mongomo	Mongomo	Mongomo
+	961	Ayene	1.8559200	10.6899400	GQ	09	0	0	Ayene	Ayene	Ayene	Ayene	Ayene	Ayene
+	961	Añisoc	1.8658000	10.7689200	GQ	09	0	0	Añisoc	Añisoc	Añisoc	Añisoc	Añisoc	Añisoc
+	961	Aconibe	1.2968300	10.9369100	GQ	09	0	0	Aconibe	Aconibe	Aconibe	Aconibe	Aconibe	Aconibe

@@ -1,0 +1,102 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                {% if data.id %}
+                    {% helper lang.l('admin_header_moderators_change', 'moderators') %}
+                {% else %}
+                    {% helper lang.l('admin_header_moderators_add', 'moderators') %}
+                {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br>
+            <form method="post" action="{{ data.action|e }}" name="save_form" class="form-horizontal form-label-left">
+                <div>{{data.action}}</div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_nickname', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.nickname|e }}" name="nickname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_email', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.email|e }}" name="email" class="form-control">
+                    </div>
+                </div>
+
+                {% if data.id %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_change_password', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="checkbox">
+                            <input type="checkbox" value="1" name="update_password" id="pass_change_field" class="flat">
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_password', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="password" value="" name="password" id="pass_field"
+                            class="form-control" {% if data.id %}disabled{% endif %}>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_repassword', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="password" value="" name="repassword" id="repass_field"
+                            class="form-control" {% if data.id %}disabled{% endif %}>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_name', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.name|e }}" name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_description', 'moderators') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea name="description" class="form-control">{{ data.description }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_permissions', 'moderators') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% include 'permissions.twig' with {module: module} %}
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                        {% helper text_save = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" value="{{text_save}}" name="btn_save">
+                        <a class="btn btn-default" href="{{site_url}}admin/moderators">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,21 @@
+<a href="javascript:void(0);" onclick="changeViewType('list');" class="{% if view_type == 'list' %}active{% endif %}">
+    <i class="fa fa-list"></i>&nbsp;{% helper lang.l('text_list', 'events') %}
+</a>
+<a href="javascript:void(0);" onclick="changeViewType('calendar');" class="{% if view_type == 'calendar' %}active{% endif %}">
+    <i class="fa fa-calendar"></i>&nbsp;{% helper lang.l('text_calendar', 'events') %}
+</a>
+
+<script>
+    function changeViewType(type) {
+        var url = "{% helper seo.seolink('events', 'setViewType') %}/" + type;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            cache: false,
+            success: function (data) {
+                locationHref('{% helper seo.seolink('events', 'search', search_type) %}');
+            }
+        });
+    }
+</script>

@@ -1,0 +1,56 @@
+<!-- Load widget code -->
+{% if preg_match('#^https://#i', site_url) %}
+    <script type="text/javascript" src="https://dme0ih8comzn4.cloudfront.net/js/feather.js"></script>
+{% else %}
+    <script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
+{% endif %}
+
+<!-- Instantiate the widget -->
+<script type="text/javascript">
+    if (typeof (featherEditor{{ avaiary_button_rand }}) === 'undefined'){
+        try{
+            var featherEditor{{ avaiary_button_rand }} = new Aviary.Feather({
+                apiKey: '{{ aviary_api_key }}',
+                apiVersion: 3,
+                {% if aviary_lang_code %}language: '{{ aviary_lang_code }}',{% endif %}
+                onLoad: function(){
+                    ('#btn_aviary_edit{{ avaiary_button_rand }}').prop('disabled', false);
+                },
+                onSave: function(imageID, newURL) {
+                    new {{ aviary_save_callback }}(imageID, newURL);
+                    featherEditor{{ avaiary_button_rand }}.close();
+                },
+                onError: function(errorObj) {
+                    var error_obj = new Errors();
+                    error_obj.show_error_block(errorObj.message, 'error');
+                },
+                postUrl: '{{ site_url }}aviary/save',
+                postData: {
+                    module: '{{ aviary_module }}',
+                    data: {{ aviary_post_data }},
+                    code: '{{ aviary_code }}'
+                },
+            });
+        } catch (e) {
+            ('#m_aviary').hide();
+        }
+    } else {
+        ('#btn_aviary_edit{{ avaiary_button_rand }}').prop('disabled', false);
+    }
+
+    if (typeof (launchEditor{{ avaiary_button_rand }}) === 'undefined'){
+        function launchEditor{{ avaiary_button_rand }}(id, src) {
+            featherEditor{{ avaiary_button_rand }}.launch({
+                image: id,
+                url: src
+            });
+            return false;
+        }
+    }
+</script>
+
+<!-- Add an edit button, passing the HTML id of the image
+        and the public URL to the image -->
+<button type="button" id="btn_aviary_edit{{ avaiary_button_rand }}" value="1" name="btn_aviary_edit"
+        onclick="return launchEditor{{ avaiary_button_rand }}('{{ aviary_photo_id }}', {{ aviary_photo_source }});">
+    {% helper lang.l('btn_aviary', 'aviary') %}</button>

@@ -1,0 +1,13 @@
+{% for item in sections %}
+    <h2 class="section-header">
+        <span class="upper">
+            {{ item.name }}
+        </span>
+        <a href="{% helper seo.seolink('users', 'profile', {'section-code': item.gid, 'section-name': item.name}) %}" class="fright">
+            <i class="fa fa-pencil"></i>&nbsp;Edit
+        </a>
+    </h2>
+    <div class="view-section">
+        {% include 'custom_view_fields.twig' with {'fields_data': item.fields} %}
+    </div>
+{% endfor %}

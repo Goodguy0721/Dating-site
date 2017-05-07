@@ -1,0 +1,139 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_social_networking_menu') %}
+            </ul>
+            &nbsp;
+        </div>
+        <div class="x_content">
+              <div id="actions" class="hide">
+            {% if allow_add %}
+                <div class="btn-group">
+                  <a href="{{ site_url }}admin/social_networking/page_edit" class="btn btn-primary">
+                      {% helper lang.l('link_add_page', 'social_networking') %}
+                  </a>
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li>
+                        <a href="{{ site_url }}admin/social_networking/page_edit">
+                            {% helper lang.l('link_add_page', 'social_networking') %}
+                        </a>
+                      </li>
+                  </ul>
+                </div>
+            {% endif %}
+              </div>
+
+            <table id="data" class="table table-striped jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('page_name', 'social_networking') %}</th>
+                        <th class="column-title text-center">{% helper lang.l('widgets_on_page', 'social_networking') %}</th>
+                        <th>{% helper lang.l('actions', 'social_networking') %}</th>
+                    </tr>
+                </thead>
+                {% if pages %}
+                    {% for item in pages %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td class="text-center">
+                              {% helper lang.l('link_widgets', 'social_networking') %}
+                            </td>
+                            <td class="icons">
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/social_networking/widgets/{{ item.id }}/" class="btn btn-primary">
+                                  {% helper lang.l('btn_edit', 'start') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                      aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                      <a href="{{ site_url }}admin/social_networking/widgets/{{ item.id }}/">
+                                        {% helper lang.l('btn_edit', 'start') %}
+                                      </a>
+                                    </li>
+                                {% if allow_edit %}
+                                    <li>
+                                      <a href="{{ site_url }}admin/social_networking/page_edit/{{ item.id }}"
+                                         class="btn btn-primary">{% spaceless %}
+                                          {% helper lang.l('link_edit_page', 'social_networking') %}
+                                      {% endspaceless %}</a>
+                                    </li>
+                                {% endif %}
+                                {% if allow_delete %}
+                                    <li>
+                                      <a href="{{ site_url }}admin/social_networking/page_delete/{{ item.id }}"
+                                         onclick="javascript: if (!confirm('{% helper lang.l('note_delete_page', 'social_networking', '', 'js') %}')) return false;"
+                                         class="btn btn-primary">
+                                          {% helper lang.l('link_delete_page', 'social_networking') %}
+                                      </a>
+                                    </li>
+                                {% endif %}
+                                  </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_pages','social_networking') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

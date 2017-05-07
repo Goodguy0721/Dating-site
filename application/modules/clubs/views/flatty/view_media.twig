@@ -1,0 +1,90 @@
+<div class="media-gallery-editor">
+    <div class="media-gallery-editor__media-box" style="margin-bottom:0px;">
+
+        {% if media.upload_gid == 'club-video' %}
+            {% if media.media_video_data.status == 'start' %}
+                <div class="pos-rel">
+                    <div class="center lh0 pos-rel">
+                        {% helper text_media_photo = lang.l('text_media_photo', 'clubs', '', 'button', media) %}
+                        <img data-image-src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                             src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                             alt="{{ text_media_photo }}" title="{{ text_media_photo }}" class="img-responsive">
+                        <div id="next_media" class="load_content_right media_view_scroller_right"></div>
+                        <div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+                    </div>
+                    <div class="subinfo box-sizing">
+                        <p>
+                            {% helper lang.l('video_wait_converting', 'media') %}
+                        </p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="plr50 pos-rel">
+                    <div style="width: {{ media.video_content.width }}px;" class="center-block">
+                        {{ media.video_content.embed }}
+                    </div>
+                    <div id="next_media" class="load_content_right media_view_scroller_right"></div>
+                    <div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+                </div>
+            {% endif %}
+        {% elseif media.upload_gid == 'club-image' %}
+            {% helper text_media_photo = lang.l('text_media_photo', 'clubs', '', 'button', media) %}
+
+            <div class="media-gallery-editor__media-source-box container_">
+                <div class="photo-edit hide" data-area="recrop">
+                    <div class="source-box">
+                        <div id="photo_source_recrop_box" class="media-gallery-editor__media-source photo-source-box">
+                            <img data-image-src="{{ media.media.file_url }}{{ vers }}"
+                                 src="{{ media.media.file_url }}{{ vers }}" id="photo_source_recrop" class="img-responsive"
+                                 alt="{{ text_media_photo }}" title="{{ text_media_photo }}">
+                        </div>
+                        <div id="recrop_menu" class="media-gallery-editor__photo-menu">
+                            <ul class="media-gallery-editor__photo-sizes" id="photo_sizes"></ul>
+                            <ul class="media-gallery-editor__photo-view">
+                                <li>
+                                    <span data-section="view">
+                                        {% helper lang.l('view', 'media') %}
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="media-gallery-editor__photo-rotate">
+                                <li>
+                                    <i id="photo_rotate_left" class="fa fa-rotate-left w fa-2x icon-hover"></i>
+                                </li>
+                                <li>
+                                    <i id="photo_rotate_right" class="fa fa-rotate-right w fa-2x icon-hover"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-area="view" class="inner-image">
+                    <img data-image-src="{{ media.media.thumbs.grand }}{{ vers }}"
+                         src="{{ media.media.thumbs.grand }}{{ vers }}" id="photo{{ media.id }}"
+                         alt="{{ text_media_photo }}" title="{{ text_media_photo }}" class="img-responsive">
+                    <div id="next_media" class="load_content_right"></div>
+                    <div id="prev_media" class="load_content_left"></div>
+                    <div class="media-gallery-editor__photo-menu">
+                        <span id="media_position"></span>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+        <div class="media-preloader hide" id="media_preloader"></div>
+    </div>
+</div>
+
+{% if media.description %}
+<div class="container" style="margin-top:30px;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="media-popup-info">
+                <div class="form-group">{{ media.description|nl2br }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,51 @@
+<script>
+    /* Load widget code */
+    var featherEditor{{ avaiary_button_rand }};
+
+    function launchEditor{{ avaiary_button_rand }}(id, src) {
+        if (typeof(featherEditor{{ avaiary_button_rand }}) === 'undefined') return false;
+        featherEditor{{ avaiary_button_rand }}.launch({
+            image: id,
+            url: src
+        });
+        return false;
+    }
+
+    loadScripts(
+        "{{ feather_url }}",
+        function() {
+            /* Instantiate the widget */
+            try {
+                featherEditor{{ avaiary_button_rand }} = new Aviary.Feather({
+                    apiKey: '{{ aviary_api_key }}',
+
+                    {% if aviary_lang_code %}
+                    language: '{{ aviary_lang_code }}',
+                    {% endif %}
+
+                    onLoad: function(){
+                        launchEditor{{ avaiary_button_rand }}('{{ aviary_photo_id }}', {{ aviary_photo_source }});
+                    },
+                    onSave: function(imageID, newURL) {
+                        $.post('{{ site_url }}aviary/save', {
+                            url: newURL,
+                            postdata: JSON.stringify({
+                                module: '{{ aviary_module }}',
+                                data: {{ aviary_post_data }},
+                                code: '{{ aviary_code }}'
+                            }), function(resp) {
+                                new {{ aviary_save_callback }}(imageID, newURL);
+                                featherEditor{{ avaiary_button_rand }}.close();
+                            }
+                        });
+                    },
+                    onError: function(errorObj) {
+                        var error_obj = new Errors();
+                        error_obj.show_error_block(errorObj.message, 'error');
+                    },
+                });
+            }catch(e){
+                $('#btn_aviary_edit{{ avaiary_button_rand }}').hide();
+            }
+        });
+</script>

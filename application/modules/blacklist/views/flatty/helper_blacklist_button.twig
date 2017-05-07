@@ -1,0 +1,29 @@
+<span id="block_user_{{ id_dest_user }}">
+	<a class="link-r-margin add_to_blacklist {% if action == 'remove' %}hide{% endif %}"
+       href="{% helper seo.seolink('blacklist', 'add', id_dest_user) %}"
+	   data-pjax="0" onclick="event.preventDefault();" class="link-r-margin"
+	   data-userId="{{ id_dest_user }}" title="{% helper lang.l('action_add', 'blacklist', '', 'button') %}">
+		<i class="fa fa-lock fa-lg edge hover zoom30"></i>
+	</a>
+	<a class="link-r-margin remove_from_blacklist {% if action == 'add' %}hide{% endif %}"
+	   href="{% helper seo.seolink('blacklist', 'remove', id_dest_user) %}"
+	   data-pjax="0" onclick="event.preventDefault();" class="link-r-margin"
+	   data-userId="{{ id_dest_user }}" title="{% helper lang.l('action_remove', 'blacklist', '', 'button') %}">
+		<i class="fa fa-lock fa-lg edge hover zoom30">
+			<i class="fa fa-mini-stack fa-remove"></i>
+		</i>
+	</a>
+</span>
+<script>
+	$(function() {
+		loadScripts(
+            ["{% helper utils.jscript('blacklist', 'blacklist.js', 'path') %}"],
+            function() {
+                blacklistObj = new blacklist({
+                    siteUrl: site_url
+                });
+            },
+            'blacklistObj'
+        );
+	});
+</script>

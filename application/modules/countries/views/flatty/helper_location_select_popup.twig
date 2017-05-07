@@ -1,0 +1,55 @@
+<div id="country_select_{{ country_helper_data.rand }}" class="controller-select">
+	<span id="country_text_{{ country_helper_data.rand }}">
+        {% set separator='' %}
+        {% if country_helper_data.country %}
+            {% set separator=',' %}
+            {{ country_helper_data.country.name }}
+        {% endif %}
+        {% if country_helper_data.region %}
+            {% set separator=',' %}
+            {{ separator}} {{ country_helper_data.region.name }}
+        {% endif %}
+        {% if country_helper_data.city %}
+            {{ separator}} {{ country_helper_data.city.name }}
+        {% endif %}
+	</span>&nbsp;&nbsp;
+	<a href="javascript:;" id="country_open_{{ country_helper_data.rand }}">
+        {% helper lang.l('link_select_region', 'countries') %}
+    </a>
+	<input type="hidden" name="{{ country_helper_data.var_country_name }}"
+        id="country_hidden_{{ country_helper_data.rand }}" value="{{ country_helper_data.country.code }}">
+	<input type="hidden" name="{{ country_helper_data.var_region_name }}"
+        id="region_hidden_{{ country_helper_data.rand }}" value="{{ country_helper_data.region.id }}">
+	<input type="hidden" name="{{ country_helper_data.var_city_name }}"
+        id="city_hidden_{{ country_helper_data.rand }}" value="{{ country_helper_data.city.id }}">
+</div>
+
+<script>
+    {% if country_helper_data.var_js_name %}
+        var {{ country_helper_data.var_js_name }};
+    {% endif %}
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('countries', 'location-popup.js', 'path') %}",
+            function(){
+                {% if country_helper_data.var_js_name %}
+                    {{ country_helper_data.var_js_name }} =
+                {% endif %}
+
+                new locationPopUp({
+                    siteUrl: '{{ site_url }}',
+                    rand: '{{ country_helper_data.rand }}',
+                    id_country: '{{ country_helper_data.country.code }}',
+                    id_region: '{{ country_helper_data.region.id }}',
+                    id_city: '{{ country_helper_data.city.id }}',
+                    select_type: '{{ country_helper_data.select_type }}'
+                });
+            },
+            {% if country_helper_data.var_js_name %}
+                {{ country_helper_data.var_js_name }}
+            {% else %}
+                ''
+            {% endif %}
+        );
+    });
+</script>

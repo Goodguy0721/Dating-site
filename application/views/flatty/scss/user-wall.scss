@@ -1,0 +1,119 @@
+
+.wall-filter{
+	padding: 20px 20px 16px;
+  	border-bottom: 1px solid #e5e5e5;
+}
+.wall-filter a{
+	 padding-#{$right}: 25px;
+}
+
+#timeline{
+	display: block;
+}
+.user-content{
+	border-bottom: 1px solid rgba(92, 103, 132, 0.25);
+  	padding: 15px 0;
+}
+.user-content .image {
+  float: $left;
+}
+.user-content .content {
+  margin-#{$left}: 80px;
+  width: auto;
+}
+
+.user-content-inner{
+  	padding: 15px 0;
+}
+.user-content-inner .image {
+  float: $left;
+}
+.user-content-inner .content {
+  margin-#{$left}: 70px;
+  width: auto;
+}
+#person-info{
+	display: none;
+	padding: 9px;
+}
+#person-info h1{
+	text-transform: uppercase;
+	font-size: 15px;
+	border-bottom: 1px solid rgba(0,0,0,0.13);
+	padding: 20px 0 10px 0;
+}
+#person-info h3{
+	color: $descr_color;
+	text-transform: uppercase;
+	font-size: 15px;
+	border-bottom:1px solid rgba(0,0,0,0.13);
+	padding: 15px 0;
+}
+#person-info .row{
+	border-bottom:1px solid rgba(0,0,0,0.13);
+	margin: 0;
+	padding: 9px 0;
+}
+#person-info .row .col-md-4{
+	color: $descr_color;
+	padding: 0;
+}
+.main-user-info{
+	font-weight: bold;
+}
+
+.b-media-wallpost {
+	border-bottom: 1px rgba(0,0,0,0.13) solid;
+	font-size: 12px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	position: relative;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+.b-media-wallpost__heading {
+	display: block;
+	font-size: 14px;
+
+	a {
+		font-weight: bold;
+	}
+}
+.b-media-wallpost__delete {
+	font-size: 13px;
+}
+.b-media-wallpost__content {
+	font-size: 12px;
+
+	.b-media-wallpost__heading {
+		font-size: inherit;
+		line-height: 30px;
+	}
+	.media-left {
+		padding-right: 5px;
+	}
+}
+.b-media-wallpost__footer {
+	margin-top: 10px;
+}
+
+.wall-post-date {
+    color: $contrast_color;
+    display: block;
+}
+
+@media (min-width: 768px) {
+	.b-media-wallpost__heading {
+		display: inline;
+	}
+    .wall-post-date {
+	    display: inline;
+	}
+	.b-media-wallpost__delete {
+		position: absolute;
+		#{$right}: 0;
+		top: 2px;
+	}
+}

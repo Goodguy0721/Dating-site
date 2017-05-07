@@ -1,0 +1,29 @@
+	3943	Salābah	14.3160300	46.7246800	YE	05	0	0	Salābah	Salābah	Salābah	Salābah	Salābah	Salābah
+	3943	Ataq	14.5376600	46.8318700	YE	05	0	0	Ataq	Ataq	Ataq	Ataq	Ataq	Ataq
+	3943	Khudayḩah	14.3484700	46.8791500	YE	05	0	0	Khudayḩah	Khudayḩah	Khudayḩah	Khudayḩah	Khudayḩah	Khudayḩah
+	3943	Al Hāmīyah	14.3270300	46.8704700	YE	05	0	0	Al Hāmīyah	Al Hāmīyah	Al Hāmīyah	Al Hāmīyah	Al Hāmīyah	Al Hāmīyah
+	3943	Al Kuraybah	14.5185200	46.8409300	YE	05	0	0	Al Kuraybah	Al Kuraybah	Al Kuraybah	Al Kuraybah	Al Kuraybah	Al Kuraybah
+	3943	Şarqāb	14.4922200	46.8389100	YE	05	0	0	Şarqāb	Şarqāb	Şarqāb	Şarqāb	Şarqāb	Şarqāb
+	3943	Şarāşir	14.4201700	45.9799300	YE	05	0	0	Şarāşir	Şarāşir	Şarāşir	Şarāşir	Şarāşir	Şarāşir
+	3943	Al Ḩāţayn	14.4014000	45.9786200	YE	05	0	0	Al Ḩāţayn	Al Ḩāţayn	Al Ḩāţayn	Al Ḩāţayn	Al Ḩāţayn	Al Ḩāţayn
+	3943	Al Majma‘	14.3973600	45.9524100	YE	05	0	0	Al Majma‘	Al Majma‘	Al Majma‘	Al Majma‘	Al Majma‘	Al Majma‘
+	3943	Al Ḩarrah	14.3714500	45.8935700	YE	05	0	0	Al Ḩarrah	Al Ḩarrah	Al Ḩarrah	Al Ḩarrah	Al Ḩarrah	Al Ḩarrah
+	3943	Shabwah	14.5440200	45.9096800	YE	05	0	0	Shabwah	Shabwah	Shabwah	Shabwah	Shabwah	Shabwah
+	3943	‘Ulays	14.5395500	45.9273500	YE	05	0	0	‘Ulays	‘Ulays	‘Ulays	‘Ulays	‘Ulays	‘Ulays
+	3943	Āl Bā Yaḩyá	14.4479300	45.9025000	YE	05	0	0	Āl Bā Yaḩyá	Āl Bā Yaḩyá	Āl Bā Yaḩyá	Āl Bā Yaḩyá	Āl Bā Yaḩyá	Āl Bā Yaḩyá
+	3943	Sha‘b Āl Mas‘ūd	14.4404800	45.9134700	YE	05	0	0	Sha‘b Āl Mas‘ūd	Sha‘b Āl Mas‘ūd	Sha‘b Āl Mas‘ūd	Sha‘b Āl Mas‘ūd	Sha‘b Āl Mas‘ūd	Sha‘b Āl Mas‘ūd
+	3943	Āl Ḩamīd	14.5247900	45.9126200	YE	05	0	0	Āl Ḩamīd	Āl Ḩamīd	Āl Ḩamīd	Āl Ḩamīd	Āl Ḩamīd	Āl Ḩamīd
+	3943	Khūtafā’	14.5199000	45.9209900	YE	05	0	0	Khūtafā’	Khūtafā’	Khūtafā’	Khūtafā’	Khūtafā’	Khūtafā’
+	3943	Al Maqāşir	14.5145100	45.9102000	YE	05	0	0	Al Maqāşir	Al Maqāşir	Al Maqāşir	Al Maqāşir	Al Maqāşir	Al Maqāşir
+	3943	Al Ḩaywas	14.5279200	45.9269600	YE	05	0	0	Al Ḩaywas	Al Ḩaywas	Al Ḩaywas	Al Ḩaywas	Al Ḩaywas	Al Ḩaywas
+	3943	Al Jawl	14.5150000	45.9927400	YE	05	0	0	Al Jawl	Al Jawl	Al Jawl	Al Jawl	Al Jawl	Al Jawl
+	3943	Al Badī‘	14.5107700	45.9941400	YE	05	0	0	Al Badī‘	Al Badī‘	Al Badī‘	Al Badī‘	Al Badī‘	Al Badī‘
+	3943	Ath Thulmān	14.5076700	45.9983400	YE	05	0	0	Ath Thulmān	Ath Thulmān	Ath Thulmān	Ath Thulmān	Ath Thulmān	Ath Thulmān
+	3943	Al Kudaymah	14.5224700	46.0002600	YE	05	0	0	Al Kudaymah	Al Kudaymah	Al Kudaymah	Al Kudaymah	Al Kudaymah	Al Kudaymah
+	3943	Gharad	14.5197200	46.0025900	YE	05	0	0	Gharad	Gharad	Gharad	Gharad	Gharad	Gharad
+	3943	Al Ḩamrā’	14.5237700	45.9975000	YE	05	0	0	Al Ḩamrā’	Al Ḩamrā’	Al Ḩamrā’	Al Ḩamrā’	Al Ḩamrā’	Al Ḩamrā’
+	3943	Ghawl al Ḩilāl	14.5307100	45.9909900	YE	05	0	0	Ghawl al Ḩilāl	Ghawl al Ḩilāl	Ghawl al Ḩilāl	Ghawl al Ḩilāl	Ghawl al Ḩilāl	Ghawl al Ḩilāl
+	3943	Ghawl Şāliḩ	14.5431500	46.0036700	YE	05	0	0	Ghawl Şāliḩ	Ghawl Şāliḩ	Ghawl Şāliḩ	Ghawl Şāliḩ	Ghawl Şāliḩ	Ghawl Şāliḩ
+	3943	Al Bilālīyah	14.5406700	46.0025300	YE	05	0	0	Al Bilālīyah	Al Bilālīyah	Al Bilālīyah	Al Bilālīyah	Al Bilālīyah	Al Bilālīyah
+	3943	Ju‘ār	14.5439200	45.9993300	YE	05	0	0	Ju‘ār	Ju‘ār	Ju‘ār	Ju‘ār	Ju‘ār	Ju‘ār
+	3943	Khimār	14.3198000	46.7392200	YE	05	0	0	Khimār	Khimār	Khimār	Khimār	Khimār	Khimār

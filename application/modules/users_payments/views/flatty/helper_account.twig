@@ -1,0 +1,73 @@
+<menu class="header-item" label="{% helper lang.l('on_account_header', 'users_payments', '', 'button') %}">
+	<a href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+		{% if user_account %}
+			{% helper start.currency_format_output({
+                'value': user_account,
+                'cur_gid': base_currency.gid
+            }) %}&nbsp;
+		{% endif %}
+		<i class="fa-credit-card"></i>&nbsp;
+		<i class="fa-caret-down"></i>
+	</a>
+	<div class="drop w300">
+        {% helper is_module_installed = utils.depends('services', 'memberships') %}
+		{% if is_module_installed.services %}
+			<span>
+                {% helper lang.l('services', 'users_payments') %}
+            </span>
+			({% spaceless %}
+                <a class="extra" href="{% helper seo.seolink('users', 'account') %}">
+                    {% helper lang.l('find_out_more', 'users_payments') %}
+                </a>
+            {% endspaceless %})
+			<menu>
+				{% if user_services %}
+					{% for user_service in user_services %}
+						{% if not user_service.is_expired %}
+							<li>
+								<a id="users_payments_link_service_{{ user_service.gid }}"
+                                   href="{{ site_url }}services/form/{{ user_service.gid }}">
+                                    {{ user_service.name }}
+                                    {% if user_service.days_left %} :
+                                        <span class="fright">
+                                            {{ user_service.days_left }}
+                                            {% helper lang.l('days_left', 'users_payments') %}
+                                        </span>
+                                    {% endif %}
+								</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			</menu>
+		{% endif %}
+		{% if is_module_installed.memberships %}
+			<span>
+                {% helper lang.l('memberships', 'memberships') %}
+            </span>
+			(<a class="extra" href="{% helper seo.seolink('users', 'account', {'action': 'memberships'}) %}">
+                {% helper lang.l('find_out_more', 'users_payments') %}
+            </a>)
+			<menu>
+				{% if user_memberships %}
+					{% for user_membership in user_memberships %}
+						<li>
+							{{ user_membership.membership_info.name }}
+							<span class="fright">
+                                {{ user_membership.left_str }}
+                            </span>
+						</li>
+					{% endfor %}
+				{% endif %}
+			</menu>
+		{% endif %}
+		<menu>
+			<li>
+                <a id="users_payments_link_update_account" class="extra"
+                   href="{% helper seo.seolink('users', 'account', {'action': 'update'}) %}">
+                    {% helper lang.l('add_funds', 'users_payments') %}
+                </a>
+            </li>
+		</menu>
+	</div>
+</menu>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <style type="text/css">
+		body{
+            color: #{{ widget.colors.text }};
+            border: 1px solid #{{ widget.colors.border }};
+            background: #{{ widget.colors.background }};
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .title{
+            color: #{{ widget.colors.block }};
+            background: #{{ widget.colors.border }};
+            text-align: center;
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        .footer{
+            color: #{{ widget.colors.block }};
+            font-size: 10px;
+            text-align: right;
+            padding: 4px;
+            text-align: center;
+            background: #{{ widget.colors.border }};
+        }
+
+		a {
+            color: #{{ widget.colors.link }};
+            text-decoration: none;
+        }
+
+        input[type=text],
+        input[type=password],
+        select,
+        textarea{
+            border: solid 1px #{{ widget.colors.border }};
+            background-color: #{{ widget.colors.background }};
+        }
+
+		input[type=text]:focus,
+        input[type=password]:focus,
+        select:focus,
+        textarea:focus{
+            border-color: #{{ widget.colors.border }};
+        }
+
+		.btn-link{
+            float: left;
+            line-height: 37px;
+            font-size: 15px;
+        }
+
+        .btn-link ins{
+            position: relative;
+            padding: 0;
+            margin-right: 10px;
+            float: left;
+            margin-top: 3px;
+        }
+
+        .btn-link ins.with-icon-small{
+            margin: 0;
+            line-height: 25px;
+        }
+
+		.with-icon-small{
+            background-image: url({{ site_root }}application/views/default/sets/bright-green/img/icons-small-ltr.png) !important;
+            background-repeat: no-repeat;
+            width: 25px !important;
+            height: 25px !important;
+        }
+
+        .with-icon-small.i-photo.w{
+            background-position: 0 -550px;
+        }
+
+        .with-icon-small.i-photo{
+            background-position: -50px -550px;
+        }
+
+        .with-icon-small.i-vtour.w{
+            background-position: 0 -525px;
+        }
+
+        .with-icon-small.i-vtour{
+            background-position: -50px -525px;
+        }
+
+        .item{
+            border-bottom: 1px solid #{{ widget.colors.border }};
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+
+    {% helper utils.jscript('', 'jquery.js', '') %}
+    {% helper utils.jscript('widgets', 'jquery.browser.js', '') %}
+    {% helper utils.jscript('widgets', 'postmessage.js', '') %}
+</head>
+<body>
+	{% if widget.title %}
+        <div class="title">
+            {{ widget.title }}
+        </div>
+    {% endif %}
+
+	<div class="content">
+        {{ widget.content }}
+    </div>
+
+    {% if widget.footer %}
+        <div class="footer">
+            {{ widget.footer }}
+        </div>
+    {% endif %}
+
+	<script>
+		$(function(){
+			var parent_url = decodeURIComponent(document.location.hash.replace(/^#/, ''));
+			$.postMessage({widget_{{ widget.gid }}_height: $('body').outerHeight(true)}, parent_url, parent);
+		});
+	</script>
+</body>
+</html>

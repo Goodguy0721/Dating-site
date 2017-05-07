@@ -1,0 +1,42 @@
+<div class="content-block load_content center">
+	<h1>
+        {% helper lang.l('field_header_congratulations', 'like_me') %}
+    </h1>
+	<h3>
+        {% helper lang.l('field_congratulations', 'like_me') %}
+    </h3>
+    <div class="inside ">
+        <div class="congratulations">
+            <div class="pos-rel m10 ptb20">
+                {% for item in user_data.users %}
+                    <div class="p5 {% if item.id == user_data.profile_id %}second-liked{% else %}first-liked{% endif %}">
+                        <img src="{{ item.media.user_logo.thumbs.big }}"
+                            alt="{{ item.nickname }}"
+                            title="{{ item.nickname }}">
+                        <div>{{ item.output_name }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="clr"></div>
+
+            <div class="mt20 pt10">
+                {{ user_data.settings.chat_message[lang_id] }}
+            </div>
+
+            <div class="mt20 congratulations__buttons">
+                {% for key, set in user_data.settings.chat_more %}
+                    {% if set.helper is not empty %}
+                        <span class="congratulations__buttons-in" data-name="{{ set.name }}">
+                            {% helper {key}.{set.helper}({
+                                'id_user': user_data.profile_id,
+                                'user_id': user_data.profile_id,
+                                'id_contact': user_data.profile_id
+                            }) %}
+                        </span>
+                    {% endif %}
+                {% endfor %}
+                <input id="keep_playing" type="button" name="keep_playing" value="{% helper lang.l('button_keep_playing', 'like_me') %}" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</div>

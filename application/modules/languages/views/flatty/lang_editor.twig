@@ -1,0 +1,47 @@
+<div id="lang_editor_js_block">
+	<div id="lang_handle">
+        {% helper lang.l('lang_editor', 'start') %}
+    </div>
+	<div id="lang_editor_content">
+        {% for item in lang_editor %}
+            <div class="ledit" langid="{{ item.module_gid }}_{{ item.gid }}">
+                <div class="name" alt="{{ item.gid }}" title="{{ item.gid }}">
+                    {{ item.gid }}
+                </div>
+                <div class="value" langid="{{ item.module_gid }}_{{ item.gid }}">
+                    {{ item.value }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    var lang_editor_data = new Object;
+    var lang_editor;
+
+    {% for item in lang_editor %}
+        lang_editor_data.{{ item.module_gid }}_{{ item.gid }} = {
+            module_gid: '{{ item.module_gid }}',
+            gid: '{{ item.gid }}',
+            lang_id: '{{ item.lang_id }}',
+            edit_type: '{{ item.edit_type }}'
+        };
+    {% endfor %}
+
+    $(function(){
+        loadScripts(
+            [
+                "{% helper utils.jscript('languages', 'lang-edit.js', 'path') %}",
+                "{% helper utils.jscript('', 'jquery.jeditable.mini.js', 'path') %}"
+            ],
+            function(){
+                lang_editor = new langEditor({
+                    siteUrl: site_url,
+                    data: lang_editor_data
+                });
+            },
+            'lang_editor'
+        );
+    });
+</script>

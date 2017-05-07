@@ -1,0 +1,174 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+  <section id="network" class="hide">
+    <div class="x_panel">
+      <section id="help-section">
+        <div id="help-block">
+          <a id="btn-hide-help" href="javascript:void(0);" class="btn btn-default pull-right">
+            <i class="fa fa-times"></i></a>
+          {% helper lang.l('admin_explanation', 'network') %}<br>
+        </div>
+        <div id="show-help-block" class="hide">
+            <a class="btn btn-default" id="btn-show-help" href="javascript:void(0);">
+              {% helper lang.l('admin_expand_explanation', 'network') %}</a>
+        </div>
+      </section>
+
+      <section id="requirements-section" class="filter-form">
+        <div class="x_title h4">
+          {% helper lang.l('admin_requirements', 'network') %}
+        </div>
+        <div class="x_content">
+      {% for item in requirements.data %}
+          <div class="row col-xs-12 {% if item.result %}green{% else %}red{% endif %}">
+            <label class="col-sm-5 col-xs-3">{{ item.name }}</label>
+            <div class="col-sm-1 col-xs-9">{{ item.value }}</div>
+          </div>
+      {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+      </section>
+
+      <form id="network-form" method="post" action="{{ site_url }}admin/network/index" name="save-form"
+        data-parsley-validate class="form-horizontal form-label-left">
+        <div id="settings-header" class="header x_title h4">
+          {% helper lang.l('admin_header_data', 'network') %}
+        </div>
+
+        <section id="access-section">
+          <section id="access-fields-section">
+            {# Domain #}
+            <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('admin_field_domain', 'network') %}</label>
+              <div class="col-md-6 col-sm-8 col-xs-12">
+                <input id="network-domain" type="text" value="{{ data.domain|e }}" name="domain" class="form-control">
+              </div>
+            </div>
+            {# Key #}
+            <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('admin_field_key', 'network') %}:</label>
+              <div class="col-md-6 col-sm-8 col-xs-12">
+                <input id="network-key" required class="form-control" type="text" value="{{ data.key|e }}" name="key">
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </section>
+          <div id="btn-access-section" class="row">
+            <div class="col-md-12">
+              <div class="ln_solid"></div>
+              <input id="btn-get-access" type="button" value="{% helper lang.l('admin_btn_get_access', 'network', "", 'button') %}" class="btn btn-default">
+            </div>
+          </div>
+        </section>
+        <section id="settings-section">
+          {# Is upload photos #}
+          <div id="upload-photos-section" class="row form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('admin_field_is_upload_photos', 'network') %}:</label>
+            <div class="col-sm-3 col-xs-12">
+              <input id="network-is-upload-photos" type="checkbox" value="1" name="is_upload_photos" {% if data.is_upload_photos %}checked{% endif %} class="flat">
+            </div>
+          </div>
+          {# <div class="col-xs-12 header h4">
+            {% helper lang.l('admin_header_filter', 'network') %}
+          </div>#}
+          {# Multiselect fields #}
+        {% for fields in form_fields %}
+          <div class="form-group">
+            {% helper start.multiselect({
+                'fields' : fields,
+                'selected' : selected_options,
+                'limits' : form_limits,
+                'all_value' : 'all'}) %}
+          </div>
+        {% endfor %}
+          {# Age #}
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">
+              {% helper lang.l('admin_field_age', 'network') %}:</label>
+            <div class="col-sm-9 col-xs-12">
+              <div class="row">
+                {#<div class="col-md-1">{% helper lang.l('admin_field_age_min', 'network') %}</div>#}
+                <div class="col-md-2 col-sm-4 col-xs-5">
+                  <input class="form-control" type="number" min="{{ age_min }}" max="{{ age_max }}" name="min_age" value="{{ data.min_age|e }}">
+                </div>
+                {#<div class="col-md-1">{% helper lang.l('admin_field_age_max', 'network') %}</div>#}
+                <div class="col-xs-2 col-sm-1 text-center">-</div>
+                <div class="col-md-2 col-sm-4 col-xs-5">
+                  <input class="form-control" type="number" min="{{ age_min }}" max="{{ age_max }}" name="max_age" value="{{ data.max_age|e }}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section id="save-section" class="form-group">
+          <div class="ln_solid"></div>
+          <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+            <input type="submit" name="btn-save" value="{% helper lang.l('btn_save', 'start', "", 'button') %}"
+              class="btn btn-success">
+            <a class="btn btn-default" href="{{ back_url }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+          </div>
+        </section>
+        <input type="hidden" name="show_help" value="1" />
+      </form>
+    </div>
+
+    <section id="connection-status-section" class="x_panel">
+      <div class="network-content">
+            <label class="header">
+                {% helper lang.l('admin_client_status', 'network') %}</label>
+            <div class="col-md-12">
+                <div class="h activity">
+                    <div class="net_client_started"{% if not clients_started %} style="display: none;"{% endif %}>
+                        <font class="net_client_status success">{% helper lang.l('admin_client_started', 'network') %}</font>
+                        <a class="net_client_stop btn btn-primary" href="{{ site_url }}admin/network/stop">
+                          {% helper lang.l('admin_client_stop', 'network') %}</a>
+                    </div>
+                    <div class="net_client_stopped"{% if clients_started %} style="display: none;"{% endif %}>
+                        <font class="net_client_status error">{% helper lang.l('admin_client_stopped', 'network') %}</font>
+                        {% if data_is_correct %}
+                            <a class="net_client_stop btn btn-primary" href="{{ site_url }}admin/network/start">
+                              {% helper lang.l('admin_client_start', 'network') %}</a>
+                        {% else %}
+                            ({% helper lang.l('admin_error_data', 'network') %})
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if net_show_log %}
+                <section id="log-section">
+                    <label class="header col-md-12">Log</label>
+                    <div class="col-md-12">
+                        <div class="header">Fast:</div>
+                        <pre><div class="wp100" id="fast">Empty</div></pre>
+                        <br>
+                        <div class="header">Slow:</div>
+                        <pre><div class="wp100" id="slow">Empty</div></pre>
+                    </div>
+                </section>
+            {% endif %}
+        </section>
+  </section>
+</div>
+<script>
+    $(function(){
+        network = new adminNetwork({
+            siteUrl: site_url,
+            status: Boolean({{ clients_started }}),
+            showLog: Boolean({{ net_show_log }}),
+            meetsReqs: Boolean({{ requirements.result }}),
+            isRegistered: Boolean('{{ is_registered }}'),
+            hasAccess: Boolean('{{ data_is_correct }}'),
+            showHelp: Boolean('{{ show_help }}')
+        });
+        $('#network').removeClass('hide');
+    });
+</script>
+
+{% include '@app/footer.twig' %}

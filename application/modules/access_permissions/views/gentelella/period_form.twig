@@ -1,0 +1,40 @@
+<div class="load_content_controller">
+    <div class="x_title h4">
+        {% helper lang.l('admin_header_period', 'access_permissions') %}
+    </div>
+    <div>
+        <form action="{{ data.action }}" method="post" enctype="multipart/form-data" id="save_form" name="save_form" data-parsley-validate class="form-horizontal form-label-left">
+            <input type="hidden" name="data[user_type]" value="{{ data.user_type }}">
+            <div class="form-group"><!-- GUID -->
+                <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                    {% helper lang.l('field_period_days','access_permissions') %}:&nbsp;
+                </label>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <div class="input-group input-group-lg">
+                        <input type="number" min="1" name="data[period]" value="{% if period.period %}{{ period.period }}{% else %}0{% endif %}" class="form-control" required>
+                        <span class="input-group-addon">
+                            {% if data.period_type %}
+                                {% helper lang.l('field_'~data.period_type, 'access_permissions') %}
+                            {% else %}
+                                {% helper lang.l('field_days', 'access_permissions') %}
+                             {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% for group in groups %}
+                <div class="form-group"><!-- GUID -->
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                        {{ group.current_name }}:&nbsp;
+                    </label>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                        <div class="input-group input-group-lg">
+                            <input type="number" min="1" name="data[{{ group.gid }}_group]" value="{%  if period[group.gid~'_group'] %}{{ period[group.gid~'_group'] }}{% else %}0{% endif %}" class="form-control" required>
+                            <span class="input-group-addon">{% helper start.currency_format_output() %}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>

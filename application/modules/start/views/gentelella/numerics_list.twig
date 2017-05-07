@@ -1,0 +1,236 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% include 'numerics_menu.twig' %}
+            </ul>
+        </div>
+        {% if section == 'overview' %}
+        <div class="x_content">
+            {% for module, module_data in settings_data.other %}
+            <div class="col-sm-6 row">
+                <label class="control-label col-md-12">{{ module_data.name }}</label>
+                {% for key, item in module_data.vars %}
+                <div class="col-md-12 row">
+                    <label class="data-label col-sm-6 col-xs-10">{{ item.field_name }}</label>
+                    <label class="data-label col-sm-6 col-xs-2 text-right">
+                        {% if item.field_type == 'checkbox' %}
+                            {% if item.value %}
+                                {% helper lang.l('yes_str', 'start') %}
+                            {% else %}
+                                {% helper lang.l('no_str', 'start') %}
+                            {% endif %}
+                        {% elseif item.field_type == 'select' %}
+                            {{ item.value_name }}
+                        {% else %}
+                            {{ item.value }}
+                        {% endif %}
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            {% for module, module_data in settings_data.numerics %}
+            <div class="col-sm-6 row">
+                <label class="control-label col-xs-12">{{ module_data.name }}</label>
+                {% for key, item in module_data.vars %}
+                <div class="col-xs-12 row">
+                    <label class="data-label col-sm-6 col-xs-10">{{ item.field_name }}</label>
+                    <label class="data-label col-sm-6 col-xs-2 text-right">
+                        {% if item.field_type == 'checkbox' %}
+                            {% if item.value %}
+                                {% helper lang.l('yes_str', 'start') %}
+                            {% else %}
+                                {% helper lang.l('no_str', 'start') %}
+                            {% endif %}
+                        {% elseif item.field_type == 'select' %}
+                            {{ item.value_name }}
+                        {% else %}
+                            {{ item.value }}
+                        {% endif %}
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+            <div class="ln_solid"></div>
+            <div class="col-xs-12">
+                <div class="compose-btn pull-left">
+                    <a class="btn btn-default" href="{{ site_url }}admin/start/menu/system-items">
+                        {% helper lang.l('btn_cancel', 'start') %}
+                    </a>
+                </div>
+            </div>
+          </div>
+        {% elseif section == 'numerics' %}
+          <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+
+                <div class="accordion" id="accordion1" role="tablist" aria-multiselectable="true">
+
+
+
+        {% for module, module_data in settings_data %}
+                    <div class="panel">
+                        <a class="panel-heading collapsed" role="tab" id="headingTwo{{module}}" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo{{module}}" aria-expanded="false" aria-controls="collapseTwo">
+                            <h4 class="panel-title">{{ module_data.name }}</h4>
+                        </a>
+                        <div id="collapseTwo{{module}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+                           <div class="panel-body">
+
+            {% for key, item in module_data.vars %}
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                        {{ item.field_name }}:
+                                    </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" name="settings[{{ module }}][{{ item.field }}]" value="{{ item.value|e }}" class="form-control">
+                                    </div>
+                                </div>
+            {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+        {% endfor %}
+
+                </div>
+
+                <div class="ln_solid"></div>
+
+                {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{{ save_text }}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/system-items">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+          </div>
+        {% elseif section == 'date_formats' %}
+          <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{{ settings_data.name }}</th>
+                        <th class="column-title">{% helper lang.l('example', 'start') %}</th>
+                        <th class="column-title">{% helper lang.l('date_formats_used_in', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, var in settings_data.vars %}
+                    {% set field = var.field %}
+                    {% if attribute(date_formats_pages, field) %}
+                        <tr>
+                            <td>{{ var.field_name }}</td>
+                            <td>{{ var.value }}</td>
+                            <td>
+                                <span id="{{ field }}" class="tooltip">
+                                    {% helper lang.l('date_formats_' ~ field ~ '_description', 'start') %}
+                                </span>
+                                <span id="tt_{{ field }}" class="hide">
+                                    <div class="tooltip-info">
+                                        {% for page in attribute(date_formats_pages, field) %}
+                                            {{ site_url }}{{ page }}<br/>
+                                        {% endfor %}
+                                    </div>
+                                </span>
+                            </td>
+                            <td class="icons">
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/start/date_formats/{{ field }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('btn_edit', 'start') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                      <a href="{{ site_url }}admin/start/date_formats/{{ field }}">
+                                          {% helper lang.l('btn_edit', 'start') %}
+                                      </a>
+                                    </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+          </div>
+
+            {% helper utils.jscript('', 'easyTooltip.min.js') %}
+            <script type="text/javascript">
+                $(function () {
+                    $(".tooltip").each(function () {
+                        $(this).easyTooltip({
+                            useElement: 'tt_' + $(this).attr('id'),
+                            yOffset: $('#tt_' + $(this).attr('id')).height() / 2,
+                            clickRemove: true
+                        });
+                    });
+                });
+            </script>
+        {% else %}
+          <div class="x_title">
+            <h2>{{ settings_data.name }}</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+            {% for key, item in settings_data.vars %}
+                <div class="form-group">
+                    {% if section == 'countries' %}
+                        <label class="control-label col-sm-3 col-xs-12">
+                            {{ item.field_name }}:</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="settings[{{ item.field }}]" value="{{ item.value|e }}" class="form-control"><br>
+                            <i>{% helper lang.l(item.field ~ '_settings_descr', 'countries') %}</i>
+                        </div>
+                    {% else %}
+                        <label class="control-label col-sm-3 col-xs-12">
+                          {{ item.field_name }}:</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            {% if item.field_type == 'text' or not item.field_type %}
+                                <input type="text" name="settings[{{ item.field }}]" value="{{ item.value|e }}" class="form-control">
+                            {% elseif item.field_type == 'checkbox' %}
+                                <input type="checkbox" name="settings[{{ item.field }}]" value="1" {% if item.value %}checked{% endif %} class="flat">
+                            {% elseif item.field_type == 'select' %}
+                                <select name="settings[{{ item.field }}]" class="form-control">
+                                    {% for key, field_value in item.field_values %}
+                                        <option value="{{ key }}"{% if item.value == key %} selected{% endif %}>
+                                            {% helper lang.l(section ~ '_' ~ item.field ~ '_' ~ field_value ~ '_value', 'start') %}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/system-items">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+          </div>
+        {% endif %}
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% include '@app/footer.twig' %}

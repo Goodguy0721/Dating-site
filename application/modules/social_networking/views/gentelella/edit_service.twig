@@ -1,0 +1,77 @@
+{% include "@app/header.twig" with {'load_type': 'ui'} %}
+{% helper utils.jscript('', 'easyTooltip.min.js') %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title h4">
+        {% if data.id %}
+            {% helper lang.l('admin_header_service_change', 'social_networking') %}
+        {% else %}
+            {% helper lang.l('admin_header_service_add', 'social_networking') %}
+        {% endif %}
+        </div>
+        <div class="x_content">
+            <form method="post" action="{{ data.action|escape }}" name="save_form" enctype="multipart/form-data" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_name', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.name|escape }}" name="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_gid', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.gid|escape }}" name="gid" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_authorize', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.authorize_url|escape }}" name="authorize_url" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_access_key', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.access_key_url|escape }}" name="access_key_url" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_app_enabled', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="checkbox" value="1" {% if data.app_enabled %}checked{% endif %} name="app_enabled" class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-12 control-label">
+                      {% helper lang.l('field_oauth_enabled', 'social_networking') %}:</label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="checkbox" value="1" {% if data.oauth_enabled %}checked{% endif %} name="oauth_enabled" class="flat">
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/social_networking/services/">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<script type='text/javascript'>
+    $(function(){
+        $(".tooltip").each(function(){
+            $(this).easyTooltip({
+                useElement: 'tt_'+$(this).attr('id')
+            });
+        });
+    });
+</script>
+
+{% include "@app/footer.twig" %}

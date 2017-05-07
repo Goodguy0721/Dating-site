@@ -1,0 +1,9 @@
+	2538	Yaviza	8.1528600	-77.6973100	PA	05	0	0	Yaviza	Yaviza	Yaviza	Yaviza	Yaviza	Yaviza
+	2538	Ualá	8.9857200	-78.0607800	PA	05	0	0	Ualá	Ualá	Ualá	Ualá	Ualá	Ualá
+	2538	Santa Fé	8.6552500	-78.1614000	PA	05	0	0	Santa Fé	Santa Fé	Santa Fé	Santa Fé	Santa Fé	Santa Fé
+	2538	Mortí	8.8526600	-77.9169000	PA	05	0	0	Mortí	Mortí	Mortí	Mortí	Mortí	Mortí
+	2538	Metetí	8.4990900	-77.9789700	PA	05	0	0	Metetí	Metetí	Metetí	Metetí	Metetí	Metetí
+	2538	La Palma	8.4060800	-78.1396400	PA	05	0	0	La Palma	La Palma	La Palma	La Palma	La Palma	La Palma
+	2538	Jaqué	7.5182600	-78.1634300	PA	05	0	0	Jaqué	Jaqué	Jaqué	Jaqué	Jaqué	Jaqué
+	2538	Garachiné	8.0668400	-78.3643600	PA	05	0	0	Garachiné	Garachiné	Garachiné	Garachiné	Garachiné	Garachiné
+	2538	El Real de Santa María	8.1300000	-77.7100000	PA	05	0	0	El Real de Santa María	El Real de Santa María	El Real de Santa María	El Real de Santa María	El Real de Santa María	El Real de Santa María

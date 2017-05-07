@@ -1,0 +1,8 @@
+	3962	Shurugwi	-19.6701600	30.0058900	ZW	02	0	0	Shurugwi	Shurugwi	Shurugwi	Shurugwi	Shurugwi	Shurugwi
+	3962	Shangani	-19.7833300	29.3666700	ZW	02	0	0	Shangani	Shangani	Shangani	Shangani	Shangani	Shangani
+	3962	Redcliff	-19.0333300	29.7833300	ZW	02	0	0	Redcliff	Рэдклифф	Redcliff	Redcliff	Redcliff	Redcliff
+	3962	Mvuma	-19.2792400	30.5282800	ZW	02	0	0	Mvuma	Mvuma	Mvuma	Mvuma	Mvuma	Mvuma
+	3962	Lalapanzi	-19.3322500	30.1776800	ZW	02	0	0	Lalapanzi	Lalapanzi	Lalapanzi	Lalapanzi	Lalapanzi	Lalapanzi
+	3962	Kwekwe	-18.9281000	29.8148600	ZW	02	0	0	Kwekwe	Kwekwe	Kwekwe	Kwekwe	Kwekwe	Kwekwe
+	3962	Gweru	-19.4500000	29.8166700	ZW	02	0	0	Gweru	Gweru	Gweru	Gweru	Gweru	Gweru
+	3962	Gokwe	-18.2047600	28.9349000	ZW	02	0	0	Gokwe	Gokwe	Gokwe	Gokwe	Gokwe	Gokwe

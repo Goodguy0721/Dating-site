@@ -1,0 +1,20 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 content-block mb20 mt20">
+    <h1>
+        {% helper lang.l('header_user_register', 'network') %}
+    </h1>
+
+    <p class="header-comment lh20 mb10">
+        {% helper lang.l('text_user_register', 'network') %}
+    </p>
+
+    <form method="post">
+        <input type="hidden" name="redirect" value="{{ redirect|e }}">
+        <input type="submit" name="btn_agree" value="{% helper lang.l('btn_agree', 'network') %}" class="btn btn-primary mb10">
+        <input type="submit" name="btn_not_agree" class="btn btn-default mb10" value="{% helper lang.l('btn_not_agree', 'network') %}">
+        <input type="submit" name="btn_skip" class="btn bg-grey btn-default mb10" value="{% helper lang.l('btn_contact_admin', 'network') %}">
+    </form>
+</div>
+
+{% include '@app/footer.twig' %}

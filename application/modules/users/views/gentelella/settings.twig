@@ -1,0 +1,111 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+        <div class="x_title h4">{% helper lang.l('header_settings', 'users') %}</div>
+		<div class="x_content">
+			<form method="post" action="" name="save_form" enctype="multipart/form-data" class="form-horizontal">
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="guest_view_profile_allow">
+							{% helper lang.l('field_guest_view_profile_allow', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="guest_view_profile_allow" type="checkbox" name="guest_view_profile_allow" class="flat"
+							   value="1" {% if users_settings.guest_view_profile_allow %}checked="checked"{% endif %}>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="guest_view_profile_limit">
+							{% helper lang.l('field_guest_view_profile_limit', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="guest_view_profile_limit" type="checkbox" name="guest_view_profile_limit" class="flat"
+							   value="1" {% if users_settings.guest_view_profile_limit %}checked="checked"{% endif %}
+								 {% if not users_settings.guest_view_profile_allow %}disabled{% endif %}>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="guest_view_profile_num">
+							{% helper lang.l('field_guest_view_profile_num', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="guest_view_profile_num" type="number" min="0" max="1000" name="guest_view_profile_num"
+							   value="{{ users_settings.guest_view_profile_num|e }}" class="form-control"
+								 {% if not users_settings.guest_view_profile_allow or not users_settings.guest_view_profile_limit %}disabled{% endif %}>
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="user_approve">
+						{% helper lang.l('field_user_approve', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<select id="user_approve" name="user_approve" class="form-control">
+							<option value="0"{% if users_settings.user_approve == '0' %}selected="selected"{% endif %}>
+								{% helper lang.l('field_user_approve_no_value', 'users') %}
+							</option>
+							<option value="1"{% if users_settings.user_approve == '1' %}selected="selected"{% endif %}>
+								{% helper lang.l('field_user_approve_admin_value', 'users') %}
+							</option>
+							<option value="2"{% if users_settings.user_approve == '2' %}selected="selected"{% endif %}>
+								{% helper lang.l('field_user_approve_service_value', 'users') %}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="user_confirm">
+						{% helper lang.l('field_user_confirm', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="user_confirm" type="checkbox" name="user_confirm" class="flat"
+							   value="1" {% if users_settings.user_confirm %}checked="checked"{% endif %}>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="hide_user_names">
+						{% helper lang.l('field_hide_user_names', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="hide_user_names" type="checkbox" name="hide_user_names" class="flat"
+							   value="1" {% if users_settings.hide_user_names %}checked="checked"{% endif %}>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="age_min">
+						{% helper lang.l('field_age_min', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="age_min" type="number" name="age_min" value="{{ users_settings.age_min }}" class="form-control">
+					</div>
+				</div>
+				<div class="row form-group">
+					<label class="control-label col-md-4 col-xs-12 col-sm-5" for="age_max">
+						{% helper lang.l('field_age_max', 'users') %}:
+					</label>
+					<div class="col-md-5 col-xs-12 col-sm-5">
+						<input id="age_max" type="number" name="age_max" value="{{ users_settings.age_max }}" class="form-control">
+					</div>
+				</div>
+				<div class="ln_solid"></div>
+				<div class="row form-group">
+					<div class="col-md-offset-4 col-md-5 col-sm-offset-5 col-sm-5">
+						<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+						<a class="btn btn-default" href="{{ site_url }}admin/users">
+							{% helper lang.l('btn_cancel', 'start') %}
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% helper utils.jscript('users', 'users-settings.js') %}
+<script>
+	$(function () {
+		new usersSettings();
+	});
+</script>
+
+{% include '@app/footer.twig' %}

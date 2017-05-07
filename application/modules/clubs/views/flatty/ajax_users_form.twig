@@ -1,0 +1,23 @@
+<style type="text/css">
+    .club-users__item { margin-bottom: 30px; }
+    .club-users__item img { width:100%; }
+</style>
+<div class="load_content_controller club-users">
+    <h1>
+        {% helper lang.l('header_users_list', 'clubs') %}
+    </h1>
+    <div class="inside">
+        <div class="" style="padding:0 0 15px; border-bottom:1px solid #ccc; margin-bottom:10px;">
+            <span style="font-weight:bold;">{% helper lang.l('header_user_find', 'clubs') %}: </span>
+            <input type="text" id="user_search" class="controller-search">
+        </div>
+
+        <div class="controller-items row" id="users_items"></div>
+
+        <div class="controller-actions row">
+            <div class="col-xs-12">
+                <ul id="user_page" class="pagination fright"></ul>
+            </div>
+        </div>
+    </div>
+</div>

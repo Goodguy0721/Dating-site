@@ -1,0 +1,100 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>{% helper lang.l('header_filters', 'users') %}</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content hide">
+        <form method="post" enctype="multipart/form-data" data-parsley-validate
+              class="form-horizontal form-label-left" name="search_form"
+              action="{{ data.action }}" id="search_form">
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="id_subscription">
+                    {% helper lang.l('field_subscription', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    <select id="id_subscription" name="id_subscription" class="form-control">
+                        {% for subscription in subscriptions %}
+                            <option value="{{ subscription.id }}" {% if subscription.id==data.id_subscription %}selected="selected"{% endif %}>
+                                {{ subscription.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 text-center">
+                <h2>{% helper lang.l('admin_header_users_data', 'mail_list') %}</h2>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="email">
+                    {% helper lang.l('field_email', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    <input type="text" id="email" name="email" value="{{ data.email|escape }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="name">
+                    {% helper lang.l('field_nickname', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    <input type="text" id="name" name="name" value="{{ data.name|escape }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="date">
+                    {% helper lang.l('field_registration_date', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    {% helper start.getCalendarInput('date', data.date, {id: 'date'}) %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="id_user_type">
+                    {% helper lang.l('field_user_type', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    <select id="user_type" name="user_type" class="form-control">
+                        <option value="0" {% if user_type=='0' %} selected{% endif %}>...</option>
+                        {% for key, item in user_types.option %}
+                            <option value="{{ key }}"{% if data.user_type==key %} selected{% endif %}>{{ item }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3" for="location">
+                    {% helper lang.l('field_location', 'mail_list') %}:</label>
+                <div class="col-md-9 col-sm-9">
+                    {% helper countries.location_select({ 'select_type':'city', 'id_country':data.id_country, 'id_region':data.id_region, 'id_city':data.id_city}) %}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9 col-sm-9 col-sm-offset-3">
+                    <input type="submit" name="btn_search" value="{% helper lang.l('btn_search', 'start', "", 'button') %}" class="btn btn-primary">
+                    <a id="btn_save" name="btn_save" href="javascript:void(0);" class="btn btn-success">{% helper lang.l('btn_save_filter', 'mail_list', "", 'button') %}</a>
+                    <input type="submit" name="btn_cancel" value="{% helper lang.l('btn_cancel', 'start', "", 'button') %}" class="btn btn-default">
+                </div>
+            </div>
+        </form>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href='{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css' rel='stylesheet' type='text/css' media='screen' />
+<script type='text/javascript'>
+    $(function(){
+        var minYear = -5;
+        var yr = new Date().getFullYear() + minYear + ':' + new Date().getFullYear();
+        $('.datepicker').datepicker({
+            dateFormat:  'yy-mm-dd',
+            changeYear:  true,
+            changeMonth: true,
+            yearRange:   yr
+        });
+        $('#btn_save').bind('click', function() {
+            mail_list.save_filter($('#search_form').serializeArray());
+        });
+        $('#id_subscription').bind('change', function() {this.form.submit()});
+    });
+</script>

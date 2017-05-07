@@ -1,0 +1,27 @@
+<span class="user-menu-item">
+    <a id="btn-kisses-{{ kisses_button_rand }}" href="javascript:void(0);"
+        class="btn-kisses{% if kisses_back %}-back{% endif %} link-r-margin"
+        title="{% helper lang.l('kiss', 'kisses', '', 'button') %}">
+        {% helper lang.l('kiss', 'kisses', '', 'button') %}
+    </a>
+</span>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('kisses', 'kisses.js', 'path') %}",
+			function(){
+				kisses = new Kisses({
+					siteUrl: site_url,
+					use_form: true,
+					btnForm: 'btn-kisses-{{ kisses_button_rand }}',
+					urlGetForm: 'kisses/ajax_get_kisses/{{ user_id }}',
+					urlSendForm: 'kisses/ajax_set_kisses/{{ user_id }}',
+					dataType: '{% if is_user %}html{% else %}json{% endif %}',
+				});
+			},
+			['kisses'],
+			{async: false}
+		);
+
+	});
+</script>

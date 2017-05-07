@@ -1,0 +1,441 @@
+{% set please_ask_me = 'Please ask me' %}
+
+{% if is_owner and sidebar == 'main' %}
+    <div class="sidebar-block g-col">
+        <div class="preview-block">
+            <div class="col-md-3 col-lg-3 no-padding-left">
+                <div class="image">
+                    <img src="{{ data.media.user_logo.thumbs.small }}" class="img-rounded" alt="{{ text_user_logo }}" title="{{ text_user_logo }}">
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-9">
+                <div class="user-description">
+                    <div class="strong-username">{{ data.output_name }},&nbsp;{{ data.age }}</div>
+                    {% if data.location %}<div><i class="fa fa-map-marker"></i>&nbsp;{{ data.city }}</div>{% endif %}
+                    <div>
+                        <a class="link-r-margin" title="{% helper lang.l('edit_my_profile', 'start', '', 'button') %}" href="{% helper seo.seolink('users', 'profile', {'section-code': 'personal', 'section-name': personal_section_name}) %}">
+                            <i class="fa fa-pencil"></i>&nbsp;{% helper lang.l('edit_my_profile', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-homapage-menu">
+            {% helper menu.get_menu('user_homepage_menu', 'user_homepage_menu') %}
+        </div>
+    </div>
+{% elseif is_owner %}
+    <div class="media pg-media g-col">
+      <div class="panel panel-default profile-image">
+        <a class="" id="user_photo">
+            {% helper users.formatAvatar({'user': data, 'size': 'great', 'class': 'img-rounded img-responsive'}) %}
+            {% if data.user_logo_moderation %}<span class="moderation-alert">Pending Approval</span>{% endif %}
+        </a>
+        <h1>{{ data.output_name }}</h1>
+        <div class="profile-status">
+          Status:
+          <span id="custom-status-field-label">{{ data.custom_status }}</span>
+          <input id="custom-status-field-value" type="hidden" value="{{ data.custom_status }}">
+          <span class="profile-actions" data-fields="custom_status" data-looking-fields="">
+            <i class="fa fa-pencil" data-action="edit"></i>
+            <i class="fa fa-check hide" data-action="save"></i>
+            <i class="fa fa-ban hide" data-action="cancel"></i>
+          </span>
+          {{ data.statuses.online_status_lang }}
+          <div class="hide" id="custom-status-field-edit">
+            <input type="text" name="custom_status" class="form-control" value="" id="headline-edit-value">
+          </div>
+        </div>
+        <div class="profile-progress">
+            <span class="user-menu__user-info_progress">Profile is {{ data.profile_completion }}% completed</span>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{ data.profile_completion }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ data.profile_completion }}%;">
+                    <span class="sr-only">{{ data.profile_completion }} </span>
+                </div>
+            </div>
+        </div>
+      </div>
+
+        {#<div class="pg-media-body user-all-description">
+            <h1>{{ data.output_name }}</h1>
+            <div class="user-description mb10">
+                <div class="mb10">
+                    <i class="fa fa-clock-o"></i>&nbsp;{{ data.statuses.online_status_lang }}
+                </div>
+                <div class="clearfix"><span class="pull-left">{{ data.age }} {% helper lang.l('text_age', 'users') %}</span> {% helper horoscope.getSignHoroscope({'user': data}) %}</div>
+
+                <div>
+                    <span {% if is_owner %}class="border-b-dashed pointer" data-change="location"{% endif %}>
+                        <i class="fa fa-map-marker"></i>&nbsp;
+                        {% if data.location %}
+                            {{ data.location }}
+                        {% else %}
+                            {% helper lang.l('link_select_region', 'countries') %}
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+            {% if is_owner %}
+                {% helper media.media_add_photo() %}
+                <script>
+                    $(function(){
+                        loadScripts(
+                            ["{% helper utils.jscript('users', 'users-settings.js', 'path') %}"],
+                            function(){
+                               changeLocation = new usersSettings({siteUrl: site_url});
+                            },
+                            ['changeLocation'],
+                            {async: false}
+                        );
+                    });
+                </script>
+            {% endif %}
+            {% include 'view_actions.twig' with {is_owner: is_owner}  %}
+        </div>#}
+        <script>
+            $(function(){
+                loadScripts(
+                    ["{% helper utils.jscript('users', '../views/flatty/js/users-avatar.js', 'path') %}"],
+                    function(){
+                       user_avatar = new avatar({
+                           site_url: site_url,
+                           id_user: {{ data.id }},
+                           saveAfterSelect: true,
+                           haveAvatar: '{{ data.have_avatar }}',
+                       });
+                    },
+                    ['user_avatar'],
+                    {async: false}
+                );
+            });
+        </script>
+        <ul class="nav nav-pills nav-stacked content-pages-tree" id="profile-sections">
+          {% if not data.is_verified %}
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/verifications" data-section="">
+                Verifications</a>
+            </div>
+          </li>
+          {% endif %}
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/profile/view#basic" data-section="basic">
+                Basic info</a>
+            </div>
+          </li>
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/profile/view#appearance" data-section="appearance">
+                Appearance</a>
+            </div>
+          </li>
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/profile/view#background" data-section="background">
+                Background</a>
+            </div>
+          </li>
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/profile/view#lifestyle" data-section="lifestyle">
+                Lifestyle</a>
+            </div>
+          </li>
+          <li class="clearfix">
+            <div class="info-menu-inner">
+              <a href="{{ site_url }}users/profile/view#others" data-section="others">
+                Others</a>
+            </div>
+          </li>
+        </ul>
+    </div>
+    {% if is_profile %}
+    <script>
+      $(function () {
+        $('#profile-sections').find('a').bind('click', function (e) {
+          e.preventDefault();
+
+          var section = $(this).data('section');
+
+          if (!section) {
+            document.location.href = $(this).attr('href');
+            return;
+          }
+
+          $('html, body').animate({
+             scrollTop: $("#" + section).offset().top - 120
+          }, 1000);
+        })
+      });
+    </script>
+    {% endif %}
+
+    <script>
+      $(function() {
+        $('.profile-actions').find('[data-action]').bind('click', function(e) {
+          e.preventDefault();
+
+          var el = $(this);
+
+          var fields = el.parent().data('fields').split(',');
+          var looking_fields = el.parent().data('looking-fields').split(',');
+
+          var name = fields.join('-');
+          var looking_name = looking_fields.join('-');
+
+          var label_name = '#' + name.replace(/\_/g, '-') + '-field-label';
+          var edit_name = '#' + name.replace(/\_/g, '-') + '-field-edit';
+
+          if (looking_name) {
+              label_name += ',#' + looking_name.replace(/\_/g, '-') + '-field-label';
+              edit_name += ',#' + looking_name.replace(/\_/g, '-') + '-field-edit';
+          }
+
+          if (el.data('action') == 'edit') {
+            //el.parents('.form-group').first().find('[data-action=edit]').hide();
+            el.parents('.form-group').first().find('[data-action=save]').show();
+            el.parents('.form-group').first().find('[data-action=cancel]').show();
+
+            for (var i in fields) {
+              if (fields[i] == 'age') {
+                $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_year]').val($('#birth-date-year-value').val());
+                $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_month]').val($('#birth-date-month-value').val());
+                $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_day]').val($('#birth-date-day-value').val());
+              } else {
+                var elem = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + fields[i] + ']');
+                var value = $('#' + fields[i].replace(/\_/g, '-') + '-field-value').val();
+                if (elem.attr('type') == 'radio') {
+                  elem.prop('checked', false).filter('[value=' + value + ']').prop('checked', true);
+                } else if (elem.attr('type') == 'checkbox') {
+                  elem.prop('checked', false);
+                  var values = value.split(',');
+                  for (var i in values) {
+                    elem.filter('[value=' + values[i] + ']').prop('checked', true);
+                  }
+                } else {
+                  elem.val(value);
+                }
+              }
+            }
+
+            for (var i in looking_fields) {
+              var elem = $('#' + looking_name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + looking_fields[i] + ']');
+              var value = $('#' + looking_fields[i].replace(/\_/g, '-') + '-field-value').val();
+              if (elem.attr('type') == 'radio') {
+                elem.prop('checked', false).filter('[value=' + value + ']').prop('checked', true);
+              } else if (elem.attr('type') == 'checkbox') {
+                elem.prop('checked', false);
+                var values = value.split(',');
+                for (var i in values) {
+                  elem.filter('[value=' + values[i] + ']').prop('checked', true);
+                }
+              } else {
+                elem.val(value);
+              }
+            }
+
+            $(label_name).hide();
+            $(edit_name).show();
+          } else if (el.data('action') == 'save') {
+            var data = {user: {}, pm: {}};
+
+            for (var i in fields) {
+              if (fields[i] == 'age') {
+                var year = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_year]').val();
+                var month = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_month]').val();
+                var day = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_day]').val();
+                data['user']['birth_date'] = year + '-' + month + '-' + day;
+              } else {
+                var elem = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + fields[i] + ']');
+                if (elem.attr('type') == 'radio') {
+                  data['user'][fields[i]] = elem.filter(':checked').val();
+                  if (typeof(data['user'][fields[i]]) == 'undefined') {
+                    data['user'][fields[i]] = 0;
+                  }
+                } else if (elem.attr('type') == 'checkbox') {
+                  data['user'][fields[i]] = [];
+                  elem.filter(':checked').each(function() {
+                    data['user'][fields[i]].push($(this).val());
+                  });
+                } else {
+                  data['user'][fields[i]] = elem.val();
+                }
+              }
+            }
+
+            for (var i in looking_fields) {
+              var elem = $('#' + looking_name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + looking_fields[i] + ']');
+              if (elem.attr('type') == 'radio') {
+                data['user'][looking_fields[i]] = elem.filter(':checked').val();
+                if (typeof(data['user'][looking_fields[i]]) == 'undefined') {
+                  data['user'][looking_fields[i]] = 0;
+                }
+              } else if (elem.attr('type') == 'checkbox') {
+                data['user'][looking_fields[i]] = [];
+                elem.filter(':checked').each(function() {
+                  data['user'][looking_fields[i]].push($(this).val());
+                });
+              } else {
+                data['user'][looking_fields[i]] = elem.val();
+              }
+            }
+
+            $.ajax({
+              url: site_url + 'users/ajax_save_field/{{ data.id }}',
+              data: data,
+              dataType: 'json',
+              method: 'POST',
+              success: function (resp) {
+                if (resp.error.length != 0) {
+                  var errors = [];
+                  for (var i in resp.error) {
+                    errors.push(resp.error[i].text);
+                  }
+                  error_object.show_error_block(errors.join('<br>'), 'error');
+                  return;
+                }
+
+                if (resp.success.length == 0) {
+                  error_object.show_error_block('Unknow error', 'error');
+                  return;
+                }
+
+                for (var i in fields) {
+                  if (fields[i] == 'age') {
+                    $('#birth-date-year-value').val($('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_year]').val());
+                    $('#birth-date-month-value').val($('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_month]').val());
+                    $('#birth-date-day-value').val($('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name=birth_date_day]').val());
+                  } else {
+                    var elem = $('#' + name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + fields[i] + ']');
+                    if (elem.attr('type') == 'radio') {
+                      $('#' + fields[i].replace(/\_/g, '-') + '-field-value').val(elem.filter(':checked').val());
+                    } else if (elem.attr('type') == 'checkbox') {
+                      var values = [];
+                      elem.filter(':checked').each(function() {
+                        values.push($(this).val());
+                      });
+                      $('#' + fields[i].replace(/\_/g, '-') + '-field-value').val(values.join(','));
+                    } else {
+                      $('#' + fields[i].replace(/\_/g, '-') + '-field-value').val(elem.val());
+                    }
+                  }
+                }
+
+                for (var i in looking_fields) {
+                  var elem = $('#' + looking_name.replace(/\_/g, '-') + '-field-edit').find('[name^=' + looking_fields[i] + ']');
+                  if (elem.attr('type') == 'radio') {
+                    $('#' + looking_fields[i].replace(/\_/g, '-') + '-field-value').val(elem.filter(':checked').val());
+                  } else if (elem.attr('type') == 'checkbox') {
+                    var values = [];
+                    elem.filter(':checked').each(function() {
+                      values.push($(this).val());
+                    });
+                    $('#' + looking_fields[i].replace(/\_/g, '-') + '-field-value').val(values.join(','));
+                  } else {
+                    $('#' + looking_fields[i].replace(/\_/g, '-') + '-field-value').val(elem.val());
+                  }
+                }
+
+                if (typeof resp.user[fields.join('_') + '_str'] !== 'undefined') {
+                  $('#' + name.replace(/\_/g, '-') + '-field-label').html(resp.user[fields.join('_') + '_str']).show();
+                } else {
+                  $('#' + name.replace(/\_/g, '-') + '-field-label').html(resp.user[fields.join('_')]).show();
+                }
+
+                if (looking_name) {
+                  if (typeof resp.user[looking_fields.join('_') + '_str'] !== 'undefined') {
+                    $('#' + looking_name.replace(/\_/g, '-') + '-field-label').html(resp.user[looking_fields.join('_') + '_str']).show();
+                  } else {
+                    $('#' + looking_name.replace(/\_/g, '-') + '-field-label').html(resp.user[looking_fields.join('_')]).show();
+                  }
+                }
+
+                if ($('#' + name.replace(/\_/g, '-') + '-field-label') !== '{{ please_ask_me }}') {
+                  $('#' + name.replace(/\_/g, '-') + '-full').show();
+                  $('#' + name.replace(/\_/g, '-') + '-empty').hide();
+                } else {
+                  $('#' + name.replace(/\_/g, '-') + '-full').hide();
+                  $('#' + name.replace(/\_/g, '-') + '-empty').show();
+                }
+
+                $(edit_name).hide();
+
+                //el.parents('.form-group').first().find('[data-action=edit]').show();
+                el.parents('.form-group').first().find('[data-action=save]').hide();
+                el.parents('.form-group').first().find('[data-action=cancel]').hide();
+              },
+            });
+          } else if (el.data('action') == 'cancel') {
+            $(label_name).show();
+            $(edit_name).hide();
+
+            //el.parents('.form-group').first().find('[data-action=edit]').show();
+            el.parents('.form-group').first().find('[data-action=save]').hide();
+            el.parents('.form-group').first().find('[data-action=cancel]').hide();
+          }
+        });
+      });
+    </script>
+{% else %}
+    <div class="media pg-media g-col">
+        <a class="g-rounded g-pic-border" id="user_photo">
+            {% helper users.formatAvatar({'user': data, 'size': 'great', 'class': 'img-rounded img-responsive'}) %}
+        </a>
+        <div class="pg-media-body user-all-description">
+            <h1>{{ data.output_name }}</h1>
+            <div class="user-description mb10">
+                <div class="mb10">
+                    <i class="fa fa-clock-o"></i>&nbsp;{{ data.statuses.online_status_lang }}
+                </div>
+                <div class="clearfix"><span class="pull-left">{{ data.age }} {% helper lang.l('text_age', 'users') %}</span> {% helper horoscope.getSignHoroscope({'user': data}) %}</div>
+
+                <div>
+                    <span {% if is_owner %}class="border-b-dashed pointer" data-change="location"{% endif %}>
+                        <i class="fa fa-map-marker"></i>&nbsp;
+                        {% if data.location %}
+                            {{ data.location }}
+                        {% else %}
+                            {% helper lang.l('link_select_region', 'countries') %}
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+            {% if is_owner %}
+                {% helper media.media_add_photo() %}
+                <script>
+                    $(function(){
+                        loadScripts(
+                            ["{% helper utils.jscript('users', 'users-settings.js', 'path') %}"],
+                            function(){
+                               changeLocation = new usersSettings({siteUrl: site_url});
+                            },
+                            ['changeLocation'],
+                            {async: false}
+                        );
+                    });
+                </script>
+            {% endif %}
+            <script>
+                $(function(){
+                    loadScripts(
+                        ["{% helper utils.jscript('users', '../views/flatty/js/users-avatar.js', 'path') %}"],
+                        function(){
+                           user_avatar = new avatar({
+                               site_url: site_url,
+                               id_user: {{ data.id }},
+                               saveAfterSelect: true,
+                               haveAvatar: '{{ data.have_avatar }}',
+                           });
+                        },
+                        ['user_avatar'],
+                        {async: false}
+                    );
+                });
+            </script>
+            {% include 'view_actions.twig' with {is_owner: is_owner}  %}
+        </div>
+    </div>
+{% endif %}

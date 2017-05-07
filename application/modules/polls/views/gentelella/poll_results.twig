@@ -1,0 +1,52 @@
+{% if poll_data.show_results %}
+    <div class="results_{{ poll_data.id }}">
+        {% for key, item in poll_data.results %}
+            {% set item = poll_data.answers_colors[key] %}
+            {% set respond = poll_data.results[key] %}
+            {% if not respond %}
+                {% set respond = 0 %}
+            {% endif %}
+            {% if max_results %}
+                <div class="poll_result" id="result_answer_{{ item }}">
+                    <label class='control-label col-sm-3 col-xs-12'>
+                    {% if language %}
+                        {% set language_item = key ~ '_' ~ language %}
+                    {% else %}
+                        {% set language_item = key ~ '_' ~ cur_lang %}
+                    {% endif %}
+                    {{ poll_data.answers_languages[language_item] }}
+                    </label>
+                    <label class="percent control-label col-sm-1">{{ ((respond / max_results) * 100)|round(0, 'floor') }}</label>
+                    <div class='col-sm-8'>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-default" data-transitiongoal="{{ ((respond / max_results) * 100)|round(0, 'floor') }}" style="width: {{ ((respond / max_results) * 100)|round(0, 'floor') }}%; background-color:#{{ item }};" aria-valuenow="{{ ((respond / max_results) * 100)|round(0, 'floor') }}"></div>
+                            </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="poll_result" id="result_answer_{{ item }}">
+                    <label class='control-label col-sm-3 col-xs-12'>
+                    {% if language %}
+                        {% set language_item = key ~ '_' ~ language %}
+                    {% else %}
+                        {% set language_item = key ~ '_' ~ cur_lang %}
+                    {% endif %}
+                    {{ poll_data.answers_languages[language_item] }}
+                    </label>
+                    <label class="control-label col-sm-1">0%</label>
+                </div>
+                {% endif %}
+            {% endfor %}
+    </div>
+{% else %}
+    <p>
+        {% helper lang.l('dont_show_results_message', 'polls') %}
+    </p>
+{% endif %}
+{% if not one_poll_place and polls_count > 1 %}
+    <div class="poll_action">
+        <a class="poll_link next_poll" href="javascript:void(0);">
+            {% helper lang.l('next_poll', 'polls') %}
+        </a>
+    </div>
+{% endif %}

@@ -1,0 +1,83 @@
+	465	Zvornik	44.3860500	19.1024700	BA	02	0	0	Zvornik	Зворник	Zvornik	Zvornik	Zvornik	Zvornik
+	465	Vlasenica	44.1818300	18.9409600	BA	02	0	0	Vlasenica	Vlasenica	Vlasenica	Vlasenica	Vlasenica	Vlasenica
+	465	Višegrad	43.7826000	19.2925600	BA	02	0	0	Višegrad	Вишеград	Višegrad	Višegrad	Višegrad	Višegrad
+	465	Ugljevik	44.6636100	19.0202800	BA	02	0	0	Ugljevik	Ugljevik	Ugljevik	Ugljevik	Ugljevik	Ugljevik
+	465	Trn	44.8582900	17.2358300	BA	02	0	0	Trn	Trn	Trn	Trn	Trn	Trn
+	465	Trebinje	42.7119700	18.3436200	BA	02	0	0	Trebinje	Требинье	Trebinje	Trebinje	Trebinje	Trebinje
+	465	Teslić	44.6063900	17.8597200	BA	02	0	0	Teslić	Teslić	Teslić	Teslić	Teslić	Teslić
+	465	Svodna	45.0377000	16.5401900	BA	02	0	0	Svodna	Svodna	Svodna	Svodna	Svodna	Svodna
+	465	Srebrenica	44.1074800	19.2966900	BA	02	0	0	Srebrenica	Сребреница	Srebrenica	Srebrenica	Srebrenica	Srebrenica
+	465	Srbac	45.0973000	17.5233100	BA	02	0	0	Srbac	Србац	Srbac	Srbac	Srbac	Srbac
+	465	Sokolac	43.9381700	18.8007900	BA	02	0	0	Sokolac	Sokolac	Sokolac	Sokolac	Sokolac	Sokolac
+	465	Kneževo	44.4907100	17.3816100	BA	02	0	0	Kneževo	Kneževo	Kneževo	Kneževo	Kneževo	Kneževo
+	465	Šipovo	44.2823700	17.0859700	BA	02	0	0	Šipovo	Šipovo	Šipovo	Šipovo	Šipovo	Šipovo
+	465	Šekovići	44.2989600	18.8553200	BA	02	0	0	Šekovići	Šekovići	Šekovići	Šekovići	Šekovići	Šekovići
+	465	Rudo	43.6178100	19.3671900	BA	02	0	0	Rudo	Рудо	Rudo	Rudo	Rudo	Rudo
+	465	Rogatica	43.7989400	19.0036300	BA	02	0	0	Rogatica	Рогатица	Rogatica	Rogatica	Rogatica	Rogatica
+	465	Prnjavor	44.8702100	17.6625600	BA	02	0	0	Prnjavor	Prnjavor	Prnjavor	Prnjavor	Prnjavor	Prnjavor
+	465	Prijedor	44.9799100	16.7140100	BA	02	0	0	Prijedor	Приедора	Prijedor	Prijedor	Prijedor	Prijedor
+	465	Priboj	44.6023300	18.9316500	BA	02	0	0	Priboj	Priboj	Priboj	Priboj	Priboj	Priboj
+	465	Pribinić	44.6101000	17.6898200	BA	02	0	0	Pribinić	Pribinić	Pribinić	Pribinić	Pribinić	Pribinić
+	465	Popovi	44.7654700	19.2866700	BA	02	0	0	Popovi	Popovi	Popovi	Popovi	Popovi	Popovi
+	465	Pale	43.8166400	18.5694900	BA	02	0	0	Pale	Пале	Pale	Pale	Pale	Pale
+	465	Omarska	44.8917000	16.8981400	BA	02	0	0	Omarska	Омарска	Omarska	Omarska	Omarska	Omarska
+	465	Nevesinje	43.2586100	18.1133300	BA	02	0	0	Nevesinje	Nevesinje	Nevesinje	Nevesinje	Nevesinje	Nevesinje
+	465	Mrkonjić Grad	44.4172900	17.0828800	BA	02	0	0	Mrkonjić Grad	Mrkonjić Grad	Mrkonjić Grad	Mrkonjić Grad	Mrkonjić Grad	Mrkonjić Grad
+	465	Maslovare	44.5659400	17.5321600	BA	02	0	0	Maslovare	Maslovare	Maslovare	Maslovare	Maslovare	Maslovare
+	465	Lopare	44.6349800	18.8434000	BA	02	0	0	Lopare	Лопаре	Lopare	Lopare	Lopare	Lopare
+	465	Ljubinje	42.9512000	18.0870200	BA	02	0	0	Ljubinje	Ljubinje	Ljubinje	Ljubinje	Ljubinje	Ljubinje
+	465	Ljubija	44.9143000	16.6069100	BA	02	0	0	Ljubija	Ljubija	Ljubija	Ljubija	Ljubija	Ljubija
+	465	Lišnja	44.8736100	17.5530600	BA	02	0	0	Lišnja	Lišnja	Lišnja	Lišnja	Lišnja	Lišnja
+	465	Laktaši	44.9085700	17.3013500	BA	02	0	0	Laktaši	Laktaši	Laktaši	Laktaši	Laktaši	Laktaši
+	465	Krupa na Vrbasu	44.6187500	17.1435100	BA	02	0	0	Krupa na Vrbasu	Krupa na Vrbasu	Krupa na Vrbasu	Krupa na Vrbasu	Krupa na Vrbasu	Krupa na Vrbasu
+	465	Križevići	44.4286300	19.0197100	BA	02	0	0	Križevići	Križevići	Križevići	Križevići	Križevići	Križevići
+	465	Kozaruša	44.9773000	16.8114200	BA	02	0	0	Kozaruša	Kozaruša	Kozaruša	Kozaruša	Kozaruša	Kozaruša
+	465	Kozarac	44.9747700	16.8416200	BA	02	0	0	Kozarac	Kozarac	Kozarac	Kozarac	Kozarac	Kozarac
+	465	Kotor Varoš	44.6183100	17.3720400	BA	02	0	0	Kotor Varoš	Kotor Varoš	Kotor Varoš	Kotor Varoš	Kotor Varoš	Kotor Varoš
+	465	Koraj	44.7085600	18.8819500	BA	02	0	0	Koraj	Koraj	Koraj	Koraj	Koraj	Koraj
+	465	Kojčinovac	44.6896600	19.2393300	BA	02	0	0	Kojčinovac	Kojčinovac	Kojčinovac	Kojčinovac	Kojčinovac	Kojčinovac
+	465	Kamičani	44.9538400	16.8624700	BA	02	0	0	Kamičani	Kamičani	Kamičani	Kamičani	Kamičani	Kamičani
+	465	Kalenderovci Donji	44.9467200	17.8378500	BA	02	0	0	Kalenderovci Donji	Kalenderovci Donji	Kalenderovci Donji	Kalenderovci Donji	Kalenderovci Donji	Kalenderovci Donji
+	465	Janja	44.6655400	19.2469100	BA	02	0	0	Janja	Janja	Janja	Janja	Janja	Janja
+	465	Ivanjska	44.9174600	17.0803500	BA	02	0	0	Ivanjska	Ivanjska	Ivanjska	Ivanjska	Ivanjska	Ivanjska
+	465	Han Pijesak	44.0816100	18.9525800	BA	02	0	0	Han Pijesak	Han Pijesak	Han Pijesak	Han Pijesak	Han Pijesak	Han Pijesak
+	465	Donja Gradina	45.2690700	16.9200300	BA	02	0	0	Donja Gradina	Donja Gradina	Donja Gradina	Donja Gradina	Donja Gradina	Donja Gradina
+	465	Gacko	43.1672200	18.5352800	BA	02	0	0	Gacko	Gacko	Gacko	Gacko	Gacko	Gacko
+	465	Foča	43.5064600	18.7785400	BA	02	0	0	Foča	Foča	Foča	Foča	Foča	Foča
+	465	Dobrljin	45.1510600	16.4786900	BA	02	0	0	Dobrljin	Dobrljin	Dobrljin	Dobrljin	Dobrljin	Dobrljin
+	465	Doboj	44.7317900	18.0869800	BA	02	0	0	Doboj	Добой	Doboj	Doboj	Doboj	Doboj
+	465	Derventa	44.9783900	17.9077900	BA	02	0	0	Derventa	Derventa	Derventa	Derventa	Derventa	Derventa
+	465	Crnjelovo Donje	44.8535100	19.1454000	BA	02	0	0	Crnjelovo Donje	Crnjelovo Donje	Crnjelovo Donje	Crnjelovo Donje	Crnjelovo Donje	Crnjelovo Donje
+	465	Ćela	44.9336800	16.7390200	BA	02	0	0	Ćela	Ćela	Ćela	Ćela	Ćela	Ćela
+	465	Čajniče	43.5571200	19.0718600	BA	02	0	0	Čajniče	Čajniče	Čajniče	Čajniče	Čajniče	Čajniče
+	465	Bratunac	44.1845500	19.3308500	BA	02	0	0	Bratunac	Bratunac	Bratunac	Bratunac	Bratunac	Bratunac
+	465	Šamac	45.0598700	18.4675600	BA	02	0	0	Šamac	Šamac	Šamac	Šamac	Šamac	Šamac
+	465	Novi Grad	45.0464300	16.3778200	BA	02	0	0	Novi Grad	Novi Grad	Novi Grad	Novi Grad	Novi Grad	Novi Grad
+	465	Brod	45.1374700	17.9872200	BA	02	0	0	Brod	Brod	Brod	Brod	Brod	Brod
+	465	Kostajnica	45.2195600	16.5392900	BA	02	0	0	Kostajnica	Kostajnica	Kostajnica	Kostajnica	Kostajnica	Kostajnica
+	465	Gradiška	45.1448400	17.2545300	BA	02	0	0	Gradiška	Gradiška	Gradiška	Gradiška	Gradiška	Gradiška
+	465	Kozarska Dubica	45.1766700	16.8094400	BA	02	0	0	Kozarska Dubica	Kozarska Dubica	Kozarska Dubica	Kozarska Dubica	Kozarska Dubica	Kozarska Dubica
+	465	Blatnica	44.4867700	17.8227800	BA	02	0	0	Blatnica	Blatnica	Blatnica	Blatnica	Blatnica	Blatnica
+	465	Bileća	42.8764500	18.4296700	BA	02	0	0	Bileća	Bileća	Bileća	Bileća	Bileća	Bileća
+	465	Bijeljina	44.7587400	19.2143700	BA	02	0	0	Bijeljina	Биелине	Bijeljina	Bijeljina	Bijeljina	Bijeljina
+	465	Banja Luka	44.7784200	17.1938600	BA	02	0	0	Banja Luka	Баня-Лука	Banja Luka	Banja Luka	Banja Luka	Banja Luka
+	465	Balatun	44.8633200	19.3393100	BA	02	0	0	Balatun	Balatun	Balatun	Balatun	Balatun	Balatun
+	465	Koran	43.8103800	18.5699900	BA	02	0	0	Koran	Koran	Koran	Koran	Koran	Koran
+	465	Dvorovi	44.8075300	19.2599900	BA	02	0	0	Dvorovi	Dvorovi	Dvorovi	Dvorovi	Dvorovi	Dvorovi
+	465	Knežica	45.1054800	16.6766800	BA	02	0	0	Knežica	Knežica	Knežica	Knežica	Knežica	Knežica
+	465	Starcevica	44.7570800	17.2117800	BA	02	0	0	Starcevica	Starcevica	Starcevica	Starcevica	Starcevica	Starcevica
+	465	Balabani	44.7308300	17.1436100	BA	02	0	0	Balabani	Balabani	Balabani	Balabani	Balabani	Balabani
+	465	Čelinac	44.7245300	17.3243100	BA	02	0	0	Čelinac	Čelinac	Čelinac	Čelinac	Čelinac	Čelinac
+	465	Ristići	44.6455400	17.1246600	BA	02	0	0	Ristići	Ristići	Ristići	Ristići	Ristići	Ristići
+	465	Ristići	44.6389500	17.1375800	BA	02	0	0	Ristići	Ristići	Ristići	Ristići	Ristići	Ristići
+	465	Tešanovići	44.6147200	17.1061100	BA	02	0	0	Tešanovići	Tešanovići	Tešanovići	Tešanovići	Tešanovići	Tešanovići
+	465	Piskavica	44.8671700	16.9746400	BA	02	0	0	Piskavica	Piskavica	Piskavica	Piskavica	Piskavica	Piskavica
+	465	Smilići	44.5034800	17.1703200	BA	02	0	0	Smilići	Smilići	Smilići	Smilići	Smilići	Smilići
+	465	Ðurđevići	44.9750800	16.9260800	BA	02	0	0	Ðurđevići	Ðurđevići	Ðurđevići	Ðurđevići	Ðurđevići	Ðurđevići
+	465	Brđani	44.6867200	18.1785900	BA	02	0	0	Brđani	Brđani	Brđani	Brđani	Brđani	Brđani
+	465	Brđani	44.6795300	18.2218800	BA	02	0	0	Brđani	Brđani	Brđani	Brđani	Brđani	Brđani
+	465	Brđani	44.6723900	18.2248000	BA	02	0	0	Brđani	Brđani	Brđani	Brđani	Brđani	Brđani
+	465	Ostojićevo	44.8588700	19.2329100	BA	02	0	0	Ostojićevo	Ostojićevo	Ostojićevo	Ostojićevo	Ostojićevo	Ostojićevo
+	465	Kozluk	44.4938900	19.1108300	BA	02	0	0	Kozluk	Kozluk	Kozluk	Kozluk	Kozluk	Kozluk
+	465	Mioče (Rudo)	43.5996600	19.4250300	BA	02	0	0	Mioče (Rudo)	Mioče (Rudo)	Mioče (Rudo)	Mioče (Rudo)	Mioče (Rudo)	Mioče (Rudo)
+	465	Brodac-Gornji	44.8637300	19.2636300	BA	02	0	0	Brodac-Gornji	Brodac-Gornji	Brodac-Gornji	Brodac-Gornji	Brodac-Gornji	Brodac-Gornji

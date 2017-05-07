@@ -1,0 +1,91 @@
+	1395	Buncrana	55.1333300	-7.4500000	IE	U	0	0	Buncrana	Buncrana	Buncrana	Buncrana	Buncrana	Buncrana
+	1395	Virginia	53.8338900	-7.0755600	IE	U	0	0	Virginia	Virginia	Virginia	Virginia	Virginia	Virginia
+	1395	Swanlinbar	54.1947200	-7.7044400	IE	U	0	0	Swanlinbar	Swanlinbar	Swanlinbar	Swanlinbar	Swanlinbar	Swanlinbar
+	1395	Smithborough	54.2233300	-7.0908300	IE	U	0	0	Smithborough	Smithborough	Smithborough	Smithborough	Smithborough	Smithborough
+	1395	Shercock	54.0000000	-6.9000000	IE	U	0	0	Shercock	Shercock	Shercock	Shercock	Shercock	Shercock
+	1395	Scotstown	54.2775000	-7.0650000	IE	U	0	0	Scotstown	Scotstown	Scotstown	Scotstown	Scotstown	Scotstown
+	1395	St Johnston	54.9355300	-7.4610900	IE	U	0	0	St Johnston	St Johnston	St Johnston	St Johnston	St Johnston	St Johnston
+	1395	Rockcorry	54.1166700	-7.0166700	IE	U	0	0	Rockcorry	Rockcorry	Rockcorry	Rockcorry	Rockcorry	Rockcorry
+	1395	Rathmullan	55.0938900	-7.5402800	IE	U	0	0	Rathmullan	Rathmullan	Rathmullan	Rathmullan	Rathmullan	Rathmullan
+	1395	Ramelton	55.0367300	-7.6492300	IE	U	0	0	Ramelton	Ramelton	Ramelton	Ramelton	Ramelton	Ramelton
+	1395	Raphoe	54.8747200	-7.5983300	IE	U	0	0	Raphoe	Raphoe	Raphoe	Raphoe	Raphoe	Raphoe
+	1395	Quigley’s Point	55.1253400	-7.1965800	IE	U	0	0	Quigley’s Point	Quigley’s Point	Quigley’s Point	Quigley’s Point	Quigley’s Point	Quigley’s Point
+	1395	Newtown Cunningham	54.9963900	-7.5191700	IE	U	0	0	Newtown Cunningham	Newtown Cunningham	Newtown Cunningham	Newtown Cunningham	Newtown Cunningham	Newtown Cunningham
+	1395	Newbliss	54.1563900	-7.1350000	IE	U	0	0	Newbliss	Newbliss	Newbliss	Newbliss	Newbliss	Newbliss
+	1395	Mullagh	53.8130600	-6.9513900	IE	U	0	0	Mullagh	Mullagh	Mullagh	Mullagh	Mullagh	Mullagh
+	1395	Muff	55.0666700	-7.2666700	IE	U	0	0	Muff	Muff	Muff	Muff	Muff	Muff
+	1395	Moville	55.1833300	-7.0500000	IE	U	0	0	Moville	Moville	Moville	Moville	Moville	Moville
+	1395	Mountcharles	54.6463900	-8.1955600	IE	U	0	0	Mountcharles	Mountcharles	Mountcharles	Mountcharles	Mountcharles	Mountcharles
+	1395	Monaghan	54.2500000	-6.9666700	IE	U	0	0	Monaghan	Монахан	Monaghan	Monaghan	Monaghan	Monaghan
+	1395	Millford	55.0880600	-7.6988900	IE	U	0	0	Millford	Millford	Millford	Millford	Millford	Millford
+	1395	Meenlaragh	55.1447200	-8.1866700	IE	U	0	0	Meenlaragh	Meenlaragh	Meenlaragh	Meenlaragh	Meenlaragh	Meenlaragh
+	1395	Manorcunningham	54.9500000	-7.6166700	IE	U	0	0	Manorcunningham	Manorcunningham	Manorcunningham	Manorcunningham	Manorcunningham	Manorcunningham
+	1395	Malin	55.3000000	-7.2666700	IE	U	0	0	Malin	Malin	Malin	Malin	Malin	Malin
+	1395	Leifear	54.8319400	-7.4836100	IE	U	0	0	Leifear	Leifear	Leifear	Leifear	Leifear	Leifear
+	1395	Letterkenny	54.9500000	-7.7333300	IE	U	0	0	Letterkenny	Леттеркенни	Letterkenny	Letterkenny	Letterkenny	Letterkenny
+	1395	Laghy	54.6165700	-8.0863200	IE	U	0	0	Laghy	Laghy	Laghy	Laghy	Laghy	Laghy
+	1395	Kingscourt	53.9080600	-6.8055600	IE	U	0	0	Kingscourt	Kingscourt	Kingscourt	Kingscourt	Kingscourt	Kingscourt
+	1395	Kilnaleck	53.8666700	-7.3166700	IE	U	0	0	Kilnaleck	Kilnaleck	Kilnaleck	Kilnaleck	Kilnaleck	Kilnaleck
+	1395	Kilmacrenan	55.0308300	-7.7791700	IE	U	0	0	Kilmacrenan	Kilmacrenan	Kilmacrenan	Kilmacrenan	Kilmacrenan	Kilmacrenan
+	1395	Killygordon	54.8000000	-7.6833300	IE	U	0	0	Killygordon	Killygordon	Killygordon	Killygordon	Killygordon	Killygordon
+	1395	Killybegs	54.6333300	-8.4500000	IE	U	0	0	Killybegs	Killybegs	Killybegs	Killybegs	Killybegs	Killybegs
+	1395	Killeshandra	54.0166700	-7.5333300	IE	U	0	0	Killeshandra	Killeshandra	Killeshandra	Killeshandra	Killeshandra	Killeshandra
+	1395	Kilcar	54.6338900	-8.5933300	IE	U	0	0	Kilcar	Kilcar	Kilcar	Kilcar	Kilcar	Kilcar
+	1395	Inniskeen	54.0000000	-6.5833300	IE	U	0	0	Inniskeen	Inniskeen	Inniskeen	Inniskeen	Inniskeen	Inniskeen
+	1395	Gweedore	55.0502800	-8.2319400	IE	U	0	0	Gweedore	Крохьли	Gweedore	Gweedore	Gweedore	Gweedore
+	1395	Greencastle	55.2000000	-6.9833300	IE	U	0	0	Greencastle	Greencastle	Greencastle	Greencastle	Greencastle	Greencastle
+	1395	Gortahork	55.1166700	-8.1333300	IE	U	0	0	Gortahork	Gortahork	Gortahork	Gortahork	Gortahork	Gortahork
+	1395	Glenties	54.7975000	-8.2825000	IE	U	0	0	Glenties	Glenties	Glenties	Glenties	Glenties	Glenties
+	1395	Glencolumbkille	54.7000000	-8.7166700	IE	U	0	0	Glencolumbkille	Glencolumbkille	Glencolumbkille	Glencolumbkille	Glencolumbkille	Glencolumbkille
+	1395	Glaslough	54.3186100	-6.8950000	IE	U	0	0	Glaslough	Glaslough	Glaslough	Glaslough	Glaslough	Glaslough
+	1395	Fahan	55.0886100	-7.4741700	IE	U	0	0	Fahan	Fahan	Fahan	Fahan	Fahan	Fahan
+	1395	Emyvale	54.3405600	-6.9591700	IE	U	0	0	Emyvale	Emyvale	Emyvale	Emyvale	Emyvale	Emyvale
+	1395	Dunlewy	55.0166700	-8.1000000	IE	U	0	0	Dunlewy	Дун Лухе	Dunlewy	Dunlewy	Dunlewy	Dunlewy
+	1395	Dunkineely	54.6308300	-8.3705600	IE	U	0	0	Dunkineely	Dunkineely	Dunkineely	Dunkineely	Dunkineely	Dunkineely
+	1395	Dungloe	54.9511100	-8.3591700	IE	U	0	0	Dungloe	Dungloe	Dungloe	Dungloe	Dungloe	Dungloe
+	1395	Dunfanaghy	55.1833300	-7.9666700	IE	U	0	0	Dunfanaghy	Dunfanaghy	Dunfanaghy	Dunfanaghy	Dunfanaghy	Dunfanaghy
+	1395	Donegal	54.6537800	-8.1113400	IE	U	0	0	Donegal	Donegal	Donegal	Donegal	Donegal	Donegal
+	1395	Derrybeg	55.0833300	-8.2894400	IE	U	0	0	Derrybeg	Derrybeg	Derrybeg	Derrybeg	Derrybeg	Derrybeg
+	1395	Culdaff	55.2833300	-7.1666700	IE	U	0	0	Culdaff	Culdaff	Culdaff	Culdaff	Culdaff	Culdaff
+	1395	Falcarragh	55.1333300	-8.1000000	IE	U	0	0	Falcarragh	Falcarragh	Falcarragh	Falcarragh	Falcarragh	Falcarragh
+	1395	Creeslough	55.1232800	-7.9095600	IE	U	0	0	Creeslough	Creeslough	Creeslough	Creeslough	Creeslough	Creeslough
+	1395	Cootehill	54.0725000	-7.0819400	IE	U	0	0	Cootehill	Cootehill	Cootehill	Cootehill	Cootehill	Cootehill
+	1395	Convoy	54.8608300	-7.6655600	IE	U	0	0	Convoy	Convoy	Convoy	Convoy	Convoy	Convoy
+	1395	Clonmany	55.2666700	-7.4166700	IE	U	0	0	Clonmany	Clonmany	Clonmany	Clonmany	Clonmany	Clonmany
+	1395	Clones	54.1833300	-7.2333300	IE	U	0	0	Clones	Clones	Clones	Clones	Clones	Clones
+	1395	Cavan	53.9908300	-7.3605600	IE	U	0	0	Cavan	Каван	Cavan	Cavan	Cavan	Cavan
+	1395	Castleblayney	54.1166700	-6.7333300	IE	U	0	0	Castleblayney	Castleblayney	Castleblayney	Castleblayney	Castleblayney	Castleblayney
+	1395	Kerrykeel	55.1333300	-7.6500000	IE	U	0	0	Kerrykeel	Kerrykeel	Kerrykeel	Kerrykeel	Kerrykeel	Kerrykeel
+	1395	Carrigans	54.9500000	-7.4333300	IE	U	0	0	Carrigans	Carrigans	Carrigans	Carrigans	Carrigans	Carrigans
+	1395	Carrickmacross	53.9727800	-6.7188900	IE	U	0	0	Carrickmacross	Carrickmacross	Carrickmacross	Carrickmacross	Carrickmacross	Carrickmacross
+	1395	Carrigart	55.1744400	-7.7977800	IE	U	0	0	Carrigart	Carrigart	Carrigart	Carrigart	Carrigart	Carrigart
+	1395	Carrick	54.6575000	-8.6316700	IE	U	0	0	Carrick	Carrick	Carrick	Carrick	Carrick	Carrick
+	1395	Carndonagh	55.2500000	-7.2666700	IE	U	0	0	Carndonagh	Carndonagh	Carndonagh	Carndonagh	Carndonagh	Carndonagh
+	1395	Butlersbridge	54.0427800	-7.3763900	IE	U	0	0	Butlersbridge	Butlersbridge	Butlersbridge	Butlersbridge	Butlersbridge	Butlersbridge
+	1395	Burtonport	54.9855600	-8.4311100	IE	U	0	0	Burtonport	Burtonport	Burtonport	Burtonport	Burtonport	Burtonport
+	1395	Burnfoot	55.0500000	-7.4000000	IE	U	0	0	Burnfoot	Burnfoot	Burnfoot	Burnfoot	Burnfoot	Burnfoot
+	1395	Bundoran	54.4778200	-8.2809400	IE	U	0	0	Bundoran	Бандоран	Bundoran	Bundoran	Bundoran	Bundoran
+	1395	Brinlack	55.1166700	-8.2833300	IE	U	0	0	Brinlack	Brinlack	Brinlack	Brinlack	Brinlack	Brinlack
+	1395	Bridge End	55.0408300	-7.3822200	IE	U	0	0	Bridge End	Bridge End	Bridge End	Bridge End	Bridge End	Bridge End
+	1395	Blacklion	54.2916800	-7.8753900	IE	U	0	0	Blacklion	Blacklion	Blacklion	Blacklion	Blacklion	Blacklion
+	1395	Belturbet	54.1000000	-7.4500000	IE	U	0	0	Belturbet	Белтурбет	Belturbet	Belturbet	Belturbet	Belturbet
+	1395	Bellanode	54.2669400	-7.0341700	IE	U	0	0	Bellanode	Bellanode	Bellanode	Bellanode	Bellanode	Bellanode
+	1395	Bellananagh	53.9333300	-7.4166700	IE	U	0	0	Bellananagh	Bellananagh	Bellananagh	Bellananagh	Bellananagh	Bellananagh
+	1395	Ballyshannon	54.5000000	-8.1833300	IE	U	0	0	Ballyshannon	Ballyshannon	Ballyshannon	Ballyshannon	Ballyshannon	Ballyshannon
+	1395	Ballyliffin	55.2833300	-7.4000000	IE	U	0	0	Ballyliffin	Ballyliffin	Ballyliffin	Ballyliffin	Ballyliffin	Ballyliffin
+	1395	Ballyjamesduff	53.8652800	-7.2027800	IE	U	0	0	Ballyjamesduff	Ballyjamesduff	Ballyjamesduff	Ballyjamesduff	Ballyjamesduff	Ballyjamesduff
+	1395	Ballyhaise	54.0500000	-7.3166700	IE	U	0	0	Ballyhaise	Ballyhaise	Ballyhaise	Ballyhaise	Ballyhaise	Ballyhaise
+	1395	Ballyconnell	54.1166700	-7.5833300	IE	U	0	0	Ballyconnell	Ballyconnell	Ballyconnell	Ballyconnell	Ballyconnell	Ballyconnell
+	1395	Ballybofey	54.8000000	-7.7833300	IE	U	0	0	Ballybofey	Ballybofey	Ballybofey	Ballybofey	Ballybofey	Ballybofey
+	1395	Ballintra	54.5769400	-8.1197200	IE	U	0	0	Ballintra	Ballintra	Ballintra	Ballintra	Ballintra	Ballintra
+	1395	Bailieborough	53.9166700	-6.9666700	IE	U	0	0	Bailieborough	Bailieborough	Bailieborough	Bailieborough	Bailieborough	Bailieborough
+	1395	Arvagh	53.9166700	-7.5833300	IE	U	0	0	Arvagh	Arvagh	Arvagh	Arvagh	Arvagh	Arvagh
+	1395	Ardara	54.7644400	-8.4075000	IE	U	0	0	Ardara	Ardara	Ardara	Ardara	Ardara	Ardara
+	1395	Loughanure	54.9972200	-8.2908300	IE	U	0	0	Loughanure	Loughanure	Loughanure	Loughanure	Loughanure	Loughanure
+	1395	Tieveborne	55.0644400	-7.4291700	IE	U	0	0	Tieveborne	Tieveborne	Tieveborne	Tieveborne	Tieveborne	Tieveborne
+	1395	Loughfad Hill	54.8158300	-8.4066700	IE	U	0	0	Loughfad Hill	Loughfad Hill	Loughfad Hill	Loughfad Hill	Loughfad Hill	Loughfad Hill
+	1395	Cnoc Na Muirleog	55.1965800	-7.8464300	IE	U	0	0	Cnoc Na Muirleog	Cnoc Na Muirleog	Cnoc Na Muirleog	Cnoc Na Muirleog	Cnoc Na Muirleog	Cnoc Na Muirleog
+	1395	Cabragh	54.2105700	-7.0486700	IE	U	0	0	Cabragh	Cabragh	Cabragh	Cabragh	Cabragh	Cabragh
+	1395	Drumkeen	54.8671500	-7.7527900	IE	U	0	0	Drumkeen	Drumkeen	Drumkeen	Drumkeen	Drumkeen	Drumkeen
+	1395	Rann Na Feirste	55.0346100	-8.3067400	IE	U	0	0	Rann Na Feirste	Rann Na Feirste	Rann Na Feirste	Rann Na Feirste	Rann Na Feirste	Rann Na Feirste
+	1395	Lough Gowna	53.8753000	-7.5361100	IE	U	0	0	Lough Gowna	Lough Gowna	Lough Gowna	Lough Gowna	Lough Gowna	Lough Gowna

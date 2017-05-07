@@ -1,0 +1,128 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 services-list">
+    {% include 'account_menu.twig' %}
+
+    {% if action == 'services' %}
+        {% set services_block %}
+            {% helper services.services_buy_list() %}
+        {% endset %}
+        {% set packages_block %}
+            {% helper packages.packages_list() %}
+        {% endset %}
+        {% set user_services_block %}
+            {% helper services.user_services_list({'id_user':user_id}) %}
+        {% endset %}
+        {% set user_packages_block %}
+            {% helper packages.user_packages_list() %}
+        {% endset %}
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="services-list-block">
+                    <div class="services-list-block__tabs">
+                        <ul class="b-tabs">
+                            <li id="all_services_tab" class="b-tabs__item active" onclick="changeServicesTab('all');"><span class="b-tabs__text">{% helper lang.l('header_services', 'users') %}</span></li>
+                            <li id="my_services_tab" class="b-tabs__item" onclick="changeServicesTab('my');"><span class="b-tabs__text">{% helper lang.l('header_my_services', 'users') %}</span></li>
+                        </ul>
+                    </div>
+
+                    <div id="all_services">
+                        {{ services_block }}
+                        {{ packages_block }}
+                    </div>
+
+                    <div id="my_services" style="display: none;">
+                        {{ user_services_block }}
+                        {{ user_packages_block }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif action == 'memberships' %}
+        <div class="g-flatty-block b-memberships">
+            {% helper memberships.memberships_list() %}
+        </div>
+    {% elseif action == 'update' %}
+        {% helper users_payments.update_account_block() %}
+    {% elseif action == 'payments_history' %}
+        <div>
+            {% helper payments.user_payments_history({'id_user':user_id, 'page':page, 'base_url':base_url}) %}
+        </div>
+    {% elseif action == 'banners' %}
+        <div class="g-flatty-block">
+            <h2 class="b-title-link">
+                {% helper lang.l('header_my_banners', 'banners') %}
+                <div class="b-title-link__action">
+                    <span id="add_banner">
+                        <a class="btn btn-primary" href="{{ site_url }}banners/edit">
+                            {% helper lang.l('link_add_banner', 'banners') %}
+                        </a>
+                    </span>
+                </div>
+            </h2>
+
+            {% helper banners.my_banners({'page':page, 'base_url':base_url}) %}
+        </div>
+    {% elseif action == 'donate' %}
+        <div>
+            {% helper start.donate_view_block() %}
+        </div>
+    {% endif %}
+</div>
+<div class="clearfix"></div>
+<div class="account-banners">
+    <div class="col-xs-12 block-banners-big">
+        <div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+        </div>
+    </div>
+    <div class="col-md-5 block-banners-small">
+        <div class="col-sm-6">
+            {% helper banners.show_banner_place('banner-185x155') %}
+        </div>
+        <div class="col-sm-6">
+            {% helper banners.show_banner_place('banner-185x75') %}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 block-banners-middle">
+        <div class="col-xs-12 col-sm-6">
+            {% helper banners.show_banner_place('banner-320x250') %}
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            {% helper banners.show_banner_place('banner-320x75') %}
+        </div>
+    </div>
+</div>
+<script>
+    function changeServicesTab(tab) {
+        if (tab === 'all') {
+            $('#my_services').hide();
+            $('#all_services').show();
+            $('#all_services_tab').addClass('active');
+            $('#my_services_tab').removeClass('active');
+        } else {
+            $('#all_services').hide();
+            $('#my_services').show();
+            $('#all_services_tab').removeClass('active');
+            $('#my_services_tab').addClass('active');
+        }
+    }
+
+    $('.expander').bind('click', function () {
+        var target = $(this).parents('.expandable').find('.toggle');
+        var icon = $(this).find('.icon');
+        if (target.is(':hidden')) {
+            icon.removeClass('down');
+            icon.addClass('up');
+            target.slideDown();
+        } else {
+            icon.removeClass('up');
+            icon.addClass('down');
+            target.slideUp();
+        }
+    });
+</script>
+
+{% include '@app/footer.twig' %}

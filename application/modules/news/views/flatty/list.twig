@@ -1,0 +1,76 @@
+{% include '@app/header.twig' %}
+
+<div class="news-content clearfix">
+    <div class="search-header">
+        <div class="title col-xs-12 col-sm-6 col-md-9 col-lg-9">
+            {% helper seo.seo_tags('header_text') %}
+            <div class="fright">
+			<a target="_blank" class="fa fa-rss fa-lg edge hover zoom20"
+                   href="{{ site_url }}news/rss"></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        {% for item in news %}
+            <div class="news news-item">
+                <div class="mb10">
+                    <a href="{% helper seo.seolink('news', 'view', item) %}" class="strong-title" title="{{ item.name }}">
+                        {{ item.name }}
+                    </a>
+                    {% if item.img %}
+                        {% if item.media.img.thumbs.small %}
+                            {% helper text_news_photo = lang.l('text_news_photo', 'news', '', 'button', item) %}
+                            <img src="{{ item.media.img.thumbs.small }}" alt="{{ text_news_logo }}" title="{{ text_news_logo }}" alt="{{ text_news_logo }}" class="img-rounded" align="{% if _LANG.rtl == 'rtl' %}right{% else %}left{% endif %}" />
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="mb10">
+                    <span class="date">
+                            {% helper date_format.tpl_date_format(item.date_add, page_data.date_format) %}
+                    </span>
+                </div>
+                <span class="annotation">{{ item.annotation }}</span>
+                <div class="mt10 clearfix">
+                    <a href="{% helper seo.seolink('news', 'view', item) %}" class="btn btn-primary-inverted">
+                        {% helper lang.l('link_view_more', 'news') %}
+                    </a>
+                </div>
+                <div class="mt10 clearfix">
+                    <div class="links fleft">
+                        {% if item.feed %}
+                            {% helper lang.l('feed_source', 'news') %}:
+                            <a href="{{ item.feed.site_link }}">{{ item.feed.title }}</a><br>
+                        {% endif %}
+                    </div>
+                    <div class="comments">
+                        <div class="comments-display-block">
+                            <a href="{% helper seo.seolink('news', 'view', item) %}">
+                                <i class="fa fa-comment-o"></i>
+                                <span class="counter">{{ item.comments_count }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        {% else %}
+            <div class="empty">
+                {% helper lang.l('no_news_yet_header', 'news') %}
+            </div>
+        {% endfor %}
+        <div class="clr"></div>
+        {% if news %}
+            <div class="line top">
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data) %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        {% helper banners.show_banner_place('banner-320x250') %}
+        {% helper banners.show_banner_place('banner-320x75') %}
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

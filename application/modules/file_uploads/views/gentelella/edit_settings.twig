@@ -1,0 +1,89 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% helper utils.jscript('', 'easyTooltip.min.js') %}
+
+<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data" class="form-horizontal">
+    <div class="x_panel">
+        <div class="x_title h4">{% if data.id %}{% helper lang.l('admin_header_config_change', 'file_uploads') %}{% else %}{% helper lang.l('admin_header_config_add', 'file_uploads') %}{% endif %}</div>
+        <div class="x_content">
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_name', 'file_uploads') %}: </label>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <input type="text" value="{{ data.name }}" name="name" class="form-control"></div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_gid', 'file_uploads') %}: </label>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <input type="text" value="{{ data.gid }}" name="gid" class="form-control"></div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_max_size', 'file_uploads') %}: </label>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <input type="text" value="{{ data.max_size }}" name="max_size" class="form-control"> b <i>{% helper lang.l('int_unlimit_condition', 'file_uploads') %}</i></div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_name_format', 'file_uploads') %}: </label>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <select name="name_format" id="name_format" class="form-control">
+                    {% for key, item in lang_name_format.option %}
+                      <option value="{{ key }}" {% if key == data.name_format %}selected{% endif %}>{{ item }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  {% helper lang.l('field_file_formats', 'file_uploads') %}: </label>
+                <div class="row">
+                    {% for category_key, category_data in formats %}
+                    <div class="col-md-2 js-category">
+                        <input type="checkbox" class="flat category" id="cat-{{ category_key }}">
+                        <label for="cat-{{ category_key }}">{% helper lang.l( category_key, 'file_uploads') %}</label><br />
+                        <ul>
+                            {% for key, item in category_data %}
+                            <li>
+                              <input class="flat" type="checkbox" name="file_formats[]" value="{{ item }}"
+                                {% if data.enable_formats[item] %}checked{% endif %} id="frm_{{ item }}">
+                              <label for="frm_{{ item }}">{{ item }}</label>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="row form-group">
+              <div class="col-xs-12 col-sm-offset-3">
+                <button class="btn btn-success" type="submit" name="btn_save" value="1">
+                  {% helper lang.l('btn_save', 'start') %}</button>
+                <a class="btn btn-default" href="{{ site_url }}admin/file_uploads/configs">{% helper lang.l('btn_cancel', 'start') %}</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type='text/javascript'>
+    $(function(){
+        $(".tooltip").each(function(){
+            $(this).easyTooltip({
+                useElement: 'tt_'+$(this).attr('id')
+            });
+        });
+
+        $('input.category').bind('change', function() {
+            var checked = $(this).is(':checked');
+            if (checked) {
+                $(this).parents('.js-category').first().find('ul input[type=checkbox]').iCheck('check');
+            } else {
+                $(this).parents('.js-category').first().find('ul input[type=checkbox]').iCheck('uncheck');
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

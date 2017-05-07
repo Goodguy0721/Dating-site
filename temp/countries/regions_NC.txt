@@ -1,0 +1,11 @@
+	2374	Thio	-21.6166700	166.2166700	NC	02	0	0	Thio	Thio	Thio	Thio	Thio	Thio
+	2374	Sarraméa	-21.6500000	165.8500000	NC	02	0	0	Sarraméa	Sarraméa	Sarraméa	Sarraméa	Sarraméa	Sarraméa
+	2374	Païta	-22.1310500	166.3571700	NC	02	0	0	Païta	Païta	Païta	Païta	Païta	Païta
+	2374	Nouméa	-22.2763100	166.4572000	NC	02	0	0	Nouméa	Нумеа	Nouméa	Nouméa	Nouméa	Nouméa
+	2374	Mont-Dore	-22.2625700	166.5662100	NC	02	0	0	Mont-Dore	Mont-Dore	Mont-Dore	Mont-Dore	Mont-Dore	Mont-Dore
+	2374	Moindou	-21.7000000	165.6833300	NC	02	0	0	Moindou	Moindou	Moindou	Moindou	Moindou	Moindou
+	2374	La Foa	-21.7107900	165.8276400	NC	02	0	0	La Foa	La Foa	La Foa	La Foa	La Foa	La Foa
+	2374	Farino	-21.6666700	165.7666700	NC	02	0	0	Farino	Farino	Farino	Farino	Farino	Farino
+	2374	Dumbéa	-22.1500000	166.4500000	NC	02	0	0	Dumbéa	Dumbéa	Dumbéa	Dumbéa	Dumbéa	Dumbéa
+	2374	Bourail	-21.5666700	165.4833300	NC	02	0	0	Bourail	Bourail	Bourail	Bourail	Bourail	Bourail
+	2374	Bouloupari	-21.8666700	166.0500000	NC	02	0	0	Bouloupari	Bouloupari	Bouloupari	Bouloupari	Bouloupari	Bouloupari

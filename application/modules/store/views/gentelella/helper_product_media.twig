@@ -1,0 +1,46 @@
+{% if media %}
+    <ul class="list-inline">
+    {% for key, item_m in media %}
+        <li>
+        {% if item_m.media %}
+            <span class="store-photo">
+                <img class="pointer img-responsive" data-click="view-media-photo" data-id-media="{{ item_m.info.media_id }}"
+                     src="{% if item_m.info.size == 'small' %}{{ item_m.media.thumbs.small }}
+                          {% elseif item_m.info.size == 'middle' %}{{ item_m.media.thumbs.middle }}
+                          {% else %}{{ item_m.media.thumbs.grand }}{% endif %}" >
+            </span>
+            {% if item_m.info.remove_url %}
+                <br>
+                <a class="photo-remove{% if section != 'media' %} hide{% endif %} btn btn-primary"
+                    href="{{ item_m.info.remove_url }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_photo', 'store', '', 'js') %}')) return false;">
+                    {% helper lang.l('btn_delete', 'start') %}
+                </a>
+            {% endif %}
+        {% elseif item_m.video_content %}
+            {% if item_m.info.size == 'big' %}
+                <div class="center-block img-responsive" style="margin:0 auto;">{{ item_m.video_content.embed }}</div>
+                {% if item_m.info.remove_url %}
+                    <a class="photo-remove{% if section != 'media' %} hide{% endif %}" href="{{ item_m.info.remove_url }}"
+                       onclick="javascript: if(!confirm('{% helper lang.l('note_delete_video', 'store', '', 'js') %}')) return false;">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                {% endif %}
+            {% else %}
+                <span class="store-photo">
+                    <img class="pointer img-responsive" data-click="view-media-video" data-id-media="0" src="{{ item_m.video_content.thumbs.big }}" />
+                    {% if item_m.info.remove_url %}
+                        <a class="photo-remove{% if section != 'media' %} hide{% endif %}" href="{{ item_m.info.remove_url }}"
+                           onclick="javascript: if(!confirm('{% helper lang.l('note_delete_video', 'store', '', 'js') %}')) return false;">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    {% endif %}
+                </span>
+            {% endif %}
+        {% else %}
+            <i class="fa fa-gift fa-5x"></i>
+        {% endif %}
+        </li>
+    {% endfor %}
+{% else %}
+    <i class="fa fa-gift fa-5x"></i>
+{% endif %}

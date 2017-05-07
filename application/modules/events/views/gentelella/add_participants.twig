@@ -1,0 +1,201 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{% helper lang.l('header_filters', 'users') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content hide">
+                <form method="post" enctype="multipart/form-data" data-parsley-validate
+                    class="form-horizontal form-label-left">
+                    <input type="hidden" name="filter" value="{{ filter|e }}">
+                    <input type="hidden" name="order" value="{{ order|e }}">
+                    <input type="hidden" name="order_direction" value="{{ order_direction|e }}">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            {% helper lang.l('user_type', 'users') %}:</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div id="gender" class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                    <input type="radio" name="user_type" value="all"{% if user_type == 'all' %} selected{% endif %}>...
+                                </label>
+                                {% for key, item in user_types.option %}
+                                <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                    <input type="radio" name="user_type" value="{{ key }}"{% if user_type == key %} selected{% endif %}>{{ item }}
+                                </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">{% helper lang.l('search_by', 'users') %}:</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" name="val_text" value="{{ search_param.text|e }}" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <select name="type_text" class="form-control">
+                                <option value="all" {% if search_param.type == 'all' %} selected{% endif %}>
+                                    {% helper lang.l('filter_all', 'users') %}
+                                </option>
+                                <option value="email" {% if search_param.type == 'email' %} selected{% endif %}>
+                                    {% helper lang.l('field_email', 'users') %}
+                                </option>
+                                <option value="fname" {% if search_param.type == 'fname' %} selected{% endif %}>
+                                    {% helper lang.l('field_fname', 'users') %}
+                                </option>
+                                <option value="sname" {% if search_param.type == 'sname' %} selected{% endif %}>
+                                    {% helper lang.l('field_sname', 'users') %}
+                                </option>
+                                <option value="nickname" {% if search_param.type == 'nickname' %} selected{% endif %}>
+                                    {% helper lang.l('field_nickname', 'users') %}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                            {% helper lang.l('latest_active', 'users') %}:</label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <input type="text" id="last_active_from" name="last_active_from" maxlength="10"
+                                class="form-control" value="{{ search_param.last_active.from|e }}">
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                            <label class="control-label" for="last_active_to">&nbsp;{% helper lang.l('to', 'users') %}&nbsp;</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <input type="text" id="last_active_to" name="last_active_to" maxlength="10" class="form-control" value="{{ search_param.last_active.to|e }}">
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                            <input type="submit" class="btn btn-primary" value="{% helper lang.l('header_user_find', 'users') %}" name="btn_search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data">
+                
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <input class="btn btn-primary" type="submit" name="save" value="{% helper lang.l('link_invite_participant', 'events') %}">
+                </div>
+            </div>
+                    
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('field_nickname', 'users') %}</th>
+                        <th class="column-title">{% helper lang.l('user_type', 'users') %}</th>
+                        <th class="column-title xs-hide">{% helper lang.l('field_email', 'users') %}</th>
+                        <th class="column-title sm-hide">{% helper lang.l('field_date_created', 'users') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in users %}
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox" class="tableflat grouping" name="id_user[]" value="{{ item.id }}" data="table_records">
+                        </td>
+                        <td>
+                            <b>{{ item.nickname }}</b><br>{{ item.fname }} {{ item.sname }}
+                        </td>
+                        <td>{{ item.user_type_str }}</td>
+                        <td class="xs-hide">
+                            {% if not empty(item.net_is_incomer) %}
+                                {% helper lang.l('network_email', 'users') %}
+                            {% else %}
+                                {{ item.email }}
+                            {% endif %}
+                        </td>
+                        <td class="sm-hide">
+                            {% helper date_format.tpl_date_format(item.date_created, page_data.date_format) %}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary">
+                                    {% helper tickets.contact_user_link({'id_user':item.id}) %}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </form>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+    });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_users','users') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

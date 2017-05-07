@@ -1,0 +1,25 @@
+{% if auth_type == 'admin' %}
+    {% for level1 in menu %}
+        {% if level1.sub %}
+            <div class="menu_section">
+                <ul class="nav side-menu">
+                    {% for level2 in level1.sub %}
+                    <li {% if level2.active == 1 %}class="current-page"{% endif %}>
+                        <a href="{{ level2.link }}" {% if DEMO_MODE %}data-analytics-gid="{{ level2.gid }}" data-analytics-cat="menu"{% endif %}>
+                            <i class="fa fa-{{ level2.icon }}"></i>
+                            {{ level2.value }} {% if level2.indicator %}<span class="num">{{ level2.indicator }}</span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <div class="menu">
+        <div class="t">
+            <div class="b min400">
+            </div>
+        </div>
+    </div>
+{% endif %}

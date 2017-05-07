@@ -1,0 +1,28 @@
+<ul id="ajax_login_link_menu_{{ dynamic_block_auth_links_data.rand }}"
+    class="index-menu {% if dynamic_block_auth_links_data.params.right_align %}righted{% endif %}">
+    <li>
+        <a id="dynblocks_link_register" href="{{ site_url }}users/registration">
+            {% helper lang.l('link_register', 'users') %}
+        </a>
+    </li>
+    <li>
+        <a href="{{ site_url }}users/login_form" onclick="return false;" id="ajax_login_link">
+            {% helper lang.l('header_login', 'users') %}
+        </a>
+    </li>
+</ul>
+
+<script>
+    $(function () {
+        loadScripts(
+                ["{% helper utils.jscript('users', 'users-auth.js', 'path') %}"],
+                function () {
+                    usersAuth = new UsersAuth({
+                        siteUrl: site_url,
+                    });
+                },
+                ['usersAuth'],
+                {async: true}
+        );
+    });
+</script>

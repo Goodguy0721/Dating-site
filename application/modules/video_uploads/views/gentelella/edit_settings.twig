@@ -1,0 +1,263 @@
+{% include '@app/header.twig' %}
+
+<script src="{{ site_root }}{{ js_folder }}easyTooltip.min.js"></script>
+
+<form class="form-horizontal" method="post" action="{{ data.action|escape }}" name="save_form" enctype="multipart/form-data">
+    <div class="x_panel">
+        <div class="x_title h4">{% helper lang.l('admin_header_config_change', 'video_uploads') %}</div>
+        <div class="x_content">
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_name', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" value="{{ data.name|escape }}" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_gid', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                    <b>{{ data.gid }}</b>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_max_size', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" value="{{ data.max_size|escape }}" name="max_size" class="form-control"> b
+                    <i>{% helper lang.l('int_unlimit_condition', 'video_uploads') %}</i></div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_file_formats', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                    {% for item in formats %}
+                        <div class="col-md-3 col-sm-3 col-xs-4"><input class="flat" type="checkbox" name="file_formats[]" value="{{ item }}" {% if data.enable_formats[item] %}checked{% endif %} id="frm_{{ item }}"> <label for="frm_{{ item }}">{{ item }}</label></div>
+                        {% endfor %}
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_upload_type', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                    <input class="flat" type="radio" value="local" name="upload_type" id="upload_type_local" {% if data.upload_type == 'local' %}checked{% endif %}>
+                    <label for="upload_type_local">{% helper lang.l('field_upload_type_local', 'video_uploads') %}</label> &nbsp;&nbsp;&nbsp;
+                    {% if data.youtube_settings  is defined %}
+                        <input class="flat" type="radio" value="youtube" name="upload_type" id="upload_type_youtube" {% if data.upload_type == 'youtube' %}checked{% endif %} {% if not settings.use_youtube_converting %}disabled{% endif %}>
+                        <label for="upload_type_youtube">{% helper lang.l('field_upload_type_youtube', 'video_uploads') %}</label>
+                    {% if not settings.use_youtube_converting %}<i>({% helper lang.l('field_upload_type_youtube_note', 'video_uploads') %})</i>{% endif %}
+                    {% endif %}
+                    </div>
+            </div>
+
+            <div id="local_settings" {% if data.upload_type != 'local' %}style="display: none;"{% endif %}>
+                <div class="row form-group h4">{% helper lang.l('admin_header_config_local_settings', 'video_uploads') %}</div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_enable_encoding', 'video_uploads') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                        <input class="flat" type="checkbox" value="1" name="use_convert" id="use_convert" {% if data.use_convert == 1 %}checked{% endif %} {% if not settings.use_local_converting_video %}disabled{% endif %}>
+                        {% if not settings.use_local_converting_video %}<i>({% helper lang.l('field_upload_type_local_note', 'video_uploads') %})</i>{% endif %}
+                    </div>
+                </div>
+
+                <div id="local_settings_params" {% if data.use_convert != 1 or not settings.use_local_converting_video %}style="display: none;"{% endif %}>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_width', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.width|escape }}" name="local_settings[width]" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_height', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.height|escape }}" name="local_settings[height]" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_audio_freq', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.audio_freq|escape }}" name="local_settings[audio_freq]" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_audio_brate', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.audio_brate|escape }}" name="local_settings[audio_brate]" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_video_brate', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.video_brate|escape }}" name="local_settings[video_brate]" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_local_video_rate', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" value="{{ data.local_settings.video_rate|escape }}" name="local_settings[video_rate]" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="youtube_settings" {% if data.upload_type != 'youtube' %}style="display: none;"{% endif %}>
+                <div class="row form-group h4">{% helper lang.l('admin_header_config_youtube_settings', 'video_uploads') %}</div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_width', 'video_uploads') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.youtube_settings.width|escape }}" name="youtube_settings[width]" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_height', 'video_uploads') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.youtube_settings.height|escape }}" name="youtube_settings[height]" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group h4">{% helper lang.l('admin_header_config_thumbs_settings', 'video_uploads') %}</div>
+            <div class="row form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_enable_thumbs', 'video_uploads') %}: </label>
+                <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                    <input class="flat" type="checkbox" id="use_thumbs" name="use_thumbs" value="1" {% if data.use_thumbs == '1' %}checked{% endif %} {% if not settings.use_local_converting_thumbs and data.upload_type == 'local' %}disabled{% endif %}>
+                    <span id="use_thumbs_info" {% if not (not settings.use_local_converting_thumbs and data.upload_type == 'local') %}style="display: none;"{% endif %}><i>({% helper lang.l('field_use_thumbs_note', 'video_uploads') %})</i></span>
+                </div>
+            </div>
+            <div id="images_settings" {% if (not settings.use_local_converting_thumbs and data.upload_type == 'local') or data.use_thumbs != '1' %}style="display: none;"{% endif %}>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_thumbs', 'video_uploads') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12 pt_6px">
+                        <a href="#" id="add_thumb_link">{% helper lang.l('link_add_thumb', 'video_uploads') %}</a><br>
+                        <table class="table table-striped">
+                            <thead></tr>
+                            <th>{% helper lang.l('field_thumb_gid', 'video_uploads') %}</th>
+                            <th>{% helper lang.l('field_thumb_width', 'video_uploads') %}</th>
+                            <th>{% helper lang.l('field_thumb_height', 'video_uploads') %}</th>
+                            </tr></thead>
+                            {% set thumbs_count = 0 %}
+                            <tbody id="thumbs_list">
+                                {% for key, item in data.thumbs_settings %}
+                                    <tr>
+                                        <td>
+                                            <input class="w_60px" type="text" name="thumbs_settings[{{ key }}][gid]" value="{{ item.gid|escape }}">
+                                        </td>
+                                        <td>
+                                            <input class="w_60px" type="text" name="thumbs_settings[{{ key }}][width]" value="{{ item.width|escape }}"> px
+                                        </td>
+                                        <td>
+                                            <input class="w_60px" type="text" name="thumbs_settings[{{ key }}][height]" value="{{ item.height|escape }}"> px
+                                        </td>
+                                        <td>
+                                            <a href="#" class="delete_thumb">
+                                                {% helper lang.l('link_delete_thumb', 'video_uploads') %}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% set thumbs_count = key %}
+                                {% endfor %}
+                                <tr id="thumb_example" style="display: none;">
+                                    <td>
+                                        <input class="w_60px" type="text" name="thumbs_settings[_new_key_][gid]" value="">
+                                    </td>
+                                    <td>
+                                        <input class="w_60px" type="text" name="thumbs_settings[_new_key_][width]" value=""> px
+                                    </td>
+                                    <td>
+                                        <input class="w_60px" type="text" name="thumbs_settings[_new_key_][height]" value=""> px
+                                    </td>
+                                    <td>
+                                        <a href="#" class="delete_thumb">
+                                            {% helper lang.l('link_delete_thumb', 'video_uploads') %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_default_img', 'video_uploads') %}: </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12"><input type="file" value="" name="default_img" class="form-control">
+                        {% if data.default_img_data %}<br><a href="{{ data.default_img_data.file_url|escape }}" target="blank">{% helper lang.l('link_view_default_image', 'video_uploads') %}</a>{% endif %}
+                    </div>
+                </div>
+                {% if data.default_img %}
+                    <div class="row form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_default_img_delete', 'video_uploads') %}: </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 pt_6px"><input class="flat" type="checkbox" value="1" name="default_img_delete"></div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="ln_solid"></div>
+            <div class="row form-group">
+                <div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+                    <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                    <a class="btn btn-default" href="{{ site_url }}admin/video_uploads/index">{% helper lang.l('btn_cancel', 'start') %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type='text/javascript'>
+    var is_local_thumbs_allowed = parseInt('{{ settings.use_local_converting_thumbs }}');
+    var thumbs_count = parseInt('{{ thumbs_count }}');
+
+    $(function () {
+        $('input[name=upload_type]').bind('change', function () {
+            change_type($(this).val());
+        });
+        $('#use_convert').bind('change', function () {
+            if ($(this).is(':checked')) {
+                $('#local_settings_params').show();
+            } else {
+                $('#local_settings_params').hide();
+            }
+        });
+        $('#use_thumbs').bind('change', function () {
+            if ($(this).is(':checked')) {
+                $('#images_settings').show();
+            } else {
+                $('#images_settings').hide();
+            }
+        });
+
+        $('#add_thumb_link').bind('click', function () {
+            var content = $('#thumb_example').html();
+            //alert(content);
+            thumbs_count++;
+            content = content.replace(/_new_key_/g, thumbs_count);
+            $('#thumbs_list').append('<tr>' + content + '</tr>');
+            return false;
+        });
+
+        $('#thumbs_list').delegate('a.delete_thumb', 'click', function () {
+            $(this).parent().parent().remove();
+            return false;
+        });
+    });
+
+    function change_type(upload_type) {
+        if ($('#use_thumbs').is(':checked')) {
+            $('#images_settings').show();
+        }
+        $('#use_thumbs').removeAttr('disabled');
+        $('#use_thumbs_info').hide();
+
+        if (upload_type == 'local') {
+            $('#local_settings').show();
+            $('#youtube_settings').hide();
+
+            if (!is_local_thumbs_allowed) {
+                $('#use_thumbs').attr('disabled', 'disabled');
+                $('#use_thumbs').prop('checked', false);
+                $('#use_thumbs_info').show();
+                $('#images_settings').hide();
+            }
+        }
+
+        if (upload_type == 'youtube') {
+            $('#local_settings').hide();
+            $('#youtube_settings').show();
+        }
+
+    }
+
+</script>
+
+{% include '@app/footer.twig' %}

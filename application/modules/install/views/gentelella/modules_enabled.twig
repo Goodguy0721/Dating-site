@@ -1,0 +1,45 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">Module</th>
+                        <th class="column-title">Description</th>
+                        <th class="column-title">Version</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, item in modules %}
+                    <tr>
+                        <td><b>{{ item.module }}</b></td>
+                        <td><b>{{ item.install_name }}</b><br>{{ item.install_descr }}</td>
+                        <td class="text-center">{{ item.version }}</td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            <a class="btn btn-primary" href="{{ site_url }}admin/install/module_install/{{ item.module }}">
+                                Install</a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="{{ site_url }}admin/install/module_install/{{ item.module }}">Install</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

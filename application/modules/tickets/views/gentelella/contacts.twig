@@ -1,0 +1,274 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_tickets_menu') %}
+            </ul>
+        </div>
+
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{% helper lang.l('header_filters', 'start') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content hide">
+              <form method="post" name="search_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                  <input type="hidden" name="filter" value="{{ filter|e }}">
+                  <input type="hidden" name="order" value="{{ order|e }}">
+                  <input type="hidden" name="order_direction" value="{{ order_direction|e }}">
+                  <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          {% helper lang.l('field_message', 'tickets') %}:</label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                          <select name="is_new" class="form-control">
+                              <option value="all"{% if is_new == 'all' %} selected{% endif %}>
+                                  {% helper lang.l('field_all_messages', 'tickets') %}
+                              </option>
+                              <option value="is_new"{% if is_new == 'is_new' %} selected{% endif %}>
+                                  {% helper lang.l('field_is_new', 'tickets') %}
+                              </option>
+                              <option value="is_not_new"{% if is_new == 'is_not_new' %} selected{% endif %}>
+                                  {% helper lang.l('field_is_not_new', 'tickets') %}
+                              </option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-3 control-label">{% helper lang.l('search_by', 'users') %}:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="val_text" value="{{ search_param.text|e }}" class="form-control">
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                          <select name="type_text" class="form-control">
+                              <option value="all" {% if search_param.type == 'all' %} selected{% endif %}>
+                                  {% helper lang.l('filter_all', 'users') %}
+                              </option>
+                              <option value="email" {% if search_param.type == 'email' %} selected{% endif %}>
+                                  {% helper lang.l('field_email', 'users') %}
+                              </option>
+                              <option value="fname" {% if search_param.type == 'fname' %} selected{% endif %}>
+                                  {% helper lang.l('field_fname', 'users') %}
+                              </option>
+                              <option value="sname" {% if search_param.type == 'sname' %} selected{% endif %}>
+                                  {% helper lang.l('field_sname', 'users') %}
+                              </option>
+                              <option value="nickname" {% if search_param.type == 'nickname' %} selected{% endif %}>
+                                  {% helper lang.l('field_nickname', 'users') %}
+                              </option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                          {% helper find_text = lang.l('header_user_find', 'users') %}
+                          <input type="submit" class="btn btn-primary" value="{{ find_text|e }}" name="btn_search">
+                      </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                  <a href="{{ site_root }}admin/tickets/answer" class="btn btn-primary">
+                      {% helper lang.l('text_contact_user', 'tickets') %}
+                  </a>
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{ site_root }}admin/tickets/answer">
+                        {% helper lang.l('text_contact_user', 'tickets') %}</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" id="delete_all">
+                          {% helper lang.l('link_delete_tickets', 'tickets') %}</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('field_users_list', 'tickets') %}</th>
+                        <th class="column-title">{% helper lang.l('field_text_message', 'tickets') %}</th>
+                        <th class="column-title">{% helper lang.l('field_text_latest_message', 'tickets') %}</th>
+                        <th class="no-link last">&nbsp;</th>
+                        <th class="bulk-actions" colspan="6">
+                            {#<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                                aria-expanded="false" style="position: absolute; top: 40px; color:#fff; font-weight:500;">
+                                    Actions ( <span class="action-cnt"> </span> )
+                                    <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu"
+                                style="position: absolute; top: 120px; left: 6px;">
+                                <li class="dropdown">
+                                    <ul>
+                                        <li>
+                                            <a href="#" id="delete_all">
+                                                {% helper lang.l('link_delete_tickets', 'tickets') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>#}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in responder %}
+                        <tr class="even pointer">
+                            <td class="a-center">
+                                <input data="table_records" type="checkbox" class="tableflat grouping" value="{{ item.id_user|e }}">
+                            </td>
+                            <td>
+                                {% if item.user.link %}
+                                    <a href="{{ site_url }}admin/users/edit/personal/{{ item.id_user }}">
+                                        {{ item.user.output_name }}
+                                    </a>
+                                {% else %}
+                                    {{ item.user.output_name }}
+                                {% endif %}
+                            </td>
+                            <td>{{ item.message }}</td>
+                            <td>
+                                {% helper date_format.tpl_date_format(item.date_created, page_data.date_format) %}
+                                &nbsp;{% helper lang.l('field_by', 'tickets') %}&nbsp;{{ item.answered }}
+                            </td>
+                            <td class="last icons">
+                                <div id="move_block">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick = "document.location.href='{{ site_url }}admin/tickets/answer/{{ item.id_user }}'">
+                                                {% helper lang.l('link_answer','tickets') %}
+                                        </button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ site_url }}admin/tickets/answer/{{ item.id_user }}">
+                                                        {% helper lang.l('link_answer','tickets') %}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ site_url }}admin/tickets/remove_contact/{{ item.id_user }}"
+                                                   onclick="javascript: if(!confirm('{% helper lang.l('link_remove_contact', 'tickets', '', 'js') %}')) return false;">
+                                                    {% helper lang.l('link_tableicon_remove_contact','tickets') %}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<script type="text/javascript">
+    var no_messages = '{% helper lang.l('no_messages', 'tickets', '', 'js') %}';
+    $(function() {
+        $(document).off('click', '#delete_all').on('click', '#delete_all', function() {
+            if (!confirm('{% helper lang.l('note_delete_contacts', 'tickets') %}')) {
+              return;
+            }
+
+            var users = '';
+            $('.grouping:checked:visible').each(function() {
+                users += '&user[]='+$(this).val();
+                $(this).parents('tr').first().fadeOut();
+            });
+            if(users != "") {
+                $.ajax({
+                    url: '{{ site_url }}admin/tickets/remove_contact/',
+                    type: 'POST',
+                    data: users,
+                    cache: false,
+                    success: function(data){
+                        if ($(".grouping:visible").length == 0){
+                            $('#check-all').parents('tbody').first().append('<tr><td colspan="6" class="center">'+no_messages+'</td></tr>');
+                        }
+                        $('#check-all').iCheck('uncheck');
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script src="{{ site_url }}application/views/gentelella/js/icheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_messages','tickets') %}"
+            },
+            "aoColumnDefs": [{
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

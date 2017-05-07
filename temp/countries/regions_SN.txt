@@ -1,0 +1,5 @@
+	2993	Ziguinchor	12.5680100	-16.2732600	SN	12	0	0	Ziguinchor	Зигиншор	Ziguinchor	Ziguinchor	Ziguinchor	Ziguinchor
+	2993	Tionk Essil	12.7855600	-16.5216700	SN	12	0	0	Tionk Essil	Tionk Essil	Tionk Essil	Tionk Essil	Tionk Essil	Tionk Essil
+	2993	Oussouye	12.4850000	-16.5469400	SN	12	0	0	Oussouye	Oussouye	Oussouye	Oussouye	Oussouye	Oussouye
+	2993	Bignona	12.8102800	-16.2263900	SN	12	0	0	Bignona	Bignona	Bignona	Bignona	Bignona	Bignona
+	2993	Adéane	12.6300000	-16.0169400	SN	12	0	0	Adéane	Adéane	Adéane	Adéane	Adéane	Adéane

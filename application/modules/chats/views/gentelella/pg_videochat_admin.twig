@@ -1,0 +1,148 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div id="pg_videochat" class="x_panel">
+        <div class="x_title h4">
+            {% helper lang.l('settings', 'chats') %}
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" action="" name="save_form" enctype="multipart/form-data"
+              class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                        {% helper lang.l('pg_videochat_fee_type', 'chats') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label>
+                            <input name="settings[fee_type]" type="radio" value="free" class="flat"
+                                   {% if chat.settings.fee_type == 'free' %}checked="checked"{% endif %}>
+                            {% helper lang.l('pg_videochat_fee_type_free', 'chats') %}
+                        </label>
+                        <label>
+                            <input name="settings[fee_type]" type="radio" value="payed" class="flat"
+                                   {% if chat.settings.fee_type == 'payed' %}checked="checked"{% endif %}>
+                            {% helper lang.l('pg_videochat_fee_type_payed', 'chats') %}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                        {% helper lang.l('pg_videochat_chat_type', 'chats') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label>
+                            <input name="settings[chat_type]" type="radio" value="invite" class="flat"
+                                   {% if chat.settings.chat_type == 'invite' %}checked="checked"{% endif %}>
+                            {% helper lang.l('pg_videochat_chat_type_invite', 'chats') %}
+                        </label><br/>
+                        <label>
+                            <input name="settings[chat_type]" type="radio" value="now" class="flat"
+                                   {% if chat.settings.chat_type == 'now' %}checked="checked"{% endif %}>
+                            {% helper lang.l('pg_videochat_chat_type_now', 'chats') %}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                        {% helper lang.l('pg_videochat_fee_amount', 'chats') %}
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input name="settings[amount]" type="text" value="{{ chat.settings.amount }}" class="form-control"
+                               onchange="this.value = parseFloat(this.value) || 0; $('#for_min_amount').text(parseFloat(this.value)*60)" />
+                        <p>{% helper lang.l('pg_videochat_fee_amount_for_minute', 'chats') %} <span id="for_min_amount" style="font-weight:bold">{{ chat.settings.amount_for_min }}</span></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                        {% helper lang.l('pg_videochat_time_alert', 'chats') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input name="settings[time_alert]" type="text" value="{{ chat.settings.time_alert }}" class="form-control" onchange="this.value = parseInt(this.value) || 3600;" />
+                        <p>{% helper lang.l('pg_videochat_time_alert_example', 'chats') %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/chats">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div id="admin_panel" class="x_panel">
+    <div class="x_content">
+        <table id="data" cellspacing="0" cellpadding="0" class="table table-striped responsive-utilities jambo_table" width="100%">
+          <thead>
+              <tr class="headings">
+                <th class="column-title">{% helper lang.l('field_invite_user', 'chats') %}</th>
+                <th class="column-title">{% helper lang.l('field_invited_user', 'chats') %}</th>
+                <th class="column-title">{% helper lang.l('field_status', 'chats') %}</th>
+                <th class="column-title">{% helper lang.l('field_date_time', 'chats') %}</th>
+                <th class="column-title">{% helper lang.l('field_amount', 'chats') %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in last_chats %}
+              <tr class="">
+                  <td>
+                      <b>{{ item.invite.nickname }}</b><br>{{ item.invite.fname }} {{ item.invite.sname }}
+                  </td>
+                  <td>
+                      <b>{{ item.invited.nickname }}</b><br>{{ item.invited.fname }} {{ item.invited.sname }}
+                  </td>
+                  <td>{{ item.status_str }}</td>
+                  <td>{{ item.date_time }}</td>
+                  <td>{% helper start.currency_format_output({'value': item.amount}) %}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+        {% include "@app/pagination.twig" %}
+
+        <!-- Datatables -->
+        <script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+        <script>
+            var asInitVals = new Array();
+            $(document).ready(function () {
+                var oTable = $('#data').dataTable({
+                    "oLanguage": {
+                        "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                        "sEmptyTable": "{% helper lang.l('no_last_chats','chats') %}"
+                    },
+                    "aoColumnDefs": [
+                        {
+                            'bSortable': false,
+                            'aTargets': []
+                        } //disables sorting for column one
+                    ],
+                    'iDisplayLength': 10,
+                    "bPaginate": false,
+                    "bInfo": false,
+                    "dom": 'T<"clear"><"actions">lfrtip',
+                });
+                $("tfoot input").keyup(function () {
+                    /* Filter on the column based on the index of this element's parent <th> */
+                    oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+                });
+                $("tfoot input").each(function (i) {
+                    asInitVals[i] = this.value;
+                });
+                $("tfoot input").focus(function () {
+                    if (this.className == "search_init") {
+                        this.className = "";
+                        this.value = "";
+                    }
+                });
+                $("tfoot input").blur(function (i) {
+                    if (this.value == "") {
+                        this.className = "search_init";
+                        this.value = asInitVals[$("tfoot input").index(this)];
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>

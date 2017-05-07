@@ -1,0 +1,59 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+	<div class="filter-form">
+		<form method="post">
+			<ul class="list-inline">
+				<li>http://</li>
+				<li><input type="text" name="url" value="{{ url }}" class="form-control"></li>
+				<li><input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_send', 'start', '', 'button') %}"></li>
+			</ul>
+		</form>
+	</div>
+	</br>
+
+	<table class="table table-striped jambo_table" width="100%">
+		<thead>
+			<tr>
+				<th colspan="2" width="30%">{% helper lang.l('analytics_h_basic', 'seo_advanced') %}</th>
+				<th colspan="2" width="30%">{% helper lang.l('analytics_h_alexa', 'seo_advanced') %}</th>
+				<th colspan="2" width="30%">{% helper lang.l('analytics_h_backlinks', 'seo_advanced') %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{% helper lang.l('field_domain_age', 'seo_advanced') %}</td>
+				<td>{% if domain and domain.registered %}{{ domain.age.y }} {% helper lang.l('da_years', 'seo_advanced') %} {{ domain.age.m }} {% helper lang.l('da_months', 'seo_advanced') %} {{ domain.age.d }} {% helper lang.l('da_days', 'seo_advanced') %}{% else %}{% helper lang.l('domain_not_registered', 'seo_advanced') %}{% endif %}</td>
+				<td>{% helper lang.l('field_backlinks', 'seo_advanced') %}:</td>
+				<td><a href="{% if check_links %}{{ check_links.alexa_backlinks }}{% endif %}" target="_blank">{% if domain %}{{ domain.alexa_backlinks }}{% endif %}</a></td>
+				<td>{% helper lang.l('field_google', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.google_backlinks }}{% endif %}" target="_blank">{% if domain %}{{ domain.google_backlinks }}{% endif %}</a></td>
+			</tr>
+		</tbody>
+		<thead>
+			<tr>
+				<th colspan="2">{% helper lang.l('analytics_h_tech', 'seo_advanced') %}</th>
+				<th colspan="4">{% helper lang.l('analytics_h_indexed', 'seo_advanced') %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{% helper lang.l('field_rank', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.technorati_rank }}{% endif %}" target="_blank">{% if domain %}{{ domain.technorati_rank }}{% endif %}</a></td>
+				<td>{% helper lang.l('field_dmoz', 'seo_advanced') %}:</td>
+				<td><a href="{% if check_links %}{{ check_links.dmoz_listed }}{% endif %}" target="_blank">{% if domain and domain.dmoz_listed %}{% helper lang.l('field_listed', 'seo_advanced') %}{% else %}{% helper lang.l('field_not_listed', 'seo_advanced') %}{% endif %}</a></td>
+				<td>{% helper lang.l('field_google', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.google_indexed }}{% endif %}" target="_blank">{% if domain %}{{ domain.google_indexed }}{% endif %}</a></td>
+			</tr>
+			<tr>
+				<td>{% helper lang.l('field_authority', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.technoraty_authority }}{% endif %}" target="_blank">{% if domain %}{{ domain.technoraty_authority }}{% endif %}</a></td>
+				<td>{% helper lang.l('field_yahoo', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.yahoo_indexed }}{% endif %}" target="_blank">{% if domain %}{{ domain.yahoo_indexed }}{% endif %}</a></td>
+				<td>{% helper lang.l('analytics_h_yandex', 'seo_advanced') %}</td>
+				<td><a href="{% if check_links %}{{ check_links.yandex_indexed }}{% endif %}" target="_blank">{% if domain %}{{ domain.yandex_indexed }}{% endif %}</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% include '@app/footer.twig' %}

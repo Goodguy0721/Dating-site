@@ -1,0 +1,119 @@
+{% helper users = users.re_format_users({'users': users,'return': true}) %}
+{% if users %}
+    {% if sort_data is not empty %}
+        <div class="sorter-block clearfix" id="sorter_block">
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                <div class="users-check-all">
+                    <input type="checkbox" id="invite_user_all">
+                </div>
+                {% helper start.sorter({
+                    'links': sort_data.links,
+                    'order': sort_data.order,
+                    'direction': sort_data.direction,
+                    'url': sort_data.url
+                }) %}
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-5">
+                <div class="fright lh30 search-top-pager">
+                    {% set page_data = page_data|merge({'type': 'cute'}) %}
+                    {% helper start.pagination(page_data) %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+    <h2 class="text-center p10">
+        {% helper lang.l('header_users_found', 'users') %}: {{ page_data.total_rows }}
+    </h2>
+{% endif %}
+
+<div class="user-list clearfix">
+    {% for ukey, user in users %}
+        {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', user) %}
+        <div id="item-block-{{ user.id }}"
+             class="user-list-item clearfix {% if user.is_highlight_in_search or
+                                user.leader_bid or
+                                (user.is_up_in_search and page_data.use_leader) %}highlight{% endif %}">
+            {% if user.leader_bid %}
+                <div class="lift_up">
+                    {% helper lang.l('header_leader', 'users') %}
+                </div>
+            {% endif %}
+
+
+            <div class="">
+                <div class="events-user-checkbox">
+                    <input id="invite_user_{{ user.id }}" type="checkbox" value="{{ user.id }}"{% if user.participant %} disabled{% endif %}>
+                </div>
+                <div class="image">
+                    <a href="{% helper seo.seolink('users', 'view', user) %}">
+                        <img src="{{ user.media.user_logo.thumbs.small }}" class="img-rounded" alt="{{ text_user_logo }}" title="{{ text_user_logo }}">
+                    </a>
+                </div>
+                <div class="descr-1">
+                    <div class="" style="float:left">
+                        <div class="">
+                            <a href="{% helper seo.seolink('users', 'view', user) %}">
+                                {{ user.output_name }}
+                            </a>, {{ user.age }}
+                        </div>
+                        {% if user.location %}
+                            <div class="">
+                                <i class="fa fa-map-marker g"></i>
+                                <span>{{ user.location }}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if pm_installed %}
+                            <div class="">
+                                <span>
+                                    {% helper lang.l('field_looking_user_type', 'users') %}
+                                    {{ user.looking_user_type_str }}, {{ user.age_min }}-{{ user.age_max }}
+                                </span>
+                            </div>
+                        {% endif %}                             
+                    </div>
+                    <div class="text-right">
+                        {% if user.participant %} 
+                            <input type="button" value="{% helper lang.l('button_already_invited', 'events') %}" class="btn" disabled>
+                        {% else %}
+                            <input type="button" value="{% helper lang.l('button_invite', 'events') %}" data-user-id="{{ user.id }}" class="btn btn-primary btn-invite-user">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% if users %}
+    <div id="pages_block_2" class="tac">
+        {% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+    </div>
+{% endif %}
+<script>
+    $(function () {
+        loadScripts(
+                [
+                    "{% helper utils.jscript('events', 'events_users.js', 'path') %}",
+                    "{% helper utils.jscript('users', 'users-list.js', 'path') %}",
+                ],
+                function () {
+                    users_list = new usersList({
+                        siteUrl: "{{ site_url }}",
+                        viewUrl: "{% helper seo.seolink('users', '') %}",
+                        viewAjaxUrl: "{{ site_url }}events/ajaxSearchUsers/",
+                        listBlockId: 'main_users_results',
+                        tIds: ['pages_block_1', 'pages_block_2', 'sorter_block']
+                    });
+                    eu = new events_users({
+                        siteUrl: site_url,
+                        event_id: {{ event_id }},
+                        invitedButtonText: '{% helper lang.l('button_already_invited', 'events') %}',
+                    });
+                },
+                ['eu','users_list']
+        );
+    });
+</script>

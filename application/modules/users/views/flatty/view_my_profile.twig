@@ -1,0 +1,1090 @@
+{% set please_ask_me = 'Please ask me' %}
+{% set no_preference = 'No preference' %}
+
+<div class="text-right"><a href="">Profile tips</a></div>
+
+<div class="profile-messages">
+  <div class="alert-message alert-message-warning profile-empty"><i class="fa fa-exclamation-circle"></i> Please answer 15 questions to optimize your profile!</div>
+</div>
+
+{# Main section #}
+<div class="view-section profile-section">
+  <div class="form-group">
+    <label>Profile headline: </label>
+    <span class="profile-actions" data-fields="headline" data-looking-fields="">
+      <i class="fa fa-pencil" data-action="edit"></i>
+    </span>
+    <div id="headline-field-label">{{ data.headline_str }}</pre></div>
+    <input id="headline-field-value" type="hidden" value="{{ data.headline|e }}">
+    <div class="form-group hide" id="headline-field-edit">
+      <textarea name="headline" rows="5" cols="80" class="form-control"
+        id="headline-edit-value">{{ data.headline|e }}</textarea>
+    </div>
+    <div class="profile-actions profile-actions-buttons" data-fields="headline" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+    {#<p>To get better matches and increase your chanes of success, <a href="">Complete it right now!</a>#}
+  </div>
+
+  <div class="form-group">
+    <label>About me: </label>
+    <span class="profile-actions" data-fields="about_me" data-looking-fields="">
+      <i class="fa fa-pencil" data-action="edit"></i>
+    </span>
+    <div id="about-me-field-label">{{ data.about_me_str }}</div>
+    <input id="about-me-field-value" type="hidden" value="{{ data.about_me|e }}">
+    <div class="form-group hide" id="about-me-field-edit">
+      <textarea name="about_me" rows="5" cols="80" class="form-control"
+        id="about-me-edit-value">{{ data.about_me|e }}</textarea>
+    </div>
+    <div class="profile-actions profile-actions-buttons" data-fields="about_me" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+    {#<p>To get better matches and increase your chanes of success, <a href="">Complete it right now!</a>#}
+  </div>
+
+  <div class="form-group">
+    <label>About my match / friends: </label>
+    <span class="profile-actions" data-fields="" data-looking-fields="looking_about">
+      <i class="fa fa-pencil" data-action="edit"></i>
+    </span>
+    <div id="looking-about-field-label">{{ data.looking_about_str }}</div>
+    <input id="looking-about-field-value" type="hidden" value="{{ data.looking_about|e }}">
+    <div class="form-group hide" id="looking-about-field-edit">
+      <textarea name="looking_about" rows="5" cols="80" class="form-control"
+        id="looking-about-edit-value">{{ data.looking_about|e }}</textarea>
+    </div>
+    <div class="profile-actions profile-actions-buttons" data-fields="" data-looking-fields="looking_about">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{# Basic section #}
+<div class="view-section profile-section" id="basic">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Basic info</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Living with</label>
+      <span class="profile-actions" data-fields="living_with" data-looking-fields="looking_living_with">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if count(data.living_with) > 0 %}hide{% endif %}"
+        id="living-with-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not count(data.living_with) > 0 %}hide{% endif %}"
+        id="living-with-full"><i class="fa fa-check-circle"></i></span>
+      <span class="profile-help"><i class="fa fa-question-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="living-with-field-label">{{ data.living_with_str }}</span>
+      <input id="living-with-field-value" name="living_with[]" type="hidden" value="{{ data.living_with|join(',') }}">
+      <div id="living-with-field-edit" class="hide">
+        {% for option_gid, option_name in living_with_options %}
+        <input type="checkbox" name="living_with[]" value="{{ option_gid|e }}"
+          {% if attribute(data.living_with, option_gid) %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-living-with-field-label">{{ data.looking_living_with_str }}</span>
+      <input id="looking-living-with-field-value" type="hidden" value="{{ data.looking_living_with.join(',') }}">
+      <div id="looking-living-with-field-edit" class="hide">
+        {% for option_gid, option_name in living_with_options %}
+        <input type="checkbox" name="looking_living_with[]" value="{{ option_gid }}"
+          {% if attribute(data.looking_living_with, option_gid) %}selected{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+        <input type="checkbox" name="living_with[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="living_with" data-looking-fields="looking_living_with">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Age</label>
+      <span class="profile-actions" data-fields="age" data-looking-fields="age_min,age_max">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.age %}hide{% endif %}"
+        id="age-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.age %}hide{% endif %}"
+        id="age-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="age-field-label">{{ data.age }}</span>
+      <input id="age-field-value" type="hidden" value="{{ data.age }}">
+      <input id="birth-date-year-value" type="hidden" value="{{ data.birth_date|date('Y') }}">
+      <input id="birth-date-month-value" type="hidden" value="{{ data.birth_date|date('m') }}">
+      <input id="birth-date-day-value" type="hidden" value="{{ data.birth_date|date('d') }}">
+      <div id="age-field-edit" class="hide">
+        {#<input type="number" name="age" value="{{ data.age|e }}" class="form-control" id="age-edit-value">#}
+        <ul class="list-inline">
+          <li>
+            <select name="birth_date_month" class="form-control" placeholder="Month">
+              <option value="01">Jan</option>
+              <option value="02">Feb</option>
+              <option value="03">Mar</option>
+              <option value="04">Apr</option>
+              <option value="05">May</option>
+              <option value="06">Jun</option>
+              <option value="07">Jul</option>
+              <option value="08">Aug</option>
+              <option value="09">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+          </li>
+          <li>
+            <select name="birth_date_day" class="form-control" placeholder="Day">
+              {% for i in 1..31 %}
+              <option>{% if i < 10 %}0{% endif %}{{ i }}</option>
+              {% endfor %}
+            </select>
+          </li>
+          <li>
+            <select name="birth_date_year" class="form-control" placeholder="Year">
+              {% for i in 1998..1950 %}
+              <option>{{ i }}</option>
+              {% endfor %}
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="age-min-age-max-field-label">{{ data.age_min_age_max_str }}</span>
+      <input id="age-min-field-value" type="hidden" value="{{ data.age_min|e }}">
+      <input id="age-max-field-value" type="hidden" value="{{ data.age_max|e }}">
+      <div id="age-min-age-max-field-edit" class="hide">
+        <div class="input-group">
+          <select name="age_min" class="form-control" id="age-max-edit-value">
+          {% for i in 18..80 %}
+            <option value="{{ i }}" {% if i == data.age_min %}selected{% endif %}>{{ i }}</option>
+          {% endfor %}
+          </select>
+          <span class="input-group-addon" id="basic-addon1">-</span>
+          <select name="age_max" class="form-control" id="age-min-edit-value">
+            {% for i in 18..80 %}
+              <option value="{{ i }}" {% if i == data.age_min %}selected{% endif %}>{{ i }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="age" data-looking-fields="age_min,age_max">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Gender</label>
+      <span class="profile-actions" data-fields="user_type" data-looking-fields="looking_user_type">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.user_type %}hide{% endif %}"
+        id="user-type-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.user_type %}hide{% endif %}"
+        id="user-type-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="user-type-field-label">{{ data.user_type_str }}</span>
+      <input id="user-type-field-value" type="hidden" value="{{ data.user_type }}">
+      <div id="user-type-field-edit" class="hide">
+        <input type="radio" name="user_type" value="male" {% if data.user_type == 'male' %}checked{% endif %}> <label>Man</label>
+        <input type="radio" name="user_type" value="female" {% if data.user_type == 'female' %}checked{% endif %}> <label>Woman</label>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-user-type-field-label">{{ data.looking_user_type_str }}</span>
+      <input id="looking-user-type-field-value" type="hidden" value="{{ data.looking_user_type }}">
+      <div id="looking-user-type-field-edit" class="hide">
+        <input type="radio" name="looking_user_type" value="male" {% if data.looking_user_type == 'male' %}checked{% endif %}> <label>Man</label>
+        <input type="radio" name="looking_user_type" value="female" {% if data.looking_user_type == 'female' %}checked{% endif %}> <label>Woman</label>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="user_type" data-looking-fields="looking_user_type">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Relationship status</label>
+      <span class="profile-actions" data-fields="relationship_status" data-looking-fields="looking_relationship_status">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.relationship_status %}hide{% endif %}"
+        id="relationship-status-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.relationship_status %}hide{% endif %}"
+        id="relationship-status-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="relationship-status-field-label">{{ data.relationship_status_str }}</span>
+      <input id="relationship-status-field-value" type="hidden" value="{{ data.relationship_status_arr|join(',') }}">
+      <div id="relationship-status-field-edit" class="hide">
+        <select name="relationship_status" class="form-control" id="relationship-status-edit-value">
+          {% for option_gid, option_name in relationship_status_options %}
+          <option value="{{ option_gid }}" {% if data.relationship_status == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-relationship-status-field-label">{{ data.looking_relationship_status_str }}</span>
+      <input id="looking-relationship-status-field-value" type="hidden" value="{{ data.looking_relationship_status_arr|join(',') }}">
+      <div id="looking-relationship-status-field-edit" class="hide">
+      {% for option_gid, option_name in relationship_status_options %}
+        <input type="checkbox" name="looking_relationship_status[]" value="{{ option_gid }}" {% if data.looking_relationship_status == option_gid %}checked{% endif %}> {{ option_name }}<br>
+      {% endfor %}
+        <input type="checkbox" name="looking_relationship_status[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="relationship_status" data-looking-fields="looking_relationship_status">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{# Appearance section #}
+<div class="view-section profile-section" id="appearance">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Appearance</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Height</label>
+      <span class="profile-actions" data-fields="height" data-looking-fields="height_min,height_max">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.height %}hide{% endif %}"
+        id="height-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.height %}hide{% endif %}"
+        id="height-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="height-field-label">{{ data.height_str }}</span>
+      <input id="height-field-value" type="hidden" value="{{ data.height }}">
+      <div id="height-field-edit" class="hide">
+        <select name="height" class="form-control" id="height-edit-value">
+          {% for option_gid, option_name in height_options %}
+          <option value="{{ option_gid }}" {% if data.height == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="height-min-height-max-field-label">{{ data.height_min_height_max_str }}</span>
+      <input id="height-min-field-value" type="hidden" value="{{ data.height_min }}">
+      <input id="height-max-field-value" type="hidden" value="{{ data.height_max }}">
+      <div id="height-min-height-max-field-edit" class="hide">
+        <div class="input-group">
+          <select name="height_min" class="form-control" id="height-min-edit-value">
+            {% for option_gid, option_name in height_options %}
+            <option value="{{ option_gid }}" {% if data.height_min == option_gid %}selected{% endif %}>{{ option_name }}</option>
+            {% endfor %}
+          </select>
+          <span class="input-group-addon" id="basic-addon1">-</span>
+          <select name="height_max" class="form-control" id="height-max-edit-value">
+            {% for option_gid, option_name in height_options %}
+            <option value="{{ option_gid }}" {% if data.height_max == option_gid %}selected{% endif %}>{{ option_name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="height" data-looking-fields="height_min,height_max">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Physical appearance</label>
+      <span class="profile-actions" data-fields="physical_appearance" data-looking-fields="looking_physical_appearance">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.physical_appearance %}hide{% endif %}"
+        id="physical-appearance-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.physical_appearance %}hide{% endif %}"
+        id="physical-appearance-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="physical-appearance-field-label">{{ data.physical_appearance_str }}</span>
+      <input id="physical-appearance-field-value" type="hidden" value="{{ data.physical_appearance_arr|join(',') }}">
+      <div id="physical-appearance-field-edit" class="hide">
+        <select name="physical_appearance" class="form-control" id="physical-appearance-edit-value">
+          {% for option_gid, option_name in physical_appearance_options %}
+          <option value="{{ option_gid }}" {% if data.physical_appearance == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-physical-appearance-field-label">{{ data.looking_physical_appearance_str }}</span>
+      <input id="looking-physical-appearance-field-value" type="hidden" value="{{ data.looking_physical_appearance_arr|join(',') }}">
+      <div id="looking-physical-appearance-field-edit" class="hide">
+        {% for option_gid, option_name in physical_appearance_options %}
+          <input type="checkbox" name="looking_physical_appearance[]" value="{{ option_gid }}" {% if data.looking_physical_appearance == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_physical_appearance[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="physical_appearance" data-looking-fields="looking_physical_appearance">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Eye color</label>
+      <span class="profile-actions" data-fields="eye_color" data-looking-fields="looking_eye_color">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.eye_color %}hide{% endif %}"
+        id="eye-color-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.eye_color %}hide{% endif %}"
+        id="eye-color-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="eye-color-field-label">{{ data.eye_color_str }}</span>
+      <input id="eye-color-field-value" type="hidden" value="{{ data.eye_color_arr|join(',') }}">
+      <div id="eye-color-field-edit" class="hide">
+        <select name="eye_color" class="form-control" id="eye-color-field-edit-val">
+          {% for option_gid, option_name in eye_color_options %}
+          <option value="{{ option_gid }}" {% if data.eye_color == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-eye-color-field-label">{{ data.looking_eye_color_str }}</span>
+      <input id="looking-eye-color-field-value" type="hidden" value="{{ data.looking_eye_color_arr|join(',') }}">
+      <div id="looking-eye-color-field-edit" class="hide">
+        {% for option_gid, option_name in eye_color_options %}
+          <input type="checkbox" name="looking_eye_color[]" value="{{ option_gid }}" {% if data.looking_eye_color == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_eye_color[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="eye_color" data-looking-fields="looking_eye_color">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Hair color</label>
+      <span class="profile-actions" data-fields="hair_color" data-looking-fields="looking_hair_color">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.hair_color %}hide{% endif %}"
+        id="hair-color-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.hair_color %}hide{% endif %}"
+        id="hair-color-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="hair-color-field-label">{{ data.hair_color_str }}</span>
+      <input id="hair-color-field-value" type="hidden" value="{{ data.hair_color_arr|join(',') }}">
+      <div id="hair-color-field-edit" class="hide">
+        <select name="hair_color" class="form-control" id="hair-color-field-edit-val">
+          {% for option_gid, option_name in hair_color_options %}
+          <option value="{{ option_gid }}" {% if data.hair_color == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-hair-color-field-label">{{ data.looking_hair_color_str }}</span>
+      <input id="looking-hair-color-field-value" type="hidden" value="{{ data.looking_hair_color_arr|join(',') }}">
+      <div id="looking-hair-color-field-edit" class="hide">
+        {% for option_gid, option_name in hair_color_options %}
+          <input type="checkbox" name="looking_hair_color[]" value="{{ option_gid }}" {% if data.looking_hair_color == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_hair_color[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="hair_color" data-looking-fields="looking_hair_color">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Body type</label>
+      <span class="profile-actions" data-fields="body_type" data-looking-fields="looking_body_type">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.body_type %}hide{% endif %}"
+        id="body-type-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.body_type %}hide{% endif %}"
+        id="body-type-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="body-type-field-label">{{ data.body_type_str }}</span>
+      <input id="body-type-field-value" type="hidden" value="{{ data.body_type_arr|join(',') }}">
+      <div id="body-type-field-edit" class="hide">
+        <select name="body_type" class="form-control" id="body-type-field-edit-val">
+          {% for option_gid, option_name in body_type_options %}
+          <option value="{{ option_gid }}" {% if data.body_type == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-body-type-field-label">{{ data.looking_body_type_str }}</span>
+      <input id="looking-body-type-field-value" type="hidden" value="{{ data.looking_body_type_arr|join(',') }}">
+      <div id="looking-body-type-field-edit" class="hide">
+        {% for option_gid, option_name in body_type_options %}
+          <input type="checkbox" name="looking_body_type[]" value="{{ option_gid }}" {% if data.looking_body_type == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_body_type[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="body_type" data-looking-fields="looking_body_type">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{# Background section #}
+<div class="view-section profile-section" id="background">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Background</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Ethnicity</label>
+      <span class="profile-actions" data-fields="ethnicity" data-looking-fields="looking_ethnicity">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.ethnicity %}hide{% endif %}"
+        id="ethnicity-empty"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="profile-full {% if not data.ethnicity %}hide{% endif %}"
+          id="ethnicity-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="ethnicity-field-label">{{ data.ethnicity_str }}</span>
+      <input id="ethnicity-field-value" type="hidden" value="{{ data.ethnicity_arr|join(',') }}">
+      <div id="ethnicity-field-edit" class="hide">
+        <select name="ethnicity" class="form-control" id="ethnicity-field-edit-val">
+          {% for option_gid, option_name in ethnicity_options %}
+          <option value="{{ option_gid }}" {% if data.ethnicity == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-ethnicity-field-label">{{ data.looking_ethnicity_str }}</span>
+      <input id="looking-ethnicity-field-value" type="hidden" value="{{ data.looking_ethnicity_arr|join(',') }}">
+      <div id="looking-ethnicity-field-edit" class="hide">
+        {% for option_gid, option_name in ethnicity_options %}
+          <input type="checkbox" name="looking_ethnicity[]" value="{{ option_gid }}" {% if data.looking_ethnicity == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_ethnicity[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="ethnicity" data-looking-fields="looking_ethnicity">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Religion</label>
+      <span class="profile-actions" data-fields="religion" data-looking-fields="looking_religion">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.religion %}hide{% endif %}"
+        id="religion-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.religion %}hide{% endif %}"
+        id="religion-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="religion-field-label">{{ data.religion_str }}</span>
+      <input id="religion-field-value" type="hidden" value="{{ data.religion_arr|join(',') }}">
+      <div id="religion-field-edit" class="hide">
+        <select name="religion" class="form-control" id="religion-field-edit-val">
+          {% for option_gid, option_name in religion_options %}
+          <option value="{{ option_gid }}" {% if data.religion == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-religion-field-label">{{ data.looking_religion_str }}</span>
+      <input id="looking-religion-field-value" type="hidden" value="{{ data.looking_religion_arr|join(',') }}">
+      <div id="looking-religion-field-edit" class="hide">
+        {% for option_gid, option_name in religion_options %}
+          <input type="checkbox" name="looking_religion[]" value="{{ option_gid }}" {% if data.looking_religion == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_religion[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="religion" data-looking-fields="looking_religion">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Language</label>
+      <span class="profile-actions" data-fields="language" data-looking-fields="looking_language">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.language %}hide{% endif %}"
+        id="language-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.language %}hide{% endif %}"
+        id="language-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4">
+      <span id="language-field-label">{{ data.language_str }}</span>
+      <input id="language-field-value" type="hidden" value="{{ data.language_arr|join(',') }}">
+      <div id="language-field-edit" class="hide">
+        <select name="language" class="form-control" id="language-field-edit-val">
+          {% for option_gid, option_name in language_options %}
+          <option value="{{ option_gid }}" {% if data.language == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <span id="looking-language-field-label">{{ data.looking_language_str }}</span>
+      <input id="looking-language-field-value" type="hidden" value="{{ data.looking_language_arr|join(',') }}">
+      <div id="looking-language-field-edit" class="hide">
+        {% for option_gid, option_name in language_options %}
+          <input type="checkbox" name="looking_language[]" value="{{ option_gid }}" {% if data.looking_language == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_language[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="language" data-looking-fields="looking_language">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Education</label>
+      <span class="profile-actions" data-fields="education" data-looking-fields="looking_education">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.education %}hide{% endif %}"
+        id="education-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.education %}hide{% endif %}"
+        id="education-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="education-field-label">{{ data.education_str }}</span>
+      <input id="education-field-value" type="hidden" value="{{ data.education_arr|join(',') }}">
+      <div id="education-field-edit" class="hide">
+        <select name="education" class="form-control" id="education-field-edit-val">
+          {% for option_gid, option_name in education_options %}
+          <option value="{{ option_gid }}" {% if data.education == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-education-field-label">{{ data.looking_education_str }}</span>
+      <input id="looking-education-field-value" type="hidden" value="{{ data.looking_education_arr|join(',') }}">
+      <div id="looking-education-field-edit" class="hide">
+        {% for option_gid, option_name in education_options %}
+          <input type="checkbox" name="looking_education[]" value="{{ option_gid }}" {% if data.looking_education == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_education[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="education" data-looking-fields="looking_education">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Political beliefs</label>
+      <span class="profile-actions" data-fields="political_beliefs" data-looking-fields="looking_political_beliefs">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.political_beliefs %}hide{% endif %}"
+        id="political-beliefs-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.political_beliefs %}hide{% endif %}"
+        id="political-beliefs-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="political-beliefs-field-label">{{ data.political_beliefs_str }}</span>
+      <input id="political-beliefs-field-value" type="hidden" value="{{ data.political_beliefs_arr|join(',') }}">
+      <div id="political-beliefs-field-edit" class="hide">
+        <select name="political_beliefs" class="form-control" id="political-beliefs-field-edit-val">
+          {% for option_gid, option_name in political_beliefs_options %}
+          <option value="{{ option_gid }}" {% if data.political_beliefs == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-political-beliefs-field-label">{{ data.looking_political_beliefs_str }}</span>
+      <input id="looking-political-beliefs-field-value" type="hidden" value="{{ data.looking_political_beliefs_arr|join(',') }}">
+      <div id="looking-political-beliefs-field-edit" class="hide">
+        {% for option_gid, option_name in political_beliefs_options %}
+          <input type="checkbox" name="looking_political_beliefs[]" value="{{ option_gid }}" {% if data.looking_political_beliefs == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_political_beliefs[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="political_beliefs" data-looking-fields="looking_political_beliefs">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{# Lifestyle section #}
+<div class="view-section profile-section" id="lifestyle">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-4">
+      Lifestyle</h2>
+    <h2 class="section-header col-xs-4">
+      Me</h2>
+    <h2 class="section-header col-xs-4">
+      My match</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Occupation</label>
+      <span class="profile-actions" data-fields="occupation" data-looking-fields="looking_occupation">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.occupation %}hide{% endif %}"
+        id="occupation-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.occupation %}hide{% endif %}"
+        id="occupation-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="occupation-field-label">{{ data.occupation_str }}</span>
+      <input id="occupation-field-value" type="hidden" value="{{ data.occupation_arr|join(',') }}">
+      <div id="occupation-field-edit" class="hide">
+        <select name="occupation" class="form-control" id="occupation-field-edit-val">
+          {% for option_gid, option_name in occupation_options %}
+          <option value="{{ option_gid }}" {% if data.occupation == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-occupation-field-label">{{ data.looking_occupation_str }}</span>
+      <input id="looking-occupation-field-value" type="hidden" value="{{ data.looking_occupation_arr|join(',') }}">
+      <div id="looking-occupation-field-edit" class="hide">
+        {% for option_gid, option_name in occupation_options %}
+          <input type="checkbox" name="looking_occupation[]" value="{{ option_gid}}" {% if data.looking_occupation == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_occupation[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="occupation" data-looking-fields="looking_occupation">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Annual income</label>
+      <span class="profile-actions" data-fields="annual_income" data-looking-fields="looking_annual_income">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.annual_income %}hide{% endif %}"
+        id="annual-income-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.annual_income %}hide{% endif %}"
+        id="annual-income-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="annual-income-field-label">{{ data.annual_income_str }}</span>
+      <input id="annual-income-field-value" type="hidden" value="{{ data.annual_income_arr|join(',') }}">
+      <div id="annual-income-field-edit" class="hide">
+        <select name="annual_income" class="form-control" id="annual-income-field-edit-val">
+          {% for option_gid, option_name in annual_income_options %}
+          <option value="{{ option_gid }}" {% if data.annual_income == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-annual-income-field-label">{{ data.looking_annual_income_str }}</span>
+      <input id="looking-annual-income-field-value" type="hidden" value="{{ data.looking_annual_income_arr|join(',') }}">
+      <div id="looking-annual-income-field-edit" class="hide">
+        {% for option_gid, option_name in annual_income_options %}
+          <input type="checkbox" name="looking_annual_income[]" value="{{ option_gid }}" {% if data.looking_annual_income == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_annual_income[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="annual_income" data-looking-fields="looking_annual_income">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Drinking</label>
+      <span class="profile-actions" data-fields="drinking" data-looking-fields="looking_drinking">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.drinking %}hide{% endif %}"
+        id="drinking-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.drinking %}hide{% endif %}"
+        id="drinking-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="drinking-field-label">{{ data.drinking_str }}</span>
+      <input id="drinking-field-value" type="hidden" value="{{ data.drinking_arr|join(',') }}">
+      <div id="drinking-field-edit" class="hide">
+        <select name="drinking" class="form-control" id="drinking-field-edit-val">
+          {% for option_gid, option_name in drinking_options %}
+          <option value="{{ option_gid }}" {% if data.drinking == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-drinking-field-label">{{ data.looking_drinking_str }}</span>
+      <input id="looking-drinking-field-value" type="hidden" value="{{ data.looking_drinking_arr|join(',') }}">
+      <div id="looking-drinking-field-edit" class="hide">
+        {% for option_gid, option_name in drinking_options %}
+          <input type="checkbox" name="looking_drinking[]" value="{{ option_gid }}" {% if data.looking_drinking == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_drinking[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="drinking" data-looking-fields="looking_drinking">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Smoking</label>
+      <span class="profile-actions" data-fields="smoking" data-looking-fields="looking_smoking">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.smoking %}hide{% endif %}"
+        id="smoking-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.smoking %}hide{% endif %}"
+        id="smoking-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="smoking-field-label">{{ data.smoking_str }}</span>
+      <input id="smoking-field-value" type="hidden" value="{{ data.smoking_arr|join(',') }}">
+      <div id="smoking-field-edit" class="hide">
+        <select name="smoking" class="form-control" id="smoking-field-edit-val">
+          {% for option_gid, option_name in smoking_options %}
+          <option value="{{ option_gid }}" {% if data.smoking == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-smoking-field-label">{{ data.looking_smoking_str }}</span>
+      <input id="looking-smoking-field-value" type="hidden" value="{{ data.looking_smoking_arr|join(',') }}">
+      <div id="looking-smoking-field-edit" class="hide">
+        {% for option_gid, option_name in smoking_options %}
+          <input type="checkbox" name="looking_smoking[]" value="{{ option_gid }}" {% if data.looking_smoking == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_smoking[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="smoking" data-looking-fields="looking_smoking">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Have children</label>
+      <span class="profile-actions" data-fields="have_children" data-looking-fields="looking_have_children">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.have_children %}hide{% endif %}"
+        id="have-children-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.have_children %}hide{% endif %}"
+        id="have-children-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="have-children-field-label">{{ data.have_children_str }}</span>
+      <input id="have-children-field-value" type="hidden" value="{{ data.have_children_arr|join(',') }}">
+      <div id="have-children-field-edit" class="hide">
+        <select name="have_children" class="form-control" id="have-children-field-edit-val">
+          {% for option_gid, option_name in have_children_options %}
+          <option value="{{ option_gid }}" {% if data.have_children == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-have-children-field-label">{{ data.looking_have_children_str }}</span>
+      <input id="looking-have-children-field-value" type="hidden" value="{{ data.looking_have_children_arr|join(',') }}">
+      <div id="looking-have-children-field-edit" class="hide">
+        {% for option_gid, option_name in have_children_options %}
+          <input type="checkbox" name="looking_have_children[]" value="{{ option_gid }}" {% if data.looking_have_children == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_have_children[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="have_children" data-looking-fields="looking_have_children">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Want children</label>
+      <span class="profile-actions" data-fields="want_children" data-looking-fields="looking_want_children">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.want_children %}hide{% endif %}"
+        id="want-children-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.want_children %}hide{% endif %}"
+        id="want-children-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="want-children-field-label">{{ data.want_children_str }}</span>
+      <input id="want-children-field-value" type="hidden" value="{{ data.want_children_arr|join(',') }}">
+      <div id="want-children-field-edit" class="hide">
+        <select name="want_children" class="form-control" id="want-children-field-edit-val">
+          {% for option_gid, option_name in want_children_options %}
+          <option value="{{ option_gid }}" {% if data.want_children == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-want-children-field-label">{{ data.looking_want_children_str }}</span>
+      <input id="looking-want-children-field-value" type="hidden" value="{{ data.looking_want_children_arr|join(',') }}">
+      <div id="looking-want-children-field-edit" class="hide">
+        {% for option_gid, option_name in want_children_options %}
+          <input type="checkbox" name="looking_want_children[]" value="{{ option_gid }}" {% if data.looking_want_children == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_want_children[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="want_children" data-looking-fields="looking_want_children">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Have pets</label>
+      <span class="profile-actions" data-fields="have_pets" data-looking-fields="looking_have_pets">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.have_pets %}hide{% endif %}"
+        id="have-pets-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.have_pets %}hide{% endif %}"
+        id="have-pets-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="have-pets-field-label">{{ data.have_pets_str }}</span>
+      <input id="have-pets-field-value" type="hidden" value="{{ data.have_pets_arr|join(',') }}">
+      <div id="have-pets-field-edit" class="hide">
+        <select name="have_pets" class="form-control" id="have-pets-field-edit-val">
+          {% for option_gid, option_name in have_pets_options %}
+          <option value="{{ option_gid }}" {% if data.have_pets == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 no-information">
+      <span id="looking-have-pets-field-label">{{ data.looking_have_pets_str }}</span>
+      <input id="looking-have-pets-field-value" type="hidden" value="{{ data.looking_have_pets_arr|join(',') }}">
+      <div id="looking-have-pets-field-edit" class="hide">
+        {% for option_gid, option_name in have_pets_options %}
+          <input type="checkbox" name="looking_have_pets[]" value="{{ option_gid }}" {% if data.looking_have_pets == option_gid %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="looking_have_pets[]" value=""> {{ no_preference }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="have_pets" data-looking-fields="looking_have_pets">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{# Others section #}
+<div class="view-section profile-section" id="others">
+  <div class="row form-group header profile-section-header">
+    <h2 class="section-header col-xs-12">
+      Others</h2>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Looking for</label>
+      <span class="profile-actions" data-fields="looking_for" data-looking-fields="">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.looking_for %}hide{% endif %}"
+        id="looking-for-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.looking_for %}hide{% endif %}"
+        id="looking-for-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-8">
+      <span id="looking-for-field-label">{{ data.looking_for_str }}</span>
+      <input id="looking-for-field-value" type="hidden" value="{{ data.looking_for.join(',') }}">
+      <div id="looking-for-field-edit" class="hide">
+        {% for option_gid, option_name in looking_for_options %}
+          <input type="checkbox" name="looking_for[]" value="{{ option_gid }}" {% if attribute(data.looking_for, option_gid) %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="looking_for" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Prefer my match / friend within</label>
+      <span class="profile-actions" data-fields="looking_distance" data-looking-fields="">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.looking_distance %}hide{% endif %}"
+        id="looking-distance-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.looking_distance %}hide{% endif %}"
+        id="looking-distance-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-8 col-sm-4">
+      <span id="looking-distance-field-label">{{ data.looking_distance_str }}</span>
+      <input id="looking-distance-field-value" type="hidden" value="{{ data.looking_distance }}">
+      <div id="looking-distance-field-edit" class="hide">
+        <select name="looking_distance" class="form-control" id="looking-distance-field-edit-val">
+        {% for option_gid, option_name in distance_options %}
+          <option value="{{ option_gid }}" {% if attribute(data.distance, option_gid) %}selected{% endif %}>{{ option_name }}</option>
+        {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="looking_distance" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>The music I enjoy listening to</label>
+      <span class="profile-actions" data-fields="listening_music" data-looking-fields="">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.listening_music %}hide{% endif %}"
+        id="listening-music-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.listening_music %}hide{% endif %}"
+        id="listening-music-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-8 no-information">
+      <div id="listening-music-field-label">{{ data.listening_music_str }}</div>
+      <input id="listening-music-field-value" type="hidden" value="{{ data.listening_music|e }}">
+      <div id="listening-music-field-edit" class="hide">
+        {% for option_gid, option_name in listening_music_options %}
+          <input type="checkbox" name="listening_music[]" value="{{ option_gid }}" {% if attribute(data.listening_music, option_gid) %}checked{% endif %}> {{ option_name }}<br>
+        {% endfor %}
+          <input type="checkbox" name="listening_music[]" value=""> {{ please_ask_me }}
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="listening_music" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Astrological sign</label>
+      <span class="profile-actions" data-fields="astrological_sign" data-looking-fields="">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+      <span class="profile-empty {% if data.astrological_sign %}hide{% endif %}"
+        id="astrological-sign-empty"><i class="fa fa-exclamation-circle"></i></span>
+      <span class="profile-full {% if not data.astrological_sign %}hide{% endif %}"
+        id="astrological-sign-full"><i class="fa fa-check-circle"></i></span>
+    </div>
+    <div class="col-xs-8">
+      <span id="astrological-sign-field-label">{{ data.astrological_sign_str }}</span>
+      <input id="astrological-sign-field-value" type="hidden" value="{{ data.astrological_sign }}">
+      <div id="astrological-sign-field-edit" class="hide">
+        <select name="astrological_sign" class="form-control" id="astrological-sign-field-edit-val">
+          {% for option_gid, option_name in astrological_sign_options %}
+          <option value="{{ option_gid }}" {% if data.astrological_sign == option_gid %}selected{% endif %}>{{ option_name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="astrological_sign" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-4">
+      <label>Subscribed</label>
+      <span class="profile-actions" data-fields="is_subscribed" data-looking-fields="">
+        <i class="fa fa-pencil" data-action="edit"></i>
+      </span>
+    </div>
+    <div class="col-xs-8">
+      <span id="is-subscribed-field-label">{{ data.is_subscribed_str }}</span>
+      <input id="is-subscribed-field-value" type="hidden" value="{{ data.is_subscribed }}">
+      <div id="is-subscribed-field-edit" class="hide">
+        <input type="checkbox" name="is_subscribed" value="1" {% if data.is_subscribed %}checked{% endif %}>
+      </div>
+    </div>
+    <div class="col-xs-12 profile-actions profile-actions-buttons" data-fields="is_subscribed" data-looking-fields="">
+      <button class="hide" data-action="cancel">Cancel</button>
+      <button class="hide" data-action="save">Save</button>
+    </div>
+  </div>
+</div>
+
+{% if subsection == 'prompt' %}
+<script>
+  $(function() {
+    loadScripts([
+      "{% helper utils.jscript('', 'uploader.js', 'path') %}",
+      "{% helper utils.jscript_by_theme('users', 'prompt.js', 'path', 'flatty') %}"],
+      function () {
+        var promptPopup = new prompt({
+          user_id: {{ data.id }},
+          errors: {
+            file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+          }
+        });
+      },
+      ['promptPopup'],
+      {async: false}
+    );
+  });
+  </script>
+  {% endif %}

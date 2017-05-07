@@ -1,0 +1,30 @@
+{% if auth_type == 'module' %}
+<div class="menu_section">
+    <ul class="nav side-menu">
+        <li{% if step == 'modules' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/modules">Installed modules</a>
+        </li>
+        <li{% if step == 'enable_modules' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/enable_modules">Enable modules{% if enabled and step != 'enable_modules' %}<span class="num">{{ enabled }}</span>{% endif %}</a>
+        </li>
+        <li{% if step == 'updates' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/updates">Enable updates{% if updates and step != 'updates' %}<span class="num">{{ updates }}</span>{% endif %}</a>
+        </li>
+        <li{% if step == 'product_updates' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/product_updates">Enable product updates{% if product_updates and step != 'product_updates' %}<span class="num">{{ product_updates }}</span>{% endif %}</a>
+        </li>
+        <li{% if step == 'libraries' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/libraries">Installed libraries</a>
+        </li>
+        <li{% if step == 'enable_libraries' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/enable_libraries">Enable libraries{% if enabled_libraries and step != 'enable_libraries' %}<span class="num">{{ enabled_libraries }}</span>{% endif %}</a>
+        </li>
+        <li{% if step == 'langs' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/langs">Languages</a>
+        </li>
+        <li{% if step == 'ftp' %} class="active"{% endif %}>
+            <a href="{{ site_url }}admin/install/installer_settings">Panel settings</a>
+        </li>
+    </ul>
+</div>
+{% endif %}

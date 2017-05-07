@@ -1,0 +1,31 @@
+<a href="#" id="country_open_{{ item_locations.rand }}">
+    <span  class="block_cat" id="country_text_{{ item_locations.rand }}">
+        {% if item_locations.country %}{{ item_locations.country.name }}{% endif %}
+        {% if item_locations.region %}, {{ item_locations.region.name }}{% endif %}
+        {% if item_locations.city %}, {{ item_locations.city.name }}{% endif %}
+    </span>
+</a>&nbsp;&nbsp;
+<input type="hidden" name="{{ item_locations.var_country_name }}[]" id="country_hidden_{{ item_locations.rand }}" value="{{ item_locations.country.code }}">
+<input type="hidden" name="{{ item_locations.var_region_name }}[]" id="region_hidden_{{ item_locations.rand }}" value="{{ item_locations.region.id }}">
+<input type="hidden" name="{{ item_locations.var_city_name }}[]" id="city_hidden_{{ item_locations.rand }}" value="{{ item_locations.city.id }}">
+<script type='text/javascript'>
+{% if item_locations.var_js_name %}var {{ item_locations.var_js_name }};{% endif %}
+
+$(function(){
+    loadScripts(
+        "{% helper utils.jscript_by_theme('countries', 'country-select.js', 'path', 'gentelella') %}",
+        function(){
+            {% if item_locations.var_js_name %}{{ item_locations.var_js_name }} = {% endif %}new countrySelect({
+                siteUrl: '{{ site_url }}',
+                rand: '{{ item_locations.rand }}',
+                id_country: '{{ item_locations.country.code }}',
+                id_region: '{{ item_locations.region.id }}',
+                id_city: '{{ item_locations.city.id }}',
+                select_type: '{{ item_locations.select_type }}'
+
+            });
+        },
+        {% if item_locations.var_js_name %}{{ item_locations.var_js_name }}{% else %}''{% endif %}
+    );
+});
+</script>

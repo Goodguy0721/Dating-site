@@ -1,0 +1,44 @@
+<menu id="users-alerts-menu" class="menu-alerts">
+    <ul class="list-inline">
+        {% for item in menu %}
+            <li class="cnt">
+                <i class="fa fa-{{ item.icon }} fa-lg item"></i>
+                <span class="badge">15</span>
+            </li>
+        {% endfor %}
+    </ul>
+</menu>
+<div class="menu-alerts-more">
+    <div class="menu-alerts-more-triangle"></div>
+    <div class="menu-alerts-more-item clearfix">
+        <div class="message-image">
+            <img src="http://gdating.work/uploads/user-logo/0/0/0/16/small-ee5136d1ce.jpg">
+        </div>
+        <div class="message-body">
+            <div class="name">Ivan Fateev</div>
+            <div class="text">Hello, Audrey :)</div>
+        </div>
+    </div>
+    <div class="menu-alerts-more-item clearfix">
+        <div class="message-image">
+            <img src="http://gdating.work/uploads/user-logo/0/0/0/16/small-ee5136d1ce.jpg">
+        </div>
+        <div class="message-body">
+            <div class="name">Ivan Fateev</div>
+            <div class="text">Hello, Audrey :)</div>
+        </div>
+    </div>
+    <div class="menu-alerts-more-item clearfix">
+        <div class="message-image">
+            <img src="http://gdating.work/uploads/user-logo/0/0/0/16/small-ee5136d1ce.jpg">
+        </div>
+        <div class="message-body">
+            <div class="name">Ivan Fateev</div>
+            <div class="text">Hello, Audrey :)</div>
+        </div>
+    </div>
+    {% helper virtual_gifts.user_gifts_menu_notifier(user_id) %}
+    <div class="menu-alerts-more-item clearfix tac">
+        <a href="">View all messages</a>
+    </div>
+</div>

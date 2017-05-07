@@ -1,0 +1,256 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+
+{% if poll_data.language %}
+    {% set cur_lang = poll_data.language %}
+{% endif %}
+{% helper utils.jscript('', 'colorsets/jscolor/jscolor.js') %}
+
+<script type="text/javascript">
+    var polls;
+    $(function () {
+        polls = new adminPollsAnswers({
+            siteUrl: '{{ site_url }}',
+            counter: '{{ answers_count }}',
+            show_results: '{{ poll_data.show_results }}'
+        });
+    });
+</script>
+
+{% set language = poll_data.language %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_answers_change', 'polls') %}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          {% if responds_count %}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              {% helper lang.l('error_no_editing', 'polls') %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3">{% helper lang.l('field_question', 'polls') %}:</label>
+                    <div class="col-md-9">
+                    {% if language and attribute(poll_data.question, language) %}
+                        {{ attribute(poll_data.question, language) }}
+                    {% elseif attribute(poll_data.question, cur_lang) %}
+                        {{ attribute(poll_data.question, cur_lang) }}
+                    {% else %}
+                        {{ poll_data.question.default }}
+                    {% endif %}
+                    </div>
+                </div>
+            
+            <div id="answers_list">
+            {% for i, answer in poll_data.answers_colors %}
+                <div class="form-group" id="row_answer_{{ i }}">
+                    
+                    <label class="control-label col-sm-3 col-xs-12">
+                        {% helper lang.l('field_answer', 'polls') %}:
+                    </label>
+                    
+                    <div class="col-sm-8 col-xs-11">
+                        <div id="languages_container">
+                            {% for lang_id, item in languages %}
+                                <div class="row{% if poll_data.language > 0 and poll_data.language != lang_id %} hide{% endif %}">
+                                    <label class="control-label col-sm-2 col-xs-12">{{ item.name }}</label>
+                                    <div id="answer_{{ i }}_{{ lang_id }}" class="question p-top2 col-sm-10 col-xs-12"
+                                         style="{% if language > 0 and language != lang_id %}display: none;{% endif %}">
+                                        {% set language_item = i ~ '_' ~ lang_id %}
+                                        {% set value = attribute(poll_data.answers_languages, language_item) %}
+                                        {% if not value %}
+                                            {% set language_item = i ~ '_default' %}
+                                            {% set value = attribute(poll_data.answers_languages, language_item) %}
+                                        {% endif %}
+                                        <input {% if responds_count %}disabled="disabled"{% endif %}
+                                               {% if lang_id == cur_lang %}id="answer_{{ i }}"{% else %}id="answer_{{ i }}_input_{{ lang_id }}"{% endif %}
+                                               class="answer_{{ i }}_input form-control {% if lang_id == cur_lang %}default_answer{% endif %}"
+                                               type="text" value="{{ value }}" name="answer[{{ i }}_{{ lang_id }}]" />
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="clearfix"></div>
+                        </div>
+                        
+                        <div class="row">
+                            <label class="control-label col-xs-2">#</label>
+                            <div class="col-xs-10">
+                                <input id="color_answer_{{ i }}" class="color_input color-pick form-control"
+                                       type="text" value="{{ attribute(poll_data.answers_colors, i) }}"
+                                       name="answers_colors[{{ i }}]">                                     
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-xs-1">
+                        {% if not responds_count %}
+                            <a id="delete_{{ i }}" class="delete_answer pull-right" href="javascript:void(0);">
+                                <i class="fa fa-trash" title="{% helper lang.l('link_delete_answer', 'polls') %}"></i>
+                            </a>
+                        {% endif %}                                
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+                
+            <div class="form-group">
+                {% if not responds_count %}
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <a href="javascript:void(0);" id="add_answer">{% helper lang.l('add_answer', 'polls') %}</a>
+                    </div>
+                {% endif %}                
+            </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                  <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                      <input class="answer_input btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                      <a class="btn btn-default" href="{{ site_url }}admin/polls/">{% helper lang.l('btn_cancel', 'start') %}</a>
+                  </div>
+                </div>
+            </form>
+                  
+                  
+                  
+            <div id="answer_tpl" class="" style="display: none;">
+                <div id="row_answer_-id-" class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_answer', 'polls') %}:</label>
+                    <div class="col-sm-8 col-xs-11">                       
+                        <div id="languages_container">
+                            {% for lang_id, item in languages %}
+                                <div class="row{% if poll_data.language > 0 and poll_data.language != lang_id %} hide{% endif %}">
+                                    <label class="control-label col-sm-2 col-xs-12">
+                                      {{ item.name }}</label>
+                                    <div id="answer_-id-_{{ lang_id }}" class="question p-top2 col-sm-10 col-xs-12"
+                                      style="{% if poll_data.language > 0 and poll_data.language != lang_id %}display: none;{% endif %}">
+                                        {% set language_item = '-id-_' ~ lang_id %}
+                                        <input {% if responds_count %}disabled="disabled"{% endif %}
+                                               {% if lang_id == cur_lang %}id="answer_-id-"{% else %}id="answer_-id-_input_{{ lang_id }}"{% endif %}
+                                               class="answer_-id-_input answer_input form-control {% if lang_id == cur_lang %}default_answer{% endif %}"
+                                               type="text" value="{{ attribute(poll_data.answers_languages, language_item) }}" name="answer[-id-_{{ lang_id }}]" />
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="answer_side row">
+                            <label class="control-label col-xs-2">#</label>
+                            <div class="col-xs-10">
+                                <input id="color_answer_-id-" class="color_input color-pick form-control"
+                                  type="text" value="{{ attribute(poll_data.answers_colors, id) }}" name="answers_colors[-id-]">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                            
+                    <div class="col-xs-1">
+                        {% if not responds_count %}
+                            <a id="delete_-id-" class="delete_answer pull-right" href="javascript:void(0);">
+                                <i class="fa fa-trash" title="{% helper lang.l('link_delete_answer', 'polls') %}"></i>
+                            </a>
+                        {% endif %}                            
+                    </div>        
+                            
+                </div>
+            </div>
+                        
+                        
+                        
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="">
+                {% helper lang.l('admin_header_preview_poll', 'polls') %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="poll">
+                <div id="question" >
+                    <div class="row">
+                        <label class="control-label col-sm-3 col-xs-12">
+                            {% if language %}
+                                {{ attribute(poll_data.question, language) }}
+                            {% else %}
+                                {{ attribute(poll_data.question, cur_lang) }}
+                            {% endif %}
+                        </label>
+                    </div>
+                    {% for i, answer in poll_data.answers_colors %}
+                        {% set language_item = i ~ '_' ~ cur_lang %}
+                        <div class="row" id="preview_answer_{{ i }}">
+                            <label class="control-label col-sm-3 col-xs-12" for="r_{{ i }}">
+                                {{ attribute(poll_data.answers_languages, language_item) }}
+                            </label>
+                            <div class="col-sm-9 col-xs-12">
+                                <input id="r_{{ i }}" class="answer_{{ i }} flat" type="{% if poll_data.answer_type == 1 %}checkbox{% else %}radio{% endif %}" value="{{ i }}" name="answer">
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {#<Template for new preview>#}
+                        <div id="preview_tpl" class="hide">
+                            <div class="row" id="preview_answer_-id-">
+                                <label for="r_-id-" class="control-label col-sm-3 col-xs-12">
+                                    {% if attribute(answers_languages, language_item) %}
+                                        {{ attribute(answers_languages, language_item) }}
+                                    {% endif %}
+                                </label>
+                                <div class="col-sm-9 col-xs-12">
+                                    <input type="{% if poll_data.answer_type == 1 %}checkbox{% else %}radio{% endif %}"
+                                      value="-id-" name="answer" id="r_-id-" class="answer_-id- flat">
+                                </div>
+                            </div>
+                        </div>
+                        {#</Template for new preview>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if poll_data.show_results %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="">
+                {% helper lang.l('admin_header_preview_poll_results', 'polls') %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="results">
+                <div id="results">
+                    <p>
+                        {% if language %}
+                            {{ attribute(poll_data.question, language) }}
+                        {% else %}
+                            {{ attribute(poll_data.question, cur_lang) }}
+                        {% endif %}
+                    </p>
+                    <div id="results_answers"></div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        polls.properties.counter = '{{ answers_count }}';
+        polls.bind_events();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,114 @@
+.swiper-slide {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+.carousel-wrapper {
+    position: relative; 
+    padding: 0;
+    height: 60px; 
+    overflow: hidden;
+}
+
+.carousel-wrapper.medium {
+    height: 210px;
+}
+
+.carousel-wrapper.big {
+    height: 315px;
+}
+.carousel-wrapper.small {
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.carousel-wrapper .direction {
+    width: 40px; 
+    text-align: center; 
+    height: 100%; 
+    cursor: pointer; 
+    padding-top: 48px; 
+    position: absolute; 
+    top: 0; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+.carousel-wrapper .direction.active {
+    background-color: #FE3D0C;
+}
+
+.carousel-wrapper .direction.left {
+    #{$left}: 0;
+}
+
+.carousel-wrapper .direction.right {
+    #{$right}: 0;
+}
+
+.carousel-wrapper .inactive {
+    background-color: #F2F2F2;
+}
+
+.carousel-wrapper a:hover {
+    text-decoration: none;
+}
+
+.carousel-wrapper .directionleft:hover #l_hover {
+
+}
+
+.carousel-wrapper .user {
+    position: relative;
+    display: inline-block;
+}
+
+.carousel-wrapper .photo {
+    display: inline-block;
+    overflow: hidden; 
+    position: relative; 
+    margin-#{$right}: 1px;
+    line-height: 0;
+}
+
+.carousel-wrapper .with-overlay-add .photo {
+    cursor: pointer;
+}
+
+.carousel-wrapper .with-overlay-add .photo:before {
+    content: ' '; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: rgba(0,0,0,.5);
+}
+
+.carousel-wrapper .with-overlay-add .photo > i {
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    margin: -0.5em 0 0 -1.2em; 
+    z-index: 3;
+}
+
+.carousel-wrapper.w-descr .user {
+    float: $left;
+}
+.carousel-wrapper.w-descr .descr {
+    display: block;
+}
+
+.carousel-wrapper .descr {
+    width: 144px;
+}
+
+.col30 .carousel-wrapper .descr {
+    width: 84px;
+}

@@ -1,0 +1,40 @@
+<div class="album" id="recent_photos">
+    <div class="album-info">
+        <i class="fa fa-camera"></i>&nbsp;&nbsp;<a href="">{{ media_count }} {% helper lang.l('text_upload_count', 'events') %}</a>
+    </div>
+    <div class="album-items">
+        {% for image in media %}
+            <div class="album-item col-xs-3 col-sm-4 col-md-4 col-lg-4">
+                <span class="a" data-click="view-media" data-id-album="{{ album_id }}" data-user-id="{{ image.id_owner }}" data-id-media="{{ image.id }}">
+                    <img src="{{ image.media.mediafile.thumbs.big }}">
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('media', 'media.js', 'path') %}",
+			function(){
+				recent_mediagallery = new media({
+					siteUrl: site_url,
+					gallery_name: 'recent_mediagallery',
+					galleryContentPage: 1,
+					idUser: 0,
+					all_loaded: 1,
+					lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+					galleryContentDiv: 'recent_photos',
+					post_data: {filter_duplicate: 1},
+					load_on_scroll: false,
+					sorterId: '',
+					direction: 'desc',
+                                        viewMediaUrl: 'events/ajaxViewMedia',
+                                        albumId: "{{ album_id }}"
+				});
+			},
+			'recent_mediagallery',
+			{async: false}
+		);
+	});
+</script>

@@ -1,0 +1,34 @@
+.news{padding: 5px 0px;}
+.news img{margin: 5px}
+.news .date{
+    font-size: 14px; 
+    color: $contrast_color;
+}
+.news .annotation{}
+.news .annotation img{margin: 5px}
+.news .links{text-align: right}
+.news-content .strong-title{
+    color: $font_color;
+    font-size: 14px;
+    font-weight: bold;
+}
+.news-content-block{
+    background: $content_bg;
+    border: 1px solid $delimiter_color;
+    border-radius: 5px;
+    text-align: left;
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 10px;    
+}
+.news-item{
+    @include g-panel;
+    text-align: $left;
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 10px; 
+    line-height: 15pt;
+}
+.news-related{    
+    @include g-panel;
+    padding: 15px;
+    text-align: left;
+}

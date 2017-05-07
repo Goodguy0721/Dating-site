@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    $(function () {
+        loadScripts(
+                ["{% helper utils.jscript('users', 'users-settings.js', 'path') %}"],
+                function () {
+                    new usersSettings({
+                        siteUrl: site_url
+                    }).availableActivation();
+                }
+        );
+    });
+</script>

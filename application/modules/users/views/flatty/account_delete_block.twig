@@ -1,0 +1,19 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+    <h1>
+        {% helper seo.seotag('header_text') %}
+    </h1>
+    <div>
+        <div class="h3 line bottom">
+            {% helper lang.l('delete_account_alert', 'users') %}
+        </div>
+        <form method="post" action="">
+            <input type="submit" name="btn_delete"
+                   value="{% helper lang.l('delete_account', 'users', '', 'buttom') %}" />
+        </form>
+    </div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

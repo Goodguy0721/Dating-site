@@ -1,0 +1,58 @@
+<div class="load_content_controller">
+    <div class="controller-actions">
+        <div id="city_page" class="fright"></div>
+        <div class="select-back">
+            {% if type == 'region' %}
+                <a href="javascript:;" id="country_select_back">
+                    <span><i class="fa fa-long-arrow-left fa-lg edge"></i> {% helper lang.l('link_select_another_country', 'countries') %}</span>
+                </a>
+            {% elseif type == 'city' %}
+                <a href="javascript:;" id="region_select_back">
+                    <span><i class="fa fa-long-arrow-left fa-lg edge"></i> {% helper lang.l('link_select_another_region', 'countries') %}</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    
+    <h1>
+        {% if type == 'region' %}
+            {{ data.country.name }}
+        {% elseif type == 'city' %}
+            {{ data.country.name }}, {{ data.region.name }}
+        {% endif %}
+    </h1>
+    
+    <h3>
+        {% if type == 'country' %}
+            {% helper lang.l('header_country_select', 'countries') %}:
+        {% elseif type == 'region' %}
+            {% helper lang.l('header_region_select', 'countries') %}:
+        {% elseif type == 'city' %}
+            {% helper lang.l('header_city_select', 'countries') %}:
+        {% endif %}        
+    </h3>
+
+    <div class="inside">
+{#        {% if type == 'region' %}
+            <div class="crumb">
+                {{ data.country.name }}
+            </div>
+        {% elseif type == 'city' %}
+            <div class="crumb">
+                {{ data.country.name }} > {{ data.region.name }}
+            </div>
+        {% endif %}#}
+
+{#        {% if type == 'city' %}
+            <input type="text" id="city_search" class="controller-search">
+        {% endif %}#}
+
+        <ul class="controller-items" id="location_select_items">
+            {% if data.items %}
+                {% for item in data.items %}
+                    <li class="location-item" gid="{{ item.id }}" code="{{ item.code }}">{{ item.name }}</li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>

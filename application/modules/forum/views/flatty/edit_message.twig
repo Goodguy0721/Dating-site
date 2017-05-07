@@ -1,0 +1,54 @@
+{% include '@app/header.twig' %}
+
+<h1>
+	{% if data.id %}
+		{% helper lang.l('admin_header_message_change', 'forum') %}
+	{% else %}
+		{% helper lang.l('admin_header_message_add', 'forum') %}
+	{% endif %}
+</h1>
+
+<div>
+	<form method="post" action="{{ site_url }}forum/edit_message/{{ subcategory_id }}" name="save_form">
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_subject', 'forum') %}: </label>
+			<input type="text" value="{{ data.subject }}" name="subject" class="form-control" />
+		</div>
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_message', 'forum') %}: </label>
+			<textarea id="message" name="message" style="width: 300px; height: 200px;" class="form-control">{{ data.message }}</textarea>
+		</div>
+		<script type="text/javascript">
+			var CKEDITOR_BASEPATH = '{{ site_url }}system/plugins/ckeditor/';
+			loadScripts(["{{ site_url }}system/plugins/ckeditor/ckeditor.js"],
+				function(){
+					CKEDITOR.replace('message', {customConfig:'{{ site_url }}system/plugins/ckeditor/config.js',language: '{{ _LANG.code }}', toolbar: 
+						[
+							{ name: 'document', items: [ 'Source' ] },
+							{ name: 'actions', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+							{ name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+							{ name: 'insert', items: [ 'Image', 'Flash', 'Table', 'SpecialChar' ] },
+							{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] },
+							{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+							{ name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+							{ name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+						]
+					});
+				},
+				'',
+				{async: false}
+			);
+		</script>
+		
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" name="btn_save" value="1">
+				{% helper lang.l('btn_save', 'start', '', 'button') %}
+			</button>
+
+			<a href="{{ site_url }}forum/messages/{{ subcategory_id }}" class="btn-link"><i class="fa fa-arrow-left"></i><i>{% helper lang.l('btn_cancel', 'start') %}</i></a>
+		</div>
+	</form>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

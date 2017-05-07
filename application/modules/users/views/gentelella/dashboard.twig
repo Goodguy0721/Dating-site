@@ -1,0 +1,40 @@
+<div class="">
+    <div class="media">
+        <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank" >
+            <img src="{{ data.media.user_logo.thumbs.big }}" class="img-responsive">
+        </a><br />
+        <div class="media-body">
+            <label>{% helper lang.l('field_name', 'users') %}:</label> {{ data.output_name }}<br>
+            <label>{% helper lang.l('field_nickname', 'users') %}:</label> {{ data.nickname }}<br>
+            <label>{% helper lang.l('field_email', 'users') %}:</label> {{ data.email }}<br>
+            <label>{% helper lang.l('field_age', 'users') %}:</label> {{ data.age }}<br>
+            {% if data.location %}<label>{% helper lang.l('field_location', 'users') %}:</label> {{ data.location }}{% endif %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+        {% if data.dashboard_status == 'user_added' %}
+            <div class="mtb10">
+                <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank" >
+                    {% helper lang.l('link_user_action', 'dashboard') %}
+                </a>
+            </div>
+            <div class="clearfix"></div>
+            <a class="btn btn-success js-dashboard-action" href="{{site_url}}admin/users/activate/{{ data.id }}/1">
+                {% helper lang.l('make_active','start') %}</a>
+            <a class="btn btn-danger js-dashboard-action" href="{{site_url}}admin/users/activate/{{ data.id }}/0">
+                {% helper lang.l('make_inactive','start') %}</a>
+            {% else %}
+            <label>{% helper lang.l('text_status', 'start') %}:</label> {% helper lang.l('status_' ~ data.dashboard_status, 'users') %}
+            
+            {% if data.dashboard_status != 'user_deleted' %}
+            <div class="mtb10">
+                <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}" target="_blank" >
+                    {% helper lang.l('link_user_action', 'users') %}
+                </a>
+            </div>
+            <div class="clearfix"></div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

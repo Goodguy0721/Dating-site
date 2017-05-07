@@ -1,0 +1,2 @@
+	2736	Palomas	18.0135800	-66.8732300	PR	153	0	0	Palomas	Palomas	Palomas	Palomas	Palomas	Palomas
+	2736	Yauco	18.0349600	-66.8499000	PR	153	0	0	Yauco	Yauco	Yauco	Yauco	Yauco	Yauco

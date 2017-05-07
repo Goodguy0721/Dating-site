@@ -1,0 +1,30 @@
+{% if not hide_poll %}
+    <div id="poll_block_{{ poll_data.id }}" class="poll_block">
+        <h4>
+            {% if language %}
+                {{ poll_data.question[language] }}
+            {% else %}
+                {{ poll_data.question[cur_lang] }}
+            {% endif %}
+        </h4>
+        <div class="poll">
+            {{ poll_block }}
+        </div>
+        <script>
+            $(function() {
+                loadScripts(
+                    "{% helper utils.jscript('polls', 'polls.js', 'path') %}",
+                    function(){
+                        polls = new Polls({
+                            siteUrl: '{{ site_url }}',
+                            poll_id: '{{ poll_data.id }}'
+                        });
+                    },
+                    'polls'
+                );
+            });
+        </script>
+    </div>
+{% endif %}
+
+<script src="{{ site_url }}application/views/gentelella/js/progressbar/bootstrap-progressbar.min.js"></script>

@@ -1,0 +1,223 @@
+{% if wall_params.place == 'homepage' %}
+	<div class="mb10 title-block" data-title="{% helper lang.l('recent_activity', 'wall_events') %}" data-id="wall-title" id="wall-title">
+		{% helper lang.l('recent_activity', 'wall_events') %}
+		<span id="wall_permissions_link" class="a fright"
+              title="{% helper lang.l('header_wall_settings', 'wall_events') %}"
+              onclick="ajax_permissions_form(site_url+'wall_events/ajax_user_permissions/');">
+            <i class="fa fa-cog"></i>
+        </span>
+	</div>
+{% endif %}
+{% if wall_params.show_post_form %}
+	<div id="wall_post" class="hide post-form wide">
+		<form id="wall_upload_form" method="post" enctype="multipart/form-data" name="wall_upload_form"
+              action="{{ site_url }}wall_events/post_form/{{ wall_params.id_wall }}/{{ wall_params.place }}">
+			<input type="hidden" name="id" value="0" />
+			<input type="hidden" name="id_wall" value="{{ wall_params.id_wall }}" />
+			<div class="form-input b-timeline-addpost clearfix">
+				<div class="form-group">
+                    <textarea id="wall_post_text" name="text"
+                        placeholder="{% helper lang.l('post_placeholder', 'wall_events') %}" class="form-control b-timeline-addpost_message innactive"></textarea>
+                </div>
+
+				<div class="b-timeline-addpost__uplodad" id="wall_post_upload">
+					<div id="wall_post_upload_form" class="b-timeline-addpost__file hide">
+						<div class="v">
+							<div class="drag">
+								<div id="dndfiles" class="drag-area">
+		                            <ins>
+		                                {% helper lang.l('drag_files', 'wall_events') %}
+		                            </ins>
+		                        </div>
+							</div>
+							<div>
+								<div class="upload-btn">
+									<span data-role="filebutton">
+										<s>{% helper lang.l('btn_choose_file', 'start') %}</s>
+										<input type="file" name="multiupload" id="multiupload" multiple />
+									</span>
+									{% if wall_params.image_upload_config.max_size or
+		                                  wall_params.video_upload_config.max_size %}
+										&nbsp;({% helper lang.l('max', 'wall_events') %}.
+		                                {% if wall_params.image_upload_config.max_size %}
+		                                    {% helper utils.bytesFormat(wall_params.image_upload_config.max_size) %}
+		                                    {% helper lang.l('images', 'wall_events') %}.
+		                                {% endif %}
+		                                {% if wall_params.video_upload_config.max_size %}
+		                                    {% helper utils.bytesFormat(wall_params.video_upload_config.max_size) %}
+		                                    {% helper lang.l('videos', 'wall_events') %}.
+		                                {% endif %})
+									{% endif %}
+								</div>
+		                        <span id="attach-input-error"></span>
+								<div id="attach-input-warning"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="b-timeline-addpost__embed hide" id="wall_post_embed_form">
+						<div>
+		                    {% helper lang.l('embed_code', 'wall_events') %}:
+		                </div>
+						<div>
+							<textarea id="wall_embed_code" class="form-input form-control" name="embed_code"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="b-timeline-addpost__controls">
+					<div class="row">
+						<div class="col-sm-8 col-md-8">
+							<a href="javascript:void(0);" id="b-timeline-addpost__linkfile" onclick="$('#wall_post_embed_form').hide(); $('#wall_post_upload_form').toggle();">
+		                        {% helper lang.l('add_uploads', 'wall_events' )%}
+		                    </a>&nbsp;
+							<a href="javascript:void(0);" id="b-timeline-addpost__linkembed" onclick="$('#wall_post_upload_form').hide(); $('#wall_post_embed_form').toggle();">
+		                        {% helper lang.l('add_embed', 'wall_events') %}
+		                    </a>
+						</div>
+		                <div class="col-sm-4 col-md-4 b-timeline-addpost__controls_right">
+		                    <input type="button" name="btn_send" id="btn_send" value="{% helper lang.l('btn_send', 'start') %}" class="btn btn-primary" />
+		                </div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</form>
+	</div>
+{% endif %}
+
+<div id="wall" class="wall"></div>
+
+<script>
+	var wall;
+	$(function(){
+		var wall_params = {{ wall_params|json_encode() }} || {};
+		wall_params.id = 'wall';
+		wall_params.onInit = function(){
+            $('#wall_post').fadeIn(600);
+        };
+
+        loadScripts(
+			"{% helper utils.jscript_by_theme('wall_events', 'wall.js', 'path', 'flatty') %}",
+			function() {
+				wall = new Wall().init(wall_params).loadEvents();
+			},
+			'wall',
+			{async: false}
+		);
+
+		$('#wall_permissions_link').click(function() {
+			ajax_permissions_form(site_url+'wall_events/ajax_user_permissions/');
+			return false;
+		});
+
+		user_ajax_permissions = new loadingContent({
+			loadBlockWidth: '620px',
+			loadBlockLeftType: 'center',
+			loadBlockTopType: 'center',
+			loadBlockTopPoint: 100,
+			closeBtnClass: 'w'
+		});
+
+		if(wall_params.show_post_form){
+			loadScripts(
+				"{% helper utils.jscript('', 'uploader.js', 'path') %}",
+				function(){
+                    var lang_data = {
+                            errors: {
+                                file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                            }
+                        };
+					mu = new uploader({
+						Accept: 'application/json',
+						siteUrl: site_url,
+						uploadUrl: wall_params.url_upload,
+						zoneId: 'dndfiles',
+						fileId: 'multiupload',
+						formId: 'wall_upload_form',
+						sendType: 'file',
+						sendId: 'btn_send',
+						messageId: 'attach-input-error',
+						warningId: 'attach-input-warning',
+						maxFileSize: wall_params.max_upload_size,
+						mimeType: wall_params.allowed_mimes,
+                        lang: lang_data,
+                        isFileEmpty: true,
+						cbOnComplete: function(data) {
+							wall.properties.uploaded = true;
+							if (data.id) {
+								$('#wall_upload_form').find('input[name="id"]').val(data.id);
+							}
+							if (data.joined_id) {
+								$('#wall_event_'+data.joined_id).remove();
+							}
+						},
+						cbOnQueueComplete: function() {
+							$('#wall_upload_form').find('input[name="id"]').val('0');
+							if (!wall.properties.uploaded) {
+								wall.newPost(function() {
+                                    wall.loadEvents('new');
+                                });
+							}else{
+								$('#wall_post_text').val('');
+								$('#wall_embed_code').val('');
+								wall.loadEvents('new');
+							}
+							wall.properties.uploaded = false;
+						},
+						createThumb: true,
+						thumbWidth: 100,
+						thumbHeight: 100,
+						thumbCrop: true,
+						thumbJpeg: false,
+						thumbBg: 'transparent',
+						fileListInZone: true,
+						jqueryFormPluginUrl: '{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}'
+					});
+				},
+				['mu'],
+				{async: false}
+			);
+		}
+
+		function wallpostActivate() {
+
+		}
+		$("#wall_post_text").bind("focus", function(event) {
+			$(this).removeClass("innactive");
+			$(".b-timeline-addpost__controls").show();
+		});
+		$("body").bind("click", function(e) {
+			var container = $(".b-timeline-addpost");
+		    if (container.has(e.target).length === 0){
+				$("#wall_post_text").addClass("innactive");
+				$(".b-timeline-addpost__controls").hide();
+				$(".b-timeline-addpost__file").hide();
+				$(".b-timeline-addpost__embed").hide();
+		    }
+		});
+	});
+
+	$(document)
+		.on('dragenter', '#wall_post', function() {
+            $('#wall_post_upload_form').slideDown();
+        })
+		.on('pjax:start', function(e){
+            $(document).off('dragenter', '#wall_post');
+        });
+
+	function ajax_permissions_form(url) {
+		$.ajax({
+			url: url,
+			cache: false,
+			data: {redirect_url: location.href},
+			success: function(data){
+				user_ajax_permissions.show_load_block(data);
+			},
+			type: 'POST'
+		});
+	}
+</script>

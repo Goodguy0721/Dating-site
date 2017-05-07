@@ -1,0 +1,202 @@
+.drag-area {
+    min-height: 80px; 
+    border: 2px dashed #C4C4C4; 
+    color: #808080; 
+    position: relative; 
+    text-align: center; 
+    cursor: move;
+    .filebar {
+        .progress {
+            overflow: unset;
+        }
+    }
+}
+
+.drag-area.hover {
+    border: 2px dashed #5990B2; 
+    color: #808080;
+}
+
+.drag-area:before {
+    content: '+'; 
+    line-height: 80px; 
+    font-size: 70px;
+}
+
+.drag-area.hover:before {
+    color: #5990B2;
+}
+
+.drag {
+    position: relative; 
+}
+
+.drag ul {
+    list-style: none; 
+    text-align: left; 
+    padding: 0; 
+    cursor: default; 
+    margin: 0;
+}
+
+.drag ul li {
+    padding: 5px 30px 5px 5px;
+}
+
+.drag-area>ins {
+    position: absolute; 
+    left: 10px; 
+    font-size: 16px; 
+    line-height: 40px; 
+    text-decoration: none;
+}
+
+.drag-area>ul li {
+    background-color: $content_bg; 
+    position: relative; 
+    line-height: 20px;
+}
+
+.drag-area>ul li .act {
+    display: inline-block; 
+    margin-top: -0.5em; 
+    position: absolute; 
+    right: 5px; 
+    top: 50%; 
+    line-height: 0;
+}
+
+.drag-area>ul li .stat-bar {
+    display: inline-block; 
+    margin-left: 10px;
+}
+
+.filebar {
+    overflow-y: auto;
+}
+
+.upload-preview {
+    display: inline-block; 
+    vertical-align: middle; 
+    line-height: 0;
+}
+
+.upload-preview img {
+    border: none; 
+    padding: 0 5px 0 0; 
+    background: none;
+}
+
+#attach-input-warning, 
+#attach-input-error {
+    color: #5990B2;
+}
+
+#attach-input-error {
+    font-weight: bold;
+}
+
+.uploadArea {
+    min-height: 100px;
+    height: auto;border: 1px dotted $input_bg_color;
+    padding: 10px;
+    cursor: move;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+ul.uploadArea, 
+.uploadArea ul {
+    padding: 5px 10px 5px 0; 
+    margin: 0;
+}
+
+ul.uploadArea li, 
+.uploadArea ul li {
+    margin: 0; 
+    padding: 3px; 
+    list-style: none; 
+    line-height: 16px; 
+    border-bottom: solid 1px #E4E4E4; 
+    overflow: hidden;
+}
+
+ul.uploadArea li span, 
+.uploadArea ul li span {
+    display: block; 
+    min-width: 100px; 
+    float: left;
+}
+
+.uploadArea ul li .progress {
+    width: 100px; 
+    border: solid 1px #8585f1; 
+    height: 13px; 
+    overflow: hidden;
+}
+
+.uploadArea ul li .progress .percent {
+    width: 0%; background-color: $input_bg_color; 
+    color: #555555; 
+    font-size: 9px; 
+    height: 13px; 
+    line-height: 13px;
+}
+
+.uploadArea ul li .stat-bar {
+    float: right;
+}
+
+.uploadArea div.drag {
+    color: #ccc; 
+    width: 100%;
+    z-index: 0;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 25px;
+}
+
+.upload-btn span {
+    background-color: $descr_color; 
+    color: #FFFFFF; 
+    cursor: pointer; 
+    display: inline-block; 
+    height: 35px; 
+    line-height: 35px; 
+    overflow: hidden; 
+    position: relative; 
+    text-align: center !important; 
+    vertical-align: middle; 
+    width: 220px;
+}
+
+@media (max-width: 480px) {
+    .upload-btn span {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.upload-btn span input {
+    cursor: pointer; 
+    font-size: 60px;  
+    margin-top: -40px; 
+    opacity: 0; 
+    position: absolute;
+    width: 100%;
+}
+
+.upload-btn span s {
+    display: inline-block; 
+    overflow: hidden; 
+    padding: 0 5px; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    width: 100%; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+}

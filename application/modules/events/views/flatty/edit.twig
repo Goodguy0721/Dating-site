@@ -1,0 +1,208 @@
+{% include '@app/header.twig' %}
+<script type="text/javascript">
+    function getEventYearRange() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var max = year + 10;
+
+        return year + ':' + max;
+    }
+</script>
+<div class="event-view">
+    <div class="col-xs-12">
+        <h1>{{ header_text }}</h1>
+    </div>
+    {% if event.id %}
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+            {% if event.image.file_url %}
+                <div class="event-preview">
+                    <div class="g-events-gallery__photo">
+                        <a id="event_photo" class="a g-events-gallery__photo-img">
+                            {%  if event.img %}
+                                <img src="{{ event.image.thumbs.large }}">
+                            {% else %}
+                                <div class="default-event-img big">
+                                    <i class="fa fa-picture-o"></i>
+                                </div>
+                            {% endif %}
+                        </a>
+                        <div id="events-main-avatar" class="g-events-gallery__actions {%  if not event.img  %} hide{% endif %}">
+                            <div class="g-photo-actions">
+                                <a class="btn-link" href="{{ site_url }}events/deleteLogo/{{ event.id }}">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                            loadScripts(
+                                    ["{% helper utils.jscript('events', 'events-avatar.js', 'path') %}"],
+                                    function () {
+                                        event_avatar = new avatar({
+                                            site_url: site_url,
+                                            id_event:{{ event.id }},
+                                            saveAfterSelect: true,
+                                        });
+                                    },
+                                    ['event_avatar'],
+                                    {async: false}
+                            );
+                        });
+                    </script>
+                </div>
+            {% endif %}
+            {% helper media.events_media_block({'count':16,'album_id':event.album_id, 'media_size':'small'}) %}
+        </div>
+    {% endif %}
+    <div class="edit-group col-xs-12 col-sm-7 col-md-6 col-lg-4">
+        <form method="post" enctype="multipart/form-data" id="event_form">
+            <div class="edit-block">
+                <label>{% helper lang.l('field_name', 'events') %}</label>
+                <input type="text" class="form-control" name="name" placeholder="Name" value="{{ event.name }}">
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_category', 'events') %}</label>
+                <select class="form-control input-sm" name="category">
+                    {% for key, category in categories.option %}
+                        <option value="{{ key }}" {% if key == event.category %}selected{% endif %}>{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_description', 'events') %}</label>
+                <textarea class="form-control" rows="5" name="description">{{ event.description }}</textarea>
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_location', 'events') %}: </label>
+                {% helper countries.location_select({
+                        'module': 'countries',
+                        'select_type': 'city',
+                        'id_country': event.country_code,
+                        'id_region': event.fk_region_id,
+                        'id_city': event.fk_city_id,
+                    }) %}
+                <input type="hidden" name="lat" value="{{ event.lat|e }}" id="lat">
+                <input type="hidden" name="lon" value="{{ event.lon|e }}" id="lon">
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_address', 'events') %}</label>
+                <input type="text" class="form-control" name="address" placeholder="Location" value="{{ event.address }}">
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_venue', 'events') %}</label>
+                <input type="text" class="form-control" name="venue" placeholder="Location" value="{{ event.venue }}">
+            </div>
+
+            <div class="edit-block">
+                <label>{% helper lang.l('field_date_started', 'events') %}</label>
+                <div class="row clearfix">
+                    <div class="col-md-7">
+                        <input class="form-control" type='text' value='{{ event.date_started }}' name="date_started" id="datepicker_date_started" maxlength="10" class="middle">
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control" type="time" value='{{ event.time_started }}' name="time_started" placeholder="00:00">
+                    </div>
+                    <input type='hidden' value='{{ event.date_started }}' name="alt_date_started" id="alt_date_started">
+                    <script>
+                        $(function () {
+                            $("#datepicker_date_started").datepicker({
+                                dateFormat: 'yy-mm-dd',
+                                altFormat: 'yy-mm-dd',
+                                altField: '#alt_date_started',
+                                changeYear: true,
+                                changeMonth: true,
+                                yearRange: getEventYearRange(),
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="edit-block">
+                <label>{% helper lang.l('field_date_ended', 'events') %}</label>
+                <div class="row clearfix">
+                    <div class="col-md-7">
+                        <input class="form-control" type='text' value='{{ event.date_ended }}' name="date_ended" id="datepicker_date_ended" maxlength="10" class="middle">
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control" type="time" value='{{ event.time_ended }}' name="time_ended" placeholder="00:00">
+                    </div>
+                    <input type='hidden' value='{{ event.date_ended }}' name="alt_date_ended" id="alt_date_ended">
+                    <script>
+                        $(function () {
+                            $("#datepicker_date_ended").datepicker({
+                                dateFormat: 'yy-mm-dd',
+                                altFormat: 'yy-mm-dd',
+                                altField: '#alt_date_ended',
+                                changeYear: true,
+                                changeMonth: true,
+                                yearRange: getEventYearRange(),
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="edit-block">
+                <label>{% helper lang.l('field_deadline_date', 'events') %}</label>
+                <div class="row clearfix">
+                    <div class="col-md-7">
+                        <input class="form-control" type='text' value='{{ event.deadline_date }}' name="deadline_date" id="datepicker_deadline_date" maxlength="10" class="middle">
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control" type="time" value='{{ event.deadline_time }}' name="deadline_time" placeholder="00:00">
+                    </div>
+                    <input type='hidden' value='{{ event.deadline_date }}' name="alt_deadline_date" id="alt_deadline_date">
+                    <script>
+                        $(function () {
+                            now = new Date();
+                            $("#datepicker_deadline_date").datepicker({
+                                dateFormat: 'yy-mm-dd',
+                                altFormat: 'yy-mm-dd',
+                                altField: '#alt_deadline_date',
+                                changeYear: true,
+                                changeMonth: true,
+                                yearRange: getEventYearRange(),
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="edit-block">
+                <label>{% helper lang.l('field_max_participants', 'events') %}</label>
+                <input type="text" class="form-control" name="max_participants" placeholder="{% helper lang.l('text_unlimited_participants', 'events') %}" value="{% if event.max_participants %} {{ event.max_participants }} {% endif %}">
+            </div>         
+            <div class="edit-block">
+                <label>{% helper lang.l('field_event_settings', 'events') %}</label>
+                <div>
+                    <label>
+                        <input type="checkbox" name="event_settings[is_user_invite]" {% if event.settings.is_user_invite %}checked="checked"{% endif %}>
+                        {% helper lang.l('field_is_invite_other', 'events') %}
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="event_settings[is_upload_media]" {% if event.settings.is_upload_media %}checked="checked"{% endif %}>
+                        {% helper lang.l('field_is_upload_media', 'events') %}
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="event_settings[is_user_can_join]" {% if event.settings.is_user_can_join %}checked="checked"{% endif %}>
+                        {% helper lang.l('field_is_user_can_join', 'events') %}
+                    </label>
+                </div>
+            </div>
+
+            <div class="edit-block">
+                <input type="button" onclick="$('#event_form').submit();" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" name="btn_save" class="btn btn-primary">
+                <a href="{% helper seo.seolink('events', 'search') %}" class="btn btn-cancel">
+                    <i class="icon icon-arrow-left icon-big edge hover"></i>
+                    {% helper lang.l('btn_back', 'start') %}
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% include '@app/footer.twig' %}

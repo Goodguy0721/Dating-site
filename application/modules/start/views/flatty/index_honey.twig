@@ -1,0 +1,215 @@
+{% if not is_pjax %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" />
+<head DIR="{{ _LANG.rtl }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {% helper seo.seo_tags('robots') %}
+
+    <base href="{{ site_root }}" />
+
+    <link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/honey/styles/font-awesome.css" type="text/css" />
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/honey/styles/bootstrap-{{ _LANG.rtl }}.css" type="text/css" />
+	<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/honey/styles/style-{{ _LANG.rtl }}.css" type="text/css" />
+{% endif %}
+
+    {% helper seo.seo_tags('title') %}
+    {% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+
+    <script>
+        var site_rtl_settings = '{{ _LANG.rtl }}';
+        var is_pjax = parseInt('{{ is_pjax }}');
+        var js_events = {% helper json.json_encode(js_events) %};
+        var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+    </script>
+
+{% if not is_pjax %}
+	<script>
+		var site_url = '{{ site_url }}';
+		var img_folder = '{{ img_folder }}';
+		var site_error_position = 'center';
+		var use_pjax = 0;
+		var pjax_container = '#pjaxcontainer';
+	</script>
+
+    {% helper utils.jscript('', 'jquery.js') %}
+    {% helper utils.jscript('', 'jquery.pjax.js') %}
+    {% helper utils.jscript('', 'functions.js') %}
+    {% helper utils.jscript('', 'loading.js') %}
+    {% helper utils.jscript('', 'errors.js') %}
+
+	{#% helper theme.js(load_type) %#}
+
+    {% helper utils.jscript('', 'loading_content.js') %}
+
+    {% helper seo_advanced.seo_traker('top') %}
+</head>
+<body>
+
+    {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+    <div id="pjaxcontainer" class="hp100">
+        {% endif %}
+
+        <script type="text/javascript">
+            $.pjax.defaults.version = 'default';
+            var messages = {% helper json.json_encode(_PREDEFINED) %};
+            var alerts;
+            var notifications;
+
+            /*new pginfo({messages: messages});
+            $(function(){
+                alerts = new Alerts();
+                notifications = new Notifications();
+            });*/
+        </script>
+
+
+        <div class="b-header">
+            <div class="container">
+                <div class="row">
+                    <div class="b-header__topline">
+                        <div class="col-sm-6">
+                            <div class="b-header__logo">
+                                <a href="{{ site_url }}">
+                                    <p class="b-header__logo-text">DATING SITE</p>
+{#                                    <img src="{{ site_root }}{{ logo_settings.path }}" border="0"
+                                         alt="{% helper seo.seo_tags_default('header_text') %}"
+                                         width="{{ logo_settings.width }}"
+                                         height="{{ logo_settings.height }}" id="logo">#}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="b-header__topnav">
+                                {% helper users.users_lang_select({type: 'menu', template: 'summer'}) %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                        <div class="b-header__message">
+                            <h2>{% helper lang.l('text_promo', 'start') %}</h2>
+                            <p>{% helper lang.l('text_promo_second', 'start') %}</p>
+                            <p>
+                                <a class="btn btn-primary btn-lg" href="{% helper seo.seolink('users', 'registration') %}" data-bind="signup">
+                                    {% helper lang.l('btn_register', 'start') %}
+                                </a>
+                                <a class="btn btn-secondary btn-lg" href="{% helper seo.seolink('users', 'login_form') %}" data-bind="login">
+                                    {% helper lang.l('btn_login', 'start') %}
+                                </a>
+                            </p>
+                            <p>
+                                {% helper users_connections.show_social_networking_login() %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-header -->
+
+        <div class="b-afterheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <p>{% helper lang.l('text_promo_description', 'start') %}</p>
+                        <p>
+                            <a class="btn-getapp btn-getapp_white btn-getatpp_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.pilotgroup.pgdatingcore"></a>
+                            <a class="btn-getapp btn-getapp_white btn-getatpp_ios" target="_blank" href="https://itunes.apple.com/us/app/soulcompanion.net-mobile/id784390992"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-afterheader -->
+
+        <div class="b-features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="b-features__item">
+                            <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/honey/images/b-features_likeme.png" alt=""></div>
+                            <h3 class="b-features__title">{% helper lang.l('features_likeme', 'start') %}</h3>
+                            <p>{% helper lang.l('features_likeme_txt', 'start') %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="b-features__item">
+                            <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/honey/images/b-features_nearest.png" alt=""></div>
+                            <h3 class="b-features__title">{% helper lang.l('features_nearest', 'start') %}</h3>
+                            <p>{% helper lang.l('features_nearest_txt', 'start') %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="b-features__item">
+                            <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/honey/images/b-features_chats.png" alt=""></div>
+                            <h3 class="b-features__title">{% helper lang.l('features_chats', 'start') %}</h3>
+                            <p>{% helper lang.l('features_chats_txt', 'start') %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-features -->
+
+        <div class="b-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="b-mobile__img">
+                            <img class="img-responsive" src="{{ site_root }}uploads/themes-fixed/honey/images/b-mobile.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="b-mobile__text">
+                            <h2>{% helper lang.l('mobile_app_title', 'start') %}</h2>
+                            <p>{% helper lang.l('mobile_app_txt', 'start') %}</p>
+                            <p>
+                                <a class="btn-getapp btn-getapp_black btn-getatpp_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.pilotgroup.pgdatingcore"></a>
+                                <a class="btn-getapp btn-getapp_black btn-getatpp_ios" target="_blank" href="https://itunes.apple.com/us/app/soulcompanion.net-mobile/id784390992"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-mobile -->
+
+        <!-- b-registration -->
+
+        <div class="b-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="{{ mobile_url }}" class="btn_tnl" data-bind="mobile">
+                            {% helper lang.l('mobile_version', 'mobile') %}
+                        </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="b-footer__copy">
+                            Site created using <a href="http://www.datingpro.com/dating-software/">PG Dating Pro</a> — powerful dating software. <a class="btn btn-sm btn-secondary" href="http://marketplace.datingpro.com/">Get started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- b-footer -->
+
+        {% helper users.users_lang_select({type: 'menu', template: 'sidebox'}) %}
+        <script src="{{ site_root }}uploads/themes-fixed/honey/js/controls.js"></script>
+    </div><!-- pjaxcontainer -->
+
+    {% helper cookie_policy.cookie_policy_block() %}
+    {% helper languages.lang_editor() %}
+    {% helper seo_advanced.seo_traker('footer') %}
+    {% helper start.demo_panel({type: 'user', place: 'bottom'}) %}
+
+</body>
+</html>

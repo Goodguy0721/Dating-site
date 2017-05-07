@@ -1,0 +1,11 @@
+<div class="form-group">
+    <label for="" class="col-xs-12 tali">
+        {% helper lang.l('reg_subscriptions', 'subscriptions') %}:
+    </label>
+    <div class="col-sm-6">
+        {% for key, item in subscriptions_list %}
+            <input {% if item.subscribed %}checked{% endif %} type="checkbox" name="user_subscriptions_list[]" value="{{ item.id }}" id="sub{{ item.id }}">
+            {% helper lang.l(item.name_i, 'subscriptions') %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div id="dashboard" class="dashboard">
+    <div class="dashboard__content x_panel">
+        <div class="">
+            <div class="x_title row" data-action="top">
+                <h2>{% helper lang.l('header_dashboard', 'dashboard') %}</h2>
+            </div>
+            <div class="x_content">
+                <ul class="list">
+                    {% for event in events %}
+                        <li data-action="event" data-id="{{event.id}}" id="event-block-{{event.id}}">
+                            <div class="panel panel-custom">
+                                <div class="panel-heading">
+                                    <span class="pull-right dashboard__date">
+                                        {% helper date_format.tpl_date_format(event.date_modified, '%Y-%m-%d') %}</span>
+                                    <h5 class="dashboard__title">
+                                        <a href="{{ site_url }}{{ event.data.dashboard_action_link }}" target="_blank">
+                                            {% helper lang.l(event.data.dashboard_header, event.data.type.module) %}</a>
+                                    </h5>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-body">
+                                    {{ event.data.content }}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="scroll-top" class="dashboard__scroll-top">
+        <i class="fa fa-chevron-up pointer"></i>
+    </div>
+    {% helper utils.jscript('dashboard', 'dashboardAdmin.js') %}
+    <script>
+        $(function () {
+            new dashboardAdmin({
+                siteUrl: site_url,
+                id: {
+                    dashboard: '#dashboard',
+                    topNav: '#top_nav',
+                    scrollTop: '#scroll-top',
+                    eventBlock: '#event-block-'
+                },
+                cssClass: {
+                    dashboardAction: '.js-dashboard-action',
+                },
+                dataAction: {
+                    event: '[data-action="event"]',
+                    top: '[data-action="top"]'
+                }
+            });
+            
+            {% if DEMO_MODE %}
+                $('.dashboard__content').off().on('click', function(){
+                    sendAnalytics('dashboard', 'wall');
+                });
+            {% endif %}
+            
+        });
+    </script>
+</div>

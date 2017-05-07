@@ -1,0 +1,72 @@
+{% include '@app/header.twig' %}
+<div class="news-content clearfix">
+        <div class="search-header">
+            <div class="title col-xs-12 col-sm-6 col-md-9 col-lg-9">
+                {% helper seo.seo_tags('header_text') %}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="news news-item">
+                {% if data.img %}
+                    {% if data.media.img.thumbs.big %}
+                        {% helper text_news_photo = lang.l('text_news_photo', 'news', '', 'button', data) %}
+                        <img src="{{ data.media.img.thumbs.big }}" align="left" hspace="5" vspace="5" class="img-rounded" alt="{{ text_news_photo }}" title="{{text_news_photo }}" />
+                    {% endif %}
+                {% endif %}
+                <span class="date">
+                    {% helper date_format.tpl_date_format(data.date_add, page_data.date_format) %}
+                </span><br>
+
+                {% if not data.content %}
+                    <span class="annotation">{{ data.annotation }}</span><br>
+                {% else %}
+                    <span class="annotation">{{ data.content }}</span><br>
+                {% endif %}
+                {% if data.video_content.embed %}
+                    {{ data.video_content.embed }}<br>
+                {% endif %}
+                <div class="mt10 clearfix">
+                    <div class="links fleft">
+                        {% if data.feed_link %}
+                            {% helper lang.l('feed_source', 'news') %}:
+                            <a href="{{ data.feed_link }}">{{ data.feed.title }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% helper banners.show_banner_place('banner-980x90') %}
+            {% if auth_type == 'user' %}
+            <div class="show-comments-block">
+                {% helper comments.comments_form({
+                    'gid': 'news',
+                    'id_obj': data.id,
+                    'hidden': 0,
+                    'count': data.comments_count,
+                    'view': 'button'
+                }) %}
+            </div>
+            {% endif %}
+            <div class="fleft mtb20">
+                <a href="{% helper seo.seolink('news', 'index') %}">
+                    {% helper lang.l('link_back_to_news', 'news') %}
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                {% helper news.newsRelated({
+                    'count': '10'
+                }) %}
+                <div class="mt10">
+                    {% helper banners.show_banner_place('banner-320x250') %}
+                    {% helper banners.show_banner_place('banner-320x75') %}
+                </div>
+        </div>
+</div>
+
+{% helper social_networking.show_social_networks_like() %}
+{% helper social_networking.show_social_networks_share() %}
+{% helper social_networking.show_social_networks_comments() %}
+
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

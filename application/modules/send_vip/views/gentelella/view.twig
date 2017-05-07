@@ -1,0 +1,92 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_send_vip_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('admin_view_data', 'send_vip') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_username', 'send_vip') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_sender_username', 'send_vip') %}</th>
+                        <th class="column-title">{% helper lang.l('send_vip_membership_name', 'send_vip') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_transfer_fee', 'send_vip') %}</th>
+                        <th class="column-title">{% helper lang.l('admin_view_status', 'send_vip') %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td class="first">{{ item.date_created }}</td>
+                        <td class="">{{ item.user }}</td>
+                        <td class="">{{ item.sender_user }}</td>
+                        <td class="">{{ item.membership_name }}</td>
+                        <td class="">{{ item.transfer_fee }}</td>
+                        <td class="" id="status_{{ item.rand }}">
+                        {% set status = item.status %}
+                        {% if status == "waiting" %}
+                            <font class="">{% helper lang.l("send_vip_waiting", "send_vip") %}</font>
+                        {% elseif status == "approved" %}
+                            <font class="success">{% helper lang.l("send_vip_approved", "send_vip") %}</font>
+                        {% elseif status == "declined" and item.declined_by_sender == '1' %}
+                            <font class="error">{% helper lang.l("send_vip_declined_by_sender", "send_vip") %}</font>
+                        {% else %}
+                            <font class="error">{% helper lang.l("send_vip_declined_by_user", "send_vip") %}</font>
+                        {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('admin_view_no_data','send_vip') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1,2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

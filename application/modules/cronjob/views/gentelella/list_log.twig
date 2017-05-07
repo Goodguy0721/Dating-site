@@ -1,0 +1,94 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div id="actions" class="hide">
+          <div class="btn-group">
+            <a class="btn btn-primary" href="{{ site_url }}admin/cronjob/delete_log/{{ cron_data.id }}">
+              {% helper lang.l('link_clear_log', 'cronjob') %}</a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ site_url }}admin/cronjob/delete_log/{{ cron_data.id }}">
+                  {% helper lang.l('link_clear_log', 'cronjob') %}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table">
+            <thead>
+                <tr>
+                    <th class="column-title">{% helper lang.l('field_date_execute', 'cronjob') %}</th>
+                    <th class="column-title">{% helper lang.l('field_output', 'cronjob') %}</th>
+                    <th class="column-title">{% helper lang.l('field_errors', 'cronjob') %}</th>
+                    <th class="column-title">{% helper lang.l('field_execution_time', 'cronjob') %}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if logs %}
+                {% for item in logs %}
+                <tr>
+                    <td>{{ item.date_add|date('d-m-Y H:i:s') }}</td>
+                    <td>{{ item.output }}</td>
+                    <td>{{ item.errors }}</td>
+                    <td>{{ item.execution_time }} {% helper lang.l('crontab_sec', 'cronjob') %}</td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% include '@app/pagination.twig' %}
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_log', 'cronjob') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': []
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

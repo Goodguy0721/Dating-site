@@ -1,0 +1,430 @@
+@mixin rounded-outer($backing: transparent) {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $backing;
+    border: 1px solid $delimiter_color;
+    margin-bottom: 10px;
+}
+.banner-unsupported {
+    div{
+        div{
+            background-color: transparent !important; 
+            border: none !important; 
+            padding: 0 !important; 
+        }
+    }    
+}
+#banner-place-banner-980x90 {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px;
+    a {
+        display: block;
+        img {
+            max-height: 90px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+#banner-place-bottom-banner {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px;
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 90px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-banner-185x75 {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 75px;
+            max-width: 185px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-banner-185x155-place {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+    }
+}
+
+#banner-place-banner-185x155 {
+    @include rounded-outer($content_bg);
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 155px;
+            max-width: 185px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-top-banner {
+    @include rounded-outer($content_bg);
+    margin: 20px auto;
+    a {
+        display: block;
+    }
+}
+
+#banner-place-top-banner {
+    @include rounded-outer($content_bg);
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 90px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-left-top-banner {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    float: $left;
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 90px;
+            max-width: 485px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-right-top-banner {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    float: $right;
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 90px;
+            max-width: 485px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-banner-320x75 {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+    }
+}
+
+#banner-place-banner-320x75 {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 75px;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+#banner-place-banner-320x250-place {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+    }
+}
+
+#banner-place-banner-320x250 {
+    @include rounded-outer($content_bg);
+    margin: 0 0 10px; 
+    a {
+        display: block;
+        img {
+            border: none !important; 
+            padding: 0 !important;
+            max-height: 250px;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+div.banners-content-block {
+    padding: 0 15px;
+}
+
+div.banners-content-block .table td {
+    vertical-align: middle;
+    padding: 5px;
+}
+
+a.btn-add-banners {
+    display: inline;
+    padding: 10px;    
+}
+
+div.banners-filter-row {
+    margin: 10px 0px;
+}
+
+div.banners-edit_block {
+    line-height: 16pt;
+}
+
+.banners-hide-table{
+    display: none;
+}
+
+div.jqplot-target {
+    overflow-y: hidden;
+    height: 335px;
+    min-width: 700px;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+.jqplot-event-canvas{
+	width:100%;
+}
+.banners-statistic-nav {
+    
+    & > li {
+        &.active {
+            a {
+                background: rgba(0, 0, 0, 0.1);
+                color: $font_color;
+                &:hover,
+                &:focus {
+                    background: rgba(0, 0, 0, 0.2);
+                    color: $font_color;
+                }
+            }
+        }
+        a {
+            &:hover,
+            &:focus {
+                background: rgba(0, 0, 0, 0.05);
+            }
+        }
+        & > a {
+            padding: 10px 15px;
+        }
+    }
+}
+
+.button-activate-banner {
+    margin: 30px 0;
+}
+
+.button-activate-banner > .btn-md {
+    width: 20%;
+}
+
+.banner {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.my-banners-header-block {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    font-weight: bold;
+    padding-bottom: 30px;
+    
+}
+.my-banner-list { 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 20px 0 40px;
+    &:last-of-type {
+        border: 0;
+        padding-bottom: 20px;
+    }
+    .banner-name {
+        font-weight: bold;
+    }
+    .action-block {
+        float: $right;
+        a {
+            padding: 0 5px;
+        }
+    }
+}
+.banner-list-empty {
+    border: 0;
+    padding: 20px;
+    text-align: center;
+}
+.activate-banner {
+    &>div {
+        padding: 20px;        
+    }    
+    &:last-of-type {
+        border: 0;
+        padding-bottom: 0;
+    }
+    .banner-name {
+        font-weight: bold;
+    }
+    .action-block {
+        float: $right;
+        a {
+            padding: 0 5px;
+        }
+    }
+    .link_color {
+        color: $link_color;
+    }
+    .positions {
+        padding: 15px 0;
+    }
+    .item-description {
+        display: none;
+    }
+}
+.banner-price {
+    border-top: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 20px 0;
+    font-weight: bold;
+}
+.my-statistic-list {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 10px 0 30px;
+    &:last-of-type {
+        border: 0;
+        padding-bottom: 0;
+    }
+    div {
+        padding-#{$left}: 20px;
+    }
+    &:hover,
+    &:focus {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    .item-description {
+        display: none;
+    }
+}
+.chart-block {
+    margin-bottom: 20px;
+    &.jqplot-target {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    &.day-type {
+        .jqplot-xaxis {
+            margin-bottom: -25px;
+        }
+    }
+    &.week-type {
+        .jqplot-xaxis {
+            canvas {
+                display: none;
+            }
+        }
+    }
+    .jqplot-yaxis {
+        margin-#{$left}: 20px;
+    }
+    .jqplot-table-legend {
+        margin-#{$right}: 30px;
+    }
+    
+}
+@media (max-width: 991px) {  
+    .banner-185x155-place,
+    .banner-185x75-place {
+        display: none;
+    }
+    #by_hours_div .jqplot-target{
+    	width:700px;
+    }
+}
+@media (max-width: 768px) {
+    .my-banners-header-block {
+        display: none;
+    }
+    .my-banner-list {
+        .action-block {
+            float: $left;
+            a {
+                padding: 20px 20px 20px 0;
+            }
+        }
+        .status {
+            i {
+                padding-#{$right}: 10px;
+            }
+        }
+    }
+    .activate-banner {
+        &>div {
+            padding: 5px;        
+        } 
+        .item-description {
+            display: block;
+            float: $left;
+        }
+        .positions {
+            padding: 5px;
+        }
+    }
+    .my-statistic-list {
+        .item-description {
+            display: block;
+            float: $left;
+        }
+    }
+    .jqplot-grid-canvas,.jqplot-series-canvas{
+        width: 100%;
+        height: 100%;
+    }
+    .jqplot-target, canvas.jqplot-series-canvas{
+        top: -3px !important;
+        height: 93%;
+    }
+    .container-jqplot{
+        width:100%;
+        overflow-x:scroll;
+    }
+    .chart-block {
+        .jqplot-yaxis{
+            margin-left: 0;
+        }
+    }
+}

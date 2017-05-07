@@ -1,0 +1,313 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+{% if data.id %}
+    {% helper depend = utils.depends('seo_advanced') %}
+    {% if depend['seo_advanced'] %}
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if section_gid=='text' %}active{% endif %}"><a href="{{ site_url }}admin/news/edit/{{ data.id }}/text">{% helper lang.l('filter_section_text', 'news') %}</a></li>
+                <li class="{% if section_gid=='seo' %}active{% endif %}"><a href="{{ site_url }}admin/news/edit/{{ data.id }}/seo">{% helper lang.l('filter_section_seo', 'seo') %}</a></li>
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}
+    {% if section_gid == 'text' %}
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_name', 'news') %} *:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% for lang_id, lang_item  in languages %}
+                            {% set name = 'name_' ~ lang_id %}
+                            {% if lang_id == current_lang_id %}
+                                <input type="text" name="name_{{ lang_id }}" value="{{ data[name]|escape }}" class="form-control"
+                                   lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}" />
+                            {% else %}
+                                <input type="hidden" name="name_{{ lang_id }}" value="{{ data[name]|escape }}" class="form-control"
+                                   lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    {% for lang_id, item in languages %}
+                                        {% set name = 'name_' ~ lang_id %}
+                                        {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <input type="text" name="name_{{ lang_id }}" class="form-control"
+                                                       value="{{ data[name]|escape }}">
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_gid', 'news') %} *:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="gid" value="{{ data.gid|escape }}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_news_lang', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="id_lang" class="form-control">
+                            {% for item in languages %}
+                                <option {% if item.id==data.id_lang %}selected{% endif %} value="{{ item.id }}">
+                                    {{ item.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_icon', 'news') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="news_icon" class="form-control">
+                        {% if data.img %}
+                        <br><img src="{{ data.media.img.thumbs.small }}"  hspace="2" vspace="2" />
+                        <br><input type="checkbox" name="news_icon_delete" value="1" id="uichb" class="flat">
+                        <label for="uichb">{% helper lang.l('field_icon_delete', 'news') %}</label>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_video', 'news') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="news_video" class="form-control">
+                        {% if data.video %}
+                            <br>{% helper lang.l('field_video_status', 'news') %}:
+                            {% if data.video_data.status=='end'  and  data.video_data.errors %}
+                                <font color="red">{% for item in data.video_data.errors %}{{ item }}<br>{% endfor %}</font>
+                            {% elseif data.video_data.status=='end' %}    <font color="green">{% helper lang.l('field_video_status_end', 'news') %}</font><br>
+                            {% elseif data.video_data.status=='images' %}    <font color="yellow">{% helper lang.l('field_video_status_images', 'news') %}</font><br>
+                            {% elseif data.video_data.status=='waiting' %} <font color="yellow">{% helper lang.l('field_video_status_waiting', 'news') %}</font><br>
+                            {% elseif data.video_data.status=='start' %} <font color="yellow">{% helper lang.l('field_video_status_start', 'news') %}</font><br>
+                            {% endif %}
+                            {% if data.video_content.thumbs.small %}
+                            <br><img src="{{ data.video_content.thumbs.small }}"  hspace="2" vspace="2" />
+                            {% endif %}
+                            <br><input type="checkbox" name="news_video_delete" value="1" id="uvchb" class="flat"><label for="uvchb">{% helper lang.l('field_video_delete', 'news') %}</label>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_annotation', 'news') %} *:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% for lang_id, lang_item  in languages %}
+                            {% set name = 'annotation_' ~ lang_id %}
+                            {% if lang_id == current_lang_id %}
+                                <textarea name="annotation_{{ lang_id }}" class="form-control">{{ data[name]|escape }}</textarea>
+                            {% else %}
+                                <input type="hidden" name="annotation_{{ lang_id }}" value="{{ data[name]|escape }}" class="form-control"
+                                   lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    {% for lang_id, item in languages %}
+                                        {% set name = 'annotation_' ~ lang_id %}
+                                        {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <textarea name="annotation_{{ lang_id }}" class="form-control">{{ data[name]|escape }}</textarea>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <i>{% helper lang.l('field_annotation_text', 'news') %}</i>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-xs-12 col-sm-offset-3" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="news_lang" class="nav nav-tabs bar_tabs" role="tablist">
+                    {% for lang_id, item in languages %}
+                        <li{% if lang_id == current_lang_id %} class="active"{% endif %} id="news_lang_{{ lang_id }}">
+                            <a href="{{ site_url }}admin/news/edit/{{ data.id }}" data-id="{{ lang_id }}">
+                                {{ item.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_content', 'news') %} *:</label>
+                    <div class="col-sm-9 col-xs-12" id="news_content">
+                    {% for lang_id, lang_item in languages %}
+                        <div id="news_content_{{ lang_id }}" class="news_content {% if lang_id != current_lang_id %}hide{% endif %}">{{ data.content_fck[lang_id] }}</div>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', "", 'button') %}" class="btn btn-success">
+                        <a class="btn btn-default" href="{{ site_url }}admin/news">{% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+            <script>
+                $(function(){
+                    $('#news_lang').find('li a').bind('click', function(){
+                        var lang_id = $(this).data('id');
+                        $('#news_lang').find('li').removeClass('active');
+                        $('#news_content').find('.news_content').addClass('hide');
+                        $('#news_lang_'+lang_id).addClass('active');
+                        $('#news_content_'+lang_id).removeClass('hide');
+                        return false;
+                    });
+                });
+            </script>
+            <div class="clearfix"></div>
+        </div>
+        {% elseif section_gid == 'seo' %}
+            {% helper depend = utils.depends('seo_advanced') %}
+            {% if depend['seo_advanced'] %}
+                {% for key, section in seo_fields %}
+                <div class="x_content">
+                    <form method="post" action="{{ data.action|escape }}" name="seo_{{ section.gid }}_form"
+                      class="form-horizontal form-label-left">
+                    {% if section.tooltip %}
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                {{ section.tooltip }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for field in section.fields %}
+                        {% set field_gid = field.gid %}
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">
+                              {{ field.name }}: </label>
+                        {% if field.type == 'checkbox' %}
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="hidden" name="{{ section.gid }}[{{ field_gid }}]" value="0">
+                                <input type="checkbox" name="{{ section.gid }}[{{ field_gid }}]" value="1" {% if seo_settings[field_gid] %}checked{% endif %} class="flat">
+                            </div>
+                        {% elseif field.type == 'text' %}
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                {% for lang_id, lang_item  in languages %}
+                                    {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                    {% if lang_id == current_lang_id %}
+                                        <input type="text" name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                               value="{{ seo_settings[section_gid][field_gid]|escape }}" class="form-control">
+                                    {% else %}
+                                        <input type="hidden" name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                               value="{{ seo_settings[section_gid][field_gid]|escape }}" class="form-control">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel">
+                                    <a class="panel-heading" role="tab" id="heading{{ field_gid }}" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ field_gid }}" aria-expanded="false" aria-controls="collapse{{ field_gid }}">
+                                        <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                    </a>
+                                    <div id="collapse{{ field_gid }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ field_gid }}">
+                                        <div class="panel-body">
+                                            {% for lang_id, item in languages %}
+                                                {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                {% if lang_id != current_lang_id %}
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12">
+                                                        <input type="text" name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                                               value="{{ seo_settings[section_gid][field_gid]|escape }}" class="form-control">
+                                                    </div>
+                                                </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elseif field.type == 'textarea' %}
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                {% for lang_id, lang_item  in languages %}
+                                    {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                    {% if lang_id == current_lang_id %}
+                                        <textarea name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                                  class="form-control">{{ seo_settings[section_gid][field_gid]|escape }}</textarea>
+                                    {% else %}
+                                        <input type="hidden" name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                               value="{{ seo_settings[section_gid][field_gid]|escape }}" class="form-control">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel">
+                                    <a class="panel-heading" role="tab" id="heading{{ field_gid }}" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ field_gid }}" aria-expanded="false" aria-controls="collapse{{ field_gid }}">
+                                        <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                    </a>
+                                    <div id="collapse{{ field_gid }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ field_gid }}">
+                                        <div class="panel-body">
+                                            {% for lang_id, item in languages %}
+                                                {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                {% if lang_id != current_lang_id %}
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12">
+                                                        <textarea name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]" class="form-control">{{ seo_settings[section_gid][field_gid]|escape }}</textarea>
+                                                    </div>
+                                                </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                            <div class="col-sm-9 col-xs-12 col-sm-offset-3"><i>{{ field.tooltip }}</i></div>
+                        </div>
+                    {% endfor %}
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                <input type="submit" name="btn_save_{{ section.gid }}" value="{% helper lang.l('btn_save', 'start', "", 'button') %}" class="btn btn-success">
+                                <input type="hidden" name="btn_save" value="1">
+                                <a class="btn btn-default" href="{{ site_url }}admin/news">{% helper lang.l('btn_cancel', 'start') %}</a>
+                            </div>
+                        </div>
+                    </form>
+                <div class="clearfix"></div>
+                </div>
+                {% endfor %}
+            {% endif %}
+    {% endif %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

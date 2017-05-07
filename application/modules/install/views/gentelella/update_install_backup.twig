@@ -1,0 +1,118 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+			<div class="x_title h4">
+				Module info
+			</div>
+			<div class="x_content form-horizontal form-label-left">
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Module:</b></label>
+						<div class="col-sm-9 col-xs-12">{{ module.module_gid }}</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Description:</b></label>
+						<div class="col-sm-9 col-xs-12"><b>{{ module.module_name }}</b><br>{{ module.module_description }}</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Version:</b></label>
+						<div class="col-sm-9 col-xs-12">{{ module.version }}</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Added:</b></label>
+						<div class="col-sm-9 col-xs-12">{{ module.date_add }}</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Latest update:</b></label>
+						<div class="col-sm-9 col-xs-12">
+							{% if module.date_update != '0000-00-00 00:00:00' %}
+								{{ module.date_update }}
+							{% else %}
+								No updates
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Changes since latest update:</b></label>
+						<div class="col-sm-9 col-xs-12">
+								{% if count(files_changes) > 0 %}
+									{% for item in files_changes %}
+									{{ item.date }} {{ item.file }}<br>
+									{% endfor %}
+								{% else %}
+									no changed files
+								{% endif %}
+						</div>
+				</div>
+				<div class="form-group">
+						<label class="control-label col-sm-3 col-xs-12"><b>Backup:</b></label>
+						<div class="col-sm-9 col-xs-12">
+								<a class="btn btn-primary" href="{{ site_url }}admin/install/generate_module_files_backup/{{ module.module_gid }}">Files backup</a><br>
+								<a class="btn btn-primary" href="{{ site_url }}admin/install/generate_install_module_settings/{{ module.module_gid }}">Module settings (langs & settings)</a>
+						</div>
+				</div>
+				<div class="x_title h4">Update info</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Description:</b></label>
+							<div class="col-sm-9 col-xs-12"><b>{{ update.update_name }}</b><br>{{ update.update_description }}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Old version:</b></label>
+							<div class="col-sm-9 col-xs-12">{{ update.version_from }}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>New version:</b></label>
+							<div class="col-sm-9 col-xs-12">{{ update.version_to }}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Files to be updated:</b></label>
+							<div class="col-sm-9 col-xs-12">
+								{% for item in update.files %}
+								{{ item.2 }}<br>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Base update:</b></label>
+							<div class="col-sm-9 col-xs-12">{% if update.base_update %}Yes{% else %}No{% endif %}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Languages update:</b></label>
+							<div class="col-sm-9 col-xs-12">{% if update.lang_update %}Yes{% else %}No{% endif %}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-xs-12"><b>Dependencies:</b></label>
+							<div class="col-sm-9 col-xs-12">
+								{% if count(update.dependencies) > 0 %}
+									{% for key, item in update.dependencies %}
+										{{ key }} V{{ item.version }}
+										{% if item.installed_version == 0 %}
+											<font style="color: red">(Not installed)</font>
+										{% else %}
+											<font {% if item.installed_version < item.version %} style="color: red"{% endif %}>
+												(V{{ item.installed_version }} installed)
+											</font>
+										{% endif %}<br>
+									{% endfor %}
+								{% else %}
+									No dependencies
+								{% endif %}
+							</div>
+						</div>
+					</div>
+          <div class="clearfix"></div>
+					<div class="ln_solid"></div>
+					<div class="form-group">
+						<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+				{% if update.allow_to_install %}
+							<a href="{{ site_url }}admin/install/module_update/{{ module.module_gid }}/{{ update_path }}"
+								 class="btn btn-success">Install update</a>
+				{% endif %}
+							<a class="btn btn-default" href="{{ site_url }}admin/install/updates">
+								{% helper lang.l('btn_cancel', 'start') %}</a>
+						</div>
+					</div>
+		</div>
+</div>
+
+{% include '@app/footer.twig' %}

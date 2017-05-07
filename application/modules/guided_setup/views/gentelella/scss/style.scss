@@ -1,0 +1,142 @@
+.guide_link {
+    text-align: center; 
+    padding: 15px 0px; 
+    border: 2px solid #E6E9ED;  
+    border-top: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.guided-popup {
+    .modal-body {
+        padding: 0;
+        .left-block {
+            padding: 0;
+        }
+        .right-block {
+            padding: 0;
+            background-color: $html_bg;
+        }
+        
+        .nav-buttons {
+            padding: 15px 0;
+            background-color: #fff;
+            border-top: 1px solid #e6e9ed;
+            
+            a {
+                margin-bottom: 0 !important;
+            }
+        }
+        
+        .guided-popup-title {
+            background-color: #fff;
+            border-bottom: 1px solid #e6e9ed;
+            
+            .dropdown-menu {
+                height: 300px;
+                overflow-y: scroll;
+            }
+            
+            .dropdown-toggle a {
+                color: $link_color;
+            }
+            
+            .fa-question-circle {
+                color: $input_main_btn;
+                cursor: pointer;
+            }
+        }
+        
+        #mobile_guided_nav {
+            top: -18px;
+            
+            .guided-current-page {
+                background-color: #f5f5f5;
+                color: #262626;
+            }
+        }
+        
+        .iframe-block {
+            height: 444px;
+        }
+        
+        #guided_content {
+            height: 100%;
+            overflow-y: auto;            
+        }
+        
+        #guided_loading_block {
+            position: absolute; 
+            z-index: 1500; 
+            right: 50%; 
+            top: 50%;
+        }
+    }
+    
+    .modal-footer {
+        display: none;
+    }
+    
+    #guided-navigation {
+        background-color: $popup_bg;
+        margin-bottom: 0;
+        overflow-y: auto;
+        height: 540px;
+        
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #213242;
+            cursor: pointer;
+            color: $contrast_color !important;
+            font-weight: 500;
+        }
+        
+        .guided-current-page {
+            border-right: 5px solid $input_main_btn;
+            background: rgba(255, 255, 255, 0.05) none repeat scroll 0 0;
+        }
+        
+        .fa-check {
+            color: $input_main_btn;
+        }
+    }
+    
+    .popover-footer {
+        padding: 9px 14px;
+        
+        #hide_guided_popover {
+            text-decoration: underline;
+            cursor: pointer;
+            line-height: 32px;
+        }
+    }
+    
+    .guided-indicator-block {
+        background-color: $popup_bg;;
+        padding: 15px;
+        border-bottom: 1px solid #213242;
+        cursor: pointer;
+        color: $contrast_color !important;
+        font-weight: 500;
+        opacity: 0.8;
+    }
+    
+    .ui-widget-header {
+        background-color: $input_main_btn;
+        border-color: $input_main_btn;
+        background-image: none;
+    }
+    
+    .ui-widget-content {
+        background-image: none;
+        background-color: unset;
+    }
+
+    .ui-progressbar {
+        height: 0.7em;
+        
+        .ui-progressbar-value {
+            margin: 0;
+        }
+    }
+}

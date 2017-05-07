@@ -1,0 +1,90 @@
+{% if dynamic_block_users_view == 'big_thumbs' %}
+    {% set block_class='big' %}
+    {% set thumb_name='great' %}
+{% elseif dynamic_block_users_view == 'medium_thumbs' %}
+    {% set block_class='medium' %}
+    {% set thumb_name='big' %}
+{% elseif dynamic_block_users_view == 'small_thumbs' %}
+    {% set block_class='small' %}
+    {% set thumb_name='middle' %}
+{% elseif dynamic_block_users_view == 'small_thumbs_w_descr' %}
+    {% set block_class='small w-descr' %}
+    {% set thumb_name='middle' %}
+{% elseif dynamic_block_users_view == 'carousel' %}
+    {% set block_class='small' %}
+    {% set thumb_name='middle' %}
+{% elseif dynamic_block_users_view == 'carousel_w_descr' %}
+    {% set block_class='small w-descr' %}
+    {% set thumb_name='middle' %}
+{% else %}
+    {% set block_class='medium' %}
+    {% set thumb_name='big' %}
+{% endif %}
+<h2 class="text-overflow" title="{{ dynamic_block_users_title|e }}">
+    {{ dynamic_block_users_title }}
+</h2>
+{% if dynamic_block_users_view == 'carousel' or dynamic_block_users_view == 'carousel_w_descr' %}
+    {% helper users.users_carousel({
+        'users': dynamic_block_users,
+        'scroll': 'auto',
+        'class': block_class,
+        'thumb_name': thumb_name
+    }) %}
+{% else %}
+    <div class="user-gallery {{ block_class }}">
+        {% for item in dynamic_block_users %}
+            <div class="col-md-3 item">
+                <div class="user">
+                    <div class="photo">
+                        {% set text_user_logo %}
+                            {% helper lang.l('text_user_logo', 'users', '', 'button', item) %}
+                        {% endset %}
+                        <a href="{% helper seo.seolink('users', 'view', item) %}">
+                            <img alt="{{ text_user_logo }}" title="{{ text_user_logo }}"
+                                 src="{{ attribute(item.media.user_logo.thumbs, thumb_name) }}"
+                                 class="img-responsive" />
+                        </a>
+                        <div class="info">
+                            <div class="text-overflow">
+                                <a href="{% helper seo.seolink('users', 'view', item) %}"
+                                   title="{{ item.output_name|e }}">
+                                    {{ item.output_name }}
+                                </a>, {{ item.age }}
+                            </div>
+                            {% if item.location %}
+                                <div class="text-overflow" title="{{ item.location|e }}">
+                                    {{ item.location }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="descr hide">
+                    <div>
+                        <a href="{% helper seo.seolink('users', 'view', item) %}">
+                            {{ item.output_name }}
+                        </a>, {{ item.age }}
+                    </div>
+                    {% if item.location %}
+                        <div>
+                            {{ item.location }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <div class="item empty">
+                {% helper lang.l('empty_search_results', 'users') %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<script>
+    $('.user-gallery').not('.w-descr')
+            .off('mouseenter', '.photo').on('mouseenter', '.photo', function () {
+        $(this).find('.info').stop().slideDown(100);
+    }).off('mouseleave', '.photo').on('mouseleave', '.photo', function () {
+        $(this).find('.info').stop(true).delay(100).slideUp(100);
+    });
+</script>

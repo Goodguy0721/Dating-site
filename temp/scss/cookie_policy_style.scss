@@ -1,0 +1,30 @@
+.mod-cookie-policy {
+    position: fixed; 
+    bottom: 20px; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000;
+}
+
+.mod-cookie-policy .container {
+    border-radius: 5px; 
+    border: 1px solid $delimiter_color; 
+    background: #fdfdf1; 
+    padding: 20px 40px;
+}
+
+.mod-cookie-policy > div {
+    position: relative;
+}
+
+.mod-cookie-policy > div p {
+    margin: auto; 
+    text-align: center;
+}
+
+.mod-cookie-policy i {
+    position: absolute; 
+    top: 5px; 
+    right: 10px;
+    cursor: pointer;
+}

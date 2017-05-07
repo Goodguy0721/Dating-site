@@ -1,0 +1,100 @@
+<form name="delete_user" class="form-horizontal form-label-right" id="delete_user_form"
+    action="{{ data.action }}" method="post" enctype="multipart/form-data"  >
+    <h5 class="" id="nickname_list">
+    {% for s in data.user_names %}
+        {{ s }}{% if not loop.last %},&nbsp;{% endif %}
+    {% endfor %}
+    </h5>
+    {% for item in data.user_ids %}
+        <input type="hidden" name="user_ids[]" value="{{ item|e }}">
+    {% endfor %}
+    {% if not data.deleted %}
+    <div class="form-group">
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <input type="radio" class="flat" name="action_user" value="block_user" id="block_user">
+        </div>
+        <label class="col-md-11 col-sm-11 col-xs-11">{% helper lang.l('link_deactivate_user', 'users') %}</label>
+    </div>
+    {% endif %}
+    <div class="form-group">
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <input type="radio" class="flat" name="action_user" value="delete_user" id="delete_user">
+        </div>
+        <label class="col-md-11 col-sm-11 col-xs-11">{% helper lang.l('delete', 'users') %}</label>
+    </div>
+    {% for key, item in callbacks_data %}
+    <div class="form-group">
+        <div class="col-md-1 col-sm-1 col-xs-12">
+            <input type="checkbox" class="flat" name="module[]" value="{{ item.callback_gid }}" {{ item.disabled_attr }}>
+        </div>
+        <label class="col-md-11 col-sm-11 col-xs-12">{{ item.name }}</label>
+    </div>
+    {% endfor %}
+
+    <!-- Buttons -->
+    {#    <div class="form-group">
+            <button type="submit" id="lie_delete" name="btn_confirm_del" class="btn btn-success" value="1" disabled>
+                {% helper lang.l('btn_confirm_del', 'users') %}</button>
+        </div>#}
+</form>
+
+<script type="text/javascript">
+    var user_deleted = '{{ data.deleted }}';
+    $(function() {
+        $('#lie_delete').off('click').on('click', function() {
+          $('#delete_user_form').trigger('submit');
+        });
+
+        if (user_deleted == 0) {
+            $('#block_user').bind('click', function(){
+                $('input[name^=module]').each(function(index,item) {
+                    $(item).iCheck('disable');
+                });
+                $('#lie_delete').prop('disabled', false);
+            });
+            $('#delete_user').bind('click', function(){
+                $('input[name^=module]').iCheck('enable');
+                $('input[value=users_delete]').iCheck('check');
+                if($('input[name^=module]:checked').val()){
+                    $('#lie_delete').prop('disabled', false);
+                }else{
+                    $('#lie_delete').prop('disabled', true);
+                }
+            });
+        }
+
+        $('input[name^=module]').bind('click', function(){
+            $('#delete_user').iCheck('check');
+            if($('input[name^=module]:checked').val()){
+                $('#lie_delete').prop('disabled', false);
+            }else{
+                $('#lie_delete').prop('disabled', true);
+            }
+        });
+
+        var nickname_list = $('#nickname_list').text();
+        var crop_list = nickname_list.substr(0,100)+' ...';
+        $('#nickname_list').text(crop_list);
+        $('#nickname_list').hover(
+            function(){$(this).text(nickname_list);},
+            function(){$(this).text(crop_list);
+        });
+
+        $('#delete_user_form input.flat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        }).on('ifClicked', function(event) {
+            $(this).trigger('click');
+        }).on('ifChanged', function(event) {
+            $(this).trigger('change');
+        }).on('ifChecked', function() {
+            $(this).attr('checked', 'checked');
+        }).on('ifUnchecked', function() {
+            $(this).removeAttr('checked');
+        }).on('ifDisabled', function() {
+            $(this).attr('disabled', 'disabled');
+        }).on('ifEnabled', function() {
+            $(this).removeAttr('disabled');
+        });
+    });
+</script>

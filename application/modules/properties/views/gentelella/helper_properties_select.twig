@@ -1,0 +1,11 @@
+<select name="{{properties_helper_data.name}}
+    {% if properties_helper_data.multi %}[]{% endif %}"
+    {% if properties_helper_data.multi %}multiple{% endif %}>
+    {% if properties_helper_data.empty_option %}<option value="0">...</option> {% endif %}
+    {% for key, item in properties_helper_data.options %}
+        <option value="{{key}}"
+            {% if properties_helper_data.selected.key == '1' %}selected{% endif %}>
+            {{item}}
+        </option>
+    {% endfor %}
+</select>

@@ -1,0 +1,17 @@
+.oauth-links ins a {
+    border: 1px solid $link_color;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px; 
+    text-align: center;
+    min-width: 30px;
+}
+
+.oauth-links ins a:hover {
+    background-color: $link_color;
+}
+
+.oauth-links ins a:hover > i {
+    color: #fff;
+}

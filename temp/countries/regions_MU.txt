@@ -1,0 +1,8 @@
+	2149	Surinam	-20.5097200	57.5052800	MU	20	0	0	Surinam	Surinam	Surinam	Surinam	Surinam	Surinam
+	2149	Souillac	-20.5166700	57.5166700	MU	20	0	0	Souillac	Souillac	Souillac	Souillac	Souillac	Souillac
+	2149	Saint Aubin	-20.4960000	57.5500000	MU	20	0	0	Saint Aubin	Сент-Обен	Saint Aubin	Saint Aubin	Saint Aubin	Saint Aubin
+	2149	Rivière des Anguilles	-20.4852800	57.5508300	MU	20	0	0	Rivière des Anguilles	Ривер-дез-Ангий	Rivière des Anguilles	Rivière des Anguilles	Rivière des Anguilles	Rivière des Anguilles
+	2149	Grand Bois	-20.4188900	57.5441700	MU	20	0	0	Grand Bois	Гран-Буа	Grand Bois	Grand Bois	Grand Bois	Grand Bois
+	2149	Chemin Grenier	-20.4872200	57.4655600	MU	20	0	0	Chemin Grenier	Шмен-Гренье	Chemin Grenier	Chemin Grenier	Chemin Grenier	Chemin Grenier
+	2149	Chamouny	-20.4822200	57.4661100	MU	20	0	0	Chamouny	Chamouny	Chamouny	Chamouny	Chamouny	Chamouny
+	2149	Camp Diable	-20.4627800	57.5788900	MU	20	0	0	Camp Diable	Camp Diable	Camp Diable	Camp Diable	Camp Diable	Camp Diable

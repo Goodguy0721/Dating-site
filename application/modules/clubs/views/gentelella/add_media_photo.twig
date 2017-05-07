@@ -1,0 +1,92 @@
+<div class="row mb20">
+  <h4 class="col-xs-12">{% helper lang.l('header_add_media', 'clubs') %}</h4>
+</div>
+
+<form id="photo_form" action="{{ data.action }}" method="post" enctype="multipart/form-data" name="save_form"
+      data-parsley-validate class="form-horizontal form-label-left" onsubmit="return">
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+      {% helper lang.l('field_files', 'media') %}:</label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <div>{% helper lang.l('field_max_photo_width_and_height', 'media') %}: {{ media_config.max_width }}x{{ media_config.max_height }}</div>
+      <div>{% helper lang.l('field_max_file_size', 'media') %}: {% if media_config.max_size %}{% helper utils.bytesFormat(media_config.max_size) %}{% endif %}</div>                    
+      <div>{% helper lang.l('field_file_types', 'media') %}: {{ media_config.file_formats_str }}</div>
+      <div id="dnd_upload" class="drag">
+        <div id="dndfiles" class="drag-area">
+          <div class="drag">
+            <p>{% helper lang.l('drag_photos', 'media') %}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="upload-btn">
+          <span data-role="filebutton">
+            <div>{% helper lang.l('btn_choose_file', 'start') %}</div>
+            <input class="form-control" type="file" name="multiUpload" id="multiUpload" accept="image/*;capture=camera" multiple />
+          </span>
+        </div>
+        &nbsp;<span id="attach-input-error"></span>
+        <div id="attach-input-warning"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_description', 'media') %}:</label>
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <textarea class="form-control" name="description">{{ media.description }}</textarea>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+      <button type="button" id="btn_upload" name="btn_save" class="btn btn-success">
+          {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+    </div>
+  </div>
+</form>
+
+<script type='text/javascript'>
+    $(function(){
+        loadScripts(
+            ["{% helper utils.jscript('', 'uploader.js', 'path') %}"],
+            function(){
+                var lang_data = {
+                        errors: {
+                            file_missing: "{% helper lang.l('error_file_missing', 'uploads') %}"
+                        }
+                    };
+                var allowed_mimes = {{ media_config.allowed_mimes|json_encode() }};
+                mu = new uploader({
+                    Accept: 'application/json',
+                    siteUrl: site_url,
+                    uploadUrl: 'admin/clubs/mediaUploadImage/{{ club.id }}',
+                    zoneId: 'dndfiles',
+                    fileId: 'multiUpload',
+                    formId: 'photo_form',
+                    sendType: 'file',
+                    sendId: 'btn_upload',
+                    messageId: 'attach-input-error',
+                    warningId: 'attach-input-warning',
+                    maxFileSize: '{{ media_config.max_size }}',
+                    mimeType:  allowed_mimes,
+                    lang: lang_data,
+                    cbOnQueueComplete: function(data) {
+                        location.href = site_url + 'admin/clubs/media/{{ club.id }}/photo';
+                    },
+                    createThumb: true,
+                    thumbWidth: 60,
+                    thumbHeight: 60,
+                    thumbCrop: true,
+                    thumbJpeg: false,
+                    thumbBg: 'transparent',
+                    fileListInZone: true,
+                    filebarHeight: 200,
+                    jqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}"
+               });
+            },
+            ['mu'],
+            {async: false}
+        );
+    });
+</script>

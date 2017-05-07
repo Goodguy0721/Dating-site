@@ -1,0 +1,42 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <div class="sitemap">
+        <div class="page-header">
+            <h1>
+                {% helper seo.seo_tags('header_text') %}
+            </h1>
+        </div>
+        {% set line = 1 %}
+
+        <div class="site-map-block row">
+            {% for key, item in blocks %}
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    {% include 'sitemap_level.twig' with {'list': item} %}
+                </div>
+                {% if loop.index is divisibleby(4) %}
+                </div><div class="site-map-block row">
+                {% endif %}
+
+            {% endfor %}
+        </div>
+
+
+    </div>
+    <div class="clr"></div>
+
+    <script type="text/javascript">
+        function equalHeight(group) {
+            tallest = 0;
+            group.each(function() {
+                thisHeight = $(this).height();
+                if(thisHeight > tallest) {
+                    tallest = thisHeight;
+                }
+            });
+            group.height(tallest);
+        }
+    </script>
+</div>
+
+{% include '@app/footer.twig' %}

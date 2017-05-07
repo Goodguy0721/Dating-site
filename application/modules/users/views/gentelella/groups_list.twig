@@ -1,0 +1,56 @@
+{% include '@app/header.twig' %}
+
+<div class="actions">
+	<ul>
+		<li>
+            <div class="l">
+                <a href="{{ site_url }}admin/users/group_edit">
+                    {% helper lang.l('link_add_group', 'users') %}
+                </a>
+            </div>
+        </li>
+	</ul>
+	&nbsp;
+</div>
+
+<table cellspacing="0" cellpadding="0" class="data" width="100%">
+<tr>
+	<th class="first">{% helper lang.l('field_group_gid', 'users') %}</th>
+	<th>{% helper lang.l('field_group_name', 'users') %}</th>
+	<th class="w150">{% helper lang.l('field_date_created', 'users') %}</th>
+	<th>{% helper lang.l('field_group_default', 'users') %}</th>
+	<th class="w100">&nbsp;</th>
+</tr>
+{% for item in groups %}
+<tr{% if loop.index is odd %} class="zebra"{% endif %}>
+	<td class="first">{{ item.gid }}</td>
+	<td><span class="js-select">{{ item.group_name }}</span></td>
+	<td class="center">{% helper date_format.tpl_date_format(item.date_created, page_data.date_format) %}</td>
+	<td class="center">
+        <a href="{{ site_url }}admin/users/group_set_default/{{ item.id }}">
+            <img src="{{ site_root }}{{ img_folder }}{% if item.is_default %}icon-full.png{% else %}icon-empty.png{% endif %}">
+        </a>
+    </td>
+	<td class="icons">
+		<a href="{{ site_url }}admin/users/group_edit/{{ item.id }}">
+            <img src="{{ site_root }}{{ img_folder }}icon-edit.png" width="16" height="16" border="0"
+                alt="{% helper lang.l('link_edit_group', 'users') %}"
+                title="{% helper lang.l('link_edit_group', 'users') %}">
+        </a>
+		<a href="{{ site_url }}admin/users/group_delete/{{ item.id }}" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_group', 'users', '', 'js') %}')) return false;">
+            <img src="{{ site_root }}{{ img_folder }}icon-delete.png" width="16" height="16" border="0"
+                alt="{% helper lang.l('link_delete_group', 'users') %}"
+                title="{% helper lang.l('link_delete_group', 'users') %}">
+        </a>
+	</td>
+</tr>
+{% else %}
+<tr>
+	<td class="center" colspan="5">{% helper lang.l('no_groups', 'users') %}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% include 'pagination.twig' %}
+
+{% include '@app/footer.twig' %}

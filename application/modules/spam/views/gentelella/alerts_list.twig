@@ -1,0 +1,218 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+    <div class="x_content">
+        <ul class="nav nav-tabs bar_tabs">
+            {% helper menu.get_admin_level1_menu('admin_spam_menu') %}
+        </ul>
+
+        {% if spam_types_count %}
+            <div class="btn-group">
+                {% for item in spam_types %}
+                    {% set stat_header = 'stat_header_spam_' ~ item.gid %}
+                {% if filter == item.gid %}{% set form_type = item.form_type %}{% endif %}
+                <label onclick="{% if item.obj_count %}location.href = '{{ site_url }}admin/spam/index/{{ item.gid }}'{% else %}javascript:;{% endif %}"
+                  class="btn btn-default{% if filter == item.gid %} active{% endif %} {% if not item.obj_count %}
+                    disabled{% endif %}">
+                    {% helper lang.l(stat_header, 'spam') %} ({{ item.obj_count }})
+                </label>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="x_content">
+
+    <div id="actions" class="hide">
+        {% if alerts %}
+          <div class="btn-group">
+            <a class="btn btn-primary" id="delete_selected"
+               href="{{ site_url }}admin/spam/alerts_delete/without_object/">
+                {% helper lang.l('link_delete_selected', 'spam') %}
+            </a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ site_url }}admin/spam/alerts_delete/without_object/"
+                   onclick="$('#delete_selected').trigger('click'); return fasle;">
+                    {% helper lang.l('link_delete_selected', 'spam') %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        {% endif %}
+    </div>
+    <form id="alerts_form" action="" method="post">
+        <table id="data" cellspacing="0" cellpadding="0" class="table table-striped jambo_table" width="100%">
+            <thead>
+                <tr class="heading">
+                    <th class="column-group">{% if alerts %}<input type="checkbox" id="check-all" class="flat">{% endif %}</th>
+                    <th class="column-title">{% helper lang.l('field_alert_content', 'spam') %}</th>
+                    <th class="column-title">{% helper lang.l('field_alert_user', 'spam') %}</th>
+                    <th class="column-title no-link">
+                        <a href="{{ sort_links.date_add }}"{% if order == 'date_add' %} class="{{ order_direction|lower }}"{% endif %}>
+                            {% helper lang.l('field_alert_date_add', 'spam') %}
+                        </a>
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for item in alerts %}
+                        <tr>
+                            {% set spam_status_name = 'alert_status_' ~ item.spam_status %}
+                            <td class="text-center">
+                                <input type="checkbox" class="flat grouping" name="ids[]" value="{{ item.id }}">
+                            </td>
+                            <td class="spam_content">
+                                {% set reason %}
+                                    {% if item.reason %}
+                                        {% helper lang.l('field_spam_reason', 'spam') %}: {{ item.reason }}<br/>
+                                    {% endif %}
+                                    {% set item_content_rand = item.content.rand %}
+                                    {{ item.content.content.list|replace({ item_content_rand : item.id, '<img' : '<img class="img-responsive"' }) }}
+                                {% endset %}
+
+                                {% if not item.mark %}
+                                    <b>{{ reason }}</b>
+                                {% else %}
+                                    {{ reason }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% set content %}
+                                    {{ item.content.user_content }}
+                                {% endset %}
+
+                                {% if not item.mark %}
+                                    <b>{{ content }}</b>
+                                {% else %}
+                                    {{ content }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% set date_created %}
+                                    {% helper date_format.tpl_date_format(item.date_add, page_data.date_format) %}
+                                {% endset %}
+
+                                {% if not item.mark %}
+                                    <b>{{ date_created }}</b>
+                                {% else %}
+                                    {{ date_created }}
+                                {% endif %}
+                            </td>
+                            <td class="icons">
+                              <div class="btn-group">
+                                <a href="{{ site_url }}admin/spam/alerts_show/{{ item.id }}"
+                                   class="btn btn-primary">
+                                    {% helper lang.l('link_alerts_show', 'spam') %}
+                                </a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                  <span class="caret"></span>
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a href="{{ site_url }}admin/spam/alerts_show/{{ item.id }}">
+                                        {% helper lang.l('link_alerts_show', 'spam') %}
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </form>
+
+    {% include '@app/pagination.twig' %}
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+    var reload_link = '{{ site_url }}admin/spam/index/';
+    var filter = '{{ filter }}';
+    var order = '{{ order }}';
+    var loading_content;
+    var order_direction = '{{ order_direction }}';
+    $(function () {
+        $(document).off('click', '#delete_selected').on('click', '#delete_selected', function () {
+            if (!$('input[type=checkbox].grouping').is(':checked'))
+                return false;
+            if (!confirm('{% helper lang.l('note_alerts_delete_all', 'spam', '', 'js') %}'))
+                return false;
+            $('#alerts_form').attr('action', $(this).attr('href')).submit();
+            return false;
+        });
+    });
+    function reload_this_page(value) {
+        var link = reload_link + filter + '/' + value + '/' + order + '/' + order_direction;
+        location.href = link;
+    }
+    var div_spam_content = $(".spam_content");
+    var iframe = div_spam_content.find('iframe');
+    if (iframe.length) {
+        iframe.css('width', '460px');
+    }
+    var a_href = div_spam_content.find('a');
+    if (a_href.length) {
+        a_href.css('width', '460px');
+        a_href.css('height', '260px');
+    }
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_alerts', 'spam') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#data_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

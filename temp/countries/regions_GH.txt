@@ -1,0 +1,7 @@
+	1093	Tarkwa	5.3064400	-1.9847400	GH	09	0	0	Tarkwa	Tarkwa	Tarkwa	Tarkwa	Tarkwa	Tarkwa
+	1093	Takoradi	4.8844700	-1.7553600	GH	09	0	0	Takoradi	Takoradi	Takoradi	Takoradi	Takoradi	Takoradi
+	1093	Shama Junction	5.0087200	-1.6301100	GH	09	0	0	Shama Junction	Shama Junction	Shama Junction	Shama Junction	Shama Junction	Shama Junction
+	1093	Sekondi-Takoradi	4.9340000	-1.7137000	GH	09	0	0	Sekondi-Takoradi	Секонди	Sekondi-Takoradi	Sekondi-Takoradi	Sekondi-Takoradi	Sekondi-Takoradi
+	1093	Prestea	5.4327400	-2.1428400	GH	09	0	0	Prestea	Prestea	Prestea	Prestea	Prestea	Prestea
+	1093	Bibiani	6.4634600	-2.3193800	GH	09	0	0	Bibiani	Bibiani	Bibiani	Bibiani	Bibiani	Bibiani
+	1093	Axim	4.8699200	-2.2404600	GH	09	0	0	Axim	Axim	Axim	Axim	Axim	Axim

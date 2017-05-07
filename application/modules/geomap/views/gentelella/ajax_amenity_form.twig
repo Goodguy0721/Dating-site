@@ -1,0 +1,14 @@
+    <h2>{% helper lang.l('header_amenity_select', 'geomap') %}</h2>
+    <div>
+        <ul class="controller-items" id="amenity_select_items"></ul>
+
+        <div class="controller-actions">
+            <input type="button" id="amenity_close_link" name="close_btn" value="{% helper lang.l('btn_close', 'start', '', 'button') %}" class="btn btn-default">
+            {% if data.max > 1 %}
+                <a href="#" id="amenity_select_back" class="btn-link">{% helper lang.l('link_reset_all', 'geomap') %}</a>
+            {% endif %}
+        </div>
+        {% if data.max > 1 %}
+            <div>{% helper lang.l('text_availbale_select_amenities', 'geomap') %} <span id="amenity_max_left_block"></span></div>
+            {% endif %}
+    </div>

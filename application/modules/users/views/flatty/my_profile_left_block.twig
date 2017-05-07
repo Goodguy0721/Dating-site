@@ -1,0 +1,19 @@
+  <div class="col-xs-12 col-sm-3">
+    {% include 'user_preview.twig' with {is_profile: true} %}
+
+    {#
+
+    {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+
+    {% helper virtual_gifts.user_gifts_block({'id_wall': data.id, 'is_mine': 'true'}) %}
+    {% helper virtual_gifts.send_gift({'user_id': data.id}) %}
+
+    <div id="active_users" class="clearfix mb10">
+      {% helper users.last_registered({'count': '12'}) %}
+    </div>
+    <div id="bonuses" class="clearfix mb10">
+      {% helper bonuses.bonuses_form() %}
+    </div>
+
+    #}
+</div>

@@ -1,0 +1,71 @@
+/*-----------------------------------------
+    mixins
+-----------------------------------------*/
+
+@mixin info-block {
+    background: $content_bg;
+    border: 2px $delimiter_color solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+@mixin g-pic-border {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        bottom: 0px;
+        content: "";
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        position: absolute;
+        display: block;
+    }
+}
+@mixin g-panel {
+    background: $content_bg;
+    border: 1px $delimiter_color solid;
+    border-radius: 5px;
+}
+
+@mixin img-rounded {
+    border-radius: 5px;
+}
+@mixin img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+@mixin text-overflow {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+@mixin rounded-outer($backing: transparent) {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $backing;
+    border: 1px solid $delimiter_color;
+    margin-bottom: 10px;
+}
+
+/*-----------------------------------------
+    end mixins
+-----------------------------------------*/

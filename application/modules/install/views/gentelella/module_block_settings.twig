@@ -1,0 +1,41 @@
+<h4>Installing: {{ module.install_name }} V{{ module.version }}</h4>
+<div>{{ module.install_descr }}</div>
+<br>
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" id="module_bar"
+         data-transitiongoal=""
+         style="width: {{ current_module_percent }}%;"
+         aria-valuenow="">{{ current_module_percent }}%</div>
+</div>
+
+<div class="x_content h4">Module settings</div>
+{% if settings %}
+    <form name="settings_submit_form" id="settings-submit-form" method="post"
+        data-parsley-validate class="form-horizontal form-label-left">
+        <input type="hidden" name="submit_btn" value='1'>
+        {{ settings }}
+        <div class="clearfix"></div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+          <input type="submit" name="send_btn" value="Save" class="btn btn-success">
+        </div>
+        <div class="clearfix"></div>
+    </form>
+    <script>
+        $(function(){
+            $('.form input:first', '#settings-submit-form').focus().select();
+            $('#settings-submit-form').bind('submit', function(e) {
+                e.preventDefault();
+                product_install.submit_settings();
+            });
+        });
+    </script>
+{% else %}
+    <script>
+    $(function(){
+        product_install.update_module_progress({{ current_module_percent }});
+        product_install.delayed_request('{{ next_step }}');
+    });
+    </script>
+{% endif %}
+

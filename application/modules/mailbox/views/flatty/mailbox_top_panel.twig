@@ -1,0 +1,82 @@
+
+<div class="row mailbox_top_menu" id="mailbox_top_menu">
+    <div class="mleft">
+        <div class="top_panel">
+        <div class="fleft">
+            <div class="valign_middle" id="all_checkbox">
+                <label for="select_all_checkbox" class="btn btn-default input-sx b0 {% if not messages %}disabled btn-disabled{% endif %}">
+                <input class="fleft" type="checkbox" id="select_all_checkbox" {% if not messages %}disabled{% endif %}>
+                    <span>{% helper lang.l('select_all', 'start') %}</span>
+                </label>
+            </div>
+        </div>
+        {% if folder == 'spam' %}
+            <div class="fleft">
+                <div id="unmark_spam" class="valign_middle">
+                    <div class="btn btn-default input-sx b0 disabled btn-disabled" role="btn">
+                        <i class="fa fa-exclamation-circle fa-1x"
+                        title="{% helper lang.l('link_message_unmark_spam', 'mailbox', '', 'button') %}"></i>
+                        <span>{% helper lang.l('link_message_unmark_spam', 'mailbox', '', 'button') %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if folder == 'inbox' %}
+            <div class="fleft">
+                <div id="mark_spam" class="valign_middle">
+                    <div class="btn btn-default input-sx b0 disabled btn-disabled" role="btn">
+                        <i class="fa fa-exclamation-circle fa-1x"
+                        title="{% helper lang.l('link_message_mark_spam', 'mailbox', '', 'button') %}"></i>
+                        <span>{% helper lang.l('link_message_mark_spam', 'mailbox', '', 'button') %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if folder != 'trash' %}
+            <div class="fleft">
+                <div id="mailbox_delete" class="valign_middle">
+                    <div class="btn btn-default input-sx b0 disabled btn-disabled" role="btn">
+                        <i class="fa fa-trash fa-1x"
+                        title="{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}"></i>
+                        <span>{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if folder == 'trash' %}
+            <div class="fleft">
+                <div id="mailbox_untrash" class="valign_middle">
+                    <div class="btn btn-default input-sx b0 disabled btn-disabled" role="btn">
+                        <i class="fa fa-reply fa-1x"
+                        title="{% helper lang.l('link_message_untrash', 'mailbox', '', 'button') %}"></i>
+                        <span>{% helper lang.l('link_message_untrash', 'mailbox', '', 'button') %}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fleft">
+                <div id="mailbox_delete_forever" class="valign_middle">
+                    <div class="btn btn-default input-sx b0 disabled btn-disabled" role="btn">
+                        <i class="fa fa-remove fa-1x"
+                        title="{% helper lang.l('link_message_forever', 'mailbox', '', 'button') %}"></i>
+                        <span>{% helper lang.l('link_message_delete', 'mailbox', '', 'button') %}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+
+        <div class="fright valign_middle form">
+            <div class="search-form">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" name="mail_keywords" id="mail_keywords" placeholder="{% helper lang.l('ph_search_messages', 'mailbox') %}"
+                        value="{{ keywords|e }}" autocomplete="off" class="form-control input-sm" required>
+                        <input type="button" name="btn_search" id="btn_search_messages"
+                        value="{% helper lang.l('btn_search', 'start') %}"
+                        class="btn btn-primary-inverted input-sm">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

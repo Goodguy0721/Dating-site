@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html DIR="{{ _LANG.rtl }}">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="revisit-after" content="3 days">
+	{% helper seo.seo_tags('robots') %}
+	<link rel="shortcut icon" href="{{ site_root }}favicon.ico">
+	<!-- For iPhone 4 Retina display: -->
+	 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-114x114-precomposed.png">
+	<!-- For iPad: -->
+	 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-72x72-precomposed.png">
+	<!-- For iPhone: -->
+	 <link rel="apple-touch-icon-precomposed" href="{{ site_root }}{{ img_folder }}favicon/apple-touch-icon-57x57-precomposed.png">
+
+	{% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+	{% helper seo.seo_tags('title') %}
+	<script type="text/javascript">
+		var site_rtl_settings = '{{ _LANG.rtl }}';
+		var is_pjax = parseInt('{{ is_pjax }}');
+		var js_events = {{ js_events|json_encode() }};
+		var id_user = {% if not empty(user_session_data.user_id) %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+	</script>
+
+	<script type="text/javascript">
+		var site_url = '{{ site_url }}';
+		var img_folder = '{{ img_folder }}';
+		var site_error_position = 'center';
+		var use_pjax = parseInt('{{ use_pjax }}');
+		var pjax_container = '#pjaxcontainer';
+	</script>
+    {% helper utils.jscript('', 'jquery') %}
+	{% helper theme.js(load_type) %}
+
+    <script type="text/javascript">
+        var jQueryShow = $.fn.show;
+        $.fn.show = function() {
+            jQueryShow.apply(this);
+            this.removeClass('hide');
+            return this;
+        };
+    </script>
+
+	<script type="text/javascript">
+		var messages = {{ _PREDEFINED|json_encode() }};
+		var alerts;
+		var notifications;
+		new pginfo({messages: messages});
+        $(function(){
+            alerts = new Alerts();
+            notifications = new Notifications();
+        });
+	</script>
+
+    <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/bootstrap-{{ _LANG.rtl }}.css">
+	<link href="{{ site_root }}application/views/flatty/css/font-awesome.css" rel="stylesheet" type="text/css">
+	{% helper utils.addCss({file: 'style', media: 'screen'}) %}
+
+	{% helper theme.css(load_type) %}
+
+	<!--[if gt IE 9]><style type="text/css">.gradient,.gradient:before,.gradient:after,[class*="icon-"] [class*="icon-"], [class*="icon-"] [class*="icon-"]:before, [class*="icon-"] [class*="icon-"]:after{filter: none;}</style><![endif]-->
+</head>
+<body>
+    <div id="pjaxcontainer" class="hp100">
+    <script type="text/javascript">
+        $('body').removeClass('index-page site-page')
+                 {% if not empty(header_type) and header_type == 'index' %}
+                 .addClass('index-page');
+                 {% else %}
+                 .addClass('site-page');
+                 {% endif %}
+    </script>
+
+{% helper seo_advanced.seo_advanced_traker('top') %}
+{% if not empty(display_browser_error) %}
+	{% helper start.available_browsers() %}
+{% endif %}
+
+<div class="video-chat">
+	<header>
+		<menu class="right-link-video">
+			<ul>
+				<li id="start-chat-link">
+                    <i class="fa fa-comments-o"></i>{% helper lang.l('link_write_message', 'chats') %}
+                </li>
+				<li title="{% helper lang.l('link_chat_complete', 'chats') %}" id="completeChat">
+                    <i class="fa fa-sign-in"></i>
+                </li>
+			</ul>
+		</menu>
+	</header>
+	<div class="col-chat" id="col-chat">
+		<div class="col-chat-item">
+			<video autoplay id="its_me" style="height: 80%; width: 100%;" muted="muted"></video>
+			<div id="my_info_block" class="info_block hide">
+				<div style="padding:10px; font-size:20px">
+                    {% helper lang.l('text_my_infotext_1', 'chats') %}
+                </div>
+				<div style="padding:10px;">
+                    {% helper lang.l('text_my_infotext_2', 'chats') %}
+                </div>
+			</div>
+			<div class="clr"></div>
+			<div class="chat-control">
+				<div class="chat-control-video">
+					<span class="text">
+                        <i class="camera fa fa-video-camera hide" id="pauseVideo"></i>
+                    </span>
+					<span class="text">
+                        <i class="microphone fa fa-microphone hide" id="pauseAudio"></i>
+                    </span>
+				</div>
+				<div class="chat-control-pause">
+					<span class="text">
+						<i class="pause fa fa-pause hide" id="pauseChat"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-chat-item">
+			<video autoplay id="its_him" style="height: 80%; width: 100%;"></video>
+			<div id="his_info_block" class="info_block hide">
+				<div style="padding:10px; font-size:20px" id="his_info_block_text"></div>
+			</div>
+			<div class="clr"></div>
+			<div class="chat-control">
+				<div class="chat-control-pause">
+					{% if last_chat.is_invited %}
+						{% helper blacklist.blacklist_button({id_user: last_chat.invited_user_id, type_button: 'for_videochat'}) %}
+					{% else %}
+						{% helper blacklist.blacklist_button({id_user: last_chat.invite_user_id, type_button: 'for_videochat'}) %}
+					{% endif %}
+				</div>
+			</div>
+			<div class="block-user" id="chat_user_block">
+				{% if last_chat.is_invited %}
+					<a href="{{ last_chat.invite.link }}" target="_blank">
+                        <img src="{{ last_chat.invite.media.user_logo.thumbs.middle }}" />
+                    </a>
+				{% else %}
+					<a href="{{ last_chat.invited.link }}" target="_blank">
+                        <img src="{{ last_chat.invited.media.user_logo.thumbs.middle }}" />
+                    </a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="start-chat-block" id="start-chat-block">
+		<span class="close-chat" id="close-chat">
+			<i class="fa fa-times"></i>
+		</span>
+		<div class="message-scroller">
+			<div id="messagesChat"></div>
+		</div>
+		<input type="text" placeholder="{% helper lang.l('link_write_something', 'chats') %}"
+               class="input-chat" id="videochatMessage">
+	</div>
+	<script type="text/javascript">
+
+        loadScripts(
+			[
+                "{% helper utils.jscript('chats', 'peer.js', 'path') %}",
+                "{% helper utils.jscript('chats', 'pg_videochat.js', 'path') %}"
+            ],
+			function(){
+				var chat_data = {{ chat_json_data }};
+				var settings_data = {{ settings_json_data }};
+				pg_videochat = new PG_videochat({
+					site_url: 			site_url,
+					settings: 			settings_data,
+					id_chat: 			chat_data.id,
+					id_inviter_user: 	chat_data.invite_user_id,
+					id_invited_user: 	chat_data.invited_user_id,
+					is_inviter: 		chat_data.is_inviter,
+					inviter_peer_id: 	chat_data.inviter_peer_id,
+					invited_peer_id: 	chat_data.invited_peer_id,
+					inviter_photo: 		chat_data.invite.media.user_logo.thumbs.small,
+					invited_photo: 		chat_data.invited.media.user_logo.thumbs.small,
+					waiting_lang: 		'{% helper lang.l('text_waiting_lang', 'chats', '', 'js') %}',
+					pause_lang: 		'{% helper lang.l('text_pause_lang', 'chats', '', 'js') %}',
+					close_alert_text: 	'{% helper lang.l('text_close_alert', 'chats', '', 'js') %}',
+					error_support: 		'{% helper lang.l('text_error_support', 'chats', '', 'js') %}',
+					connect_now: 		'{% helper lang.l('text_connect_now', 'chats', '', 'js') %}',
+					complete_lang: 		'{{ complete_lang }}',
+					start_chat_id: 		'start-chat-link',
+					close_chat_id: 		'close-chat',
+					chat_block: 		'start-chat-block',
+				});
+			},
+			'pg_videochat',
+			{async: true}
+		);
+	</script>
+
+</div>
+</body>
+</html>

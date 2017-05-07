@@ -1,0 +1,31 @@
+{% set thumb_name = recent_thumb.name %}
+<div class="clearfix user-media-block" id="user_recent_photos">
+    {{ user_media_block }}
+</div>
+<script>
+    $(function () {
+        loadScripts(
+                "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+                function () {
+                    recent_mediagallery = new media({
+                        siteUrl: site_url,
+                        gallery_name: 'recent_mediagallery',
+                        galleryContentPage: 1,
+                        idUser: '{{ id_user }}',
+                        all_loaded: 1,
+                        lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+                        galleryContentDiv: 'user_recent_photos',
+                        post_data: {filter_duplicate: 1},
+                        load_on_scroll: false,
+                        sorterId: '',
+                        direction: 'desc',
+                        refreshRecentPhotosDiv: '#user_recent_photos',
+                        refreshRecentPhotosButton: '#refresh_user_recent_photos',
+                        recentMediaUrl: 'media/ajax_get_user_recent_media',
+                    });
+                },
+                'recent_mediagallery',
+                {async: false}
+        );
+    });
+</script>

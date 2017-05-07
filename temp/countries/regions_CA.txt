@@ -1,0 +1,6 @@
+	613	Carcross	60.1660900	-134.7036700	CA	12	0	0	Carcross	Carcross	Carcross	Carcross	Carcross	Carcross
+	613	Haines Junction	60.7521600	-137.5108200	CA	12	0	0	Haines Junction	Haines Junction	Haines Junction	Haines Junction	Haines Junction	Haines Junction
+	613	Mayo	63.5927400	-135.8998400	CA	12	0	0	Mayo	Mayo	Mayo	Mayo	Mayo	Mayo
+	613	Watson Lake	60.0634900	-128.7089300	CA	12	0	0	Watson Lake	Watson Lake	Watson Lake	Watson Lake	Watson Lake	Watson Lake
+	613	Whitehorse	60.7161100	-135.0537500	CA	12	0	0	Whitehorse	Уайтхорс	Whitehorse	Whitehorse	Whitehorse	Whitehorse
+	613	Dawson City	64.0601300	-139.4332800	CA	12	0	0	Dawson City	Доусон	Dawson City	Dawson City	Dawson City	Dawson City

@@ -1,0 +1,319 @@
+<div class="media-gallery-editor">
+    <div class="media-gallery-editor__media-box">
+
+        {% if media.upload_gid == 'events_video' %}
+            {% if media.media_video_data.status == 'start' %}
+                <div class="pos-rel">
+                    <div class="center lh0 pos-rel">
+                        {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', media) %}
+                        <img data-image-src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                             src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                             alt="{{ text_media_photo }}" title="{{ text_media_photo }}" class="img-responsive">
+                        <div id="next_media" class="load_content_right media_view_scroller_right"></div>
+                        <div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+                    </div>
+                    <div class="subinfo box-sizing">
+                        <p>
+                            {% helper lang.l('video_wait_converting', 'media') %}
+                        </p>
+                        {% if media.id_parent or not is_user_media_owner %}
+                            {% if media.id_parent %}
+                                {% if media.permissions == 0 %}
+                                    <p>
+                                        {% helper lang.l('permissions_restrict', 'media') %}
+                                    </p>
+                                {% endif %}
+                                {% if media.video_content and not media.media_video %}
+                                    <p>
+                                        {% helper lang.l('media_deleted_by_owner', 'media') %}
+                                    </p>
+                                {% endif %}
+                            {% endif %}
+                            <span>
+                                {% helper lang.l('media_owner', 'media') %}:&nbsp;
+                                {% if media.owner_info.id %}
+                                    <a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                                        {{ media.owner_info.output_name }}
+                                    </a>
+                                {% else %}
+                                    <span>
+                                        {{ media.owner_info.output_name }}
+                                    </span>
+                                {% endif %}
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="plr50 pos-rel">
+                    <div style="width: {{ media.video_content.width }}px;" class="center-block">
+                        {{ media.video_content.embed }}
+                    </div>
+                    <div id="next_media" class="load_content_right media_view_scroller_right"></div>
+                    <div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+                </div>
+                {% if not is_user_media_owner %}
+                    <div>
+                        {% helper lang.l('media_owner', 'media') %}:&nbsp;
+                        {% if media.owner_info.id %}
+                            <a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                                {{ media.owner_info.output_name }}
+                            </a>
+                        {% else %}
+                            <span>{{ media.owner_info.output_name }}</span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% elseif media.upload_gid == 'events_audio' %}
+
+            <div class="media-gallery-editor__media-source-box container_">
+                <div data-area="view" class="inner-image">
+                    <div id="audio_content" class="g-users-gallery__audio audio-content b-audiocell" data-id-media="{{media.id}}">
+
+                        <div id="timeline_popup" class="timeline list-timeline timeline_{{media.id}}">
+                            <div id="playhead_popup" class="playhead playhead_{{media.id}}"></div>
+                        </div>
+
+                        <div id="play_popup" class="play-track play-track_{{media.id}} b-audiocell__play" style="hei">
+                            <i class="fa fa-play fa-lg"></i>
+                        </div>
+                        <div id="duration_popup" class="duration_{{media.id}} duration-time duration-glr b-audiocell__time"></div>
+                        <div class="clearfix"></div>
+
+                        <div id="audioname_popup" class="audioname_{{media.id}} b-audiocell__txt">
+                            {{media.fname}}
+                        </div>
+
+                        <div class="g-users-gallery__overlay-icon">
+                            <i class="fa fa-music fa-4x opacity60"></i>
+                        </div>
+                        <audio id="player_{{media.id}}" preload="auto" src="{{media.media.mediafile.file_url}}"></audio>
+                    </div>
+
+                    <div id="next_media" class="load_content_right"></div>
+                    <div id="prev_media" class="load_content_left"></div>
+                    <div class="media-gallery-editor__photo-menu">
+                        <span id="media_position"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="clr"></div>
+        {% elseif media.upload_gid == 'events_image' %}
+            {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', media) %}
+
+            <div class="media-gallery-editor__media-source-box container_">
+                <div class="photo-edit hide" data-area="recrop">
+                    <div class="source-box">
+                        <div id="photo_source_recrop_box" class="media-gallery-editor__media-source photo-source-box">
+                            <img data-image-src="{{ media.media.mediafile.file_url }}{{ vers }}"
+                                 src="{{ media.media.mediafile.file_url }}{{ vers }}" id="photo_source_recrop" class="img-responsive"
+                                 alt="{{ text_media_photo }}" title="{{ text_media_photo }}">
+                        </div>
+                        <div id="recrop_menu" class="media-gallery-editor__photo-menu">
+                            <ul class="media-gallery-editor__photo-sizes" id="photo_sizes"></ul>
+                            <ul class="media-gallery-editor__photo-view">
+                                <li>
+                                    <span data-section="view">
+                                        {% helper lang.l('view', 'media') %}
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="media-gallery-editor__photo-rotate">
+                                <li>
+                                    <i id="photo_rotate_left" class="fa fa-rotate-left w fa-2x icon-hover"></i>
+                                </li>
+                                <li>
+                                    <i id="photo_rotate_right" class="fa fa-rotate-right w fa-2x icon-hover"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-area="view" class="inner-image">
+                    <img data-image-src="{{ media.media.mediafile.thumbs.grand }}{{ vers }}"
+                         src="{{ media.media.mediafile.thumbs.grand }}{{ vers }}" id="photo{{ media.id }}"
+                         alt="{{ text_media_photo }}" title="{{ text_media_photo }}" class="img-responsive">
+                    <div id="next_media" class="load_content_right"></div>
+                    <div id="prev_media" class="load_content_left"></div>
+                    <div class="media-gallery-editor__photo-menu">
+                        <span id="media_position"></span>
+                    </div>
+                </div>
+
+
+                {% if media.id_parent or not is_user_media_owner %}
+                    <div class="subinfo">
+                        {% if media.id_parent %}
+                            {% if media.permissions == 0 %}
+                                <p>
+                                    {% helper lang.l('permissions_restrict', 'media') %}
+                                </p>
+                            {% endif %}
+                            {% if media.media and not media.mediafile %}
+                                <p>
+                                    {% helper lang.l('media_deleted_by_owner', 'media') %}
+                                </p>
+                            {% endif %}
+                        {% endif %}
+                        <div class="media-gallery-editor__owner">
+                            {% if media.owner_info.id %}
+                                <a href="{% helper seo.seolink('users', 'view', media.owner_info) %}">
+                                    {{ media.owner_info.output_name }}
+                                </a>
+                            {% else %}
+                                <span>
+                                    {{ media.owner_info.output_name }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+        {% endif %}
+
+        <div class="media-preloader hide" id="media_preloader"></div>
+        <div class="media-gallery-editor__media-actions">
+            {% if is_user_media_owner %}
+
+            {% else %}
+                <div class="media-action-item">
+                    {% helper ratings.send_rating_block({
+                        'object_id': media.id,
+                        'type_gid': 'media_object',
+                        'responder_id': responder_id,
+                        'success': rating_callback,
+                        'is_owner': is_user_media_owner,
+                        'template': 'form'
+                    }) %}
+                </div>
+
+                <div class="media-action-item">
+                    {% helper likes.like_block({
+                        'gid': 'media' ~ media.id,
+                        'type': 'button',
+                        'btn_class': 'edge w',
+                        'template': 'popup'
+                    }) %}
+                </div>
+
+                <div class="media-action-item">
+                    {% helper spam.mark_as_spam_block({
+                        'object_id': media.id,
+                        'type_gid': 'media_object',
+                        'template': 'whitebutton',
+                        'icon_size': 'lg'
+                    }) %}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="media-popup-info">
+                {% if media.upload_gid == 'events-album-audio' %}
+                        {% if is_user_media_owner %}
+                                <label class="media-label-editable">
+                                    {% helper lang.l('label_edit_title', 'audio_uploads') %} :
+                                </label>
+
+                                <div class="form-group">
+                                    <input contenteditable class="form-control audio_content"
+                                        value="{% if media.fname %}{{ media.fname|nl2br }}{% endif %}">
+                                </div>
+
+                                <label class="media-label-editable">
+                                    {% helper lang.l('label_edit_lyrics', 'audio_uploads') %}:
+                                </label>
+
+                                <div class="text form-group song_lyrics">
+                                    <textarea contenteditable class="form-control song_lyrics" value="">{% if media.description %}{{ media.description }}{% endif %}</textarea>
+                                </div>
+
+                        {% else %}
+                                {% if media.fname %}
+                                        <div>{{ media.fname|nl2br }}</div>
+                                {% endif %}
+                        {% endif %}
+                {% else %}
+                    <div class="form-group" title="{% helper lang.l('edit_description', 'media', '', 'button') %}">
+                        {% if is_user_media_owner %}<input contenteditable="true" class="form-control" placeholder="{% helper lang.l('edit_description', 'media', '', 'button') %}" name="description"
+                            value="{% if media.description %}{{ media.description|nl2br }}{% endif %}">
+                        {% else %}
+                            <div class="form-group">{% if media.description %}{{ media.description|nl2br }}{% endif %}</div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <div data-section="comments">
+                    {% helper comments.comments_form({
+                        'gid': 'media',
+                        'id_obj': media.id,
+                        'hidden': 0,
+                        'max_height': 500,
+                        'view': 'popup',
+                        'order_by': 'asc'
+                    }) %}
+                </div>
+                <div data-section="albums" class="hide"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+{#            {% if is_user_media_owner %}
+            <div class="media-popup-options" id="media_menu">
+
+                {% if is_user_media_owner and media.upload_gid == 'events_image' %}
+                <div class="clearfix mb10">
+                    <div class="popup-opt-title">
+                        {% helper lang.l('btn_edit', 'start') %}
+                    </div>
+                    <div class="popup-opt-block">
+                        <button type="button" class="btn btn-default" data-section="recrop">
+                            <i class="fa fa-crop"></i> {% helper lang.l('recrop', 'media') %}
+                        </button>
+
+                        {% set aviary_photo_source %}
+                            $('#photo{{ media.id }}').prop('src')
+                        {% endset %}
+
+                        {% set aviary_save_callback %}
+                            function(imageID, newURL){
+                                var error_obj = new Errors();
+                                error_obj.show_error_block('{% helper lang.l('image_update_success', 'media', '', 'js') %}', 'success');
+
+                                var img = document.getElementById(imageID);
+                                img.src = newURL;
+
+                                var photo_source = $('#photo{{ media.id }}');
+                                photo_source.prop({src: newURL+'?'+(new Date().getTime())});
+                            }
+                        {% endset %}
+
+                        {% set aviary_editor_button %}
+                            {% helper aviary.aviary_editor_button({
+                                'id': 'photo' ~ media.id,
+                                'source': aviary_photo_source,
+                                'module_gid': 'media',
+                                'post_data': aviary_post_data,
+                                'save_callback': aviary_save_callback
+                            }) %}
+                        {% endset %}
+
+                        {% if aviary_editor_button %}
+                            <span data-section="aviary">
+                                {{ aviary_editor_button }}
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}#}
+        </div>
+    </div>
+</div>

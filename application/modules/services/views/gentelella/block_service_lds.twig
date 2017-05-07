@@ -1,0 +1,16 @@
+{% for item in lds_data %}
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.ld_header(item.ds, item.module) %}:</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <select name="lds[{{ item.ds }}]" class="form-control">
+                <option value="0"></option>
+            {% for ds_key, ds_item in item.reference.option %}
+                <option value="{{ ds_key }}"{% if ds_key == item.value %} selected{% endif %}>
+                    {{ ds_item }}
+                </option>
+            {% endfor %}
+            </select>
+        </div>
+    </div>
+{% endfor %}

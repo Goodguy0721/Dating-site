@@ -1,0 +1,51 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-4 col-xs-12">
+                        {% helper lang.l('field_used', 'aviary') %}:</label>
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <input type="hidden" name="data[used]" value="0">
+                        <input type="checkbox" name="data[used]" value="1"
+                            {% if data.used %}checked{% endif %} id="aviary_used" class="flat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-4 col-xs-12">
+                        {% helper lang.l('field_api_key', 'aviary') %}:</label>
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <input type="text" name="data[api_key]" value="{{ data.api_key|escape }}"
+                            id="aviary_api_key" class="form-control"
+                            {% if not data.used %}disabled{% endif %}>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3 col-sm-8 col-sm-offset-4 col-xs-12">
+                        <button class="btn btn-success" type="submit" name="btn_save" value="1">
+                            {% helper lang.l('btn_save', 'start') %}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/add_ons_items">
+                            {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+	</div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('#aviary_used').on('ifChecked', function() {
+                $('#aviary_api_key').prop('disabled', false);
+            });
+        $('#aviary_used').on('ifUnchecked', function() {
+                $('#aviary_api_key').prop('disabled', true);
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

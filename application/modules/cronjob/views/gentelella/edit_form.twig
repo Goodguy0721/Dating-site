@@ -1,0 +1,56 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title h4">{% if data.id %}{% helper lang.l('admin_header_cronjob_change', 'cronjob') %}{% else %}{% helper lang.l('admin_header_cronjob_add', 'cronjob') %}{% endif %}</div>
+        <div class="x_content">
+            <form class="form-horizontal col-md-10 col-sm-12 col-xs-12" method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_name', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.name }}" name="name" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_module', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.module }}" name="module" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_model', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.model }}" name="model" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_method', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.method }}" name="method" class="form-control"></div>
+                </div>
+
+                <div  class="row form-group"><i>{% helper lang.l('crontab_comment', 'cronjob') %}</i></div>
+
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_tab_min', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.ct_min }}" name="ct_min" class="form-control"><i>{% helper lang.l('field_cron_tab_min_text', 'cronjob') %}</i></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_tab_hour', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.ct_hour }}" name="ct_hour" class="form-control"><i>{% helper lang.l('field_cron_tab_hour_text', 'cronjob') %}</i></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_tab_day', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.ct_day }}" name="ct_day" class="form-control"><i>{% helper lang.l('field_cron_tab_day_text', 'cronjob') %}</i></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_tab_month', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.ct_month }}" name="ct_month" class="form-control"><i>{% helper lang.l('field_cron_tab_month_text', 'cronjob') %}</i></div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 col-sm-5">{% helper lang.l('field_cron_tab_wday', 'cronjob') %}: </label>
+                    <div class="col-md-6 col-xs-12 col-sm-5"><input type="text" value="{{ data.ct_wday }}" name="ct_wday" class="form-control"><i>{% helper lang.l('field_cron_tab_wday_text', 'cronjob') %}</i></div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="col-md-offset-3 col-sm-offset-5 col-md-6 col-xs-12 col-sm-5">
+                    <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                    <a class="btn btn-default" href="{{ site_url }}admin/cronjob">{% helper lang.l('btn_cancel', 'start') %}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include '@app/footer.twig' %}

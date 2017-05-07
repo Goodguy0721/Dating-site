@@ -1,0 +1,87 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{% helper lang.l('admin_header_settings_change', 'store') %}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}" id="associations_form">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_products_per_page', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.products_per_page }}" name="products_per_page" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_products_featured_items', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.products_featured_items }}" name="products_featured_items" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_products_similar_items', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.products_similar_items }}" name="products_similar_items" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_products_block_items', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="text" value="{{ data.products_block_items }}" name="products_block_items" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_shipping_page_gid', 'store') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div id="shipping_page_gid">
+                            <span id="shipping_page_gid_text">
+                                    <span class="block_cat" id="name_{{ data.shipping_page_gid }}">
+                                        {{ data.shipping_page_gid }}
+                                    </span>
+                                    <input type="hidden" name="shipping_page_gid" value="{{ data.shipping_page_gid }}" id="gid_{{ data.shipping_page_gid }}">
+                            </span>&nbsp;&nbsp;
+                            <a href="#" id="gid_shipping">{% helper lang.l('field_choose_page', 'store') %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                        <input type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', "", 'button') %}" class="btn btn-success">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+$(function(){
+    guides_open = new loadingContent({
+        loadBlockSize: 'big',
+        footerButtons: '<input class="btn btn-success disabled" type="button" id="submit" name="btn_confirm_del" value="{% helper lang.l('btn_select', 'store') %}">',
+        loadBlockTitle: '{% helper lang.l('field_choose_gid_page', 'store') %}',
+    });
+    $('#gid_shipping').unbind('click').click(function(){
+        $.ajax({
+            url: site_url + 'admin/store/ajax_gid_shipping',
+            cache: false,
+            success: function(data){
+                guides_open.show_load_block(data);
+            }
+        });
+        return false;
+    });
+});
+</script>
+
+{% include '@app/footer.twig' %}

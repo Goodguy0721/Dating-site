@@ -1,0 +1,167 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_blods_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <label>{% helper lang.l('field_category', 'blogs') %}: 
+                    <select name="content_type" onchange="document.location='{{ site_url }}admin/blogs/index/'+this.value">
+                        <option value="all">{% helper lang.l('all_blogs', 'blogs') %}</option>  
+                        {% for key,item in categories.option %}
+                            <option value="{{ key }}" {% if key == category %} selected{% endif %}>{{ item }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <table id="blogs" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_title', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('field_user', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('link_created', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('link_type', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('link_posts_count', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('link_comments_count', 'blogs') %}</th>
+                        <th class="column-title">{% helper lang.l('field_category', 'blogs') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="8">
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in blogs %}
+                    <tr class="even pointer">
+                        <td class="first">{{ item.title }}</td>
+                        <td><a href="{{ site_url }}admin/users/edit/personal/{{ item.user_id }}">{{ item.user.output_name }}</a></td>
+                        <td>{{ item.date_created }}</td>
+                        <td>{{ item.type }}</td>
+                        <td class="center">{% if item.posts_count != '0' %}<a href="{{ site_url }}admin/blogs/posts/{{ item.id }}">{{ item.posts_count }}</a>{% else %}{{ item.posts_count }}{% endif %}</td>
+                        <td class="center">{{ item.comments_count }}</td>
+                        <td>{{ item.category_name }}</td>
+                        <td class="icons">
+                            <div class="btn-group">
+                                {% if item.active %}
+                                <button type="button"
+                                    class="btn btn-primary" title="{% helper lang.l('link_deactivate_blog','blogs') %}"
+                                    onclick = "document.location.href='{{ site_url }}admin/blogs/activate_blog/{{ item.id }}/0'">
+                                        {% helper lang.l('make_inactive','start') %}
+                                </button>
+                                {% else %}
+                                    <button type="button"
+                                        class="btn btn-primary" title="{% helper lang.l('link_activate_blog','users') %}"
+                                        onclick = "document.location.href='{{ site_url }}admin/blogs/activate_blog/{{ item.id }}/1'">
+                                            {% helper lang.l('make_active','start') %}
+                                    </button>
+                                {% endif %}
+
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        {% if item.active %}
+                                            <a href="{{ site_url }}admin/blogs/activate_blog/{{ item.id }}/0">
+                                                {% helper lang.l('link_deactivate_blog', 'blogs') %}
+                                            </a>
+                                        {% else %}
+                                            <a href="{{ site_url }}admin/blogs/activate_blog/{{ item.id }}/1">
+                                                {% helper lang.l('link_activate_blog', 'blogs') %}
+                                            </a>
+                                        {% endif %}
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ site_url }}admin/blogs/posts/{{ item.id }}">
+                                            {% helper lang.l('link_view_posts', 'blogs') %}
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ site_url }}admin/blogs/delete_blog/{{ item.id }}">
+                                            {% helper lang.l('link_delete_blog', 'blogs') %}
+                                        </a>
+                                    </li>
+                                
+                                    {% helper contact = tickets.contact_user_link({id_user: item.user_id}) %}
+                                    {% if contact|trim %}
+                                    <li>
+                                        {{ contact }}
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+        });
+    });
+</script>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#blogs').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_blogs','blogs') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1,3,6,7]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+
+        var actions = $("#actions");
+        $('#blogs_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

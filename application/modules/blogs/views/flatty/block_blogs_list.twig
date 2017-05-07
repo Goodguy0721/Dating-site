@@ -1,0 +1,95 @@
+<div class="edit_block">
+	<div class="view-user">
+	<h2 class="line top bottom linked">
+		{% helper lang.l('category_search_result', 'blogs') %} {{ category_name }}
+		<a class="fright mr5" href="javascript:void(0)" onclick="document.location='{% helper seo.seolink('blogs', 'categories') %}'"><i class="fa fa-list fa-lg" title="{% helper lang.l('link_list_categories', 'blogs') %}"></i></a>
+	</h2>
+		{% if blogs %}
+			{% for item in blogs %}
+			<div style="overflow:hidden;padding: 5px 0;" class="line bottom">
+					<div class="fleft" style="width: 120px;">
+					<a class="imgcanvas_container" href="{{ item.user.link }}" target="_blank">
+						<img src="{{ item.user.media.user_logo.thumbs.middle }}" class="imgcanvas" alt="">
+					</a>
+				</div>
+				<div class="fleft" style="width: 799px;">
+					<div class="fleft">
+						<h4>
+							<a href="{{ site_url }}blogs/view_blog/{{ item.id }}" style="font-weight:bold">{{ item.title }}</a>
+						</h4>
+						<p style="overflow:hidden;">
+							<font class="fleft">{% helper lang.l('post_author', 'blogs') %}:&nbsp;</font>
+							<a class="fleft" href="{{ item.user.link }}">{{ item.user.output_name }}</a>
+						</p>
+						<p class="text_hidden" style="overflow:hidden;">
+							<font class="fleft">{% helper lang.l('posted_at', 'blogs') %}:&nbsp;</font>
+							<font class="fleft">{% helper date_format.tpl_date_format(item.date_created, page_data.date_time_format) %}</font>
+							{% if item.is_hidden == 1 %}<font class="fleft">&nbsp;&nbsp;&nbsp;{% helper lang.l('field_hidden_post', 'blogs') %}</font>{% endif %}
+						</p>
+					</div>		
+					
+					<div class="fright sharing soc">						
+						<table>
+							<tr>
+								<td width="136">
+									<a target="_blank" class="mrc__plugin_uber_like_button" href="http://connect.mail.ru/share?url={{ site_url }}blogs/view_blog/{{ item.id }}" data-mrc-config="{'nt' : '1', 'cm' : '1', 'ck' : '1', 'sz' : '20', 'st' : '3'}">
+										Send
+									</a>
+								</td>
+								<td>
+									<div class="fb-like" data-href="{{ site_url }}blogs/view_blog/{{ item.id }}" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+								</td>
+								<td>
+									<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site_url }}blogs/view_blog/{{ item.id }}" data-count="horizontal" data-text="{{ item.title }}" data-via="" data-lang="en"></a>
+								</td>
+								<td>
+									<span class="g">
+										<g:plusone href="{{ site_url }}blogs/view_blog/{{ item.id }}"></g:plusone>
+									</span>
+								</td>
+							</tr>
+						</table>						
+					</div>
+					
+					<script type="text/javascript">
+						loadScripts(["http://cdn.connect.mail.ru/js/loader.js", "//platform.twitter.com/widgets.js", ],
+							function(){},'',{async: false}
+						);
+					</script>
+					
+					<div class="blog_body" style="display: table; width: 100%;padding: 10px 0;">
+						<div class="mb5">{% helper utils.truncate(item.body, 500) %}</div>
+						<p>
+							{% if item.can_comment == '1' or is_user == 1 %}
+							{% if item.comments_count %}
+								<a href="{{ site_url }}blogs/view_post/{{ item.id }}">{{ item.comments_count }} {% helper lang.l('comments', 'blogs') %}</a>
+							{% else %}
+								<font class="text_hidden">{% helper lang.l('no_comment', 'blogs') %}</font>
+							{% endif %}
+							&nbsp;&nbsp;|&nbsp;&nbsp;					
+								<a href="{{ site_url }}blogs/view_post/{{ item.id }}">{% helper lang.l('link_add_comment', 'blogs') %}</a>
+							{% endif %}
+							{% if show_photo == '1' %} &nbsp;										
+							{% else %}
+								{% if is_user == '1' %}
+									&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="javascript:void(0)" onclick="document.location='{{ site_url }}blogs/edit_post/{{ item.id }}'" title="{% helper lang.l('link_edit_post', 'blogs') %}" alt="{% helper lang.l('link_edit_post', 'blogs') %}">{% helper lang.l('link_edit_post', 'blogs') %}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="javascript:void(0)" onclick="javascript: if(!confirm('{% helper lang.l('note_delete_post', 'blogs', '', 'js') %}')) {return false;}else{document.location='{{ site_url }}blogs/delete_post/{{ item.id }}'}" title="{% helper lang.l('link_delete_post', 'blogs') %}" alt="{% helper lang.l('link_delete_post', 'blogs') %}">{% helper lang.l('link_delete_post', 'blogs') %}</a>
+								{% endif %}
+							{% endif %}
+						</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		{% else %}
+			<div class="center">{% helper lang.l('no_blogs', 'blogs') %}</div>
+		{% endif %}
+		{% if blogs %}
+			<div id="pages_block_2">
+				{% set page_data = page_data|merge({'type': 'full'}) %}
+        		{% helper start.pagination(page_data) %}
+        	</div>
+		{% endif %}	
+	</div>
+</div>

@@ -1,0 +1,97 @@
+<div class="bottom-btns__item" id="im_chat">
+    <button type="button" id="im_chat_btn"
+            data-status-class="{{ im_data.user_status.current_site_status_text }}"
+            class="btn btn-default btn-sm hide
+            {{ im_data.user_status.current_site_status_text}}
+            {% if im_data.user_status.current_site_status_text == 'offline' %}{% endif %} js-im-button-class">
+            {% helper lang.l('btn_im', 'im') %}<i data-flash="0" class="fa fa-comment"></i>
+    </button>
+
+    <div id="im_panel" class="hide im">
+        <div id="im_messages_window" class="im-msg-window">
+            <div class="im-header im_msg_btns">
+                <ins class="a fa fa-remove im__close"></ins>
+                <span class="im-msg-window__title" data-button="profile" title="{% helper lang.l('title_view_profile', 'im') %}"></span>
+                <ins class="a im__clear" data-button="clear">{% helper lang.l('title_clear_history', 'im') %}</ins>
+            </div>
+            <div class="im-content">
+                <div class="im-scroller im-scroll js-messages-window"></div>
+            </div>
+            <div class="im-bottom im-msg-window__footer">
+                <div class="im-msg-window__sendfield clearfix im_msg_btns" id="im_msg_btns">
+                    <textarea class="im-msg-window__textarea"></textarea>
+                    <div>
+                        <input class="btn btn-primary mt5" type="button" name="sendbtn" value="{% helper lang.l('btn_send', 'start', '', 'button') %}" />
+                        <span>(Ctrl+Enter)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="im_contact_list" class="im-contact-list">
+            <div class="im-header">
+                <div class="im-header__title">
+                    <span class="im-header__toggle-search js-toggle-search"><i class="fa fa-search"></i>&nbsp;{% helper lang.l('btn_im', 'im') %}</span>
+                    <span></span>
+                    <div class="im-header__search js-header__search">
+                        <input id="im_contact_list_search" type="text" placeholder="{% helper lang.l('search_placeholder', 'im') %}" />
+                    </div>
+                </div>
+                <ins id="im_chat_contact_list_btn" class="a fa fa-remove im__close"></ins>
+            </div>
+            <div class="im-content pop-up-content">
+                <div class="im-scroller im-scroll js-contact-window"></div>
+            </div>
+            <div class="im-bottom im-contact-list__footer">
+                <select name="site_status" autocomplete="off">
+                    {% for key, status in im_data.statuses %}
+                        <option value="{{ status.val }}" {% if im_data.user_status.site_status == status.val %}selected{% endif %}>
+                            {{ status.lang }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+            </div>
+        </div>
+    </div>
+    <div id="im_info_popup" class="im-info-popup hide"></div>
+</div>
+<script>
+    loadScripts(
+        [
+            "{% helper utils.jscript('', 'jquery-slimscroll.js', 'path') %}",
+            "{% helper utils.jscript('im', '../views/flatty/js/im.js', 'path') %}"
+        ],
+        function(){
+            var data = {{ im_json_data }};
+            im = new Im({
+                site_url: site_url,
+                new_msgs: data.new_msgs,
+                statuses: data.statuses,
+                id_user: parseInt(data.id_user),
+                user_name: data.user_name,
+                site_status: parseInt(typeof data.user_status !== 'undefined' ? data.user_status.site_status : 0),
+                age_lng: data.age_lang,
+                history_lng: data.history_lang,
+                clear_confirm_lng: data.clear_confirm_lang,
+                available_view_url: "{% helper utils.jscript('', 'available_view.js', 'path') %}"
+            });
+            $('.js-messages-window').slimScroll({
+                height: '250px',
+                railVisible: true,
+                alwaysVisible: true,
+                size:'5px'
+            });
+            $('.js-contact-window').slimScroll({
+                height: '350px',
+                railVisible: true,
+                alwaysVisible: true,
+                size:'5px'
+            });
+        },
+        '',
+        {async: true}
+    );
+
+</script>

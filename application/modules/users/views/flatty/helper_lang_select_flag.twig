@@ -1,0 +1,23 @@
+<div id="lang-flag">
+    <ul>
+        {% for item in languages %}
+            {% if item.status %}
+                <li {% if item.id == current_lang %}class="lbi-selected"{% endif %} role="presentation" data-code="{{ item.code }}" data-id="{{ item.id }}">
+                    {#{{ item.name }}#}
+                    <img title="{{ item.name }}" src="{{ site_root }}uploads/themes-fixed/custom/images/lang__{{ item.code }}.png" alt="">
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+<script>
+    $(function() {
+        $('#lang-flag li').on('click touchstart', function(event){
+            event.stopPropagation();
+            event.preventDefault();
+
+            var lang_id = $(this).data('id')
+            location.href = site_url + 'users/change_language/' + lang_id;
+        });
+    });
+</script>

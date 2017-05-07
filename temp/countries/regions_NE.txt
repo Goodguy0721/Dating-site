@@ -1,0 +1,6 @@
+	2416	Zinder	13.8071600	8.9881000	NE	07	0	0	Zinder	Зиндер	Zinder	Zinder	Zinder	Zinder
+	2416	Tanout	14.9708900	8.8878600	NE	07	0	0	Tanout	Tanout	Tanout	Tanout	Tanout	Tanout
+	2416	Mirriah	13.7072700	9.1501300	NE	07	0	0	Mirriah	Мирриа	Mirriah	Mirriah	Mirriah	Mirriah
+	2416	Matamey	13.4230900	8.4748500	NE	07	0	0	Matamey	Matamey	Matamey	Matamey	Matamey	Matamey
+	2416	Magaria	12.9982600	8.9099100	NE	07	0	0	Magaria	Magaria	Magaria	Magaria	Magaria	Magaria
+	2416	Gouré	13.9835000	10.2703500	NE	07	0	0	Gouré	Gouré	Gouré	Gouré	Gouré	Gouré

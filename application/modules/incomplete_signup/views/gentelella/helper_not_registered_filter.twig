@@ -1,0 +1,5 @@
+<li class="{% if filter == 'not_registered' %}active{% endif %}{% if not filter_data.not_registered %} disabled{% endif %}">
+    <a href="{% if filter_data.not_registered %}{{ site_url }}admin/incomplete_signup/not_registered{% else %}javascript:;{% endif %}">
+        {% helper lang.l('filter_not_registered_users', 'incomplete_signup') %} ({{ filter_data.not_registered }})
+    </a>
+</li>

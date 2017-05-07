@@ -1,0 +1,119 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-xs-12">
+   <div class="x_panel">
+    <form method="post" action="{{ data.action }}" name="save_form"  enctype="multipart/form-data"
+          data-parsley-validate class="form-horizontal form-label-left">
+      <div>
+        <b>{{ theme.name }}</b><br>{{ theme.description }}<br><br>
+        {% if theme.img %}<img src="{{ theme.img }}"><br><br>{% endif %}
+        {% helper lang.l('field_default', 'themes') %}: {% if theme.default %}{% helper lang.l('status_default_yes', 'themes') %}{% else %}{% helper lang.l('status_default_no', 'themes') %}{% endif %}<br>
+        {% helper lang.l('field_active', 'themes') %}: {% if theme.active %}{% helper lang.l('status_active_yes', 'themes') %}{% else %}{% helper lang.l('status_active_no', 'themes') %}{% endif %}<br><br>
+      </div>
+
+      <h2 class="col-xs-12">{% helper lang.l('admin_header_logo_editor', 'themes') %}</h2>
+      <div class="col-md-6 col-xs-6 col-xs-12">
+          <div class="h5">{% helper lang.l('admin_header_logo_settings', 'themes') %}</div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('field_logo_width', 'themes') %} ({% helper lang.l('size_px', 'themes') %}): </label>
+              <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{ theme.logo_width }}" name="logo_width" class="form-control">
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('field_logo_height', 'themes') %} ({% helper lang.l('size_px', 'themes') %}): </label>
+              <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{ theme.logo_height }}" name="logo_height" class="form-control">
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-6 col-xs-12">
+          <div class="h5">{% helper lang.l('admin_header_mini_logo_settings', 'themes') %}</div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('field_logo_width', 'themes') %} ({% helper lang.l('size_px', 'themes') %}): </label>
+              <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{ theme.mini_logo_width }}" name="mini_logo_width" class="form-control">
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-3 col-xs-12">
+                {% helper lang.l('field_logo_height', 'themes') %} ({% helper lang.l('size_px', 'themes') %}): </label>
+              <div class="col-sm-9 col-xs-12">
+                <input type="text" value="{{ theme.mini_logo_height }}" name="mini_logo_height" class="form-control">
+              </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 ">
+            <div class="menu-level3 hidden-xs">
+                <ul class="nav nav-tabs bar_tabs" id="edit_tabs">
+                    {% for key, item in langs %}
+                    <li{% if item.id == lang_id %} class="active"{% endif %}><a href="{{ site_url }}admin/themes/view_installed/{{ theme.id }}/{{ item.id }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu-level3 visible-xs">
+                <ul class="nav nav-tabs tabs-left" id="edit_tabs">
+                    {% for key, item in langs %}
+                    <li{% if item.id == lang_id %} class="active"{% endif %}><a href="{{ site_url }}admin/themes/view_installed/{{ theme.id }}/{{ item.id }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div>
+                <div class="h5 x_title">{% helper lang.l('admin_header_logo_upload', 'themes') %}</div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_logo_file', 'themes') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="file" value="" name="logo" class="form-control">
+                        <br>
+                        <img src="{{ theme.logo_url }}" width="{{ theme.logo_width }}" height="{{ theme.logo_height }}" />
+                    </div>
+                </div>
+                {% if theme.logo %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_logo_delete', 'themes') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="checkbox" name="logo_delete" value="1" class="flat">
+                    </div>
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_mini_logo_file', 'themes') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="file" value="" name="mini_logo" class="form-control">
+                        <br>
+                        <img src="{{ theme.mini_logo_url }}" width="{{ theme.mini_logo_width }}" height="{{ theme.mini_logo_height }}" />
+                    </div>
+                </div>
+                {% if theme.mini_logo %}
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12">
+                      {% helper lang.l('field_logo_delete', 'themes') %}: </label>
+                    <div class="col-sm-9 col-xs-12">
+                      <input type="checkbox" name="mini_logo_delete" value="1" class="flat">
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+                <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                <a class="btn btn-default" href="{{ site_url }}admin/themes/installed_themes/{{ theme.type }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+            </div>
+          </div>
+      </form>
+  </div>
+</div>
+
+{% include '@app/footer.twig' %}

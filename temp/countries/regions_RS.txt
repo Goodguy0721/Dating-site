@@ -1,0 +1,51 @@
+	2995	Zemun	44.8430600	20.4011100	RS	SE	0	0	Zemun	Земун	Zemun	Zemun	Zemun	Zemun
+	2995	Zaječar	43.9035800	22.2640500	RS	SE	0	0	Zaječar	Заечар	Zaječar	Zaječar	Zaječar	Zaječar
+	2995	Vrnjačka Banja	43.6272500	20.8963400	RS	SE	0	0	Vrnjačka Banja	Врнячка-Баня	Vrnjačka Banja	Vrnjačka Banja	Vrnjačka Banja	Vrnjačka Banja
+	2995	Vranje	42.5513900	21.9002800	RS	SE	0	0	Vranje	Вране	Vranje	Vranje	Vranje	Vranje
+	2995	Tutin	42.9902800	20.3313900	RS	SE	0	0	Tutin	Тутин	Tutin	Tutin	Tutin	Tutin
+	2995	Trstenik	43.6169400	21.0025000	RS	SE	0	0	Trstenik	Trstenik	Trstenik	Trstenik	Trstenik	Trstenik
+	2995	Surčin	44.7930600	20.2802800	RS	SE	0	0	Surčin	Сурчин	Surčin	Surčin	Surčin	Surčin
+	2995	Sremčica	44.6765300	20.3923200	RS	SE	0	0	Sremčica	Sremčica	Sremčica	Sremčica	Sremčica	Sremčica
+	2995	Smederevska Palanka	44.3654800	20.9588500	RS	SE	0	0	Smederevska Palanka	Смедеревска-Паланка	Smederevska Palanka	Smederevska Palanka	Smederevska Palanka	Smederevska Palanka
+	2995	Smederevo	44.6627800	20.9300000	RS	SE	0	0	Smederevo	Смедерево	Smederevo	Smederevo	Smederevo	Smederevo
+	2995	Prokuplje	43.2341700	21.5880600	RS	SE	0	0	Prokuplje	Прокупле	Prokuplje	Prokuplje	Prokuplje	Prokuplje
+	2995	Požarevac	44.6213300	21.1878200	RS	SE	0	0	Požarevac	Пожаревац	Požarevac	Požarevac	Požarevac	Požarevac
+	2995	Pirot	43.1530600	22.5861100	RS	SE	0	0	Pirot	Пирот	Pirot	Pirot	Pirot	Pirot
+	2995	Paraćin	43.8608300	21.4077800	RS	SE	0	0	Paraćin	Парачин	Paraćin	Paraćin	Paraćin	Paraćin
+	2995	Obrenovac	44.6548600	20.2001700	RS	SE	0	0	Obrenovac	Obrenovac	Obrenovac	Obrenovac	Obrenovac	Obrenovac
+	2995	Novi Pazar	43.1366700	20.5122200	RS	SE	0	0	Novi Pazar	Нови-Пазар	Novi Pazar	Novi Pazar	Novi Pazar	Novi Pazar
+	2995	Niš	43.3247200	21.9033300	RS	SE	0	0	Niš	Ниш	Niš	Niš	Niš	Niš
+	2995	Negotin	44.2263900	22.5308300	RS	SE	0	0	Negotin	Неготин	Negotin	Negotin	Negotin	Negotin
+	2995	Majdanpek	44.4277100	21.9459600	RS	SE	0	0	Majdanpek	Майданпек	Majdanpek	Majdanpek	Majdanpek	Majdanpek
+	2995	Ljig	44.2300700	20.2381900	RS	SE	0	0	Ljig	Лиг	Ljig	Ljig	Ljig	Ljig
+	2995	Leskovac	42.9980600	21.9461100	RS	SE	0	0	Leskovac	Лесковац	Leskovac	Leskovac	Leskovac	Leskovac
+	2995	Lazarevac	44.3853400	20.2557000	RS	SE	0	0	Lazarevac	Лазаревац	Lazarevac	Lazarevac	Lazarevac	Lazarevac
+	2995	Lapovo	44.1842400	21.0972700	RS	SE	0	0	Lapovo	Лапово	Lapovo	Lapovo	Lapovo	Lapovo
+	2995	Kruševac	43.5800000	21.3338900	RS	SE	0	0	Kruševac	Крушевац	Kruševac	Kruševac	Kruševac	Kruševac
+	2995	Kraljevo	43.7258300	20.6894400	RS	SE	0	0	Kraljevo	Кралево	Kraljevo	Kraljevo	Kraljevo	Kraljevo
+	2995	Kragujevac	44.0166700	20.9166700	RS	SE	0	0	Kragujevac	Крагуевац	Kragujevac	Kragujevac	Kragujevac	Kragujevac
+	2995	Jagodina	43.9771300	21.2612100	RS	SE	0	0	Jagodina	Ягодина	Jagodina	Jagodina	Jagodina	Jagodina
+	2995	Gornji Milanovac	44.0260300	20.4615200	RS	SE	0	0	Gornji Milanovac	Gornji Milanovac	Gornji Milanovac	Gornji Milanovac	Gornji Milanovac	Gornji Milanovac
+	2995	Golubac	44.6529600	21.6319900	RS	SE	0	0	Golubac	Голубац	Golubac	Golubac	Golubac	Golubac
+	2995	Ćuprija	43.9275000	21.3700000	RS	SE	0	0	Ćuprija	Ćuprija	Ćuprija	Ćuprija	Ćuprija	Ćuprija
+	2995	Ćićevac	43.7188200	21.4408500	RS	SE	0	0	Ćićevac	Ćićevac	Ćićevac	Ćićevac	Ćićevac	Ćićevac
+	2995	Čačak	43.8913900	20.3497200	RS	SE	0	0	Čačak	Чачак	Čačak	Čačak	Čačak	Čačak
+	2995	Bor	44.0748800	22.0959100	RS	SE	0	0	Bor	Бор	Bor	Bor	Bor	Bor
+	2995	Belgrade	44.8040100	20.4651300	RS	SE	0	0	Belgrade	Белград	Belgrade	Belgrade	Belgrade	Belgrade
+	2995	Arilje	43.7530600	20.0955600	RS	SE	0	0	Arilje	Ариле	Arilje	Arilje	Arilje	Arilje
+	2995	Aranđelovac	44.3069400	20.5600000	RS	SE	0	0	Aranđelovac	Аранджеловац	Aranđelovac	Aranđelovac	Aranđelovac	Aranđelovac
+	2995	Raška	43.2872200	20.6152800	RS	SE	0	0	Raška	Рашка	Raška	Raška	Raška	Raška
+	2995	Vladimirci	44.6147200	19.7852800	RS	SE	0	0	Vladimirci	Vladimirci	Vladimirci	Vladimirci	Vladimirci	Vladimirci
+	2995	Valjevo	44.2751300	19.8982100	RS	SE	0	0	Valjevo	Валево	Valjevo	Valjevo	Valjevo	Valjevo
+	2995	Užice	43.8586100	19.8487800	RS	SE	0	0	Užice	Ужице	Užice	Užice	Užice	Užice
+	2995	Šabac	44.7466700	19.6900000	RS	SE	0	0	Šabac	Шабац	Šabac	Šabac	Šabac	Šabac
+	2995	Prijepolje	43.3899600	19.6487000	RS	SE	0	0	Prijepolje	Prijepolje	Prijepolje	Prijepolje	Prijepolje	Prijepolje
+	2995	Priboj	43.5830600	19.5251900	RS	SE	0	0	Priboj	Прибой	Priboj	Priboj	Priboj	Priboj
+	2995	Osečina	44.3730600	19.6013900	RS	SE	0	0	Osečina	Osečina	Osečina	Osečina	Osečina	Osečina
+	2995	Mali Zvornik	44.3734400	19.1065100	RS	SE	0	0	Mali Zvornik	Мали-Зворник	Mali Zvornik	Mali Zvornik	Mali Zvornik	Mali Zvornik
+	2995	Ljubovija	44.1894400	19.3766700	RS	SE	0	0	Ljubovija	Любовия	Ljubovija	Ljubovija	Ljubovija	Ljubovija
+	2995	Krupanj	44.3655600	19.3619400	RS	SE	0	0	Krupanj	Krupanj	Krupanj	Krupanj	Krupanj	Krupanj
+	2995	Čajetina	43.7497700	19.7127300	RS	SE	0	0	Čajetina	Чаетина	Čajetina	Čajetina	Čajetina	Čajetina
+	2995	Bogatić	44.8375000	19.4805600	RS	SE	0	0	Bogatić	Bogatić	Bogatić	Bogatić	Bogatić	Bogatić
+	2995	Bajina Bašta	43.9708300	19.5675000	RS	SE	0	0	Bajina Bašta	Байина-Башта	Bajina Bašta	Bajina Bašta	Bajina Bašta	Bajina Bašta
+	2995	Knjazevac	43.5663400	22.2570100	RS	SE	0	0	Knjazevac	Knjazevac	Knjazevac	Knjazevac	Knjazevac	Knjazevac

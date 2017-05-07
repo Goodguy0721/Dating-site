@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading pos-rel">
+        {% include 'mailbox_menu.twig' %}
+    </div>
+
+    <div class="panel-body oh">
+        {% include 'mailbox_top_panel.twig' %}
+    </div>
+
+    <div class="panel-body oh">
+    	{% for item in messages %}
+            <div class="row {% if (folder == 'inbox' or folder == 'spam') and item.is_new %}bold{% endif %} btn_{% if folder == 'drafts' %}edit{% else %}read{% endif %}_message pointer" data-id="{{ item.id }}">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9 point">
+
+                        <label for="message[{{ item.id }}]" class="pointer mailbox_content_label">
+                        <input type="checkbox" id="message[{{ item.id }}]" name="select_message[{{ item.id }}]"
+                            data-role="msg-checkbox" data-id-msg="{{ item.id }}" value="{{ item.id }}" />
+                        </label>
+
+                    <div class="valign_middle">
+                        <div class="output_name fleft"><span>
+                            {% if folder == 'inbox' or folder == 'spam' %}
+                                {% helper utils.truncate(item.sender.output_name, 150) %}
+                            {% elseif not item.recipient %}
+                                {% helper lang.l('no_user', 'mailbox') %}
+                            {% else %}
+                                {% helper utils.truncate(item.recipient.output_name, 150) %}
+                            {% endif %}</span>
+                        </div>
+                        <div class="subject mb10">
+                            {% if item.subject %}
+                                {% helper utils.truncate(item.subject, 70) %}
+                            {% else %}
+                                {% helper lang.l('text_default_subject', 'mailbox') %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="date_right mr15">
+                    <div class="valign_middle gray date">
+                        <i>{% helper date_format.tpl_date_format(item.date_add, page_data.date_time_format) %}</i>
+                    </div>
+                </div>
+            </div>
+    	{% else %}
+    		<div class="line top empty center ptb20">
+                {% helper lang.l('no_messages', 'mailbox') %}
+            </div>
+    	{% endfor %}
+    </div>
+
+</div>
+
+{% if messages %}
+    <div>
+        {% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+    </div>
+{% endif %}

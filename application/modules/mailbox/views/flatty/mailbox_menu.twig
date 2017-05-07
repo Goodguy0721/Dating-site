@@ -1,0 +1,42 @@
+    <div class="row">
+        <div class="col-xs-12 col-md-9">
+            <ul class="b-tabs">
+        		<li class="b-tabs__item {% if folder == 'inbox' %}active{% endif %}" role="presentation" id="inbox">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'inbox') %}">
+                        {% helper lang.l('inbox', 'mailbox') %}
+                        <span class="ind_inbox_new_message {% if not inbox_new_message %}hide{% endif %}">
+                            ({{ inbox_new_message }})
+                        </span>
+                    </a>
+                </li>
+        		<li class="b-tabs__item {% if folder == 'outbox' %}active{% endif %}" role="presentation" id="outbox">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'outbox') %}">
+                        {% helper lang.l('outbox', 'mailbox') %}
+                    </a>
+                </li>
+        		<li class="b-tabs__item {% if folder == 'drafts' %}active{% endif %}" role="presentation" id="drafts">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'drafts') %}">
+                        {% helper lang.l('drafts', 'mailbox') %}
+                    </a>
+                </li>
+        		<li class="b-tabs__item {% if folder == 'trash' %}active{% endif %}" role="presentation" id="trash">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'trash') %}">
+                        {% helper lang.l('trash', 'mailbox') %} {% if trash_new_message > 0 %}({{ trash_new_message }}){% endif %}
+                    </a>
+                </li>
+        		<li class="b-tabs__item {% if folder == 'spam' %}active{% endif %}" role="presentation" id="spam">
+                    <a class="b-tabs__text" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'spam') %}">
+                        {% helper lang.l('spam', 'mailbox') %} {% if spam_new_message > 0 %}({{ spam_new_message }}){% endif %}
+                    </a>
+                </li>
+        	</ul>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+            <div class="panel-heading__rightbtn">
+                <a class="btn btn-primary {% if write_message %}active{% endif %}" data-pjax-no-scroll="1" href="{% helper seo.seolink('mailbox', 'write') %}">
+                    {% helper lang.l('write_message', 'mailbox') %}
+                </a>
+            </div>
+        </div>
+    </div>

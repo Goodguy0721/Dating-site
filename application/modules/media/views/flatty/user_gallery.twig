@@ -1,0 +1,90 @@
+{% helper is_module_installed = utils.depends('audio_uploads') %}
+<div class="content-block">
+    <div class="b-album-filters">
+        <div class="row">
+            <div class="col-xs-12 {% if is_owner %}col-sm-8 col-md-9{% endif %}">
+                <ul class="b-tabs" id="filters">
+                    {% for key, item in media_filters %}
+                        <li data-param="{{ key }}" data-user-id="{{ id_user }}" data-history="{{ item.link }}" class="b-tabs__item {% if gallery_param == key %}active{% endif %}">
+                            <span class="b-tabs__text">{{ item.name }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if is_owner %}
+                <div class="col-xs-12 col-sm-4 col-md-3 b-album-filters__addfile">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" data-media="add_photo">{% helper lang.l('add_photo', 'media') %}</button>
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Add photo</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a data-media="add_photo" href="javascript:void(0);">{% helper lang.l('add_photo', 'media') %}</a></li>
+                            <li><a data-media="add_video" href="javascript:void(0);">{% helper lang.l('add_video', 'media') %}</a></li>
+                            {% if is_module_installed.audio_uploads %}
+                                <li><a data-media="add_audio" href="javascript:void(0);">{% helper lang.l('add_audio', 'audio_uploads') %}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-inline">
+                    <div id="album_id_container" class="b-album-filters__bottom {% if gallery_param != 'albums' %} hide{% endif %}">
+                        {{ albums }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-inline">
+                    <div id="media_sorter" class="b-album-filters__bottom {% if gallery_param == 'albums' %} hide{% endif %}">
+                        <span class="media-sorter">{% helper lang.l('sort_by', 'start') %}&nbsp;</span>
+                        <select class="form-control">
+                            {% for key, item in media_sorter.links %}
+                                <option value="{{ key }}" {% if key == media_sorter.order %}selected{% endif %}>
+                                    {{ item }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <i data-role="sorter-dir" class="hidden-xs fa {% if media_sorter.direction == 'ASC' %}fa-arrow-up{% else %}fa-arrow-down{% endif %} pointer plr5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery_content" class="row g-users-gallery">
+        {% autoescape false %}
+            {{ content.content }}
+        {% endautoescape %}
+    </div>
+
+    <div class="media-button-content {% if not content.have_more %}hide{% endif %}">
+        <input class="btn btn-secondary" id="media_button" type="button" value="{% helper lang.l('show_more', 'media', '', 'button') %}">
+    </div>
+</div>
+<script>
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+            function(){
+                mediagallery = new media({
+                    siteUrl: site_url,
+                    galleryContentPage: {{ page }},
+                    galleryContentParam: '{{ gallery_param }}',
+                    idUser: {{ id_user }},
+                    all_loaded: {% if content.have_more %}0{% else %}1{% endif %},
+                    lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media', '', 'js') %}",
+                    lang_delete_confirm_album: "{% helper lang.l('delete_confirm_albums', 'media', '', 'js') %}",
+                });
+            },
+            ['mediagallery'],
+            {async: true}
+        );
+    });
+</script>

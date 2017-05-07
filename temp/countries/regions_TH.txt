@@ -1,0 +1,12 @@
+	3539	Ban Talat Yai	7.8848100	98.4000800	TH	62	0	0	Ban Talat Yai	Талат-Яи	Ban Talat Yai	Ban Talat Yai	Ban Talat Yai	Ban Talat Yai
+	3539	Ban Talat Nua	7.8848900	98.3855700	TH	62	0	0	Ban Talat Nua	Талат-Нуа	Ban Talat Nua	Ban Talat Nua	Ban Talat Nua	Ban Talat Nua
+	3539	Phuket	7.8905900	98.3981000	TH	62	0	0	Phuket	Пхукет	Phuket	Phuket	Phuket	Phuket
+	3539	Kathu	7.9177900	98.3332200	TH	62	0	0	Kathu	Кату	Kathu	Kathu	Kathu	Kathu
+	3539	Rawai	7.7796500	98.3253200	TH	62	0	0	Rawai	Rawai	Rawai	Rawai	Rawai	Rawai
+	3539	Ban Ko Kaeo	7.9359900	98.3966400	TH	62	0	0	Ban Ko Kaeo	Ко-Каео	Ban Ko Kaeo	Ban Ko Kaeo	Ban Ko Kaeo	Ban Ko Kaeo
+	3539	Ban Karon	7.8476900	98.2985000	TH	62	0	0	Ban Karon	Ban Karon	Ban Karon	Ban Karon	Ban Karon	Ban Karon
+	3539	Wichit	7.8894000	98.3852300	TH	62	0	0	Wichit	Wichit	Wichit	Wichit	Wichit	Wichit
+	3539	Patong	7.8960700	98.2966100	TH	62	0	0	Patong	Патонг	Patong	Patong	Patong	Patong
+	3539	Ban Chalong	7.8446800	98.3389700	TH	62	0	0	Ban Chalong	Ban Chalong	Ban Chalong	Ban Chalong	Ban Chalong	Ban Chalong
+	3539	Ban Ratsada	7.9096300	98.4024800	TH	62	0	0	Ban Ratsada	Ратсада	Ban Ratsada	Ban Ratsada	Ban Ratsada	Ban Ratsada
+	3539	Nai Harn	7.7785900	98.3066100	TH	62	0	0	Nai Harn	Наи-Харн	Nai Harn	Nai Harn	Nai Harn	Nai Harn

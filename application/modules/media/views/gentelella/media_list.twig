@@ -1,0 +1,344 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('media_menu_item') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="actions">
+                <div class="btn-group">
+                    <a id="mark_adult_select_block" href="javascript:;" class="btn btn-primary">
+                        {% helper lang.l('btn_mark_adult', 'media') %}</a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a id="mark_adult_select_block" href="javascript:;">
+                                {% helper lang.l('btn_mark_adult', 'media') %}</a>
+                        </li>
+                        <li>
+                            <a id="unmark_adult_select_block" href="javascript:void(0)">
+                                {% helper lang.l('btn_unmark_adult', 'media') %}</a>
+                        </li>
+                        <li>
+                            <a id="delete_select_block" href="javascript:void(0)">
+                                {% helper lang.l('btn_link_delete', 'media') %}</a>
+                        </li>
+                    </ul>
+                </div>
+	        </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table bulk_action">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-group"><input type="checkbox" id="check-all" class="flat"></th>
+                        <th class="column-title">{% helper lang.l('field_files', 'media') %}</th>
+                        <th class="column-title">{% helper lang.l('media_info', 'media') %}</th>
+                        <th class="column-title">{% helper lang.l('media_owner', 'media') %}</th>
+                        <th class="column-title text-center">18+</th>
+                        <th class="column-title">&nbsp;</th>
+                        <th class="bulk-actions" colspan="4">
+                            {#<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false"
+                               style="position: absolute; top: 40px; color:#fff; font-weight:500;">
+                                Actions ( <span class="action-cnt"> </span> )
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu" style="position: absolute; top: 120px; left: 6px;">
+                                <li class="dropdown">
+                                    <ul>
+                                        <li>
+                                            <a id="mark_adult_select_block" href="" onclick="return false;">
+                                                {% helper lang.l('btn_mark_adult', 'media') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="unmark_adult_select_block" href="javascript:void(0)">
+                                                {% helper lang.l('btn_unmark_adult', 'media') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="delete_select_block" href="javascript:void(0)">
+                                                {% helper lang.l('btn_link_delete', 'media') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>#}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in media %}
+                    <tr class="even pointer{% if item.is_adult %} adult{% endif %}">
+                        <td>
+                            <input data="table_records" type="checkbox" class="flat grouping"
+                                value="{{ item.id }}" id="media-{{ item.id }}"></td>
+                        <td>
+                        {% if item.upload_gid == 'gallery_audio' %}
+                            <audio src="{{ item.media.mediafile.file_url }}" controls style="max-width: 100%;"></audio>
+                        {% elseif item.media %}
+                            <a href="{{ item.media.mediafile.file_url }}" target="_blank">
+                                <img src="{{ item.media.mediafile.thumbs.small }}"/>
+                            </a>
+                        {% endif %}
+
+                        {% if item.video_content %}
+                            <span onclick="vpreview = new loadingContent({'closeBtnClass': 'w'}); vpreview.show_load_block('{{ item.video_content.embed|e }}');">
+                                <img class="pointer" src="{{ item.video_content.thumbs.small }}"/>
+                            </span>
+                        {% endif %}
+                        </td>
+                        <td>
+                            <b>{% helper lang.l('media_user', 'media') %}</b>: {{ item.user_info.output_name }}<br>
+                            <b>{% helper lang.l('field_permitted_for', 'media') %}</b>: {% helper lang.ld_option('permissions', 'media', item.permissions) %}
+                        </td>
+                        <td>
+                            {% if empty(item.owner_info.is_user_deleted) %}
+                                <a href="{{ site_url }}admin/users/edit/personal/{{ item.id_owner }}" target="_blank">
+                                    {{ item.owner_info.output_name }}
+                                </a>
+                            {% else %}
+                                {{ item.owner_info.output_name }}
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if item.is_adult == 0 %}
+                                <span class="label label-default">18+</span>
+                            {% else %}
+                                <span class="label label-danger">18+</span>
+                            {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary delete_select_file" data-id="{{ item.id }}"
+                                        onclick="javascript:void(0)">
+                                    {% helper lang.l('link_delete_media','media') %}
+                                </button>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="delete_select_file" data-id="{{ item.id }}"
+                                                onclick="javascript:void(0)">
+                                            {% helper lang.l('link_delete_media','media') %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                    {% if item.is_adult == 0 %}
+                                        <a href="{{ site_url }}admin/media/mark_adult_media/{{ item.id }}">
+                                                {% helper lang.l('mark_adult', 'media') %}
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/media/unmark_adult_media/{{ item.id }}">
+                                            {% helper lang.l('unmark_adult', 'media') %}
+                                        </a>
+                                    {% endif %}
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    var reload_link = "{{ site_url }}admin/media/";
+    var param = "{{ param }}";
+
+    $(function() {
+        $('#grouping_all').bind('click', function() {
+            var checked = $(this).is(':checked');
+            if (checked) {
+                $('input.grouping').prop('checked', true);
+            } else {
+                $('input.grouping').prop('checked', false);
+            }
+        });
+
+        $('#grouping_all').bind('click', function() {
+            var checked = $(this).is(':checked');
+            if (checked) {
+                $('input[type=checkbox].grouping').prop('checked', true);
+            } else {
+                $('input[type=checkbox].grouping').prop('checked', false);
+            }
+        });
+    });
+
+    delete_select_block = new loadingContent( {
+        loadBlockSize: 'small',
+        loadBlockLeftType: 'center',
+        loadBlockTopType: 'center',
+        closeBtnClass: 'close',
+        footerButtons: '<input type="submit" id="lie_delete" name="btn_confirm" value="{% helper lang.l('btn_confirm', 'media') %}" class="btn btn-primary">'
+    });
+
+    $(document).off('click', '.delete_select_file').on('click', '.delete_select_file', function() {
+        var id_media = $(this).attr('data-id');
+        var data = new Array();
+
+        var checked = $('input#media-'+id_media).is(':checked');
+        if (checked) {
+            $('input#media-'+id_media).prop('checked', false);
+            $('input#media-'+id_media).prop('checked', true);
+        } else {
+            $('input#media-'+id_media).prop('checked', true);
+        }
+
+        data[0] = id_media;
+
+        if (data.length > 0) {
+            $.ajax({
+                url: site_url + 'admin/media/ajax_confirm_select/delete_select_block',
+                cache: false,
+                success: function(data) {
+                    delete_select_block.show_load_block(data);
+                }
+            });
+        } else {
+            error_object.show_error_block('{% helper lang.l('no_media', 'media', '', 'js') %}', 'error');
+        }
+    });
+
+    $(document).off('click', '#delete_select_block').on('click', '#delete_select_block', function() {
+        var data = new Array();
+
+        $('.grouping:checked').each(function(i) {
+            data[i] = $(this).val();
+        });
+
+        if (data.length > 0) {
+            $.ajax({
+                url: site_url + 'admin/media/ajax_confirm_select/delete_select_block',
+                cache: false,
+                success: function(data){
+                    delete_select_block.show_load_block(data);
+                }
+            });
+        } else {
+            error_object.show_error_block('{% helper lang.l('no_media', 'media', '', 'js') %}', 'error');
+        }
+    });
+
+    $(document).off('click', '#mark_adult_select_block').on('click', '#mark_adult_select_block', function() {
+        var data = new Array();
+
+        $('.grouping:checked').each(function(i) {
+            data[i] = $(this).val();
+        });
+
+        if (data.length > 0) {
+            $.ajax({
+                url: site_url + 'admin/media/ajax_mark_adult_select',
+                cache: false,
+                type: "POST",
+                data: {file_ids : data},
+                success: function(data) {
+                    reload_this_page('index/' + param);
+                }
+            });
+        } else {
+            error_object.show_error_block('{% helper lang.l('no_media', 'media', '', 'js') %}', 'error');
+        }
+    });
+
+    $(document).off('click', '#unmark_adult_select_block').on('click', '#unmark_adult_select_block', function() {
+        var data = new Array();
+
+        $('.grouping:checked').each(function(i) {
+            data[i] = $(this).val();
+        });
+
+        if (data.length > 0) {
+            $.ajax({
+                url: site_url + 'admin/media/ajax_unmark_adult_select',
+                cache: false,
+                type: "POST",
+                data: {file_ids : data},
+                success: function(data) {
+                    reload_this_page('index/'+param);
+                }
+            });
+        } else {
+            error_object.show_error_block('{% helper lang.l('no_media', 'media', '', 'js') %}', 'error');
+        }
+    });
+
+    function reload_this_page(value) {
+        var link = reload_link + value;
+        location.href=link;
+    }
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script src="{{ site_url }}application/views/gentelella/js/icheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_media','media') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,2,4,5]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

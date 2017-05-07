@@ -1,0 +1,1026 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+    {% if data.id %}
+        {% set user_menu %}{% spaceless %}
+            {% if sections %}
+                {% for key, item in sections %}
+                <li{% if item.gid == section %} class="active"{% endif %}>
+                    <a href="{{ site_url }}admin/users/edit/{{ item.gid }}/{{ data.id }}">
+                        {{ item.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            {% endif %}
+            {% set is_module_installed = utils.depends('seo_advanced', 'media') %}
+            {% if is_module_installed.seo_advanced %}
+                <li{% if section == 'seo' %} class="active"{% endif %}>
+                    <a href="{{ site_url }}admin/users/edit/seo/{{ data.id }}">
+                        {% helper lang.l('filter_section_seo', 'seo') %}
+                    </a>
+                </li>
+            {% endif %}
+            {% if is_module_installed.media %}
+                <li>
+                    <a href="{{ site_url }}admin/media/user_media/{{ data.id }}">
+                        {% helper lang.l('filter_section_uploads', 'media') %}
+                    </a>
+                </li>
+            {% endif %}
+        {% endspaceless %}{% endset %}
+        {% if user_menu %}
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li{% if section == 'personal' %} class="active"{% endif %}>
+                    <a href="{{ site_url }}admin/users/edit/personal/{{ data.id }}">
+                        {% helper lang.l('table_header_personal', 'users') %}
+                    </a>
+                </li>
+                {{ user_menu }}
+            </ul>
+            &nbsp;
+        </div>
+        {% endif %}
+    {% endif %}
+
+        {#<div class="x_title">
+            <h2>
+                {% if data.id %}
+                    {% if data.id %}
+                        {% helper lang.l('admin_header_users_change', 'users') %}
+                    {% else %}
+                        {% helper lang.l('admin_header_users_add', 'users') %}
+                    {% endif %}
+                {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>#}
+
+        <div class="x_content">
+    {% if section == 'personal' %}
+        <form action="{{ data.action }}" method="post" enctype="multipart/form-data" name="save_form"
+            data-parsley-validate class="form-horizontal form-label-left">
+                {% if not data.id %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_user_type', 'users') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="gender" class="btn-group" data-toggle="buttons">
+                            {% for key, item in user_types.option %}
+                            <label class="btn btn-default{% if key == data.user_type %} active{% endif %}"
+                                data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                <input type="radio" name="user_type" value="{{ key }}"{% if key == data.user_type %} checked{% endif %}>{{ item }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_looking_user_type', 'users') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="gender" class="btn-group" data-toggle="buttons">
+                            {% for key, item in user_types.option %}
+                            <label class="btn btn-default{% if key == data.looking_user_type %} active{% endif %}"
+                                data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                <input type="radio" name="looking_user_type" value="{{ key }}"{% if key == data.looking_user_type %} checked{% endif %}>{{ item }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_email', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="email" value="{{ data.email|e }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_nickname', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.nickname|e }}" name="nickname" class="form-control">
+                    </div>
+                </div>
+                {% if data.id %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_change_password', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="checkbox" value="1" name="update_password" id="pass_change_field" class="flat">
+                    </div>
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_password', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="password" value="" name="password" id="pass_field"{% if data.id %}disabled{% endif %} class="form-control">
+                    </div>
+                </div>
+                {% if not empty(use_repassword) %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_repassword', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="password" value="" name="repassword" id="repass_field"{% if data.id %}disabled{% endif %} class="form-control">
+                    </div>
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_fname', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.fname|e }}" name="fname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_sname', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" value="{{ data.sname|e }}" name="sname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Age: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <select class="form-control" name="age">
+                          {% for age in age_range %}
+                          <option value="{{ age }}"{% if age == data.age %} selected{% endif %}>
+                              {{ age }}
+                          </option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_partner_age', 'users') %}:</label>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <select class="form-control" name="age_min">
+                            {% for age in age_range %}
+                            <option value="{{ age }}"{% if age == data.age_min %} selected{% endif %}>
+                                {{ age }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 text-center">
+                        <span class="form-control-box">{% helper lang.l('to', 'users') %}</span>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <select class="form-control" name="age_max">
+                            {% for age in age_range %}
+                            <option value="{{ age }}"{% if age == data.age_max %} selected{% endif %}>
+                                {{ age }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_icon', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" value="{{ data.sname|e }}" name="user_icon" class="btn btn-default">
+                        {% if data.user_logo or data.user_logo_moderation %}
+                            <br><input type="checkbox" name="user_icon_delete" value="1" id="uichb" class="flat">
+                            <label for="uichb">{% helper lang.l('field_icon_delete', 'users') %}</label><br>
+                            {% if data.user_logo_moderation %}
+                                <img src="{{ data.media.user_logo_moderation.thumbs.middle }}">
+                            {% else %}
+                                <img src="{{ data.media.user_logo.thumbs.middle }}">
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('birth_date', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% helper start.getCalendarInput('birth_date', data.birth_date_hidden, {id: 'birth_date', year_range: {min: -80, max: -18}}) %}
+                    </div>
+                </div>
+
+                {# <custom_M> #}
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_living_with', 'users') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="living_with" multiple class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in living_with_options %}
+                                <option value="{{key}}" {% if key == data.living_with %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Living with (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_living_with" multiple class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in living_with_options %}
+                                <option value="{{key}}" {% if key == data.looking_living_with %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Ethnicity:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="ethnicity" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in ethnicity_options %}
+                                <option value="{{key}}" {% if key == data.ethnicity %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Ethnicity (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_ethnicity" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in ethnicity_options %}
+                                <option value="{{key}}" {% if key == data.looking_ethnicity %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Relationship status:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="relationship_status" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in relationship_status_options %}
+                                <option value="{{key}}" {% if key == data.relationship_status %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Relationship status (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_relationship_status" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in relationship_status_options %}
+                                <option value="{{key}}" {% if key == data.looking_relationship_status %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Height:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="height" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in height_options %}
+                                <option value="{{key}}" {% if key == data.height %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Height (my match):</label>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <select name="height_min" class="form-control">
+                          <option value="">...</option>
+                          {% for key, item in height_options %}
+                              <option value="{{key}}" {% if key == data.height_min %}selected{% endif %}>{{item}}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12 text-center">
+                        <span class="form-control-box">{% helper lang.l('to', 'users') %}</span>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <select name="height_max" class="form-control">
+                          <option value="">...</option>
+                          {% for key, item in height_options %}
+                              <option value="{{key}}" {% if key == data.height_max %}selected{% endif %}>{{item}}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                </div>
+                {# </custom_M> #}
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_region', 'users') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% helper countries.location_select({
+                            select_type: 'city',
+                            id_country: data.id_country,
+                            id_region: data.id_region,
+                            id_city: data.id_city,
+                            var_country_name: 'id_country',
+                            var_region_name: 'id_region',
+                            var_city_name: 'id_city'
+                        }) %}
+                    <input type="hidden" name="lat" value="{{ data.lat|e }}" id="lat">
+                    <input type="hidden" name="lon" value="{{ data.lon|e }}" id="lon">
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Postal code:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="postal_code" value="{{ data.postal_code|e }}" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Physical appearance:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="physical_appearance" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in physical_appearance_options %}
+                                <option value="{{key}}" {% if key == data.physical_appearance %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Physical appearance (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_physical_appearance" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in physical_appearance_options %}
+                                <option value="{{key}}" {% if key == data.looking_physical_appearance %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Eye color:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="eye_color" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in eye_color_options %}
+                                <option value="{{key}}" {% if key == data.eye_color %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Eye color (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_eye_color" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in eye_color_options %}
+                                <option value="{{key}}" {% if key == data.looking_eye_color %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Hair color:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="hair_color" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in hair_color_options %}
+                                <option value="{{key}}" {% if key == data.hair_color %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Hair color (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_hair_color" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in hair_color_options %}
+                                <option value="{{key}}" {% if key == data.looking_hair_color %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Body type:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="body_type" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in body_type_options %}
+                                <option value="{{key}}" {% if key == data.body_type %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Body type (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_body_type" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in body_type_options %}
+                                <option value="{{key}}" {% if key == data.looking_body_type %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Religion:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="religion" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in religion_options %}
+                                <option value="{{key}}" {% if key == data.religion %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Religion (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_religion" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in religion_options %}
+                                <option value="{{key}}" {% if key == data.looking_religion %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Language:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="language" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in language_options %}
+                                <option value="{{key}}" {% if key == data.language %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Language (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_language" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in language_options %}
+                                <option value="{{key}}" {% if key == data.looking_language %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Education:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="education" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in education_options %}
+                                <option value="{{key}}" {% if key == data.education %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Education (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_education" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in education_options %}
+                                <option value="{{key}}" {% if key == data.looking_education %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Occupation:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="occupation" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in occupation_options %}
+                                <option value="{{key}}" {% if key == data.occupation %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Occupation (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_occupation" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in occupation_options %}
+                                <option value="{{key}}" {% if key == data.looking_occupation %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Annual income:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="annual_income" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in annual_income_options %}
+                                <option value="{{key}}" {% if key == data.annual_income %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Annual income (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_annual_income" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in annual_income_options %}
+                                <option value="{{key}}" {% if key == data.looking_annual_income %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Drinking:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="drinking" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in drinking_options %}
+                                <option value="{{key}}" {% if key == data.drinking %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Drinking (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_drinking" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in drinking_options %}
+                                <option value="{{key}}" {% if key == data.looking_drinking %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Smoking:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="smoking" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in smoking_options %}
+                                <option value="{{key}}" {% if key == data.smoking %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Smoking (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_smoking" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in smoking_options %}
+                                <option value="{{key}}" {% if key == data.looking_smoking %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Have children:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="have_children" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in have_children_options %}
+                                <option value="{{key}}" {% if key == data.have_children %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Have children (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_have_children" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in have_children_options %}
+                                <option value="{{key}}" {% if key == data.looking_have_children %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Want children:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="want_children" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in want_children_options %}
+                                <option value="{{key}}" {% if key == data.want_children %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Want children (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_want_children" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in want_children_options %}
+                                <option value="{{key}}" {% if key == data.looking_want_children %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Have pets:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="have_pets" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in have_pets_options %}
+                                <option value="{{key}}" {% if key == data.have_pets %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Have pets (my match):
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_have_pets" class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in have_pets_options %}
+                                <option value="{{key}}" {% if key == data.looking_have_pets %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Headline:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea name="headline" rows="5" cols="80" class="form-control">{{ data.headline|e }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        About me:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea name="about_me" rows="5" cols="80" class="form-control">{{ data.about_me|e }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        About my match:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea name="looking_about" rows="5" cols="80" class="form-control">{{ data.looking_about|e }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Looking for:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="looking_for" multiple class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in looking_for_options %}
+                                <option value="{{key}}" {% if key == data.looking_for %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Prefer my match / friend within:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <div class="input-group">
+                        <input type="number" name="looking_distance" value="{{ data.looking_distance|e }}" class="form-control">
+                        <span class="input-group-addon">km</span>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        The music I enjoy listening to:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea name="listening_music" rows="5" cols="80" class="form-control">{{ data.listening_music|e }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Astrological sign:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="astrological_sign" multiple class="form-control">
+                            <option value="">...</option>
+                            {% for key, item in astrological_sign_options %}
+                                <option value="{{key}}" {% if key == data.astrological_sign %}selected{% endif %}>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Subscribed:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="hidden" name="is_subscribed" value="0">
+                        <input type="checkbox" name="is_subscribed" value="1" {% if data.is_subscribed %}checked{% endif %}>
+                    </div>
+                </div>
+
+                {% helper is_module_installed = utils.depends('geomap') %}
+                {% if is_module_installed.geomap %}
+                    {% helper geomap.geomap_load_geocoder() %}
+                {% endif %}
+                <script type="text/javascript">
+                    $(function() {
+                        loadScripts(
+                            ["{% helper utils.jscript('users', 'users-map.js', 'path') %}"],
+                            function() {
+                                users_map = new usersMap({
+                                    siteUrl: site_url,
+                                });
+                            },
+                            ['users_map'],
+                            {async: true}
+                        );
+                    });
+                </script>
+                {% if data.id %}
+                    {% if data.confirm %}
+                        <input type="hidden" name="confirm" value="1">
+                    {% else %}
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                {% helper lang.l('field_confirm', 'users') %}: </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="checkbox" value="1" name="confirm" class="flat">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                <div class="ln_solid"></div>
+
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/users">
+                            {% helper lang.l('btn_cancel', 'start' )%}</a>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+    {% elseif section == 'seo' %}
+            {% helper is_module_installed = utils.depends('seo_advanced') %}
+            {% if is_module_installed.seo_advanced %}
+                {% for key, section in seo_fields %}
+                    <form method="post" action="{{ data.action|e }}" name="seo_{{ section.gid }}_form"
+                        data-parsley-validate class="form-horizontal form-label-left">
+                        <br>
+                        <h3>{{ section.name }}</h3>
+
+                        {% if section.tooltip %}
+                            <p>{{ section.tooltip }}</p>
+                        {% endif %}
+
+                        {% for field in section.fields %}
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ field.name }}: </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    {% set field_gid = field.gid %}
+                                    {% if field.type == 'checkbox' %}
+                                        <input type="hidden" name="{{ section.gid }}[{{ field_gid }}]" value="0">
+                                        <input type="checkbox" name="{{ section.gid }}[{{ field_gid }}]" value="1"
+                                            class="flat" {% if attribute(seo_settings, field_gid) %}checked{% endif %}>
+                                    {% elseif field.type == 'text' %}
+                                        {% for lang_id, lang_item in languages %}
+                                            {% if lang_id == current_lang_id %}
+                                                {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                <input type="text" name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]"
+                                                    value="{{ attribute(attribute(seo_settings, section_gid), field_gid)|e }}"
+                                                    class="form-control">
+                                            {% endif %}
+                                        {% endfor %}
+
+                                </div>
+                                <div class="accordion col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel">
+                                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                        </a>
+                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                {% for lang_id, item in languages %}
+                                                    {% if lang_id != current_lang_id %}
+                                                        {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ item.name }}</label>
+                                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                                <input name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]" class="form-control" value="attribute(attribute(seo_settings, section_gid), field_gid)|e" />
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                        {% elseif field.type == 'textarea' %}
+                                            {% for lang_id, lang_item in languages %}
+                                                {% if lang_id == current_lang_id %}
+                                                    {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                    <textarea name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]" rows="5" cols="80"
+                                                        class="form-control">{{ attribute(attribute(seo_settings, section_gid), field_gid)|e }}</textarea>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                </div>
+                                <div class="accordion col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel">
+                                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                                        </a>
+                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                {% for lang_id, item in languages %}
+                                                    {% if lang_id != current_lang_id %}
+                                                        {% set section_gid = section.gid ~ '_' ~ lang_id %}
+                                                        <textarea name="{{ section.gid }}[{{ field_gid }}][{{ lang_id }}]" rows="5" cols="80"
+                                                            class="form-control">{{ attribute(attribute(seo_settings, section_gid), field_gid)|e }}</textarea>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                        {% endif %}<br>{{ field.tooltip }}
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="ln_solid"></div>
+
+                    <!-- Buttons -->
+                        <button type="submit" name="btn_save_{{ section.gid }}" class="btn btn-success">
+                            {% helper lang.l('btn_save', 'start') %}</button>
+                        <a class="cancel" href="{{ back_url }}">
+                            {% helper lang.l('btn_cancel', 'start') %}</a>
+
+                        <input type="hidden" name="btn_save" value="1">
+                    </form>
+                    <div class="clearfix"></div>
+                {% endfor %}
+            {% endif %}
+    {% else %}
+            <form action="{{ data.action }}" method="post" enctype="multipart/form-data" name="save_form"
+                  data-parsley-validate class="form-horizontal form-label-left">
+
+                {% include 'custom_form_fields.twig' %}
+
+                <div class="ln_solid"></div>
+
+            <!-- Buttons -->
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <button type="submit" name="btn_save" class="btn btn-success" value="1">
+                            {{ save_text }}</button>
+                        <a class="btn btn-default" href="{{ site_url }}admin/start/menu/add_ons_items">
+                            {% helper lang.l('btn_cancel', 'start') %}</a>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+    {% endif %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $("#pass_change_field")
+            .on('ifChecked', function(){
+                $("#pass_field").removeAttr("disabled");
+                $("#repass_field").removeAttr("disabled");
+            })
+            .on('ifUnchecked', function(){
+                $("#pass_field").attr('disabled', 'disabled');
+                $("#repass_field").attr('disabled', 'disabled');
+            });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

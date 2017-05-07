@@ -1,0 +1,202 @@
+{% helper users = users.re_format_users({'users': users,'return': true}) %}
+{% if users %}
+    {% if sort_data is not empty %}
+        <div class="sorter-block clearfix" id="sorter_block">
+            {#<div class="pull-left pl15">
+                {% helper start.sorter({
+                'links': sort_data.links,
+                'order': sort_data.order,
+                'direction': sort_data.direction,
+                'url': sort_data.url
+            }) %}
+            </div>#}
+            <div class="st-info" style="left: 30px;">
+                <div class="lh30">
+                    {% helper lang.l('header_users_found', 'users') %}: {{ page_data.total_rows }}
+                </div>
+            </div>
+            <div class="pull-right pr15">
+                <div class="fright lh30 search-top-pager">
+                    {% set page_data = page_data|merge({'type': 'cute'}) %}
+                    {% helper start.pagination(page_data) %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+    <h2 class="text-center p10">
+        {% helper lang.l('header_users_found', 'users') %}: {{ page_data.total_rows }}
+    </h2>
+{% endif %}
+<div class="{% if page_data.view_type == 'gallery' %}row g-users-gallery{% else %}user-list{% endif %}">
+    {% for ukey, user in users %}
+        {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', user) %}
+        {% if page_data.view_type == 'gallery' %}
+            <div class="g-users-gallery__item col-xs-6 col-sm-3 col-md-3 col-lg-3 {% if user.is_highlight_in_search or user.leader_bid or (user.is_up_in_search and page_data.use_leader) %}highlight{% endif %}">
+                <div class="g-users-gallery__content">
+                    <div class="g-users-gallery__photo">
+                        <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', user) %}">
+                            {% helper users.formatAvatar({'user': user, 'size': 'great'}) %}
+                        </a>
+                    </div>
+                    <div class="g-users-gallery__info">
+                        <div class="text-overflow">
+                            <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'view', user) %}">
+                              {{ user.output_name }}</a>, {{ user.age }}
+                        </div>
+                        {% if user.location %}
+                            <div class="text-overflow">
+                                {{ user.location }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if ukey == 3  %}
+                <div class="banner-unsupported">
+                    {% helper banners.show_banner_place('banner-980x90') %}
+                </div>
+            {% elseif ukey == 7 or (ukey == users_count - 1 and ukey < 7) %}
+                <div class="clearfix mt10">
+                    <div class="col-xs-6">
+                        <div class="banner-unsupported">
+                            {% helper banners.show_banner_place('banner-320x250') %}
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="banner-unsupported">
+                            {% helper banners.show_banner_place('banner-320x75') %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% else %}
+            {% if ukey == 0 %}
+                <div class="banner-unsupported">
+                    {% helper banners.show_banner_place('banner-980x90') %}
+                </div>
+            {% elseif ukey == 3 %}
+                <div class="clearfix mt10">
+                    <div class="col-xs-6">
+                        <div class="banner-unsupported">
+                            {% helper banners.show_banner_place('banner-320x250') %}
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="banner-unsupported">
+                            {% helper banners.show_banner_place('banner-320x75') %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div id="item-block-{{ user.id }}"
+                 class="user-list-item clearfix {% if user.is_highlight_in_search or
+                                        user.leader_bid or
+                                        (user.is_up_in_search and page_data.use_leader) %}highlight{% endif %}">
+                {% if user.leader_bid %}
+                    <div class="lift_up">
+                        {% helper lang.l('header_leader', 'users') %}
+                    </div>
+                {% endif %}
+
+                <div class="col-xs-12 no-padding-left no-padding-right">
+                    <div class="image">
+                        <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', user) %}">
+                            {% helper users.formatAvatar({'user': user, 'size': 'middle'}) %}
+                        </a>
+                    </div>
+                    <div class="descr-1">
+                      <div class="row">
+                        <div class="col-xs-5">
+                          <a href="{% helper seo.seolink('users', 'view', user) %}">{{ user.output_name }}</a> {% if user.is_new %}NEW!{% endif %}<br>
+                          {% if is_match %}Match {{ user.relevation }}%<br>{% endif %}
+                          {{ user.age }}, {{ user.user_type_str }}{% if user.relationship_status %}, {{ user.relationship_status_str }}{% endif %}<br>
+                        {% if user.location %}
+                          <i class="fa fa-map-marker g"></i> <span>{{ user.location }}</span><br>
+                        {% endif %}
+                        {% if user.ethnicity %}
+                          <strong>Ethnicity</strong>: {{ user.ethnicity_str }}<br>
+                        {% endif %}
+                        {% if user.living_with %}
+                          <strong>Living with:</strong> {{ user.living_with_str }}
+                        {% endif %}
+                          {# {% helper ratings.get_rate_item({'object_id': user.id, 'type_gid': 'users_object'}) %} #}
+                        </div>
+                        <div class="col-xs-5 user-quick-actions">
+                          {% if user.online_status %}
+                            {% if user.custom_status %}
+                          {{ user.custom_status }}
+                            {% else %}
+                          Online
+                            {% endif %}
+                          {% else %}
+                          Offline
+                          {% endif %}<br>
+                          {% helper mailbox.send_message_button({'id_user': user_id, 'view_type': 'button'}) %}
+                          {% helper friendlist.friendlist_links({'id_user': user_id, 'view_type': 'link'}) %}
+                          {% helper blacklist.blacklist_button({'id_user': user_id, 'view_type': 'link'}) %}
+                          {% helper favourites.favourites_button({'id_user': user_id, 'view_type': 'link'}) %}
+                          {% helper chats.helper_btn_chat({user_id: data.id, 'view_type': 'link'}) %}
+                          {% helper winks.wink({'user_id': user_id, 'view_type': 'link'}) %}
+                          {% helper kisses.kisses_list({'user_id': user_id, 'view_type': 'link'}) %}
+                          {% helper spam.mark_as_spam_block({'object_id': user_id, 'type_gid': 'users_object', 'template': 'link'}) %}<br>
+                          My private note: <i class="fa fa-pencil"></i>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% if users %}
+    <div id="pages_block_2" class="tac">
+        {% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+    </div>
+{% endif %}
+
+<script>
+    {% if not show_list_buttons %}
+        $(".user-menu a").each(function () {
+            $(this).unbind('click').removeAttr('onclick').html('<span class="dislink">' + $(this).html() + '</span>');
+        });
+        $(".lider-link").each(function () {
+            $(this).html('<a href="javascript:void(0)" class="dislink">' + $(this).children().html() + '</a>');
+        });
+
+        $(".dislink").each(function () {
+            $(this).bind('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                $.ajax({
+                    url: '{{ site_url }}' + 'users/prevent_view',
+                    success: function (data) {
+                        var list_view_request_window = new loadingContent({
+                            loadBlockWidth: '500px',
+                            linkerObjID: $(this).attr('id'),
+                            loadBlockLeftType: 'center',
+                            loadBlockTopType: 'center',
+                            closeBtnClass: 'w'
+                        });
+                        list_view_request_window.show_load_block(data);
+                    },
+                    dataType: 'html',
+                    type: 'POST'
+                });
+            });
+        });
+    {% endif %}
+
+    $('.user-gallery').not('.w-descr').find('.photo')
+            .off('mouseenter').on('mouseenter', function () {
+        $(this).find('.info').stop().slideDown(100);
+    }).off('mouseleave').on('mouseleave', function () {
+        $(this).find('.info').stop(true).delay(100).slideUp(100);
+    });
+
+    $('#main_page').click(function () {
+        $('.umb').hide();
+    });
+</script>

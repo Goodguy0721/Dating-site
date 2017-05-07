@@ -1,0 +1,64 @@
+<div>
+	{% if users %}
+		<div class="sorter short-line" id="sorter_block">
+			{% helper start.sorter({
+                'links': sort_data.links,
+                'order': sort_data.order,
+                'direction': sort_data.direction,
+                'url': sort_data.url
+            }) %}
+			<span class="h2">
+                {% helper lang.l('header_users_search_results', 'users') %} -
+                {{ page_data.total_rows }} {% helper lang.l('header_users_found', 'users') %}
+            </span>
+			<div class="fright">
+                {% set page_data = page_data|merge({'type': 'cute'}) %}
+                {% helper start.pagination(page_data) %}
+            </div>
+		</div>
+	{% else %}
+		<div class="sorter short-line" id="sorter_block">
+			<h2>
+                {% helper lang.l('header_users_search_results', 'users') %} -
+                {{ page_data.total_rows }} {% helper lang.l('header_users_found', 'users') %}
+            </h2>
+		</div>
+	{% endif %}
+
+	<div class="user-gallery big">
+        {% for item in users %}
+            {% helper text_user_logo = lang.l('text_user_logo', 'users', '', 'button', item) %}
+            <div id="item-block-{{ item.id }}" class="item">
+                <div class="user">
+                    <div class="photo">
+                        <a href="{% helper seo.seolink('users', 'view', item) %}">
+                            {% helper users.formatAvatar({'user': item, 'size': 'great'}) %}
+                        </a>
+                        <div class="info">
+                            <div class="text-overflow">
+                                <a href="{% helper seo.seolink('users', 'view', item) %}">{{ item.output_name }}</a>, {{ item.age }}
+                            </div>
+                            {% if item.location %}
+                                <div class="text-overflow">{{ item.location }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+	</div>
+	{% if users %}
+        <div id="pages_block_2">
+            {% set page_data = page_data|merge({'type': 'full'}) %}
+            {% helper start.pagination(page_data) %}
+        </div>
+    {% endif %}
+</div>
+<script>
+	$('.user').find('.photo')
+		.off('mouseenter').on('mouseenter', function(){
+			$(this).find('.info').stop().slideDown(100);
+		}).off('mouseleave').on('mouseleave', function(){
+			$(this).find('.info').stop(true).delay(100).slideUp(100);
+		});
+</script>

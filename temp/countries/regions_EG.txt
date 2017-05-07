@@ -1,0 +1,6 @@
+	954	Ţābā	29.4919900	34.8957200	EG	26	0	0	Ţābā	Таба	Ţābā	Ţābā	Ţābā	Ţābā
+	954	Sharm el-Sheikh	27.9158200	34.3299500	EG	26	0	0	Sharm el-Sheikh	Шарм-эль-Шейх	Sharm el-Sheikh	Sharm el-Sheikh	Sharm el-Sheikh	Sharm el-Sheikh
+	954	Nuwaybi‘a	29.0468100	34.6634000	EG	26	0	0	Nuwaybi‘a	Нувейба	Nuwaybi‘a	Nuwaybi‘a	Nuwaybi‘a	Nuwaybi‘a
+	954	Dhahab	28.5009800	34.5133800	EG	26	0	0	Dhahab	Дахаб	Dhahab	Dhahab	Dhahab	Dhahab
+	954	El-Tor	28.2416800	33.6222000	EG	26	0	0	El-Tor	El-Tor	El-Tor	El-Tor	El-Tor	El-Tor
+	954	Saint Catherine	28.5619100	33.9493400	EG	26	0	0	Saint Catherine	Saint Catherine	Saint Catherine	Saint Catherine	Saint Catherine	Saint Catherine

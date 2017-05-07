@@ -1,0 +1,31 @@
+<span class="user-menu-item" id="link-association-{{ associations_button_rand }}">
+    <a id="btn-association-{{ associations_button_rand }}" class="link-r-margin {% if associations.compared %}disabled {% endif %}"
+        title="{% helper lang.l('link_send', 'associations', '', 'button') %}"
+        href="javascript:void(0);">
+        {% helper lang.l('link_send', 'associations', '', 'button') %}
+    </a>
+</span>
+<script>
+    $(function () {
+        loadScripts(
+            "{% helper utils.jscript('associations', '../views/flatty/js/associations.js', 'path') %}",
+            function () {
+                var lang_data = {
+                    compare: "{% helper lang.l('button_compare', 'associations', '', 'js') %}",
+                    more: "{% helper lang.l('button_more', 'associations', '', 'js') %}",
+                    already_sent: "{% helper lang.l('error_already_sent', 'associations', '', 'js') %}",
+                    associations_empty: "{% helper lang.l('error_associations_empty', 'associations', '', 'js') %}"
+                };
+                associations = new Associations({
+                    siteUrl: site_url,
+                    profile_id: '{{ associations.profile_id }}',
+                    rand: '{{ associations_button_rand }}',
+                    compared: '{{ associations.compared }}',
+                    lang: lang_data,
+                });
+            },
+            'associations',
+            {async: false}
+        );
+    });
+</script>

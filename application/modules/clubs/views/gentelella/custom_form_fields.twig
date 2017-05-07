@@ -1,0 +1,82 @@
+{% for item in fields_data %}
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}: </label>
+    <div class="col-md-9 col-sm-9 col-xs-12" id="field-{{ item.gid }}">
+      {% if item.field_type == 'select' %}
+        {% if item.settings_data_array.view_type == 'select' %}
+          <select name="{{ item.field_name|e }}" class="form-control">
+            {% if item.settings_data_array.empty_option %}
+              <option value="0"{% if value == 0 %} selected{% endif %}>...</option>
+            {% endif %}
+            {% for value, option in item.options.option %}
+              <option value="{{ value|e }}"{% if value == item.value %} selected{% endif %}>
+                {{ option }}
+              </option>
+            {% endfor %}
+          </select>
+        {% else %}
+          {% if item.settings_data_array.empty_option %}
+            <input type="radio" name="{{ item.field_name|e }}" value="0"{% if value == 0 %} checked{% endif %} id="{{ item.field_name }}_0">
+            <label for="{{ item.field_name }}_0">No select</label><br>
+          {% endif %}
+          {% for value, option in item.options.option %}
+            <input type="radio" name="{{ item.field_name }}" value="{{ value|e }}" {% if value == item.value %} checked{% endif %} id="{{ item.field_name }}_{{ value }}">
+            <label for="{{ item.field_name }}_{{ value }}">{{ option }}</label><br>
+          {% endfor %}
+        {% endif %}
+      {% elseif item.field_type == 'multiselect' %}
+        {% if item.settings_data_array.view_type == 'mselect' %}
+          <select name="{{ item.field_name }}[]" multiple class="form-control">
+            {% for value, option in item.options.option %}
+              <option value="{{ value|e }}" {% helper utils.inArray(value, item.value, 'selected') %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        {% else %}
+          {% for value, option in item.options.option %}
+            <div class="chbx">
+              <input type="checkbox" name="{{ item.field_name }}[]" value="{{ value|e }}" {% helper utils.inArray(value, item.value, 'checked') %} id="{{ item.field_name|e }}_{{ value|e }}" class="flat">
+              <label for="{{ item.field_name|e }}_{{ value|e }}">{{ option }}</label>
+            </div>
+          {% endfor %}
+          <div class="clearfix"></div>
+          <a href="#" class="select-link">{% helper lang.l('select_all', 'start') %}</a> &nbsp;|&nbsp;<a href="#" class="unselect-link">{% helper lang.l('unselect_all', 'start') %}</a>
+        {% endif %}
+      {% elseif item.field_type == 'text' %}
+        <input type="text" value="{{ item.value|e }}" name="{{ item.field_name }}" class="form-control" maxlength="{{ item.settings_data_array.max_char }}">
+      {% elseif item.field_type == 'textarea' %}
+        <textarea name="{{ item.field_name }}" class="form-control">{{ item.value|e }}</textarea>
+      {% elseif item.field_type == 'checkbox' %}
+        <input type="checkbox" value="1" name="{{ item.field_name }}"{% if item.value == '1' %} checked{% endif %} class="flat">
+      {% elseif item.field_type == 'range' %}
+        <input type="text" value="{{ item.value|e }}" name="{{ item.field_name }}" class="form-control">
+        ({% helper lang.l('min', 'start') %} - {% helper lang.l('max', 'start') %}: {{ item.settings_data_array.min_val }} - {{ item.settings_data_array.max_val }})
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+<script type="text/javascript">
+    function setchbx(fid, status) {
+        if(status){
+            $('#'+fid).find('input[type=checkbox]').each(function(index, item) {
+                if (!item.checked) {
+                    $(item).next().trigger('click');
+                }
+            });
+        }else{
+            $('#'+fid).find('input[type=checkbox]').each(function(index, item) {
+                if (item.checked) {
+                    $(item).next().trigger('click');
+                }
+            });
+        }
+    }
+    $(function(){
+        $('.select-link').bind('click', function(){
+            setchbx($(this).parent().attr('id'), 1); return false;
+        });
+        $('.unselect-link').bind('click', function(){
+            setchbx($(this).parent().attr('id'), 0); return false;
+        });
+    });
+</script>

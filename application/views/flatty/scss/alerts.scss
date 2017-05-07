@@ -1,0 +1,23 @@
+.alert-warning_pop {
+    background: none repeat scroll 0 0 $popup_bg; 
+    max-width: 60%; 
+    position: fixed; 
+    text-align: center; 
+    z-index: 1004;
+}
+
+.alert_bg {
+    display: none; 
+    height: 100%; 
+    left: 0; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1003;
+}
+
+.alert_bg {
+    background-color: rgb(255, 255, 255); 
+    background-color: rgba(255, 255, 255, .8);
+}
+

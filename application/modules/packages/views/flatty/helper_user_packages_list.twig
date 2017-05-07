@@ -1,0 +1,82 @@
+<div class="packages">
+	{% set is_inactive_packages = 0 %}
+	{% helper data_alert_lng = lang.l('service_activate_confirm', 'services') %}
+	{% for block_user_package in block_user_packages %}
+		{% if not block_user_package.is_active %}
+            {% set is_inactive_packages = 1 %}
+        {% endif %}
+		<dl class="user-package{% if not block_user_package.is_active %} inactive hide-always{% endif %}">
+			<div class="h2">
+                {{ block_user_package.package_info.name }}
+            </div>
+			<div class="h3 p5">
+                {% helper lang.l('package_active_till', 'packages') %}:&nbsp;
+                {% helper date_format.tpl_date_format(block_user_package.till_date,
+                                                      block_user_packages_date_formats.date_time_format) %}
+            </div>
+			<div class="services">
+				{% for service in block_user_package.user_services %}
+					<div class="service{% if not service.count or not service.status %} inactive{% endif %}">
+						<div class="table">
+							<dl>
+								<dt class="view">
+									<h2 class="m0">
+                                        {{ service.name }}&nbsp;({{ service.count }})
+                                    </h2>
+									<div class="t-2">
+										{% if not service.is_active %}
+                                            <div class="pb5">
+                                                {% helper date_format.tpl_date_format(service.date_modified,
+                                                                                      block_user_packages_date_formats.date_format) %}
+                                            </div>
+                                        {% endif %}
+										{% if service.description %}
+                                            <div>
+                                                <span>{{ service.description }}</span>
+                                            </div>
+                                        {% endif %}
+										{% for setting_gid, setting_options in service.service.template.data_admin_array %}
+											<div>
+                                                <span>
+                                                    {{ setting_options.name }}:
+                                                    {{ service.service.data_admin[setting_gid] }}
+                                                </span>
+                                            </div>
+										{% endfor %}
+									</div>
+								</dt>
+								<dt class="righted">
+									{% if block_user_package.is_active and service.count and service.status %}
+										<input type="button" onclick="
+											var href='{{ site_url }}services/user_service_activate/{{ block_user_package.id_user }}/{{ service.id }}/{{ service.service_gid }}';
+											var alert='{{ data_alert_lng|e }}<br>{{ service.name|e }}<br>({{ service.description|e }})';
+
+                                            if(!parseInt('{{ service.template.alert_activate }}')) {
+												locationHref(href);
+											} else {
+												alerts.show({
+													text: alert.replace(/<br>/g, '\n'),
+													type: 'confirm',
+													ok_callback: function(){
+														locationHref(href);
+													}
+												});
+											}" value="{% helper lang.l('btn_activate', 'services') %}" />
+									{% endif %}
+								</dt>
+							</dl>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</dl>
+	{% endfor %}
+
+	{% if is_inactive_packages %}
+		<div>
+            <span class="a" onclick="$(this).parents('.packages').find('.user-package.inactive').toggleClass('hide-always');">
+                {% helper lang.l('show_hide_inactive_packages', 'services') %}
+            </span>
+        </div>
+	{% endif %}
+</div>

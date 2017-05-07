@@ -1,0 +1,157 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div>
+            <p class="mb5">{% helper lang.l('title_'~type, 'forum') %}</p>
+            <p class="mb5">{% helper lang.l('category_counts', 'forum') %}: {{ categories_count }}</p>
+        </div>
+
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if type == 'public' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/forum/index/public">
+                        {% helper lang.l('filter_public', 'forum') %}
+                    </a>
+                </li>
+                {#<li class="{% if type == 'club' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/forum/index/club">
+                        {% helper lang.l('filter_club', 'forum') %}
+                    </a>
+                </li>#}
+            </ul>
+        </div>
+
+        <div class="x_content">
+            <div id="actions" class="hide">
+                {% if type == 'public' %}
+                    <div class="btn-group">
+                        <a href="{{ site_root }}admin/forum/edit_category" class="btn btn-primary">
+                          {% helper lang.l('link_add_category', 'forum') %}</a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ site_root }}admin/forum/edit_category">
+                                    {% helper lang.l('link_add_category', 'forum') %}
+                                </a>
+                            </li>
+                            {#<li>
+                                <a href="{{ site_url }}admin/forum/sorting/">
+                                    {% helper lang.l('link_sorting_mode', 'forum') %}
+                                </a>
+                            </li>#}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+
+            <table id="forum" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_categories', 'forum') %}</th>
+                        <th class="column-title">{% helper lang.l('field_category_description', 'forum') %}</th>
+                        <th class="column-title">{% helper lang.l('link_subcategory_count', 'forum') %}</th>
+                        <th class="column-title">{% helper lang.l('link_messages_count', 'forum') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key,item in categories %}
+                        <tr class="even pointer">
+                            <td>
+                                <a href="{{ site_url }}admin/forum/subcategories/{{ item.id }}">
+                                    {{ item.category }}
+                                </a>
+                            </td>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.subcategory_count }}</td>
+                            <td>{{ item.messages_count }}</td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick = "document.location.href='{{ site_url }}admin/forum/edit_category/{{ item.id }}'">
+                                            {% helper lang.l('link_edit_category','forum') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/forum/edit_category/{{ item.id }}">
+                                                {% helper lang.l('link_edit_category','forum') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/forum/delete_category/{{ item.id }}"
+                                               onclick="javascript: if(!confirm('{% helper lang.l('note_delete_category', 'forum', '', 'js') %}')) return false;">
+                                                {% helper lang.l('link_delete_category','forum') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#forum').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_categories','forum') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#forum_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

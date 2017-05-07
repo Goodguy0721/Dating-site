@@ -1,0 +1,57 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_moderation_menu') %}
+            </ul>
+        </div>
+        <form method="post" action="{{ form_save_link }}" name="moder_sattings_save" enctype="multipart/form-data"
+            data-parsley-validate class="form-horizontal form-label-left">
+        {% for key, item in moder_types %}
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    {% helper lang.l('mtype_' ~ item.name, 'moderation') %}:</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="hidden" name="type_id[]" value="{{ item.id }}">
+                {% if item.mtype >= 0 %}
+                    <input type="radio" class="flat" name="mtype[{{ item.id }}]"
+                            value="2" id="mtype_{{ item.id }}_2"{% if item.mtype == '2' %}checked{% endif %}>
+                    {% helper lang.l('mtype_2', 'moderation') %}
+                    <br>
+                    <input type="radio" class="flat" name="mtype[{{ item.id }}]"
+                            value="1" id="mtype_{{ item.id }}_1"{% if item.mtype == '1' %}checked{% endif %}>
+                    {% helper lang.l('mtype_1', 'moderation') %}
+                    <br>
+                    <input type="radio" class="flat" name="mtype[{{ item.id }}]"
+                            value="0" id="mtype_{{ item.id }}_0"{% if item.mtype == '0' %}checked{% endif %}>
+                    {% helper lang.l('mtype_0', 'moderation') %}
+                    <br><br>
+                {% else %}
+                    <input type="hidden" value="mtype[{{ item.id }}]" value="{{ item.mtype }}">
+                {% endif %}
+                    <input type="checkbox" name="check_badwords[{{ item.id }}]"
+                           value="1" {% if item.check_badwords == '1' %}checked{% endif %}
+                           id="chbw_{{ item.id }}" class="flat tableflat">
+                    <span for="chbw_{{ item.id }}">{% helper lang.l('check_badwords', 'moderation') %}</span>
+                </div>
+            </div>
+        {% endfor %}
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                    {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                    <input type="submit" class="btn btn-success" value="{{ save_text }}" name="sbmBtn">
+                    <a href="{{ site_url }}admin/moderation" class="btn btn-default">
+                      {% helper lang.l('btn_cancel', 'start') %}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+{% include '@app/footer.twig' %}

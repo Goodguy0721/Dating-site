@@ -1,0 +1,19 @@
+	2124	Saint-Pierre	14.7438300	-61.1753300	MQ	MQ	0	0	Saint-Pierre	Saint-Pierre	Saint-Pierre	Saint-Pierre	Saint-Pierre	Saint-Pierre
+	2124	Saint-Joseph	14.6709900	-61.0390500	MQ	MQ	0	0	Saint-Joseph	Saint-Joseph	Saint-Joseph	Saint-Joseph	Saint-Joseph	Saint-Joseph
+	2124	Sainte-Marie	14.7839200	-60.9927400	MQ	MQ	0	0	Sainte-Marie	Сент-Мари	Sainte-Marie	Sainte-Marie	Sainte-Marie	Sainte-Marie
+	2124	Sainte-Luce	14.4673300	-60.9270800	MQ	MQ	0	0	Sainte-Luce	Sainte-Luce	Sainte-Luce	Sainte-Luce	Sainte-Luce	Sainte-Luce
+	2124	Rivière-Pilote	14.4774600	-60.9035000	MQ	MQ	0	0	Rivière-Pilote	Rivière-Pilote	Rivière-Pilote	Rivière-Pilote	Rivière-Pilote	Rivière-Pilote
+	2124	Le Vauclin	14.5452400	-60.8388300	MQ	MQ	0	0	Le Vauclin	Le Vauclin	Le Vauclin	Le Vauclin	Le Vauclin	Le Vauclin
+	2124	Les Trois-Îlets	14.5390000	-61.0360800	MQ	MQ	0	0	Les Trois-Îlets	Les Trois-Îlets	Les Trois-Îlets	Les Trois-Îlets	Les Trois-Îlets	Les Trois-Îlets
+	2124	Saint-Esprit	14.5500000	-60.9333300	MQ	MQ	0	0	Saint-Esprit	Saint-Esprit	Saint-Esprit	Saint-Esprit	Saint-Esprit	Saint-Esprit
+	2124	Le Robert	14.6775100	-60.9422800	MQ	MQ	0	0	Le Robert	Le Robert	Le Robert	Le Robert	Le Robert	Le Robert
+	2124	Le Morne-Rouge	14.7666700	-61.1333300	MQ	MQ	0	0	Le Morne-Rouge	Le Morne-Rouge	Le Morne-Rouge	Le Morne-Rouge	Le Morne-Rouge	Le Morne-Rouge
+	2124	Le Marin	14.4721200	-60.8697300	MQ	MQ	0	0	Le Marin	Le Marin	Le Marin	Le Marin	Le Marin	Le Marin
+	2124	Le Lorrain	14.8329200	-61.0566700	MQ	MQ	0	0	Le Lorrain	Le Lorrain	Le Lorrain	Le Lorrain	Le Lorrain	Le Lorrain
+	2124	Le Lamentin	14.6080000	-61.0093300	MQ	MQ	0	0	Le Lamentin	Le Lamentin	Le Lamentin	Le Lamentin	Le Lamentin	Le Lamentin
+	2124	Le François	14.6155700	-60.9030800	MQ	MQ	0	0	Le François	Le François	Le François	Le François	Le François	Le François
+	2124	La Trinité	14.7375800	-60.9628600	MQ	MQ	0	0	La Trinité	La Trinité	La Trinité	La Trinité	La Trinité	La Trinité
+	2124	Le Gros-Morne	14.7000000	-61.0000000	MQ	MQ	0	0	Le Gros-Morne	Le Gros-Morne	Le Gros-Morne	Le Gros-Morne	Le Gros-Morne	Le Gros-Morne
+	2124	Fort-de-France	14.6089200	-61.0733400	MQ	MQ	0	0	Fort-de-France	Форт-де-Франс	Fort-de-France	Fort-de-France	Fort-de-France	Fort-de-France
+	2124	Ducos	14.5752900	-60.9745300	MQ	MQ	0	0	Ducos	Ducos	Ducos	Ducos	Ducos	Ducos
+	2124	Basse-Pointe	14.8695400	-61.1150400	MQ	MQ	0	0	Basse-Pointe	Basse-Pointe	Basse-Pointe	Basse-Pointe	Basse-Pointe	Basse-Pointe

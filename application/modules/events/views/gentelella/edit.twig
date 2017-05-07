@@ -1,0 +1,276 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active" id="events_edit_main_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_main/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type" selected>
+                        {% helper lang.l('menu_edit_main_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default" id="events_edit_participants_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/edit_participants/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('menu_edit_participants_item', 'events') %}
+                    </label>
+                    <label class="btn btn-default" id="events_edit_album_item"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           onclick="document.location.href='{{ site_url }}admin/events/media_list/{{ event_id }}'">
+                        <input type="radio" name="looking_user_type">
+                        {% helper lang.l('menu_edit_album_item', 'events') %}
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" enctype="multipart/form-data" data-parsley-validate
+                  class="form-horizontal form-label-left" name="save_form"
+                  action="{{ data.action }}">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_name', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {{ langs[current_lang_id].name }}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="name_{{ current_lang_id }}"
+                               value="{{ event['name_' ~ current_lang_id]|escape }}"
+                               lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ current_lang_id }}"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in langs %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                              {{ lang_item.name }}:</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <input type="text" name="name_{{ lang_id }}"
+                                                       value="{{ event['name_' ~ lang_id]|escape }}"
+                                                       lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.ld_header('category', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% helper ld_category = lang.ld('category', 'events') %}
+                        <select name="category" class="form-control">
+                            {% for key, item in ld_category.option %}
+                                <option value="{{ key }}" {% if event.category == key %}selected{% endif %}>{{ item }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_description', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {{ langs[current_lang_id].name }}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea type="text" name="description_{{ current_lang_id }}"
+                               lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ current_lang_id }}"
+                               class="form-control">{{ event['description_' ~ current_lang_id]|escape }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="accordion col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3" id="accordionThree" role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <a class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordionThree" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <h4 class="panel-title">{% helper lang.l('others_languages', 'start') %}</h4>
+                            </a>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                {% for lang_id, lang_item in langs %}
+                                    {% if lang_id != current_lang_id %}
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12">{{ lang_item.name }}:</label>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <textarea type="text" name="description_{{ lang_id }}"
+                                                       lang-editor="value" lang-editor-type="data-name" lang-editor-lid="{{ lang_id }}"
+                                                       class="form-control">{{ event['description_' ~ lang_id]|escape }}</textarea>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_location', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {% helper countries.location_select({
+                          'select_type' : 'city',
+                          'id_country' : event.country_code,
+                          'id_region' : event.fk_region_id,
+                          'id_city' : event.fk_city_id
+                        }) %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_address', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="address" class="form-control" value="{{ event.address }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_venue', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="venue" class="form-control" value="{{ event.venue }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_date_started', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                              {% helper start.getCalendarInput('date_started', event.date_started, {
+                                id: 'datepicker_date_started',
+                                altFormat: 'yy-mm-dd',
+                                altField: '#alt_date_started'
+                              }) %}
+                              <input type='hidden' value='{{ event.date_started }}' name="alt_date_started" id="alt_date_started">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                              <input type="time" value='{{ event.time_started }}' name="time_started" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_date_ended', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                          {% helper start.getCalendarInput('date_ended', event.date_ended, {
+                            id: 'datepicker_date_ended',
+                            altFormat: 'yy-mm-dd',
+                            altField: '#alt_date_ended',
+                          }) %}
+                          <input type='hidden' value='{{ event.date_ended }}' name="alt_date_ended" id="alt_date_ended">
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                          <input type="time" value='{{ event.time_ended }}' name="time_ended" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_deadline_date', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                              {% helper start.getCalendarInput('deadline_date', event.deadline_date, {
+                                id: 'datepicker_deadline_date',
+                                altFormat: 'yy-mm-dd',
+                                altField: '#alt_deadline_date',
+                              }) %}
+                              <input type='hidden' value='{{ event.deadline_date }}' name="alt_deadline_date" id="alt_deadline_date">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                              <input type="time" value='{{ event.deadline_time }}' name="deadline_time" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_img', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="file" name="{{ upload_gid }}" class="btn btn-default">
+                        {% if event.img %}
+                            <br><input type="checkbox" name="event_icon_delete" value="1" id="uichb" class="flat">
+                            <label for="uichb">{% helper lang.l('field_icon_delete', 'users') %}</label><br>
+                            <img src="{{ event.image.thumbs.big }}" title="{{ event.name }}"  alt="{{ event.name }}">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      {% helper lang.l('field_max_participants', 'events') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type='text' value='{{ event.max_participants }}' name="max_participants" class="form-control">
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="is_user_invite">
+                         {% helper lang.l('field_is_invite_other', 'events') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input class="grouping flat" id="is_user_invite" type="checkbox" name="event_settings[is_user_invite]" {% if event.settings.is_user_invite %}checked="checked"{% endif %}>                       
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="is_upload_media">
+                         {% helper lang.l('field_is_upload_media', 'events') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input class="grouping flat" id="is_upload_media" type="checkbox" name="event_settings[is_upload_media]" {% if event.settings.is_upload_media %}checked="checked"{% endif %}>                       
+                    </div>
+                </div>
+              
+                        
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="is_user_can_join">
+                         {% helper lang.l('field_is_user_can_join', 'events') %}:
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input class="grouping flat" id="is_user_can_join" type="checkbox" name="event_settings[is_user_can_join]" {% if event.settings.is_user_can_join %}checked="checked"{% endif %}>                       
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                        <button type="submit" name="save" value="1" class="btn btn-success">
+                          {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+                        <a href="{{ site_url }}admin/events/index" class="btn btn-cancel">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<link href='{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css' rel='stylesheet' type='text/css' media='screen' />
+
+{% include '@app/footer.twig' %}

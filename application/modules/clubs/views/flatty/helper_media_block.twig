@@ -1,0 +1,32 @@
+{% set rand = random(11111, 99999) %}
+<div class="clearfix user-media-block" id="club_media{{ rand }}">
+    {{ media_block }}
+</div>
+<script>
+    $(function () {
+        loadScripts(
+            "{% helper utils.jscript('clubs', 'clubs-media.js', 'path') %}",
+            function () {
+                club_mediagallery{{ rand }} = new clubsMedia({
+                    siteUrl: site_url,
+                    idGroup: '{{ helper_mblock_data.club_id }}', 
+                    gallery_name: 'club_mediagallery',
+                    {% if helper_mblock_data.upload_gid == 'club-image' %}
+                    galleryContentParam: 'photo',
+                    {% elseif helper_mblock_data.upload_gid == 'club-video' %}
+                    galleryContentParam: 'video',
+                    {% endif %}
+                    galleryContentPage: 1,
+                    all_loaded: 1,
+                    galleryContentDiv: 'club_media{{ rand }}',
+                    post_data: {filter_duplicate: 1},
+                    load_on_scroll: false,
+                    sorterId: '',
+                    direction: 'desc',
+                });
+            },
+            'club_mediagallery{{ rand }}',
+            {async: false}
+        );
+    });
+</script>

@@ -1,0 +1,64 @@
+<div>
+    {% if event.id_wall == user_id %}
+    <a class="btn btn-primary pull-right delete_wall_event" data-id="{{ event.id }}" data-message="{% helper lang.l('confirm_delete', 'wall_events') %}" href="javascript:;">
+      {% helper lang.l('btn_delete', 'start') %}</a>
+    {% endif %}
+</div>
+{% for key, edata in event.data%}
+    <div>{% helper date_format.tpl_date_format(edata.event_date, date_format) %}{% if event.id_poster != user_id and use_spam %}<span class="ml10">{% helper spam.mark_as_spam_block({object_id: event.id, type_gid: 'wall_events_object', template: 'minibutton'}) %}</span>{% endif %}</div>
+
+    {% if edata.text %}
+        <div>{{ edata.text|nl2br }}</div>
+    {% endif %}
+
+    {% if event.media[key].img %}
+        {% set i = 0 %}
+        <div class="wall-gallery" gallery="wall_{event.id}">
+            {% for item in event.media[key].img %}
+                {% set i = i + 1 %}
+                <div class="ib p5">
+                    <img src="{% if i > 8 %}{{ item.thumbs.middle }}
+                              {% else %}{{ item.thumbs.big }}
+                              {% endif %}"
+                         gallery-src="{{ item.thumbs.grand }}">
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if event.media[key].video %}
+        {% for item in event.media[key].video %}
+        <div class="ptb5">
+            {% if item.status == 'start' %}
+                <div>{{ item.file_name }}</div>
+                <div class="error-text">{% helper lang.l('video_converting', 'wall_events') %}</div>
+            {% elseif item.errors %}
+                <div>{{ item.file_name }}</div>
+                {% for err in item.errors %}
+                    <div class="error-text">{{ err }}</div>
+                {% endfor %}
+            {% elseif item.embed %}
+                <div>{{ item.embed }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if event.media[key].audio %}
+        {% for item in event.media[key].audio %}
+        <div class="ptb5">
+            {% if item.status == 'start' %}
+                <div>{{ item.file_name }}</div>
+                <div class="error-text">{% helper lang.l('audio_converting', 'wall_events') %}</div>
+            {% elseif item.errors %}
+                <div>{{ item.file_name }}</div>
+                {% for err in item.errors %}
+                    <div class="error-text">{{ err }}</div>
+                {% endfor %}
+            {% elseif item.embed %}
+                <div>{{ item.embed }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endfor %}

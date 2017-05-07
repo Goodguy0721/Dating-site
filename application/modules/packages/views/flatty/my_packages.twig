@@ -1,0 +1,37 @@
+{% include '@app/header.twig' %}
+
+{% helper start.widgets() %}
+<div class="rc">
+	<div class="content-block">
+		<h1>
+            {% helper lang.l('header_my_packages', 'users_packages') %}
+        </h1>
+		<p class="header-comment">
+            {% helper lang.l('text_my_packages', 'users_packages') %}
+        </p>
+	</div>
+	<div class="content-block">
+		{% for item in user_packages %}
+            <h2 class="line top bottom">
+                {{ item.package_info.name }}
+            </h2>
+            <p class="header-comment">
+                {% for item_s in item.package_info.services_list %}
+                    -{{ item_s.name }}<br>
+                {% endfor %}
+            </p>
+            <p class="header-comment">
+                {% for item_s in item.user_services %}
+                    -{{ item_s.service_name }}({{ item_s.count }})<br>
+                {% endfor %}
+            </p><br>
+		{% else %}
+            {% helper lang.l('no_users_packages', 'users_packages') %}
+		{% endfor %}
+		{% set page_data = page_data|merge({'type': 'full'}) %}
+        {% helper start.pagination(page_data) %}
+	</div>
+</div>
+<div class="clr"></div>
+
+{% include '@app/footer.twig' %}

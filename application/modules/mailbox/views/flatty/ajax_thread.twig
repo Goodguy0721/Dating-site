@@ -1,0 +1,35 @@
+{% for item in thread %}
+    <li>
+        <a id="btn_toggle_message_{{ item.id }}" data-id="{{ item.id }}"
+           class="btn-toggle-message">
+            <i class="fa fa-caret-right g"></i>
+        </a>
+        <div class="table-div">
+            <dl>
+                <dt class="text-overflow user">
+                    {{ item.sender.output_name }}
+                </dt>
+                <dt class="righted">
+                    {% helper date_format.tpl_date_format(item.date_add, page_data.date_time_format) %}
+                </dt>
+            </dl>
+        </div>
+        <div class="teaser">
+            {% if item.is_new and read_disabled %}
+                {% helper lang.l('error_not_access', 'mailbox') %}
+            {% else %}
+                {{ item.message }}
+            {% endif %}
+        </div>
+    </li>
+{% endfor %}
+
+{% if thread_count %}
+	{% helper link_more_messages = lang.l('link_more_messages', 'mailbox') %}
+	<li class="center">
+        <a href="javascipt:void(0);" class="btn_thread" data-id="{{ message.id }}"
+           data-direction="{{ direction }}" data-page="{{ page }}">
+            {{ link_more_messages|replace({'[messages]': thread_count}) }}
+        </a>
+    </li>
+{% endif %}

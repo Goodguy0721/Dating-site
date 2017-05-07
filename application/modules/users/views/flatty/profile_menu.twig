@@ -1,0 +1,48 @@
+<div class="profile-menu clearfix">
+    <ul>
+        {% helper is_module_installed = utils.depends('wall_events', 'media') %}
+
+        {% helper profile_section_name = lang.l('filter_section_profile', 'users') %}
+
+        <li {% if action == 'view' %}class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'profile', {'section-code': 'view', 'section-name': profile_section_name}) %}">
+                {{ profile_section_name }}
+            </a>
+        </li>
+
+        {% if is_module_installed.media %}
+            {% helper gallery_section_name = lang.l('filter_section_gallery', 'users') %}
+            <li {% if action == 'gallery' %}class="active"{% endif %}>
+                <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'profile', {'section-code': 'gallery', 'section-name': gallery_section_name}) %}">
+                    {{ gallery_section_name }}
+                </a>
+            </li>
+        {% endif %}
+
+        <li {% if action == 'details' %}class="active"{% endif %}>
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'profile', {'section-code': 'details', 'section-name': 'Details'}) %}">
+                More about me
+            </a>
+        </li>
+
+        {% if is_module_installed.wall_events %}
+            {% set wall_section_name %}
+                {% helper lang.l('filter_section_wall', 'users') %}
+            {% endset %}
+            <li {% if action == 'wall'%}class="active"{% endif %}>
+                <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'profile', {'section-code': 'wall', 'section-name': wall_section_name}) %}">
+                    Comments
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+    {% if action == 'wall' %}
+        <div class="fright">
+            <span id="wall_permissions_link" class="fright" title="{% helper lang.l('header_wall_settings', 'wall_events') %}" onclick="ajax_permissions_form(site_url + 'wall_events/ajax_user_permissions/');">
+                <i class="fa fa-cog icon-big edge hover zoom30">
+                    <i class="fa fa-mini-stack icon-lock"></i>
+                </i>
+            </span>
+        </div>
+    {% endif %}
+</div>

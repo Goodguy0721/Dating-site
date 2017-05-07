@@ -1,0 +1,6 @@
+<div class="menu-alerts-more-item clearfix {% if not kisses_count %}hide-always{% endif %}">
+    <a href="{% helper seo.seolink('kisses', 'inbox') %}">
+        {% helper lang.l('header_new_kisses', 'kisses') %}:
+        <b class="summand fright kisses_count">{{ kisses_count }}</b>
+    </a>
+</div>

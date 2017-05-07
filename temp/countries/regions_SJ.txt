@@ -1,0 +1,3 @@
+	3358	Longyearbyen	78.2233400	15.6468900	SJ	21	0	0	Longyearbyen	Лонгйир	Longyearbyen	Longyearbyen	Longyearbyen	Longyearbyen
+	3358	Barentsburg	78.0643800	14.1858500	SJ	21	0	0	Barentsburg	Баренцбург	Barentsburg	Barentsburg	Barentsburg	Barentsburg
+	3358	Ny-Ålesund	78.9237300	11.9249700	SJ	21	0	0	Ny-Ålesund	Ny-Ålesund	Ny-Ålesund	Ny-Ålesund	Ny-Ålesund	Ny-Ålesund

@@ -1,0 +1,128 @@
+<div class="content-block load_content">
+    <h1>
+        {% helper lang.l('header_use_services', 'services') %}
+    </h1>
+
+    <div class="inside">
+        {% helper data_alert_lng = lang.l('service_activate_confirm', 'services') %}
+
+        {% if service.is_free_status or block_data.user_services %}
+            {% if service.is_free_status %}
+                <div>
+                    {% helper lang.l('service_activate_free_text', 'services') %}
+                </div>
+                <div class="service{% if block_data.user_services %} mb10{% endif %}">
+                    
+                    <div class="service-title clearfix">
+                        <div class="service-name">
+                            {{ service.name }}                            
+                        </div>
+                    </div>
+                        
+                    <div class="service-description">
+                        {% for setting_gid, setting_options in service.template.data_admin_array %}
+                            <div>
+                                <span>
+                                    {{ setting_options.name }}: {{ service.data_admin[setting_gid] }}
+                                </span>
+                            </div>
+                        {% endfor %}                        
+                    </div>
+                    
+                    <button class="btn btn-primary" id="btn_activate_service">{% helper lang.l('btn_activate', 'services') %}</button>
+                    
+                    <script type="text/javascript">
+                        $('#btn_activate_service').off().on('click', function(){
+                            var href = '{{ site_url }}services/user_service_activate/{{ user_session_data.user_id }}/0/{{ service.gid }}';
+                            var alert = '{{ data_alert_lng|e }}<br>{{ service.name|e('js') }}<br>({ service.description|e('js') }})';
+
+                            if (!parseInt('{{ service.template.alert_activate }}')) {
+                                locationHref(href);
+                            } else {
+                                alerts.show({
+                                    text: alert.replace(/<br>/g, '\n'),
+                                    type: 'confirm',
+                                    ok_callback: function () {
+                                        locationHref(href);
+                                    }
+                                });
+                            }                            
+                        });
+                    </script>
+
+                </div>
+                {% if block_data.user_services %}
+                    <div class="centered h3">
+                        {% helper lang.l('or', 'start') %}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if block_data.user_services %}
+                <div class="mb30">
+                    {% helper lang.l('service_spend_text', 'services') %}
+                </div>
+                <form method="POST" action="" id="ability_form" role="form">
+                    {% for item in block_data.user_services %}
+                        <div class="service">
+                            
+                            <div class="service-title clearfix">
+                                <div class="service-name">
+                                    {% if item.package_name %}
+                                        {{ item.package_name }} :
+                                    {% endif %}
+                                    {% if item.service.name %}
+                                        {{ item.service.name }}
+                                    {% else %}
+                                        {{ item.name }}
+                                    {% endif %}
+                                    {% if item.count %}
+                                        &nbsp;({{ item.count }})
+                                    {% endif %}                           
+                                </div>
+
+                                {% if item.package_till_date %}
+                                    <div>
+                                        {% helper lang.l('package_active_till', 'packages') %}:&nbsp;
+                                        {% helper date_format.tpl_date_format(item.package_till_date, block_data.date_time_format) %}
+                                    </div>
+                                {% endif %}
+
+                                <div class="service-control">
+                                    <input type="button" data-value="{{ item.id }}"
+                                           data-alert="{% if item.template.alert_activate %}
+                                           {{ data_alert_lng|e }}<br>
+                                           {{ item.name|e }}<br>
+                                           {{ item.description|e }}<br>
+                                           {{ item.alert|e }}
+                                           {% endif %}" value="{% helper lang.l('btn_activate', 'services') %}" class="btn btn-primary"/>
+
+                                </div>
+                            </div>
+
+                            <div class="service-description">
+                                {% for setting_gid, setting_options in item.service.template.data_admin_array %}
+                                    <div>
+                                        <span>
+                                            {{ setting_options.name }}:
+                                            {{ item.service.data_admin[setting_gid] }}
+                                        </span>
+                                    </div>
+                                {% endfor %}                       
+                            </div>
+     
+                        </div>
+                    {% endfor %}
+                </form>
+            {% endif %}
+        {% else %}
+            <p>
+                {% helper lang.l('service_buy_text', 'services') %}
+            </p>
+            <a href="{% helper seo.seolink('services', 'index', {'gid': template.gid}) %}" target="blank">
+                {% helper lang.l('service_link_buy', 'services') %}
+            </a>
+            {% endif %}
+            </div>
+            <div class="clr"></div>
+        </div>

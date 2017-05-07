@@ -1,0 +1,52 @@
+<form method="post" name="save_form" enctype="multipart/form-data"
+      data-parsley-validate class="form-horizontal form-label-left"
+      action="{{ site_url }}admin/tickets/answer/{{ id_user }}">
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_add_recipients', 'tickets') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+        {% if not contact_data %}
+            <input type="text" name="name_user" id="user_text"
+                   autocomplete="off" value="" class="form-control"
+                   placeholder="{% helper lang.l('input_default', 'start', '', 'button') %}">&nbsp;
+            <input type="hidden" name="id_user" id="user_hidden" value="">
+            <script type="text/javascript">
+                $(function(){
+                    loadScripts(
+                        "{% helper utils.jscript('', 'autocomplete_input.js', 'path') %}",
+                        function() {
+                            user_autocomplete = new autocompleteInput({
+                                siteUrl: '{{ site_url }}',
+                                dataUrl: 'admin/tickets/ajax_get_users_data',
+                                id_text: 'user_text',
+                                id_hidden: 'user_hidden',
+                                rand: '{{ rand }}',
+                                format_callback: function(data) {
+                                    return data.output_name + (data.nickname != data.output_name ? ' (' + data.nickname + ')' : '');
+                                }
+                            });
+                        },
+                        'user_autocomplete'
+                    );
+                });
+            </script>
+        {% else %}
+            <label class="control-label">{{ contact_data.output_name }}</label>
+        {% endif %}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+            {% helper lang.l('field_text_message', 'tickets') %}:</label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <textarea name="message" class="resizable_textarea form-control"></textarea>
+        </div>
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+            <input type="submit" class="btn btn-success" value="{% helper lang.l('field_send', 'tickets') %}" name="btn_save">
+            <a href="{{ site_url }}admin/tickets/index" class="btn btn-default">{% helper lang.l('btn_cancel', 'start') %}</a>
+        </div>
+    </div>
+</form>

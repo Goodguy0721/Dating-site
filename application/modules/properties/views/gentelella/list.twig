@@ -1,0 +1,113 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <!-- 1 level menu -->
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper utils.jscript('', 'admin-multilevel-sorter.js') %}
+            </ul>
+        </div>
+        <div class="x_content">
+            <div id="menu" class="btn-group" data-toggle="buttons">
+                {% for lang_id, item in langs %}
+                    <label class="btn btn-default {% if lang_id == current_lang_id %}active{% endif %}"
+                           onclick="document.location.href='{{site_url}}admin/properties/property/{{ds_gid}}/{{lang_id}}'">
+                        <input type="radio" {% if lang_id == current_lang_id %}selected{% endif %}>
+                        {{item.name}}
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div id="actions">
+          <div class="btn-group">
+            <a href="{{site_url}}admin/properties/property_items/{{current_lang_id}}/{{current_gid}}" class="btn btn-primary">
+                {% helper lang.l('link_add_ds_item', 'properties') %}
+            </a>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{site_url}}admin/properties/property_items/{{current_lang_id}}/{{current_gid}}">
+                    {% helper lang.l('link_add_ds_item', 'properties') %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="x_panel"></div>
+
+        <div class="x_content">
+            <div class="filter-form" id="ds_items">
+                <ul name="parent_0" class="sort connected" id="clsr0ul">
+                    {% for key, item in reference.option %}
+                    <li id="item_{{key}}" data-id="item_{{ key }}">
+                        <div class="editable" id="{{key}}">
+                            {{item}}
+                            <div class="icons pull-right">
+                              <div class="btn-group">
+                                <a href="{{site_url}}admin/properties/property_items/{{current_lang_id}}/{{current_gid}}/{{key}}"
+                                   class="btn btn-primary">{% spaceless %}
+                                    {% helper lang.l('btn_edit', 'start') %}
+                                {% endspaceless %}</a>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                  <span class="caret"></span>
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a href="{{site_url}}admin/properties/property_items/{{current_lang_id}}/{{current_gid}}/{{key}}">{% spaceless %}
+                                        {% helper lang.l('btn_edit', 'start') %}
+                                    {% endspaceless %}</a>
+                                  </li>
+                                  <li>
+                                    <a  onclick="if (!confirm('{% helper lang.l('note_delete_ds_item', 'properties', '', 'js') %}')) return false;"
+                                        href="{{site_url}}admin/properties/ds_item_delete/{{current_gid}}/{{key}}">
+                                            {% helper lang.l('btn_delete', 'start') %}
+                                    </a>
+                                  </li>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ site_url }}application/views/gentelella/js/sortable/Sortable.min.js"></script>
+<script>
+    $(function(){
+        var sortable = Sortable.create($(clsr0ul)[0], {
+                onUpdate: function (/**Event*/evt) {
+
+                    var result = sortable.toArray();
+
+                    var data = {};
+
+                    for (var i in result) {
+                        data[result[i]] = parseInt(i) + 1;
+                    }
+
+                    $.ajax({
+                        url: '{{ site_url }}admin/properties/ajax_ds_item_save_sorter/{{ current_gid }}/',
+                        data: {sorter: {parent_0: data }},
+                        dataType: 'json',
+                        method: 'post',
+                    });
+                },
+            });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

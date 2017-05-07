@@ -1,0 +1,37 @@
+{% include '@app/header.twig' %}
+
+<div class="info-content">
+    <div class="col-xs-12 col-md-3">
+        <div class="inside account_menu">
+            {% helper content.get_content_tree(page.id) %}
+        </div>
+        <div class="banners-block">
+            {% helper banners.show_banner_place('banner-185x155') %}
+            {% helper banners.show_banner_place('banner-185x75') %}
+            {% helper banners.show_banner_place('banner-320x250') %}
+            {% helper banners.show_banner_place('banner-320x75') %}
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 content-page">
+        <div class="info-content-block wysiwyg">
+            <h1>
+                {% helper seo.seo_tags('header_text') %}
+            </h1>
+            {% if page.img %}
+            <div>
+                <img src="{{ page.media.img.thumbs.big }}" alt="{{ page.title|e }}">
+            </div>
+            {% endif %}
+            {{ page.content|raw }}
+            <div class="banner-unsupported">
+                {% helper banners.show_banner_place('banner-980x90') %}
+            </div>
+        </div>
+        {% helper social_networking.show_social_networks_like() %}
+        {% helper social_networking.show_social_networks_share() %}
+        {% helper social_networking.show_social_networks_comments() %}
+    </div>
+</div>
+
+</aside>
+{% include '@app/footer.twig' %}

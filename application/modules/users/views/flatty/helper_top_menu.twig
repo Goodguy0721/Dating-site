@@ -1,0 +1,74 @@
+<menu id="users-alerts-menu" class="menu-alerts">
+    <div class="menu-item">
+        <a class="uam-top link-open-menu btn-slide"
+           data-slidemenu="#slidemenu">
+            <i class="fa fa-bars fa-lg item"></i>
+            <span class="badge sidebar-sum hide-always"></span>
+        </a>
+    </div>
+
+    {% if auth_type == 'user' %}
+    <div class="menu-alerts-item menu-item tohide" id="menu_mailbox_alerts">
+        <a id="menu-messages-more" href="" class="uam-top menu-messages-more"
+           data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button"
+           aria-expanded="false" data-pjax="0">
+            <i class="fa fa-envelope fa-lg item"></i>
+            <span class="badge sum"></span>
+        </a>
+        <div class="menu-alerts-more dropdown-menu" role="menu" aria-labelledby="menu-messages-more">
+            <div class="menu-alerts-more-triangle"></div>
+            {% helper mailbox.new_messages({ template: 'header' }) %}
+        </div>
+    </div>
+
+    {% helper is_module_installed = utils.depends('tickets') %}
+    {% if is_module_installed.tickets %}
+        <div class="menu-alerts-item menu-item tohide" id="menu_admin_alerts">
+            <a id="menu-messages-more" href="" class="uam-top menu-messages-more"
+               data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button"
+               aria-expanded="false" data-pjax="0">
+                <i class="fa fa-bell fa-lg item"></i>
+                <span class="badge sum"></span>
+            </a>
+            <div class="menu-alerts-more dropdown-menu" role="menu" aria-labelledby="menu-messages-more">
+                <div class="menu-alerts-more-triangle"></div>
+                {% helper tickets.admin_new_messages({template: 'header', is_admin: '1'}) %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="menu-alerts-item menu-item tohide" id="menu_users_alerts">
+        <a id="menu-messages-more" href="" class="uam-top menu-messages-more"
+           data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button"
+           aria-expanded="false" data-pjax="0">
+            <i class="fa fa-users fa-lg item"></i>
+            <span class="badge sum"></span>
+        </a>
+        <div class="menu-alerts-more dropdown-menu" role="menu" aria-labelledby="menu-messages-more">
+            <div class="menu-alerts-more-triangle"></div>
+            {% helper friendlist.friend_requests({template: 'header'}) %}
+            {% helper users.visitors({template: 'header'}) %}
+            {% helper kisses.new_kisses({template: 'header'}) %}
+            {% helper winks.winks_count({template: 'header'}) %}
+            {% helper events.event_requests({template: 'header'}) %}
+            {% helper questions.new_questions({template: 'header'}) %}
+            {% helper associations.new_associations({template: 'header'}) %}
+            {% helper virtual_gifts.user_gifts_menu_notifier(user_id) %}
+        </div>
+    </div>
+    {% endif %}
+</menu>
+<script type="text/javascript">
+$(function () {
+    loadScripts(
+            ["{% helper theme.include_js('users', 'top-menu.js', 'path') %}"],
+            function () {
+                new topMenu({
+                    siteUrl: site_url,
+                    parent: '.menu-alerts-item',
+                    summandsParent: '.menu-alerts-more-item'
+                });
+            }
+    );
+});
+</script>

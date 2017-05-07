@@ -1,0 +1,146 @@
+{% include '@app/header.twig' %}
+<div class="store-content">
+    <div class="container">
+        <div class="row-content">
+            <div class="search-header">
+                <div class="title">
+                    {% helper seo.seo_tags('header_text') %}
+                </div>
+            </div>
+            <div>
+                <form method="post" action="{{ form_settings.action }}" id="cart_block" enctype="multipart/form-data">
+                    <div class="contrasting-block clearfix">
+                        <div class="cart-header-block">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding-left">{% helper lang.l('field_product_description', 'store') %}</div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">{% helper lang.l('field_count', 'store') %}</div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">{% helper lang.l('field_product_price', 'store') %}</div>
+                        </div>
+                        <div id="cart_items" class="cart-products">
+                            {% for item in data_cart.items %}
+                                <div id="cart_item_{{ item.id }}" class="cart-product-item clearfix">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 b-cart__first-col">
+                                        <div class="product-image">
+                                            <a href="{% helper seo.seolink('store', 'product', item.product) %}" alt="{{ item.product.name }}">
+                                                {% if item.product.media.mediafile.thumbs.middle is not empty %}
+                                                    <img src="{{ item.product.media.mediafile.thumbs.middle }}"
+                                                         alt="{{ item.product.name }}" title="{{ item.product.name }}" class="img-rounded img-responsive">
+                                                {% else %}
+                                                    <div class="default-middle-image">
+                                                        <i class="fa fa-gift fa-4x"></i>
+                                                    </div>
+                                                {% endif %}
+                                            </a>
+                                        </div>
+                                        <div class="product-description">
+                                            <a class="product-name" href="{% helper seo.seolink('store', 'product', item.product) %}" alt="{{ item.product.name }}">
+                                                {{ item.product.name }}
+                                            </a>
+                                            {% for opt in item.product.options %}
+                                                {% set option_id = opt.id %}
+                                                {% set item_id = item.id %}
+                                                {% if item.data[option_id] %}
+                                                    <div>
+                                                        {% helper store.store_options_values({
+                                                            'header': opt.name,
+                                                            'id': opt.id,
+                                                            'options': item.data[option_id],
+                                                            'action': 'view',
+                                                            'source': 'user'
+                                                        }) %}
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 b-cart__other-col">
+                                        <div class="cart-count-block">
+                                            <div class="cart-item-title">{% helper lang.l('field_count', 'store') %}:</div>
+                                            <div class="icon-count fltl pr10">
+                                                <div id="count_down" data-cartitem="{{ item.id }}">
+                                                    -
+                                                </div>
+                                            </div>
+                                            <div class="fltl pr10">
+                                                <input type="hidden" id="count_{{ item.id }}" type="text"
+                                                       value="{{ item.count }}" name="count[{{ item.id  }}]">
+                                                <span class="count-block" id="item_{{ item.id }}">
+                                                    {{ item.count }}
+                                                </span>
+                                            </div>
+                                            <div class="icon-count">
+                                                <div id="count_up" data-cartitem="{{ item.id }}">
+                                                    +
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 b-cart__other-col">
+                                        <div class="cart-item-title">{% helper lang.l('field_product_price', 'store') %}:</div>
+                                        <div>
+                                            {% helper start.currency_format_output() %}
+                                            <span id="price_{{ item.id }}">
+                                                {{ item.price }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 b-cart__check-col">
+                                        <div class="cart-item-title"></div>
+                                        <input data-cartitem="{{ item.id }}" id="status_{{ item.id }}" type="checkbox" value="{{ item.id }}" name="cart_item[]">
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="cart-product-item clearfix">
+                                    {% helper lang.l('field_cart_empty', 'store') %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="hide cart-product-item clearfix">
+                            {% helper lang.l('field_cart_empty', 'store') %}
+                        </div>
+                    </div>
+                    <div class="cart-total-line">
+                        <div class="fltl btn-block" id="action_block">
+                            {% if data_cart.data.products_count %}
+                                <input class="btn btn-primary" id="create_preorder" type="button" name="create"
+                                    value="{% helper lang.l('button_checkout', 'store', '', 'button') %}">
+                                <input class="btn btn-primary" id="del_item_cart" type="button"
+                                    value="{% helper lang.l('link_delete', 'store', '', 'button') %}">
+                            {% endif %}
+                        </div>
+                        <div class="fltr">
+                            <div class="title-block">
+                                {% helper lang.l('field_total', 'store') %}
+                                (<span id="cart_count">{{ data_cart.data.products_count }}</span>
+                                {% helper lang.l('field_pc', 'store') %}):&nbsp;
+                                {% helper start.currency_format_output() %}
+                                <span id="cart_total">
+                                    {{ data_cart.data.total }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	loadScripts(
+		"{% helper utils.jscript('store', 'store_cart.js', 'path') %}",
+		function(){
+			cart = new storeCart({
+				siteUrl: site_url,
+				langs: {
+					add_cart_lang: "{% helper lang.l('button_in_cart', 'store', '', 'js') %}",
+					confirm_lang: "{% helper lang.l('button_confirm', 'store', '', 'js') %}",
+					error_select: "{% helper lang.l('error_select_item', 'store', '', 'js') %}",
+				},
+			});
+		},
+		'cart',
+		{async: true}
+	);
+});
+</script>
+{% include '@app/footer.twig' %}

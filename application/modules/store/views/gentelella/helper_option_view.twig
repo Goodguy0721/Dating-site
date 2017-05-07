@@ -1,0 +1,10 @@
+{% if options_values.show %}
+    {{ options_values.header }}:
+    {% for id_key, val in options_values.option %}
+        {% if val.sel %}
+            {% if counter > 0 %}&#124;&nbsp;{% endif %}
+            {% set counter = counter + 1 %}
+            {{ val.name|escape }}<input type="hidden" name="options[{{ item_id }}][{{ opt.id }}]" value="{{ id_key }}">
+        {% endif %}
+    {% endfor %}
+{% endif %}

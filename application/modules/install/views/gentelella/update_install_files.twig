@@ -1,0 +1,52 @@
+<h4>Installing: {{ module.update_name }}</h4>
+<div>{{ module.update_description }}</div>
+<br>
+<div class="bar-level2" id="module_bar">
+  <div class="progress">
+      <div class="progress-bar progress-bar-success" data-transitiongoal="0" id="overall_bar"
+          style="width: {{ current_module_percent }}%" aria-valuenow="0">{{ current_module_percent }}%</div>
+  </div>
+</div>
+<div class="x_content h4">Files</div>
+{% if skip %}
+    <script>
+    $(function(){
+        product_install.delayed_request('{{ next_step }}');
+    });
+    </script>
+{% else %}
+    {% if errors %}
+    <div>{% for item in errors %}{{ item }}{% endfor %}</div>
+    <div class="filter-form">
+        <div class="x_title">
+          <h4>Please copy files into appliation/modules/{{ module.module }},
+              create folders and click "Refresh"</h4>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-12">Files:</label>
+            <div class="col-sm-9 col-xs-12">
+              {% for item in module.files %}
+                updates/{{ path }}/{{ item.2 }}<br>
+              {% endfor %}
+          </div>
+        </div>
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+      <div class="col-xs-12">
+          <input type="button" class="btn btn-primary" onclick="javascript: product_install.request('files');"
+                 name="refresh_module" value="Refresh">
+          <input type="button" class="btn btn-default" onclick="javascript: product_install.request('chmod');"
+                 name="skip_module" value="Skip">
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    {% else %}
+    <script>
+    $(function(){
+        product_install.delayed_request('{{ next_step }}');
+    });
+    </script>
+    {% endif %}
+{% endif %}
+

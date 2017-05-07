@@ -1,0 +1,57 @@
+<div class="content-block load_content">
+    <h1>
+        {% helper lang.l('header_login', 'users') %}
+    </h1>
+
+    <div class="inside logform">
+        <form action="{{ site_url }}users/login" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="email"  class="col-xs-12 tali">
+                    {% helper lang.l('field_email', 'users') %}:
+                </label>
+                <div class="col-xs-8">
+                    <input type="text" name="email" id="email" class="form-control" value="{% if DEMO_MODE %}{{demo_user_type_login_settings.login}}{% endif %}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password"  class="col-xs-12 tali">
+                    {% helper lang.l('field_password', 'users') %}:
+                </label>
+                <div class="col-xs-8">
+                    <input type="password" name="password" id="password" class="form-control" value="{% if DEMO_MODE %}{{demo_user_type_login_settings.password}}{% endif %}">
+                </div>
+                <div class="col-xs-12 after-form tali">
+                    <a href="{% helper seo.seolink('users', 'restore') %}">
+                        {% helper lang.l('link_restore', 'users') %}
+                    </a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="submit" name="logbtn" class="btn btn-primary">
+                        {% helper lang.l('btn_login', 'start') %}
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="clearfix row">
+            <div class="col-xs-12">
+                {% helper users_connections.show_social_networking_login() %}
+            </div>
+        </div>
+
+        <div class="clearfix row">
+            <div class="col-xs-12">
+                <p class="header-comment">
+                    {% helper lang.l('text_register_comment', 'users') %}
+                </p>
+                <a href="{% helper seo.seolink('users', 'registration') %}" class="">
+                    <i class="fa fa-arrow-right"></i>
+                    {% helper lang.l('link_register', 'users') %}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

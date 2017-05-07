@@ -1,0 +1,3 @@
+	2955	Uafato	-13.9520200	-171.5154000	WS	06	0	0	Uafato	Uafato	Uafato	Uafato	Uafato	Uafato
+	2955	Samamea	-13.9337500	-171.5312200	WS	06	0	0	Samamea	Samamea	Samamea	Samamea	Samamea	Samamea
+	2955	Musumusu	-13.9303000	-171.5587600	WS	06	0	0	Musumusu	Musumusu	Musumusu	Musumusu	Musumusu	Musumusu

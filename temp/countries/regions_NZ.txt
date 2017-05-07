@@ -1,0 +1,13 @@
+	2391	Whataroa	-43.2833300	170.4166700	NZ	G3	0	0	Whataroa	Whataroa	Whataroa	Whataroa	Whataroa	Whataroa
+	2391	Reefton	-42.1166700	171.8666700	NZ	G3	0	0	Reefton	Reefton	Reefton	Reefton	Reefton	Reefton
+	2391	Okarito	-43.2333300	170.1833300	NZ	G3	0	0	Okarito	Okarito	Okarito	Okarito	Okarito	Okarito
+	2391	Karamea	-41.2500000	172.1166700	NZ	G3	0	0	Karamea	Karamea	Karamea	Karamea	Karamea	Karamea
+	2391	Harihari	-43.1500000	170.5500000	NZ	G3	0	0	Harihari	Harihari	Harihari	Harihari	Harihari	Harihari
+	2391	Haast	-43.8833300	169.0500000	NZ	G3	0	0	Haast	Хааст	Haast	Haast	Haast	Haast
+	2391	Franz Josef	-43.3890500	170.1818900	NZ	G3	0	0	Franz Josef	Franz Josef	Franz Josef	Franz Josef	Franz Josef	Franz Josef
+	2391	Dobson	-42.4500000	171.3000000	NZ	G3	0	0	Dobson	Dobson	Dobson	Dobson	Dobson	Dobson
+	2391	Blackball	-42.3666700	171.4166700	NZ	G3	0	0	Blackball	Blackball	Blackball	Blackball	Blackball	Blackball
+	2391	Barrytown	-42.2500000	171.3333300	NZ	G3	0	0	Barrytown	Barrytown	Barrytown	Barrytown	Barrytown	Barrytown
+	2391	Hokitika	-42.7166700	170.9666700	NZ	G3	0	0	Hokitika	Hokitika	Hokitika	Hokitika	Hokitika	Hokitika
+	2391	Greymouth	-42.4666700	171.2000000	NZ	G3	0	0	Greymouth	Греймут	Greymouth	Greymouth	Greymouth	Greymouth
+	2391	Westport	-41.7526200	171.6037000	NZ	G3	0	0	Westport	Westport	Westport	Westport	Westport	Westport

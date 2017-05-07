@@ -1,0 +1,12 @@
+<div class="news-related">
+    <div class="search-header">
+        <div class="title">
+            {% helper lang.l('field_news_related', 'news') %}
+        </div>
+    </div>
+    {% for key, item in news_related %}
+        <div class="mt10">
+            <a href="{% helper seo.seolink('news', 'view', item) %}">{{ item.name }}</a>
+        </div>
+    {% endfor %}
+</div>

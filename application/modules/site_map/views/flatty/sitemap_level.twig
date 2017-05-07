@@ -1,0 +1,16 @@
+<ul class="ul-top-padding">
+    {% for li in list %}
+        <li>
+            {% if li.clickable %}
+                <a href="{{ li.link }}">
+                    {{ li.name }}
+                </a>
+            {% else %}
+                {{ li.name }}
+            {% endif %}
+            {% if li.items %}
+                {% include 'sitemap_level.twig' with {'list': li.items} %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

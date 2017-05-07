@@ -1,0 +1,26 @@
+/* TODO: объединить с алертами и использовать бутстрап */
+.pginfo.field.error {
+    border: 1px solid red !important;
+}
+
+.pginfo.field.success {
+    border: 1px solid green !important;
+}
+
+.pginfo.msg {
+	font-size: 0.8571em;
+}
+
+.pginfo.msg.error {
+    color: red;
+}
+
+.field-success-icon{
+    float: left;
+    color: green;
+}
+
+.field-error-icon{
+    float: left;
+    color: red;
+}

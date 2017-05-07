@@ -1,0 +1,6 @@
+	3673	Zonguldak	41.4513900	31.7930500	TR	85	0	0	Zonguldak	Зонгулдак	Zonguldak	Zonguldak	Zonguldak	Zonguldak
+	3673	Gökçebey	41.3058300	32.1423400	TR	85	0	0	Gökçebey	Gökçebey	Gökçebey	Gökçebey	Gökçebey	Gökçebey
+	3673	Ereğli	41.2826200	31.4180600	TR	85	0	0	Ereğli	Эрегли	Ereğli	Ereğli	Ereğli	Ereğli
+	3673	Devrek	41.2191700	31.9558300	TR	85	0	0	Devrek	Devrek	Devrek	Devrek	Devrek	Devrek
+	3673	Çaycuma	41.4263900	32.0755600	TR	85	0	0	Çaycuma	Çaycuma	Çaycuma	Çaycuma	Çaycuma	Çaycuma
+	3673	Alaplı	41.1814000	31.3851400	TR	85	0	0	Alaplı	Alaplı	Alaplı	Alaplı	Alaplı	Alaplı

@@ -1,0 +1,182 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_shoutbox_menu') %}
+            </ul>
+        </div>
+
+        <div class="x_content">
+            {% if messages %}
+                <div id="actions" class="hide">
+                  <div class="btn-group">
+                    <a href="{{ site_url }}admin/shoutbox/messages_delete/" class="btn btn-primary" id="delete_selected">
+                        {% helper lang.l('link_delete_selected', 'shoutbox') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="{{ site_url }}admin/shoutbox/messages_delete/" onclick="$('#delete_selected').trigger('click'); return false;">
+                            {% helper lang.l('link_delete_selected', 'shoutbox') %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            {% endif %}
+            <form action="" method="post" id="messages-form">
+                <table id="messages" class="table table-striped responsive-utilities jambo_table bulk_action">
+                    <thead>
+                        <tr class="headings">
+                            <th class="column-group"><input type="checkbox" class="flat" id="check-all"></th>
+                            <th class="column-title">{% helper lang.l('field_message', 'shoutbox') %}</th>
+                            <th class="column-title">{% helper lang.l('field_author', 'shoutbox') %}</th>
+                            <th class="column-title">{% helper lang.l('field_date_created', 'shoutbox') %}</th>
+                            <th class="column-title">&nbsp;</th>
+                            <th class="bulk-actions" colspan="6"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for message in messages %}
+                        <tr>
+                <td class="text-center">
+                    <input type="checkbox" class="grouping flat" value="{{ message.id }}" name="ids[]"></td>
+                <td>{{ message.message }}</td>
+                <td>
+                  {% if message.user_info.nickname %}
+                    {{ message.user_info.nickname }} {% if message.user_info.output_name != '' %}({{ message.user_info.output_name }}){% endif %}
+                  {% else %}
+                    <font class="error">{{ message.user_info.output_name }}</font>
+                  {% endif %}
+                </td>
+                <td>
+                  {{ message.date_created }}
+                </td>
+                <td class="icons">
+                {% helper contact = tickets.contact_user_link({'id_user' : message.user_info.id}) %}
+                {% if contact|trim %}
+                    <div class="btn-group">
+                        <span class="btn btn-primary">{{ contact }}</span>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                {{ contact }}
+                            </li>
+                            <li>
+                                <a href="{{ site_url }}admin/shoutbox/delete/{{ message.id }}"
+                                    onclick="javascript: if(!confirm('{% helper lang.l('note_delete_message', 'shoutbox', '', 'js') %}')) return false;">
+                                    {% helper lang.l('link_delete_message', 'shoutbox') %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="btn-group">
+                        <a href="{{ site_url }}admin/shoutbox/delete/{{ message.id }}"
+                            onclick="javascript: if(!confirm('{% helper lang.l('note_delete_message', 'shoutbox', '', 'js') %}')) return false;"
+                            class="btn btn-primary">
+                            {% helper lang.l('link_delete_message', 'shoutbox') %}
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="{{ site_url }}admin/shoutbox/delete/{{ message.id }}"
+                                onclick="javascript: if(!confirm('{% helper lang.l('note_delete_message', 'shoutbox', '', 'js') %}')) return false;">
+                                {% helper lang.l('link_delete_message', 'shoutbox') %}
+                            </a>
+                          </li>
+                        </ul>
+                    </div>
+                {% endif %}
+                </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#messages').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_messages','shoutbox') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#messages_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        $(document).off('click', '#delete_selected').on('click', '#delete_selected', function() {
+            if (!$('input[type=checkbox].grouping').is(':checked')) {
+                error_object.show_error_block('{% helper lang.l("no_objects_select", "start", "", "js") %}', 'error');
+                return false;
+            }
+
+            if (!confirm('{% helper lang.l('note_alerts_delete_all', 'shoutbox', '', 'js') %}')) {
+                return false;
+            }
+            $('#messages-form').attr('action', $(this).attr('href')).submit();
+            return false;
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

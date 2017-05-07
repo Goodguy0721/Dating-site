@@ -1,0 +1,10 @@
+<div class="pg-{{ widget.gid }}"{% if widget.size %} data-size="{{ widget.size }}"{% endif %} data-lang="{{ current_lang_code }}"></div>
+<script>
+(function(d, s, id){
+	js = d.getElementsByTagName(s)[0];
+    var script = d.createElement(s);
+    script.id = id;
+    script.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//{{ site_url_regex }}application/modules/widgets/js/widgets.js";
+    js.parentNode.insertBefore(script, js);
+})(document, 'script', 'pg-widget');
+</script>

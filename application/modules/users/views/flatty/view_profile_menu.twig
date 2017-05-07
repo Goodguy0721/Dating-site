@@ -1,0 +1,40 @@
+<div class="profile-menu clearfix">
+    <ul>
+        {% helper is_module_installed = utils.depends('wall_events', 'media') %}
+
+        {% helper profile_section_name = lang.l('filter_section_profile', 'users') %}
+        <li {% if profile_section == 'profile' %}class="active"{% endif %}>
+            {% set seodata2 = seodata|merge({'section-code': 'profile', 'section-name': profile_section_name}) %}
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'view', seodata2) %}">
+                {{ profile_section_name }}
+            </a>
+        </li>
+
+        {% if is_module_installed.media %}
+            {% helper gallery_section_name = lang.l('filter_section_gallery', 'users') %}
+            <li {% if profile_section == 'gallery' %}class="active"{% endif %}>
+                {% set seodata3 = seodata|merge({'section-code': 'gallery', 'section-name': gallery_section_name}) %}
+                <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'view', seodata3) %}">
+                    {{ gallery_section_name }}
+                </a>
+            </li>
+        {% endif %}
+
+        <li {% if profile_section == 'details' %}class="active"{% endif %}>
+            {% set seodata4 = seodata|merge({'section-code': 'details', 'section-name': ''}) %}
+            <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'view', seodata4) %}">
+                More about me
+            </a>
+        </li>
+
+        {% if is_module_installed.wall_events %}
+            {% helper wall_section_name = lang.l('filter_section_wall', 'users') %}
+            <li {% if profile_section == 'wall' %}class="active"{% endif %}>
+                {% set seodata1 = seodata|merge({'section-code': 'wall', 'section-name': wall_section_name}) %}
+                <a data-pjax-no-scroll="1" href="{% helper seo.seolink('users', 'view', seodata1) %}">
+                    Comment
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>

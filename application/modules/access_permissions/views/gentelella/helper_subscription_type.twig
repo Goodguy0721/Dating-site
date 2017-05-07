@@ -1,0 +1,65 @@
+<h2>{% helper lang.l('field_subscription_type', 'access_permissions') %}</h2>
+<div id="actions">
+    <div class="btn-group">
+        <a id="add-subscription-type" data-action="add" onclick="{% helper start.setAnalytics('access_permissions', 'btn_add_group') %}" class="btn btn-primary" data-id="0" {% if role_data.type %}data-user_type="{{ role_data.type }}"{% endif %}>
+            {% helper lang.l('link_add', 'access_permissions') %}
+        </a>
+    </div>
+</div>
+<div id="s-types-list">
+    <table class="table table-striped responsive-utilities jambo_table bulk_action">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">
+                    {% helper lang.l('field_title', 'access_permissions') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_status', 'access_permissions') %}
+                </th>
+                <th class="column-title text-right">
+                    {% helper lang.l('field_action', 'access_permissions') %}
+                </th>                
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.current_name }}</td>
+                    <td class="icons">
+                        {% if not group.is_default %}
+                        <div class="checkbox" data-action="status" data-id="{{ group.id }}">
+                            <input type="checkbox" name="subscriptions[{{ group.gid }}]" {% if group.is_active %}checked{% endif %} class="flat subscription-js">
+                        </div>
+                        {% endif %}
+                    </td>
+                    <td class="icons">
+                        <div class="btn-group">
+                            <a data-action="edit" class="btn btn-primary"  data-id="{{ group.id }}"  {% if role_data.type %}data-user_type="{{ role_data.type }}"{% endif %} data-gid="{{ group.gid }}">
+                                {% helper lang.l('link_edit', 'access_permissions') %}
+                            </a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="cursor-pointer" {% if role_data.type %}data-user_type="{{ role_data.type }}"{% endif %} data-action="edit" data-id="{{ group.id }}" data-gid="{{ group.gid }}">
+                                        {% helper lang.l('link_edit', 'access_permissions') %}
+                                    </a>
+                                </li>
+                                {% if not group.is_default %}
+                                    <li>
+                                        <a class="cursor-pointer" {% if role_data.type %}data-user_type="{{ role_data.type }}"{% endif %} data-action="delete" data-id="{{ group.id }}" data-gid="{{ group.gid }}">
+                                            {% helper lang.l('link_delete', 'access_permissions') %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,74 @@
+<div class="events-calendar-nav col-xs-10 col-sm-11 col-md-12 col-lg-12">
+    <a id="btn_curr_month" class="calendar-arrow red">{% helper lang.l('today', 'users') %}</a>
+    <a id="btn_prev_month" class="calendar-arrow red"><</a>
+    <a id="btn_next_month" class="calendar-arrow red">></a>
+    <span id="events_date">{{ calendar.current_date_format }}</span>
+</div>
+
+<div class="calendar">
+    <div class="days-titles col-xs-12">
+        {% for month in calendar.months.option %}
+            <div class="sevengrid-xs-7 sevengrid-sm-7 sevengrid-md-1 sevengrid-lg-1">{{ month }}</div>
+        {% endfor %}
+    </div>
+    <div class="visible-window col-xs-12">
+        {% for date in calendar.date %}
+            <div class="days-block sevengrid-xs-1 sevengrid-sm-1 sevengrid-md-1 sevengrid-lg-1">
+                <div class="block{% if date.current %} today{% endif %}">
+                    <div class="title {% if date.other_month %} other-month{% endif %}">
+                        {{ date.day }}
+                        {% if date.events %}
+                            {% for event in date.events %}
+                                <a href="{% helper seo.seolink('events', 'view', event.id) %}">
+                                    <div class="event-block {% if calendar.current_day | date('U') > date.full_date | date('U') %}expired{% else %}actual{% endif %}">
+                                        {{ event.name }}
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="visible-window-mobile col-xs-12">
+        {% for date in calendar.date %}
+            {% if date.events %}
+                <div class="days-block sevengrid-xs-7 sevengrid-sm-7 sevengrid-md-7 sevengrid-lg-7">
+                    <div class="block{% if date.current %} today{% endif %}">
+                        <div class="title {% if date.other_month %} other-month{% endif %}">
+                            {{ date.day }}
+                            {% for event in date.events %}
+                                <a href="{% helper seo.seolink('events', 'view', event.id) %}">
+                                    <div class="event-block {% if calendar.current_day | date('U') > date.full_date | date('U') %}expired{% else %}actual{% endif %}">
+                                        {{ event.name }}
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+        
+    <script>
+        $(function(){
+            loadScripts(
+                [
+                    "{% helper utils.jscript('events', 'events_calendar.js', 'path') %}",
+                ],
+                function(){
+                    calendar = new eventsCalendar({
+                        siteUrl: site_url,
+                        searchType: '{{ search_type }}',
+                        current_month: {{ month }},
+                    });
+                },
+                '',
+                {async: false}
+            );
+        });
+        //calendar.init_controls();
+    </script>
+</div>

@@ -1,0 +1,44 @@
+{% include '@app/header.twig' %}
+<ul class="nav nav-tabs bar_tabs">
+{% helper menu.get_admin_level1_menu('admin_video_menu') %}
+</ul>
+
+{% if not settings.use_youtube_converting %}
+<div class="x_panel">
+	<div>{% helper lang.l('error_unable_youtube_converting_video', 'video_uploads') %}</div>
+</div>
+{% endif %}
+
+<div class="x_panel">
+	<form class="form-horizontal" method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data">
+		<div class="x_title h4">{% helper lang.l('admin_header_youtube_settings', 'video_uploads') %}</div>
+		<div class="x_content">
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_login', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.youtube_converting_login|escape }}" name="youtube_converting_login" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_password', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="password" value="{{ settings.youtube_converting_password|escape }}" name="youtube_converting_password" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_developer_key', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.youtube_converting_developer_key|escape }}" name="youtube_converting_developer_key" class="form-control"></div>
+			</div>
+			<div class="row form-group">
+				<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_youtube_source', 'video_uploads') %}: </label>
+				<div class="col-md-6 col-sm-6 col-xs-12"><input type="text" value="{{ settings.youtube_converting_source|escape }}" name="youtube_converting_source" class="form-control"></div>
+			</div>
+			<div class="ln_solid"></div>
+			<div class="row form-group">
+				<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+					<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+					<a class="btn btn-default" name="btn_reset" href="{{ site_url }}admin/video_uploads/youtube_settings_check">
+                        {% helper lang.l('check_youtube_settings', 'video_uploads', '', 'button') %}</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% include '@app/footer.twig' %}

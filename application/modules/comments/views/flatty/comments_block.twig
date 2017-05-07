@@ -1,0 +1,65 @@
+{% for comment in comments.comments %}
+    {% if comment.status == 1 %}
+        {% set comment_id_user=comment.id_user %}
+        {% set comment_user=attribute(comments.users, comment_id_user) %}
+        <div id="comment_id_{{ comment.id }}" class="comment_block item b user-content">
+            <div class="image">
+                {% set text_user_logo %}
+                    {% helper lang.l('text_user_logo', 'comments', '', 'button', data) %}
+                {% endset %}
+                {% if not comment_user.is_guest %}
+                    <a class="g-pic-border g-rounded-small" href="{% helper seo.seolink('users', 'view', comment_user) %}">
+                        <img class="wall-comment-block-img" src="{{ comment_user.user_logo }}" alt="{{ text_user_logo }}" title="{{ text_user_logo }}" />
+                    </a>
+                {% else %}
+                    <span class="g-pic-border g-rounded-small">
+                        <img class="wall-comment-block-img" src="{{ comment_user.user_logo }}" alt="{{ text_user_logo }}" title="{{ text_user_logo }}" />
+                    </span>
+                {% endif %}
+            </div>
+            <div class="content">
+                <div class="comment-entry">
+                    <span class="comment-heading">
+                        {% if comment_user.is_guest and comment.user_name %}
+                            {{ comment.user_name }}
+                        {% else %}
+                            <a href="{% helper seo.seolink('users', 'view', comment_user) %}">
+                                {{ comment_user.output_name }}
+                            </a>
+                        {% endif %}
+                    </span>
+                    <span class="comment-date">
+                        {% helper date_format.tpl_date_format(comment.date, date_format) %}
+                    </span>
+
+                    {% if not comment.is_author %}
+                        <span class="ml10">
+                            {% helper spam.mark_as_spam_block({
+                                'object_id': comment.id,
+                                'type_gid': 'comments_object',
+                                'template': 'minibutton'
+                            }) %}
+                        </span>
+                    {% endif %}
+                <div class="comment-content">
+                    {{ comment.text|nl2br }}
+                </div>
+                <div class="comment-btns-line">
+                    <span>
+                        {% if comments_type.settings.use_likes %}
+                            <span class="fright">
+                                {% helper likes.like_block({"gid":"cmnt" ~ comment.id, "type":"button"}) %}
+                            </span>
+                        {% endif %}
+                        {% if comment.can_edit %}
+                            <a href="javascript:;" onclick="comments.deleteComment('{{ comment.id }}'); event.preventDefault();">
+                               {% helper lang.l('btn_delete', 'start') %}
+                            </a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        </div>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,18 @@
+<script>
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('incomplete_signup', 'incomplete_signup.js', 'path') %}",
+            function(){
+                registerFormInput_object = new registerFormInput({
+                    siteUrl: '{{ site_url }}',
+                    timeout: '{{ timeout_send_data }}'
+                });
+            },
+            'registerFormInput_object'
+        );
+
+        $("input[name=btn_register]").click(function(){
+            clearInterval(registerFormInput_object.properties.intervalid);
+        });
+    });
+</script>

@@ -1,0 +1,83 @@
+{% include '@app/header.twig' %}
+<div class="col-xs-12">
+    <h1>
+        {% helper seo.seo_tags('header_text') %}
+    </h1>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="hide-in-mobile">
+        {% helper users.get_preview() %}
+        {% helper media.user_media_block({'count': 9, 'user_id': user_id}) %}
+    </div>
+</div>
+<!--Profile -->
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div class="search-type-page clearfix">
+        {% if count %}
+            <div class="stp-menu-block clearfix">
+                <div class="stp-menu-inner">
+
+                </div>
+                <div class="sub-search-form col-xs-12 mt10">
+                    <form method="post" action="" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="search" value="{{ search|e }}" placeholder="{% helper lang.l('search', 'blacklist', '', 'button') %}" />&nbsp;
+                            <input type="submit" value="{% helper lang.l('btn_search', 'start') %}" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+        <div class="stp-content-block clearfix">
+            {% for item in list %}
+                <div id="block_user_{{ item.user.id }}" class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="user">
+                        <div class="photo">
+                            <a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                {% helper users.formatAvatar({'user': item.user, 'size': 'great'}) %}
+                            </a>
+                            <div class="actions">
+                                <div class="text-overflow">
+                                    {% if item.user.id %}
+                                        <a id="blacklist_remove_{{ item.user.id }}" data-pjax="0"
+                                           data-userid="{{ item.user.id }}" href="{{ site_url }}blacklist/remove/{{ item.user.id }}"
+                                           class="remove_from_blacklist btn-link link-r-margin" title="{% helper lang.l('action_remove', 'blacklist', '', 'button') %}">
+                                            <i class="fa fa-user-times"></i>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="text-overflow">
+                                <a href="{% helper seo.seolink('users', 'view', item.user) %}">
+                                    {{ item.user.output_name }}
+                                </a>, {{ item.user.age }}
+                            </div>
+                            {% if item.user.location %}
+                                <div class="text-overflow">
+                                    {{ item.user.location }}
+                                </div>
+                            {% endif %}
+                            <div class="text-overflow">
+                                {% helper date_format.tpl_date_format(item.date_update, page_data.date_time_format) %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="empty text-center p10">
+                    {% helper lang.l('empty_result', 'blacklist') %}
+                </div>
+            {% endfor %}
+        </div>
+        {% if list %}
+            <div id="pages_block_2" class="tac">
+                {% set page_data = page_data|merge({'type': 'full'}) %}
+                {% helper start.pagination(page_data) %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% include '@app/footer.twig' %}

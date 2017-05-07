@@ -1,0 +1,12 @@
+	170	Aoloau	-14.3197200	-170.7700000	AS	050	0	0	Aoloau	Aoloau	Aoloau	Aoloau	Aoloau	Aoloau
+	170	Vaitogi	-14.3588900	-170.7347200	AS	050	0	0	Vaitogi	Vaitogi	Vaitogi	Vaitogi	Vaitogi	Vaitogi
+	170	Vailoatai	-14.3611100	-170.7822200	AS	050	0	0	Vailoatai	Vailoatai	Vailoatai	Vailoatai	Vailoatai	Vailoatai
+	170	Taputimu	-14.3602800	-170.7730600	AS	050	0	0	Taputimu	Taputimu	Taputimu	Taputimu	Taputimu	Taputimu
+	170	Tāfuna	-14.3358300	-170.7200000	AS	050	0	0	Tāfuna	Тафуна	Tāfuna	Tāfuna	Tāfuna	Tāfuna
+	170	Faleniu	-14.3325000	-170.7444400	AS	050	0	0	Faleniu	Faleniu	Faleniu	Faleniu	Faleniu	Faleniu
+	170	Leone	-14.3438900	-170.7850000	AS	050	0	0	Leone	Leone	Leone	Leone	Leone	Leone
+	170	Malaeloa/Ituau	-14.3472200	-170.7672200	AS	050	0	0	Malaeloa/Ituau	Malaeloa/Ituau	Malaeloa/Ituau	Malaeloa/Ituau	Malaeloa/Ituau	Malaeloa/Ituau
+	170	Malaeloa/Aitulagi	-14.3386100	-170.7678400	AS	050	0	0	Malaeloa/Aitulagi	Malaeloa/Aitulagi	Malaeloa/Aitulagi	Malaeloa/Aitulagi	Malaeloa/Aitulagi	Malaeloa/Aitulagi
+	170	Malaeimi	-14.3227800	-170.7338900	AS	050	0	0	Malaeimi	Malaeimi	Malaeimi	Malaeimi	Malaeimi	Malaeimi
+	170	Mapusagafou	-14.3305600	-170.7527800	AS	050	0	0	Mapusagafou	Mapusagafou	Mapusagafou	Mapusagafou	Mapusagafou	Mapusagafou
+	170	Mesepa	-14.3313900	-170.7444400	AS	050	0	0	Mesepa	Mesepa	Mesepa	Mesepa	Mesepa	Mesepa

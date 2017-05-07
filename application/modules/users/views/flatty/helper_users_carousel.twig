@@ -1,0 +1,100 @@
+{% if users_carousel_data.users is not empty %}
+    {% if users_carousel_data.header %}
+        <h2>{{ users_carousel_data.header }}</h2>
+    {% endif %}
+
+    <script>
+        $(function () {
+            loadScripts(
+                [
+                    "{% helper utils.jscript('', 'jquery.jcarousel.min.js', 'path') %}",
+                    "{% helper utils.jscript('', 'init_carousel_controls.js', 'path') %}",
+                    "{% helper utils.jscript('', 'slick/slick.min.js', 'path') %}"
+                ],
+                function () {
+                    var data = {{ users_carousel_data.carousel|json_encode() }};
+                            $('#users_carousel_' + data.rand).removeClass('hide');
+
+                    carousel{{ users_carousel_data.rand }} = $('#users_carousel_' + data.rand).find('.jcarousel').jcarousel({
+                        animation: 250
+                    });
+
+                    carousel_controls{{ users_carousel_data.rand }} = new init_carousel_controls({
+                        carousel: carousel{{ users_carousel_data.rand }},
+                        carousel_images_count: data.visible,
+                        carousel_total_images: data.users_count,
+                        btnNext: '#directionright_' + data.rand,
+                        btnPrev: '#directionleft_' + data.rand,
+                        scroll: 1
+                    });
+
+                    $('#users_carousel_{{ users_carousel_data.rand }} .jcarousel').each(function() {
+                        var slidesToShow = Math.floor($(this).width()/$(this).find('.swiper-slide:first').width());
+                        slidesToShow = (slidesToShow > 20) ? slidesToShow : 20;
+
+                        if (slidesToShow > {{ users_carousel_data.users|length }}) {
+                            var slides = $(this).find('.swiper-slide');
+                            var clonesCount = Math.ceil(slidesToShow/{{ users_carousel_data.users|length }});
+                            for (var i = 0; i < clonesCount; i++) {
+                                slides.clone(true, true).appendTo($(this))
+                            }
+                        }
+
+                        $(this).slick({
+                            accessibility: false,
+                            dots: false,
+                            infinite: true,
+                            speed: 0,
+                            variableWidth: true,
+                            slidesToShow: slidesToShow,
+                            slidesToScroll: slidesToShow,
+                            prevArrow: false,
+                            nextArrow: false
+                        });
+
+                        $(window).bind('resize', function() {
+                            $('#users_carousel_{{ users_carousel_data.rand }} .jcarousel').each(function() {
+                                $(this).slick('slickSetOption', {refresh: true});
+                            });
+                        });
+                    });
+                },
+                ['carousel_controls{{ users_carousel_data.rand }}', 'carousel{{ users_carousel_data.rand }}']
+            );
+        });
+    </script>
+
+    {% set users_carousel_thumb_name=users_carousel_data.carousel.thumb_name %}
+    <div id="users_carousel_{{ users_carousel_data.rand }}" class="user-gallery carousel-wrapper hide {% if users_carousel_data.carousel.class %}{{ users_carousel_data.carousel.class }}{% endif %}">
+        <div class="user-gallery-inner dimp100 box-sizing">
+            <div class="jcarousel swiper-wrapper" dir="ltr">
+                {% for item in users_carousel_data.users %}
+                    <div class="swiper-slide {% if item.carousel_data.class is not empty %}{{ item.carousel_data.class }}{% endif %}" {% if item.carousel_data.id is not empty %}id="{{ item.carousel_data.id }}"{% endif %}>
+                        <div class="user">
+                            <div class="photo">
+                                <a href="{% helper seo.seolink('users', 'view', item) %}">
+                                    {% helper users.formatAvatar({'user': item, 'size': users_carousel_thumb_name}) %}
+                                </a>
+                                {% if item.carousel_data.icon_class is not empty %}
+                                    <i>
+                                        <i class="fa {{ item.carousel_data.icon_class }}"></i>
+                                    </i>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+{% endif %}
+<script>
+    $('#users_carousel_{{ users_carousel_data.rand }}').not('.w-descr')
+            .off('mouseenter', '.photo').on('mouseenter', '.photo', function () {
+        $(this).find('.info').stop().slideDown(100);
+    }).off('mouseleave', '.photo').on('mouseleave', '.photo', function () {
+        $(this).find('.info').stop(true).delay(100).slideUp(100);
+    });
+    $('.info', '#users_carousel_{{ users_carousel_data.rand }}').hide();
+</script>

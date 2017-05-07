@@ -1,0 +1,14 @@
+	1030	Sinnamary	5.3767600	-52.9567900	GF	GF	0	0	Sinnamary	Sinnamary	Sinnamary	Sinnamary	Sinnamary	Sinnamary
+	1030	Saint-Laurent-du-Maroni	5.5010100	-54.0294100	GF	GF	0	0	Saint-Laurent-du-Maroni	Сен-Лоран-дю-Марони	Saint-Laurent-du-Maroni	Saint-Laurent-du-Maroni	Saint-Laurent-du-Maroni	Saint-Laurent-du-Maroni
+	1030	Saint-Georges-de-l'Oyapock	3.9000000	-51.8000000	GF	GF	0	0	Saint-Georges-de-l'Oyapock	Saint-Georges-de-l'Oyapock	Saint-Georges-de-l'Oyapock	Saint-Georges-de-l'Oyapock	Saint-Georges-de-l'Oyapock	Saint-Georges-de-l'Oyapock
+	1030	Roura	4.7251900	-52.3261600	GF	GF	0	0	Roura	Roura	Roura	Roura	Roura	Roura
+	1030	Rémire-Montjoly	4.9166700	-52.2666700	GF	GF	0	0	Rémire-Montjoly	Rémire-Montjoly	Rémire-Montjoly	Rémire-Montjoly	Rémire-Montjoly	Rémire-Montjoly
+	1030	Matoury	4.8487200	-52.3256500	GF	GF	0	0	Matoury	Matoury	Matoury	Matoury	Matoury	Matoury
+	1030	Mana	5.6676600	-53.7782800	GF	GF	0	0	Mana	Mana	Mana	Mana	Mana	Mana
+	1030	Macouria	5.0166700	-52.4833300	GF	GF	0	0	Macouria	Macouria	Macouria	Macouria	Macouria	Macouria
+	1030	Kourou	5.1628100	-52.6426500	GF	GF	0	0	Kourou	Кур	Kourou	Kourou	Kourou	Kourou
+	1030	Iracoubo	5.4787100	-53.2052400	GF	GF	0	0	Iracoubo	Iracoubo	Iracoubo	Iracoubo	Iracoubo	Iracoubo
+	1030	Grand-Santi	4.2729500	-54.3814600	GF	GF	0	0	Grand-Santi	Grand-Santi	Grand-Santi	Grand-Santi	Grand-Santi	Grand-Santi
+	1030	Cayenne	4.9333300	-52.3333300	GF	GF	0	0	Cayenne	Кайенна	Cayenne	Cayenne	Cayenne	Cayenne
+	1030	Camopi	3.1688700	-52.3352500	GF	GF	0	0	Camopi	Camopi	Camopi	Camopi	Camopi	Camopi
+	1030	Apatou	5.1552600	-54.3431100	GF	GF	0	0	Apatou	Apatou	Apatou	Apatou	Apatou	Apatou

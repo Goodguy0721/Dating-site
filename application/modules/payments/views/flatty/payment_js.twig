@@ -1,0 +1,61 @@
+{% include '@app/header.twig' %}
+
+{% if need_redirect %}
+    <script>
+        locationHref('{{ site_url }}payments/js/{{ data.id }}/1');
+    </script>
+{% else %}
+    {{ data.js }}
+    <div class="col-lg-12">
+        <h1>
+            {% helper lang.l('header_payment_form', 'payments') %}
+        </h1>
+        <div class="content-value">
+            <div class="edit_block">
+                <div class="payment_table">
+                    <table>
+                        <tr>
+                            <td>
+                                {% helper lang.l('field_payment_name', 'payments') %}:
+                            </td>
+                            <td class="value">
+                                {{ data.payment_data.name }} ({{ data.payment_type_gid }})
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {% helper lang.l('field_amount', 'payments') %}:
+                            </td>
+                            <td class="value">
+                                {% helper start.currency_format_output({'value': data.amount, 'cur_gid': data.currency_gid}) %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {% helper lang.l('field_billing_type', 'payments') %}:
+                            </td>
+                            <td class="value">
+                                {{ data.system.name }}
+                            </td>
+                        </tr>
+                        {% if data.system.info_data %}
+                            <tr>
+                                <td>
+                                    {% helper lang.l('field_info_data', 'payments') %}:
+                                </td>
+                                <td class="value">
+                                    {{ data.system.info_data }}
+                                </td>
+                            </tr>
+                        {% endif %}
+                    </table>
+                </div>
+                <div class="b outside">
+                    {{ js }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% include '@app/footer.twig' %}

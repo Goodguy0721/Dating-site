@@ -1,0 +1,20 @@
+<div class="form-group">
+    {% helper lang.l('header_order', 'store') %} <a href="{{ site_url }}admin/store/order/{{ data.id }}" target="_blank" ><b>#{{ data.code }}</b></a><br>
+    {% for item in data.items %}
+    {{ item.name }}<br>
+    <img src="{{ item.product.media.mediafile.thumbs.small }}" class="img-responsive"><br>
+    {% endfor %}
+    <label>{% helper lang.l('field_sender', 'store') %}:</label> {{ data.customer_name }}<br>
+    <label>{% helper lang.l('field_recipient', 'store') %}:</label> {% if data.id_user > 0 %}{{ data.user }}{% else %}{{ data.customer_name }}{% endif %}<br>
+    <label>{% helper lang.l('field_count', 'store') %}:</label> {{ data.products_count }}<br>
+    <label>{% helper lang.l('field_total_with_delivery', 'store') %}:</label> {% helper start.currency_output({value: data.total, cur_gid: data.gid_currency}) %}<br>
+    {% if data.shipping_location %}
+    <label>{% helper lang.l('field_street_address', 'store') %}:</label> {{ data.shipping_location }}<br>
+    {% endif %}
+    <label>{% helper lang.l('field_current_status', 'store') %}:</label> {{ data.status_text }}<br>
+</div>
+<div class="form-group">
+    <a class="btn btn-success" target="_blank" href="{{ site_url }}admin/store/order/{{ data.id }}">
+        {% helper lang.l('link_edit_order','store') %}
+    </a>
+</div>

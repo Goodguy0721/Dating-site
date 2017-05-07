@@ -1,0 +1,103 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+            {% if data.id %}
+                {% helper lang.l('admin_header_menu_item_change', 'menu') %}
+            {% else %}
+                {% helper lang.l('admin_header_menu_item_add', 'menu') %}
+            {% endif %}
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form method="post" name="save_form" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_menu_item_gid', 'menu') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" value="{{ data.gid|e }}" name="gid" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_menu_item_link', 'menu') %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="input-group">
+                        <span class="input-group-btn">
+                          <input type="radio" class="flat" value="out" name="link_type" id="link_type_out"
+                            {% if data.link_out %}checked{% endif %}>
+                          <label class="btn row">{% helper lang.l('link_external', 'menu') %}</label>
+                        </span>
+                        <input type="text" class="form-control pull-left" value="{{ data.link_out|e }}" name="link_out" class="long_long" onclick="javascript: check('out');">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-6 col-sm-6 col-xs-12 col-sm-offset-3">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                          <input type="radio" class="flat" value="in" name="link_type" id="link_type_in"
+                              {% if data.link_in %}checked{% endif %}>
+                          <label class="btn">{{ site_url }}</label>
+                      </span>
+                      <input type="text" class="form-control" value="{{ data.link_in|e }}"
+                          class="middle" name="link_in" onclick="javascript: check('in');">
+                    </div>
+                  </div>
+                </div>
+            {% for lang_id, item in languages %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_menu_item_value', 'menu') %} ({{ item.name }}):</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control" name="langs[{{ lang_id }}]"
+                            value="{{ attribute(data.langs, lang_id)|e }}">
+                    </div>
+                </div>
+            {% endfor %}
+            {% if indicators %}
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_indicator', 'menu') %}{% if item.name %} ({{ item.name }}){% endif %}:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="indicator_gid" id="indicator" class="form-control">
+                            <option value="0">{% helper lang.l('no_indicator', 'menu') %}</option>
+                            {% for indicator_gid, indicator in indicators %}
+                                {% if indicator.name %}
+                                    <option value="{{ indicator_gid }}" {% if data.indicator_gid == indicator_gid %}selected="selected"{% endif %}>
+                                        {{ indicator.name }}
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            {% endif %}
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-xs-12 col-sm-offset-3">
+                        {% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+                        <input type="submit" class="btn btn-success" name="btn_save" value="{{ save_text }}">
+                        <a href="{{ site_url }}admin/menu/items/{{ menu_id }}" class="btn btn-default">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+    function check(type) {
+        $('#link_type_' + type).attr('checked', 'checked');
+    }
+</script>
+
+{% include '@app/footer.twig' %}

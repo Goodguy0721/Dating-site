@@ -1,0 +1,115 @@
+{% if dynamic_block_users_media_data.view == 'big_thumbs' %}
+    {% set block_class = 'big' %}
+    {% set thumb_name = 'great' %}
+{% elseif dynamic_block_users_media_data.view == 'medium_thumbs' %}
+    {% set block_class = 'medium' %}
+    {% set thumb_name = 'big' %}
+{% elseif dynamic_block_users_media_data.view == 'small_thumbs' %}
+    {% set block_class = 'small' %}
+    {% set thumb_name = 'middle' %}
+{% elseif dynamic_block_users_media_data.view == 'small_thumbs_w_descr' %}
+    {% set block_class = 'small w-descr' %}
+    {% set thumb_name = 'middle' %}
+{% elseif dynamic_block_users_media_data.view == 'carousel' %}
+    {% set block_class = 'small' %}
+    {% set thumb_name = 'middle' %}
+{% elseif dynamic_block_users_media_data.view == 'carousel_w_descr' %}
+    {% set block_class = 'small w-descr' %}
+    {% set thumb_name = 'middle' %}
+{% else %}
+    {% set block_class = 'medium' %}
+    {% set thumb_name = 'big' %}
+{% endif %}
+<div id="dynamic_block_gallery_{{ dynamic_block_users_media_data.rand }}">
+	<h2 class="text-overflow" title="{{ dynamic_block_users_media_data.title|e }}">
+        {{ dynamic_block_users_media_data.title }}
+    </h2>
+	{% if dynamic_block_users_media_data.view == 'carousel' or dynamic_block_users_media_data.view == 'carousel_w_descr' %}
+		{% helper media.media_carousel({
+            'media': dynamic_block_users_media_data.media.media,
+            'scroll': 'auto',
+            'class': block_class,
+            'thumb_name': thumb_name
+        }) %}
+	{% else %}
+		<div id="dynamic_block_users_media_{{ dynamic_block_users_media_data.rand }}"
+             class="user-gallery {{ block_class }}">
+			{% for item in dynamic_block_users_media_data.media.media %}
+				<div class="item">
+					<div class="user">
+						<div class="photo">
+							{% if item.video_content %}
+                                <div class="overlay-icon pointer" data-click="view-media"
+                                     data-id-media="{{ item.id }}" data-place="site_gallery">
+                                    <i class="fa fa-play w fa-4x opacity60"></i>
+                                </div>
+                            {% endif %}
+							{% helper text_media_photo = lang.l('text_media_photo', 'media', '',  'button', item) %}
+							<img class="pointer" data-click="view-media"
+                                 data-id-media="{{ item.id }}" data-place="site_gallery"
+                                 src="{% if item.media %}{{ item.media.mediafile.thumbs[thumb_name] }}{% elseif item.video_content %}{{ item.video_content.thumbs[thumb_name] }}{% endif %}" alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+							<div class="info">
+								<div class="text-overflow">
+                                    <a href="{% helper seo.seolink('users', 'view', item.user_info) %}">
+                                        {{ item.user_info.output_name }}
+                                    </a>, {{ item.user_info.age }}
+                                </div>
+								{% if item.user_info.location %}
+                                    <div class="text-overflow">
+                                        {{ item.user_info.location }}
+                                    </div>
+                                {% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="descr hide">
+						<div>
+                            <a href="{% helper seo.seolink('users', 'view', item.user_info) %}">
+                                {{ item.user_info.output_name }}
+                            </a>, {{ item.user_info.age }}
+                        </div>
+						{% if item.user_info.location %}
+                            <div>
+                                {{ item.user_info.location }}
+                            </div>
+                        {% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+<script>
+	$('#dynamic_block_users_media_{{ dynamic_block_users_media_data.rand }}').not('.w-descr')
+		.off('mouseenter', '.photo').on('mouseenter', '.photo', function(){
+			$(this).find('.info').stop().slideDown(100);
+		}).off('mouseleave', '.photo').on('mouseleave', '.photo', function(){
+			$(this).find('.info').stop(true).delay(100).slideUp(100);
+		});
+
+	$(document).one('pjax:start', function(){
+		$('#dynamic_block_users_media_{{ dynamic_block_users_media_data.rand }}')
+            .not('.w-descr').off('mouseenter', '.photo').off('mouseleave', '.photo');
+	});
+
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+			function(){
+				mediagallery{{ dynamic_block_users_media_data.rand }} = new media({
+					siteUrl: site_url,
+					galleryContentPage: 1,
+					galleryContentParam: '{{ dynamic_block_users_media_data.type }}',
+					galleryContentDiv: 'dynamic_block_gallery_{{ dynamic_block_users_media_data.rand }}',
+					idUser: 0,
+					all_loaded: 1,
+					load_on_scroll: false,
+					lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media') %}",
+					gallery_name: 'mediagallery{{ dynamic_block_users_media_data.rand }}'
+				});
+			},
+			['mediagallery{{ dynamic_block_users_media_data.rand }}'],
+			{async: true}
+		);
+	});
+</script>

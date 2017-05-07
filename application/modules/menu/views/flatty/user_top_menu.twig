@@ -1,0 +1,64 @@
+<ul>
+	{% for key, item in menu %}
+        <li class="menu-group {% if item.active is not empty or item.in_chain is not empty %}active{% endif %}">
+            {% if item.sub is not empty %}
+                <span id="user_{{ item.gid }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}
+                </span>
+            {% else %}
+                <a id="user_{{ item.gid }}" href="{{ item.link }}">
+                    {% if item.icon %}
+                        <i class="fa fa-{{ item.icon }}"></i>
+                    {% endif %}
+                    {{ item.value }}
+                </a>
+            {% endif %}
+        </li>
+        <li class="menu-empty">
+            <ul class="submenu noPrint">
+                {% for key, s in item.sub %}
+                    <li class="menu-item {% if s.active %}active{% endif %}">
+                        <a id="user_{{ item.gid }}_{{ s.gid }}" href="{{ s.link }}" {% if s.gid == 'chat_item' %}target="_blank"{% endif %}>
+                            {{ s.value }}{% if s.indicator %}<span class="badge summand {{ s.gid }}_count">{{ s.indicator }}</span>{% endif %}
+                            {#TODO: перенести всё в indicators #}
+                            {% if s.gid == 'friendlist_item' %}
+                                {% helper friendlist.friend_requests({template: 'left'}) %}
+                            {% elseif s.gid == 'visits_item' %}
+                                {% helper users.visitors({template: 'left'}) %}
+                            {% elseif s.gid == 'kisses_item' %}
+                                {% helper kisses.new_kisses({template: 'left'}) %}
+                            {% elseif s.gid == 'winks_item' %}
+                                {% helper winks.winks_count({template: 'left'}) %}
+                            {% elseif s.gid == 'mailbox_item' %}
+                                {% helper mailbox.new_messages({ template: 'left' }) %}
+                            {% elseif s.gid == 'questions_item' %}
+                                {% helper questions.new_questions({ template: 'left' }) %}
+                            {% endif %}
+
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    {% helper menu.get_menu('user_top_advanced_menu', 'user_top_advanced_menu') %}
+</ul>
+<script type="text/javascript">
+    $(function(){
+		loadScripts(
+			[
+				"{% helper utils.jscript('menu', 'main-menu.js', 'path') %}",
+			],
+			function(){
+				main_menu = new mainMenu({
+					siteUrl: site_url,
+				});
+			},
+			'main_menu',
+			{async: false}
+		);
+	});
+</script>

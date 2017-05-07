@@ -1,0 +1,46 @@
+<div class="content-block load_content">
+    <h1>{% helper lang.l('view_media', 'media') %} <span id="media_position"></span></h1>
+     <div class="edit-media-content">
+            <div class="center lh0">
+                <div id="image_content" class="text-center" data-area="view">
+                    <div class="pos-rel">
+                        {% helper store.store_media({
+                            'id_product': media_data.product_id,
+                            'size': 'big',
+                            'id_media': media_data.media_id,
+                            'type': media_data.type,
+                            'amount': 'single'
+                        }) %}
+                        <div id="next_media" class="load_content_right"></div>
+                        <div id="prev_media" class="load_content_left"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="clearfix"></div>
+
+    {#<div class="ln_solid"></div>
+
+    <div class="model-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="view_media_close">
+            {% helper lang.l('btn_cancel','start') %}
+        </button>
+    </div> #}
+</div>
+
+<script>
+    $(function(){
+        loadScripts(
+            "{% helper utils.jscript('store', 'store_media.js', 'path') %}",
+            function(){
+                product_media = new store_media({
+                    siteUrl: site_url,
+                    mediaId: "{{ media_data.media_id }}",
+                    count_photo: "{{ media_data.count }}",
+                });
+            },
+            'product_media',
+            {async: false}
+        );
+    });
+</script>

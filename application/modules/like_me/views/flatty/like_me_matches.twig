@@ -1,0 +1,65 @@
+<div class="b-likeme__mymatches">
+    <div class="g-flatty-block clearfix">
+    	{% for item in user_data.content %}
+            <div class="short-line"></div>
+            <div class="g-users-gallery">
+    			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 g-users-gallery__item">
+    				<div class="g-users-gallery__content">
+    					<div class="g-users-gallery__photo">
+    						<a class="g-pic-border g-rounded" href="{% helper seo.seolink('users', 'view', item) %}">
+    							<img class="img-responsive" src="{{ item.media.user_logo.thumbs.great }}" alt="" />
+    						</a>
+                            <div class="g-users-gallery__actions">
+                                <div class="g-photo-actions">
+                                    <a href="{% helper seo.seolink('like_me', 'remove', {'profile_id': item.id}) %}"
+                                        title="{% helper lang.l('link_action_remove', 'like_me') %}">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+    					</div>
+                        <div class="g-users-gallery__info">
+                            <div class="text-overflow">
+                                <a class="g-users-gallery__name" href="{% helper seo.seolink('users', 'view', item) %}">{{ item.output_name }}</a>, {{ item.age }}
+                            </div>
+                            {% if item.location %}
+                                <div class="text-overflow">
+                                    {{ item.location }}
+                                </div>
+                            {% endif %}
+                            <div>
+                                {% for key, set  in settings %}
+                                    {% if set.helper is not empty %}
+                                        {% helper {key}.{set.helper}({
+                                            'id_user': item.id,
+                                            'user_id': item.id,
+                                            'id_contact': item.id
+                                        }) %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+    				</div>
+    			</div>
+            </div>
+    	{% else %}
+            <div>
+                <h2>
+                    {% helper lang.l('empty_list', 'like_me') %}
+                </h2>
+                <div>
+                    <input type="button" id="go-perfect" value="{% helper lang.l('field_play_more_perfect', 'like_me') %}" class="btn btn-secondary">
+                </div>
+            </div>
+    	{% endfor %}
+
+</div>
+
+
+
+
+    {% if user_data.have_more is not empty %}
+        <div class="match-button-content">
+            <input id="show_more" type="button" value="{% helper lang.l('button_show_more', 'like_me') %}" class="btn btn-primary">
+        </div>
+    {% endif %}

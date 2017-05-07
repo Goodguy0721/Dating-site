@@ -1,0 +1,47 @@
+{% if poll_data.show_results %}
+	<div class="results_{{ poll_data.id }}">
+		{% for key, item in poll_data.results %}
+			{% set item = poll_data.answers_colors[key] %}
+			{% set respond = poll_data.results[key] %}
+			{% if not respond %}
+                {% set respond = 0 %}
+            {% endif %}
+			{% if max_results %}
+				<div class="poll_result" id="result_answer_{{ item }}">
+					{% if language %}
+                        {% set language_item = key ~ '_' ~ language %}
+                    {% else %}
+                        {% set language_item = key ~ '_' ~ cur_lang %}
+                    {% endif %}
+					{{ poll_data.answers_languages[language_item] }}
+                                        <div class="percent fright">
+						{{ ((respond / max_results) * 100)|round(0, 'floor') }}%
+					</div>
+					<div class="poll_progress" style="background-color: #{{ item }}; width: {{ ((respond / max_results) * 100)|round(0, 'floor') }}%;"></div>
+				</div>
+			{% else %}
+				<div class="poll_result" id="result_answer_{{ item }}">
+					{% if language %}
+                        {% set language_item = key ~ '_' ~ language %}
+                    {% else %}
+                        {% set language_item = key ~ '_' ~ cur_lang %}
+                    {% endif %}
+					{{ poll_data.answers_languages[language_item] }}<br>
+					<div class="poll_progress fleft" style="background-color: #{{item}}; width: 1%;"></div>
+					<div class="fleft ml10">0%</div>
+				</div><b>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% else %}
+	<p>
+        {% helper lang.l('dont_show_results_message', 'polls') %}
+    </p>
+{% endif %}
+{% if not one_poll_place and polls_count > 1 %}
+	<div class="poll_action">
+		<a class="poll_link next_poll" href="javascript:void(0);">
+            {% helper lang.l('next_poll', 'polls') %}
+        </a>
+	</div>
+{% endif %}

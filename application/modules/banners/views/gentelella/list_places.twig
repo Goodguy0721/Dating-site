@@ -1,0 +1,142 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_banners_menu') %}
+            </ul>
+        </div>
+        {% if allow_config_add %}
+        <div class="x_title">
+            <a href="{{ site_url }}admin/banners/edit_place" class="btn btn-primary">
+                {% helper lang.l('link_add_place', 'banners') %}
+            </a>
+            <div class="clearfix"></div>
+        </div>
+        {% endif %}
+        <div class="x_content">
+            <table id="users" class="table table-striped responsive-utilities jambo_table display">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_place_id', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_place_name', 'banners') %}
+                        </th>
+                        <th class="column-title text-center md-hide">
+                            {% helper lang.l('field_place_keyword', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_place_sizes', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_place_in_rotation', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_place_rotate_time', 'banners') %}
+                        </th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for place in places %}
+                        <tr class="even pointer text-center">
+                            <td class="center">{{ place.id }}</td>
+                            <td>{{ place.name }}</td>
+                            <td class="md-hide">{{ place.keyword }}</td>
+                            <td class="center">{{ place.width }} x {{ place.height }}</td>
+                            <td class="center">{{ place.places_in_rotation }}</td>
+                            <td class="center">
+                                {% if place.rotate_time %}
+                                    {{ place.rotate_time }} sec.
+                                {% else %}
+                                    {% helper lang.l('no_rotation', 'banners') %}
+                                {% endif %}
+                            </td>
+                            <td class="icons">
+                                <div class="btn-group" style="white-space:nowrap; width: 100%;">
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.location.href='{{ site_url }}admin/banners/edit_place/{{ place.id }}'">
+                                        {% helper lang.l('link_edit_place','banners') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/banners/edit_place/{{ place.id }}">
+                                                {% helper lang.l('link_edit_place','banners') %}
+                                            </a>
+                                        </li>
+                                        {% if allow_config_add %}
+                                        <li>
+                                            {% helper confirm_text = lang.l('note_delete_place', 'banners', '', 'js') %}
+                                            <a href="{{ site_url }}admin/banners/delete_place/{{ place.id }}" onclick="return confirm('{{ confirm_text }}');">
+                                                {% helper lang.l('link_delete_place','banners') %}
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_place','banners') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [6]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

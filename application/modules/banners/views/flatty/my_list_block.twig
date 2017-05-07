@@ -1,0 +1,109 @@
+<div class="table-responsive">
+    <div class="my-banners-header-block">
+        <div class="col-sm-1 no-padding-left">{% helper lang.l('field_number', 'banners') %}</div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">{% helper lang.l('field_name', 'banners') %}</div>
+        <div class="col-sm-3">{% helper lang.l('field_approve', 'banners') %}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    {% for banner in banners %}
+        <div class="my-banner-list clearfix">
+            <div class="col-xs-12 col-sm-1">{{ loop.index }}.</div>
+            <div class="col-xs-1 col-sm-1">
+                <a href="javascript:void(0)" class="fa fa-eye fa-lg" id="view_{{ banner.id }}" title="{% helper lang.l('link_view_banner', 'banners', '', 'button') %}"></a>
+                <div id="view_{{ banner.id }}_content" class="hide">
+                    {% if banner.banner_type == 1 %}
+                        <img src="{{ banner.media.banner_image.file_url }}"  alt="{{ banner.alt_text|e }}" width="{{ banner.banner_place_obj.width }}" height="{{ banner.banner_place_obj.height }}" />
+                    {% else %}
+                        {{ banner.html }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-5">
+                <div class="banner-name">
+                    {{ banner.name }}
+                    {% if banner.banner_place_obj %}
+                        ({{ banner.banner_place_obj.name }} {{banner.banner_place_obj.width }}X{{ banner.banner_place_obj.height }})
+                    {% endif %}
+                </div>
+
+                {% set limit='' %}
+
+                {% if banner.number_of_views %}
+                    {% set limit=1 %}
+                    {% helper lang.l('shows', 'banners') %} - {{ banner.number_of_views }}<br/>
+                {% endif %}
+
+                {% if banner.number_of_clicks %}
+                    {% set limit=1 %}
+                    {% helper lang.l('clicks', 'banners') %} - {{ banner.number_of_clicks }}<br/>
+                {% endif %}
+
+                {% if banner.expiration_date and banner.expiration_date != '0000-00-00 00:00:00' %}
+                    {% set limit=1 %}
+                    {% helper lang.l('till', 'banners') %} - {% helper date_format.tpl_date_format(banner.expiration_date, page_data.date_format) %}
+                {% endif %}
+
+                {% if not limit %}
+                    {% if banner.status %}
+                        {% helper lang.l('never_stop', 'banners') %}
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                {% if banner.approve == '1' %}
+                    <span class="status">
+                        <i class="fa fa-chevron-circle-down fa-lg color-link_color"></i>
+                        {% if banner.status %}
+                            {% helper lang.l('text_banner_activated', 'banners') %}
+                        {% else %}
+                            {% helper lang.l('approved', 'banners') %}
+                        {% endif %}
+                    </span>
+                {% elseif banner.approve == '-1' %}
+                    <span class="status">
+                        <i class="fa fa-ban fa-lg color-link_color"></i>
+                        {% helper lang.l('declined', 'banners') %}
+                    </span>
+                {% else %}
+                    <span class="status wait">
+                        <i class="fa fa-clock-o g fa-lg"></i>
+                        {% helper lang.l('not_approved', 'banners') %}
+                    </span>
+                {% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-2">
+                <div class="action-block">
+                    {% if banner.approve == '1' %}
+                        {% if not banner.status %}
+                            <a href="{{ site_url }}banners/activate/{{ banner.id }}" class="fa fa-play fa-lg" title="{% helper lang.l('link_activate_banner', 'banners') %}"></a>
+                        {% endif %}
+                        {% if banner.status == '1' %}
+                            <a href="{{ site_url }}banners/statistic/{{ banner.id }}" class="fa fa-bar-chart fa-lg" title="{% helper lang.l('link_banner_stat', 'banners', '', 'button') %}"></a>
+                        {% endif %}
+                    {% endif %}
+                    <a href="javascript:void(0);" class="fa fa-trash fa-lg" onclick="javascript:{% spaceless %} if(!confirm('{% helper lang.l('note_delete_banner', 'banners', '', 'js') %}')) return false; locationHref('{{ site_url }}banners/delete/{{ banner.id }}'); {% endspaceless %}"></a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-xs-12 banner-list-empty">{% helper lang.l('no_banners', 'banners') %}</div>
+    {% endfor %}
+</div>
+<div class="clr"></div>
+
+<script>
+	$(function(){
+		loadScripts(
+			"{% helper utils.jscript('', 'easyTooltip.min.js', 'path') %}",
+			function(){
+				$("a.fa-eye").each(function(){
+					var id = $(this).attr('id')+'_content';
+					$(this).easyTooltip({useElement: id});
+				});
+			}
+		);
+	});
+</script>

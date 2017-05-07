@@ -1,0 +1,50 @@
+{% include '@app/header.twig' %}
+
+<div class="x_panel">
+	<div class="x_title">
+		<ul class="nav nav-tabs bar_tabs">
+		{% helper menu.get_admin_level1_menu('admin_spam_menu') %}
+		</ul>
+	</div>
+
+	<div class="x_content form-horizontal">
+	<form method="post" action="" name="save_form">
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_type_form_type', 'spam') %}:&nbsp;*
+			</label>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<select name="data[form_type]" class="form-control">
+					{% for key, item in form_type_lang.option %}
+					<option value="{{ key|e }}" {% if key == data.form_type %}selected{% endif %}>
+						{{ item }}
+					</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_type_send_mail', 'spam') %}: </label>
+			<div class="col-md-6 col-sm-6 col-xs-12 data-label">
+				<input type="hidden" name="data[send_mail]" value="0" />
+				<input class="flat" type="checkbox" name="data[send_mail]" value="1" {% if data.send_mail %}checked="checked"{% endif %} />
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_type_status', 'spam') %}: </label>
+			<div class="col-md-6 col-sm-6 col-xs-12 data-label">
+				<input type="hidden" name="data[status]" value="0" />
+				<input class="flat" type="checkbox" name="data[status]" value="1" {% if data.status %}checked="checked"{% endif %} />
+			</div>
+		</div>
+		<div class="ln_solid"></div>
+		{% helper save_text = lang.l('btn_save', 'start', '', 'button') %}
+		<div class="row form-group"><div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+			<input class="btn btn-success" type="submit" name="btn_save" value="{{ save_text }}">
+			<a class="btn btn-default" href="{{ site_url }}admin/spam/types">{% helper lang.l('btn_cancel', 'start') %}</a>
+		</div></div>
+	</form>
+	</div>
+</div>
+
+{% include '@app/footer.twig' %}

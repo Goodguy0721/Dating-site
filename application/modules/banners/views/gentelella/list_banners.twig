@@ -1,0 +1,310 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_banners_menu') %}
+            </ul>
+        </div>
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="menu" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default{% if page_data.view_type == 'admin' %} active{% endif %}{% if filter_data.admin == 0 %} disabled{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           {% if filter_data.admin > 0 %}onclick="document.location.href='{{ site_url }}admin/banners/index/admin'"{% endif %}>
+                        <input type="radio">
+                        {% helper lang.l('filter_admin_banners', 'banners') %} ({{ filter_data.admin }})
+                    </label>
+                    <label class="btn btn-default{% if page_data.view_type == 'user' %} active{% endif %}{% if filter_data.user == 0 %} disabled{% endif %}"
+                           data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"
+                           {% if filter_data.user > 0 %}onclick="document.location.href='{{ site_url }}admin/banners/index/user'"{% endif %}>
+                        <input type="radio">
+                        {% helper lang.l('filter_users_banners', 'banners') %} ({{ filter_data.user }})
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="actions" class="hide">
+                <div class="btn-group">
+                    <a id="banners_link_add" href="{{ site_url }}admin/banners/edit" class="btn btn-primary">
+                        {% helper lang.l('link_add_banner', 'banners') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a id="banners_link_add" href="{{ site_url }}admin/banners/edit">
+                                {% helper lang.l('link_add_banner', 'banners') %}
+                            </a>
+                        </li>
+                        <li>
+                            <a id="banners_link_update" href="{{ site_url }}admin/banners/update_hour_statistic">
+                                {% helper lang.l('update_statistic_manually', 'banners') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table display">
+                <thead>
+                    <tr class="headings text-center">
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_number', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            &nbsp;
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_name', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_location', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('field_limitations', 'banners') %}
+                        </th>
+                        <th class="column-title text-center">
+                            {% helper lang.l('text_status', 'start') %}
+                        </th>
+                        <th class="column-title text-center">
+                            &nbsp;
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for banner in banners %}
+                    <tr class="even pointer">
+                        <td class="center">{{ loop.index }}</td>
+                        <td class="center view-banner">
+                            <i class="fa fa-eye cursor-pointer" id="view_{{ banner.id }}"
+                               alt="{% helper lang.l('link_view_banner','banners') %}"
+                               title="{% helper lang.l('link_view_banner','banners') %}"></i>
+                            <div id="view_{{ banner.id }}_content" class="preview"></div>
+                        </td>
+                        <td class="center">
+                            {{ banner.name }}
+                            {% if page_data.view_type == 'user' %}({{ banner.user.output_name }}){% endif %}
+                        </td>
+                        <td class="center">
+                            {% if banner.banner_place_obj %}
+                                {{ banner.banner_place_obj.name }} {{ banner.banner_place_obj.width }}X{{ banner.banner_place_obj.height }}
+                            {% endif %}
+                        </td>
+                        <td class="center">
+                            {% if banner.approve == -1 %}
+                                {% helper lang.l('declined', 'banners') %}
+                            {% else %}
+                                {% set limit = '' %}
+                                {% if banner.number_of_views %}
+                                    {% set limit = true %}
+                                    {% helper lang.l('shows', 'banners') %} - {{ banner.number_of_views }}
+                                    <br/>
+                                {% endif %}
+                                {% if banner.number_of_clicks %}
+                                    {% set limit = true %}
+                                    {% helper lang.l('clicks', 'banners') %} - {{ banner.number_of_clicks }}
+                                    <br/>
+                                {% endif %}
+                                {% if banner.expiration_date and banner.expiration_date != '0000-00-00 00:00:00' %}
+                                    {% set limit = true %}
+                                    {% helper lang.l('till', 'banners') %} - {% helper date_format.tpl_date_format(banner.expiration_date, page_data.date_format) %}
+                                {% endif %}
+                                {% if not limit %}
+                                    {% if banner.status %}
+                                        {% helper lang.l('never_stop', 'banners') %}
+                                    {% elseif page_data.view_type == 'admin' %}
+                                        {% helper lang.l('text_banner_inactivated', 'banners') %}
+                                    {% elseif page_data.view_type == 'user' and banner.approve == 1 %}
+                                        {% helper lang.l('approved', 'banners') %}
+                                    {% else %}
+                                        {% helper lang.l('waiting_activation', 'banners') %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if banner.approve == 1 %}
+                                {% helper lang.l('btn_tableicon_is_active','start') %}
+                            {% else %}
+                                {% helper lang.l('btn_tableicon_is_inactive','start') %}
+                            {% endif %}
+                        </td>
+                        <td class="icons">
+                            <div class="btn-group">
+                        {% if page_data.view_type == 'admin' %}
+                            {% if banner.approve == 1 %}
+                                <a href="{{ site_url }}admin/banners/activate/{{ banner.id }}/0"
+                                    id="banner_deactivate_{{ banner.id }}"
+                                    title="{% helper lang.l('link_deactivate_banner','banners') %}"
+                                    class="btn btn-primary">
+                                    {% helper lang.l('make_inactive','start') %}</a>
+                                <span id="span_banner_deactivate_{{ banner.id }}" class="hide">
+                                    <div class="tooltip-info">
+                                    {% if banner.views_left %}
+                                        <b>{% helper lang.l('shows_left', 'banners') %}:</b> {{ banner.views_left }}<br>
+                                    {% endif %}
+                                    {% if banner.clicks_left %}
+                                        <b>{% helper lang.l('clicks_left', 'banners') %}:</b> {{ banner.clicks_left }}<br>
+                                    {% endif %}
+                                    {% if banner.expiration_date and banner.expiration_date != '0000-00-00 00:00:00' %}
+                                        <b>{% helper lang.l('till', 'banners') %}:</b> {% helper date_format.tpl_date_format(banner.expiration_date, page_data.date_format) %}<br>
+                                    {% endif %}
+                                    </div>
+                                </span>
+                            {% else %}
+                                <a href="{{ site_url }}admin/banners/activate/{{ banner.id }}/1"
+                                    title="{% helper lang.l('link_activate_banner','banners') %}"
+                                    class="btn btn-primary">
+                                    {% helper lang.l('make_active','start') %}</a>
+                            {% endif %}
+                        {% else %}
+                            {% if page_data.view_type == "user" and banner.approve == 0 %}
+                                <a class="btn btn-primary" href="{{ site_url }}admin/banners/edit/{{ banner.id }}/1">
+                                    {% helper lang.l('link_edit_banner','banners') %}</a>
+                            {% else %}
+                                <a class="btn btn-primary" href="{{ site_url }}admin/banners/edit/{{ banner.id }}">
+                                    {% helper lang.l('link_edit_banner','banners') %}</a>
+                            {% endif %}
+                        {% endif %}
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                {% if page_data.view_type == 'admin' %}
+                                    <li>
+                                    {% if banner.approve == 1 %}
+                                        <a href="{{ site_url }}admin/banners/activate/{{ banner.id }}/0"
+                                            id="banner_deactivate_{{ banner.id }}"
+                                            title="{% helper lang.l('link_deactivate_banner','banners') %}">
+                                            {% helper lang.l('make_inactive','start') %}</a>
+                                        <span id="span_banner_deactivate_{{ banner.id }}" class="hide">
+                                            <div class="tooltip-info">
+                                                {% if banner.views_left %}
+                                                    <b>{% helper lang.l('shows_left', 'banners') %}:</b> {{ banner.views_left }}<br>
+                                                {% endif %}
+                                                {% if banner.clicks_left %}
+                                                    <b>{% helper lang.l('clicks_left', 'banners') %}:</b> {{ banner.clicks_left }}<br>
+                                                {% endif %}
+                                                {% if banner.expiration_date and banner.expiration_date != '0000-00-00 00:00:00' %}
+                                                    <b>{% helper lang.l('till', 'banners') %}:</b> {% helper date_format.tpl_date_format(banner.expiration_date, page_data.date_format) %}<br>
+                                                {% endif %}
+                                            </div>
+                                        </span>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/banners/activate/{{ banner.id }}/1"
+                                            title="{% helper lang.l('link_activate_banner','banners') %}">
+                                            {% helper lang.l('make_active','start') %}</a>
+                                    {% endif %}
+                                    </li>
+                                {% endif %}
+                                    <li>
+                                    {% if page_data.view_type == "user" and banner.approve == 0 %}
+                                        <a href="{{ site_url }}admin/banners/edit/{{ banner.id }}/1">
+                                            {% helper lang.l('link_edit_banner','banners') %}</a>
+                                    {% else %}
+                                        <a href="{{ site_url }}admin/banners/edit/{{ banner.id }}">
+                                            {% helper lang.l('link_edit_banner','banners') %}</a>
+                                    {% endif %}
+                                    </li>
+                                {% if banner.status == 1 %}
+                                    <li>
+                                        <a href='{{site_url}}admin/banners/statistic/{{banner.id}}/'>
+                                            {% helper lang.l('link_view_statistic','banners') %}</a>
+                                    </li>
+                                {% endif %}
+                                    <li>
+                                        <a onclick="return confirm('{% helper lang.l('note_delete_banner', 'banners', '', 'js') %}');"
+                                           href="{{site_url}}admin/banners/delete/{{banner.id}}">
+                                            {% helper lang.l('link_delete_banner','banners') %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $("td.view-banner > i").click(function() {
+            if ($("td.view-banner > .preview").html() != '') {
+              $("td.view-banner > .preview").html('');
+            } else {
+              $("td.view-banner > .preview").html('');
+              var banner_id =  $(this).attr('id').replace(/\D+/g, '');
+              $.ajax({
+                  url: '{{ site_url }}admin/banners/preview/' + banner_id,
+                  success: function(data){
+                      $('#view_' + banner_id + '_content').html(data).show();
+                  }
+              });
+            }
+        });
+        $(document).click(function(){$("td.view-banner > .preview").html('')});
+    });
+</script>
+
+{% helper utils.jscript('', 'jquery-ui.custom.min.js') %}
+<link href="{{ site_root }}{{ js_folder }}jquery-ui/jquery-ui.custom.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_banners','banners') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [1,4,5,6]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}

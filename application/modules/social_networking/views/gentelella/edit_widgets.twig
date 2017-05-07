@@ -1,0 +1,53 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+{% helper utils.jscript('', 'easyTooltip.min.js') %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_panel">
+	<form method="post" action="{{ data.action }}" name="save_form" enctype="multipart/form-data"
+		data-parsley-validate class="form-horizontal form-label-left">
+			<table cellspacing="0" cellpadding="0" class="table table-striped jambo_table" width="100%">
+				<thead>
+				<tr>
+					<th>{% helper lang.l('field_name', 'social_networking') %}</th>
+					<th>{% helper lang.l('widget_like', 'social_networking') %}</th>
+					<th>{% helper lang.l('widget_share', 'social_networking') %}</th>
+					<th>{% helper lang.l('widget_comments', 'social_networking') %}</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% if services %}
+				{% for key, item in services %}
+					<tr>
+						<td>{{ item.name }} {% if not item.status %}({% helper lang.l('no_active_widgets', 'social_networking') %}){% endif %}</td>
+						<td>{% if 'like' in widgets_actions[key] %}<input class="flat" type="checkbox" name="like[{{ item.gid }}]" {% if not item.status %}disabled{% else %}{% set gid=item.gid %}{% if data.data.like[gid] %}checked{% endif %}{% endif %} />{% endif %}</td>
+						<td>{% if 'share' in widgets_actions[key] %}<input class="flat" type="checkbox" name="share[{{ item.gid }}]" {% if not item.status %}disabled{% else %}{% set gid=item.gid %}{% if data.data.share[gid] %}checked{% endif %}{% endif %} />{% endif %}</td>
+						<td>{% if 'comments' in widgets_actions[key] %}<input class="flat" type="checkbox" name="comments[{{ item.gid }}]" value="{{ item.id }}" {% if not item.status %}disabled{% else %}{% set gid=item.gid %}{% if data.data.comments[gid] %}checked{% endif %}{% endif %} />{% endif %}</td>
+					</tr>
+				{% endfor %}
+				{% else %}
+					<tr><td colspan=4>{% helper lang.l('no_services', 'social_networking') %}</td></tr>
+				{% endif %}
+				</tbody>
+			</table>
+		<div class="ln_solid"></div>
+		<div class="form-group">
+			<div class="col-xs-12">
+				<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+				<a class="btn btn-default" href="{{ site_url }}admin/social_networking/pages/">{% helper lang.l('btn_cancel', 'start') %}</a>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+
+<script type='text/javascript'>
+	$(function(){
+		$(".tooltip").each(function(){
+			$(this).easyTooltip({
+				useElement: 'tt_'+$(this).attr('id')
+			});
+		});
+	});
+</script>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,165 @@
+<span class="wall-post-date">{% helper date_format.tpl_date_format(event.date_update, date_format) %}</span>
+{% if event.id_poster != user_id %}
+    <span class="ml10">
+        {% helper spam.mark_as_spam_block({
+            'object_id': event.id,
+            'type_gid': 'wall_events_object',
+            'template': 'minibutton'
+        }) %}
+    </span>
+{% endif %}
+
+<div>
+    {% if event.event_type_gid == 'image_upload' %}
+        {% helper lang.l('uploads_new_photos', 'media') %}
+    {% elseif event.event_type_gid == 'video_upload' %}
+        {% helper lang.l('uploads_new_videos', 'media') %}
+    {% elseif event.event_type_gid == 'audio_upload' %}
+        {% helper lang.l('uploads_new_audios', 'audio_uploads') %}
+    {% endif %} ({{ event.media_count_all }})
+</div>
+<div class="b-media-gallery">
+    {% for key, edata in event.data %}
+        {% if edata.upload_gid == 'gallery_audio' %}
+            <div class="b-media-gallery__item-audio">
+                <div class="audio-content" data-id-media="{{edata.id}}">
+                    <audio id="player_{{edata.id}}" preload="auto" src="{{edata.media.mediafile.file_url}}"></audio>
+                    <div id="play_{{edata.id}}" class="play-track" ><i class="fa fa-play fa-lg"></i></div>
+                    <div id="duration_{{edata.id}}" class="duration-time duration_{{edata.id}}"></div>
+                    <div id="audioname_{{edata.id}}" class="audio-name audioname_{{edata.id}}">
+                        <span {% if edata.description is not empty %}
+                            class="audio-lyrics-link" onclick="$('#lyrics{{edata.id}}').toggle();" {% endif %}
+                            >
+                            {{edata.fname}}
+                        </span>
+                    </div>
+                    <div id="timeline_{{edata.id}}" class="timeline timeline_{{edata.id}} list-timeline timeline-hide">
+                        <div id="playhead_{{edata.id}}" class="playhead playhead_{{edata.id}}"></div>
+                    </div>
+                    <div class="audio-song-lyrics-block hide" id="lyrics{{edata.id}}">
+                        <span>
+                            {{edata.description|nl2br}}
+                        </span>
+                    </div>
+                    <script>
+                        /*var first_time_play_{{rand_id}} = 1;
+                         $('#player_{{item.id}}').on('play', function(){
+                         if(first_time_play_{{item.id}} == 1){
+                         $.post(site_url + 'audio_uploads/ajax_increment_listenings', {"audio_id":{/literal}{$item.id}{literal}}, function(){
+                         var listenings_number_block = $('span[data-gid=media{/literal}{$item.id}{literal}] .view_num');
+                         listenings_number_block.html(parseInt(listenings_number_block.html()) + 1);
+                         
+                         });
+                         first_time_play_{/literal}{$item.id}{literal} = 0;
+                         }
+                         });*/
+                    </script>
+                </div>
+            </div>
+        {% else %}
+            <div class="b-media-gallery__item">
+                <div class="user">
+                    <div class="b-media-gallery__photo">
+                        <span class="g-pic-border g-rounded" data-user-id="{{ edata.id_owner }}"
+                              data-id-media="{{ edata.id }}" data-click="view-media">
+                            {% if edata.video_content %}
+                                <div class="overlay-icon pointer">
+                                    <i class="fa-play-sign w fa-4x opacity60"></i>
+                                </div>
+                            {% endif %}
+                            <img src="{% spaceless %}
+                                 {% if edata.media %}
+                                     {{ edata.media.mediafile.thumbs.big }}
+                                 {% elseif edata.video_content %}
+                                     {{ edata.video_content.thumbs.big }}
+                                 {% endif %}
+                                 {% endspaceless %}"
+                                     alt="{% if edata.media %}{{ edata.media.mediafile.photo_alt|e }}{% endif %}"
+                                     title="{% if edata.media %}{{ edata.media.mediafile.photo_title|e }}{% endif %}" />
+                            </span>
+                            <div class="b-media-gallery__photoinfo">
+                                <div class="b-media-gallery__info-icons">
+                                    {% if edata.id_parent and ((edata.media and not edata.mediafile) or
+                                                        (edata.video_content and not edata.media_video)) %}
+                                    <p>
+                                        {% helper lang.l('media_deleted_by_owner', 'media') %}
+                                    </p>
+                                    {% endif %}
+                                        <div>
+                                            <span class="mr10_" data-gid="media{{ edata.id }}">
+                                                <i class="fa fa-eye">&nbsp;</i>
+                                                <span class="view_num">{{ edata.views }}</span>
+                                            </span>
+                                            <span class="mr10_">
+                                                {% helper likes.like_block({
+                                                                    'gid': 'media' ~ edata.id,
+                                                                    'type': 'button',
+                                                                    'btn_class': 'edge w'
+                                                                }) %}
+                                            </span>
+                                            {% if edata.is_adult %}
+                                                <i class="fa-female edge w">&nbsp;</i>
+                                                <span>18+</span>
+                                            {% endif %}
+                                            {% if edata.id_user != user_id %}
+                                                <span class="fright">
+                                                    {% helper spam.mark_as_spam_block({
+                                                                        'object_id': edata.id,
+                                                                        'type_gid': 'media_object',
+                                                                        'template': 'whitebutton'
+                                                                    }) %}
+                                                </span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% if event.media_count_more %}
+                            {% helper gallery_section_name = lang.l('filter_section_gallery', 'media') %}
+                            <div class="fright righted">
+                                {% set user_gallery_link %}{% spaceless %}
+                                        {% if user_id == event.id_poster %}
+                                            {% helper seo.seolink('users', 'profile', {'section-code': 'gallery', 'section-name': gallery_section_name}) %}
+                                        {% else %}
+                                            {% helper seo.seolink('users', 'view', { 'section-code': 'gallery', 'section-name': gallery_section_name, 'data': event.id_poster}) %}
+                                        {% endif %}
+                                {% endspaceless %}{% endset %}
+                                <a class="hover-icon" href="{{ user_gallery_link }}">
+                                    <i class="fa fa-arrow-right edge hover"></i>
+                                    <span class="ml5">
+                                        {% helper lang.l('show_more', 'media') %}&nbsp;({{ event.media_count_more }})
+                                    </span>
+                                </a>
+                            </div>
+                        {% endif %}
+                        <script>
+                            $(function () {
+                                if (!window.wall_mediagallery) {
+                                    loadScripts(
+                                            "{% helper utils.jscript('media', '../views/flatty/js/media.js', 'path') %}",
+                                            function () {
+                                                wall_mediagallery = new media({
+                                                    siteUrl: site_url,
+                                                    gallery_name: 'wall_mediagallery',
+                                                    galleryContentPage: 1,
+                                                    idUser: 0,
+                                                    all_loaded: 1,
+                                                    lang_delete_confirm: "{% helper lang.l('delete_confirm', 'media', '', 'js') %}",
+                                                    galleryContentDiv: 'wall_events',
+                                                    post_data: {filter_duplicate: 1},
+                                                    load_on_scroll: false,
+                                                    sorterId: '',
+                                                    direction: 'desc'
+                                                });
+                                            },
+                                            'wall_mediagallery',
+                                            {async: false}
+                                    );
+                                }
+                            });
+                        </script>

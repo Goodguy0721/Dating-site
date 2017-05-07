@@ -1,0 +1,126 @@
+    <div class="g-flatty-block">
+        <div class="row g-flatty-block__header">
+            <div class="col-sm-12">
+                <h2 class="b-title-control">
+                    <span class="b-title-control__text">{% helper lang.l('header_donate_view_block', 'start') %}</span>
+
+                    <div id="ajax_donate_link_menu_{{rand}}" class="b-title-control__action">
+                        {% if send_money != ''%}
+                            <input type='button' id="donate_link_send_money" class="btn btn-primary btn-sm" value="{% helper lang.l('send_money', 'send_money') %}" title="{% helper lang.l('send_money', 'send_money') %}">
+                            <script>
+                                $(function(){
+                                    var rand = '{{rand}}';
+                                    ajaxGetSendMoneyBlock{{rand}} = new loadingContent({
+                                        loadBlockWidth: '400px',
+                                        loadBlockLeftType: 'right',
+                                        loadBlockTopType: 'bottom',
+                                        closeBtnClass: 'w'
+                                    }).update_css_styles({'z-index': 2000}).update_css_styles({'z-index': 2000}, 'bg');
+                                    $('#donate_link_send_money').unbind('click').click(function(){
+                                        $.ajax({
+                                            url: site_url + 'send_money/ajaxGetSendMoneyBlock',
+                                            cache: false,
+                                            success: function(data){
+                                                ajaxGetSendMoneyBlock{{rand}}.show_load_block(data);
+                                            }
+                                        });
+                                        return false;
+                                    });
+                                });
+                                $(function(){
+                                    loadScripts(
+                                        "{% helper utils.jscript('send_money', 'send_money.js', 'path') %}",
+                                        function(){
+                                            declineMoneyTransaction = new ajaxDeclineMoneyTransaction({
+                                                siteUrl: site_url,
+                                            });
+                                            approveMoneyTransaction = new ajaxApproveMoneyTransaction({
+                                                siteUrl: site_url,
+                                            });
+                                        },
+                                        ['declineMoneyTransaction','approveTransaction'],
+                                        {async: true}
+                                    );
+                                });
+
+                            </script>
+                        {% endif %}
+                        {% if send_vip != '' %}
+                            <input type='button' id="donate_link_send_vip" class="btn btn-primary btn-sm" value="{% helper lang.l('send_vip', 'send_vip') %}" title="{% helper lang.l('send_vip', 'send_vip') %}">
+                            <script>
+                                $(function(){
+                                    var rand = '{{rand}}';
+                                    ajaxGetSendVipBlock{{rand}} = new loadingContent({
+                                        loadBlockWidth: '400px',
+                                        loadBlockLeftType: 'right',
+                                        loadBlockTopType: 'bottom',
+                                        closeBtnClass: 'w'
+                                    }).update_css_styles({'z-index': 2000}).update_css_styles({'z-index': 2000}, 'bg');
+                                    $('#donate_link_send_vip').unbind('click').click(function(){
+                                        $.ajax({
+                                            url: site_url + 'send_vip/ajaxGetSendVipBlock',
+                                            cache: false,
+                                            success: function(data){
+                                                /*console.log(data);*/
+                                                ajaxGetSendVipBlock{{rand}}.show_load_block(data);
+                                            }
+                                        });
+                                        return false;
+                                    });
+                                });
+                                $(function(){
+                                    loadScripts(
+                                        "{% helper utils.jscript('send_vip', 'send_vip.js', 'path') %}",
+                                        function(){
+                                            declineVipTransaction = new ajaxDeclineVipTransaction({
+                                                siteUrl: site_url,
+                                            });
+                                            approveVipTransaction = new ajaxApproveVipTransaction({
+                                                siteUrl: site_url,
+                                            });
+                                        },
+                                        ['declineVipTransaction','approveVipTransaction'],
+                                        {async: true}
+                                    );
+                                });
+                            </script>
+                        {% endif %}
+                    </div>
+                </h2>
+            </div>
+        </div>
+
+        <div class="table-responsive mt10">
+            {% if transactions %}
+            <table class="table table-hover">
+                <tr>
+                    <th class="w100">{% helper lang.l('donate_amount', 'start') %}</th>
+                    <th class="w100">{% helper lang.l('donate_comment', 'start') %}</th>
+                    <th class='w200'><div class="righted">{% helper lang.l('donate_status', 'start') %}</div></th>
+                </tr>
+                {% for item in transactions %}
+                <tr>
+                    <td class="donate va-top">{% if item.full_amount == '' %}{% elseif item.full_amount > 0 %}<span dir="ltr"><font class="donate approve">+{{item.amount}} {{currency.abbr}}</font></span>{% else %}<span dir="ltr"><font class="donate decline">{{item.full_amount}} {{currency.abbr}}</font></span>{% endif %}</td>
+                    <td class="donate va-top"><div>{{item.comment}}</div><div class='color-descr_color'>{#item.date_created|date_format:page_data.date_time_format#}</div></td>
+                    <td id="status_{{item.rand}}" class="righted">
+                        {% if item.status == "waiting" %}
+                            {% if item.approveLink != '' %}<button class='btn btn-primary' onClick="{% if item.membership_name !='' %}approveVipTransaction.approveVipTransaction{% else %}approveMoneyTransaction.approveMoneyTransaction{% endif %}('{{item.id}}','{{item.rand}}');" title="{% helper lang.l('donate_approve', 'start') %}">{% helper lang.l('donate_approve', 'start') %}</button>{% endif %}
+                            <div style="margin-left: 17px;" class='fright{% if item.approveLink != '' %} mt10{% endif %}'>
+                                <a href="#" onClick="{% if item.membership_name !='' %}declineVipTransaction.declineVipTransaction{% else %}declineMoneyTransaction.declineMoneyTransaction{% endif %}('{{item.id}}','{{item.rand}}');" title="{% helper lang.l('donate_decline', 'start') %}"><font class='donate decline'>{% helper lang.l('donate_decline', 'start') %}</font></a>
+                            </div>
+                        {% elseif item.status == "approved" %}
+                            <div><font class="donate approve">{% helper lang.l('donate_approved', 'start') %}</font></div>
+                        {% elseif (item.status == "declined") and (item.declined_by_me == '1') %}
+                            <div><font class="donate decline">{% helper lang.l('donate_declined_by_me', 'start') %}</font></div>
+                        {% else %}
+                            <div><font class="donate decline">{% helper lang.l('donate_declined', 'start') %}</font></div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                <div class="text-center">{% helper lang.l('donate_no_data', 'start') %}</div>
+            {% endif %}
+        </div>
+    </div>

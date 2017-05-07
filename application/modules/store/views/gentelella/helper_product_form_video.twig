@@ -1,0 +1,45 @@
+<form id="upload_video" method="post" enctype="multipart/form-data" data-parsley-validate
+      class="form-horizontal form-label-left" name="save_form"
+      action="{{ data.action }}">
+    <div class="form-group">
+        <label class="control-label col-md-3">{% helper lang.l('admin_header_video', 'store') %}:</label>
+        <div class="col-md-9">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">{% if product.photo %}{% helper lang.l('field_product_video', 'store') %}:{% endif %}</label>
+        <div class="col-md-9">
+            <div id="store_video">
+                {% helper store.store_media({
+                    'id_product' : product.id,
+                    'size' : 'middle',
+                    'amount' : 'single',
+                    'type' : 'video'
+                }) %}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">{% helper lang.l('field_upload_video', 'store') %}:</label>
+        <div class="col-md-9">
+            <div>{% helper lang.l('field_max_count_video', 'store') %}: 1</div>
+            <div>{% helper lang.l('field_max_video_size', 'store') %}: {% helper utils.bytes_format(video_config.max_size) %}</div>
+            <div>{% helper lang.l('field_photo_file_types', 'store') %}: {{ video_config.file_formats_str }}</div>
+            <div>
+                <input type="file" name="videofile" id="videofile" class="form-control" />({% helper lang.l('max', 'start') %} {% helper utils.bytesFormat(video_config.max_size) %})&nbsp;<span id="v-attach-input-error"></span>
+                <div id="v-attach-input-warning"></div>
+            </div>
+            <div>{% helper lang.l('field_upload_video_descr', 'store') %}: </div>
+            <div>
+                <textarea name="embed_code" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-sm-9 col-xs-12 col-sm-offset-3">
+            <input id="btn_vupload" type="button" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}" class="btn btn-success">
+            <a class="btn btn-default" href="{{ back_url }}">{% helper lang.l('btn_cancel', 'start') %}</a>
+        </div>
+    </div>
+</form>

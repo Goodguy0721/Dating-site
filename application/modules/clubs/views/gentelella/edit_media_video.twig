@@ -1,0 +1,67 @@
+<div class="row mb20">
+  <h4 class="col-xs-12">{% helper lang.l('header_edit_media', 'clubs') %}</h4>
+</div>
+
+<form id="photo_form" action="{{ data.action }}" method="post" enctype="multipart/form-data" name="save_form"
+      data-parsley-validate class="form-horizontal form-label-left" onsubmit="return">
+
+  <div class="form-group">
+    <div class="text-center">
+      <div class="pos-rel">
+        {% if media.media_video_data.status == 'start' %}
+          <div class="text-center lh0 pos-rel">
+            {% helper text_media_photo = lang.l('text_media_photo', 'media', '', 'button', media) %}
+            <img data-image-src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                 src="{{ media.video_content.thumbs.great }}{{ vers }}"
+                 alt="{{ text_media_photo }}" title="{{ text_media_photo }}" />
+            <div id="next_media" class="load_content_right media_view_scroller_right"></div>
+            <div id="prev_media" class="load_content_left media_view_scroller_left"></div>
+          </div>
+          <div class="subinfo box-sizing mtb10">
+            <p>
+              {% helper lang.l('video_wait_converting', 'media') %}
+            </p>
+          </div>
+        {% else %}
+          <div style="width:{{ media.video_content.width }}px; max-width:100%;" class="center-block">
+            {{ media.video_content.embed }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_description', 'media') %}:</label>
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <textarea class="form-control" id="description" name="description">{{ media.description }}</textarea>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+      <button type="button" id="btn_save" name="btn_save" class="btn btn-success">
+          {% helper lang.l('btn_save', 'start', '', 'button') %}</button>
+    </div>
+  </div>
+</form>
+
+<script type='text/javascript'>
+    $(function() {
+        $('#btn_save').off('click').click(function() {
+            $.ajax({
+                url: site_url + 'admin/clubs/mediaSaveVideo/{{ media.id }}',
+                type: 'POST',
+                data: {description: $("#description").val()},
+                dataType: 'json', 
+                success: function(resp) {
+                    if (resp.errors != '') {
+                        error_object.show_error_block(resp.errors, 'error');
+                    } else {
+                        location.href = site_url + 'admin/clubs/media/{{ club.id }}/video';
+                    }
+                }
+            });
+        });
+    });
+</script>

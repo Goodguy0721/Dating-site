@@ -1,0 +1,28 @@
+<div class="form-group">
+    {{ data.content.content.list }}<br>
+    <label>{% helper lang.l('report_count', 'spam') %}:</label> {{ data.report_count }}<br>
+    <label>{% helper lang.l('field_spam_reason', 'spam') %}:</label> {{ data.reason }}<br>
+    {% if data.message %}
+        {{ data.message }}<br>
+    {% endif %}
+</div>
+<div class="form-group">
+    <label>{% helper lang.l('field_alert_poster', 'spam') %}</label>
+    <a href="{{ site_url }}admin/users/edit/personal/{{ data.poster.id }}" target="_blank" >{{ data.poster.output_name }}</a><br>
+</div>
+<div class="form-group">
+    {% if data.dashboard_status == 'alert_added' or data.dashboard_status == 'alert_saved' %}
+        <a class="btn btn-success js-dashboard-action" href="{{site_url}}admin/spam/alerts_delete/without_object/{{ data.id }}">
+            {% helper lang.l('link_alerts_delete', 'spam') %}</a>
+            {% if data.link %}
+            <a class="btn btn-primary" href="{{ data.link }}">
+                {% helper lang.l('btn_content_edit', 'spam') %}</a>
+            {% endif %}
+            {% if data.delete_link and data.content.user_content != '' %}
+            <a class="btn btn-danger js-dashboard-action" href="{{ data.delete_link }}{{ data.id }}" >
+                {% helper lang.l('btn_content_delete', 'spam') %}</a>
+            {% endif %}
+        {% else %}
+        <label>{% helper lang.l('text_status', 'start') %}:</label> {% helper lang.l('status_' ~ data.dashboard_status, 'spam') %}
+    {% endif %}
+</div>

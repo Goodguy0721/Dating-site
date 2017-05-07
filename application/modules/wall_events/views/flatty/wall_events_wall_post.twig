@@ -1,0 +1,101 @@
+	{% for key, edata in event.data %}
+		<span class="wall-post-date">
+            {% helper date_format.tpl_date_format(edata.event_date, date_format) %}
+            {% if event.id_poster != user_id %}
+                <span class="ml10">
+                    {% helper spam.mark_as_spam_block({
+                        'object_id': event.id,
+                        'type_gid': 'wall_events_object',
+                        'template': 'minibutton'
+                    }) %}
+                </span>
+            {% endif %}
+        </span>
+
+		{% if edata.text %}
+            <div class="wall-post-content">
+                {{ edata.text }}
+            </div>
+        {% endif %}
+
+		{% if event.media[key].img %}
+			<div class="wall-gallery" gallery="wall_{{ event.id }}">
+				{% for item in event.media[key].img %}
+					<div class="g-pic-border g-rounded">
+                        <img src="{% spaceless %}
+                                {% if i > 8 %}
+                                    {{ item.thumbs.middle }}
+                                {% else %}
+                                    {{ item.thumbs.big }}
+                                {% endif %}
+                            {% endspaceless %}" gallery-src="{{ item.thumbs.grand }}"
+						alt="{{ item.photo_alt|e }}" title="{{ item.photo_title|e }}" />
+                    </div>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if event.media[key].video is not empty %}
+			{% for key, item in event.media[key].video %}
+				<div class="pt5">
+					{% if item.status == 'start' %}
+						<div>
+                            {{ item.file_name }}
+                        </div>
+						<div class="error-text">
+                            {% helper lang.l('video_converting', 'wall_events') %}
+                        </div>
+					{% elseif item.errors %}
+						<div>
+                            {{ item.file_name }}
+                        </div>
+						{% for err in item.errors %}
+							<div class="error-text">
+                                {{ err }}
+                            </div>
+						{% endfor %}
+					{% elseif item.embed %}
+						<div>
+                            {{ item.embed }}
+                        </div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		{% endif %}
+
+                {% if event.media[key].audio is not empty %}
+
+			{% for item in event.media[key].audio %}
+                        {% set rand_id = random(10000) %}
+                <div class="audio-content" data-id-media="{{rand_id}}">
+                    <audio id="player_{{rand_id}}" preload="auto" src="{{item.file_url}}"></audio>
+                    <div id="play_{{rand_id}}" class="play-track" ><i class="fa fa-play fa-lg"></i></div>
+                    <div id="duration_{{rand_id}}" class="duration-time duration_{{rand_id}}"></div>
+                    <div id="audioname_{{rand_id}}" class="audio-name audioname_{{rand_id}}">
+                        <span {% if event.data[0]['audios'][item.file_name|replace({'.mp3':'', '.wav':''})].song_lyrisc is not empty %}
+                            class="audio-lyrics-link" onclick="$('#lyrics{{rand_id}}').toggle();"
+                            {% endif %}>
+                            {{event.data[0]['audios'][item.file_name|replace({'.mp3':'', '.wav':''})].song_name}}
+                        </span>
+                    </div>
+                    <div id="timeline_{{rand_id}}" class="timeline timeline_{{rand_id}} list-timeline timeline-hide">
+                        <div id="playhead_{{rand_id}}" class="playhead playhead_{{rand_id}}"></div>
+                    </div>
+                    <div class="audio-song-lyrics-block hide" id="lyrics{{rand_id}}">
+                        <span>
+                            {{event.data[0]['audios'][item.file_name|replace({'.mp3':'', '.wav':''})].song_lyrics|nl2br}}
+                        </span>
+                    </div>
+                </div>
+
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+
+    {% if event.id_wall == user_id or event.id_poster == user_id %}
+        <a class="b-media-wallpost__delete js-delete_wall_event" data-id="{{ event.id }}"
+           data-message="{% helper lang.l('confirm_delete', 'wall_events') %}"
+           href="javascript:;">
+           {% helper lang.l('btn_delete', 'start') %}
+        </a>
+    {% endif %}

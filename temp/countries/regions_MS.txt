@@ -1,0 +1,3 @@
+	2286	Salem	16.7509500	-62.2217500	MS	03	0	0	Salem	Salem	Salem	Salem	Salem	Salem
+	2286	Saint John's Village	16.7821500	-62.1910300	MS	03	0	0	Saint John's Village	Saint John's Village	Saint John's Village	Saint John's Village	Saint John's Village	Saint John's Village
+	2286	Gerald's	16.7957500	-62.1935600	MS	03	0	0	Gerald's	Gerald's	Gerald's	Gerald's	Gerald's	Gerald's

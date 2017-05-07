@@ -1,0 +1,2 @@
+	330	Zardob	40.2199100	47.7099700	AZ	71	0	0	Zardob	ЗАРДОБ	Zardob	Zardob	Zardob	Zardob
+	330	Begimli	40.2521900	47.8236100	AZ	71	0	0	Begimli	БЕГИМЛИ	Begimli	Begimli	Begimli	Begimli

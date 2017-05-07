@@ -1,0 +1,50 @@
+{% include '@app/header.twig' %}
+
+<div class="content-block">
+	<h1>{% if not post.id %}{% helper lang.l('header_create_a_post', 'blogs') %}{% else %}{% helper lang.l('header_edit_a_post', 'blogs') %}{% endif %}</h1>
+	{% include 'blog_menu.twig' %}
+	<div style="margin-top:15px">
+	<form method="post" action="{{ site_url }}blogs/edit_post/{{ post.id }}">
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_title', 'blogs') %}: </label>
+			<input type='text' value='{{ post.title }}' name="title" class="form-control" />
+		</div>
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_description', 'blogs') %}: </label>
+			<div>{{ content_fck }}</div>
+		</div>
+		<div class="form-group clearfix">
+			<input type="hidden" value="0" name="is_hidden"><input type="checkbox" value="1" name="is_hidden" {% if post.is_hidden %}checked{% endif %}>
+			<label for="is_hidden">{% helper lang.l('field_hidden_post', 'blogs') %}</label>
+		</div>
+		<div class="form-group clearfix">
+			<input type="hidden" value="0" name="can_comment"><input type="checkbox" value="1" name="can_comment" {% if post.can_comment %}checked{% endif %}>
+			<label for="is_hidden">{% helper lang.l('field_can_comment', 'blogs') %}</label>
+		</div>
+		<div class="form-group clearfix">
+			<label>{% helper lang.l('field_tags', 'blogs') %}: </label>
+			<input type='text' value='{{ post.tags_str }}' name="tags" class="form-control" />
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" name="btn_save" value="1">
+				{% if post.id %}
+					{% helper lang.l('btn_add', 'start', '', 'button') %}
+				{% else %}
+					{% helper lang.l('btn_save', 'start', '', 'button') %}
+				{% endif %}
+			</button>
+		</div>
+	</form>
+</div>
+</div>
+<div class="clr"></div>
+
+<script type="text/javascript">
+	$(function() {
+		if ($('#cke_body').length) {
+			$('#cke_body').remove();
+		}
+	});
+</script>
+
+{% include '@app/footer.twig' %}

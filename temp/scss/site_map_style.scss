@@ -1,0 +1,37 @@
+/* sitemap style */
+.sitemap {
+    padding-right: 15px;
+    padding-left: 15px;
+    .site-map-block {
+        margin-top: 15px;
+        padding-top: 20px;
+        border-top: 1px solid #c5c5c5;
+        &:nth-child(1n) {
+            margin-top: 15px;
+        }
+        &:last-of-type {
+            margin-bottom: 20px;
+        }
+        &.row {
+            margin-right: 0;
+            margin-left: 0;
+            div {
+                padding: 0px;
+            }
+        }
+        ul {
+            li {
+                line-height: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .site-map-block {
+            div {
+                margin-bottom: 40px;
+            }
+    }
+}
+/* end sitemap style */

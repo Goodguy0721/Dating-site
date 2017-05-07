@@ -1,0 +1,36 @@
+{% include "@app/header.twig" %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+      {% helper utils.jscript_by_theme('install', 'product_install.js', 'script', 'gentelella') %}
+      <script>
+        var product_install;
+        $(function() {
+            product_install=new productInstall({siteUrl: '{{ site_root }}', currentLang: '{{ lang_id }}'});
+            product_install.langs_update();
+        });
+      </script>
+
+      <div class="filter-form">
+          <div class="install_main_window">
+              <div class="pad">
+                  <h3>Update languages</h3>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-success" data-transitiongoal="0" 
+                            id="overall_bar" style="width: 0%;" aria-valuenow="0">0%</div>
+                  </div>
+                  <br>
+                  <h3 id="module_name"></h3>
+                  <div id="module_desc"></div>
+                  <div id="modules_reload"></div>
+              </div>
+          </div>
+      </div>
+      <div class="clearfix"></div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{ site_url }}application/views/gentelella/js/progressbar/bootstrap-progressbar.min.js"></script>
+
+{% include "@app/footer.twig" %}

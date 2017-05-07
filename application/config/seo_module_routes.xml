@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+<store>
+<method name="product" link="[text|store/][opt|category_name|literal][text|/][opt|id|literal][text|-][tpl|1|gid|literal]" />
+<method name="category" link="[text|store/][text|category-][tpl|1|gid|literal]" />
+<method name="preorder" link="[text|store/][text|preorder-][tpl|1|code|literal]" />
+<method name="order" link="[text|store/][text|order-][tpl|1|code|literal]" />
+</store>
+</routes>

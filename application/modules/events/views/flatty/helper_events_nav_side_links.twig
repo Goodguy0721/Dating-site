@@ -1,0 +1,25 @@
+<div class="refresh-search-event-type">
+    <a search_type="upcoming" href="{% helper seo.seolink('events', action) %}" class="refresh-search-event-type {% if search_type == 'upcoming' %}active{% endif %}">
+        {% helper lang.l('header_index', 'events') %}
+    </a>
+</div>
+<div class="refresh-search-event-type">
+    <a search_type="archive" href="{% helper seo.seolink('events', action, 'archive') %}" class="{% if search_type == 'archive' %}active{% endif %}">
+        {% helper lang.l('text_archive', 'events') %}
+    </a>
+</div>
+<div class="refresh-search-event-type">
+    <a search_type="my_events" href="{% helper seo.seolink('events', action, 'my_events') %}" class="{% if search_type == 'my_events' %}active{% endif %}">
+        {% helper lang.l('text_my_events', 'events') %}
+    </a>
+</div>
+<div class="refresh-search-event-type">
+    <a search_type="will_go" href="{% helper seo.seolink('events', action, 'will_go') %}" class="{% if search_type == 'will_go' %}active{% endif %}">
+        {% helper lang.l('text_will_go', 'events') %}
+    </a>
+</div>
+<div class="refresh-search-event-type">
+    <a search_type="requests" href="{% helper seo.seolink('events', action, 'requests') %}" class="{% if search_type == 'requests' %}active{% endif %}">
+        {% helper lang.l('text_requests', 'events') %}
+    </a>
+</div>

@@ -1,0 +1,238 @@
+/* reset css */
+/*html, 
+body, 
+div, 
+span, 
+applet, 
+object, 
+iframe, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre, 
+a, 
+abbr, 
+acronym, 
+address, 
+big, 
+cite, 
+code, 
+del, 
+dfn, 
+em, 
+img, 
+ins, 
+kbd, 
+q, 
+s, 
+samp, 
+small, 
+strike, 
+strong, 
+sub, 
+sup, 
+tt, 
+var, 
+b, 
+u, 
+i, 
+center, 
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li, 
+fieldset, 
+form, 
+label, 
+legend, 
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td, 
+article, 
+aside, 
+canvas, 
+details, 
+embed, 
+figure, 
+figcaption, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+output, 
+ruby, 
+section, 
+summary, 
+time, 
+mark, 
+audio, 
+video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font: inherit; 
+    vertical-align: baseline;
+}*/
+
+/* HTML5 display-role reset for older browsers */
+/*article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section {
+    display: block;
+}
+
+body{
+    line-height: 1; 
+    overflow-y: scroll;
+}
+
+ol, 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+    content: ''; 
+    content: none;
+}
+
+table {
+    border-collapse: collapse; 
+    border-spacing: 0;
+}
+
+img {
+    border: none;
+}
+
+s, 
+i, 
+b, 
+ins, 
+del,
+label {
+    text-decoration: none; 
+    font-style: normal;
+    font-weight: normal;
+}*/
+/* !HTML5 display-role reset for older browsers! */
+
+ol, 
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+s, 
+i, 
+b, 
+ins, 
+del,
+label {
+    text-decoration: none; 
+    font-style: normal;
+    font-weight: normal;
+}
+
+.fleft {
+    float: $left !important;
+}
+
+.fright {
+    float: $right !important;
+}
+
+.fltl {
+    float: $left;
+}
+
+.fltr {
+    float: $right;
+}
+
+.hide {
+    display: none;
+}
+
+.hide-always {
+    display: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.clr {
+    clear: both;
+}
+.gray{
+    color: $descr_color;
+}
+.search-top-pager .pages .gray{
+    color: $descr_color;
+}
+.search-top-pager .pages .gray:hover{
+    color: $input_color;
+}
+.tac{
+    text-align: center;
+}
+
+.form-control[contenteditable=true] {
+    border-radius: 0 !important;
+    border-width: 0;
+    box-shadow: none;
+    height: auto;
+    padding: 0;
+    
+    &:empty:before {
+        color: #999;
+        content: attr(placeholder);
+        display: block; /* For Firefox */
+    }
+    
+    &:empty,
+    &:focus {
+        border-radius: 5px !important;
+        border-width: 1px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        height: 34px;
+        padding: 6px 12px;
+    }
+}
+
+[contenteditable=true]:focus {
+    
+}

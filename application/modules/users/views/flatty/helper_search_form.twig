@@ -1,0 +1,759 @@
+{% helper default_select_lang = lang.l('select_default', 'users') %}
+{% helper all_select_lang = lang.l('filter_all', 'users') %}
+{% helper location_lang = lang.l('field_search_country', 'users') %}
+<form action="{{ form_settings.action }}" method="POST" id="main_search_form_{{ form_settings.form_id }}">
+    <div class="{{ form_settings.type }}">
+        {% if form_settings.type == 'line' %}
+            <div class="inside">
+                <div id="line-search-form_{{ form_settings.form_id }}">
+                    <input type="text" name="search" placeholder="{% helper lang.l('search_people', 'start') %}" />
+                    <button type="submit" id="main_search_button_{{ form_settings.form_id }}" class="search"><i class="fa-search w"></i></button>
+                </div>
+            </div>
+        {% elseif form_settings.type == 'index' %}
+            {# <custom_M> #}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">{% filter upper %}{% helper lang.l('field_user_type', 'users') %}{% endfilter %}</label>
+                        {% helper start.selectbox({
+                            'input': 'looking_user_type',
+                            'id': 'looking_user_type',
+                            'value': user_types.option,
+                            'selected': data.looking_user_type,
+                            'default': false,
+                        }) %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">{% filter upper %}{% helper lang.l('field_looking_user_type', 'users') %}{% endfilter %}</label>
+                        {% helper start.selectbox({
+                            'input': 'user_type',
+                            'id': 'user_type',
+                            'value': user_types.option,
+                            'selected': data.user_type,
+                            'default': all_select_lang
+                        }) %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">{% filter upper %}{% helper lang.l('field_age', 'users') %}{% endfilter %}</label>
+                        {% helper start.selectbox({
+                            'input': 'age_min',
+                            'id': 'age_min',
+                            'value': age_range,
+                            'selected': data.age_min,
+                            'default': false,
+                        }) %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">{% helper lang.l('to', 'users') %}</label>
+                        {% helper start.selectbox({
+                            'input': 'age_max',
+                            'id': 'age_max',
+                            'value': age_range,
+                            'selected': data.age_max,
+                            'default': false,
+                        }) %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                        <label for="">{% helper lang.l('field_living_with', 'users') %}</label>
+
+                        {% helper start.selectbox({
+                            'input': 'living_with',
+                            'id': 'living_with',
+                            'value': living_with.option,
+                            'selected': data.living_with,
+                            'default': all_select_lang
+                        }) %}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">{% filter upper %}{% helper lang.l('field_location', 'users') %}{% endfilter %}</label>
+                        {% helper countries.location_select({
+                            'select_type': 'city',
+                            'placeholder': location_lang,
+                            'id_country': data.looking_id_country,
+                            'id_region': data.looking_id_region,
+                            'id_city': data.looking_id_city
+                        }) %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">&nbsp;</label>
+                        <input type="submit" class="btn btn-primary form-control" value="{% helper lang.l('btn_search', 'start') %}">
+                    </div>
+                </div>
+            </div>
+            {# </custom_M> #}
+        {% elseif form_settings.type == 'advanced_search' %}
+          <div class="quick-search-cont">
+              <div class="search-block clearfix">
+                  <div class="mt-panel-header">
+                    Advanced / Saved
+                  </div>
+                  <div class="f-title">
+                      I am a
+                      {# {% filter upper %}{% helper lang.l('field_user_type', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                      {% helper start.selectbox({
+                          'input': 'looking_user_type',
+                          'id': 'looking_user_type',
+                          'value': user_types.option,
+                          'selected': data.looking_user_type,
+                          'default': false
+                      }) %}
+                  </div>
+              </div>
+              <div class="search-block clearfix">
+                  <div class="f-title">
+                    Seeking a {# {% filter upper %}{% helper lang.l('field_looking_user_type', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                      {% helper start.selectbox({
+                          'input': 'user_type',
+                          'id': 'user_type',
+                          'value': user_types.option,
+                          'selected': data.user_type,
+                          'default': all_select_lang
+                      }) %}
+                  </div>
+              </div>
+              {# </custom_M> #}
+              <div class="search-block clearfix">
+                  <div class="f-title">
+                      Age {# {% filter upper %}{% helper lang.l('field_ages', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block clearfix">
+                      <div class="col-xs-2 lh30 p0">From</div>
+                      <div class="col-xs-4 no-padding-left">
+                          {% helper start.selectbox({
+                          'input': 'age_min',
+                          'id': 'age_min',
+                          'value': age_range,
+                          'selected': data.age_min,
+                          'default': false,
+                      }) %}
+                      </div>
+                      <div class="col-xs-2 lh30 center">To</div>
+                      <div class="col-xs-4 no-padding-right">
+                          {% helper start.selectbox({
+                          'input': 'age_max',
+                          'id': 'age_max',
+                          'value': age_range,
+                          'selected': data.age_max,
+                          'default': false,
+                      }) %}
+                      </div>
+                  </div>
+              </div>
+              <div class="search-block clearfix" id="search-by-location">
+                  <div class="f-title">
+                      Location{#  {% filter upper %}{% helper lang.l('field_location', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <input type="radio" name="location_type" value="region" checked> <label for="">Region
+                      </div>
+                      <div class="col-xs-6">
+                        <input type="radio" name="location_type" value="distance"> <label for="">Distance
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-block">
+                      <div class="search-by-control" id="search-by-region">
+                          {% helper countries.location_select({
+                              'select_type': 'city',
+                              'placeholder': location_lang,
+                              'id_country': data.looking_id_country,
+                              'id_region': data.looking_id_region,
+                              'id_city': data.looking_id_city
+                          }) %}
+                      </div>
+                      <div class="search-by-control hide" id="search-by-distance">
+                        {#<div class="input-group">
+                          <input type="number" name="distance" value="" class="form-control">
+                          <span class="input-group-addon">km</span>
+                        </div>#}
+                        <select name="looking_distance" class="form-control">
+                        {% for option_gid, option_name in distance_options %}
+                          <option value="{{ option_gid }}" {% if attribute(data.distance, option_gid) %}selected{% endif %}>{{ option_name }}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+                      <script>
+                        $(function() {
+                          $('#search-by-location').find('[name=location_type]').bind('change', function(e) {
+                            e.preventDefault();
+                            $('#search-by-location').find('.search-by-control').hide();
+                            $('#search-by-' + $(this).val()).show();
+                          });
+                        });
+                      </script>
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Living with
+                  </div>
+                  <div class="f-block">
+                      <div>
+                          {% helper start.checkbox({
+                              'input': 'living_with',
+                              'id': 'living_with',
+                              'value': living_with.option,
+                              'selected': data.living_with,
+                              'default': all_select_lang
+                          }) %}
+                      </div>
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Photo
+                  </div>
+                  <div class="f-block">
+                    <select name="with_photo" class="form-control">
+                      <option value="">No preference</option>
+                      <option value="1">With photo</option>
+                      <option value="2">Without photo</option>
+                    </select>
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Heigth
+                  </div>
+                  <div class="f-block">
+                    <div class="row">
+                      <div class="col-xs-2">From</div>
+                      <div class="col-xs-10">
+                        <select name="height_min" class="form-control">
+                          <option value="">No preference</option>
+                          {% for option_gid, option_name in height_options %}
+                          <option value="{{ option_gid }}">{{ option_name }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                      <div class="col-xs-2">To</div>
+                      <div class="col-xs-10">
+                        <select name="height_max" class="form-control">
+                          <option value="">No preference</option>
+                          {% for option_gid, option_name in height_options %}
+                          <option value="{{ option_gid }}">{{ option_name }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Relationship status
+                  </div>
+                  <div class="f-block">
+                      {% helper start.checkbox({
+                          'input': 'relationship_status',
+                          'id': 'relationship_status',
+                          'value': relationship_status_options,
+                          'selected': data.relationship_status,
+                          'default': 'Any'
+                      }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Looking for
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'looking_for',
+                        'id': 'looking_for',
+                        'value': looking_for_options,
+                        'selected': data.looking_for,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Ethnicity
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'ethnicity',
+                        'id': 'ethnicity',
+                        'value': ethnicity_options,
+                        'selected': data.ethnicity,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Body type
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'body_type',
+                        'id': 'body_type',
+                        'value': body_type_options,
+                        'selected': data.body_type,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Religion
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'religion',
+                        'id': 'religion',
+                        'value': religion_options,
+                        'selected': data.religion,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Education
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'education',
+                        'id': 'education',
+                        'value': education_options,
+                        'selected': data.education,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Smoking
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'smoking',
+                        'id': 'smoking',
+                        'value': smoking_options,
+                        'selected': data.smoking,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Drinking
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'drinking',
+                        'id': 'drinking',
+                        'value': drinking_options,
+                        'selected': data.drinking,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Children
+                  </div>
+                  <div class="f-block">
+                    {% helper start.checkbox({
+                        'input': 'have_children',
+                        'id': 'children',
+                        'value': have_children_options,
+                        'selected': data.have_children,
+                        'default': 'Any'
+                    }) %}
+                  </div>
+              </div>
+              <div class="search-block search-block-dropdown open clearfix">
+                  <div class="f-title">
+                    <div class="search-block-toggle">
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    Keyword
+                  </div>
+                  <div class="f-block">
+                      <input type="text" name="keyword" value="" class="form-control">
+                  </div>
+              </div>
+              <div class="search-block clearfix">
+                  <input type="checkbox" name="save_search" value="1"> <label>Save search criteria</label>
+              </div>
+              {% if save_search_count %}
+              <div class="search-block clearfix">
+                <a href="{{ site_url }}users/searches">Save search {{ save_search_count }}</a>
+              </div>
+              {% endif %}
+              <div class="search-block clearfix">
+                  <button id="main_search_button_{{ form_settings.form_id }}" class="btn btn-primary">Search</button>
+                  {% if form_settings.use_advanced %}
+                      <span class="collapse-links ml10">
+                          <a href="#" class="hide" id="more-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_more_options', 'start') %}&nbsp;<i class="fa fa-caret-down icon-big text-icon"></i></a>
+                          <a href="#" class="hide" id="less-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_less_options', 'start') %}&nbsp;<i class="fa fa-caret-up icon-big text-icon"></i></a>
+                      </span>
+                      &nbsp;&nbsp;&nbsp;
+                  {% endif %}
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <script>
+              $(function() {
+                $('.search-block-toggle').bind('click', function(e) {
+                  e.preventDefault();
+                  var searchBlock = $(this).parents('.search-block-dropdown').first();
+                  if (searchBlock.hasClass('open')) {
+                    searchBlock.removeClass('open');
+                  } else {
+                    searchBlock.addClass('open');
+                  }
+                })
+              });
+            </script>
+        {% elseif form_settings.type == 'living_with_search' %}
+          <div class="quick-search-cont">
+              <div class="search-block clearfix">
+                  <div class="mt-panel-header">
+                    Living with
+                  </div>
+                  <div class="f-block">
+                      <div>
+                          {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                          {% helper start.checkbox({
+                              'input': 'living_with',
+                              'id': 'living_with',
+                              'value': living_with.option,
+                              'selected': data.living_with,
+                              'default': all_select_lang
+                          }) %}
+                      </div>
+                  </div>
+              </div>
+              <div class="search-block clearfix">
+                <input type="button" id="main_search_button_{{ form_settings.form_id }}" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}">
+                {% if form_settings.use_advanced %}
+                    <span class="collapse-links ml10">
+                        <a href="#" class="hide" id="more-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_more_options', 'start') %}&nbsp;<i class="fa fa-caret-down icon-big text-icon"></i></a>
+                        <a href="#" class="hide" id="less-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_less_options', 'start') %}&nbsp;<i class="fa fa-caret-up icon-big text-icon"></i></a>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;
+                {% endif %}
+              </div>
+              <div class="clearfix"></div>
+            </div>
+        {% elseif form_settings.type == 'by_location_search' %}
+            <div class="quick-search-cont">
+                <div class="search-block clearfix" id="search-by-location">
+                    <div class="mt-panel-header">
+                      By Location
+                    </div>
+                    <div class="f-block">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <input type="radio" name="location_type" value="region" checked> <label for="">Region
+                        </div>
+                        <div class="col-xs-6">
+                          <input type="radio" name="location_type" value="distance"> <label for="">Distance
+                        </div>
+                      </div>
+                    </div>
+                    <div class="f-block">
+                        <div class="search-by-control" id="search-by-region">
+                            {% helper countries.location_select({
+                                'select_type': 'city',
+                                'placeholder': location_lang,
+                                'id_country': data.looking_id_country,
+                                'id_region': data.looking_id_region,
+                                'id_city': data.looking_id_city
+                            }) %}
+                        </div>
+                        <div class="search-by-control hide" id="search-by-distance">
+                          {#<div class="input-group">
+                            <input type="number" name="distance" value="" class="form-control">
+                            <span class="input-group-addon">km</span>
+                          </div>#}
+                          <select name="looking_distance" class="form-control">
+                          {% for option_gid, option_name in distance_options %}
+                            <option value="{{ option_gid }}" {% if attribute(data.distance, option_gid) %}selected{% endif %}>{{ option_name }}</option>
+                          {% endfor %}
+                          </select>
+                        </div>
+                        <script>
+                          $(function() {
+                            $('#search-by-location').find('[name=location_type]').bind('change', function(e) {
+                              e.preventDefault();
+                              $('#search-by-location').find('.search-by-control').hide();
+                              $('#search-by-' + $(this).val()).show();
+                            });
+                          });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="search-block clearfix">
+                    <input type="button" id="main_search_button_{{ form_settings.form_id }}" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}">
+                    {% if form_settings.use_advanced %}
+                        <span class="collapse-links ml10">
+                            <a href="#" class="hide" id="more-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_more_options', 'start') %}&nbsp;<i class="fa fa-caret-down icon-big text-icon"></i></a>
+                            <a href="#" class="hide" id="less-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_less_options', 'start') %}&nbsp;<i class="fa fa-caret-up icon-big text-icon"></i></a>
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                    {% endif %}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        {% else %}
+            {# <custom_M> #}
+          <div class="quick-search-cont">
+              <div class="search-block clearfix">
+                  <div class="mt-panel-header">
+                    Quick Search
+                  </div>
+                  <div class="f-title">
+                      I am a
+                      {# {% filter upper %}{% helper lang.l('field_user_type', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                      {% helper start.selectbox({
+                          'input': 'looking_user_type',
+                          'id': 'looking_user_type',
+                          'value': user_types.option,
+                          'selected': data.looking_user_type,
+                          'default': false
+                      }) %}
+                  </div>
+              </div>
+              <div class="search-block clearfix">
+                  <div class="f-title">
+                    Seeking a {# {% filter upper %}{% helper lang.l('field_looking_user_type', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                      {% helper start.selectbox({
+                          'input': 'user_type',
+                          'id': 'user_type',
+                          'value': user_types.option,
+                          'selected': data.user_type,
+                          'default': all_select_lang
+                      }) %}
+                  </div>
+              </div>
+              {# </custom_M> #}
+              <div class="search-block clearfix">
+                  <div class="f-title">
+                      Age {# {% filter upper %}{% helper lang.l('field_ages', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block clearfix">
+                      <div class="col-xs-2 lh30 p0">From</div>
+                      <div class="col-xs-4 no-padding-left">
+                          {% helper start.selectbox({
+                          'input': 'age_min',
+                          'id': 'age_min',
+                          'value': age_range,
+                          'selected': data.age_min,
+                          'default': false,
+                      }) %}
+                      </div>
+                      <div class="col-xs-2 lh30 center">To</div>
+                      <div class="col-xs-4 no-padding-right">
+                          {% helper start.selectbox({
+                          'input': 'age_max',
+                          'id': 'age_max',
+                          'value': age_range,
+                          'selected': data.age_max,
+                          'default': false,
+                      }) %}
+                      </div>
+                  </div>
+              </div>
+              <div class="search-block clearfix" id="search-by-location">
+                  <div class="f-title">
+                      Location{#  {% filter upper %}{% helper lang.l('field_location', 'users') %}{% endfilter %} #}
+                  </div>
+                  <div class="f-block">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <input type="radio" name="location_type" value="region" checked> <label for="">Region
+                      </div>
+                      <div class="col-xs-6">
+                        <input type="radio" name="location_type" value="distance"> <label for="">Distance
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-block">
+                      <div class="search-by-control" id="search-by-region">
+                          {% helper countries.location_select({
+                              'select_type': 'city',
+                              'placeholder': location_lang,
+                              'id_country': data.looking_id_country,
+                              'id_region': data.looking_id_region,
+                              'id_city': data.looking_id_city
+                          }) %}
+                      </div>
+                      <div class="search-by-control hide" id="search-by-distance">
+                        {#<div class="input-group">
+                          <input type="number" name="distance" value="" class="form-control">
+                          <span class="input-group-addon">km</span>
+                        </div>#}
+                        <select name="looking_distance" class="form-control">
+                        {% for option_gid, option_name in distance_options %}
+                          <option value="{{ option_gid }}" {% if attribute(data.distance, option_gid) %}selected{% endif %}>{{ option_name }}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+                      <script>
+                        $(function() {
+                          $('#search-by-location').find('[name=location_type]').bind('change', function(e) {
+                            e.preventDefault();
+                            $('#search-by-location').find('.search-by-control').hide();
+                            $('#search-by-' + $(this).val()).show();
+                          });
+                        });
+                      </script>
+                  </div>
+              </div>
+              <div class="search-block clearfix">
+                  <div class="f-title">
+                      Photo
+                  </div>
+                  <div class="f-block">
+                    <select name="with_photo" class="form-control">
+                      <option value="">No preference</option>
+                      <option value="1">With photo</option>
+                      <option value="-1">Without photo</option>
+                    </select>
+                  </div>
+              </div>
+              {# <custom_M> #}
+               {#<div class="search-block clearfix">
+                  {% helper living_with = lang.ld('living_with', 'data_properties') %}
+                  <div class="f-title">
+                      Living with {% filter upper %}{% helper lang.l('field_living_with', 'users') %}{% endfilter %}
+                  </div>
+                  <div class="f-block">
+                      <div>
+                          {% helper start.checkbox({
+                              'input': 'living_with',
+                              'id': 'living_with',
+                              'value': living_with.option,
+                              'selected': data.living_with,
+                              'default': all_select_lang
+                          }) %}
+                      </div>
+                  </div>
+              </div>#}
+              {# </custom_M> #}
+
+              <div id="full-search-form_{{ form_settings.form_id }}" {% if form_settings.type == 'short' %}class="hide"{% endif %}>
+                  {% if form_settings.use_advanced %}
+                      <div class="clr"></div>
+                      {% for item in advanced_form %}
+                          {% if item.type == 'section' %}
+                              {% for field in item.section.fields %}
+                                  <div class="search-field custom {{ field.field.type }} {{ field.settings.search_type }}">
+                                      <p>{{ field.field_content.name }}</p>
+                                      {% include 'helper_search_field_block.twig' with {
+                                          'field': field,
+                                          'field_name': field.field_content.field_name
+                                      }  %}
+                                  </div>
+                              {% endfor %}
+                          {% else %}
+                              <div class="search-field custom {{ item.field.type }} {{ item.settings.search_type }}">
+                                  <p>{{ item.field_content.name }}</p>
+                                  {% include 'helper_search_field_block.twig' with {
+                                      'field': item,
+                                      'field_name': item.field_content.field_name
+                                  }  %}
+                              </div>
+                          {% endif %}
+                      {% endfor %}
+                  {% endif %}
+              </div>
+              <div class="search-block clearfix">
+                  <input type="button" id="main_search_button_{{ form_settings.form_id }}" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}">
+                  {% if form_settings.use_advanced %}
+                      <span class="collapse-links ml10">
+                          <a href="#" class="hide" id="more-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_more_options', 'start') %}&nbsp;<i class="fa fa-caret-down icon-big text-icon"></i></a>
+                          <a href="#" class="hide" id="less-options-link_{{ form_settings.form_id }}">{% helper lang.l('link_less_options', 'start') %}&nbsp;<i class="fa fa-caret-up icon-big text-icon"></i></a>
+                      </span>
+                      &nbsp;&nbsp;&nbsp;
+                  {% endif %}
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          {% endif %}
+    </div>
+</form>

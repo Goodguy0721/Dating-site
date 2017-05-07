@@ -1,0 +1,2 @@
+	2500	Khasab	26.1799300	56.2477400	OM	07	0	0	Khasab	Khasab	Khasab	Khasab	Khasab	Khasab
+	2500	Dib Dibba	26.1977800	56.2577800	OM	07	0	0	Dib Dibba	Дибба Аль-Баях	Dib Dibba	Dib Dibba	Dib Dibba	Dib Dibba

@@ -1,0 +1,8 @@
+<div class="menu-alerts-more-item clearfix {% if not friend_requests_count %}hide-always{% endif %}">
+    <a id="friendlist_link_friends_requests" href="{{ site_url }}friendlist/friends_requests">
+        {% helper lang.l('friends_requests', 'friendlist') %}:
+        <b class="summand friend_requests_count fright">
+            {{ friend_requests_count }}
+        </b>
+    </a>
+</div>

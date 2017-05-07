@@ -1,0 +1,7 @@
+{% include '@app/header.twig' with {'header_type': 'index'} %}
+
+<div class="content">
+    {% helper dynamic_blocks.dynamic_blocks_area(color_scheme) %}
+</div>
+
+{% include '@app/footer.twig' with {'header_type': 'index'} %}

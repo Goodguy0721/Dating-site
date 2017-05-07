@@ -1,0 +1,7 @@
+	3952	Sesheke	-17.4759300	24.2968400	ZM	01	0	0	Sesheke	Шешеке	Sesheke	Sesheke	Sesheke	Sesheke
+	3952	Senanga	-16.1166700	23.2666700	ZM	01	0	0	Senanga	Senanga	Senanga	Senanga	Senanga	Senanga
+	3952	Mongu	-15.2483500	23.1274100	ZM	01	0	0	Mongu	Монгу	Mongu	Mongu	Mongu	Mongu
+	3952	Lukulu	-14.3706700	23.2419600	ZM	01	0	0	Lukulu	Lukulu	Lukulu	Lukulu	Lukulu	Lukulu
+	3952	Limulunga	-15.0969100	23.1375800	ZM	01	0	0	Limulunga	Limulunga	Limulunga	Limulunga	Limulunga	Limulunga
+	3952	Kaoma	-14.7833300	24.8000000	ZM	01	0	0	Kaoma	Kaoma	Kaoma	Kaoma	Kaoma	Kaoma
+	3952	Kalabo	-14.9700400	22.6813800	ZM	01	0	0	Kalabo	Kalabo	Kalabo	Kalabo	Kalabo	Kalabo

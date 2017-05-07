@@ -1,0 +1,25 @@
+{% for key, edata in wall_event.data %}
+    <div class="wall-post-date">
+        {% helper date.tpl_date_format(edata.event_date, date_format) %}
+    </div>
+
+    <div class="media b-media-wallpost__content" id="wall_event_{{ wall_event.id }}" gid="{{ wall_event.event_type_gid }}">
+        <div class="media-left">
+            <a class="g-pic-border g-rounded-small" href="{% helper seo.seolink('users', 'view', user) %}">
+                <img class="media-object" src="{{ user.media.user_logo.thumbs.small }}" width="30" />
+            </a>
+        </div>
+
+        <div class="media-body">
+            <span class="b-media-wallpost__heading">
+                <a href="{% helper seo.seolink('users', 'view', user) %}">
+                    {{ user.output_name }}
+                </a>
+                {% helper lang.l('text_event_create', 'events') %}
+                <a href="{% helper seo.seolink('events', 'view', event.id) %}">
+                    {{ event.name }}
+                </a>
+            </span>
+        </div>
+    </div>
+{% endfor %}

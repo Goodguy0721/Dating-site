@@ -1,0 +1,3 @@
+	837	Uvira	-3.3953400	29.1377900	CD	12	0	0	Uvira	Увира	Uvira	Uvira	Uvira	Uvira
+	837	Kabare	-2.4968200	28.7908100	CD	12	0	0	Kabare	Kabare	Kabare	Kabare	Kabare	Kabare
+	837	Bukavu	-2.4907700	28.8428100	CD	12	0	0	Bukavu	Bukavu	Bukavu	Bukavu	Bukavu	Bukavu

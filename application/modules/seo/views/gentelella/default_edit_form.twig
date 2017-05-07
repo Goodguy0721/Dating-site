@@ -1,0 +1,182 @@
+{% include '@app/header.twig' %}
+<form class="x_panel form-horizontal" method="post" action="{{ data.action }}" name="save_form">
+	<div class="x_title h4">
+		{% helper lang.l('admin_header_global_seo_settings_editing', 'seo') %} :
+	{% if controller == 'admin' %}
+		{% helper lang.l('default_seo_admin_field', 'seo') %}
+	{% else %}
+		{% helper lang.l('default_seo_user_field', 'seo') %}
+	{% endif %}
+	</div>
+	<div class="x_content">
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_title_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_title', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'meta_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{{ item.name }}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input type="text" name="title[{{ key }}]" value="{{ user_settings[section_gid].title|escape }}"
+							 class="form-control">
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_keyword_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_keyword', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'meta_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{{ item.name }}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<textarea name="keyword[{{ key }}]" rows="5" cols="80"
+					class="form-control">{{ user_settings[section_gid].keyword|escape }}</textarea>
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_description_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_description', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'meta_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{{ item.name }}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<textarea name="description[{{ key }}]" rows="5" cols="80"
+									class="form-control">{{ user_settings[section_gid].description|escape }}</textarea>
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('header_section_og', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_og', 'seo') %}</div>
+		</div>
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_og_title_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_og_title', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'og_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_og_title', 'seo') %}({{ item.name }}): </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input type="text" name="og_title[{{ key }}]" class="form-control"
+					value="{{ user_settings[section_gid].og_title|escape }}">
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_og_type_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_og_type', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'og_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{{ item.name }}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input type="text" name="og_type[{{ key }}]" class="form-control"
+					value="{{ user_settings[section_gid].og_type|escape }}"></div>
+		</div>
+		{% endfor %}
+		<br>
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_og_description_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_og_description', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'og_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{{ item.name }}:</label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<textarea name="og_description[{{ key }}]" rows="5" cols="80"
+					class="form-control">{{ user_settings[section_gid].og_description|escape }}</textarea>
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+
+		{% if controller == 'user' %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				<b>{% helper lang.l('field_header_default', 'seo') %}</b></label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				{% helper lang.l('text_help_header', 'seo') %}</div>
+		</div>
+		{% for key, item in languages %}
+		{% set section_gid = 'og_' ~ key %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">{{ item.name }}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<input type="text" name="header[{{ key }}]" class="form-control"
+					value="{{ user_settings[section_gid].header|escape }}">
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+		{% endif %}
+
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_lang_in_url', 'seo') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input class="flat" type="checkbox" value="1" name="lang_in_url"
+					{% if user_settings.lang_in_url %}checked{% endif %} id="lang_in_url">
+			</div>
+		</div>
+		{% if controller == 'user' %}
+		<div class="row form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				{% helper lang.l('field_lang_canonical', 'seo') %}: </label>
+			<div class="col-md-9 col-sm-9 col-xs-12 data-label">
+				<input type="hidden" name="lang_canonical" value="0">
+				<input class="flat" type="checkbox" name="lang_canonical" value="1"
+					{% if user_settings.lang_canonical %}checked{% endif %}>
+			</div>
+		</div>
+		{% endif %}
+		<div class="ln_solid"></div>
+		<div class="row form-group">
+			<div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9 col-xs-12">
+				<input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+				<a class="btn btn-default" href="{{ site_url }}admin/seo/index">{% helper lang.l('btn_cancel', 'start') %}</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+{% include '@app/footer.twig' %}

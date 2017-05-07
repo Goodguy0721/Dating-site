@@ -1,0 +1,92 @@
+{% include '@app/header.twig' %}
+
+{# <link rel="stylesheet" type="text/css" href="{{ site_url }}application/modules/clubs/views/flatty/css/style-{{ _LANG.rtl }}.css"> #}
+
+<div class="user-profile-view">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        {% include 'view_left_block.twig' %}
+
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-image'}) %}
+        {% helper clubs.mediaBlock({'count': 9, 'club_id': club.id, 'upload_gid': 'club-video'}) %}
+
+        {% helper banners.show_banner_place('banner-185x75') %}
+        {% helper banners.show_banner_place('banner-185x155') %}
+    </div>
+
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" style="margin-top:15px;">
+        <div class="description">
+            {% include 'view_club_menu.twig' %}
+            <div class="view-user">
+                <div class="view-user__descr">
+                    <h2 class="section-header">
+                        <span class="upper">
+                            {% helper lang.l('table_header_personal', 'clubs') %}
+                        </span>
+                    </h2>
+                    <div class="view-section">
+                        {% helper no_info_str = lang.l('no_information', 'users') %}
+                        
+                        <div class="field-block clearfix">
+                            <div class="field-name col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                {% helper lang.l('field_title', 'clubs') %}:
+                            </div>
+                            <div class="field-info col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                {{ club.title }}
+                            </div>
+                        </div>
+
+                        <div class="field-block clearfix">
+                            <div class="field-name col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                {% helper lang.l('field_category', 'clubs') %}:
+                            </div>
+                            <div class="field-info col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                {{ club.category_str }}
+                            </div>
+                        </div>
+
+                        {% if club.location %}
+                            <div class="field-block clearfix">
+                                <div class="field-name col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    {% helper lang.l('field_region', 'clubs') %}:
+                                </div>
+                                <div class="field-info col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                    {{ club.location }}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="field-block clearfix">
+                            <div class="field-name col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                {% helper lang.l('field_description', 'clubs') %}:
+                            </div>
+                            <div class="field-info col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                {{ club.description|nl2br }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% for item in sections %}
+                        {% set view_fields %}
+                            {% include 'custom_view_fields.twig' with {'fields_data': item.fields} %}
+                        {% endset %}
+                        {% if view_fields|trim %}
+                            <h2 class="section-header">
+                                <span class="upper">
+                                    {{ item.name }}
+                                </span>
+                            </h2>
+                            <div class="view-section">
+                                {{ view_fields }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+        {% helper banners.show_banner_place('banner-980x90') %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

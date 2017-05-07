@@ -1,0 +1,120 @@
+{% include '@app/header.twig' with {load_type: 'editable|ui'} %}
+
+<div>
+    <div>
+        <!-- 1 level menu -->
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_languages_menu') %}
+            </ul>
+        </div>
+        <!-- 2 level menu -->
+        <div class="x_title">
+            <div id="menu" class="btn-group" data-toggle="buttons">
+                {% for lang_id, item in langs %}
+                    <label class="btn btn-default
+                           {% if lang_id == current_lang_id %}active{% endif %}"
+                           onclick="document.location.href = '{{site_url}}admin/languages/ds_items/{{lang_id}}/{{current_module_id}}/{{current_gid}}'">
+                        <input type="radio" {% if lang_id == current_lang_id %}selected{% endif %}>
+                        {{item.name}}
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content" id="ds_items">
+            {% if not current_module.is_disabled_action_ds %}
+                <div class="btn-group">
+                    <a href="{{site_url}}admin/languages/ds_items_edit/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}" class="btn btn-primary">
+                        {% helper lang.l('link_add_ds_item', 'languages') %}
+                    </a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{site_url}}admin/languages/ds_items_edit/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}">
+                                {% helper lang.l('link_add_ds_item', 'languages') %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="javascript: mlSorter.update_sorting();
+                                    return false;">
+                                {% helper lang.l('link_resort_items', 'languages') %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+            <ul name="parent_0" class="sort connected" id="clsr0ul">
+                {% for key, item  in reference.option %}
+                    <li id="item_{{key}}" class="editable-languages-only x_panel">
+                        <div class="icons pull-right">
+                            {% if not current_module.is_disabled_action_ds %}
+                                <div class="btn-group">
+                                    <a href="{{site_url}}admin/languages/ds_items_edit/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}/{{key}}"
+                                       class="btn btn-primary">
+                                        {% helper lang.l('btn_edit', 'start') %}
+                                    </a>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{site_url}}admin/languages/ds_items_edit/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}/{{key}}">
+                                                {% helper lang.l('btn_edit', 'start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="if (confirm('{% helper lang.l('note_delete_ds_item', 'languages', '', 'js') %}'))
+                                                    mlSorter.deleteItem('{{key}}');
+                                                return false;" href="javascript:;">
+                                                {% helper lang.l('btn_delete', 'start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="editable" id="{{key}}">{{item}}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var change_url = '{{site_url}}admin/languages/ajax_ds_item_save/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}';
+    var mlSorter;
+    $(function () {
+        $('.editable').editable(change_url, {
+            tooltip: '{% helper lang.l("default_editable_text", "languages", "", "js") %}',
+            placeholder: '<font class="hide_text">{% helper lang.l("default_editable_text", "languages", '','js') %}</font>',
+            name: 'text',
+            submit: 'Save',
+            cancel: 'Cancel',
+            height: 'auto',
+            width: 300,
+            cssclass: 'jeditable-form',
+            callback: function (value, settings) {
+                $(this).html(settings.current);
+            }
+        });
+        mlSorter = new multilevelSorter({
+            siteUrl: '{{site_url}}',
+            itemsBlockID: 'pages',
+            urlSaveSort: 'admin/languages/ajax_ds_item_save_sorter/{{current_module_id}}/{{current_gid}}/',
+            urlDeleteItem: 'admin/languages/ajax_ds_item_delete/{{current_module_id}}/{{current_gid}}/',
+//		success: function(data){
+//			location.href = '{{site_url}}admin/languages/ds_items/{{current_lang_id}}/{{current_module_id}}/{{current_gid}}';
+//		}
+        });
+    });
+</script>
+{% include '@app/footer.twig' %}

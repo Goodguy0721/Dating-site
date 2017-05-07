@@ -1,0 +1,157 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% helper menu.get_admin_level1_menu('admin_news_menu') %}
+            </ul>
+        </div>
+        <div class="x_content">
+          <div id="actions" class="hide">
+            <div class="btn-group">
+              <a href="{{ site_url }}admin/news/edit" class="btn btn-primary">
+                  {% helper lang.l('link_add_news', 'news') %}
+              </a>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ site_url }}admin/news/edit">
+                      {% helper lang.l('link_add_news', 'news') %}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <table id="users" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">{% helper lang.l('field_date_add', 'news') %}</th>
+                        <th class="column-title">{% helper lang.l('field_name', 'news') %}</th>
+                        <th class="column-title">{% helper lang.l('field_news_type', 'news') %}</th>
+                        <th class="column-title">{% helper lang.l('text_status', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in news %}
+                    <tr>
+                        <td>
+                          {% helper utils.tpl_date_format(item.date_add,page_data.date_format) %}
+                        </td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.news_type }}</td>
+                        <td>
+                          {% if item.status %}
+                              {% helper lang.l('btn_tableicon_is_active','start') %}
+                          {% else %}
+                              {% helper lang.l('btn_tableicon_is_not_active','start') %}
+                          {% endif %}
+                        </td>
+                        <td class="icons">
+                          <div class="btn-group">
+                            {% if item.status %}
+                                <button type="button" class="btn btn-primary"
+                                        title="{% helper lang.l('link_deactivate_news', 'news') %}"
+                                        onclick="document.location.href='{{ site_url }}admin/news/activate/{{ item.id }}/0'">
+                                    {% helper lang.l('make_inactive','start') %}
+                                </button>
+                            {% else %}
+                                <button type="button" class="btn btn-primary"
+                                        title="{% helper lang.l('link_activate_news', 'news') %}"
+                                        onclick="document.location.href='{{ site_url }}admin/news/activate/{{ item.id }}/1'">
+                                    {% helper lang.l('make_active','start') %}
+                                </button>
+                            {% endif %}
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  {% if item.status %}
+                                    <li>
+                                      <a href="{{ site_url }}admin/news/activate/{{ item.id }}/0">
+                                          {% helper lang.l('make_inactive','start') %}
+                                      </a>
+                                    </li>
+                                  {% else %}
+                                    <li>
+                                      <a href="{{ site_url }}admin/news/activate/{{ item.id }}/1">
+                                          {% helper lang.l('make_active','start') %}
+                                      </a>
+                                    </li>
+                                  {% endif %}
+                                    <li>
+                                        <a href="{{ site_url }}admin/news/edit/{{ item.id }}">
+                                            {% helper lang.l('link_edit_news', 'news') %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ site_url }}admin/news/delete/{{ item.id }}"
+                                           onclick="javascript: if(!confirm('{% helper lang.l('note_delete_news', 'news', "", 'js') %}')) return false;">
+                                            {% helper lang.l('link_delete_news', 'news') %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<!-- Datatables -->
+<script src="{{ site_url }}application/views/gentelella/js/datatables/js/jquery.dataTables.js"></script>
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#users').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_news','news') %}"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [2,3,4]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bSort": false,
+            "bPaginate": false,
+            "bInfo": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+        var actions = $("#actions");
+        $('#users_wrapper').find('.actions').html(actions.html());
+        actions.remove();
+    });
+</script>
+
+{% include '@app/footer.twig' %}
